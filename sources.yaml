@@ -1,0 +1,84 @@
+# Daily digest sources
+# The scheduled agent reads this file each morning at 07:00 CET.
+# Edit freely — add, remove, or reorder. Changes take effect on the next run.
+
+settings:
+  max_items_per_source: 3       # caps a chatty source from dominating
+  max_items_per_topic: 6        # final cap per topic section
+  lookback_hours: 36            # how far back to consider "fresh"
+  dedupe_near_duplicates: true  # collapse stories covering the same event
+
+topics:
+  - name: Astronomy & Space
+    sources:
+      - name: NASA Breaking News
+        url: https://www.nasa.gov/news/
+      - name: ESA News
+        url: https://www.esa.int/ESA_Multimedia/Search?SearchText=&result_type=news
+      - name: Sky & Telescope
+        url: https://skyandtelescope.org/astronomy-news/
+      - name: Quanta Magazine (Physics)
+        url: https://www.quantamagazine.org/physics/
+      - name: Astronomy Picture of the Day
+        url: https://apod.nasa.gov/apod/
+
+  - name: World News
+    sources:
+      - name: The Economist
+        url: https://www.economist.com/latest
+      - name: Reuters World
+        url: https://www.reuters.com/world/
+
+  - name: Rugby (high-level only)
+    filter: Tier-1 internationals, World Cup, URC, Top 14, Premiership, Champions Cup. Skip local/age-grade.
+    sources:
+      - name: World Rugby News
+        url: https://www.world.rugby/news
+      - name: Telegraph Rugby
+        url: https://www.telegraph.co.uk/rugby-union/
+
+  - name: Sailing
+    sources:
+      - name: Sail-World
+        url: https://www.sail-world.com/
+      - name: Yachting World
+        url: https://www.yachtingworld.com/news
+
+  - name: Science-Based Lifting
+    sources:
+      - name: Stronger By Science
+        url: https://www.strongerbyscience.com/articles/
+      - name: MacroFactor Blog
+        url: https://macrofactorapp.com/blog/
+      - name: Menno Henselmans
+        url: https://mennohenselmans.com/articles/
+
+  - name: People Leadership
+    filter: Research-tagged or methodology-driven pieces only. Skip op-eds and personal anecdotes.
+    sources:
+      - name: MIT Sloan Management Review
+        url: https://sloanreview.mit.edu/topic/leadership/
+      - name: HBR Leadership
+        url: https://hbr.org/topic/leadership
+
+  - name: Emotional Intelligence
+    sources:
+      - name: Greater Good Magazine (UC Berkeley)
+        url: https://greatergood.berkeley.edu/articles
+      - name: APA Monitor on Psychology
+        url: https://www.apa.org/monitor
+
+  - name: AI Engineering
+    sources:
+      - name: Matt Pocock
+        url: https://www.mattpocock.com/articles
+      - name: Simon Willison
+        url: https://simonwillison.net/
+
+  - name: Jobs
+    type: listings  # show fresh postings, do not editorialize
+    sources:
+      - name: freelancermap
+        url: https://www.freelancermap.com/projects
+      - name: swissdevjobs.ch
+        url: https://swissdevjobs.ch/
