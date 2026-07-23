@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Digest — 23 July 2026</title>
+  <style>
+    :root {
+      --bg: #f9f9f7;
+      --surface: #ffffff;
+      --border: #e2e2da;
+      --text: #1a1a18;
+      --text-secondary: #5a5a52;
+      --accent: #2a5caa;
+      --accent-hover: #1e4380;
+      --section-header-bg: #f0f0ea;
+      --tag-bg: #e8eefc;
+      --tag-text: #2a5caa;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #16161a;
+        --surface: #1e1e24;
+        --border: #2e2e38;
+        --text: #e8e8e0;
+        --text-secondary: #9a9a92;
+        --accent: #6a9de8;
+        --accent-hover: #8db8f0;
+        --section-header-bg: #22222c;
+        --tag-bg: #1e2a48;
+        --tag-text: #6a9de8;
+      }
+    }
+    :root[data-theme="dark"] {
+      --bg: #16161a;
+      --surface: #1e1e24;
+      --border: #2e2e38;
+      --text: #e8e8e0;
+      --text-secondary: #9a9a92;
+      --accent: #6a9de8;
+      --accent-hover: #8db8f0;
+      --section-header-bg: #22222c;
+      --tag-bg: #1e2a48;
+      --tag-text: #6a9de8;
+    }
+    :root[data-theme="light"] {
+      --bg: #f9f9f7;
+      --surface: #ffffff;
+      --border: #e2e2da;
+      --text: #1a1a18;
+      --text-secondary: #5a5a52;
+      --accent: #2a5caa;
+      --accent-hover: #1e4380;
+      --section-header-bg: #f0f0ea;
+      --tag-bg: #e8eefc;
+      --tag-text: #2a5caa;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      font-size: 16px;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); text-decoration: underline; }
+
+    .page-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 4rem;
+    }
+
+    /* Header */
+    header {
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 1.25rem;
+      margin-bottom: 2rem;
+    }
+    header h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+    header h1 span.date-part {
+      color: var(--text-secondary);
+      font-weight: 400;
+    }
+    .back-link {
+      margin-top: 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+    }
+
+    /* Sections */
+    section {
+      margin-bottom: 2.5rem;
+    }
+    section h2 {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      background: var(--section-header-bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 0.35rem 0.75rem;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+
+    /* Items */
+    .item-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .item {
+      padding: 0.9rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .item:last-child { border-bottom: none; }
+    .item-title {
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 1.35;
+      margin-bottom: 0.25rem;
+    }
+    .item-title a { color: var(--text); }
+    .item-title a:hover { color: var(--accent); text-decoration: none; }
+    .item-meta {
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.35rem;
+    }
+    .item-source {
+      font-weight: 600;
+      color: var(--tag-text);
+      background: var(--tag-bg);
+      padding: 0.1rem 0.45rem;
+      border-radius: 3px;
+      font-size: 0.73rem;
+      letter-spacing: 0.01em;
+      margin-right: 0.4rem;
+    }
+    .item-summary {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* Jobs section */
+    .job-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+    @media (max-width: 540px) {
+      .job-grid { grid-template-columns: 1fr; }
+    }
+    .job-card {
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.8rem 1rem;
+      background: var(--surface);
+    }
+    .job-card .item-title {
+      font-size: 0.9rem;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+      padding-top: 1rem;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <header>
+    <h1>Daily Digest &mdash; <span class="date-part">23 July 2026</span></h1>
+    <p class="back-link"><a href="../index.html">← Back to index</a></p>
+  </header>
+
+  <main>
+
+    <!-- Astronomy & Space -->
+    <section id="astronomy-space">
+      <h2>Astronomy &amp; Space</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://earthsky.org/sun/sun-news-activity-solar-flare-cme-aurora-updates/" target="_blank" rel="noopener">
+              Sunspot Region AR4493 Fires 23 Flares in a Single Day
+            </a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">EarthSky / NASA</span>
+            22 July 2026
+          </div>
+          <p class="item-summary">
+            New sunspot region AR4493, which grew rapidly to reach beta-gamma-delta magnetic configuration (the maximum complexity), fired 23 of 24 solar flares on July 22, including two M-class events; further eruptions are expected as the region rotates into direct Earth-facing position.
+          </p>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.space.com/" target="_blank" rel="noopener">
+              SpaceX Starship Flight 13 Launches Carrying First V3 Starlink Satellites
+            </a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Space.com</span>
+            23 July 2026
+          </div>
+          <p class="item-summary">
+            SpaceX's 13th integrated Starship flight test carried the inaugural batch of upgraded V3 Starlink satellites; the mission also marks continued progress in testing Starship's reusability and payload-delivery architecture ahead of Artemis lunar commitments.
+          </p>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://apod.nasa.gov/apod/astropix.html" target="_blank" rel="noopener">
+              APOD: The Corona Australis Molecular Cloud and the Chandelier Cluster
+            </a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">NASA APOD</span>
+            22 July 2026
+          </div>
+          <p class="item-summary">
+            NASA's Astronomy Picture of the Day showcased the star-forming Corona Australis Molecular Cloud alongside the ancient globular Chandelier Cluster, illustrating the coexistence of young stellar nurseries and billion-year-old stellar relics within the Southern Crown region.
+          </p>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.sciencedaily.com/news/space_time/astronomy/" target="_blank" rel="noopener">
+              ESA Gaia Data Reveals Milky Way's Ancient Disk Flip Triggered by Galactic Merger
+            </a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">ESA Gaia / ScienceDaily</span>
+            Recent
+          </div>
+          <p class="item-summary">
+            Analysis of Gaia mission astrometry shows the Milky Way's thick disk rotates significantly more slowly than the thin disk; high-resolution simulations indicate a past merger event caused the thick disk to flip its orientation, fundamentally reshaping the early Galaxy's structure.
+          </p>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- World News -->
+    <section id="world-news">
+      <h2>World News</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.reuters.com/world/europe/factbox-who-mykhailo-drapatyi-ukraines-new-army-chief-2026-07-22/" target="_blank" rel="noopener">
+              Ukraine Replaces Army Chief: Zelenskyy Appoints Drapatyi After Nationwide Protests Force Syrskyi Out
+            </a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Reuters</span>
+            22 July 2026
+          </div>
+          <p class="item-summary">
+            President Zelenskyy appointed Major General Mykhailo Drapatyi, 43, as Ukraine's new commander-in-chief, replacing General Syrskyi following days of nationwide protests; Drapatyi—credited with halting the 2024 Kharkiv incursion and the youngest-ever commander of Ukraine's land forces—pledged to intensify counteroffensive operations.
+          </p>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.timesofisrael.com/liveblog-july-22-2026/" target="_blank" rel="noopener">
+              US-Iran Conflict: 11th Consecutive Night of Airstrikes; Iran Fires Drones at US Bases in Jordan and Bahrain
+            </a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Times of Israel / JustSecurity</span>
+            22 July 2026
+          </div>
+          <p class="item-summary">
+            US Central Command conducted its 11th successive night of strikes on Iran; Iran's military counter-targeted US facilities at Al Azraq air base in Jordan and Sheikh Isa Air Base in Bahrain with Arash suicide drones; the US has simultaneously informed Israel of plans to further escalate using heavy bombers—the first such use in the joint campaign.
+          </p>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.reuters.com/world/middle-east/yemens-houthis-say-they-targeted-two-saudi-oil-tankers-source-says-encelia-hit-2026-07-22/" target="_blank" rel="noopener">
+              Houthis Strike Saudi Tankers ENCELIA and LAYLA; Brent Crude Surges 2.5%
+            </a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Reuters</span>
+            22 July 2026
+          </div>
+          <p class="item-summary">
+            Yemen's Houthis claimed missile strikes on two Saudi-flagged oil tankers under a declared naval blockade on Saudi Arabia; ENCELIA was confirmed hit and on fire near Jizan port on the Red Sea, sending Brent crude to ~$96/barrel; shippers were warned any vessel loading Saudi cargo is a valid target.
+          </p>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.reuters.com/world/africa/congo-says-nearly-1000-die-ebola-confirmed-cases-rise-2473-2026-07-22/" target="_blank" rel="noopener">
+              DRC Ebola Outbreak Crosses 1,000 Deaths — Fastest-Spreading in Recorded History
+            </a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Reuters</span>
+            22 July 2026
+          </div>
+          <p class="item-summary">
+            The DRC Bundibugyo-strain Ebola outbreak has killed 1,031 people since emerging in May 2026—reaching 1,000 deaths in under 10 weeks, versus ~8 months for the comparable 2018 outbreak; 2,473 confirmed cases span DRC and 20 in neighbouring Uganda; Africa CDC director-general Kaseya confirmed the toll at a health conference in Ghana.
+          </p>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- Rugby -->
+    <section id="rugby">
+      <h2>Rugby — Tier-1 / High-Level Only</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.world.rugby/news/1045758/disciplinary-updatetomasalbornoz-argentina" target="_blank" rel="noopener">
+              Nations Championship: Argentina Fly-Half Albornoz Faces Misconduct Charge After Confronting Referee
+            </a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">World Rugby</span>
+            22 July 2026
+          </div>
+          <p class="item-summary">
+            World Rugby charged Argentina fly-half Tomás Albornoz with misconduct after he made physical contact with referee Angus Gardner during post-match remonstrations over a TMO-disallowed try that would have levelled the Nations Championship match against England (31–24 final); under the new Match Official Abuse Sanction Process, the penalty ranges from an automatic two-match ban to 18 weeks.
+          </p>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.world.rugby/news/1045740/italy-drop-out-of-top-10-in-world-rugby-mens-rankings" target="_blank" rel="noopener">
+              Italy Drop to 12th in World Rugby Men's Rankings — Worst Position in Nearly Three Years
+            </a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">World Rugby</span>
+            22 July 2026
+          </div>
+          <p class="item-summary">
+            Italy fell two places to 12th after a winless Nations Championship July window—losing to New Zealand, Japan, and Australia (57–10)—with their rating slipping to 76.30 points, below both Japan and Wales; the side faces a significant rebuild before the November window.
+          </p>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.world.rugby/news" target="_blank" rel="noopener">
+              Italy Head Coach Quesada Receives Automatic Two-Match Ban for Criticising Officiating
+            </a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">World Rugby</span>
+            23 July 2026
+          </div>
+          <p class="item-summary">
+            World Rugby handed Italy head coach Gonzalo Quesada an automatic two-match suspension for public comments critical of match officiating during the Nations Championship, adding further pressure to Italy's coaching staff following their difficult July window.
+          </p>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- Sailing -->
+    <section id="sailing">
+      <h2>Sailing</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.sail-world.com/news/298238/Lanzarote-52-Super-Series-day-2" target="_blank" rel="noopener">
+              52 Super Series Lanzarote Day 2: Paprec Leads by Two Points in Breezy Canaries Conditions
+            </a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Sail-World</span>
+            23 July 2026
+          </div>
+          <p class="item-summary">
+            Paprec (Jean-Luc Petithuguenin / Vendée Globe runner-up Yoann Richomme as navigator) extended their lead to two clear points after four races at the Lanzarote 52 Super Series, with consistent composure in 25+ knot winds separating them from circuit leaders Sled (Takashi Okura, reigning TP52 World Champions) across the 13-boat international fleet.
+          </p>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.sail-world.com/news/298208/Lanzarote-52-Super-Series-Day-1" target="_blank" rel="noopener">
+              52 Super Series Lanzarote Day 1: Paprec and Sled Share Race Wins
+            </a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Sail-World</span>
+            22 July 2026
+          </div>
+          <p class="item-summary">
+            Opening day of the Lanzarote 52 Super Series Sailing Week saw Paprec and Sled each score one race win and a second in winds exceeding 25 knots; Paprec led on countback from 13 boats representing 11 nationalities at the Marina Rubicon venue.
+          </p>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.yachtingworld.com/all-latest-posts/sail-gp-portsmouth-set-for-full-on-solent-obstacle-course-159188" target="_blank" rel="noopener">
+              SailGP Portsmouth: Full-On Solent 'Obstacle Course' Awaits 13 F50s (25–26 July)
+            </a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Yachting World</span>
+            22 July 2026
+          </div>
+          <p class="item-summary">
+            The Emirates Great Britain Sail Grand Prix (8th leg of the 2026 Rolex SailGP Championship) races on the eastern Solent, where fixed hazards including Spitbank Fort and naval shipping lanes create a unique racecourse; Australia's Bonds Flying Roos lead the series, ahead of an equal-points battle between host Emirates GBR and Spain's Los Gallos.
+          </p>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.sail-world.com/news/298241/Leigh-McMillan-returns-to-SailGP-Team-France" target="_blank" rel="noopener">
+              Leigh McMillan Returns to SailGP Team France for Portsmouth After Shoulder Injury
+            </a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Sail-World</span>
+            23 July 2026
+          </div>
+          <p class="item-summary">
+            Wing trimmer Leigh McMillan rejoins DS Automobiles SailGP Team France at Portsmouth (25–26 July) following recovery from a traumatic shoulder injury that sidelined him for the Rio event; his return bolsters France's crew depth ahead of the critical championship mid-season stop.
+          </p>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- People Leadership -->
+    <section id="people-leadership">
+      <h2>People Leadership</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://sloanreview.mit.edu/article/a-new-way-to-address-troubled-team-dynamics/" target="_blank" rel="noopener">
+              A New Way to Address Troubled Team Dynamics
+            </a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">MIT Sloan Management Review</span>
+            22 July 2026
+          </div>
+          <p class="item-summary">
+            Ina Toegel and Jean-Louis Barsoux present a structured Big Five personality-framework methodology where teams complete assessments then participate in guided sessions that explicitly link collective trait profiles to existing interpersonal tensions; the same protocol accelerates cohesion in newly formed teams by surfacing fault lines before they harden into conflicts, giving leaders a replicable diagnostic rather than ad-hoc conflict resolution.
+          </p>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://sloanreview.mit.edu/article/how-leaders-unlock-innovation-on-the-front-lines/" target="_blank" rel="noopener">
+              How Leaders Unlock Innovation on the Front Lines
+            </a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">MIT Sloan Management Review</span>
+            20 July 2026
+          </div>
+          <p class="item-summary">
+            Field research by Mosner, Sting, and Chandrasekaran finds leadership behaviour—not worker motivation—is the primary bottleneck to front-line innovation; three levers identified: allocating time and budget for ideas, enabling low-stakes experimentation, and reinforcing employees' "innovation identities." Leaders who fail to signal openness cause workers to self-censor viable ideas.
+          </p>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- Emotional Intelligence -->
+    <section id="emotional-intelligence">
+      <h2>Emotional Intelligence</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://greatergood.berkeley.edu/article/item/what_students_say_builds_character_in_college" target="_blank" rel="noopener">
+              What Students Say Builds Character in College
+            </a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Greater Good Magazine (UC Berkeley)</span>
+            22 July 2026
+          </div>
+          <p class="item-summary">
+            Research by Jasmine M. Truong and Sara E. Rimm-Kaufman identifies classroom conditions that foster empathy, open-mindedness, and civic engagement in college students; perspective-taking across opposing beliefs emerged as the most difficult competency to cultivate, yet faculty-designed deliberate structures can substantially improve outcomes.
+          </p>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.apa.org/monitor/2026/07-08/ai-job-skills-thinking" target="_blank" rel="noopener">
+              How AI Is Reshaping Human Skills and Thinking
+            </a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">APA Monitor on Psychology</span>
+            July/August 2026 Issue
+          </div>
+          <p class="item-summary">
+            Research covered in the July/August 2026 Monitor finds that heavy reliance on generative AI reduces critical thinking, job-specific skills, and social-emotional competencies; structured, intentional human-AI collaboration—rather than passive delegation—is identified as the mechanism for preserving uniquely human cognitive and interpersonal capabilities.
+          </p>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.apa.org/monitor/2026/07-08/volunteering-kind-acts" target="_blank" rel="noopener">
+              Volunteering and Kind Acts Benefit the Helper, Not Just the Recipient
+            </a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">APA Monitor on Psychology</span>
+            July/August 2026 Issue
+          </div>
+          <p class="item-summary">
+            Meta-analytic evidence shows that performing acts of kindness and volunteering meaningfully reduces depression and anxiety while boosting happiness; the primary driver is increased felt social connection, with effects strongest when people perceive their contribution as both chosen and impactful.
+          </p>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- AI Engineering -->
+    <section id="ai-engineering">
+      <h2>AI Engineering</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://simonwillison.net/2026/Jul/" target="_blank" rel="noopener">
+              Simon Willison: Fireside Chat with the Claude Code Team on Agentic Engineering Patterns
+            </a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Simon Willison's Weblog</span>
+            21 July 2026
+          </div>
+          <p class="item-summary">
+            Willison published a fireside chat with Claude Code leads Cat and Thariq covering frontier agentic engineering patterns, session design, and practical guidance on building production-grade multi-agent pipelines with Claude Code.
+          </p>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- Jobs -->
+    <section id="jobs">
+      <h2>Jobs &amp; Freelance Listings</h2>
+      <div class="job-grid">
+
+        <div class="job-card">
+          <div class="item-title">
+            <a href="https://www.freelancermap.com/project/senior-ai-rag-implementation-engineer-production-grade-infrastructure" target="_blank" rel="noopener">
+              Senior AI/RAG Implementation Engineer
+            </a>
+          </div>
+          <div class="item-meta"><span class="item-source">freelancermap</span> Freelance</div>
+          <p class="item-summary">Production-grade RAG systems on Azure/AWS; ingestion pipelines for PDF, SharePoint, SAP, Salesforce; multi-agent workflows via LangGraph/LangChain; anti-hallucination guardrails.</p>
+        </div>
+
+        <div class="job-card">
+          <div class="item-title">
+            <a href="https://www.freelancermap.com/project/genai-llm-engineer-gcp-und-agentic-ai" target="_blank" rel="noopener">
+              GenAI / LLM Engineer (GCP &amp; Agentic AI)
+            </a>
+          </div>
+          <div class="item-meta"><span class="item-source">freelancermap</span> Frankfurt · 10-month contract</div>
+          <p class="item-summary">Financial-sector client; LLM orchestration within regulated GCP environment; MCP pattern implementation; Python, Agentic AI. Not model training.</p>
+        </div>
+
+        <div class="job-card">
+          <div class="item-title">
+            <a href="https://www.freelancermap.com/project/ai-engineer-llms-und-generative-ai" target="_blank" rel="noopener">
+              AI Engineer (LLMs &amp; Generative AI)
+            </a>
+          </div>
+          <div class="item-meta"><span class="item-source">freelancermap</span> Freelance</div>
+          <p class="item-summary">6+ yrs software dev, 2+ yrs LLMs in production; prompt engineering, model evaluation, inference pipeline optimisation.</p>
+        </div>
+
+        <div class="job-card">
+          <div class="item-title">
+            <a href="https://swissdevjobs.ch/" target="_blank" rel="noopener">
+              Junior Network Engineer
+            </a>
+          </div>
+          <div class="item-meta"><span class="item-source">swissdevjobs.ch</span> Cyberlink AG · Zürich · CHF 75–90k</div>
+          <p class="item-summary">Full-time networking role at Cyberlink AG in Zürich. German-speaking environment.</p>
+        </div>
+
+        <div class="job-card">
+          <div class="item-title">
+            <a href="https://swissdevjobs.ch/" target="_blank" rel="noopener">
+              Full Stack Software Developer (80–100%)
+            </a>
+          </div>
+          <div class="item-meta"><span class="item-source">swissdevjobs.ch</span> Cleveron AG · Bern · CHF 95–100k</div>
+          <p class="item-summary">Full-stack role at Cleveron AG in Bern. English-speaking environment.</p>
+        </div>
+
+        <div class="job-card">
+          <div class="item-title">
+            <a href="https://swissdevjobs.ch/" target="_blank" rel="noopener">
+              Java Fullstack Software Developer
+            </a>
+          </div>
+          <div class="item-meta"><span class="item-source">swissdevjobs.ch</span> Unisys · Switzerland</div>
+          <p class="item-summary">Java, JavaScript, Spring, TypeScript, Angular, SQL stack at Unisys Switzerland.</p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Generated 23 July 2026, 07:00 CET &mdash; <a href="../index.html">Daily Digest index</a></p>
+    <p style="margin-top:0.3rem;">Sources: NASA/EarthSky, Space.com, Reuters, Times of Israel, JustSecurity, World Rugby, EuroSail News, US Sailing, MIT Sloan Management Review, Greater Good (UC Berkeley), APA Monitor, Simon Willison&rsquo;s Weblog, freelancermap, swissdevjobs.ch</p>
+  </footer>
+
+</div>
+</body>
+</html>
