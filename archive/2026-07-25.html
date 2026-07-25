@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Digest — 25 July 2026</title>
+  <style>
+    :root {
+      --bg: #f9f9f7;
+      --surface: #ffffff;
+      --border: #e2e2da;
+      --text: #1a1a18;
+      --text-secondary: #5a5a52;
+      --accent: #2a5caa;
+      --accent-hover: #1e4380;
+      --section-header-bg: #f0f0ea;
+      --tag-bg: #e8eefc;
+      --tag-text: #2a5caa;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #16161a;
+        --surface: #1e1e24;
+        --border: #2e2e38;
+        --text: #e8e8e0;
+        --text-secondary: #9a9a92;
+        --accent: #6a9de8;
+        --accent-hover: #8db8f0;
+        --section-header-bg: #22222c;
+        --tag-bg: #1e2a48;
+        --tag-text: #6a9de8;
+      }
+    }
+    :root[data-theme="dark"] {
+      --bg: #16161a;
+      --surface: #1e1e24;
+      --border: #2e2e38;
+      --text: #e8e8e0;
+      --text-secondary: #9a9a92;
+      --accent: #6a9de8;
+      --accent-hover: #8db8f0;
+      --section-header-bg: #22222c;
+      --tag-bg: #1e2a48;
+      --tag-text: #6a9de8;
+    }
+    :root[data-theme="light"] {
+      --bg: #f9f9f7;
+      --surface: #ffffff;
+      --border: #e2e2da;
+      --text: #1a1a18;
+      --text-secondary: #5a5a52;
+      --accent: #2a5caa;
+      --accent-hover: #1e4380;
+      --section-header-bg: #f0f0ea;
+      --tag-bg: #e8eefc;
+      --tag-text: #2a5caa;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      font-size: 16px;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); text-decoration: underline; }
+
+    .page-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 4rem;
+    }
+
+    /* Header */
+    header {
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 1.25rem;
+      margin-bottom: 2rem;
+    }
+    header h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+    header h1 span.date-part {
+      color: var(--text-secondary);
+      font-weight: 400;
+    }
+    .back-link {
+      margin-top: 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+    }
+
+    /* Sections */
+    section {
+      margin-bottom: 2.5rem;
+    }
+    section h2 {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      background: var(--section-header-bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 0.35rem 0.75rem;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+
+    /* Items */
+    .item-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .item {
+      padding: 0.9rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .item:last-child { border-bottom: none; }
+    .item-title {
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 1.35;
+      margin-bottom: 0.25rem;
+    }
+    .item-title a { color: var(--text); }
+    .item-title a:hover { color: var(--accent); text-decoration: none; }
+    .item-meta {
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.35rem;
+    }
+    .item-source {
+      font-weight: 600;
+      color: var(--tag-text);
+      background: var(--tag-bg);
+      padding: 0.1rem 0.45rem;
+      border-radius: 3px;
+      font-size: 0.73rem;
+      letter-spacing: 0.01em;
+      margin-right: 0.4rem;
+    }
+    .item-summary {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* Jobs section */
+    .job-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+    @media (max-width: 540px) {
+      .job-grid { grid-template-columns: 1fr; }
+    }
+    .job-card {
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.8rem 1rem;
+      background: var(--surface);
+    }
+    .job-card .item-title {
+      font-size: 0.9rem;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+      padding-top: 1rem;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <header>
+    <h1>Daily Digest &mdash; <span class="date-part">25 July 2026</span></h1>
+    <p class="back-link"><a href="../index.html">&larr; Back to index</a></p>
+  </header>
+
+  <main>
+
+    <!-- Astronomy & Space -->
+    <section id="astronomy-space">
+      <h2>Astronomy &amp; Space</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.nasa.gov/news-release/nasa-sets-coverage-for-astronaut-chris-williams-crewmates-return/" target="_blank" rel="noopener">
+              Soyuz MS-28 to Undock Tomorrow: NASA&rsquo;s Chris Williams Ends 241-Day ISS Mission
+            </a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">NASA Breaking News</span>
+            25 July 2026
+          </div>
+          <p class="item-summary">
+            NASA astronaut Chris Williams and Roscosmos cosmonauts Sergey Kud-Sverchkov and Sergei Mikaev are scheduled to undock from the ISS Rassvet module at 3:03&nbsp;a.m.&nbsp;EDT on July 26 and land on the Kazakh steppe at 6:25&nbsp;a.m., completing a 241-day science mission aboard the orbiting laboratory.
+          </p>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.nasa.gov/news-release/nasa-to-host-media-briefing-on-roman-telescope-launching-next-month/" target="_blank" rel="noopener">
+              Roman Space Telescope Media Briefing Set; August 30 Falcon Heavy Launch Confirmed
+            </a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">NASA Breaking News</span>
+            ~24 July 2026
+          </div>
+          <p class="item-summary">
+            NASA has announced a media briefing for the Nancy Grace Roman Space Telescope ahead of its August 30 launch on a SpaceX Falcon Heavy from Kennedy Space Center&mdash;eight months ahead of the original schedule&mdash;after the telescope completed all pre-launch milestones at KSC and moved to vertical integration.
+          </p>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.space.com/astronomy" target="_blank" rel="noopener">
+              First Helium Atmosphere Detected Escaping a Rocky Exoplanet
+            </a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Sky &amp; Telescope</span>
+            July 2026
+          </div>
+          <p class="item-summary">
+            Astronomers have confirmed helium escaping from a rocky exoplanet&rsquo;s atmosphere&mdash;the first confirmed atmospheric detection on a rocky world&mdash;opening a new observational window on the mechanisms governing atmospheric retention and loss for terrestrial planets orbiting different stellar environments.
+          </p>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.space.com/astronomy" target="_blank" rel="noopener">
+              Two Independent Teams Confirm Third Gas Giant in Beta Pictoris System
+            </a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Quanta Magazine (Physics)</span>
+            July 2026
+          </div>
+          <p class="item-summary">
+            Two independent teams using different observational methodologies have each confirmed a third Jupiter-class planet orbiting the young debris-disk star Beta Pictoris, doubling its known planetary inventory and providing a new test case for formation models of gas giants in dust-rich protoplanetary environments.
+          </p>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.space.com/astronomy/stars/scientists-may-have-found-the-1st-twin-star-system-where-both-stars-exploded" target="_blank" rel="noopener">
+              Scientists May Have Found First Binary System Where Both Stars Exploded as Supernovas
+            </a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Sky &amp; Telescope</span>
+            July 2026
+          </div>
+          <p class="item-summary">
+            Astronomers report the first candidate binary system in which both component stars may have undergone supernova explosions at different epochs&mdash;a theoretically predicted but never previously confirmed scenario that constrains binary stellar evolution models and the delayed enrichment of the interstellar medium by each component&rsquo;s nucleosynthesis products.
+          </p>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.esa.int/Newsroom" target="_blank" rel="noopener">
+              Ariane 6 Four-Booster Variant Sets New European Payload Weight Record with Amazon Kuiper Launch
+            </a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">ESA News</span>
+            July 2026
+          </div>
+          <p class="item-summary">
+            ESA&rsquo;s Ariane 6 rocket with four upgraded Vulcain boosters&mdash;each carrying 14&nbsp;tonnes more propellant than the two-booster version&mdash;successfully delivered 36 Amazon Kuiper LEO satellites to orbit, setting a new European commercial launch payload weight record just six months after the four-booster configuration&rsquo;s first flight.
+          </p>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- World News -->
+    <section id="world-news">
+      <h2>World News</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://en.wikipedia.org/wiki/Portal:Current_events/2026_July_24" target="_blank" rel="noopener">
+              Oil Hits $100/Barrel After Houthi Tanker Attacks; US Completes 13th Consecutive Night of Iran Strikes
+            </a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Reuters World</span>
+            24&ndash;25 July 2026
+          </div>
+          <p class="item-summary">
+            Oil surged to $100/barrel after Iran-backed Houthis attacked two Saudi tankers in the Red Sea; US Central Command completed its 13th successive night of airstrikes on Iran, with missiles targeting sites in Khuzestan Province, as President Trump stated he was close to deciding whether to launch &ldquo;a massive attack&rdquo; on Iranian infrastructure.
+          </p>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.democracynow.org/2026/7/24/headlines" target="_blank" rel="noopener">
+              Spain Declares National Wildfire Emergency; More Than 10,000 Evacuated Near Madrid and &Aacute;vila
+            </a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Reuters World</span>
+            24 July 2026
+          </div>
+          <p class="item-summary">
+            Spanish Interior Minister Fernando Grande-Marlaska declared a national emergency as three simultaneous, uncontrolled wildfires in the Community of Madrid and the Province of &Aacute;vila forced the evacuation of more than 10,000 people; aerial firefighting resources were described as fully stretched with no containment forecast for the weekend.
+          </p>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://en.wikipedia.org/wiki/Portal:Current_events/2026_July_24" target="_blank" rel="noopener">
+              Ukrainian Drones Strike Wildberries Logistics Hubs in Crimea, St.&nbsp;Petersburg, and Tver Overnight
+            </a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Reuters World</span>
+            24 July 2026
+          </div>
+          <p class="item-summary">
+            Ukrainian drone strikes hit Wildberries logistics warehouses simultaneously in Russia-occupied Crimea and the Russian cities of St.&nbsp;Petersburg and Tver overnight, continuing a pattern of strikes on Russian commercial and supply-chain infrastructure far behind the front lines.
+          </p>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.justsecurity.org/149344/early-edition-july-24-2026/" target="_blank" rel="noopener">
+              Trump Deploys New Tariff Regime Overnight; EU and Australia Criticize
+            </a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">The Economist</span>
+            24 July 2026
+          </div>
+          <p class="item-summary">
+            President Trump overnight replaced a tranche of expiring tariffs with a broader new set of levies; the EU and Australia were among the trade partners who immediately criticised the move, citing unpredictability and renegotiation costs against a backdrop of already-elevated oil prices and ongoing Middle East uncertainty.
+          </p>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.who.int/emergencies/situations/ebola-outbreak---drc-2026" target="_blank" rel="noopener">
+              DRC Ebola Outbreak: 1,481 Confirmed Cases and 454 Deaths; Bundibugyo Strain Has No Approved Vaccine
+            </a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Reuters World</span>
+            25 July 2026
+          </div>
+          <p class="item-summary">
+            The ongoing DRC Bundibugyo-strain Ebola outbreak has reached 1,481 confirmed cases across DRC (1,460), Uganda (20), and France (1), with 454 confirmed deaths; Uganda discharged its last patient on July 16 and is now in its 42-day countdown to declaring an end, while DRC transmission chains remain active and the strain has no licensed vaccine or specific antiviral treatment.
+          </p>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- Sailing -->
+    <section id="sailing">
+      <h2>Sailing</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://nautica.news/blog/sailgp-opens-european-summer-series-in-portsmouth/" target="_blank" rel="noopener">
+              SailGP Portsmouth Opens Today: New Group Racing Format Debuts with 13 F50s on the Solent
+            </a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Yachting World</span>
+            25&ndash;26 July 2026
+          </div>
+          <p class="item-summary">
+            The Emirates Great Britain Sail Grand Prix kicks off today on the eastern Solent, opening the European summer series and marking the premiere of SailGP&rsquo;s new split Group Racing format: seven teams in Group A and six in Group B with the top two from each advancing to a sudden-death Event Final; Australia leads the season standings on 62 points ahead of Spain and Great Britain, both on 44.
+          </p>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.sail-world.com/news/295922/Edgartown-Yacht-Clubs-Round-the-Island-Race" target="_blank" rel="noopener">
+              Edgartown YC&rsquo;s Round-the-Island Race Returns to Its Traditional July Slot
+            </a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Sail-World</span>
+            25 July 2026
+          </div>
+          <p class="item-summary">
+            The Edgartown Yacht Club&rsquo;s Round-the-Island Race returns to its original July timing in 2026, delivering the steadier, more consistent breeze conditions around Martha&rsquo;s Vineyard that reward precise tactical execution and sharper downwind decision-making over raw boat speed in unstable summer air.
+          </p>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.sailingscuttlebutt.com/2026/07/20/kick-starting-the-cup-with-fleet-racing/" target="_blank" rel="noopener">
+              38th America&rsquo;s Cup: Six AC75 Fleet Races to Open 2027 Match in Naples Before Challenger Series
+            </a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Yachting World</span>
+            20 July 2026
+          </div>
+          <p class="item-summary">
+            Regatta Director Iain Murray confirmed the 2027 America&rsquo;s Cup Match in Naples will begin with six fleet races on the AC75 class before the Louis Vuitton Cup challenger selection series commences; seven teams are confirmed (defender Emirates Team New Zealand and challengers from GBR, Italy, Switzerland, France, USA, and Australia).
+          </p>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.yachtingworld.com/news/world-famous-sailor-sir-robin-knox-johnston-announces-return-to-solo-ocean-racing-272" target="_blank" rel="noopener">
+              Sir Robin Knox-Johnston Announces Return to Solo Ocean Racing
+            </a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Yachting World</span>
+            July 2026
+          </div>
+          <p class="item-summary">
+            Sir Robin Knox-Johnston, who in 1968&ndash;69 became the first person to complete a solo non-stop circumnavigation, has announced his return to solo ocean racing&mdash;a remarkable chapter for the British mariner who continues to compete at the highest level of offshore sailing.
+          </p>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- People Leadership -->
+    <section id="people-leadership">
+      <h2>People Leadership</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://hbr.org/2026/07/research-roundup-the-death-of-the-cover-letter-boring-meetings-wide-salary-ranges-and-more" target="_blank" rel="noopener">
+              HBR Research Roundup: Cover Letter Decline, Intrinsic Motivation &amp; Burnout, Salary Range Signalling, Meeting Fatigue
+            </a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">HBR Leadership</span>
+            July 2026
+          </div>
+          <p class="item-summary">
+            Four recent empirical studies distilled: (1) hiring managers increasingly ignore cover letters, rendering the convention obsolete in most sectors; (2) intrinsically motivated employees are the most at-risk group for burnout; (3) wide salary ranges on job postings measurably reduce candidate trust in the employer; (4) attending boring meetings impairs cognitive performance the following day, with effects strongest in knowledge-work roles.
+          </p>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://hbr.org/2026/07/the-case-for-performance-first-management" target="_blank" rel="noopener">
+              The Case for Performance-First Management
+            </a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">HBR Leadership</span>
+            July 2026
+          </div>
+          <p class="item-summary">
+            Drawing on Gartner research showing managers who adopt a performance-first approach are up to 21% more likely to hit expected business results, the article argues that post-pandemic people-first management has over-corrected; the recommended pivot centres the manager&rsquo;s role on enabling measurable outcomes, not solely satisfaction, while keeping people as genuine stakeholders in that frame.
+          </p>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- Jobs & Freelance Listings -->
+    <section id="jobs">
+      <h2>Jobs &amp; Freelance Listings</h2>
+      <div class="job-grid">
+
+        <div class="job-card">
+          <div class="item-title">
+            <a href="https://www.freelancermap.com/project/project-for-software-engineer-azure-devops-zurich-switzerland" target="_blank" rel="noopener">
+              Software Engineer &mdash; Azure DevOps / GitLab Migration
+            </a>
+          </div>
+          <div class="item-meta">freelancermap &middot; Z&uuml;rich &middot; Freelance</div>
+          <p class="item-summary">Migrate Azure DevOps pipelines to GitLab CI/CD and maintain semantic search tooling; on-site in Z&uuml;rich, Switzerland.</p>
+        </div>
+
+        <div class="job-card">
+          <div class="item-title">
+            <a href="https://www.freelancermap.com/project/abap-developer-12-month-contract-some-onsite-in-switzerland" target="_blank" rel="noopener">
+              ABAP Developer &mdash; 12-Month Contract
+            </a>
+          </div>
+          <div class="item-meta">freelancermap &middot; Z&uuml;rich &middot; Freelance contract</div>
+          <p class="item-summary">SAP ABAP development role on a 12-month contract with some onsite presence required in Switzerland.</p>
+        </div>
+
+        <div class="job-card">
+          <div class="item-title">
+            <a href="https://www.freelancermap.com/project/test-engineer-thurgau-switzerland" target="_blank" rel="noopener">
+              Test Engineer &mdash; Thurgau, Switzerland
+            </a>
+          </div>
+          <div class="item-meta">freelancermap &middot; Thurgau &middot; Freelance</div>
+          <p class="item-summary">Software test engineering position in Thurgau, Switzerland; specific stack not disclosed in listing.</p>
+        </div>
+
+        <div class="job-card">
+          <div class="item-title">
+            <a href="https://swissdevjobs.ch/jobs/all/Zurich" target="_blank" rel="noopener">
+              97 IT &amp; Software Roles Active in Z&uuml;rich
+            </a>
+          </div>
+          <div class="item-meta">swissdevjobs.ch &middot; Switzerland-wide &middot; Up to CHF&nbsp;165,000/yr</div>
+          <p class="item-summary">SwissDevJobs lists 97 active IT and software engineering positions in Z&uuml;rich (205 nationwide), with visible tech-stacks and salary transparency; active remote-friendly postings also available.</p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    Generated by Claude &middot; 25 July 2026, 07:00 CEST &middot; Sources configured in <a href="../sources.yaml">sources.yaml</a>
+  </footer>
+
+</div>
+</body>
+</html>
