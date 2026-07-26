@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Digest — 26 July 2026</title>
+  <style>
+    :root {
+      --bg: #f9f9f7;
+      --surface: #ffffff;
+      --border: #e2e2da;
+      --text: #1a1a18;
+      --text-secondary: #5a5a52;
+      --accent: #2a5caa;
+      --accent-hover: #1e4380;
+      --section-header-bg: #f0f0ea;
+      --tag-bg: #e8eefc;
+      --tag-text: #2a5caa;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #16161a;
+        --surface: #1e1e24;
+        --border: #2e2e38;
+        --text: #e8e8e0;
+        --text-secondary: #9a9a92;
+        --accent: #6a9de8;
+        --accent-hover: #8db8f0;
+        --section-header-bg: #22222c;
+        --tag-bg: #1e2a48;
+        --tag-text: #6a9de8;
+      }
+    }
+    :root[data-theme="dark"] {
+      --bg: #16161a;
+      --surface: #1e1e24;
+      --border: #2e2e38;
+      --text: #e8e8e0;
+      --text-secondary: #9a9a92;
+      --accent: #6a9de8;
+      --accent-hover: #8db8f0;
+      --section-header-bg: #22222c;
+      --tag-bg: #1e2a48;
+      --tag-text: #6a9de8;
+    }
+    :root[data-theme="light"] {
+      --bg: #f9f9f7;
+      --surface: #ffffff;
+      --border: #e2e2da;
+      --text: #1a1a18;
+      --text-secondary: #5a5a52;
+      --accent: #2a5caa;
+      --accent-hover: #1e4380;
+      --section-header-bg: #f0f0ea;
+      --tag-bg: #e8eefc;
+      --tag-text: #2a5caa;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      font-size: 16px;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); text-decoration: underline; }
+
+    .page-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 4rem;
+    }
+
+    /* Header */
+    header {
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 1.25rem;
+      margin-bottom: 2rem;
+    }
+    header h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+    header h1 span.date-part {
+      color: var(--text-secondary);
+      font-weight: 400;
+    }
+    .back-link {
+      margin-top: 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+    }
+
+    /* Sections */
+    section {
+      margin-bottom: 2.5rem;
+    }
+    section h2 {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      background: var(--section-header-bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 0.35rem 0.75rem;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+
+    /* Items */
+    .item-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .item {
+      padding: 0.9rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .item:last-child { border-bottom: none; }
+    .item-title {
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 1.35;
+      margin-bottom: 0.25rem;
+    }
+    .item-title a { color: var(--text); }
+    .item-title a:hover { color: var(--accent); text-decoration: none; }
+    .item-meta {
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.35rem;
+    }
+    .item-source {
+      font-weight: 600;
+      color: var(--tag-text);
+      background: var(--tag-bg);
+      padding: 0.1rem 0.45rem;
+      border-radius: 3px;
+      font-size: 0.73rem;
+      letter-spacing: 0.01em;
+      margin-right: 0.4rem;
+    }
+    .item-summary {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* Jobs section */
+    .job-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+    @media (max-width: 540px) {
+      .job-grid { grid-template-columns: 1fr; }
+    }
+    .job-card {
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.8rem 1rem;
+      background: var(--surface);
+    }
+    .job-card .item-title {
+      font-size: 0.9rem;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+      padding-top: 1rem;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <header>
+    <h1>Daily Digest &mdash; <span class="date-part">26 July 2026</span></h1>
+    <p class="back-link"><a href="../index.html">&larr; Back to index</a></p>
+  </header>
+
+  <main>
+
+    <!-- Astronomy & Space -->
+    <section id="astronomy-space">
+      <h2>Astronomy &amp; Space</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.space.com/space-exploration/human-spaceflight/nasa-astronaut-two-cosmonauts-return-to-earth-soyuz-ms-28" target="_blank" rel="noopener">
+              Soyuz MS-28 Lands: Williams, Kud-Sverchkov &amp; Mikaev Return After 241-Day ISS Mission
+            </a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">NASA / Space.com</span>
+            26 July 2026
+          </div>
+          <p class="item-summary">
+            NASA astronaut Chris Williams and Roscosmos cosmonauts Sergey Kud-Sverchkov and Sergei Mikaev undocked from the ISS and landed on the Kazakh steppe on July 26, completing a 241-day science mission aboard the orbiting laboratory.
+          </p>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://spacepolicyonline.com/events/iss-change-of-command-ceremony-july-25-2026-earth-orbit-940-am-et/" target="_blank" rel="noopener">
+              ISS Change of Command: Jessica Meir Takes Over from Kud-Sverchkov
+            </a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">NASA</span>
+            25 July 2026
+          </div>
+          <p class="item-summary">
+            In a formal ceremony broadcast from orbit, NASA&rsquo;s Jessica Meir assumed command of the International Space Station from Russia&rsquo;s Sergey Kud-Sverchkov ahead of the departing crew&rsquo;s undocking.
+          </p>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://spaceflightnow.com/2026/07/" target="_blank" rel="noopener">
+              SpaceX Super Heavy-Starship Completes Mostly Successful Test Flight
+            </a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Spaceflight Now</span>
+            25 July 2026
+          </div>
+          <p class="item-summary">
+            SpaceX&rsquo;s Super Heavy-Starship rocket completed a mostly successful integrated test flight on July 25, advancing the program&rsquo;s development milestones for future crewed and cargo missions.
+          </p>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.quantamagazine.org/how-fast-is-the-universe-really-expanding-20260723/" target="_blank" rel="noopener">
+              How Fast Is the Universe Really Expanding?
+            </a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Quanta Magazine</span>
+            23 July 2026
+          </div>
+          <p class="item-summary">
+            Updated analysis of independent cosmic-expansion measurements deepens the Hubble tension: early-universe probes and late-universe probes continue to disagree by a statistically significant margin, pointing to possible new physics.
+          </p>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- World News -->
+    <section id="world-news">
+      <h2>World News</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.reuters.com/world/" target="_blank" rel="noopener">
+              Oil Surges Past $100 After Houthi Rebels Attack Two Saudi Tankers in Red Sea
+            </a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Reuters World</span>
+            25 July 2026
+          </div>
+          <p class="item-summary">
+            Iran-backed Houthi rebels struck two Saudi oil tankers in the Red Sea, triggering a sharp spike in crude prices above $100 per barrel amid renewed concerns about supply disruption through a critical global shipping lane.
+          </p>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.reuters.com/world/" target="_blank" rel="noopener">
+              Rubio Meets Lavrov; Trump &ldquo;Committed&rdquo; to Russia Diplomacy If Conditions Allow
+            </a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Reuters World</span>
+            25 July 2026
+          </div>
+          <p class="item-summary">
+            US Secretary of State Marco Rubio held talks with Russian Foreign Minister Sergey Lavrov, stating that President Trump remained committed to diplomatic progress on Ukraine and broader US-Russia relations if conditions and factors had changed to make it possible.
+          </p>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.reuters.com/world/" target="_blank" rel="noopener">
+              India: Wangchuk Ends 26-Day Hunger Strike as Youth Protests Persist
+            </a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Reuters World</span>
+            25 July 2026
+          </div>
+          <p class="item-summary">
+            Climate activist Sonam Wangchuk ended a 26-day hunger strike that galvanized one of India&rsquo;s largest youth movements in recent years, though demonstrators vowed to continue until the education minister resigns over policy grievances.
+          </p>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.reuters.com/world/" target="_blank" rel="noopener">
+              Former Israeli Military Chief Emerges as Unlikely Challenger to Netanyahu
+            </a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Reuters World</span>
+            25 July 2026
+          </div>
+          <p class="item-summary">
+            After three years of war and growing public frustration, a former Israeli military chief has emerged as a credible challenger to Prime Minister Netanyahu ahead of a major political test this fall, offering voters an alternative national security vision.
+          </p>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- Rugby -->
+    <section id="rugby">
+      <h2>Rugby</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.world.rugby/news" target="_blank" rel="noopener">
+              Nations Championship: Final Pre-Break Weekend Completes as Top-Tier Nations Set November Standings
+            </a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">World Rugby News</span>
+            26 July 2026
+          </div>
+          <p class="item-summary">
+            The inaugural World Rugby Nations Championship completed its final round of July fixtures before the international break, concluding a Northern vs Southern Hemisphere round-robin that will resume in November ahead of the inaugural Finals Weekend.
+          </p>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.world.rugby/news" target="_blank" rel="noopener">
+              Misconduct Charges Filed Against Argentina&rsquo;s Tom&aacute;s Albornoz
+            </a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">World Rugby News</span>
+            25 July 2026
+          </div>
+          <p class="item-summary">
+            World Rugby issued misconduct charges against Pumas fly-half Tom&aacute;s Albornoz following incidents at the end of Argentina&rsquo;s Nations Championship match against England on 18 July, with a disciplinary hearing expected before the next Tier-1 window.
+          </p>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- Sailing -->
+    <section id="sailing">
+      <h2>Sailing</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.sail-world.com/news/298315/Clipper-2025-26-Race-|-Grand-Finale-Live" target="_blank" rel="noopener">
+              Clipper 2025&ndash;26 Race Grand Finale: Fleet Completes 40,000 nm Circumnavigation in Portsmouth
+            </a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Sail-World</span>
+            25 July 2026
+          </div>
+          <p class="item-summary">
+            The Clipper Round the World fleet crossed the finish line off Southsea Castle and returned to Gunwharf Quays, Portsmouth on July 25, completing the 14th edition of the race after a 40,000-nautical-mile circumnavigation that began August 31, 2025.
+          </p>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.yachtingworld.com/all-latest-posts/sail-gp-portsmouth-set-for-full-on-solent-obstacle-course-159188" target="_blank" rel="noopener">
+              SailGP Portsmouth: Emirates Great Britain Race on Home Water Before 20,000 Fans
+            </a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Yachting World</span>
+            25&ndash;26 July 2026
+          </div>
+          <p class="item-summary">
+            Defending SailGP champions Emirates Great Britain host the Portsmouth Grand Prix on the Solent this weekend, with gusty 16&ndash;26 knot conditions forecast for Sunday and up to 20,000 spectators expected along Southsea Common.
+          </p>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.sail-world.com/news/298344/J-80-Worlds-at-CORK-Kingston-overall" target="_blank" rel="noopener">
+              J/80 World Championship 2026 Concludes at CORK Sail Kingston
+            </a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Sail-World</span>
+            25 July 2026
+          </div>
+          <p class="item-summary">
+            Three final races at Portsmouth Olympic Harbour capped the 2026 J/80 World Championship on Saturday, concluding an outstanding week of one-design racing hosted by CORK Sail Kingston.
+          </p>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- People Leadership -->
+    <section id="people-leadership">
+      <h2>People Leadership</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://hbr.org/2026/07/research-roundup-the-death-of-the-cover-letter-boring-meetings-wide-salary-ranges-and-more" target="_blank" rel="noopener">
+              Research Roundup: Cover Letters Dying, Middle Managers Drive Upskilling, Intrinsic Motivation Raises Burnout Risk
+            </a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">HBR Leadership</span>
+            July 2026
+          </div>
+          <p class="item-summary">
+            HBR&rsquo;s July research compilation synthesises recent empirical work: middle managers have an outsized impact on employee upskilling outcomes; intrinsically motivated employees face the highest burnout risk; and wide salary ranges systematically affect perceived pay fairness.
+          </p>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://sloanreview.mit.edu/article/how-leaders-unlock-innovation-on-the-front-lines/" target="_blank" rel="noopener">
+              How Leaders Unlock Innovation on the Front Lines
+            </a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">MIT Sloan Management Review</span>
+            20 July 2026
+          </div>
+          <p class="item-summary">
+            Mosner, Sting, and Chandrasekaran present field research showing frontline employees are systematically better positioned than managers to identify customer-experience improvement opportunities&mdash;and that specific leader behaviours predict whether those insights are captured or lost.
+          </p>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- Emotional Intelligence -->
+    <section id="emotional-intelligence">
+      <h2>Emotional Intelligence</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.apa.org/news/press/releases/2026/07/uncertainty-meaningful-work" target="_blank" rel="noopener">
+              Learning to Live with Career Uncertainty Predicts Meaningful and Satisfying Work
+            </a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">APA Monitor on Psychology</span>
+            July 2026
+          </div>
+          <p class="item-summary">
+            APA-published research finds that individuals who accept that there may not always be a perfect career choice&mdash;and who make decisions despite that uncertainty&mdash;report significantly more meaningful, satisfying, and engaged work than those who seek certainty before acting.
+          </p>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://greatergood.berkeley.edu/article/item/the_surprising_power_of_conversations_to_change_peoples_minds_including_our_own" target="_blank" rel="noopener">
+              The Surprising Power of Conversations to Change People&rsquo;s Minds &mdash; Including Our Own
+            </a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Greater Good Magazine (UC Berkeley)</span>
+            20 July 2026
+          </div>
+          <p class="item-summary">
+            New research reviewed by Jill Suttie suggests that structured discussion of politically charged differences of opinion can measurably converge opposing viewpoints, with mutual perspective-taking as the active mechanism.
+          </p>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- AI Engineering -->
+    <section id="ai-engineering">
+      <h2>AI Engineering</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://simonwillison.net/2026/Jul/" target="_blank" rel="noopener">
+              OpenAI&rsquo;s Accidental &ldquo;Cyberattack&rdquo; Against Hugging Face: When AI Systems Become Inadvertent Adversaries
+            </a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Simon Willison</span>
+            22 July 2026
+          </div>
+          <p class="item-summary">
+            Simon Willison documents an incident in which OpenAI&rsquo;s AI systems inadvertently generated outputs that triggered Hugging Face&rsquo;s security infrastructure, illustrating real-world risks of agentic AI acting outside its intended operational envelope.
+          </p>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://simonwillison.net/2026/Jul/" target="_blank" rel="noopener">
+              Moonshot AI Announces Kimi K3: 2.8T-Parameter Model with Open Weights by July 27
+            </a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Simon Willison</span>
+            ~22 July 2026
+          </div>
+          <p class="item-summary">
+            Chinese AI lab Moonshot AI announced Kimi K3, described as their most capable model to date with 2.8 trillion parameters, with an open-weight release promised by July 27&mdash;potentially the largest openly released model parameter count to date.
+          </p>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://simonwillison.net/2026/Jul/20/cheap-reverse-engineering/" target="_blank" rel="noopener">
+              Reverse-Engineering Is Cheap Now
+            </a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Simon Willison</span>
+            20 July 2026
+          </div>
+          <p class="item-summary">
+            Willison argues that AI-assisted tooling has dramatically lowered the cost and expertise barrier for reverse-engineering proprietary systems, with significant implications for security research, interoperability, and competitive intelligence.
+          </p>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- Jobs -->
+    <section id="jobs">
+      <h2>Jobs</h2>
+      <div class="job-grid">
+
+        <div class="job-card">
+          <div class="item-title">
+            <a href="https://www.freelancermap.com/projects" target="_blank" rel="noopener">Service Architect</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">freelancermap</span>
+            Hampshire, UK &middot; Contract
+          </div>
+        </div>
+
+        <div class="job-card">
+          <div class="item-title">
+            <a href="https://www.freelancermap.com/projects" target="_blank" rel="noopener">Full-Stack Blockchain Developer &mdash; DeFi Integration</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">freelancermap</span>
+            Remote &middot; Contract
+          </div>
+        </div>
+
+        <div class="job-card">
+          <div class="item-title">
+            <a href="https://www.freelancermap.com/projects" target="_blank" rel="noopener">Principal Data Engineer</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">freelancermap</span>
+            Remote &middot; Contract
+          </div>
+        </div>
+
+        <div class="job-card">
+          <div class="item-title">
+            <a href="https://swissdevjobs.ch/" target="_blank" rel="noopener">205 IT &amp; Software Developer Roles</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">swissdevjobs.ch</span>
+            Switzerland &middot; up to CHF&nbsp;165,000
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    Generated <time datetime="2026-07-26T07:00:00+02:00">26 July 2026, 07:00 CEST</time> &mdash; Sources: NASA, Space.com, Spaceflight Now, Quanta Magazine, Reuters, World Rugby, Sail-World, Yachting World, HBR, MIT Sloan, APA, Greater Good (UC Berkeley), Simon Willison&rsquo;s Weblog, freelancermap, swissdevjobs.ch
+  </footer>
+
+</div>
+</body>
+</html>
