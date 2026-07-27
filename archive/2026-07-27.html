@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Digest — 27 July 2026</title>
+  <style>
+    :root {
+      --bg: #f9f9f7;
+      --surface: #ffffff;
+      --border: #e2e2da;
+      --text: #1a1a18;
+      --text-secondary: #5a5a52;
+      --accent: #2a5caa;
+      --accent-hover: #1e4380;
+      --section-header-bg: #f0f0ea;
+      --tag-bg: #e8eefc;
+      --tag-text: #2a5caa;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #16161a;
+        --surface: #1e1e24;
+        --border: #2e2e38;
+        --text: #e8e8e0;
+        --text-secondary: #9a9a92;
+        --accent: #6a9de8;
+        --accent-hover: #8db8f0;
+        --section-header-bg: #22222c;
+        --tag-bg: #1e2a48;
+        --tag-text: #6a9de8;
+      }
+    }
+    :root[data-theme="dark"] {
+      --bg: #16161a;
+      --surface: #1e1e24;
+      --border: #2e2e38;
+      --text: #e8e8e0;
+      --text-secondary: #9a9a92;
+      --accent: #6a9de8;
+      --accent-hover: #8db8f0;
+      --section-header-bg: #22222c;
+      --tag-bg: #1e2a48;
+      --tag-text: #6a9de8;
+    }
+    :root[data-theme="light"] {
+      --bg: #f9f9f7;
+      --surface: #ffffff;
+      --border: #e2e2da;
+      --text: #1a1a18;
+      --text-secondary: #5a5a52;
+      --accent: #2a5caa;
+      --accent-hover: #1e4380;
+      --section-header-bg: #f0f0ea;
+      --tag-bg: #e8eefc;
+      --tag-text: #2a5caa;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      font-size: 16px;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); text-decoration: underline; }
+
+    .page-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 4rem;
+    }
+
+    /* Header */
+    header {
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 1.25rem;
+      margin-bottom: 2rem;
+    }
+    header h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+    header h1 span.date-part {
+      color: var(--text-secondary);
+      font-weight: 400;
+    }
+    .back-link {
+      margin-top: 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+    }
+
+    /* Sections */
+    section {
+      margin-bottom: 2.5rem;
+    }
+    section h2 {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      background: var(--section-header-bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 0.35rem 0.75rem;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+
+    /* Items */
+    .item-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .item {
+      padding: 0.9rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .item:last-child { border-bottom: none; }
+    .item-title {
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 1.35;
+      margin-bottom: 0.25rem;
+    }
+    .item-title a { color: var(--text); }
+    .item-title a:hover { color: var(--accent); text-decoration: none; }
+    .item-meta {
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.35rem;
+    }
+    .item-source {
+      font-weight: 600;
+      color: var(--tag-text);
+      background: var(--tag-bg);
+      padding: 0.1rem 0.45rem;
+      border-radius: 3px;
+      font-size: 0.73rem;
+      letter-spacing: 0.01em;
+      margin-right: 0.4rem;
+    }
+    .item-summary {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+      padding-top: 1rem;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <header>
+    <h1>Daily Digest &mdash; <span class="date-part">27 July 2026</span></h1>
+    <p class="back-link"><a href="../index.html">&larr; Back to index</a></p>
+  </header>
+
+  <main>
+
+    <!-- Astronomy & Space -->
+    <section id="astronomy-space">
+      <h2>Astronomy &amp; Space</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.nasa.gov/news-release/nasa-invites-media-to-roman-space-telescope-crew-13-launches/" target="_blank" rel="noopener">Nancy Grace Roman Space Telescope: Launch Set for 30 August on SpaceX Falcon Heavy</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">NASA</span>
+            <span>26 Jul 2026</span>
+          </div>
+          <div class="item-summary">NASA confirmed an Aug 30 launch from Kennedy Space Center, nine months ahead of the original schedule; a media briefing is set for July 29 to preview the mission's wide-field infrared survey science goals.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.nasa.gov/news-release/nasa-sets-coverage-for-astronaut-chris-williams-crewmates-return/" target="_blank" rel="noopener">Soyuz MS-28 Lands: ISS Crew Returns After 241-Day Mission</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">NASA</span>
+            <span>26 Jul 2026</span>
+          </div>
+          <div class="item-summary">NASA astronaut Chris Williams and Roscosmos cosmonauts Sergey Kud-Sverchkov and Sergei Mikaev touched down on the Kazakh steppe southeast of Dzhezkazgan, completing a 241-day mission aboard the International Space Station.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.esa.int/ESA_Multimedia/Images/2026/07/FLEX_and_Sentinel-3C_bound_for_launch_site" target="_blank" rel="noopener">ESA's FLEX and Sentinel-3C Arrive in Kourou Ahead of Joint Vega-C Launch</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">ESA</span>
+            <span>Jul 2026</span>
+          </div>
+          <div class="item-summary">The two satellites docked at Pariacabo port on 13 July and have begun an eight-week launch campaign; FLEX will be the first mission to map global photosynthesis from orbit, while Sentinel-3C continues the Copernicus Earth-observation series.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://skyandtelescope.org/astronomy-news/" target="_blank" rel="noopener">Two Independent Teams Confirm Third Giant Planet in Beta Pictoris System</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Sky &amp; Telescope</span>
+            <span>Jul 2026</span>
+          </div>
+          <div class="item-summary">Two research groups independently identified a third gas-giant companion orbiting the benchmark debris-disk star Beta Pictoris, providing fresh constraints on planet formation in young stellar systems.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://skyandtelescope.org/astronomy-news/" target="_blank" rel="noopener">Euclid Space Telescope Detects 31 Early Quasars Missed by Previous Surveys</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Sky &amp; Telescope</span>
+            <span>Jul 2026</span>
+          </div>
+          <div class="item-summary">Euclid's wide-field infrared imaging uncovered 31 high-redshift quasars that had evaded detection in prior ground-based and space surveys, extending the census of supermassive black holes in the early universe.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.quantamagazine.org/astrophysicists-puzzle-over-webbs-new-universe-20260702/" target="_blank" rel="noopener">Webb's Early-Universe Observations Challenge Standard Cosmological Models</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Quanta Magazine</span>
+            <span>2 Jul 2026</span>
+          </div>
+          <div class="item-summary">Unexpectedly massive galaxies and supermassive black holes appearing in JWST data at redshifts where they should not yet exist have prompted a proliferation of competing theoretical modifications to standard structure-formation models.</div>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- World News -->
+    <section id="world-news">
+      <h2>World News</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.timesofisrael.com/liveblog-july-27-2026" target="_blank" rel="noopener">Van Attack at Berlin Pride Kills 1, Injures 16; Suspect Detained</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Times of Israel / Wire Reports</span>
+            <span>27 Jul 2026</span>
+          </div>
+          <div class="item-summary">A van drove into a crowd attending Berlin's Pride event, killing one person and injuring 16 others; German police identified the suspect and took them into custody shortly after the incident.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.timesofisrael.com/liveblog-july-27-2026" target="_blank" rel="noopener">Trump Denies US Munitions Shortage as Tensions with Iran Escalate</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Times of Israel</span>
+            <span>27 Jul 2026</span>
+          </div>
+          <div class="item-summary">President Trump rejected reports the US is running low on munitions in its campaign against Iran and posted AI-generated imagery of warplanes striking Kharg Island — Iran's primary oil export terminal — on Truth Social.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://en.wikipedia.org/wiki/Portal:Current_events/July_2026" target="_blank" rel="noopener">European Wildfires Force 250,000+ Evacuations Across France and Spain</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Wire Reports</span>
+            <span>27 Jul 2026</span>
+          </div>
+          <div class="item-summary">Severe wildfires sweeping southern France and Spain have prompted mass evacuations exceeding 250,000 residents as firefighters and aerial assets battle blazes fanned by drought and heat.</div>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- Rugby -->
+    <section id="rugby">
+      <h2>Rugby (High-Level Only)</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.rugbypass.com/nations-championship/fixtures-results/" target="_blank" rel="noopener">Nations Championship Round 3 Results: New Zealand and South Africa Remain Perfect</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">World Rugby / RugbyPass</span>
+            <span>18 Jul 2026</span>
+          </div>
+          <div class="item-summary">New Zealand defeated Ireland 40&ndash;21 and South Africa shut out Wales 43&ndash;0, while England beat Argentina 31&ndash;24 and France overpowered Japan 42&ndash;15, leaving New Zealand and South Africa as the only sides with three wins from three in the inaugural tournament's July leg.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.world.rugby/beta/en/tournaments/nations-championship/2026" target="_blank" rel="noopener">Nations Championship Standings After July Leg: Full Table</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">World Rugby</span>
+            <span>18 Jul 2026</span>
+          </div>
+          <div class="item-summary">The three July rounds produced decisive separations at both ends of the table, with New Zealand and South Africa at nine points each; the competition resumes in November with three further rounds before a Finals Weekend determines the first Nations Championship champion.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.world.rugby/news" target="_blank" rel="noopener">Argentina's Albornoz Faces World Rugby Misconduct Charge After England Match</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">World Rugby</span>
+            <span>Jul 2026</span>
+          </div>
+          <div class="item-summary">World Rugby issued a misconduct charge against Argentina flanker Tom&aacute;s Albornoz following incidents at the conclusion of Argentina's Nations Championship match against England on 18 July.</div>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- Sailing -->
+    <section id="sailing">
+      <h2>Sailing</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.boatingnz.co.nz/2026/07/los-gallos-spain-complete-the-fairytale-as-sailgps-european-leg-kicks-off-in-portsmouth/" target="_blank" rel="noopener">SailGP Portsmouth: Spain Wins Back-to-Back Events as European Leg Opens</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Sail-World / Boating NZ</span>
+            <span>25&ndash;26 Jul 2026</span>
+          </div>
+          <div class="item-summary">Diego Bot&iacute;n's Los Gallos SailGP Team claimed victory in the Portsmouth Sail Grand Prix — their second consecutive event win after Halifax — with Sweden second and Canada third in the fleet of 13 nations racing identical 50-foot foiling catamarans.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.sail-world.com/news/297931/Racing-Division-Sets-Sail-in-2026-Race-to-Mackinac" target="_blank" rel="noopener">2026 Race to Mackinac: 208 Racing Division Boats Start in Ideal Conditions</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Sail-World</span>
+            <span>Jul 2026</span>
+          </div>
+          <div class="item-summary">The 117th Chicago Yacht Club Race to Mackinac presented by Wintrust saw 208 Racing Division starters leave Lake Michigan in ideal upwind conditions in one of North American offshore sailing's longest-running contests.</div>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- People Leadership -->
+    <section id="people-leadership">
+      <h2>People Leadership</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://sloanreview.mit.edu/article/how-leaders-unlock-innovation-on-the-front-lines/" target="_blank" rel="noopener">How Leaders Unlock Innovation on the Front Lines</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">MIT Sloan Management Review</span>
+            <span>20 Jul 2026</span>
+          </div>
+          <div class="item-summary">Research by Mosner, Sting, and Chandrasekaran finds that frontline workers see improvement opportunities but withhold ideas when managers fail to resource experiments or affirm employees' innovation identities — identifying three specific leadership behaviours that materially increase initiative uptake.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://sloanreview.mit.edu/article/a-new-way-to-address-troubled-team-dynamics/" target="_blank" rel="noopener">A New Way to Address Troubled Team Dynamics</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">MIT Sloan Management Review</span>
+            <span>22 Jul 2026</span>
+          </div>
+          <div class="item-summary">Toegel and Barsoux show that facilitated sessions using the Big Five personality framework — connecting aggregate team profiles to recurring tensions — allow groups to name and defuse conflict patterns that remain intractable when discussed directly.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://hbr.org/2026/07/what-60-years-of-data-reveals-about-how-men-and-women-experience-leadership" target="_blank" rel="noopener">What 60 Years of Data Reveals About How Men and Women Experience Leadership</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Harvard Business Review</span>
+            <span>Jul 2026</span>
+          </div>
+          <div class="item-summary">Replicating a landmark 1965 HBR survey across subsequent decades, researchers find that men and women now diverge sharply on whether female leaders are judged by higher standards and whether advancement systems are meritocratic — a gap that has widened rather than closed.</div>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- AI Engineering -->
+    <section id="ai-engineering">
+      <h2>AI Engineering</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://venturebeat.com/technology/chinas-moonshot-ai-releases-kimi-k3-the-largest-open-source-model-ever-rivaling-top-u-s-systems" target="_blank" rel="noopener">Kimi K3 Open Weights Drop Today: 2.8T-Parameter Model Available Under Modified MIT Licence</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">VentureBeat / Hugging Face</span>
+            <span>27 Jul 2026</span>
+          </div>
+          <div class="item-summary">Moonshot AI published the full weights of Kimi K3 — a 2.8-trillion-parameter mixture-of-experts model with ~50B active parameters per token — on HuggingFace today; independent testing has found a 51% hallucination rate that was absent from the company's published benchmark charts, warranting caution before production deployment.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://llm-stats.com/llm-updates" target="_blank" rel="noopener">Claude Opus 5 Released by Anthropic</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">LLM Stats</span>
+            <span>24 Jul 2026</span>
+          </div>
+          <div class="item-summary">Anthropic released Claude Opus 5, its latest flagship model, adding it to a week that also saw Grok STT 1.0 (xAI, July 23) and Gemini 3.6 Flash (Google, July 21), bringing the total tracked ecosystem to 351 live models from 59 providers as of July 26.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://simonwillison.net/2026/Jul/" target="_blank" rel="noopener">Simon Willison: Agentic Engineering Defined as Distinct Software Practice</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Simon Willison</span>
+            <span>Jul 2026</span>
+          </div>
+          <div class="item-summary">Willison published a guide framing "agentic engineering" as a distinct software discipline — developing systems with coding agents that autonomously write and execute code — alongside coverage of Nativ (a macOS MLX wrapper for local model inference) and the GPT-5.6 family benchmarks.</div>
+        </li>
+
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Generated 27 July 2026 &mdash; Europe/Zurich. Sources: NASA, ESA, Sky &amp; Telescope, Quanta Magazine, Times of Israel, World Rugby, RugbyPass, Sail-World, MIT Sloan Management Review, Harvard Business Review, VentureBeat, Simon Willison's Weblog, LLM Stats.</p>
+  </footer>
+
+</div>
+</body>
+</html>

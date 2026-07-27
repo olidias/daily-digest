@@ -103,20 +103,6 @@
     font-family: ui-sans-serif, system-ui, sans-serif;
     margin: -.25rem 0 .6rem;
   }
-  /* Jobs grid */
-  .job-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: .65rem;
-  }
-  @media (max-width: 520px) { .job-grid { grid-template-columns: 1fr; } }
-  .job-card {
-    border: 1px solid var(--border);
-    border-radius: 5px;
-    padding: .7rem .9rem;
-    background: var(--card);
-  }
-  .job-card .item-title { font-size: 0.9rem; }
   /* Archive */
   .archive-section {
     margin-top: 3.5rem;
@@ -161,202 +147,166 @@
 <body>
 <header>
   <h1>Daily Digest</h1>
-  <div class="date">26 July 2026 &mdash; <a href="./archive/2026-07-26.html">view standalone</a></div>
+  <div class="date">27 July 2026 &mdash; <a href="./archive/2026-07-27.html">view standalone</a></div>
 </header>
 
 <section>
   <h2>Astronomy &amp; Space</h2>
-  <p class="window-note">Sources: NASA, Sky &amp; Telescope, Quanta Magazine, Spaceflight Now &middot; 36-hour lookback</p>
+  <p class="window-note">Sources: NASA, ESA, Sky &amp; Telescope, Quanta Magazine &middot; 36-hour lookback</p>
 
   <div class="item">
-    <p class="item-title"><a href="https://www.space.com/space-exploration/human-spaceflight/nasa-astronaut-two-cosmonauts-return-to-earth-soyuz-ms-28">Soyuz MS-28 Lands: Williams, Kud-Sverchkov &amp; Mikaev Return After 241-Day ISS Mission</a></p>
-    <p class="item-meta">NASA / Space.com &middot; 26 July 2026</p>
-    <p class="item-summary">NASA astronaut Chris Williams and Roscosmos cosmonauts Sergey Kud-Sverchkov and Sergei Mikaev undocked from the ISS and landed on the Kazakh steppe on July 26, completing a 241-day science mission aboard the orbiting laboratory.</p>
+    <p class="item-title"><a href="https://www.nasa.gov/news-release/nasa-invites-media-to-roman-space-telescope-crew-13-launches/">Nancy Grace Roman Space Telescope: Launch Confirmed for 30 August on SpaceX Falcon Heavy</a></p>
+    <p class="item-meta">NASA &middot; 26 July 2026</p>
+    <p class="item-summary">NASA confirmed an Aug&nbsp;30 launch from Kennedy Space Center, nine months ahead of original schedule; a media briefing is set for July&nbsp;29 to preview the mission&rsquo;s wide-field infrared survey science goals, with media accreditation deadline passing July&nbsp;26.</p>
   </div>
 
   <div class="item">
-    <p class="item-title"><a href="https://spacepolicyonline.com/events/iss-change-of-command-ceremony-july-25-2026-earth-orbit-940-am-et/">ISS Change of Command: Jessica Meir Takes Over from Kud-Sverchkov</a></p>
-    <p class="item-meta">NASA &middot; 25 July 2026</p>
-    <p class="item-summary">In a formal ceremony broadcast from orbit, NASA&rsquo;s Jessica Meir assumed command of the International Space Station from Russia&rsquo;s Sergey Kud-Sverchkov ahead of the departing crew&rsquo;s undocking.</p>
+    <p class="item-title"><a href="https://www.nasa.gov/news-release/nasa-sets-coverage-for-astronaut-chris-williams-crewmates-return/">Soyuz MS-28 Lands: Williams, Kud-Sverchkov &amp; Mikaev Return After 241-Day ISS Mission</a></p>
+    <p class="item-meta">NASA &middot; 26 July 2026</p>
+    <p class="item-summary">NASA astronaut Chris Williams and Roscosmos cosmonauts Sergey Kud-Sverchkov and Sergei Mikaev touched down on the Kazakh steppe southeast of Dzhezkazgan at 05:26&thinsp;CDT, completing a 241-day mission aboard the International Space Station.</p>
   </div>
 
   <div class="item">
-    <p class="item-title"><a href="https://spaceflightnow.com/2026/07/">SpaceX Super Heavy-Starship Completes Mostly Successful Test Flight</a></p>
-    <p class="item-meta">Spaceflight Now &middot; 25 July 2026</p>
-    <p class="item-summary">SpaceX&rsquo;s Super Heavy-Starship rocket completed a mostly successful integrated test flight on July 25, advancing the program&rsquo;s development milestones for future crewed and cargo missions.</p>
+    <p class="item-title"><a href="https://www.esa.int/ESA_Multimedia/Images/2026/07/FLEX_and_Sentinel-3C_bound_for_launch_site">ESA&rsquo;s FLEX and Sentinel-3C Begin Eight-Week Launch Campaign in Kourou</a></p>
+    <p class="item-meta">ESA &middot; July 2026</p>
+    <p class="item-summary">Both satellites docked at Pariacabo port on 13&nbsp;July and have begun an eight-week campaign ahead of a joint Vega-C launch in September; FLEX will be the first mission to map global photosynthesis from orbit, while Sentinel-3C continues the Copernicus Earth-observation series.</p>
   </div>
 
   <div class="item">
-    <p class="item-title"><a href="https://www.quantamagazine.org/how-fast-is-the-universe-really-expanding-20260723/">How Fast Is the Universe Really Expanding?</a></p>
-    <p class="item-meta">Quanta Magazine &middot; 23 July 2026</p>
-    <p class="item-summary">Updated analysis of independent cosmic-expansion measurements deepens the Hubble tension: early-universe probes and late-universe probes continue to diverge by a statistically significant margin, pointing to possible new physics beyond &Lambda;CDM.</p>
+    <p class="item-title"><a href="https://skyandtelescope.org/astronomy-news/">Two Independent Teams Confirm Third Giant Planet in Beta Pictoris System</a></p>
+    <p class="item-meta">Sky &amp; Telescope &middot; July 2026</p>
+    <p class="item-summary">Two research groups independently confirmed a third gas-giant companion orbiting the canonical debris-disk star Beta Pictoris, providing fresh observational constraints on planet formation and migration in young planetary systems.</p>
+  </div>
+
+  <div class="item">
+    <p class="item-title"><a href="https://skyandtelescope.org/astronomy-news/">Euclid Space Telescope Detects 31 Early Quasars Missed by Previous Surveys</a></p>
+    <p class="item-meta">Sky &amp; Telescope &middot; July 2026</p>
+    <p class="item-summary">Euclid&rsquo;s wide-field infrared imaging uncovered 31 high-redshift quasars that evaded prior ground-based and space surveys, extending the census of supermassive black holes active in the early universe.</p>
+  </div>
+
+  <div class="item">
+    <p class="item-title"><a href="https://www.quantamagazine.org/astrophysicists-puzzle-over-webbs-new-universe-20260702/">Webb&rsquo;s Early-Universe Observations Challenge Standard Cosmological Models</a></p>
+    <p class="item-meta">Quanta Magazine &middot; 2 July 2026</p>
+    <p class="item-summary">Unexpectedly massive galaxies and supermassive black holes appearing in JWST data at redshifts where they should not yet exist have prompted multiple competing theoretical modifications to &Lambda;CDM structure-formation models.</p>
   </div>
 
 </section>
 
 <section>
   <h2>World News</h2>
-  <p class="window-note">Sources: Reuters World &middot; 36-hour lookback</p>
+  <p class="window-note">Sources: Wire Reports &middot; 36-hour lookback</p>
 
   <div class="item">
-    <p class="item-title"><a href="https://www.reuters.com/world/">Oil Surges Past $100 After Houthi Rebels Attack Two Saudi Tankers in Red Sea</a></p>
-    <p class="item-meta">Reuters World &middot; 25 July 2026</p>
-    <p class="item-summary">Iran-backed Houthi rebels struck two Saudi oil tankers in the Red Sea, triggering a sharp spike in crude prices above $100 per barrel amid renewed concerns about supply disruption through a critical global shipping lane.</p>
+    <p class="item-title"><a href="https://www.timesofisrael.com/liveblog-july-27-2026">Van Attack at Berlin Pride Kills 1, Injures 16; Suspect Detained</a></p>
+    <p class="item-meta">Wire Reports &middot; 27 July 2026</p>
+    <p class="item-summary">A van drove into a crowd attending Berlin&rsquo;s Pride event, killing one person and injuring 16 others; German police identified the suspect and took them into custody shortly after the incident.</p>
   </div>
 
   <div class="item">
-    <p class="item-title"><a href="https://www.reuters.com/world/">Rubio Meets Lavrov; Trump &ldquo;Committed&rdquo; to Russia Diplomacy If Conditions Allow</a></p>
-    <p class="item-meta">Reuters World &middot; 25 July 2026</p>
-    <p class="item-summary">US Secretary of State Marco Rubio held talks with Russian Foreign Minister Sergey Lavrov, stating that President Trump remained committed to diplomatic progress on Ukraine and broader US-Russia relations if conditions and factors had changed to make it possible.</p>
+    <p class="item-title"><a href="https://www.timesofisrael.com/liveblog-july-27-2026">Trump Denies US Munitions Shortage, Posts AI-Generated Imagery Threatening Iran&rsquo;s Kharg Island</a></p>
+    <p class="item-meta">Times of Israel &middot; 27 July 2026</p>
+    <p class="item-summary">President Trump rejected reports that US forces face munitions shortfalls in the campaign against Iran and shared AI-generated imagery of warplanes striking Kharg Island &mdash; Iran&rsquo;s primary crude-oil export terminal &mdash; on Truth Social, raising the rhetorical temperature amid ongoing military operations.</p>
   </div>
 
   <div class="item">
-    <p class="item-title"><a href="https://www.reuters.com/world/">India: Wangchuk Ends 26-Day Hunger Strike as Youth Protests Persist</a></p>
-    <p class="item-meta">Reuters World &middot; 25 July 2026</p>
-    <p class="item-summary">Climate activist Sonam Wangchuk ended a 26-day hunger strike that galvanized one of India&rsquo;s largest youth movements in recent years, though demonstrators vowed to continue until the education minister resigns over education policy grievances.</p>
-  </div>
-
-  <div class="item">
-    <p class="item-title"><a href="https://www.reuters.com/world/">Former Israeli Military Chief Emerges as Unlikely Challenger to Netanyahu</a></p>
-    <p class="item-meta">Reuters World &middot; 25 July 2026</p>
-    <p class="item-summary">After three years of war and growing public frustration, a former Israeli military chief has emerged as a credible challenger to PM Netanyahu ahead of a major political test this fall, offering voters an alternative national-security vision for the country&rsquo;s leadership.</p>
+    <p class="item-title"><a href="https://en.wikipedia.org/wiki/Portal:Current_events/July_2026">European Wildfires Force 250,000+ Evacuations Across France and Spain</a></p>
+    <p class="item-meta">Wire Reports &middot; 27 July 2026</p>
+    <p class="item-summary">Severe wildfires sweeping southern France and Spain have prompted mass evacuations exceeding 250,000 residents as aerial assets and ground crews battle blazes fanned by drought conditions and extreme summer heat.</p>
   </div>
 
 </section>
 
 <section>
   <h2>Rugby</h2>
-  <p class="window-note">Filter: Tier-1 internationals, Nations Championship, Champions Cup, URC, Top 14, Premiership only &middot; 36-hour lookback</p>
+  <p class="window-note">Filter: Tier-1 internationals, Nations Championship, Champions Cup, URC, Top 14, Premiership only &middot; Most recent: 18 July 2026</p>
 
   <div class="item">
-    <p class="item-title"><a href="https://www.world.rugby/news">Nations Championship: Final Pre-Break Weekend Completes as Top-Tier Nations Set November Standings</a></p>
-    <p class="item-meta">World Rugby News &middot; 26 July 2026</p>
-    <p class="item-summary">The inaugural World Rugby Nations Championship completed its final round of July fixtures before the international break, concluding a Northern vs Southern Hemisphere round-robin that resumes in November ahead of the inaugural Finals Weekend.</p>
+    <p class="item-title"><a href="https://www.rugbypass.com/nations-championship/fixtures-results/">Nations Championship Round 3: New Zealand and South Africa Remain Perfect</a></p>
+    <p class="item-meta">World Rugby / RugbyPass &middot; 18 July 2026</p>
+    <p class="item-summary">New Zealand defeated Ireland 40&ndash;21 and South Africa shut out Wales 43&ndash;0, while England beat Argentina 31&ndash;24 and France overpowered Japan 42&ndash;15 &mdash; leaving New Zealand and South Africa as the only sides with three wins from three in the inaugural tournament&rsquo;s July leg; the competition resumes in November.</p>
   </div>
 
   <div class="item">
-    <p class="item-title"><a href="https://www.world.rugby/news">Misconduct Charges Filed Against Argentina&rsquo;s Tom&aacute;s Albornoz</a></p>
-    <p class="item-meta">World Rugby News &middot; 25 July 2026</p>
-    <p class="item-summary">World Rugby issued misconduct charges against Pumas fly-half Tom&aacute;s Albornoz following incidents at the end of Argentina&rsquo;s Nations Championship match against England on 18 July, with a disciplinary hearing expected before the next Tier-1 window.</p>
+    <p class="item-title"><a href="https://www.world.rugby/news">Argentina&rsquo;s Albornoz Faces World Rugby Misconduct Charge After England Match</a></p>
+    <p class="item-meta">World Rugby &middot; July 2026</p>
+    <p class="item-summary">World Rugby issued a misconduct charge against Argentina flanker Tom&aacute;s Albornoz following incidents at the conclusion of the Nations Championship clash against England on 18&nbsp;July, with a disciplinary hearing expected before the November window.</p>
   </div>
 
 </section>
 
 <section>
   <h2>Sailing</h2>
-  <p class="window-note">Sources: Sail-World, Yachting World &middot; 36-hour lookback</p>
+  <p class="window-note">Sources: Sail-World &middot; 36-hour lookback</p>
 
   <div class="item">
-    <p class="item-title"><a href="https://www.sail-world.com/news/298315/Clipper-2025-26-Race-|-Grand-Finale-Live">Clipper 2025&ndash;26 Race Grand Finale: Fleet Completes 40,000 nm Circumnavigation in Portsmouth</a></p>
-    <p class="item-meta">Sail-World &middot; 25 July 2026</p>
-    <p class="item-summary">The Clipper Round the World fleet crossed the finish line off Southsea Castle and returned to Gunwharf Quays on July 25, completing the 14th edition of the race after a 40,000-nautical-mile circumnavigation that began August 31, 2025.</p>
+    <p class="item-title"><a href="https://www.boatingnz.co.nz/2026/07/los-gallos-spain-complete-the-fairytale-as-sailgps-european-leg-kicks-off-in-portsmouth/">SailGP Portsmouth: Spain Wins Back-to-Back Events as European Leg Opens</a></p>
+    <p class="item-meta">Sail-World / Boating NZ &middot; 25&ndash;26 July 2026</p>
+    <p class="item-summary">Diego Bot&iacute;n&rsquo;s Los Gallos SailGP Team claimed the Portsmouth Sail Grand Prix &mdash; their second consecutive event win after Halifax &mdash; with Artemis Sweden second and Northstar Canada third in the fleet of 13 nations racing identical 50-foot foiling catamarans hitting speeds over 100&thinsp;km/h.</p>
   </div>
 
   <div class="item">
-    <p class="item-title"><a href="https://www.yachtingworld.com/all-latest-posts/sail-gp-portsmouth-set-for-full-on-solent-obstacle-course-159188">SailGP Portsmouth: Emirates Great Britain Race on Home Water Before 20,000 Fans</a></p>
-    <p class="item-meta">Yachting World / Sail-World &middot; 25&ndash;26 July 2026</p>
-    <p class="item-summary">Defending SailGP champions Emirates Great Britain host the Portsmouth Grand Prix on the Solent this weekend, with gusty 16&ndash;26 knot conditions forecast for Sunday and up to 20,000 spectators expected along Southsea Common.</p>
-  </div>
-
-  <div class="item">
-    <p class="item-title"><a href="https://www.sail-world.com/news/298344/J-80-Worlds-at-CORK-Kingston-overall">J/80 World Championship 2026 Concludes at CORK Sail Kingston</a></p>
-    <p class="item-meta">Sail-World &middot; 25 July 2026</p>
-    <p class="item-summary">Three final races at Portsmouth Olympic Harbour capped the 2026 J/80 World Championship on Saturday, concluding an outstanding week of one-design racing hosted by CORK Sail Kingston.</p>
+    <p class="item-title"><a href="https://www.sail-world.com/news/297931/Racing-Division-Sets-Sail-in-2026-Race-to-Mackinac">2026 Race to Mackinac: 208 Racing Division Boats Start in Ideal Upwind Conditions</a></p>
+    <p class="item-meta">Sail-World &middot; July 2026</p>
+    <p class="item-summary">The 117th Chicago Yacht Club Race to Mackinac presented by Wintrust saw 208 Racing Division starters depart Lake Michigan in ideal upwind conditions, continuing one of North American offshore sailing&rsquo;s longest-running contests.</p>
   </div>
 
 </section>
 
 <section>
   <h2>People Leadership</h2>
-  <p class="window-note">Filter: Research-tagged and methodology-driven pieces only &middot; Sources: HBR, MIT Sloan</p>
+  <p class="window-note">Filter: Research-tagged and methodology-driven pieces only &middot; Sources: MIT Sloan, HBR &middot; Most recent: 22 July 2026</p>
 
   <div class="item">
-    <p class="item-title"><a href="https://hbr.org/2026/07/research-roundup-the-death-of-the-cover-letter-boring-meetings-wide-salary-ranges-and-more">HBR Research Roundup: Cover Letters Dying, Middle Managers Drive Upskilling, Intrinsic Motivation Raises Burnout Risk</a></p>
-    <p class="item-meta">HBR Leadership (empirical studies) &middot; July 2026</p>
-    <p class="item-summary">Four recent empirical studies synthesised: middle managers have an outsized impact on employee upskilling outcomes; intrinsically motivated employees face the highest burnout risk; wide salary ranges systematically affect perceived pay fairness; and attending boring meetings impairs next-day cognitive performance in knowledge-work roles.</p>
+    <p class="item-title"><a href="https://sloanreview.mit.edu/article/a-new-way-to-address-troubled-team-dynamics/">A New Way to Address Troubled Team Dynamics</a></p>
+    <p class="item-meta">MIT Sloan Management Review (Toegel &amp; Barsoux) &middot; 22 July 2026</p>
+    <p class="item-summary">Facilitated sessions using the Big Five personality framework &mdash; connecting aggregate team profiles to recurring tensions &mdash; allow groups to name and defuse conflict patterns that remain intractable when addressed directly, based on field research across multiple organisations.</p>
   </div>
 
   <div class="item">
     <p class="item-title"><a href="https://sloanreview.mit.edu/article/how-leaders-unlock-innovation-on-the-front-lines/">How Leaders Unlock Innovation on the Front Lines</a></p>
     <p class="item-meta">MIT Sloan Management Review (Mosner, Sting &amp; Chandrasekaran) &middot; 20 July 2026</p>
-    <p class="item-summary">Field research identifies specific leader behaviours that predict whether frontline employee insights&mdash;who are systematically better positioned than managers to spot customer-experience improvements&mdash;are captured and acted upon versus lost to organisational inertia.</p>
-  </div>
-
-</section>
-
-<section>
-  <h2>Emotional Intelligence</h2>
-  <p class="window-note">Sources: APA Monitor on Psychology, Greater Good Magazine (UC Berkeley) &middot; 36-hour lookback</p>
-
-  <div class="item">
-    <p class="item-title"><a href="https://www.apa.org/news/press/releases/2026/07/uncertainty-meaningful-work">Learning to Live with Career Uncertainty Predicts Meaningful and Satisfying Work</a></p>
-    <p class="item-meta">APA Monitor on Psychology &middot; July 2026</p>
-    <p class="item-summary">APA-published research finds that individuals who accept that there may not always be a perfect career choice&mdash;and who make decisions despite that uncertainty&mdash;report significantly more meaningful, satisfying, and engaged work than those who defer action while seeking certainty.</p>
+    <p class="item-summary">Field research finds that frontline workers see improvement opportunities systematically better than managers but withhold ideas when leaders fail to resource experiments or affirm employees&rsquo; innovation identities &mdash; three specific leader behaviours are identified that materially increase initiative uptake.</p>
   </div>
 
   <div class="item">
-    <p class="item-title"><a href="https://greatergood.berkeley.edu/article/item/the_surprising_power_of_conversations_to_change_peoples_minds_including_our_own">The Surprising Power of Conversations to Change People&rsquo;s Minds &mdash; Including Our Own</a></p>
-    <p class="item-meta">Greater Good Magazine (UC Berkeley) &middot; 20 July 2026</p>
-    <p class="item-summary">New research reviewed by Jill Suttie demonstrates that structured discussion of politically charged differences of opinion can measurably converge opposing viewpoints, with mutual perspective-taking as the active mechanism rather than argumentation.</p>
+    <p class="item-title"><a href="https://hbr.org/2026/07/what-60-years-of-data-reveals-about-how-men-and-women-experience-leadership">What 60 Years of Data Reveals About How Men and Women Experience Leadership</a></p>
+    <p class="item-meta">Harvard Business Review &middot; July 2026</p>
+    <p class="item-summary">Replicating the landmark 1965 HBR survey of 2,000 executives across subsequent decades, researchers find that men and women now diverge sharply on whether female leaders face higher standards and whether advancement is meritocratic &mdash; a perceptual gap that has widened rather than closed.</p>
   </div>
 
 </section>
 
 <section>
   <h2>AI Engineering</h2>
-  <p class="window-note">Sources: Simon Willison&rsquo;s Weblog &middot; 36-hour lookback</p>
+  <p class="window-note">Sources: Simon Willison, VentureBeat, LLM Stats &middot; 36-hour lookback</p>
 
   <div class="item">
-    <p class="item-title"><a href="https://simonwillison.net/2026/Jul/">OpenAI&rsquo;s Accidental &ldquo;Cyberattack&rdquo; Against Hugging Face: When AI Systems Become Inadvertent Adversaries</a></p>
-    <p class="item-meta">Simon Willison &middot; 22 July 2026</p>
-    <p class="item-summary">Simon Willison documents an incident in which OpenAI&rsquo;s AI systems inadvertently generated outputs that triggered Hugging Face&rsquo;s security infrastructure, illustrating real-world risks of agentic AI acting outside its intended operational envelope&mdash;a scenario Willison describes as &ldquo;science fiction that happened.&rdquo;</p>
-  </div>
-
-  <div class="item">
-    <p class="item-title"><a href="https://simonwillison.net/2026/Jul/">Moonshot AI Announces Kimi K3: 2.8T-Parameter Model with Open Weights by July 27</a></p>
-    <p class="item-meta">Simon Willison &middot; ~22 July 2026</p>
-    <p class="item-summary">Chinese AI lab Moonshot AI announced Kimi K3, described as their most capable model to date with 2.8 trillion parameters, with an open-weight release promised by July 27&mdash;potentially the largest openly released model parameter count to date.</p>
+    <p class="item-title"><a href="https://venturebeat.com/technology/chinas-moonshot-ai-releases-kimi-k3-the-largest-open-source-model-ever-rivaling-top-u-s-systems">Kimi K3 Open Weights Released: 2.8T-Parameter Model Drops on HuggingFace Today</a></p>
+    <p class="item-meta">VentureBeat / Hugging Face &middot; 27 July 2026</p>
+    <p class="item-summary">Moonshot AI published the full weights of Kimi K3 &mdash; a 2.8-trillion-parameter mixture-of-experts model (~50B active parameters per token) under a Modified MIT licence &mdash; though independent testing found a 51% hallucination rate absent from the company&rsquo;s published benchmark comparisons, warranting scrutiny before production deployment.</p>
   </div>
 
   <div class="item">
-    <p class="item-title"><a href="https://simonwillison.net/2026/Jul/20/cheap-reverse-engineering/">Reverse-Engineering Is Cheap Now</a></p>
-    <p class="item-meta">Simon Willison &middot; 20 July 2026</p>
-    <p class="item-summary">Willison argues that AI-assisted tooling has dramatically lowered the cost and expertise barrier for reverse-engineering proprietary systems, with significant implications for security research, interoperability, and competitive intelligence.</p>
+    <p class="item-title"><a href="https://llm-stats.com/llm-updates">Claude Opus 5 Released by Anthropic; Busy Week Sees Three New Flagship Models</a></p>
+    <p class="item-meta">LLM Stats &middot; 24 July 2026</p>
+    <p class="item-summary">Anthropic released Claude Opus 5 on July&nbsp;24, joining Grok STT&nbsp;1.0 (xAI, July&nbsp;23) and Gemini 3.6&nbsp;Flash (Google, July&nbsp;21) in a dense week of frontier model launches, bringing the tracked ecosystem to 351&nbsp;live models from 59&nbsp;providers as of July&nbsp;26.</p>
   </div>
 
-</section>
-
-<section>
-  <h2>Jobs &amp; Freelance Listings</h2>
-  <p class="window-note">Sources: freelancermap, swissdevjobs.ch &middot; Fresh postings as of 26 July 2026</p>
-  <div class="job-grid">
-
-    <div class="job-card">
-      <p class="item-title"><a href="https://www.freelancermap.com/projects">Service Architect</a></p>
-      <p class="item-meta">freelancermap &middot; Hampshire, UK &middot; Contract</p>
-    </div>
-
-    <div class="job-card">
-      <p class="item-title"><a href="https://www.freelancermap.com/projects">Full-Stack Blockchain Developer &mdash; DeFi Integration</a></p>
-      <p class="item-meta">freelancermap &middot; Remote &middot; Contract</p>
-    </div>
-
-    <div class="job-card">
-      <p class="item-title"><a href="https://www.freelancermap.com/projects">Principal Data Engineer</a></p>
-      <p class="item-meta">freelancermap &middot; Remote &middot; Contract</p>
-    </div>
-
-    <div class="job-card">
-      <p class="item-title"><a href="https://swissdevjobs.ch/">205 IT &amp; Software Developer Roles</a></p>
-      <p class="item-meta">swissdevjobs.ch &middot; Switzerland &middot; Up to CHF&thinsp;165,000</p>
-    </div>
-
+  <div class="item">
+    <p class="item-title"><a href="https://simonwillison.net/2026/Jul/">Simon Willison: Agentic Engineering Defined; Nativ Brings Local MLX Models to macOS</a></p>
+    <p class="item-meta">Simon Willison &middot; July 2026</p>
+    <p class="item-summary">Willison published a guide framing &ldquo;agentic engineering&rdquo; as a distinct software discipline, and covered Nativ &mdash; a macOS desktop application wrapping MLX for running AI models locally with both a chat interface and a localhost API &mdash; alongside analysis of the new GPT-5.6 family benchmarks.</p>
   </div>
+
 </section>
 
 <div class="archive-section">
   <h2>Archive</h2>
   <ul class="archive-list">
+    <li>
+      <a href="./archive/2026-07-27.html">2026-07-27</a>
+      <span class="archive-summary">Roman Telescope Aug 30 confirmed + July 29 briefing; Soyuz MS-28 lands (Williams/Kud-Sverchkov/Mikaev 241d); FLEX+Sentinel-3C campaign begins Kourou; Beta Pic third planet (2 teams); Euclid 31 early quasars; Webb early-universe anomalies; Berlin Pride van attack 1 dead 16 injured; Trump denies munitions shortage posts Kharg Island imagery; Europe wildfires 250k+ evacuated; Nations Champ R3 NZ+SA perfect (40&ndash;21, 43&ndash;0); Albornoz misconduct charge; SailGP Portsmouth Spain back-to-back; Race to Mackinac 208 boats; MIT Sloan Big Five team dynamics; MIT Sloan frontline innovation; HBR 60yr gender leadership data; Kimi K3 2.8T open weights drop today (51% hallucination caveat); Claude Opus 5; Willison agentic engineering + Nativ MLX</span>
+    </li>
     <li>
       <a href="./archive/2026-07-26.html">2026-07-26</a>
       <span class="archive-summary">Soyuz MS-28 lands Jul 26 (Williams/Kud-Sverchkov/Mikaev, 241 days); Meir takes ISS command Jul 25; Starship mostly successful Jul 25; Quanta Hubble tension; Oil $100 Houthi tanker attacks; Rubio&ndash;Lavrov US&ndash;Russia talks; Wangchuk ends 26-day hunger strike India; Netanyahu political challenge from ex-military chief; Nations Champ final weekend; Albornoz misconduct charges; Clipper Grand Finale 40k nm Portsmouth; SailGP Portsmouth Emirates GB home; J/80 Worlds concludes; HBR burnout/upskilling roundup; MIT Sloan frontline innovation; APA career uncertainty meaningful work; GGM conversations change minds; Willison OpenAI&ndash;HuggingFace inadvertent cyberattack; Kimi K3 2.8T params Jul 27; freelancermap service architect/DeFi/data; swissdevjobs 205 roles</span>
@@ -493,7 +443,7 @@
 </div>
 
 <footer>
-  Generated by Claude &middot; 26 July 2026, 07:00 CEST &middot; Sources configured in <a href="./sources.yaml">sources.yaml</a>
+  Generated by Claude &middot; 27 July 2026, 07:00 CEST &middot; Sources configured in <a href="./sources.yaml">sources.yaml</a>
 </footer>
 </body>
 </html>
