@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Digest &mdash; 28 July 2026</title>
+  <style>
+    :root {
+      --bg: #f9f9f7;
+      --surface: #ffffff;
+      --border: #e2e2da;
+      --text: #1a1a18;
+      --text-secondary: #5a5a52;
+      --accent: #2a5caa;
+      --accent-hover: #1e4380;
+      --section-header-bg: #f0f0ea;
+      --tag-bg: #e8eefc;
+      --tag-text: #2a5caa;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #16161a;
+        --surface: #1e1e24;
+        --border: #2e2e38;
+        --text: #e8e8e0;
+        --text-secondary: #9a9a92;
+        --accent: #6a9de8;
+        --accent-hover: #8db8f0;
+        --section-header-bg: #22222c;
+        --tag-bg: #1e2a48;
+        --tag-text: #6a9de8;
+      }
+    }
+    :root[data-theme="dark"] {
+      --bg: #16161a;
+      --surface: #1e1e24;
+      --border: #2e2e38;
+      --text: #e8e8e0;
+      --text-secondary: #9a9a92;
+      --accent: #6a9de8;
+      --accent-hover: #8db8f0;
+      --section-header-bg: #22222c;
+      --tag-bg: #1e2a48;
+      --tag-text: #6a9de8;
+    }
+    :root[data-theme="light"] {
+      --bg: #f9f9f7;
+      --surface: #ffffff;
+      --border: #e2e2da;
+      --text: #1a1a18;
+      --text-secondary: #5a5a52;
+      --accent: #2a5caa;
+      --accent-hover: #1e4380;
+      --section-header-bg: #f0f0ea;
+      --tag-bg: #e8eefc;
+      --tag-text: #2a5caa;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      font-size: 16px;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); text-decoration: underline; }
+
+    .page-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 4rem;
+    }
+
+    header {
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 1.25rem;
+      margin-bottom: 2rem;
+    }
+    header h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+    header h1 span.date-part {
+      color: var(--text-secondary);
+      font-weight: 400;
+    }
+    .back-link {
+      margin-top: 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+    }
+
+    section {
+      margin-bottom: 2.5rem;
+    }
+    section h2 {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      background: var(--section-header-bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 0.35rem 0.75rem;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+
+    .item-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .item {
+      padding: 0.9rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .item:last-child { border-bottom: none; }
+    .item-title {
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 1.35;
+      margin-bottom: 0.25rem;
+    }
+    .item-title a { color: var(--text); }
+    .item-title a:hover { color: var(--accent); text-decoration: none; }
+    .item-meta {
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.35rem;
+    }
+    .item-source {
+      font-weight: 600;
+      color: var(--tag-text);
+      background: var(--tag-bg);
+      padding: 0.1rem 0.45rem;
+      border-radius: 3px;
+      font-size: 0.73rem;
+      letter-spacing: 0.01em;
+      margin-right: 0.4rem;
+    }
+    .item-summary {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+      padding-top: 1rem;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <header>
+    <h1>Daily Digest &mdash; <span class="date-part">28 July 2026</span></h1>
+    <p class="back-link"><a href="../index.html">&larr; Back to index</a></p>
+  </header>
+
+  <main>
+
+    <!-- Astronomy & Space -->
+    <section id="astronomy-space">
+      <h2>Astronomy &amp; Space</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://apod.nasa.gov/apod/ap260727.html" target="_blank" rel="noopener">APOD: Bubble Nebula (NGC 7635) &mdash; Stellar-Wind Cavity Imaged by Hubble</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">NASA APOD</span>
+            <span>27 Jul 2026</span>
+          </div>
+          <div class="item-summary">Yesterday&rsquo;s Astronomy Picture of the Day features NGC 7635, the Bubble Nebula, where a hot O-star inflates a 10-light-year shell of ionised gas against a dense molecular cloud, highlighting the interplay between stellar mass loss and the surrounding interstellar medium.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://earthsky.org/sun/sun-news-activity-solar-flare-cme-aurora-updates/" target="_blank" rel="noopener">M3.2 Solar Flare from AR4494 Triggers Radio Blackout; CME Expected to Graze Earth</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">EarthSky</span>
+            <span>26&ndash;27 Jul 2026</span>
+          </div>
+          <div class="item-summary">An M3.2 flare from active region AR4494 peaked at 15:28 UTC on 26 July, causing an R1 (minor) radio blackout over the Americas and Atlantic; a separately launched CME is expected to deliver a glancing blow today, potentially elevating geomagnetic activity to G1&ndash;G2 (minor&ndash;moderate) and producing high-latitude aurora.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.sciencedaily.com/news/space_time/" target="_blank" rel="noopener">Cloud Cover Biases Sub-Neptune Interior Models, ASU Study Finds</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">ASU / ScienceDaily</span>
+            <span>26 Jul 2026</span>
+          </div>
+          <div class="item-summary">Researchers at Arizona State University&rsquo;s School of Earth and Space Exploration showed that atmospheric clouds in sub-Neptunes systematically distort retrieved interior structure estimates, underscoring that cloud parameterisation must be solved before mass-radius relationships can reliably constrain planet composition.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.quantamagazine.org/how-fast-is-the-universe-really-expanding-20260723/" target="_blank" rel="noopener">Quanta: How Fast Is the Universe Really Expanding? The Hubble Tension Explained</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Quanta Magazine</span>
+            <span>23 Jul 2026</span>
+          </div>
+          <div class="item-summary">In &ldquo;The Joy of Why,&rdquo; Steven Strogatz and Janna Levin trace the Hubble tension &mdash; a ~10% discrepancy between CMB-based and distance-ladder-based measurements of the expansion rate &mdash; and survey proposed resolutions from early dark energy to new calibrations of Cepheid variables.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://science.nasa.gov/astrophysics/programs/cosmic-origins/community/agn-sig-spotlight-series-21-july-2026/" target="_blank" rel="noopener">Aspera Mission Confirmed for 15 August Launch to Map Circumgalactic Medium in UV</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">NASA Science</span>
+            <span>Jul 2026</span>
+          </div>
+          <div class="item-summary">Aspera, a NASA small-sat astrophysics mission launching August 15 on a rideshare, will survey diffuse extreme-ultraviolet emission from hot gas in the circumgalactic and intergalactic medium of nearby galaxies &mdash; the first dedicated instrument to map this largely uncharted reservoir of baryons surrounding galaxies.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.universetoday.com/" target="_blank" rel="noopener">Archived Radio Surveys Open New Frequencies to SETI Technosignature Searches</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Universe Today</span>
+            <span>26 Jul 2026</span>
+          </div>
+          <div class="item-summary">Re-analysis of archival radio telescope data has identified new frequency windows amenable to technosignature searches while simultaneously establishing a quantitative map of sky regions already covered, allowing future campaigns to prioritise unexplored angular and spectral space more systematically.</div>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- World News -->
+    <section id="world-news">
+      <h2>World News</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.democracynow.org/2026/7/27/headlines" target="_blank" rel="noopener">U.S. Military Pauses Iran Airstrikes After Two-Week Campaign; Diplomatic Talks Intensify</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Democracy Now / Wire Reports</span>
+            <span>27 Jul 2026</span>
+          </div>
+          <div class="item-summary">The U.S. military has suspended airstrikes on Iran after approximately two weeks of intensive bombing, with diplomatic sources reporting back-channel negotiations aimed at averting a return to sustained conflict; oil markets remain volatile on ceasefire uncertainty.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://en.wikipedia.org/wiki/Portal:Current_events/July_2026" target="_blank" rel="noopener">European Wildfires: 360,000+ Evacuated as France and Spain Hit by Fourth Heatwave</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Wire Reports</span>
+            <span>27 Jul 2026</span>
+          </div>
+          <div class="item-summary">Wildfires driven by the summer&rsquo;s fourth heatwave have forced more than 360,000 evacuations across France (where the Gironde blaze remains active) and Spain (where two major central fires are only now being brought under control), with aerial assets and cross-border teams deployed.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.democracynow.org/2026/7/27/headlines" target="_blank" rel="noopener">ICC Votes to Remove Chief Prosecutor Karim Khan After Misconduct Allegations</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Wire Reports</span>
+            <span>27 Jul 2026</span>
+          </div>
+          <div class="item-summary">The International Criminal Court&rsquo;s Assembly of States Parties voted to remove Chief Prosecutor Karim Khan following the upholding of sexual misconduct allegations, triggering a selection process for his successor at a court currently managing active cases including those arising from the Gaza and Ukraine conflicts.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.democracynow.org/2026/7/27/headlines" target="_blank" rel="noopener">Houthi Rebels Strike Saudi Oil Infrastructure on the Red Sea Coast</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Wire Reports</span>
+            <span>27 Jul 2026</span>
+          </div>
+          <div class="item-summary">Yemen&rsquo;s Houthi movement launched missile strikes against Saudi Arabian oil installations on the Red Sea coast, adding further pressure on energy supply chains already strained by the U.S.&ndash;Iran confrontation and contributing to elevated global crude prices.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://aa.com.tr/en/world/morning-briefing-july-27-2026/4010047" target="_blank" rel="noopener">India: Education Minister Resigns After Week of Mass Student Protests</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Anadolu Agency</span>
+            <span>27 Jul 2026</span>
+          </div>
+          <div class="item-summary">Dharmendra Pradhan stepped down as India&rsquo;s education minister following sustained nationwide protests that began over university admissions policy, marking a rare cabinet resignation driven by student-led mass mobilisation.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.democracynow.org/2026/7/27/headlines" target="_blank" rel="noopener">FOMC Opens Two-Day Meeting as Middle East Oil Spike Complicates Rate Outlook</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Wire Reports / Fed</span>
+            <span>28 Jul 2026</span>
+          </div>
+          <div class="item-summary">The Federal Open Market Committee convenes today and tomorrow against a backdrop of easing core inflation data and surging energy costs driven by the Middle East standoff, creating an unusual tension for policymakers weighing whether to hold or adjust the federal funds rate.</div>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- Rugby -->
+    <section id="rugby">
+      <h2>Rugby (High-Level Only)</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.nzherald.co.nz/sport/rugby/all-blacks/all-blacks-schedule-and-results-2026-13-test-season-for-year-three-of-scott-robertson/LZ2KJ6VSLZFDTF6IAIOJ7IU4VY/" target="_blank" rel="noopener">All Blacks Mid-Tour: South Africa 4-Test Series Underway After Nations Championship Break</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">NZ Herald / Planet Rugby</span>
+            <span>Jul 2026</span>
+          </div>
+          <div class="item-summary">New Zealand&rsquo;s eight-match South Africa tour &mdash; which includes four Tests against the Springboks and warm-up matches against URC provincial sides &mdash; continues as the Nations Championship resumes in November; both teams enter the series as the only unbeaten sides in that competition&rsquo;s inaugural July window.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://en.wikipedia.org/wiki/2026%E2%80%9327_Premiership_Rugby" target="_blank" rel="noopener">2026&ndash;27 Premiership Rugby: Franchise Model Era Opens 25 September</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Wikipedia / Rugby World</span>
+            <span>Jul 2026</span>
+          </div>
+          <div class="item-summary">The 40th season of the Premiership will be the first under a franchise structure, eliminating automatic promotion and relegation and allowing clubs to invest under a reformed salary cap; season-opener fixtures and squad signing activity are accelerating ahead of the September 25 kick-off.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.rugbyworld.com/rugby-fixtures" target="_blank" rel="noopener">Nations Championship Resumes November; Wallabies in Bye Week Before Japan Fixture</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Rugby World</span>
+            <span>28 Jul 2026</span>
+          </div>
+          <div class="item-summary">With the Nations Championship&rsquo;s July leg concluded (New Zealand and South Africa the sole unbeaten sides on nine points), international rugby is between major test windows; Australia&rsquo;s Wallabies have a two-week gap before facing Japan, while Europe&rsquo;s top clubs focus on pre-season preparation.</div>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- Sailing -->
+    <section id="sailing">
+      <h2>Sailing</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://sailgp.com/" target="_blank" rel="noopener">SailGP Season Standings: Spain Leads After Back-to-Back Wins; European Leg Continues</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">SailGP</span>
+            <span>26 Jul 2026</span>
+          </div>
+          <div class="item-summary">Following their second consecutive event victory in Portsmouth (after Halifax), Diego Bot&iacute;n&rsquo;s Los Gallos Spain SailGP Team leads the season standings; Sweden (Outteridge) finished second in Portsmouth, with Canada (Scott) third, as the European leg continues at its next venue.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.sail-world.com/news/298344/" target="_blank" rel="noopener">J/80 World Championship 2026 Concludes at CORK Sail Kingston</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Sail-World</span>
+            <span>25 Jul 2026</span>
+          </div>
+          <div class="item-summary">Three final races at Portsmouth Olympic Harbour (CORK/Sail Kingston, Ontario) decided the 2026 J/80 World Championship title on July 25, completing a strong week of one-design racing on Kingston Harbour.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.cycracetomackinac.com/" target="_blank" rel="noopener">Noakes Sydney Gold Coast Race: Fleet Offshore on 386nm Course from Rushcutters Bay</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Sail-World</span>
+            <span>25&ndash;28 Jul 2026</span>
+          </div>
+          <div class="item-summary">The Noakes Sydney Gold Coast Yacht Race fleet departed Rushcutters Bay on July 25 and is now racing offshore on the 386-nautical-mile course to Main Beach; position reports and ETA estimates are being published on the race tracker as leaders approach the Queensland coast.</div>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- Science-Based Lifting -->
+    <section id="science-lifting">
+      <h2>Science-Based Lifting</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://acsm.org/resistance-training-guidelines-update-2026/" target="_blank" rel="noopener">ACSM 2026 Position Stand: Landmark Resistance Training Guidelines from 137 Systematic Reviews</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">ACSM</span>
+            <span>Jul 2026</span>
+          </div>
+          <div class="item-summary">The American College of Sports Medicine&rsquo;s first resistance training position stand update in 17 years &mdash; synthesising 137 systematic reviews representing 30,000+ participants &mdash; finds hypertrophy occurs across 30&ndash;100% 1RM provided effort is sufficient, that &ge;10 sets/week amplifies growth, and that training to failure is not consistently superior to hard stopping for the typical healthy adult.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://journals.physiology.org/doi/full/10.1152/japplphysiol.00353.2025" target="_blank" rel="noopener">Low-Load vs. High-Load Training in Trained Individuals: Similar Hypertrophy, Divergent Strength</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Journal of Applied Physiology</span>
+            <span>2025 (recently indexed)</span>
+          </div>
+          <div class="item-summary">A controlled trial in trained individuals found that low-load and high-load protocols produced statistically similar muscle hypertrophy over the study period, but high-load training yielded meaningfully greater maximal strength gains &mdash; evidence that load selection should be matched to the specific quality being prioritised.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://macrofactor.com/mm-july-2026/" target="_blank" rel="noopener">MacroFactor July 2026: Rest Periods Between Sets, AI Label Scanner, and App Updates</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">MacroFactor Blog</span>
+            <span>24 Jul 2026</span>
+          </div>
+          <div class="item-summary">MacroFactor&rsquo;s July update covers the evidence on inter-set rest periods (longer rest &mdash; &ge;2 min &mdash; supports strength more robustly than hypertrophy, which tolerates shorter intervals with equated volume), alongside a new AI-powered nutrition label scanner supporting multilingual and non-standard label formats.</div>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- People Leadership -->
+    <section id="people-leadership">
+      <h2>People Leadership</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://hbr.org/2026/07/research-roundup-the-death-of-the-cover-letter-boring-meetings-wide-salary-ranges-and-more" target="_blank" rel="noopener">HBR Research Roundup: Cover Letters Obsolescent, Boring Meetings Costly, Wide Salary Ranges Harmful</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Harvard Business Review</span>
+            <span>Jul 2026</span>
+          </div>
+          <div class="item-summary">A curated research summary finds cover letters have lost predictive validity for hiring outcomes, boring meetings carry substantial hidden productivity costs attributable to poor facilitation rather than meeting length, and excessively wide published salary ranges deter high-quality candidates who read the spread as a signal of pay inequity.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://hbr.org/2026/07/the-case-for-performance-first-management" target="_blank" rel="noopener">The Case for Performance-First Management: Gartner Data Shows 21% Better Outcomes</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Harvard Business Review</span>
+            <span>Jul 2026</span>
+          </div>
+          <div class="item-summary">Gartner research across thousands of manager-employee pairs finds that managers who consistently orient conversations toward performance expectations &mdash; rather than leading primarily with relationship-building &mdash; are 21% more likely to deliver expected business results, and their reports report higher job satisfaction scores.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://sloanreview.mit.edu/article/leaderships-blind-spot-in-the-age-of-ai/" target="_blank" rel="noopener">MIT Sloan: Leadership&rsquo;s Blind Spot in the Age of AI &mdash; Embodied and Source Intelligence</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">MIT Sloan Management Review</span>
+            <span>7 Jul 2026</span>
+          </div>
+          <div class="item-summary">Otto Scharmer argues that while AI excels at pattern recognition and computation, effective leadership requires &ldquo;source intelligence&rdquo; &mdash; awareness of the social field from which collective action emerges &mdash; and embodied cognition that AI cannot replicate, and that organisations are at risk of systematically under-investing in these human capacities as AI automates cognitive load.</div>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- Emotional Intelligence -->
+    <section id="emotional-intelligence">
+      <h2>Emotional Intelligence</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.apa.org/monitor/2026/07-08/ai-job-skills-thinking" target="_blank" rel="noopener">APA Monitor: Heavy AI Reliance Erodes Critical Thinking and Job-Specific Skills</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">APA Monitor on Psychology</span>
+            <span>Jul&ndash;Aug 2026</span>
+          </div>
+          <div class="item-summary">The July/August Monitor on Psychology reviews accumulating evidence that over-reliance on generative AI reduces users&rsquo; critical thinking and occupational skill retention, while structured &ldquo;human-in-the-loop&rdquo; AI use &mdash; where humans set constraints and review outputs &mdash; preserves cognitive engagement and produces better combined outcomes.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://greatergood.berkeley.edu/articles" target="_blank" rel="noopener">Greater Good: Classroom Experiences That Build Empathy and Civic Engagement &mdash; and What Blocks Them</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Greater Good Magazine (UC Berkeley)</span>
+            <span>22 Jul 2026</span>
+          </div>
+          <div class="item-summary">A research-based piece identifies the pedagogical conditions &mdash; structured perspective-taking, collaborative problem-solving, and teacher modelling of open-mindedness &mdash; most strongly associated with student empathy development and civic participation, along with the structural obstacles (high-stakes testing pressure, siloed curricula) that consistently undermine them.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://greatergood.berkeley.edu/articles" target="_blank" rel="noopener">Greater Good: Grudge-Holding Produces Measurable Physiological Harm; Forgiveness Restores Balance</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Greater Good Magazine (UC Berkeley)</span>
+            <span>14 Jul 2026</span>
+          </div>
+          <div class="item-summary">Research reviewed in Greater Good finds that sustained resentment elevates inflammatory markers and disrupts autonomic cardiovascular regulation, while practised forgiveness &mdash; distinguished from condoning or reconciling &mdash; restores baseline physiology and is associated with lower long-term mortality risk.</div>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- AI Engineering -->
+    <section id="ai-engineering">
+      <h2>AI Engineering</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://dentro.de/ai/news/" target="_blank" rel="noopener">EU AI Act Tightens August 2: Transparency Obligations, Regulator Model-Access Powers Take Effect</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">EU / AI News</span>
+            <span>Effective 2 Aug 2026</span>
+          </div>
+          <div class="item-summary">Five days from today, the EU AI Act&rsquo;s next implementation tranche requires high-risk AI system providers to meet stricter transparency and documentation standards and grants national regulators new powers to demand model access and recall deployed systems &mdash; directly affecting teams shipping AI products into European markets.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://pricepertoken.com/news/model-releases" target="_blank" rel="noopener">OpenAI Releases GPT-5.6 Family (Luna / Terra / Sol) with 1M-Token Context</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Price Per Token / AI News</span>
+            <span>Jul 2026</span>
+          </div>
+          <div class="item-summary">OpenAI&rsquo;s GPT-5.6 lineup in three capability tiers (Luna at $1/M input, Terra at $2.50/M, Sol at $5/M) all feature a one-million-token context window and a February 2026 knowledge cutoff; OpenAI benchmarks claim Sol outperforms Claude Fable 5 on long-running agentic tasks, though independent evaluation is pending.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://llm-stats.com/ai-news" target="_blank" rel="noopener">Nvidia Forms Open Secure AI Alliance with CrowdStrike, Hugging Face, and Dell</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">LLM Stats / AI News</span>
+            <span>Jul 2026</span>
+          </div>
+          <div class="item-summary">Nvidia has anchored a new industry coalition to develop and share open tooling for AI safety and cybersecurity, with CrowdStrike, Hugging Face, and Dell as founding members; the alliance will publish shared benchmarks for adversarial robustness and supply-chain integrity standards for model distribution.</div>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- Jobs -->
+    <section id="jobs">
+      <h2>Jobs</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.freelancermap.com/projects/remote-for-eu" target="_blank" rel="noopener">Freelancermap EU Remote: 22+ IT Contracts Open (AWS Full-Stack, ServiceNow, Android/Kotlin)</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">freelancermap</span>
+            <span>Jul 2026</span>
+          </div>
+          <div class="item-summary">Current EU-remote listings include AWS Java Full-Stack Developer (Brussels/Luxembourg), ServiceNow &amp; Jira Specialist, Android Developer (Kotlin), and Full-Stack Blockchain Developer (DeFi integration); platform shows 33+ total EU remote projects with flexible contract terms.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://swissdevjobs.ch/" target="_blank" rel="noopener">SwissDevJobs.ch: 345 Active Software Developer Roles in Switzerland</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">swissdevjobs.ch</span>
+            <span>Jul 2026</span>
+          </div>
+          <div class="item-summary">Switzerland&rsquo;s curated IT job board lists 345 open developer roles in July 2026, spanning Java, Python, JavaScript, C++, SQL, and Salesforce stacks, with positions concentrated in Z&uuml;rich, Basel, and Bern; the platform also indexes Swiss tech communities and hackathons.</div>
+        </li>
+
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Generated 28 July 2026 &mdash; Europe/Zurich. Sources: NASA APOD, EarthSky, ASU/ScienceDaily, Quanta Magazine, Universe Today, Democracy Now, Anadolu Agency, Wikipedia Current Events, NZ Herald, Planet Rugby, SailGP, Sail-World, ACSM, Journal of Applied Physiology, MacroFactor, Harvard Business Review, MIT Sloan Management Review, APA Monitor, Greater Good Magazine, EU AI Act, Price Per Token, LLM Stats, freelancermap, swissdevjobs.ch.</p>
+  </footer>
+
+</div>
+</body>
+</html>
