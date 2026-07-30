@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Digest &mdash; 30 July 2026</title>
+  <style>
+    :root {
+      --bg: #f9f9f7;
+      --surface: #ffffff;
+      --border: #e2e2da;
+      --text: #1a1a18;
+      --text-secondary: #5a5a52;
+      --accent: #2a5caa;
+      --accent-hover: #1e4380;
+      --section-header-bg: #f0f0ea;
+      --tag-bg: #e8eefc;
+      --tag-text: #2a5caa;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #16161a;
+        --surface: #1e1e24;
+        --border: #2e2e38;
+        --text: #e8e8e0;
+        --text-secondary: #9a9a92;
+        --accent: #6a9de8;
+        --accent-hover: #8db8f0;
+        --section-header-bg: #22222c;
+        --tag-bg: #1e2a48;
+        --tag-text: #6a9de8;
+      }
+    }
+    :root[data-theme="dark"] {
+      --bg: #16161a;
+      --surface: #1e1e24;
+      --border: #2e2e38;
+      --text: #e8e8e0;
+      --text-secondary: #9a9a92;
+      --accent: #6a9de8;
+      --accent-hover: #8db8f0;
+      --section-header-bg: #22222c;
+      --tag-bg: #1e2a48;
+      --tag-text: #6a9de8;
+    }
+    :root[data-theme="light"] {
+      --bg: #f9f9f7;
+      --surface: #ffffff;
+      --border: #e2e2da;
+      --text: #1a1a18;
+      --text-secondary: #5a5a52;
+      --accent: #2a5caa;
+      --accent-hover: #1e4380;
+      --section-header-bg: #f0f0ea;
+      --tag-bg: #e8eefc;
+      --tag-text: #2a5caa;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      font-size: 16px;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); text-decoration: underline; }
+
+    .page-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 4rem;
+    }
+
+    header {
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 1.25rem;
+      margin-bottom: 2rem;
+    }
+    header h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+    header h1 span.date-part {
+      color: var(--text-secondary);
+      font-weight: 400;
+    }
+    .back-link {
+      margin-top: 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+    }
+
+    section {
+      margin-bottom: 2.5rem;
+    }
+    section h2 {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      background: var(--section-header-bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 0.35rem 0.75rem;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+
+    .item-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .item {
+      padding: 0.9rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .item:last-child { border-bottom: none; }
+    .item-title {
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 1.35;
+      margin-bottom: 0.25rem;
+    }
+    .item-title a { color: var(--text); }
+    .item-title a:hover { color: var(--accent); text-decoration: none; }
+    .item-meta {
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.35rem;
+    }
+    .item-source {
+      font-weight: 600;
+      color: var(--tag-text);
+      background: var(--tag-bg);
+      padding: 0.1rem 0.45rem;
+      border-radius: 3px;
+      font-size: 0.73rem;
+      letter-spacing: 0.01em;
+      margin-right: 0.4rem;
+    }
+    .item-summary {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+      padding-top: 1rem;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <header>
+    <h1>Daily Digest &mdash; <span class="date-part">30 July 2026</span></h1>
+    <p class="back-link"><a href="../index.html">&larr; Back to index</a></p>
+  </header>
+
+  <main>
+
+    <!-- Astronomy & Space -->
+    <section id="astronomy-space">
+      <h2>Astronomy &amp; Space</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.quantamagazine.org/physicists-solve-a-muon-mystery-now-old-results-dont-add-up-20260729/" target="_blank" rel="noopener">Physicists Solve the Muon g&minus;2 Mystery &mdash; and Create a New Theoretical Collision</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Quanta Magazine</span>
+            <span>29 Jul 2026</span>
+          </div>
+          <div class="item-summary">New lattice QCD calculations resolve the 25-year muon magnetic moment discrepancy to one part in 100 billion, matching Fermilab&rsquo;s experimental result &mdash; but the new approach invalidates older data-driven dispersive sum-rule estimates that were themselves considered rigorous, opening a fresh methodological dispute about which theoretical framework is correct.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.space.com/stargazing/full-buck-moon-leads-a-mini-planet-parade-through-the-summer-sky-july-29-2026" target="_blank" rel="noopener">Full Buck Moon Peaks at 14:36 UTC; Venus, Saturn, Mars and Mercury Form Pre-Dawn Procession</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Space.com</span>
+            <span>29 Jul 2026</span>
+          </div>
+          <div class="item-summary">July&rsquo;s full moon reached peak illumination yesterday at 14:36 UTC in Capricornus while four naked-eye planets &mdash; Venus, Saturn, Mars, and Mercury &mdash; formed a compact sequential procession visible in the pre-dawn sky; Jupiter simultaneously reached solar conjunction and will be unobservable for several weeks.</div>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- World News -->
+    <section id="world-news">
+      <h2>World News</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://havanatimes.org/news/international-news-briefs-for-wednesday-july-29-2026/" target="_blank" rel="noopener">Japan: 7.1-Magnitude Earthquake Kills at Least 18 in Southwestern Region</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">International Newswires</span>
+            <span>28&ndash;29 Jul 2026</span>
+          </div>
+          <div class="item-summary">A powerful 7.1-magnitude earthquake struck southwestern Japan on Monday, killing at least 18 people; rescue operations are ongoing as the region assesses structural damage.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://havanatimes.org/news/international-news-briefs-for-wednesday-july-29-2026/" target="_blank" rel="noopener">France and Spain Race to Contain Wildfires Amid 42&deg;C Heat Wave; 360,000+ Evacuated</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">International Newswires</span>
+            <span>29 Jul 2026</span>
+          </div>
+          <div class="item-summary">Over 360,000 people have been evacuated from wildfires sweeping France and Spain &mdash; the largest peacetime evacuation in French history &mdash; as temperatures reach 42&deg;C (107&deg;F) and crews struggle to contain multiple fire fronts.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://havanatimes.org/news/international-news-briefs-for-wednesday-july-29-2026/" target="_blank" rel="noopener">US Pauses Iran Airstrikes; Trump Schedules Separate Meetings with Zelenskyy and Netanyahu</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">International Newswires</span>
+            <span>29 Jul 2026</span>
+          </div>
+          <div class="item-summary">The US military has suspended its nearly two-week bombing campaign against Iran as diplomatic efforts intensify; President Trump is holding separate meetings with Ukrainian President Zelenskyy and Israeli Prime Minister Netanyahu to coordinate next steps on two concurrent crises.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://havanatimes.org/news/international-news-briefs-for-wednesday-july-29-2026/" target="_blank" rel="noopener">Iran Executes Two Men Who Participated in January Anti-Government Protests</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">International Newswires / Human Rights Groups</span>
+            <span>29 Jul 2026</span>
+          </div>
+          <div class="item-summary">Iranian authorities hanged Amirhossein Safari and Abolfazl Sepahi, two men convicted in connection with the January anti-government protests, according to human rights organisations monitoring the country&rsquo;s judiciary.</div>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- Sailing -->
+    <section id="sailing">
+      <h2>Sailing</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.ussailing.org/competition/championships/" target="_blank" rel="noopener">US Sailing Championship Opens Today at St Francis Yacht Club, San Francisco (Jul 30&ndash;Aug 2)</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">US Sailing</span>
+            <span>30 Jul &ndash; 2 Aug 2026</span>
+          </div>
+          <div class="item-summary">The US Sailing Championship begins today at St Francis Yacht Club on San Francisco Bay, drawing elite fleets across multiple classes for four days of racing through August 2.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://sailgp.com/news/26/six-winners-six-races-portsmouth-delivers-blockbuster-opening-day/" target="_blank" rel="noopener">SailGP Season Standings: Australia (62 pts) Leads Spain and Great Britain (44 pts each) After 7 of 13 Events</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">SailGP</span>
+            <span>Post-Portsmouth, Jul 2026</span>
+          </div>
+          <div class="item-summary">Following Spain&rsquo;s back-to-back win at the Emirates Great Britain Sail Grand Prix in Portsmouth (Jul 25&ndash;26), the SailGP Season 4 standings now show Australia (Tom Slingsby) ahead on 62 points, with Spain (Diego Bot&iacute;n) and Great Britain (Dylan Fletcher) tied at 44 points each, setting up a tight second half of the season.</div>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- People Leadership -->
+    <section id="people-leadership">
+      <h2>People Leadership</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.sahmcapital.com/news/content/ai-adoption-is-outpacing-leadership-readiness-as-new-research-finds-only-3-of-organizations-say-their-leaders-are-fully-prepared-to-lead-ai-enabled-teams-2026-07-22" target="_blank" rel="noopener">AI Adoption Is Outpacing Leadership Readiness: Only 3% of Organisations Say Leaders Are Fully Prepared</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">ManpowerGroup Talent Solutions</span>
+            <span>22 Jul 2026</span>
+          </div>
+          <div class="item-summary">A global workforce study from Talent Solutions finds that despite accelerating AI investment, only 3% of organisations report their leaders are highly prepared to manage AI-enabled ways of working &mdash; even as 78% of employees express concern about AI&rsquo;s impact on their roles &mdash; with the principal barrier identified as people-change capability rather than technical adoption.</div>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- Emotional Intelligence -->
+    <section id="emotional-intelligence">
+      <h2>Emotional Intelligence</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.apa.org/monitor/2026/07-08/volunteering-kind-acts" target="_blank" rel="noopener">Volunteering and Prosocial Acts Reduce Depression and Anxiety &mdash; via Increased Social Connection</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">APA Monitor on Psychology</span>
+            <span>Jul&ndash;Aug 2026</span>
+          </div>
+          <div class="item-summary">Research reviewed in the APA Monitor&rsquo;s July&ndash;August 2026 issue finds that performing acts of kindness and volunteering measurably boosts happiness while reducing depression and anxiety, with the primary mechanism being heightened feelings of social connectedness rather than any direct cognitive or behavioural change.</div>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- AI Engineering -->
+    <section id="ai-engineering">
+      <h2>AI Engineering</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://simonwillison.net/2026/Jul/28/discovering-cryptographic-weaknesses-with-claude/" target="_blank" rel="noopener">Discovering Cryptographic Weaknesses with Claude: AI-Assisted Formal Security Analysis at Scale</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Simon Willison</span>
+            <span>28 Jul 2026</span>
+          </div>
+          <div class="item-summary">Willison links to Anthropic research demonstrating that Claude Mythos can autonomously surface mathematical flaws in deployed cryptographic protocols, identifying multiple practical vulnerabilities in standard implementations &mdash; a significant benchmark result for LLM-assisted formal security analysis that shifts the model from search-accelerator to active flaw-discoverer.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://simonwillison.net/2026/Jul/28/akshat-bubna/" target="_blank" rel="noopener">Unauthenticated Modal Endpoint Allowed Public Execution in Customer&rsquo;s Sandbox</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Simon Willison / Akshat Bubna</span>
+            <span>28 Jul 2026</span>
+          </div>
+          <div class="item-summary">A Modal customer accidentally published an unauthenticated endpoint that exposed their cloud sandbox for arbitrary public code execution; Willison cites the incident as a concrete example of the agentic security surface problem &mdash; systems designed to run code on behalf of AI agents must enforce authentication even on endpoints that appear internal.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://dentro.de/ai/news/" target="_blank" rel="noopener">EU AI Act High-Risk and Transparency Obligations Take Effect 2 August &mdash; Three Days Away</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">EU Regulatory</span>
+            <span>Effective 2 Aug 2026</span>
+          </div>
+          <div class="item-summary">The next wave of EU AI Act compliance requirements activates on Saturday, granting regulators the power to demand model access and issue product recalls for systems classified as high-risk; enterprises deploying AI in health, critical infrastructure, or HR contexts face the most immediate pressure to verify conformity documentation.</div>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- Jobs -->
+    <section id="jobs">
+      <h2>Jobs</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.freelancermap.com/projects/switzerland" target="_blank" rel="noopener">Freelancermap CH: BSI Developer (CRM/Banking, Z&uuml;rich, Aug start) &mdash; Platform Solution Architect Java/Integration (Bern, 40% remote)</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">freelancermap</span>
+            <span>Jul 2026</span>
+          </div>
+          <div class="item-summary">Highlighted Swiss IT freelance roles posted this week: a BSI CRM/Banking Developer position in Z&uuml;rich with an August 2026 start (via SThree Germany), and a Platform Solution Architect role focusing on Java and systems integration in Bern at 40% remote; the Switzerland listing currently shows ~309 active IT projects overall.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://swissdevjobs.ch/" target="_blank" rel="noopener">SwissDevJobs: Active Developer Openings Across Switzerland</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">swissdevjobs.ch</span>
+            <span>Jul 2026</span>
+          </div>
+          <div class="item-summary">SwissDevJobs aggregates current Swiss-market tech positions with salary transparency and stack filtering; check the site directly for the latest software engineering, full-stack, and platform engineering postings (345 software developer roles listed as of July 2026).</div>
+        </li>
+
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>
+    Generated by Claude &middot; 30 July 2026, 07:00 CEST &middot; Sources configured in <a href="../sources.yaml">sources.yaml</a>
+  </footer>
+
+</div>
+</body>
+</html>
