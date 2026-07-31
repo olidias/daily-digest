@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Digest &mdash; 31 July 2026</title>
+  <style>
+    :root {
+      --bg: #f9f9f7;
+      --surface: #ffffff;
+      --border: #e2e2da;
+      --text: #1a1a18;
+      --text-secondary: #5a5a52;
+      --accent: #2a5caa;
+      --accent-hover: #1e4380;
+      --section-header-bg: #f0f0ea;
+      --tag-bg: #e8eefc;
+      --tag-text: #2a5caa;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #16161a;
+        --surface: #1e1e24;
+        --border: #2e2e38;
+        --text: #e8e8e0;
+        --text-secondary: #9a9a92;
+        --accent: #6a9de8;
+        --accent-hover: #8db8f0;
+        --section-header-bg: #22222c;
+        --tag-bg: #1e2a48;
+        --tag-text: #6a9de8;
+      }
+    }
+    :root[data-theme="dark"] {
+      --bg: #16161a;
+      --surface: #1e1e24;
+      --border: #2e2e38;
+      --text: #e8e8e0;
+      --text-secondary: #9a9a92;
+      --accent: #6a9de8;
+      --accent-hover: #8db8f0;
+      --section-header-bg: #22222c;
+      --tag-bg: #1e2a48;
+      --tag-text: #6a9de8;
+    }
+    :root[data-theme="light"] {
+      --bg: #f9f9f7;
+      --surface: #ffffff;
+      --border: #e2e2da;
+      --text: #1a1a18;
+      --text-secondary: #5a5a52;
+      --accent: #2a5caa;
+      --accent-hover: #1e4380;
+      --section-header-bg: #f0f0ea;
+      --tag-bg: #e8eefc;
+      --tag-text: #2a5caa;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      font-size: 16px;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); text-decoration: underline; }
+
+    .page-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 4rem;
+    }
+
+    header {
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 1.25rem;
+      margin-bottom: 2rem;
+    }
+    header h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+    header h1 span.date-part {
+      color: var(--text-secondary);
+      font-weight: 400;
+    }
+    .back-link {
+      margin-top: 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+    }
+
+    section {
+      margin-bottom: 2.5rem;
+    }
+    section h2 {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      background: var(--section-header-bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 0.35rem 0.75rem;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+
+    .item-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .item {
+      padding: 0.9rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .item:last-child { border-bottom: none; }
+    .item-title {
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 1.35;
+      margin-bottom: 0.25rem;
+    }
+    .item-title a { color: var(--text); }
+    .item-title a:hover { color: var(--accent); text-decoration: none; }
+    .item-meta {
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.35rem;
+    }
+    .item-source {
+      font-weight: 600;
+      color: var(--tag-text);
+      background: var(--tag-bg);
+      padding: 0.1rem 0.45rem;
+      border-radius: 3px;
+      font-size: 0.73rem;
+      letter-spacing: 0.01em;
+      margin-right: 0.4rem;
+    }
+    .item-summary {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+      padding-top: 1rem;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <header>
+    <h1>Daily Digest &mdash; <span class="date-part">31 July 2026</span></h1>
+    <p class="back-link"><a href="../index.html">&larr; Back to index</a></p>
+  </header>
+
+  <main>
+
+    <!-- Astronomy & Space -->
+    <section id="astronomy-space">
+      <h2>Astronomy &amp; Space</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.jpl.nasa.gov/news/nasas-psyche-mission-delivers-mars-flyby-data-time-lapse-video/" target="_blank" rel="noopener">NASA&rsquo;s Psyche Delivers Mars Flyby Science: Magnetometer, Spectrometer and Time-Lapse Images Released</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">NASA / JPL</span>
+            <span>28 Jul 2026</span>
+          </div>
+          <div class="item-summary">JPL published the science return from Psyche&rsquo;s May 15 Mars gravity assist &mdash; instrument readings from the magnetometer, gamma-ray and neutron spectrometer, and a time-lapse image sequence of Mars &mdash; validating all instruments ahead of the spacecraft&rsquo;s 2029 encounter with the metal-rich asteroid Psyche, the probable exposed iron-nickel core of an early differentiated planetesimal.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.sciencedaily.com/news/space_time/" target="_blank" rel="noopener">SETI Radio Searches May Have Missed Most of the Spectrum: New Study Urges Expansion into High-Frequency Bands</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Space News / ScienceDaily</span>
+            <span>30 Jul 2026</span>
+          </div>
+          <div class="item-summary">A new analysis finds that decades of radio SETI programmes have concentrated on a narrow band of microwave frequencies &mdash; leaving a largely unexplored range of higher radio frequencies unexamined &mdash; and argues that technologically advanced civilisations might preferentially transmit at these overlooked wavelengths for reasons of efficiency or atmospheric propagation.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.planetary.org/articles/calendar-of-space-events-2026" target="_blank" rel="noopener">Southern Delta Aquariid Meteor Shower Peaks Today &mdash; Near-Full Moon Will Wash Out Most Meteors</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">The Planetary Society</span>
+            <span>31 Jul 2026</span>
+          </div>
+          <div class="item-summary">The Southern Delta Aquariid shower reaches peak activity on July 31, producing up to 25 meteors per hour under ideal conditions, but the almost-full Buck Moon (which peaked July 29 at 14:36 UTC) will severely reduce visible counts; dark-sky observers south of the equator in pre-dawn hours have the best prospect.</div>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- World News -->
+    <section id="world-news">
+      <h2>World News</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.radiofree.org/2026/07/30/top-u-s-world-headlines-july-30-2026/" target="_blank" rel="noopener">Russia Extends Bombardment to Lviv as Ukraine&rsquo;s Western-Supplied Air Defences Are Depleted</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">International Newswires</span>
+            <span>30 Jul 2026</span>
+          </div>
+          <div class="item-summary">Russia expanded its near-daily strikes on Ukrainian population centres to include Lviv on July 30, apparently exploiting Kyiv&rsquo;s critical shortage of interceptor missiles as Western partners struggle to sustain resupply rates, with the attacks intensifying pressure on the diplomatic track ahead of Trump&rsquo;s scheduled meetings with Zelenskyy and Netanyahu.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.radiofree.org/2026/07/30/top-u-s-world-headlines-july-30-2026/" target="_blank" rel="noopener">Japan Earthquake (M 7.1): Rescue Operations Continue in Kumamoto After Mall Blast Complicates Recovery</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">International Newswires</span>
+            <span>28&ndash;31 Jul 2026</span>
+          </div>
+          <div class="item-summary">As rescue teams continue searching for survivors following Monday&rsquo;s magnitude 7.1 earthquake in Kyushu, an explosion at AEON Mall Kumamoto compounded casualties and complicated access for emergency responders, with Japan&rsquo;s Self-Defence Forces and civilian services working in parallel to reach isolated communities.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.radiofree.org/2026/07/30/top-u-s-world-headlines-july-30-2026/" target="_blank" rel="noopener">France and Spain Wildfires: 360,000+ Evacuated in What French Officials Call Largest Peacetime Displacement</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">International Newswires</span>
+            <span>29&ndash;31 Jul 2026</span>
+          </div>
+          <div class="item-summary">Fire crews in France and Spain continued battling multiple fronts as temperatures reached 42&nbsp;&deg;C, with more than 360,000 people forced from their homes in what French authorities described as the largest peacetime domestic evacuation in the country&rsquo;s history; the events are being cited by climate scientists as a concrete manifestation of accelerating Mediterranean fire seasons.</div>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- Rugby -->
+    <section id="rugby">
+      <h2>Rugby</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://en.wikipedia.org/wiki/2026_Nations_Championship" target="_blank" rel="noopener">Inaugural Nations Championship Enters July Window: All 12 Tier-1 Nations Competing for First Time</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">World Rugby / Nations Championship</span>
+            <span>Jul 2026</span>
+          </div>
+          <div class="item-summary">The 2026 Nations Championship &mdash; World Rugby&rsquo;s first formal global league for men&rsquo;s Tier-1 nations &mdash; is in its July international window, with all 12 squads fielding strongest available selections ahead of knockout rounds and the RWC 2027 qualifying implications that flow from final standings.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.planetrugby.com/news/rassies-reckoning-how-the-2026-nations-championship-squads-will-write-the-first-draft-of-rugby-world-cup-2027" target="_blank" rel="noopener">Ireland&rsquo;s Nations Championship Squad: 15 Players on Sub-10 Caps Signals Biggest Generational Shift Since 2023 RWC</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Planet Rugby</span>
+            <span>Jul 2026</span>
+          </div>
+          <div class="item-summary">Ireland&rsquo;s 37-man Nations Championship working group includes 15 players with fewer than 10 Test caps, a dramatic change from the 2023 World Cup squad in which more than half were over 30, signalling a deliberate programme to bed in the next generation before the 2027 tournament in Australia.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.world.rugby/news/1044129/jwc-2026-players-to-watch-on-road-to-rwc-2027" target="_blank" rel="noopener">Erasmus Adds Stormers Prop Ntuthuko Mchunu to Springboks Squad for Argentina &amp; All Blacks Tests</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">World Rugby / Planet Rugby</span>
+            <span>Jul 2026</span>
+          </div>
+          <div class="item-summary">Rassie Erasmus has bolstered South Africa&rsquo;s front row by calling up Stormers loosehead Ntuthuko Mchunu for the Springboks&rsquo; Nations Championship Tests against Argentina and the All Blacks &mdash; the two fixtures Erasmus described as the most significant selection pressure-tests before RWC 2027 squad confirmation.</div>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- Sailing -->
+    <section id="sailing">
+      <h2>Sailing</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.portsmouth.co.uk/whats-on/things-to-do/clipper-world-race-portsmouth-crowds-pictures-8821656" target="_blank" rel="noopener">Clipper Race 2025&ndash;26: Team GOSH Wins Under Youngest-Ever Skipper-First-Mate Combination</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Clipper Race / Portsmouth News</span>
+            <span>25 Jul 2026</span>
+          </div>
+          <div class="item-summary">After 11 months and 40,000 nautical miles across all oceans, Team GOSH (Great Ormond Street Hospital) claimed overall victory in the 2025&ndash;26 Clipper Round the World Race, skippered by 26-year-old Oli Irvine with 22-year-old First Mate Otto Kurlow &mdash; the youngest winning combination in the race&rsquo;s history &mdash; having won seven of thirteen legs en route to Portsmouth.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.sailingscuttlebutt.com/2026/07/26/spain-win-at-sailgp-portsmouth/" target="_blank" rel="noopener">SailGP Portsmouth: Spain Wins, Artemis Breaks into Top Three as Championship Tightens</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Sailing Scuttlebutt / SailGP</span>
+            <span>25&ndash;26 Jul 2026</span>
+          </div>
+          <div class="item-summary">Diego Bot&iacute;n&rsquo;s Spain team took victory at the Emirates Great Britain Sail Grand Prix in Portsmouth, while Artemis SailGP moved into third overall &mdash; leapfrogging Emirates GBR (who scored zero points finishing 11th) &mdash; leaving Australia&rsquo;s Tom Slingsby leading the championship with an increasingly tight pack of challengers ahead of the Germany event on 22&ndash;23 August.</div>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- Science-Based Lifting -->
+    <section id="science-based-lifting">
+      <h2>Science-Based Lifting</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://acsm.org/resistance-training-guidelines-update-2026/" target="_blank" rel="noopener">ACSM 2026 Resistance Training Position Stand: Four Critical Variables, Not Equipment or Periodization Style</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">ACSM / 2 Minute Medicine</span>
+            <span>2026</span>
+          </div>
+          <div class="item-summary">The American College of Sports Medicine&rsquo;s first major resistance training update in 17 years synthesized 137 systematic reviews (30,000+ participants) and concluded that only four variables reliably drive outcomes &mdash; load relative to capacity, weekly set volume (&#8805;&nbsp;10 sets per muscle group for hypertrophy), full range of motion, and sufficient effort per set (2&ndash;3 reps-in-reserve works as well as failure) &mdash; while equipment choice, complex periodization, and modality produced no consistent benefit for healthy adults.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.naturalnews.com/2026-07-26-study-strength-training-lower-heart-attack-women.html" target="_blank" rel="noopener">Women &amp; Resistance Training: 14.5-Year JACC Cohort Study (n&nbsp;=&nbsp;117,025) Links Weekly Lifting to Substantially Lower CVD Risk</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Journal of the American College of Cardiology</span>
+            <span>26 Jul 2026</span>
+          </div>
+          <div class="item-summary">A large prospective cohort study published in JACC tracked 117,025 women over a mean 14.5-year follow-up and found that those who engaged in regular resistance training had significantly lower rates of incident cardiovascular disease &mdash; adding to a body of evidence that strength training confers cardiovascular benefits independent of aerobic activity.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://journals.physiology.org/doi/full/10.1152/japplphysiol.00353.2025" target="_blank" rel="noopener">Low-Load and High-Load Training Produce Divergent Strength Gains but Similar Hypertrophy in Trained Individuals</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Journal of Applied Physiology</span>
+            <span>2025&ndash;2026</span>
+          </div>
+          <div class="item-summary">A controlled trial in trained individuals found that low-load training (taken close to failure) matched high-load training for muscle hypertrophy, but high-load protocols produced meaningfully greater maximal-strength gains &mdash; a methodologically clean result consistent with the specificity principle and with practical implications for programming priorities.</div>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- People Leadership -->
+    <section id="people-leadership">
+      <h2>People Leadership</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://sloanreview.mit.edu/article/our-guide-to-the-summer-2026-issue/" target="_blank" rel="noopener">MIT Sloan: The 7&nbsp;C&rsquo;s of Crisis Management Maturity &mdash; What Prepared Organisations Actually Do Differently</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">MIT Sloan Management Review</span>
+            <span>Summer 2026</span>
+          </div>
+          <div class="item-summary">MIT SMR research identifies seven characteristics that distinguish crisis-capable organisations &mdash; Contingency planning, Cross-functional coordination, transparent Communication, Compassion, Confrontation of hard truths, Control, and Continuity &mdash; and finds that these capabilities are developed through deliberate practice in non-crisis periods, not assembled under pressure.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://hbr.org/topic/subject/leadership-and-managing-people" target="_blank" rel="noopener">HBR: The Growing Gap Between the Company Leaders Think They Run and the One Employees Experience</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Harvard Business Review</span>
+            <span>6 Jul 2026</span>
+          </div>
+          <div class="item-summary">HBR&rsquo;s managing editor highlights systematic research showing that senior leaders consistently overestimate the psychological safety, alignment, and operational health of their organisations relative to what employees actually report experiencing &mdash; with the gap widening as seniority increases and as leaders rely more on formal reporting channels than direct observation.</div>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- Emotional Intelligence -->
+    <section id="emotional-intelligence">
+      <h2>Emotional Intelligence</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://greatergood.berkeley.edu/article/item/how_to_become_a_scientist_of_your_own_emotions" target="_blank" rel="noopener">Holding Grudges Has Measurable Physiological Costs; Forgiveness Restores Autonomic Balance (Greater Good, UC Berkeley)</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Greater Good Science Center (UC Berkeley)</span>
+            <span>14 Jul 2026</span>
+          </div>
+          <div class="item-summary">Research summarised by psychologist Emiliana Simon-Thomas at UC Berkeley&rsquo;s Greater Good Science Center finds that chronic grudge-holding measurably elevates cortisol, suppresses heart-rate variability, and impairs immune function, while practising forgiveness &mdash; even unilaterally &mdash; produces demonstrable restoration of these physiological markers.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://greatergood.berkeley.edu/article/item/your_happiness_calendar_for_july_2026" target="_blank" rel="noopener">Greater Good&rsquo;s July 2026 Happiness Calendar: 31 Evidence-Based Daily Practices from UC Berkeley Research</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Greater Good Science Center (UC Berkeley)</span>
+            <span>1 Jul 2026</span>
+          </div>
+          <div class="item-summary">Kira M. Newman compiled a day-by-day schedule of well-being micro-practices for July 2026 &mdash; each grounded in peer-reviewed research from the Greater Good Science Center &mdash; covering gratitude, compassion, social connection, and emotional regulation techniques that have demonstrated measurable effects in controlled studies.</div>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- AI Engineering -->
+    <section id="ai-engineering">
+      <h2>AI Engineering</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://simonwillison.net/" target="_blank" rel="noopener">Anatomy of a Frontier Lab Agent Intrusion: Hugging Face&rsquo;s Technical Timeline of OpenAI&rsquo;s Accidental Cyberattack</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Simon Willison</span>
+            <span>Late Jul 2026</span>
+          </div>
+          <div class="item-summary">Willison links to Hugging Face&rsquo;s detailed technical post-mortem of an incident in which an OpenAI agentic system unintentionally attacked Hugging Face infrastructure &mdash; a concrete demonstration that agentic pipelines with broad network access can cause inter-organisational harm without deliberate intent, and that standard defences are insufficient for AI-driven CI environments.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://simonwillison.net/2026/Jul/19/ai-mania/" target="_blank" rel="noopener">AI Mania Is Eviscerating Global Decision-Making &mdash; Corporate FOMO Overriding Rigorous Evaluation</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Simon Willison</span>
+            <span>19 Jul 2026</span>
+          </div>
+          <div class="item-summary">Willison amplifies Nik Suresh&rsquo;s analysis arguing that the pressure to deploy AI at speed is causing large organisations to bypass the deliberate evaluation frameworks they would apply to any other significant technology investment &mdash; substituting competitive anxiety for engineering discipline &mdash; with consequences for reliability, safety, and long-term trust in AI systems.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://dentro.de/ai/news/" target="_blank" rel="noopener">EU AI Act High-Risk &amp; Transparency Obligations Activate Tomorrow (2&nbsp;August): What Changes for AI Deployments</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">EU Regulatory / AI News</span>
+            <span>Effective 2 Aug 2026</span>
+          </div>
+          <div class="item-summary">With EU AI Act enforcement of high-risk and transparency obligations beginning on 2 August, regulators gain the authority to demand model access and issue product recalls for systems deployed in health, critical infrastructure, employment, and education contexts; organisations lacking complete conformity documentation face enforcement action from day one.</div>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- Jobs -->
+    <section id="jobs">
+      <h2>Jobs</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.freelancermap.com/projects/switzerland" target="_blank" rel="noopener">Freelancermap CH: Platform Engineer (Z&uuml;rich), Azure Cloud Engineer (Lucerne), WebMethods Specialist (Contract) &mdash; ~309 Active IT Projects</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">freelancermap</span>
+            <span>Jul&ndash;Aug 2026</span>
+          </div>
+          <div class="item-summary">Current Swiss IT contract highlights on freelancermap include a Platform Engineer role in Z&uuml;rich and an Azure Cloud Engineer position in Lucerne &mdash; both posted for August starts via agencies including Hays AG and PROSTAFF Schweiz GmbH &mdash; alongside a WebMethods Specialist contract and roughly 309 total active IT project listings for Switzerland.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://swissdevjobs.ch/" target="_blank" rel="noopener">SwissDevJobs: 345+ Software Developer Roles Open Across Z&uuml;rich, Bern and Baden in July 2026</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">swissdevjobs.ch</span>
+            <span>Jul 2026</span>
+          </div>
+          <div class="item-summary">SwissDevJobs lists more than 345 active software developer positions across Switzerland for July 2026, with the most in-demand skill clusters centering on REST API development, DevOps/cloud infrastructure (Azure, AWS), Java, JavaScript/TypeScript, and SharePoint integration, concentrated in Z&uuml;rich, Bern, and Baden.</div>
+        </li>
+
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>
+    Generated by Claude &middot; 31 July 2026, 07:00 CEST &middot; Sources configured in <a href="../sources.yaml">sources.yaml</a>
+  </footer>
+
+</div>
+</body>
+</html>
