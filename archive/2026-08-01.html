@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Digest &mdash; 1 August 2026</title>
+  <style>
+    :root {
+      --bg: #f9f9f7;
+      --surface: #ffffff;
+      --border: #e2e2da;
+      --text: #1a1a18;
+      --text-secondary: #5a5a52;
+      --accent: #2a5caa;
+      --accent-hover: #1e4380;
+      --section-header-bg: #f0f0ea;
+      --tag-bg: #e8eefc;
+      --tag-text: #2a5caa;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #16161a;
+        --surface: #1e1e24;
+        --border: #2e2e38;
+        --text: #e8e8e0;
+        --text-secondary: #9a9a92;
+        --accent: #6a9de8;
+        --accent-hover: #8db8f0;
+        --section-header-bg: #22222c;
+        --tag-bg: #1e2a48;
+        --tag-text: #6a9de8;
+      }
+    }
+    :root[data-theme="dark"] {
+      --bg: #16161a;
+      --surface: #1e1e24;
+      --border: #2e2e38;
+      --text: #e8e8e0;
+      --text-secondary: #9a9a92;
+      --accent: #6a9de8;
+      --accent-hover: #8db8f0;
+      --section-header-bg: #22222c;
+      --tag-bg: #1e2a48;
+      --tag-text: #6a9de8;
+    }
+    :root[data-theme="light"] {
+      --bg: #f9f9f7;
+      --surface: #ffffff;
+      --border: #e2e2da;
+      --text: #1a1a18;
+      --text-secondary: #5a5a52;
+      --accent: #2a5caa;
+      --accent-hover: #1e4380;
+      --section-header-bg: #f0f0ea;
+      --tag-bg: #e8eefc;
+      --tag-text: #2a5caa;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      font-size: 16px;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); text-decoration: underline; }
+
+    .page-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 4rem;
+    }
+
+    header {
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 1.25rem;
+      margin-bottom: 2rem;
+    }
+    header h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+    header h1 span.date-part {
+      color: var(--text-secondary);
+      font-weight: 400;
+    }
+    .back-link {
+      margin-top: 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+    }
+
+    section {
+      margin-bottom: 2.5rem;
+    }
+    section h2 {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      background: var(--section-header-bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 0.35rem 0.75rem;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+
+    .item-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .item {
+      padding: 0.9rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .item:last-child { border-bottom: none; }
+    .item-title {
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 1.35;
+      margin-bottom: 0.25rem;
+    }
+    .item-title a { color: var(--text); }
+    .item-title a:hover { color: var(--accent); text-decoration: none; }
+    .item-meta {
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.35rem;
+    }
+    .item-source {
+      font-weight: 600;
+      color: var(--tag-text);
+      background: var(--tag-bg);
+      padding: 0.1rem 0.45rem;
+      border-radius: 3px;
+      font-size: 0.73rem;
+      letter-spacing: 0.01em;
+      margin-right: 0.4rem;
+    }
+    .item-summary {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+      padding-top: 1rem;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <header>
+    <h1>Daily Digest &mdash; <span class="date-part">1 August 2026</span></h1>
+    <p class="back-link"><a href="../index.html">&larr; Back to index</a></p>
+  </header>
+
+  <main>
+
+    <!-- Astronomy & Space -->
+    <section id="astronomy-space">
+      <h2>Astronomy &amp; Space</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://science.nasa.gov/blogs/roman/2026/07/27/nasa-fuels-roman-space-telescope-for-late-august-launch/" target="_blank" rel="noopener">Roman Space Telescope Fully Fueled at Kennedy Space Center; Aug 30 Falcon Heavy Launch Confirmed</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">NASA Science Blog</span>
+            <span>30 Jul 2026</span>
+          </div>
+          <div class="item-summary">NASA technicians loaded 290 gallons of hydrazine propellant into the Nancy Grace Roman Space Telescope at KSC&rsquo;s Payload Hazardous Servicing Facility, completing the final major pre-launch milestone; the observatory launches August 30 aboard a SpaceX Falcon Heavy and will survey dark matter, dark energy, and exoplanet populations with a field of view at least 100&times; larger than Hubble&rsquo;s.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.nasa.gov/blogs/spacestation/2026/07/30/spacewalk-preps-bioprinting-and-exercise-research-top-station-schedule/" target="_blank" rel="noopener">NASA Schedules Three ISS Spacewalks in August: Solar Array, Antenna Replacement, and Power Systems</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">NASA / ISS Blog</span>
+            <span>30&ndash;31 Jul 2026</span>
+          </div>
+          <div class="item-summary">Commander Jessica Meir and astronaut Anil Menon will lead EVA-96 on August 6 to prepare for the seventh roll-out solar array (IROSA), augmenting station power; EVA-97 on August 13 replaces the Space-to-Ground antenna; EVA-98 on August 25 connects power-channel cables and data relay systems &mdash; the most concentrated EVA sequence at ISS in years, and the first time a parent-child pair (Anna Menon and Anil Menon) will both have conducted open-space operations.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://science.nasa.gov/solar-system/whats-up-august-2026-skywatching-tips-from-nasa/" target="_blank" rel="noopener">August 12: Total Solar Eclipse, Perseid Peak Under New Moon, and Six-Planet Dawn Alignment Converge</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Sky &amp; Telescope / NASA Science</span>
+            <span>Aug 2026</span>
+          </div>
+          <div class="item-summary">A rare triple convergence falls on August 12: the Moon&rsquo;s shadow crosses Greenland, Iceland, and parts of Spain and Portugal in a total solar eclipse; the Perseid meteor shower peaks that night under a new Moon (50&ndash;70 meteors per hour in dark skies, one of the best Perseid displays in years); and a six-planet alignment stretches across the pre-dawn sky earlier that morning &mdash; making August 12 among the most observationally dense single days of the decade.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://science.nasa.gov/solar-system/whats-up-august-2026-skywatching-tips-from-nasa/" target="_blank" rel="noopener">Partial Lunar Eclipse August 27&ndash;28: Visible Across Americas, Parts of Europe and Africa</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">NASA Science</span>
+            <span>Aug 2026</span>
+          </div>
+          <div class="item-summary">The Full Moon dips through Earth&rsquo;s umbral shadow on the night of August 27&ndash;28, producing a partial lunar eclipse visible without equipment from much of North and South America and portions of Europe and Africa &mdash; the second significant eclipse event of August after the August 12 total solar eclipse.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.quantamagazine.org/physics/" target="_blank" rel="noopener">Quanta: New Calculations Appear to Resolve 25-Year Particle Physics Puzzle &mdash; But Create a Fresh Experimental Clash</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Quanta Magazine</span>
+            <span>29 Jul 2026</span>
+          </div>
+          <div class="item-summary">New theoretical calculations seem to have closed a 25-year-old discrepancy in particle physics, but in doing so they introduce a tension with a separate body of experimental results &mdash; an example of anomaly resolution in one place revealing or sharpening inconsistency in another, a pattern that physicists say often precedes genuine theoretical advances.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.esa.int/Newsroom" target="_blank" rel="noopener">ESA SMILE Mission Completing Commissioning in August; Routine Science Operations to Begin September</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">ESA</span>
+            <span>Jun&ndash;Aug 2026</span>
+          </div>
+          <div class="item-summary">The European-Chinese SMILE (Solar wind Magnetosphere Ionosphere Link Explorer) satellite &mdash; which reached its science orbit in June &mdash; is completing commissioning through August and will begin systematic X-ray imaging of Earth&rsquo;s magnetosphere in September, providing the first sustained view of how the solar wind reshapes the magnetospheric boundary in real time.</div>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- World News -->
+    <section id="world-news">
+      <h2>World News</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.justsecurity.org/150786/early-edition-july-31-2026/" target="_blank" rel="noopener">Trump Board of Peace Announces Hamas Full-Disarmament Deal; Hamas Conditions Execution on Israeli Withdrawal</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Just Security</span>
+            <span>31 Jul 2026</span>
+          </div>
+          <div class="item-summary">The Trump administration&rsquo;s Board of Peace announced it has reached an agreement with Hamas to fully disarm &mdash; called a &ldquo;historic breakthrough&rdquo; by President Trump &mdash; but a senior Hamas official publicly stated that disarmament is contingent on Israel withdrawing first; the overall framework requires independently verified reciprocal steps over seven to eight months, with disarmament expected to begin within the coming weeks if conditions are met.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.democracynow.org/2026/7/30/headlines" target="_blank" rel="noopener">Pentagon Strikes Dozens of IRGC Targets in Iran Including Command Centers and Drone Production Facilities</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Democracy Now! / International Newswires</span>
+            <span>30 Jul 2026</span>
+          </div>
+          <div class="item-summary">The Pentagon confirmed strikes on dozens of Islamic Revolutionary Guard Corps targets inside Iran &mdash; including military command centres and drone manufacturing sites &mdash; in direct retaliation for Iranian-backed attacks on U.S. bases in Jordan, marking a significant escalation in the ongoing U.S.&ndash;Iran military exchange and raising concern among regional allies about further Iranian reprisals.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.justsecurity.org/150786/early-edition-july-31-2026/" target="_blank" rel="noopener">Russia Launches Over 70 Missiles and 280 Drones at Ukraine; Eight Killed; Poland Scrambles Interceptors</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">International Newswires</span>
+            <span>30 Jul 2026</span>
+          </div>
+          <div class="item-summary">Russia launched more than 70 missiles and approximately 280 drones at Ukrainian targets in a sustained overnight barrage that killed at least eight people; Poland scrambled aircraft to secure its airspace as debris approached the border, and Ukrainian officials said the scale of the attack reflects deliberate pressure on a diplomatic track ahead of scheduled international meetings.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.10things.news/p/10-things-global-news-31st-july-2026" target="_blank" rel="noopener">China Politburo Signals Faster Fiscal Expenditure, Holds Back From Sudden Stimulus as Growth Data Weakens</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">10 Things Global News / State Media</span>
+            <span>31 Jul 2026</span>
+          </div>
+          <div class="item-summary">China&rsquo;s Communist Party Politburo agreed at its July meeting to accelerate fiscal spending and &ldquo;effectively expand domestic demand,&rdquo; according to state media, while stopping short of a sudden large-scale stimulus package; the measured response comes as weak second-quarter growth data and persistent soft domestic consumption test the resilience of the world&rsquo;s second-largest economy.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.justsecurity.org/150786/early-edition-july-31-2026/" target="_blank" rel="noopener">At Least 18 Migrants Die Reaching Spanish Ceuta After Thousands Breach Morocco Frontier Fence</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">International Newswires</span>
+            <span>30&ndash;31 Jul 2026</span>
+          </div>
+          <div class="item-summary">At least 18 people died attempting to reach the Spanish enclave of Ceuta after thousands of migrants breached the border fence with Morocco in one of the largest mass crossing events in recent years; Spanish authorities activated emergency protocols and the EU called for increased support, with the incident renewing political pressure over North Africa migration management.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.10things.news/p/10-things-global-news-31st-july-2026" target="_blank" rel="noopener">France Gironde Wildfires Situation &ldquo;Stabilised&rdquo; After Week of 42&deg;C European Heatwave</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">10 Things Global News / International Newswires</span>
+            <span>31 Jul 2026</span>
+          </div>
+          <div class="item-summary">Fire crews in France&rsquo;s Gironde region reported that the wildfire situation had stabilised after more than a week of fires driven by extreme heat reaching 42&nbsp;&deg;C across Europe; European climate scientists cited the 2026 fire season as a measurable expression of accelerating Mediterranean wildfire risk, with the broader France-Spain fire complex having forced hundreds of thousands of evacuations.</div>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- Rugby -->
+    <section id="rugby">
+      <h2>Rugby (Tier-1 Internationals &amp; Major Competitions)</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://en.wikipedia.org/wiki/2026_men%27s_rugby_union_internationals" target="_blank" rel="noopener">All Blacks Confirmed for Eight-Match South Africa Tour: Four Tests vs Springboks Plus URC Club Fixtures</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">World Rugby / International Newswires</span>
+            <span>Jul&ndash;Aug 2026</span>
+          </div>
+          <div class="item-summary">New Zealand have confirmed an eight-match tour of South Africa, headlined by four Tests against the Springboks &mdash; including the fourth at M&amp;T Bank Stadium in Baltimore &mdash; plus fixtures against South African URC franchise sides; the series runs as the Nations Championship August window and is widely seen as the decisive pre-RWC 2027 test of both squads&rsquo; depth.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.world.rugby/news" target="_blank" rel="noopener">Springboks Bolster Front Row: Erasmus Calls Up Stormers Loosehead Mchunu for Argentina and All Blacks Tests</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">World Rugby</span>
+            <span>Jul 2026</span>
+          </div>
+          <div class="item-summary">Rassie Erasmus added Stormers loosehead Ntuthuko Mchunu to the Springboks squad for the Nations Championship Tests against Argentina and New Zealand, describing the two upcoming fixtures as the most significant selection pressure-tests before the 2027 Rugby World Cup squad is finalised.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://en.wikipedia.org/wiki/2026_Nations_Championship" target="_blank" rel="noopener">Ireland Nations Championship Squad: 15 Players Under 10 Caps &mdash; Largest Generational Shift Since 2023 RWC</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Planet Rugby / World Rugby</span>
+            <span>Jul 2026</span>
+          </div>
+          <div class="item-summary">Ireland&rsquo;s 37-man Nations Championship working group includes 15 players with fewer than 10 Test caps &mdash; a dramatic contrast to the 2023 World Cup squad in which the majority were aged over 30 &mdash; signalling a deliberate programme to integrate the next generation before the 2027 tournament in Australia.</div>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- Sailing -->
+    <section id="sailing">
+      <h2>Sailing</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://ilcasailing.org/" target="_blank" rel="noopener">2026 ILCA 4 Youth World Championships Open in Aarhus, Denmark (Aug 1&ndash;9)</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">ILCA / Sail-World</span>
+            <span>1 Aug 2026</span>
+          </div>
+          <div class="item-summary">The 2026 ILCA 4 Youth World Championships begin today in Aarhus, Denmark, running through August 9 and coinciding with the first day the new ILCA 4 MkII sail is class-legal for racing; Aarhus is one of Europe&rsquo;s premier youth sailing venues and the event is expected to draw one of the largest international youth fleets of the August calendar.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://orc.org/europeans2026" target="_blank" rel="noopener">ORC European Championship Set for Klaip&#279;da, Lithuania, August 7&ndash;15: First Baltic Offshore Championship of This Level</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">ORC</span>
+            <span>Aug 2026</span>
+          </div>
+          <div class="item-summary">Lithuania will host its first offshore sailing championship of European scale August 7&ndash;15 in Klaip&#279;da, with a strong international fleet headlined by pre-championship form from RHINO (skipper Saulius Pajarskas); the event is targeting Platinum certification under the Clean Regattas sustainability programme, which would make it the first Baltic offshore event to reach that standard.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.sail-world.com/" target="_blank" rel="noopener">Bay of Palma Regatta Opens August 1&ndash;8: Over 100 Boats from 20 Countries Across Six Classes</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Sail-World / Yachting World</span>
+            <span>1 Aug 2026</span>
+          </div>
+          <div class="item-summary">The Bay of Palma opens its competitive week today with more than 100 boats from approximately 20 countries competing across six classes &mdash; one of the most internationally diverse club regattas on the August calendar and a key proving ground for Mediterranean offshore racing crews in the lead-up to autumn offshore season.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.sail-world.com/news/298229/OKDIA-News-July-2026" target="_blank" rel="noopener">RS Games at Trav&#234;munder Woche (July 31): Sail-World On-Site at Northern Europe&rsquo;s Premier Summer Regatta</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Sail-World</span>
+            <span>31 Jul 2026</span>
+          </div>
+          <div class="item-summary">Sail-World&rsquo;s Mark Jardine covered the RS Games as part of Germany&rsquo;s Trav&#234;munder Woche on July 31, capturing racing footage and sailor interviews at one of Northern Europe&rsquo;s most established summer regatta gatherings, which draws a wide cross-section of RS-class competitors from across the continent.</div>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- Science-Based Lifting -->
+    <section id="science-lifting">
+      <h2>Science-Based Lifting</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://acsm.org/resistance-training-guidelines-update-2026/" target="_blank" rel="noopener">ACSM 2026 Position Stand: Training Close to Failure (2&ndash;3 RIR) Matches Training to Failure for Hypertrophy, with Less Systemic Fatigue</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">ACSM / 2 Minute Medicine</span>
+            <span>2026</span>
+          </div>
+          <div class="item-summary">The ACSM&rsquo;s landmark 2026 Resistance Training Position Stand &mdash; synthesising 137 systematic reviews covering 30,000+ participants &mdash; concluded that stopping sets 2&ndash;3 repetitions from failure (reps in reserve) produces equivalent hypertrophic outcomes to training to volitional failure, while accumulating less systemic fatigue; the guideline recommends at least 10 sets per muscle group per week at any load from 30&ndash;100% 1RM for hypertrophy, and 2&ndash;3 sets at &ge;80% 1RM for strength.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://mennohenselmans.com/" target="_blank" rel="noopener">Henselmans et al.: Modest Carbohydrate Supplementation Does Not Significantly Augment Resistance Training Adaptations in Trained Men</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Menno Henselmans / ResearchGate</span>
+            <span>Jun 2026</span>
+          </div>
+          <div class="item-summary">A controlled study by Menno Henselmans and colleagues found that modest carbohydrate-energy supplementation added to a resistance training programme did not produce meaningfully greater gains in strength or hypertrophy in already-trained men compared with controls, suggesting that carbohydrate periodisation effects may be less significant than often assumed when total energy intake is adequate.</div>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- People Leadership -->
+    <section id="leadership">
+      <h2>People Leadership</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://hbr.org/2026/07/what-60-years-of-data-reveals-about-how-men-and-women-experience-leadership" target="_blank" rel="noopener">HBR: 60 Years of Executive Survey Data Reveal That Attitude Gains on Women in Leadership Have Not Closed the Promotion Gap</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Harvard Business Review</span>
+            <span>Jul 2026</span>
+          </div>
+          <div class="item-summary">HBR replicated a 1965 survey of 2,000 executives every twenty years, finding that while stated support for women in leadership has improved substantially across the six-decade longitudinal dataset, the gap between expressed attitude and actual promotion decisions persists &mdash; and widens at the highest organisational levels &mdash; pointing to structural rather than attitudinal barriers as the primary blockage.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://store.hbr.org/product/harvard-business-review-july-august-2026/BR2604" target="_blank" rel="noopener">HBR Jul/Aug 2026: &ldquo;The False Alignment Trap&rdquo; &mdash; Structured Dissent Protocols as Antidote to Consensus Illusion</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Harvard Business Review</span>
+            <span>Jul/Aug 2026</span>
+          </div>
+          <div class="item-summary">HBR research identifies the &ldquo;false alignment trap&rdquo; &mdash; a dynamic in which teams appear to reach consensus while privately diverging &mdash; and presents evidence-based intervention protocols including structured red-teaming and anonymised pre-mortem processes that reliably expose and reduce hidden disagreement, with field data from financial-services and healthcare organisations.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://sloanreview.mit.edu/topic/leadership/" target="_blank" rel="noopener">MIT Sloan Research: AI Accelerates Individual Work Tasks but Human Judgment Remains Irreplaceable for Trust, Values, and Relationship Decisions</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">MIT Sloan Management Review</span>
+            <span>2026</span>
+          </div>
+          <div class="item-summary">MIT Sloan Management Review research drawing on multiple years of cross-sector evidence finds that while AI tools demonstrably accelerate routine cognitive work, communication and decision-making involving values, trust-building, or ongoing relationships shows no performance gain from AI assistance &mdash; and in some domains shows degraded outcomes when AI-mediated &mdash; reinforcing a competence boundary that current AI architectures do not cross.</div>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- Emotional Intelligence -->
+    <section id="emotional-intelligence">
+      <h2>Emotional Intelligence</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.beautifulminds-newsletter.com/p/research-roundup-august-2026" target="_blank" rel="noopener">Kaufman August 2026 Research Roundup: Emotional Intelligence Peaks Mid-40s; Overall Psychological Functioning Peaks at 55&ndash;60</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Beautiful Minds / Scott Barry Kaufman</span>
+            <span>Aug 2026</span>
+          </div>
+          <div class="item-summary">Scott Barry Kaufman&rsquo;s August research roundup compiles evidence showing that emotional intelligence reaches its peak in the mid-40s, while combined cognitive and personality functioning peaks even later at around 55&ndash;60 &mdash; coinciding with when many people reach senior career positions &mdash; with implications for how organisations should think about the relationship between career stage, EI development, and developmental investment timing.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://journals.sagepub.com/doi/10.1177/15344843251342689" target="_blank" rel="noopener">Systematic Review of 101 Empirical Studies: Leader EI Positively Linked to Performance, Wellbeing, and Retention, Mediated by Trust and Psychological Safety</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Leadership &amp; Organization Development Journal / SAGE</span>
+            <span>2026</span>
+          </div>
+          <div class="item-summary">A comprehensive review of 101 empirical studies published between 1990 and 2021, synthesised in 2026, finds consistent positive associations between leader emotional intelligence and outcomes including team performance, employee wellbeing, and retention; the review identifies trust and psychological safety as the primary mediating variables and recommends EI development programmes be structured around creating conditions for these rather than training EI skills in isolation.</div>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- AI Engineering -->
+    <section id="ai-engineering">
+      <h2>AI Engineering</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://simonwillison.net/2026/Jul/30/luna-price-drop/" target="_blank" rel="noopener">Simon Willison: GPT-5.6 Luna Gets 80% Price Cut, Terra 20% &mdash; Mid-Tier API Access Now Dramatically Cheaper</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Simon Willison&rsquo;s Weblog</span>
+            <span>30 Jul 2026</span>
+          </div>
+          <div class="item-summary">OpenAI slashed pricing on its GPT-5.6 model family &mdash; an 80% reduction on Luna and 20% on Terra &mdash; making the mid-tier model substantially more accessible to individual developers and organisations with cost-sensitive production workloads; Willison notes the speed of the reduction as a sign of competitive pressure at the mid-range frontier.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://simonwillison.net/2026/Jul/28/anatomy-of-a-frontier-lab-agent-intrusion/" target="_blank" rel="noopener">Willison: Hugging Face&rsquo;s Technical Timeline of OpenAI&rsquo;s Accidental July 2026 Cyberattack &mdash; 8 CVEs, JFrog Artifactory Exploit Confirmed</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Simon Willison&rsquo;s Weblog</span>
+            <span>28&ndash;30 Jul 2026</span>
+          </div>
+          <div class="item-summary">Willison covers Hugging Face&rsquo;s detailed post-mortem of the July 2026 incident in which an OpenAI agentic system unintentionally attacked Hugging Face infrastructure; the confirmed exploit vector was a vulnerability in JFrog&rsquo;s Artifactory (8 separate CVEs attributed to OpenAI staff), and Willison describes the document as both a crash-course in modern adversarial security and a concrete demonstration that agentic pipelines with broad network access can cause cross-organisational harm without deliberate intent.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" target="_blank" rel="noopener">EU AI Act: High-Risk System and Transparency Obligations Take Effect August 2 &mdash; Product Recall Authority Activated</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">EU Regulatory</span>
+            <span>Effective 2 Aug 2026</span>
+          </div>
+          <div class="item-summary">From August 2, EU AI Act enforcement of high-risk AI system requirements and transparency obligations is live &mdash; giving regulators authority to demand model access, audit documentation, and issue product recalls for AI systems deployed in health, critical infrastructure, employment, education, and other designated contexts; organisations lacking complete conformity assessment documentation face enforcement action from tomorrow.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.infoq.com/llms/news/" target="_blank" rel="noopener">GitLab 2026 AI Accountability Report: 78% of Developers Code Faster with AI, But Overall Delivery Velocity Unchanged &mdash; an &ldquo;AI Paradox&rdquo;</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">GitLab / InfoQ</span>
+            <span>2026</span>
+          </div>
+          <div class="item-summary">GitLab&rsquo;s 2026 AI Accountability Report finds that while 78% of developers report faster individual coding with AI assistance, software delivery velocity at the organisational level has not accelerated due to downstream bottlenecks in testing, security review, and code review &mdash; a result the report terms the &ldquo;AI Paradox,&rdquo; with implications for where organisations should invest to convert individual gains into system-level improvement.</div>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- Jobs -->
+    <section id="jobs">
+      <h2>Jobs</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.freelancermap.com/projects/switzerland" target="_blank" rel="noopener">Freelancermap CH: 628+ Active IT Projects &mdash; BSI Developer (CRM/Banking, Z&uuml;rich), Java+AWS Lead Architects (Switzerland, Hybrid)</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">freelancermap</span>
+            <span>Aug 2026</span>
+          </div>
+          <div class="item-summary">Current Swiss IT contract highlights include a BSI Developer (CRM/Banking) role in Z&uuml;rich with an August 2026 start date and Lead Developer / Senior Solutions Architect positions requiring Java and core AWS services in a hybrid Switzerland arrangement; 628+ total active IT projects listed for Switzerland across all skill levels.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://swissdevjobs.ch/" target="_blank" rel="noopener">SwissDevJobs: 193 Open Software Developer Roles in Switzerland &mdash; REST API, DevOps, Java, TypeScript Leading Demand; Salaries to 165 KCHF</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">swissdevjobs.ch</span>
+            <span>Aug 2026</span>
+          </div>
+          <div class="item-summary">SwissDevJobs lists 193 active software developer positions across Switzerland, with the highest demand in REST API development, DevOps/cloud infrastructure (Azure, AWS), Java, and TypeScript/JavaScript; roles concentrated in Z&uuml;rich, Bern, and Baden, with senior-level packages reaching 165,000 CHF; the platform publishes full tech stacks and salary ranges with each listing.</div>
+        </li>
+
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>
+    Generated by Claude &middot; 1 August 2026, 07:00 CEST &middot; Sources configured in <a href="../sources.yaml">sources.yaml</a>
+  </footer>
+
+</div>
+</body>
+</html>
