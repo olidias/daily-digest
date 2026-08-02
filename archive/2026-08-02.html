@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Digest &mdash; 2 August 2026</title>
+  <style>
+    :root {
+      --bg: #f9f9f7;
+      --surface: #ffffff;
+      --border: #e2e2da;
+      --text: #1a1a18;
+      --text-secondary: #5a5a52;
+      --accent: #2a5caa;
+      --accent-hover: #1e4380;
+      --section-header-bg: #f0f0ea;
+      --tag-bg: #e8eefc;
+      --tag-text: #2a5caa;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #16161a;
+        --surface: #1e1e24;
+        --border: #2e2e38;
+        --text: #e8e8e0;
+        --text-secondary: #9a9a92;
+        --accent: #6a9de8;
+        --accent-hover: #8db8f0;
+        --section-header-bg: #22222c;
+        --tag-bg: #1e2a48;
+        --tag-text: #6a9de8;
+      }
+    }
+    :root[data-theme="dark"] {
+      --bg: #16161a;
+      --surface: #1e1e24;
+      --border: #2e2e38;
+      --text: #e8e8e0;
+      --text-secondary: #9a9a92;
+      --accent: #6a9de8;
+      --accent-hover: #8db8f0;
+      --section-header-bg: #22222c;
+      --tag-bg: #1e2a48;
+      --tag-text: #6a9de8;
+    }
+    :root[data-theme="light"] {
+      --bg: #f9f9f7;
+      --surface: #ffffff;
+      --border: #e2e2da;
+      --text: #1a1a18;
+      --text-secondary: #5a5a52;
+      --accent: #2a5caa;
+      --accent-hover: #1e4380;
+      --section-header-bg: #f0f0ea;
+      --tag-bg: #e8eefc;
+      --tag-text: #2a5caa;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      font-size: 16px;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); text-decoration: underline; }
+
+    .page-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 4rem;
+    }
+
+    header {
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 1.25rem;
+      margin-bottom: 2rem;
+    }
+    header h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+    header h1 span.date-part {
+      color: var(--text-secondary);
+      font-weight: 400;
+    }
+    .back-link {
+      margin-top: 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+    }
+
+    section {
+      margin-bottom: 2.5rem;
+    }
+    section h2 {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      background: var(--section-header-bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 0.35rem 0.75rem;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+
+    .item-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .item {
+      padding: 0.9rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .item:last-child { border-bottom: none; }
+    .item-title {
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 1.35;
+      margin-bottom: 0.25rem;
+    }
+    .item-title a { color: var(--text); }
+    .item-title a:hover { color: var(--accent); text-decoration: none; }
+    .item-meta {
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.35rem;
+    }
+    .item-source {
+      font-weight: 600;
+      color: var(--tag-text);
+      background: var(--tag-bg);
+      padding: 0.1rem 0.45rem;
+      border-radius: 3px;
+      font-size: 0.73rem;
+      letter-spacing: 0.01em;
+      margin-right: 0.4rem;
+    }
+    .item-summary {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+      padding-top: 1rem;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <header>
+    <h1>Daily Digest &mdash; <span class="date-part">2 August 2026</span></h1>
+    <p class="back-link"><a href="../index.html">&larr; Back to index</a></p>
+  </header>
+
+  <main>
+
+    <!-- Astronomy & Space -->
+    <section id="astronomy-space">
+      <h2>Astronomy &amp; Space</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://science.nasa.gov/blogs/roman/2026/07/27/nasa-fuels-roman-space-telescope-for-late-august-launch/" target="_blank" rel="noopener">Roman Space Telescope Fully Fueled; Aug 30 Falcon Heavy Launch Confirmed</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">NASA Science Blog</span>
+            <span>27 Jul 2026</span>
+          </div>
+          <div class="item-summary">Propellant loading is complete at Kennedy Space Center&rsquo;s Payload Hazardous Servicing Facility, marking the final major pre-launch milestone; the Nancy Grace Roman Space Telescope launches August 30 on a SpaceX Falcon Heavy and will survey dark matter, dark energy, and exoplanet populations with a field of view more than 100&times; wider than Hubble&rsquo;s.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://science.nasa.gov/solar-system/whats-up-august-2026-skywatching-tips-from-nasa/" target="_blank" rel="noopener">August 12: Total Solar Eclipse + Perseid Peak Under New Moon &mdash; Rare Double-Header</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">NASA Science</span>
+            <span>Aug 2026</span>
+          </div>
+          <div class="item-summary">A total solar eclipse crosses northern Russia, Greenland, Iceland, and northern Spain on August 12 (first totality on the Spanish mainland since 1905), and the Perseid meteor shower peaks the same night under a new Moon &mdash; 50&ndash;70 meteors per hour in dark skies &mdash; making it one of the most observationally dense single days of the decade; a partial lunar eclipse follows on August 27&ndash;28.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://apod.nasa.gov/apod/" target="_blank" rel="noopener">APOD 1 August: Buck Moon Rising with Belt of Venus</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Astronomy Picture of the Day</span>
+            <span>1 Aug 2026</span>
+          </div>
+          <div class="item-summary">Yesterday&rsquo;s Astronomy Picture of the Day featured July&rsquo;s full Buck Moon rising above the horizon framed by the pink-purple Belt of Venus &mdash; the shadow-cast anti-twilight arc visible opposite the setting Sun during the moments just after sunset.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://skyandtelescope.org/astronomy-news/" target="_blank" rel="noopener">First Helium Atmosphere Detected on a Rocky Planet</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Sky &amp; Telescope</span>
+            <span>Jul&ndash;Aug 2026</span>
+          </div>
+          <div class="item-summary">A team of astronomers detected helium escaping from the upper atmosphere of a rocky exoplanet, marking the first confirmed atmospheric detection on a terrestrial-sized world and opening a new spectroscopic pathway for probing rocky-planet atmospheres with JWST and future observatories.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://skyandtelescope.org/astronomy-news/" target="_blank" rel="noopener">Jupiter-Mass Planet Found Orbiting a Brown Dwarf Orbiting a Star &mdash; Unusual Hierarchical Triple</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Sky &amp; Telescope</span>
+            <span>Jul&ndash;Aug 2026</span>
+          </div>
+          <div class="item-summary">Astronomers discovered a planet with roughly Jupiter&rsquo;s mass orbiting a brown dwarf that in turn orbits a sun-like star, creating a three-body hierarchy that challenges current planet and brown-dwarf formation models and raises questions about stability over billion-year timescales.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.quantamagazine.org/physics/" target="_blank" rel="noopener">Quanta: New Calculations Resolve 25-Year Particle Physics Puzzle &mdash; But Expose Fresh Experimental Tension</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Quanta Magazine</span>
+            <span>29 Jul 2026</span>
+          </div>
+          <div class="item-summary">Theoretical calculations appear to close a longstanding discrepancy in particle physics, yet in resolving one anomaly they surface a new clash with other experimental results &mdash; a pattern Quanta notes often precedes genuine advances in the underlying theory.</div>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- World News -->
+    <section id="world-news">
+      <h2>World News</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.reuters.com/world/" target="_blank" rel="noopener">Ukraine Front Lines: Russia Continues Grinding Advance; Ceasefire Talks Remain Stalled</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Reuters World</span>
+            <span>Aug 2026</span>
+          </div>
+          <div class="item-summary">Ukraine remains on the defensive following the loss of its Kursk foothold in spring; Russian forces continue incremental advances along the eastern and southern front with no viable ceasefire framework currently under active negotiation.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.reuters.com/world/" target="_blank" rel="noopener">US-Iran Talks Target 20-Year Uranium Enrichment Pause; Regional Tensions Remain Elevated</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Reuters World</span>
+            <span>Aug 2026</span>
+          </div>
+          <div class="item-summary">Intensive US-Iran negotiations are pursuing an agreement to pause Iranian uranium enrichment for up to 20 years, alongside rare direct Lebanon-Israel talks in Washington, both described as the most significant Middle East diplomatic initiatives in years despite strong opposition from Hezbollah.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.economist.com/latest" target="_blank" rel="noopener">NATO 5% Defence Spending Target Sharpens East-West European Rift</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">The Economist</span>
+            <span>Aug 2026</span>
+          </div>
+          <div class="item-summary">Debate over a proposed NATO commitment to spend 5% of GDP on defence is deepening the alliance&rsquo;s internal divisions, with Eastern European members broadly in favour and Western European governments facing public fatigue and high debt levels pushing back on the target&rsquo;s timeline and enforceability.</div>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- Rugby -->
+    <section id="rugby">
+      <h2>Rugby</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.planetrugby.com/news/rugbys-greatest-rivalry-details-of-all-blacks-eight-game-tour-of-south-africa-confirmed" target="_blank" rel="noopener">All Blacks Begin Eight-Match South Africa Tour on August 7 &mdash; Four Springbok Tests at Iconic Venues</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">World Rugby / Planet Rugby</span>
+            <span>Aug 2026</span>
+          </div>
+          <div class="item-summary">New Zealand opens its first major South Africa tour in 30 years on August 7 against the Stormers in Cape Town, followed by provincial matches against the Sharks, Bulls, and Lions; four Springbok Tests are staged at Ellis Park, DHL Stadium, FNB Stadium (94,000 seats), and a yet-to-be-confirmed neutral venue &mdash; SANZAAR suspended the Rugby Championship in 2026 to accommodate the full schedule.</div>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- Sailing -->
+    <section id="sailing">
+      <h2>Sailing</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.sail-world.com/news/298456/" target="_blank" rel="noopener">ILCA 4 &amp; 6 Youth World Championships Open in Aarhus &mdash; 877 Sailors from 56 Nations</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Sail-World</span>
+            <span>1&ndash;19 Aug 2026</span>
+          </div>
+          <div class="item-summary">The 2026 ILCA Youth World Championships opened August 1 in Aarhus, Denmark with the largest fleet in event history competing across the Laser 4.7 and Laser Radial classes; racing runs through August 19.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.sail-world.com/news/297996/" target="_blank" rel="noopener">RORC Round Britain &amp; Ireland Race Starts August 9 &mdash; Next Generation Steps Up</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Sail-World</span>
+            <span>Aug 2026</span>
+          </div>
+          <div class="item-summary">The Royal Ocean Racing Club&rsquo;s Round Britain and Ireland Race departs August 9, with organisers noting a notably young average crew age across the fleet that signals a generational shift in elite offshore passage racing.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.sail-world.com/news/298321/" target="_blank" rel="noopener">ORC European Championship Opens in Klaip&#279;da, Lithuania &mdash; August 7&ndash;15</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Sail-World</span>
+            <span>7&ndash;15 Aug 2026</span>
+          </div>
+          <div class="item-summary">Klaip&#279;da hosts the 2026 ORC European Championship on the Baltic Sea, with rating-rule racing across multiple offshore classes over nine days.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.sail-world.com/news/297831/All-nations-confirmed-for-2026-Team-Racing-Worlds" target="_blank" rel="noopener">All 12 Nations Confirmed for Team Racing World Championship in Stockholm, August 12&ndash;16</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Sail-World</span>
+            <span>Aug 2026</span>
+          </div>
+          <div class="item-summary">The keelboat Team Racing World Championship convenes in Stockholm with all twelve qualified nations confirmed; the format pairs three-boat teams in close-quarters tactical racing where blocking and mark-rounding strategy often determine outcomes over boatspeed.</div>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- Science-Based Lifting -->
+    <section id="lifting">
+      <h2>Science-Based Lifting</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.strongerbyscience.com/high-volume-vs-high-intensity/" target="_blank" rel="noopener">High Volume vs High Intensity: Meta-Analyses Consistently Favour 10+ Weekly Sets per Muscle Group for Hypertrophy</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Stronger By Science</span>
+          </div>
+          <div class="item-summary">A new Stronger by Science analysis consolidates meta-analytic evidence showing that weekly set volume per muscle group is a stronger predictor of hypertrophy than load intensity when volume is equated, with diminishing returns evident above roughly 30&ndash;40 sets per week.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.strongerbyscience.com/eccentric-overload-training/" target="_blank" rel="noopener">Does Eccentric Overload Training Enhance Muscle Growth? SBS Weighs the Evidence</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Stronger By Science</span>
+          </div>
+          <div class="item-summary">Eccentric emphasis during resistance training confers a modest hypertrophy advantage over standard loading in several muscle groups, though the magnitude varies and the evidence does not consistently support eccentric-only protocols as superior on a set-for-set basis.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.strongerbyscience.com/protein-timing-muscle-gain/" target="_blank" rel="noopener">Protein Timing and Muscle Gain: Systematic Review Finds Weak Independent Effect</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Stronger By Science</span>
+          </div>
+          <div class="item-summary">A systematic review covered by Stronger by Science finds that the timing of protein intake relative to training has a small and inconsistent effect on muscle accretion compared to total daily protein intake, calling into question the practical significance of the post-workout &ldquo;anabolic window.&rdquo;</div>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- People Leadership -->
+    <section id="leadership">
+      <h2>People Leadership</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://sloanreview.mit.edu/article/level-up-your-crisis-management-skills/" target="_blank" rel="noopener">MIT Sloan: Seven Practices Separate Leaders Who Manage Crises from Those Who Don&rsquo;t</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">MIT Sloan Management Review</span>
+            <span>Summer 2026</span>
+          </div>
+          <div class="item-summary">Research from in-depth interviews with a former prime minister, multiple CEOs, and board chairs identifies seven learnable crisis-management practices &mdash; the &ldquo;7C&rsquo;s&rdquo;: contingency planning, cross-functional coordination, transparent communication, compassion, confronting hard truths, control, and continuity &mdash; and finds that effective crisis leadership is acquired rather than innate.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://sloanreview.mit.edu/article/our-guide-to-the-summer-2026-issue/" target="_blank" rel="noopener">MIT Sloan: &ldquo;AI Spine&rdquo; Governance Model Accelerates Enterprise GenAI Adoption</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">MIT Sloan Management Review</span>
+            <span>Summer 2026</span>
+          </div>
+          <div class="item-summary">Field research in the Summer 2026 issue finds that firms establishing a cross-functional &ldquo;AI spine&rdquo; &mdash; a coordination layer connecting domain experts, end users, and technical teams across business units &mdash; consistently expand both scope and quality of GenAI deployment compared to organisations operating siloed AI teams.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://sloanreview.mit.edu/topic/leadership/" target="_blank" rel="noopener">MIT Sloan Research: GenAI Boosts Strong Entrepreneurs, Hurts Weaker Ones</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">MIT Sloan Management Review</span>
+            <span>Summer 2026</span>
+          </div>
+          <div class="item-summary">A new study finds that GenAI assistance improves outcomes for already-high-performing entrepreneurs but degrades performance for weaker ones, apparently because evaluating the quality of AI-generated business advice requires the same strategic judgement the tool is meant to supplement.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://hbr.org/2026/07/what-60-years-of-data-reveals-about-how-men-and-women-experience-leadership" target="_blank" rel="noopener">HBR: 60 Years of Data on Gender in Leadership &mdash; What Has and Hasn&rsquo;t Changed</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">HBR Leadership</span>
+            <span>10 Jul 2026</span>
+          </div>
+          <div class="item-summary">Replicating the landmark 1965 Harvard Business Review survey across four data points spanning six decades, researchers show which leadership stereotypes have persisted, which have eroded, and where the most durable perception gaps between male and female leaders remain despite structural changes to the workplace.</div>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- Emotional Intelligence -->
+    <section id="emotional-intelligence">
+      <h2>Emotional Intelligence</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://greatergood.berkeley.edu/articles" target="_blank" rel="noopener">Research: &ldquo;Microkindnesses&rdquo; Spread Through Social Networks and Have Outsized Impact on Belonging</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Greater Good Magazine (UC Berkeley)</span>
+            <span>16 Jul 2026</span>
+          </div>
+          <div class="item-summary">A study covered by Greater Good finds that small prosocial acts &mdash; a smile, brief encouragement, holding a door &mdash; propagate from person to person through social networks and produce a disproportionately large effect on recipients&rsquo; sense of connection and belonging relative to the effort cost to the initiator.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.apa.org/monitor/2026/2026-07-08-monitor.pdf" target="_blank" rel="noopener">APA Monitor Jul&ndash;Aug 2026: AI De-Skilling Concerns, Animal-Assisted Therapy Evidence, Volunteering Research</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">APA Monitor on Psychology</span>
+            <span>Jul&ndash;Aug 2026</span>
+          </div>
+          <div class="item-summary">The July&ndash;August 2026 Monitor covers emerging concern that routine AI tool use may erode clinical reasoning skills in therapists, summarises a new evidence base for structured animal-assisted therapy protocols, and reviews research on volunteering as a behavioural intervention with measurable psychological benefits.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://greatergood.berkeley.edu/articles" target="_blank" rel="noopener">Self-Compassion Improves Coping Effectiveness, Meta-Analysis Finds</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Greater Good Magazine (UC Berkeley)</span>
+            <span>2026</span>
+          </div>
+          <div class="item-summary">Meta-analytic data cited by Greater Good shows that higher self-compassion is associated with greater use of adaptive coping strategies &mdash; problem-solving and cognitive reframing over avoidance &mdash; with downstream improvements in emotional wellbeing across stress contexts.</div>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- AI Engineering -->
+    <section id="ai-engineering">
+      <h2>AI Engineering</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://blog.modelcontextprotocol.io/posts/2026-07-28/" target="_blank" rel="noopener">MCP 2026-07-28: Largest Protocol Revision Since Launch &mdash; Stateless Core, Multi-Round-Trip, Header Routing</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Model Context Protocol</span>
+            <span>28 Jul 2026</span>
+          </div>
+          <div class="item-summary">The 2026-07-28 MCP specification replaces the protocol&rsquo;s stateful session model with a self-contained request-response core, adds multi-round-trip request capability, header-based routing, cacheable list results, and authorization hardening; beta SDKs for Python, TypeScript, Go, and C# are available now, with Python v2 renaming FastMCP to MCPServer and TypeScript v2 splitting into focused packages.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://simonwillison.net/2026/Aug/1/ten-advances-in-mathematics/" target="_blank" rel="noopener">Simon Willison: Ten Recent Advances in Mathematics and Theoretical Computer Science</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Simon Willison&rsquo;s Weblog</span>
+            <span>1 Aug 2026</span>
+          </div>
+          <div class="item-summary">Willison curates ten significant recent breakthroughs spanning mathematics and theoretical computer science &mdash; including combinatorics, complexity theory, and formal methods &mdash; as a reading guide for engineers interested in the mathematical foundations underlying modern computing.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://simonwillison.net/" target="_blank" rel="noopener">OpenAI GPT-5.6 Pricing Cuts: Terra &minus;20%, Luna &minus;80%</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Simon Willison&rsquo;s Weblog</span>
+            <span>31 Jul 2026</span>
+          </div>
+          <div class="item-summary">OpenAI cut prices for its GPT-5.6 family on July 31, reducing the Terra tier by 20% and the lighter Luna tier by 80%, continuing a pattern of aggressive commodity pricing that Willison argues is reshaping the economics of AI-powered product development.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://simonwillison.net/" target="_blank" rel="noopener">New await context.browser_task() API Lets Agents Execute JavaScript in the User&rsquo;s Browser</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">Simon Willison&rsquo;s Weblog</span>
+            <span>Aug 2026</span>
+          </div>
+          <div class="item-summary">Willison describes a new <code>await context.browser_task()</code> mechanism that allows agentic tool plugins to run custom JavaScript directly in the end-user&rsquo;s browser context, enabling Datasette agent plugins to query live DOM state and client-side data within an agent loop.</div>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- Jobs -->
+    <section id="jobs">
+      <h2>Jobs</h2>
+      <ul class="item-list">
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://www.freelancermap.com/projects/switzerland" target="_blank" rel="noopener">Freelancermap Switzerland: Fullstack (Z&uuml;rich), Platform Engineer (Bern/Zug 40&ndash;100% Remote), SDET (Bern 60% Remote)</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">freelancermap</span>
+            <span>Aug 2026</span>
+          </div>
+          <div class="item-summary">Active Swiss freelance projects include web/backend fullstack roles in Z&uuml;rich, infrastructure and platform engineering in Bern and Zug with significant remote flexibility, and a Software Developer in Test position in Bern at 60% remote.</div>
+        </li>
+
+        <li class="item">
+          <div class="item-title">
+            <a href="https://swissdevjobs.ch/" target="_blank" rel="noopener">SwissDevJobs.ch: 193 Active IT &amp; Developer Jobs &mdash; Salaries to CHF&nbsp;165,000, Stack &amp; Canton Filters</a>
+          </div>
+          <div class="item-meta">
+            <span class="item-source">swissdevjobs.ch</span>
+            <span>Aug 2026</span>
+          </div>
+          <div class="item-summary">Switzerland&rsquo;s developer-focused job board lists 193 active positions across software engineering, DevOps, ML, and QA roles with transparent salary data up to CHF&nbsp;165,000 and filters for technology stack, canton, and remote/hybrid arrangement.</div>
+        </li>
+
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Generated at 07:05 CET on 2 August 2026 &mdash; sources: NASA, ESA, Sky &amp; Telescope, Quanta Magazine, Reuters, World Rugby / Planet Rugby, Sail-World, Stronger by Science, MIT Sloan Management Review, Harvard Business Review, Greater Good Science Center (UC Berkeley), APA Monitor on Psychology, Model Context Protocol Blog, Simon Willison&rsquo;s Weblog, freelancermap, SwissDevJobs.ch. RSS feeds unavailable; content sourced via web search.</p>
+  </footer>
+
+</div>
+</body>
+</html>
