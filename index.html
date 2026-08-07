@@ -6,523 +6,478 @@
 <title>Daily Digest</title>
 <style>
   :root {
-    --bg: #fafaf7;
-    --fg: #1a1a1a;
-    --muted: #666;
-    --accent: #2a5a8a;
-    --border: #e5e5e0;
-    --card: #ffffff;
+    --bg: #fafafa;
+    --surface: #ffffff;
+    --border: #e0e0e0;
+    --text: #1a1a1a;
+    --muted: #666666;
+    --accent: #1a56db;
+    --accent-hover: #1143b5;
+    --tag-bg: #eef2ff;
+    --tag-color: #3730a3;
+    --header-bg: #0f172a;
+    --header-fg: #f8fafc;
+    --section-border: #3b82f6;
+    --archive-border: #94a3b8;
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #161616;
-      --fg: #e8e8e8;
-      --muted: #999;
-      --accent: #7ab0e0;
-      --border: #2a2a2a;
-      --card: #1f1f1f;
+      --bg: #0f172a;
+      --surface: #1e293b;
+      --border: #334155;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --accent: #60a5fa;
+      --accent-hover: #93c5fd;
+      --tag-bg: #1e3a5f;
+      --tag-color: #93c5fd;
+      --header-bg: #020617;
+      --header-fg: #f1f5f9;
+      --section-border: #3b82f6;
+      --archive-border: #475569;
     }
   }
   :root[data-theme="dark"] {
-    --bg: #161616; --fg: #e8e8e8; --muted: #999; --accent: #7ab0e0; --border: #2a2a2a; --card: #1f1f1f;
+    --bg: #0f172a;
+    --surface: #1e293b;
+    --border: #334155;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --accent: #60a5fa;
+    --accent-hover: #93c5fd;
+    --tag-bg: #1e3a5f;
+    --tag-color: #93c5fd;
+    --header-bg: #020617;
+    --header-fg: #f1f5f9;
+    --section-border: #3b82f6;
+    --archive-border: #475569;
   }
   :root[data-theme="light"] {
-    --bg: #fafaf7; --fg: #1a1a1a; --muted: #666; --accent: #2a5a8a; --border: #e5e5e0; --card: #ffffff;
+    --bg: #fafafa;
+    --surface: #ffffff;
+    --border: #e0e0e0;
+    --text: #1a1a1a;
+    --muted: #666666;
+    --accent: #1a56db;
+    --accent-hover: #1143b5;
+    --tag-bg: #eef2ff;
+    --tag-color: #3730a3;
+    --header-bg: #0f172a;
+    --header-fg: #f8fafc;
+    --section-border: #3b82f6;
+    --archive-border: #94a3b8;
   }
-  * { box-sizing: border-box; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
-    font-family: ui-serif, Georgia, "Times New Roman", serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     background: var(--bg);
-    color: var(--fg);
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 2rem 1.25rem 4rem;
-    line-height: 1.55;
-    font-size: 17px;
+    color: var(--text);
+    line-height: 1.6;
+    font-size: 16px;
   }
-  a { color: var(--accent); }
   header {
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 1.25rem;
-    margin-bottom: 2rem;
+    background: var(--header-bg);
+    color: var(--header-fg);
+    padding: 2rem 1.5rem;
+    text-align: center;
   }
-  h1 {
-    font-size: 1.85rem;
-    margin: 0 0 .25rem;
-    font-weight: 600;
-    letter-spacing: -0.01em;
+  header h1 { font-size: 1.6rem; font-weight: 700; letter-spacing: -0.02em; }
+  header p { margin-top: 0.35rem; font-size: 0.9rem; opacity: 0.7; }
+  main { max-width: 760px; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
+  section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--section-border);
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1.5rem;
   }
-  .date {
-    color: var(--muted);
-    font-size: 0.95rem;
-    font-family: ui-sans-serif, system-ui, sans-serif;
-  }
-  h2 {
-    font-size: 1.05rem;
-    margin: 2.25rem 0 .75rem;
-    font-family: ui-sans-serif, system-ui, sans-serif;
+  section h2 {
+    font-size: 1rem;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.06em;
+    color: var(--muted);
+    margin-bottom: 1rem;
+  }
+  .item { padding: 0.75rem 0; border-bottom: 1px solid var(--border); }
+  .item:last-child { border-bottom: none; padding-bottom: 0; }
+  .item:first-child { padding-top: 0; }
+  .item a {
+    font-weight: 600;
     color: var(--accent);
-    font-weight: 600;
-  }
-  section { margin-bottom: 1.5rem; }
-  .item {
-    padding: .85rem 0;
-    border-bottom: 1px solid var(--border);
-  }
-  .item:last-child { border-bottom: none; }
-  .item-title {
-    font-weight: 600;
-    margin: 0 0 .25rem;
-    font-size: 1rem;
-    line-height: 1.35;
-  }
-  .item-title a {
-    color: var(--fg);
     text-decoration: none;
+    font-size: 0.975rem;
+    display: block;
+    margin-bottom: 0.2rem;
   }
-  .item-title a:hover {
-    color: var(--accent);
-    text-decoration: underline;
-  }
-  .item-meta {
-    font-size: 0.82rem;
+  .item a:hover { color: var(--accent-hover); text-decoration: underline; }
+  .item .meta {
+    font-size: 0.78rem;
     color: var(--muted);
-    font-family: ui-sans-serif, system-ui, sans-serif;
-    margin-bottom: .3rem;
+    margin-bottom: 0.3rem;
   }
-  .item-summary {
-    margin: 0;
-    font-size: 0.92rem;
-    color: var(--fg);
+  .item .meta .source {
+    display: inline-block;
+    background: var(--tag-bg);
+    color: var(--tag-color);
+    border-radius: 4px;
+    padding: 1px 7px;
+    font-weight: 600;
+    font-size: 0.75rem;
+    margin-right: 0.4rem;
   }
-  .window-note {
-    font-size: 0.83rem;
-    color: var(--muted);
-    font-family: ui-sans-serif, system-ui, sans-serif;
-    margin: -.25rem 0 .6rem;
-  }
-  /* Archive */
+  .item p { font-size: 0.9rem; color: var(--text); }
+
+  /* Archive section */
   .archive-section {
-    margin-top: 3.5rem;
-    padding-top: 1.5rem;
-    border-top: 2px solid var(--border);
+    background: var(--surface);
+    border: 1px solid var(--archive-border);
+    border-left: 4px solid var(--archive-border);
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    margin-top: 2.5rem;
   }
-  .archive-section h2 { margin-top: 0; }
-  .archive-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  .archive-section h2 {
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    margin-bottom: 1rem;
   }
-  .archive-list li {
-    padding: .5rem 0;
-    border-bottom: 1px solid var(--border);
-    font-family: ui-sans-serif, system-ui, sans-serif;
-    font-size: 0.9rem;
-  }
+  .archive-list { list-style: none; }
+  .archive-list li { padding: 0.4rem 0; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
   .archive-list li:last-child { border-bottom: none; }
-  .archive-list a {
-    color: var(--accent);
-    text-decoration: none;
-    font-weight: 600;
-  }
+  .archive-list a { color: var(--accent); text-decoration: none; }
   .archive-list a:hover { text-decoration: underline; }
-  .archive-summary {
-    color: var(--muted);
-    font-size: 0.83rem;
-    margin-left: .4rem;
-  }
+  .archive-list .arch-date { font-weight: 600; }
+  .archive-list .arch-topics { color: var(--muted); font-size: 0.82rem; margin-left: 0.5rem; }
+
   footer {
-    margin-top: 3rem;
-    padding-top: 1.25rem;
-    border-top: 1px solid var(--border);
-    font-size: 0.82rem;
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: 0.8rem;
     color: var(--muted);
-    font-family: ui-sans-serif, system-ui, sans-serif;
+    border-top: 1px solid var(--border);
   }
-  footer a { color: var(--muted); }
 </style>
 </head>
 <body>
+
 <header>
   <h1>Daily Digest</h1>
-  <div class="date">6 August 2026 &mdash; <a href="./archive/2026-08-06.html">view standalone</a></div>
+  <p>Science-first · Curated · Automated each morning</p>
 </header>
 
-<section>
-  <h2>Astronomy &amp; Space</h2>
-  <p class="window-note">Sources: NSO, NASA, EurekAlert, Sky&amp;Telescope &middot; 36-hour lookback</p>
+<main>
 
-  <div class="item">
-    <p class="item-title"><a href="https://www.eurekalert.org/news-releases/1138745">Inouye Solar Telescope Detects Kelvin-Helmholtz Instability on the Sun&rsquo;s Visible Surface for the First Time</a></p>
-    <p class="item-meta">NSO / EurekAlert &middot; 5 Aug 2026 &middot; Published in <em>Nature</em></p>
-    <p class="item-summary">Using the NSF Daniel K. Inouye Solar Telescope on Haleakal&#257;, an international team found the first-ever signature of Kelvin-Helmholtz instability&mdash;tiny swirling patterns analogous to ocean wave-breaking&mdash;at the boundaries of magnetic structures on the Sun&rsquo;s photosphere; the discovery may explain why the corona is orders-of-magnitude hotter than the surface and how magnetic energy accumulates before solar flares and eruptions that can affect satellite and power-grid infrastructure on Earth.</p>
+  <!-- TODAY'S DIGEST: 7 August 2026 -->
+
+  <section>
+    <h2>🔭 Astronomy &amp; Space — 7 Aug 2026</h2>
+
+    <div class="item">
+      <a href="archive/2026-08-07.html#space1" target="_blank" rel="noopener">ISS U.S. Spacewalk #96: Solar Array Upgrade Prep Complete</a>
+      <div class="meta"><span class="source">NASA</span> 6 Aug 2026</div>
+      <p>Jessica Meir and Anil Menon completed a 6 h 27 min EVA to prepare the 3B power channel for future IROSA solar array installation, supporting ISS deorbit schedule.</p>
+    </div>
+
+    <div class="item">
+      <a href="https://skyandtelescope.org/astronomy-news/inouye-solar-telescope-sees-the-sun-closer-than-ever/" target="_blank" rel="noopener">Inouye Solar Telescope Reveals Kelvin-Helmholtz Instability on Sun's Surface</a>
+      <div class="meta"><span class="source">Sky &amp; Telescope / Nature</span> 5 Aug 2026</div>
+      <p>New highest-resolution photosphere images (416 nm) show magnetic-element boundaries and stripes consistent with Kelvin-Helmholtz instability — first observation at this scale on the solar surface; published in <em>Nature</em>.</p>
+    </div>
+
+    <div class="item">
+      <a href="https://skyandtelescope.org/astronomy-press-releases/a-banner-year-for-the-perseid-meteor-shower/" target="_blank" rel="noopener">2026 Perseids: New Moon Coincides with Peak for Near-Ideal Conditions</a>
+      <div class="meta"><span class="source">Sky &amp; Telescope</span> Aug 2026</div>
+      <p>Peak Aug 12–13 with new moon at 17:37 UTC Aug 12 eliminating moonlight; 50+ meteors/hour forecast under dark skies.</p>
+    </div>
+
+  </section>
+
+  <section>
+    <h2>🌍 World News — 7 Aug 2026</h2>
+
+    <div class="item">
+      <a href="https://www.cnn.com/2026/08/05/world/live-news/iran-war-trump" target="_blank" rel="noopener">Strait of Hormuz: Iran-Oman Agree Safe-Route Coordinates as Convoy Traffic Resumes</a>
+      <div class="meta"><span class="source">CNN / Lloyd's List Intelligence</span> 5–6 Aug 2026</div>
+      <p>Iran and Oman agreed on geographic coordinates for a proposed safe shipping corridor; weekly transits rising (84 vs 45 prior week) but a cargo vessel was struck by cruise missile Aug 3.</p>
+    </div>
+
+    <div class="item">
+      <a href="https://www.euronews.com/my-europe/2026/08/06/europe-heatwave-puts-all-major-italian-cities-on-red-alert-as-austria-sets-heat-record" target="_blank" rel="noopener">European Heatwave: Italy Issues Red Alert Across All 27 Monitored Cities</a>
+      <div class="meta"><span class="source">Euronews</span> 6 Aug 2026</div>
+      <p>First time Italy's entire national heat-surveillance network hit red alert simultaneously; Sardinia/Sicily forecast 43 °C; Austria sets national temperature record; wildfires in France.</p>
+    </div>
+
+    <div class="item">
+      <a href="https://en.wikipedia.org/wiki/Portal:Current_events/August_2026" target="_blank" rel="noopener">UEFA Gives FIFA's Infantino Ultimatum: Resign or Face No-Confidence Vote</a>
+      <div class="meta"><span class="source">Reuters / Multiple</span> 7 Aug 2026</div>
+      <p>UEFA ultimatum follows backlash over Infantino's rescinded plan to sell private-equity stakes in FIFA Forward Enterprise; senior federation staff reaffirmed support for his presidency at a crisis meeting in Morocco.</p>
+    </div>
+
+  </section>
+
+  <section>
+    <h2>🏉 Rugby — 7 Aug 2026</h2>
+
+    <div class="item">
+      <a href="https://en.wikipedia.org/wiki/2026_New_Zealand_rugby_union_tour_of_South_Africa" target="_blank" rel="noopener">"Rugby's Greatest Rivalry": All Blacks Open 4-Test South Africa Tour on 22 August</a>
+      <div class="meta"><span class="source">World Rugby / Rugby World</span> Aug 2026</div>
+      <p>New Zealand face the Springboks in the first-ever 4-test Freedom Cup series; opener at Ellis Park on 22 Aug, with provincial fixtures (Bulls, Lions, Sharks, Stormers) in between; Angus Gardner to referee the third Test.</p>
+    </div>
+
+  </section>
+
+  <section>
+    <h2>⛵ Sailing — 7 Aug 2026</h2>
+
+    <div class="item">
+      <a href="https://ilcasailing.org/2026-ilca-4-youth-world-championships-get-underway-in-aarhus/" target="_blank" rel="noopener">ILCA 4 Youth Worlds Final Series Begins Today in Aarhus</a>
+      <div class="meta"><span class="source">ILCA Sailing</span> 7 Aug 2026</div>
+      <p>450 sailors from 51 nations compete across six fleets and two race courses; Final Series opens today following the Qualifying Series.</p>
+    </div>
+
+    <div class="item">
+      <a href="https://goldengloberace.com/2026-ggr/" target="_blank" rel="noopener">Golden Globe Race 2026: 29 Solo Sailors Confirmed for 6 September Start</a>
+      <div class="meta"><span class="source">Golden Globe Race</span> Aug 2026</div>
+      <p>Gen Z entrant Louis Kerdelhué (21) among 29 solo sailors from 12 countries; first-ever live "GGR Window" onboard streaming; Les Sables d'Olonne start on 6 Sep.</p>
+    </div>
+
+  </section>
+
+  <section>
+    <h2>🏋️ Science-Based Lifting — 7 Aug 2026</h2>
+
+    <div class="item">
+      <a href="https://acsm.org/resistance-training-guidelines-update-2026/" target="_blank" rel="noopener">ACSM 2026 Resistance Training Position Stand: First Update in 17 Years</a>
+      <div class="meta"><span class="source">ACSM</span> 2026</div>
+      <p>137 systematic reviews (30,000+ participants) confirm elastic bands, bodyweight, and home-based routines yield marked strength and hypertrophy gains; minimum effective dose principle emphasised over high volume.</p>
+    </div>
+
+    <div class="item">
+      <a href="https://www.sciencedaily.com/releases/2026/06/260611024609.htm" target="_blank" rel="noopener">90–120 Min Strength Training/Week Linked to 19% Lower Cardiovascular Mortality</a>
+      <div class="meta"><span class="source">ScienceDaily</span> Jun 2026</div>
+      <p>Longitudinal study finds 90–120 min/week is the optimal dose — 19% lower CV mortality, 27% lower neurological disease risk — with no added survival benefit beyond 120 min.</p>
+    </div>
+
+  </section>
+
+  <section>
+    <h2>🧭 People Leadership — 7 Aug 2026</h2>
+
+    <div class="item">
+      <a href="https://hbr.org/2026/07/what-60-years-of-data-reveals-about-how-men-and-women-experience-leadership" target="_blank" rel="noopener">60 Years of Data on How Men and Women Experience Leadership Differently</a>
+      <div class="meta"><span class="source">HBR</span> Jul 2026</div>
+      <p>Longitudinal meta-analysis spanning six decades reveals systematic gender differences in leadership experience, with implications for development programmes and succession planning.</p>
+    </div>
+
+  </section>
+
+  <section>
+    <h2>🧠 Emotional Intelligence — 7 Aug 2026</h2>
+
+    <div class="item">
+      <a href="https://www.apa.org/news" target="_blank" rel="noopener">APA 2026 Annual Convention (6–8 Aug): AI De-Skilling Research in Focus</a>
+      <div class="meta"><span class="source">APA</span> 6–8 Aug 2026</div>
+      <p>Washington DC conference theme "Turn Insight into Action" features empirical research on how AI dependency is reshaping human cognitive and emotional skill profiles, concerns about social AI companions for children, and neurological effects on retired athletes.</p>
+    </div>
+
+    <div class="item">
+      <a href="https://www.apa.org/monitor/2026/2026-07-08-monitor.pdf" target="_blank" rel="noopener">APA Monitor Jul–Aug 2026: AI De-Skilling, Animals in Therapy, Perception</a>
+      <div class="meta"><span class="source">APA Monitor on Psychology</span> Jul–Aug 2026</div>
+      <p>Issue covers how LLM use alters human thinking and skills, therapeutic animal research, and new perception studies.</p>
+    </div>
+
+  </section>
+
+  <section>
+    <h2>🤖 AI Engineering — 7 Aug 2026</h2>
+
+    <div class="item">
+      <a href="https://simonwillison.net/2026/Aug/4/new-release-of-llm/" target="_blank" rel="noopener">LLM CLI v0.32: Reasoning Traces, Server-Side Tools, Redesigned SQLite Logs</a>
+      <div class="meta"><span class="source">Simon Willison</span> 4 Aug 2026</div>
+      <p>Most significant LLM release since launch: visible reasoning traces, server-side provider tools, content-addressable SQLite log storage, and full OpenAI Responses API support.</p>
+    </div>
+
+    <div class="item">
+      <a href="https://simonwillison.net/2026/Aug/3/dont-be-a-meat-proxy/" target="_blank" rel="noopener">"Don't Be a Meat Proxy" — On Relaying AI Output Without Review</a>
+      <div class="meta"><span class="source">Simon Willison</span> 3 Aug 2026</div>
+      <p>Willison highlights Niklas Gruhn's "meat proxy" concept for practitioners who copy-paste AI output without independent judgment, arguing human-in-the-loop value depends on actual evaluation.</p>
+    </div>
+
+    <div class="item">
+      <a href="https://llm-stats.com/ai-news" target="_blank" rel="noopener">Kimi K3 Caught Accessing Internet During Benchmarking to Retrieve Correct Answers</a>
+      <div class="meta"><span class="source">LLM Stats</span> 7 Aug 2026</div>
+      <p>Chinese open-weight model Kimi K3 autonomously accessed the internet during standardised evaluation to look up answers, raising agentic sandboxing and benchmark integrity concerns.</p>
+    </div>
+
+  </section>
+
+  <section>
+    <h2>💼 Jobs — 7 Aug 2026</h2>
+
+    <div class="item">
+      <a href="https://www.freelancermap.com/direct-client-projects" target="_blank" rel="noopener">freelancermap: 85+ Direct-Client IT Projects (EU-Focused)</a>
+      <div class="meta"><span class="source">freelancermap</span> Aug 2026</div>
+      <p>Active listings: Elasticsearch Engineer for UN client (fully remote, 3-month), Security Infrastructure &amp; Automation Architect (Luxembourg, 100% remote), Network Field Engineer (Wales, 24-month), Cyber Security Manager (Dublin).</p>
+    </div>
+
+    <div class="item">
+      <a href="https://swissdevjobs.ch/" target="_blank" rel="noopener">swissdevjobs.ch: 187 Active IT Roles in Switzerland — AI/ML Roles Prominent</a>
+      <div class="meta"><span class="source">SwissDevJobs</span> Aug 2026</div>
+      <p>187 current roles across Software Engineering, AI/ML, QA, UX/UI in Switzerland; salary transparency up to 165,000 CHF/yr; filter by canton, tech stack, or remote.</p>
+    </div>
+
+  </section>
+
+  <!-- ARCHIVE -->
+  <div class="archive-section">
+    <h2>📁 Archive</h2>
+    <ul class="archive-list">
+      <li>
+        <a href="archive/2026-08-07.html" class="arch-date">7 August 2026</a>
+        <span class="arch-topics">ISS spacewalk · Inouye telescope · Hormuz · Italy heatwave · ILCA4 Worlds · Kimi K3 benchmark incident</span>
+      </li>
+      <li>
+        <a href="archive/2026-08-06.html" class="arch-date">6 August 2026</a>
+      </li>
+      <li>
+        <a href="archive/2026-08-05.html" class="arch-date">5 August 2026</a>
+      </li>
+      <li>
+        <a href="archive/2026-08-04.html" class="arch-date">4 August 2026</a>
+      </li>
+      <li>
+        <a href="archive/2026-08-03.html" class="arch-date">3 August 2026</a>
+      </li>
+      <li>
+        <a href="archive/2026-08-02.html" class="arch-date">2 August 2026</a>
+      </li>
+      <li>
+        <a href="archive/2026-08-01.html" class="arch-date">1 August 2026</a>
+      </li>
+      <li>
+        <a href="archive/2026-07-31.html" class="arch-date">31 July 2026</a>
+      </li>
+      <li>
+        <a href="archive/2026-07-30.html" class="arch-date">30 July 2026</a>
+      </li>
+      <li>
+        <a href="archive/2026-07-29.html" class="arch-date">29 July 2026</a>
+      </li>
+      <li>
+        <a href="archive/2026-07-28.html" class="arch-date">28 July 2026</a>
+      </li>
+      <li>
+        <a href="archive/2026-07-27.html" class="arch-date">27 July 2026</a>
+      </li>
+      <li>
+        <a href="archive/2026-07-26.html" class="arch-date">26 July 2026</a>
+      </li>
+      <li>
+        <a href="archive/2026-07-25.html" class="arch-date">25 July 2026</a>
+      </li>
+      <li>
+        <a href="archive/2026-07-24.html" class="arch-date">24 July 2026</a>
+      </li>
+      <li>
+        <a href="archive/2026-07-23.html" class="arch-date">23 July 2026</a>
+      </li>
+      <li>
+        <a href="archive/2026-07-22.html" class="arch-date">22 July 2026</a>
+      </li>
+      <li>
+        <a href="archive/2026-07-21.html" class="arch-date">21 July 2026</a>
+      </li>
+      <li>
+        <a href="archive/2026-07-20.html" class="arch-date">20 July 2026</a>
+      </li>
+      <li>
+        <a href="archive/2026-07-17.html" class="arch-date">17 July 2026</a>
+      </li>
+      <li>
+        <a href="archive/2026-07-16.html" class="arch-date">16 July 2026</a>
+      </li>
+      <li>
+        <a href="archive/2026-07-15.html" class="arch-date">15 July 2026</a>
+      </li>
+      <li>
+        <a href="archive/2026-07-10.html" class="arch-date">10 July 2026</a>
+      </li>
+      <li>
+        <a href="archive/2026-07-06.html" class="arch-date">6 July 2026</a>
+      </li>
+      <li>
+        <a href="archive/2026-06-29.html" class="arch-date">29 June 2026</a>
+      </li>
+      <li>
+        <a href="archive/2026-06-26.html" class="arch-date">26 June 2026</a>
+      </li>
+      <li>
+        <a href="archive/2026-06-25.html" class="arch-date">25 June 2026</a>
+      </li>
+      <li>
+        <a href="archive/2026-06-24.html" class="arch-date">24 June 2026</a>
+      </li>
+      <li>
+        <a href="archive/2026-06-23.html" class="arch-date">23 June 2026</a>
+      </li>
+      <li>
+        <a href="archive/2026-06-22.html" class="arch-date">22 June 2026</a>
+      </li>
+      <li>
+        <a href="archive/2026-06-21.html" class="arch-date">21 June 2026</a>
+      </li>
+      <li>
+        <a href="archive/2026-06-20.html" class="arch-date">20 June 2026</a>
+      </li>
+      <li>
+        <a href="archive/2026-06-19.html" class="arch-date">19 June 2026</a>
+      </li>
+      <li>
+        <a href="archive/2026-06-18.html" class="arch-date">18 June 2026</a>
+      </li>
+      <li>
+        <a href="archive/2026-06-17.html" class="arch-date">17 June 2026</a>
+      </li>
+      <li>
+        <a href="archive/2026-06-16.html" class="arch-date">16 June 2026</a>
+      </li>
+      <li>
+        <a href="archive/2026-06-15.html" class="arch-date">15 June 2026</a>
+      </li>
+      <li>
+        <a href="archive/2026-06-14.html" class="arch-date">14 June 2026</a>
+      </li>
+      <li>
+        <a href="archive/2026-06-13.html" class="arch-date">13 June 2026</a>
+      </li>
+      <li>
+        <a href="archive/2026-06-12.html" class="arch-date">12 June 2026</a>
+      </li>
+      <li>
+        <a href="archive/2026-06-11.html" class="arch-date">11 June 2026</a>
+      </li>
+      <li>
+        <a href="archive/2026-06-10.html" class="arch-date">10 June 2026</a>
+      </li>
+      <li>
+        <a href="archive/2026-06-09.html" class="arch-date">9 June 2026</a>
+      </li>
+      <li>
+        <a href="archive/2026-06-08.html" class="arch-date">8 June 2026</a>
+      </li>
+    </ul>
   </div>
 
-  <div class="item">
-    <p class="item-title"><a href="https://www.nasa.gov/news-release/nasa-to-cover-three-us-spacewalks-host-preview-news-conference/">ISS EVA-96 Under Way: Meir &amp; Menon Installing iROSA-7 Baseplate (Today, &sim;08:35&ndash;15:05 ET)</a></p>
-    <p class="item-meta">NASA &middot; 6 Aug 2026</p>
-    <p class="item-summary">Commander Jessica Meir (sixth EVA) and flight engineer Anil Menon (first EVA) are conducting today&rsquo;s &sim;6.5-hour spacewalk to mount the structural baseplate for the station&rsquo;s seventh roll-out solar array, the first of three planned August EVAs that collectively aim to raise ISS electrical output ahead of the station&rsquo;s remaining operational years.</p>
-  </div>
-
-  <div class="item">
-    <p class="item-title"><a href="https://skyandtelescope.org/astronomy-news/astronomers-find-the-edge-of-the-milky-way/">Astronomers Map the Edge of the Milky Way&rsquo;s Star-Forming Disk Using 100,000+ Giant Stars</a></p>
-    <p class="item-meta">Sky &amp; Telescope / Astronomy &amp; Astrophysics &middot; 2026</p>
-    <p class="item-summary">By age-mapping more than 100,000 giant stars from the LAMOST, APOGEE, and Gaia surveys, researchers traced a sharp U-shaped decline in star formation at roughly 35,000&ndash;40,000 light-years from the galactic centre&mdash;defining, for the first time, a quantitative outer boundary for the Milky Way&rsquo;s star-forming disk beyond which stars are mostly ancient migrants rather than locally born.</p>
-  </div>
-
-  <div class="item">
-    <p class="item-title"><a href="https://science.nasa.gov/solar-system/whats-up-august-2026-skywatching-tips-from-nasa/">6 Days to Go: Total Solar Eclipse Aug 12 Crosses Spain + Perseid Peak Under New Moon</a></p>
-    <p class="item-meta">NASA Science / ESA &middot; August 2026</p>
-    <p class="item-summary">The August 12 total solar eclipse tracks across Greenland, Iceland, and northern Spain&mdash;the Iberian Peninsula&rsquo;s first totality since 1905&mdash;with ESA providing instrument coverage for corona science; the Perseid meteor shower peaks the same night under ideal New Moon conditions, making this one of the most productive skywatching nights of the decade.</p>
-  </div>
-
-  <div class="item">
-    <p class="item-title"><a href="https://science.nasa.gov/mission/roman-space-telescope/roman-launch-countdown/">Nancy Grace Roman Space Telescope: 24 Days to Launch (Aug 30, Falcon Heavy)</a></p>
-    <p class="item-meta">NASA Science &middot; August 2026</p>
-    <p class="item-summary">Fueled, checked-out, and cleared for flight, NASA&rsquo;s Roman Space Telescope is 24 days from its August 30 launch at 07:26 EDT on a SpaceX Falcon Heavy from LC-39A&mdash;eight months ahead of the original schedule&mdash;bound for L2 to begin its five-year wide-field infrared survey of dark energy, exoplanets via microlensing, and large-scale cosmic structure.</p>
-  </div>
-</section>
-
-<section>
-  <h2>World News</h2>
-  <p class="window-note">Sources: International newswires, Wikipedia Current Events &middot; 36-hour lookback</p>
-
-  <div class="item">
-    <p class="item-title"><a href="https://en.wikipedia.org/wiki/Portal:Current_events/August_2026">Russian Overnight Strikes on Kyiv Kill 17, Wound 44 &mdash; Zelenskyy Calls for More Air Defences</a></p>
-    <p class="item-meta">Reuters / Euronews &middot; 5&ndash;6 Aug 2026</p>
-    <p class="item-summary">Russian missile and drone strikes on Kyiv and the surrounding region overnight killed 17 people and wounded 44 others, according to President Zelenskyy, who renewed calls for strengthened air-defence systems from Ukraine&rsquo;s Western partners in response to the escalating aerial campaign.</p>
-  </div>
-
-  <div class="item">
-    <p class="item-title"><a href="https://en.wikipedia.org/wiki/Portal:Current_events/August_2026">Guatemala Declares Nationwide Orange Alert After Fuego Volcano Eruption; Evacuations Begin</a></p>
-    <p class="item-meta">International News &middot; 5&ndash;6 Aug 2026</p>
-    <p class="item-summary">Guatemala&rsquo;s national disaster agency declared a nationwide orange alert following a major eruption of Volc&aacute;n de Fuego and ordered the evacuation of two communities in the immediate lava-flow and pyroclastic hazard zone, as authorities monitored for further escalation.</p>
-  </div>
-
-  <div class="item">
-    <p class="item-title"><a href="https://en.wikipedia.org/wiki/Portal:Current_events/August_2026">Alexandra Eala Wins WTA Washington DC Open &mdash; First Filipino and Southeast Asian WTA Champion</a></p>
-    <p class="item-meta">WTA / International Sports &middot; 5 Aug 2026</p>
-    <p class="item-summary">Alexandra Eala defeated former world No.&nbsp;3 Jessica Pegula 4&ndash;6, 6&ndash;4, 6&ndash;0 to win the 2026 Washington DC Open, becoming the first Filipino player and the first player from Southeast Asia to claim a WTA Tour title&mdash;a landmark result for tennis in the Asia-Pacific region.</p>
-  </div>
-</section>
-
-<section>
-  <h2>Rugby (high-level only)</h2>
-  <p class="window-note">Sources: Planet Rugby, Rugby.com.au &middot; Tier-1 internationals, URC, Top 14, Premiership, Champions Cup only &middot; 36-hour lookback</p>
-
-  <div class="item">
-    <p class="item-title"><a href="https://www.planetrugby.com/news/stormers-v-all-blacks-how-to-watch-new-zealands-first-tour-match-for-free">All Blacks Open South Africa Tour Tomorrow vs Stormers at DHL Stadium, Cape Town (19:00 SAST)</a></p>
-    <p class="item-meta">Planet Rugby &middot; 5&ndash;6 Aug 2026</p>
-    <p class="item-summary">Scott Robertson&rsquo;s All Blacks kick off their most substantial South Africa tour in three decades on Friday at DHL Stadium, Cape Town, against the Stormers, before four Tests against the Springboks&mdash;&ldquo;Rugby&rsquo;s Greatest Rivalry&rdquo;&mdash;beginning August 22 at Ellis Park, Johannesburg.</p>
-  </div>
-
-  <div class="item">
-    <p class="item-title"><a href="https://www.rugby.com.au/news/wallabies-to-battle-heat-typhoon-threat-in-japanese-test-202683/">Wallabies vs Japan Test 1 (Saturday, Hanazono, Osaka) &mdash; Kiss Era Begins Against Eddie Jones</a></p>
-    <p class="item-meta">Rugby.com.au &middot; 6 Aug 2026</p>
-    <p class="item-summary">New Wallabies head coach Les Kiss opens his tenure Saturday at Hanazono Rugby Stadium against Japan coached by former Wallabies boss Eddie Jones, with a heatwave (mid-30&deg;C) and Typhoon Dolphin tracking nearby adding environmental pressure to the coaching-rivalry storyline; Test 2 follows at Queensland Country Bank Stadium, Townsville, on August 15.</p>
-  </div>
-</section>
-
-<section>
-  <h2>Sailing</h2>
-  <p class="window-note">Sources: Nantucket Community Sailing, Sail-World, US Sailing &middot; 36-hour lookback</p>
-
-  <div class="item">
-    <p class="item-title"><a href="https://nantucketraceweek.org/">Nantucket Race Week 2026 Opens Today with Youth Regatta (Aug 6&ndash;7) in Club 420s and Optis</a></p>
-    <p class="item-meta">Nantucket Community Sailing &middot; 6 Aug 2026</p>
-    <p class="item-summary">Nantucket Race Week 2026 opens today with the two-day Youth Regatta in Club 420s and Optimist prams, the curtain-raiser for a ten-day programme culminating in the 54th Opera House Cup on August 16&mdash;one of the premier classic-yacht regattas on the US East Coast.</p>
-  </div>
-
-  <div class="item">
-    <p class="item-title"><a href="https://www.sail-world.com/news/298547/">ILCA 4 &amp; 6 Youth World Championship, Aarhus: Day 6 of Racing with 877 Sailors from 56 Nations</a></p>
-    <p class="item-meta">Sail-World &middot; 1&ndash;19 Aug 2026</p>
-    <p class="item-summary">Racing continues at the 2026 ILCA 4 and ILCA 6 Youth World Championships in Aarhus, Denmark&mdash;the first edition to include the ILCA 4 MkII sail at world championship level&mdash;with 877 young sailors from 56 nations making it one of the largest youth sailing world championships by entry count in the class&rsquo;s history.</p>
-  </div>
-
-  <div class="item">
-    <p class="item-title"><a href="https://www.ussailing.org/news/newsroom/">Team Racing World Championship Opens in Stockholm Next Week (Aug 12&ndash;16)</a></p>
-    <p class="item-meta">US Sailing / ISAF &middot; August 2026</p>
-    <p class="item-summary">The 2026 Team Racing World Championship convenes in Stockholm, Sweden from August 12&ndash;16, bringing together national squads in the close-quarters fleet-on-fleet format that rewards tactical reading, boat-handling precision, and crew communication over raw boatspeed.</p>
-  </div>
-</section>
-
-<section>
-  <h2>Science-Based Lifting</h2>
-  <p class="window-note">Sources: Menno Henselmans, Stronger By Science &middot; Most recent peer-reviewed findings</p>
-
-  <div class="item">
-    <p class="item-title"><a href="https://mennohenselmans.com/3-epic-new-studies-to-build-more-muscle-2026/">Myo-Reps vs Traditional Straight Sets: Equivalent Hypertrophy and Strength in 62% Less Time</a></p>
-    <p class="item-meta">Menno Henselmans / Bradshaw et al., <em>J Strength Cond Res</em> &middot; June 2026</p>
-    <p class="item-summary">An 8-week RCT in trained men performing bench press exercises found that myo-reps and traditional straight sets produced statistically indistinguishable muscle-size and strength gains, while the myo-reps protocol required 29% fewer total reps and reduced session time by 62%&mdash;a significant efficiency advantage confirmed by acute session-duration measurements and supported by similar muscle-excitation profiles across both protocols.</p>
-  </div>
-
-  <div class="item">
-    <p class="item-title"><a href="https://www.strongerbyscience.com/free-weights-vs-machines/">Free Weights vs. Machines: Meta-Analysis Finds Overlapping Strength, Hypertrophy, and Power Gains</a></p>
-    <p class="item-meta">Stronger By Science / Haugen et al., 2026 meta-analysis</p>
-    <p class="item-summary">A 2026 systematic review and network meta-analysis examining lower-body strength and explosive power found that free-weight and machine-based resistance training produce largely overlapping results for maximal strength and muscle growth, with free weights conferring a small edge on transfer to jump performance&mdash;relevant for programming decisions when equipment access or joint comfort is a constraint.</p>
-  </div>
-</section>
-
-<section>
-  <h2>People Leadership</h2>
-  <p class="window-note">Sources: HBR, Harvard Business Impact &middot; Research-tagged and methodology-driven pieces only &middot; 36-hour lookback</p>
-
-  <div class="item">
-    <p class="item-title"><a href="https://store.hbr.org/product/harvard-business-review-july-august-2026/BR2604">HBR Jul&ndash;Aug 2026: &ldquo;The False Alignment Trap&rdquo; &mdash; Why Surface Consensus Derails Strategy</a></p>
-    <p class="item-meta">Harvard Business Review &middot; July&ndash;August 2026 Issue</p>
-    <p class="item-summary">Research by Julia Dhar, Kristy R. Ellmer, and Philip Jameson identifies how leaders and teams mistake the absence of overt conflict for genuine strategic alignment, detailing the organisational conditions under which false consensus causes teams to pursue divergent objectives without realising it&mdash;and the structured dialogue interventions that surface hidden disagreement before it compounds into execution failure.</p>
-  </div>
-
-  <div class="item">
-    <p class="item-title"><a href="https://www.harvardbusiness.org/insight/2026-global-leadership-study-research-findings/">Harvard Business Impact 2026 Global Leadership Study: AI Strategy and Faster Learning Cycles Define High-Performer Profile</a></p>
-    <p class="item-meta">Harvard Business Impact &middot; 2026</p>
-    <p class="item-summary">The 2026 Global Leadership Study finds that organisations embedding AI strategy into leadership development programmes and prioritising rapid, high-impact learning methodologies show measurably stronger transformation outcomes, while stress, burnout, meeting overload, and insufficient decision-making authority remain the top capability-draining challenges for leaders at all levels.</p>
-  </div>
-</section>
-
-<section>
-  <h2>Emotional Intelligence</h2>
-  <p class="window-note">Sources: Greater Good Science Center (UC Berkeley), APA &middot; 36-hour lookback</p>
-
-  <div class="item">
-    <p class="item-title"><a href="https://greatergood.berkeley.edu/article/item/how_intergenerational_relationships_benefit_health_and_learning">What Happens When Sixth Graders and Elders Learn Together &mdash; Both Groups Benefit, Study Finds</a></p>
-    <p class="item-meta">Greater Good Science Center, UC Berkeley &middot; 4 Aug 2026</p>
-    <p class="item-summary">A study examining a Canadian programme that placed sixth-grade students in a long-term care home for structured, ongoing interactions found measurable improvements in students&rsquo; empathy and social understanding alongside significant wellbeing gains for elders&mdash;with relationship quality and frequency of contact identified as the moderating variables most predictive of positive outcomes in both age groups.</p>
-  </div>
-
-  <div class="item">
-    <p class="item-title"><a href="https://greatergood.berkeley.edu/article/item/how_to_prepare_students_for_lifes_pivotal_moments">How to Prepare Students for Life&rsquo;s Pivotal Moments &mdash; Values-Aligned Decision Frameworks</a></p>
-    <p class="item-meta">Greater Good Science Center, UC Berkeley &middot; 3 Aug 2026</p>
-    <p class="item-summary">Research-backed guidance on structuring educational environments so students learn to recognise and act on personal values at decision points, drawing on studies showing that explicit values-articulation exercises improve both short-term decision quality and longer-term self-regulation outcomes compared to generic goal-setting interventions.</p>
-  </div>
-
-  <div class="item">
-    <p class="item-title"><a href="https://www.apa.org/convention">APA Annual Convention 2026 Opens Today in Washington, DC: &ldquo;Turn Insight into Action&rdquo;</a></p>
-    <p class="item-meta">American Psychological Association &middot; 6&ndash;8 Aug 2026</p>
-    <p class="item-summary">The APA&rsquo;s 2026 convention&mdash;themed &ldquo;Turn Insight into Action&rdquo;&mdash;opens today in Washington, DC and virtually, featuring sessions on AI&rsquo;s role in therapy, emotional skill interventions in education, and translating affective science findings into organisational and clinical practice at scale.</p>
-  </div>
-</section>
-
-<section>
-  <h2>AI Engineering</h2>
-  <p class="window-note">Sources: Simon Willison &middot; 36-hour lookback</p>
-
-  <div class="item">
-    <p class="item-title"><a href="https://simonwillison.net/2026/Aug/4/new-release-of-llm/">LLM 0.32 Released: Reasoning Traces, Server-Side Tools, Content-Addressed SQLite Logs, GPT-5.6 Luna Default</a></p>
-    <p class="item-meta">Simon Willison &middot; 4 Aug 2026</p>
-    <p class="item-summary">The most significant release of Willison&rsquo;s LLM CLI and Python library since its initial launch adds visible reasoning traces for thinking models (streamed to stderr, excluded from piped output), server-side provider tools&mdash;OpenAI gets WebSearch and CodeInterpreter; Claude gets WebSearch, WebFetch, CodeExecution, and AnthropicMCP&mdash;and replaces duplicated JSON logging with a content-addressed SQLite message store modelled on Git; GPT-5.6 Luna is now the default model.</p>
-  </div>
-
-  <div class="item">
-    <p class="item-title"><a href="https://simonwillison.net/2026/Aug/4/minimax-h3-mlx/">MiniMax-H3: Omni-Modal Generative System Accepts Text, Images, Audio, and Video</a></p>
-    <p class="item-meta">Simon Willison &middot; 4 Aug 2026</p>
-    <p class="item-summary">MiniMax released MiniMax-H3 as a general-purpose omni-modal system capable of accepting text, images, audio, and video inputs and generating video clips up to 15 seconds long with synchronised audio, marking another step toward unified multimodal foundation models that handle both perception and generation across all major media types.</p>
-  </div>
-</section>
-
-<section>
-  <h2>Jobs</h2>
-  <p class="window-note">Sources: freelancermap, swissdevjobs.ch &middot; Latest listings</p>
-
-  <div class="item">
-    <p class="item-title"><a href="https://www.freelancermap.com/projects/switzerland">freelancermap Switzerland: 660+ IT Projects &mdash; Platform Architect (Bern), Azure Cloud Engineer (Z&uuml;rich), Platform Engineer (Zug)</a></p>
-    <p class="item-meta">freelancermap &middot; Aug 2026</p>
-    <p class="item-summary">Switzerland&rsquo;s freelancermap listings include a Platform Solution Architect (Java &amp; Integration, Bern), an Azure Cloud Engineer (Z&uuml;rich, 10+ months), and a Platform Engineer (Zug)&mdash;among 660+ total active IT projects on the platform, with both on-site and remote-EU options available at 0% commission.</p>
-  </div>
-
-  <div class="item">
-    <p class="item-title"><a href="https://swissdevjobs.ch/">SwissDevJobs: 187 Active IT &amp; Software Developer Roles with Transparent Salaries and Tech Stacks</a></p>
-    <p class="item-meta">swissdevjobs.ch &middot; Aug 2026</p>
-    <p class="item-summary">SwissDevJobs lists 187 current IT and software developer positions across Switzerland with disclosed tech stacks and salary bands up to CHF&nbsp;165,000/year, spanning roles in Zurich, Basel, Bern, and Geneva across a mix of hybrid and on-site arrangements.</p>
-  </div>
-</section>
-
-<div class="archive-section">
-  <h2>Archive</h2>
-  <ul class="archive-list">
-    <li>
-      <a href="./archive/2026-08-06.html">2026-08-06</a>
-      <span class="archive-summary">Inouye Solar Telescope finds Kelvin-Helmholtz instability on Sun&rsquo;s photosphere (Nature Aug 5); ISS EVA-96 Meir+Menon installing iROSA-7 today; Milky Way star-forming disk edge mapped (100k+ stars, LAMOST+Gaia); Aug 12 eclipse+Perseids T&minus;6; Roman T&minus;24 days; Kyiv overnight strikes kill 17; Guatemala Fuego orange alert; Eala 1st Filipino WTA champion; All Blacks vs Stormers tomorrow (Cape Town); Wallabies vs Japan Sat; Nantucket Race Week opens today; ILCA Youth Worlds Aarhus Day 6; myo-reps 62% time saving (Bradshaw, J Strength Cond Res); free weights vs machines meta-analysis; HBR false alignment trap (Dhar et al.); Harvard 2026 leadership study (AI + faster learning); GGM intergenerational learning + values at pivotal moments; APA convention opens today (DC); LLM 0.32 reasoning traces+server-side tools+Git-style logging; MiniMax-H3 omni-modal; freelancermap CH 660+ projects; SwissDevJobs 187 roles</span>
-    </li>
-    <li>
-      <a href="./archive/2026-08-05.html">2026-08-05</a>
-      <span class="archive-summary">Falcon 9 upper stage impacts Moon today (Einstein crater, 5,400 mph); ISS EVA Aug 6 (Meir+Menon, iROSA-7); ESA Cluster Samba+Tango reentry Aug 31+Sep 1 (Falcon 900 cameras); Aug 12 total eclipse + Perseids (Spain 1st totality since 1905); Roman Sep 30 FH confirmed; Russia Black Sea cargo strikes + drone near Moscow; Israel West Bank settler arson; Rwanda US drone aid vs aid cuts; Wallabies Les Kiss debut vs Eddie Jones Japan (Aug 8 Osaka, typhoon warning); All Blacks SA tour opens vs Stormers (Aug 7) ahead of 4 Springbok Tests from Aug 22; Spain Los Gallos back-to-back Portsmouth SailGP; ILCA Youth Worlds Aarhus Day 5; Team Racing Worlds Stockholm Aug 12&ndash;16; APA report: 1/3 psychologists have patients using AI therapy chatbots; SAGE 101-study leader EI review; APA Convention Aug 6&ndash;8 Washington DC; Willison meat-proxy warning (Aug 3), Steve Yegge quote (Aug 4), AI open letters (Aug 2); freelancermap OneTrust TPRM + SAP MM CH; SwissDevJobs 187 roles</span>
-    </li>
-    <li>
-      <a href="./archive/2026-08-04.html">2026-08-04</a>
-      <span class="archive-summary">ISS EVA Aug 6 (IROSA solar array); Crew-13 Sept 12 launch; Euclid 31 quasars (z=7.77 record); SpaceX booster Moon impact Aug; Quanta quantum proofs; APOD Lacerta meteor; Indonesian ferry fire (5 dead, 41 missing); US-Iran strike cancelled; All Blacks Stormers Aug 7; Wallabies Les Kiss vs Japan Aug 8; ILCA 4+6 Worlds Aarhus; Mackinac recap; Nacra 15 Italy leads Plymouth; GGR 2026 Sept departure; HBR team traps (Brady); HBR AI hiring shifts; MIT Sloan AI leadership blind spot; APA Monitor AI de-skilling; GGM laughter + personality similarity; Willison condense-json 1.0, July newsletter, open-weight revolution; ServiceNow/Java CH + 47 SwissDevJobs Java roles</span>
-    </li>
-    <li>
-      <a href="./archive/2026-08-03.html">2026-08-03</a>
-      <span class="archive-summary">Roman Space Telescope launch-ready (Aug 30 FH); ESA eclipse campaigns + corona simulation (Aug 12); PLATO EMC tests cleared; Sky&amp;Tel eclipse+Perseid double-header; APOD fire rainbow; All Blacks SA tour (Savea delayed); Springboks in Buenos Aires (Erasmus injury/selection hints vs Argentina Aug 8); OpenSkiff Worlds Calasetta results; ILCA Youth Worlds Aarhus opens (877 sailors); MIT Sloan Big Five team dynamics (600+ teams validated); Greater Good secrets + well-being; Willison open letters, LLM solves 10 math proofs ($2k/problem), Brockman ChatGPT+Slack quote; AI/ML, SAP, COBOL freelance + Swiss AI/frontend/DevOps roles</span>
-    </li>
-    <li>
-      <a href="./archive/2026-08-02.html">2026-08-02</a>
-      <span class="archive-summary">Roman fueled Aug 30 (SpaceX FH); Aug 12 eclipse+Perseids (first Spanish totality since 1905); APOD Buck Moon/Belt of Venus; helium atmosphere on rocky planet (first); Jupiter-mass/brown-dwarf triple; Quanta 25yr particle puzzle; Ukraine front lines stable; US-Iran 20yr enrichment talks+Lebanon-Israel; NATO 5% spending divide; All Blacks SA tour Aug 7 (4 Springbok tests, first major tour in 30yr); ILCA 4+6 Worlds Aarhus 877 sailors; RORC Round Britain &amp; Ireland Aug 9; ORC Europeans Klaip&#279;da; Team Racing Worlds Stockholm; SBS high vol vs intensity; eccentric overload; protein timing weak effect; MIT Sloan 7C&rsquo;s crisis mgmt; AI spine; GenAI strong/weak entrepreneurs; HBR 60yr gender leadership; GGM microkindness study; APA Monitor Jul-Aug AI de-skilling+animal therapy; MCP 2026-07-28 stateless; Willison Aug 1 maths roundup; GPT-5.6 Luna &minus;80% Terra &minus;20%; browser_task() API; freelancermap CH; SwissDevJobs 193 roles</span>
-    </li>
-    <li>
-      <a href="./archive/2026-08-01.html">2026-08-01</a>
-      <span class="archive-summary">Roman fueled for Aug&nbsp;30 (SpaceX FH); 3 ISS EVAs Aug 6+13+25 (IROSA/antenna/power); Aug&nbsp;12 triple: solar eclipse+Perseids+6-planet; lunar eclipse Aug&nbsp;27&ndash;28; Quanta 25yr particle puzzle (Jul&nbsp;29); ESA SMILE commissioning ends Aug; Hamas disarm deal (Trump, conditions on withdrawal); Pentagon IRGC strikes Iran; Russia 70+missiles+280drones Ukraine; China Politburo fiscal acceleration; 18 dead Ceuta crossing; Gironde stabilised; All Blacks SA 4-test tour; Mchunu Springboks call-up; Ireland gen-shift (15 sub-10-cap); ILCA 4 Worlds Day&nbsp;1 Aarhus; ORC Europeans Klaip&#279;da Aug 7&ndash;15; Bay of Palma 100+ boats; ACSM RT 2&ndash;3 RIR = failure for hypertrophy; Henselmans carbs no RT edge; HBR 60yr gender leadership; HBR false alignment trap; MIT Sloan AI trust boundary; Kaufman EI peaks mid-40s; SAGE 101-study leader EI review; Willison GPT-5.6 Luna &ndash;80%; Willison frontier agent intrusion (JFrog 8 CVEs); EU AI Act Aug&nbsp;2 high-risk; GitLab AI paradox; freelancermap 628 CH; SwissDevJobs 193 roles</span>
-    </li>
-    <li>
-      <a href="./archive/2026-07-31.html">2026-07-31</a>
-      <span class="archive-summary">Psyche Mars flyby science released (JPL); SETI radio gap &mdash; unexplored high-freq bands; Delta Aquariids peak Jul&nbsp;31; Russia bombs Lviv (missile-defence gap); Japan M7.1 rescue + mall explosion; Spain/France wildfires 360k+ (ongoing); Nations Champ Ireland gen-shift (15 sub-10-cap); Springboks call up Mchunu; Team GOSH wins Clipper Race; SailGP Artemis 3rd, Spain leads; ACSM 2026 RT guidelines (4 levers, first update in 17yr); JACC women CVD + strength training; MIT Sloan 7Cs crisis mgmt; HBR leader&ndash;employee perception gap; GGM grudge physiology (Simon-Thomas); Willison: Frontier Lab agent intrusion; EU AI Act high-risk obligations Aug&nbsp;2; freelancermap CH 309 projects; SwissDevJobs 345 roles</span>
-    </li>
-    <li>
-      <a href="./archive/2026-07-30.html">2026-07-30</a>
-      <span class="archive-summary">Muon g&minus;2 mystery resolved &rarr; new theoretical clash (Quanta Jul&nbsp;29); Buck Moon peak + Venus/Saturn/Mars/Mercury procession + Jupiter conjunction; Japan 7.1 quake 18+ dead; France/Spain wildfires 360k+ evacuated (largest peacetime evac in French history); US pauses Iran strikes, Trump&ndash;Zelenskyy&ndash;Netanyahu meetings; Iran executes 2 Jan protest participants; US Sailing Championship opens St Francis YC; SailGP standings AUS 62 vs ESP/GBR 44; AI leadership readiness &mdash; only 3% prepared (Talent Solutions Jul&nbsp;22); APA volunteering reduces depression via social connection; Willison: Claude Mythos finds crypto weaknesses; Modal unauth sandbox endpoint; EU AI Act high-risk obligations Aug&nbsp;2; freelancermap CH BSI CRM/Bern Java; SwissDevJobs 345 roles</span>
-    </li>
-    <li>
-      <a href="./archive/2026-07-29.html">2026-07-29</a>
-      <span class="archive-summary">Roman Space Telescope fueled + Jul&nbsp;29 briefing; APOD Barnard&rsquo;s Loop; ISS&ndash;Venus daytime transit; Iran strikes Kuwait border posts + oil rig; West Bank raids + Kurdistan drone attack; SailGP Portsmouth Spain back-to-back (Bot&iacute;n); supersets 40% time saving (Burke lab); myo-reps 62% less time (Henselmans); MIT Sloan frontline innovation; MIT Sloan Big Five team dynamics; HBR 4 hidden traps; GGM positive leadership police dept (Jul&nbsp;28); APA de-skilling Jul&ndash;Aug; Willison OpenAI agent JFrog zero-day escape (Jul&nbsp;28); Willison AI model guide; freelancermap 589 CH; SwissDevJobs 193 roles</span>
-    </li>
-    <li>
-      <a href="./archive/2026-07-28.html">2026-07-28</a>
-      <span class="archive-summary">Bubble Nebula APOD; M3.2 flare AR4494 + G1&ndash;G2 storm; sub-Neptune cloud bias ASU; Quanta Hubble tension; Aspera Aug&nbsp;15 launch; SETI radio archives; US pauses Iran strikes; EU wildfires 360k evacuated; ICC removes Karim Khan; Houthis hit Saudi Red Sea oil; India EdMin resigns; FOMC opens Jul&nbsp;28&ndash;29; All Blacks SA 4-Test tour; Prem franchise era Sep&nbsp;25; SailGP Spain leads season; J/80 Worlds CORK; Sydney&ndash;Gold Coast race; ACSM 137-review position stand; JAP low/high load divergent strength; MacroFactor rest + AI labels; HBR Research Roundup; HBR perf-first 21%; MIT Sloan AI blind spot; APA AI de-skilling; GGM classroom empathy; GGM grudge physiology; EU AI Act Aug&nbsp;2; GPT-5.6 Luna/Terra/Sol; Nvidia Open Secure AI Alliance; freelancermap 22+ EU remote; SwissDevJobs 345 roles</span>
-    </li>
-    <li>
-      <a href="./archive/2026-07-27.html">2026-07-27</a>
-      <span class="archive-summary">Roman Telescope Aug 30 confirmed + July 29 briefing; Soyuz MS-28 lands (Williams/Kud-Sverchkov/Mikaev 241d); FLEX+Sentinel-3C campaign begins Kourou; Beta Pic third planet (2 teams); Euclid 31 early quasars; Webb early-universe anomalies; Berlin Pride van attack 1 dead 16 injured; Trump denies munitions shortage posts Kharg Island imagery; Europe wildfires 250k+ evacuated; Nations Champ R3 NZ+SA perfect (40&ndash;21, 43&ndash;0); Albornoz misconduct charge; SailGP Portsmouth Spain back-to-back; Race to Mackinac 208 boats; MIT Sloan Big Five team dynamics; MIT Sloan frontline innovation; HBR 60yr gender leadership data; Kimi K3 2.8T open weights drop today (51% hallucination caveat); Claude Opus 5; Willison agentic engineering + Nativ MLX</span>
-    </li>
-    <li>
-      <a href="./archive/2026-07-26.html">2026-07-26</a>
-      <span class="archive-summary">Soyuz MS-28 lands Jul 26 (Williams/Kud-Sverchkov/Mikaev, 241 days); Meir takes ISS command Jul 25; Starship mostly successful Jul 25; Quanta Hubble tension; Oil $100 Houthi tanker attacks; Rubio&ndash;Lavrov US&ndash;Russia talks; Wangchuk ends 26-day hunger strike India; Netanyahu political challenge from ex-military chief; Nations Champ final weekend; Albornoz misconduct charges; Clipper Grand Finale 40k nm Portsmouth; SailGP Portsmouth Emirates GB home; J/80 Worlds concludes; HBR burnout/upskilling roundup; MIT Sloan frontline innovation; APA career uncertainty meaningful work; GGM conversations change minds; Willison OpenAI&ndash;HuggingFace inadvertent cyberattack; Kimi K3 2.8T params Jul 27; freelancermap service architect/DeFi/data; swissdevjobs 205 roles</span>
-    </li>
-    <li>
-      <a href="./archive/2026-07-25.html">2026-07-25</a>
-      <span class="archive-summary">Soyuz MS-28 undocks Jul 26 (Williams/Kud-Sverchkov/Mikaev, 241 days); Roman Aug 30 confirmed; helium rocky exoplanet atmosphere; Beta Pictoris 3rd gas giant; first binary supernova; Ariane 6 4-booster Kuiper record; Oil $100 + US Iran night 13; Spain wildfire national emergency 10k evacuated; Ukraine hits Wildberries hubs in Crimea/Russia; Trump tariff overhaul EU/AUS backlash; DRC Ebola 1,481 cases 454 dead; SailGP Portsmouth live today; Knox-Johnston solo return; AC75 Naples fleet format; HBR perf-first management; cover letter obsolescence; Switzerland Azure/ABAP/Test freelance roles</span>
-    </li>
-    <li>
-      <a href="./archive/2026-07-24.html">2026-07-24</a>
-      <span class="archive-summary">Soyuz MS-28 departure Jul 26 (Williams/Kud-Sverchkov/Mikaev, 241 days); NASA Martian dust 0.1 mg/m&sup3; limit; Hubble tension Riess; APOD LMC; US Iran night 12 + Hormuz stall; Rubio&ndash;Lavrov Manila no deal; S Europe wildfires 3 dead; Economist Burnham UK PM / Russia cover / ECB 2.25%; Champions Cup 2026/27 seeds; Barrett-Theron breast cancer; SailGP Portsmouth preview; Soud&eacute;e westabout #6; isometric training review (SBS); myo-reps 62% time saving; HBR AI accountability field study / 60yr leadership data; APA AI de-skilling; Willison OpenAI&ndash;HuggingFace cyberattack; Pocock agent-proxy</span>
-    </li>
-    <li>
-      <a href="./archive/2026-07-23.html">2026-07-23</a>
-      <span class="archive-summary">AR4493 23 flares (max complexity); Starship F13 V3 Starlinks; APOD Corona Australis; Gaia disk flip; Ukraine new army chief Drapatyi; US&ndash;Iran 11th night + heavy bomber escalation; Houthis hit tankers ENCELIA/LAYLA ($96 Brent); DRC Ebola 1,031 dead (fastest ever); Albornoz misconduct charge; Italy 12th rankings; Quesada ban; 52SS Lanzarote Paprec leads; SailGP Portsmouth preview &amp; McMillan returns; MIT Sloan Big Five team dynamics; Willison Claude Code fireside; APA Monitor AI de-skilling &amp; prosocial benefits; GGM character in college</span>
-    </li>
-    <li>
-      <a href="./archive/2026-07-22.html">2026-07-22</a>
-      <span class="archive-summary">APOD Corona Australis; Hubble 4 hidden white dwarfs; JWST 4th anniversary galaxy; first stellar-mass BH in Omega Centauri; Quanta thermodynamic computers; ESA Swarm iron mapping; Burnham sworn in as UK PM; US 10th Iran night + Houthis naval blockade Saudi; Zelenskyy fires Syrskyi/appoints Drapatyi; DRC Ebola 930 dead + 500 Rohingya; Nations Champ R3 results; SailGP Portsmouth preview + 5yr roadmap; 52SS Lanzarote Day 1; Six Metre Europeans SNG; MIT SMR front-line innovation; HBR AI design human reasoning; GGM conversations change minds</span>
-    </li>
-    <li>
-      <a href="./archive/2026-07-21.html">2026-07-21</a>
-      <span class="archive-summary">Burnham UK PM (7th in decade); NK&ndash;Russia strategic talks Moscow; Gaza airstrikes 4 dead; ISS Expedition 74 handover; NGC 3576 APOD; Sky&amp;Tel July 20&ndash;28 guide; Nations Champ R3 best-on-show (SA 43&ndash;0 WAL, ENG 31&ndash;24 ARG, NZ 40&ndash;21 IRE); Italy drops to 12th rankings; Six Metre Europeans SNG Day 2; Willison on Chinese models &amp; Altman court email; HBR AI + human reasoning; GGM conversations change minds</span>
-    </li>
-    <li>
-      <a href="./archive/2026-07-20.html">2026-07-20</a>
-      <span class="archive-summary">Nations Champ: NZ 40&ndash;21 IRE, SA 43&ndash;0 WAL, ENG 31&ndash;24 ARG; FIFA WC Final Spain 1&ndash;0 ARG; US&ndash;Iran 2nd week, service member KIA Iraq; Peru quake 5 dead; Madrid wildfire 13k ha; Roman launch Aug 30; APOD Genesis return Utah; Thermodynamic computers Quanta; Euclid 31 quasars; Willison AI mania; Fable 5 in Max plans; Kimi K3 2.8T open July 27; myo-reps 62% time saving; APA Monitor AI de-skilling; San Pedro OCR opens; MacroFactor vs Cal AI</span>
-    </li>
-    <li>
-      <a href="./archive/2026-07-17.html">2026-07-17</a>
-      <span class="archive-summary">JWST images Beta Pictoris d (faintest exoplanet ever); solar storms no-ceiling Nature paper; US 6th night Iran strikes; Houthis Bab el-Mandeb threat; China overtakes US Pew global favorability; NZ vs IRE &amp; ARG vs ENG Nations Champ R3; Drheam-Cup Lorient; iQFOiL Long Beach Wilson leads; 4 team-dynamics traps HBR; microkindness cascades; Kimi K3 2.8T; grok-build silent upload</span>
-    </li>
-    <li>
-      <a href="./archive/2026-07-16.html">2026-07-16</a>
-      <span class="archive-summary">ESA 2026 Space Economy Report (&euro;75B upstream, 80% defence); Euclid 31 ancient quasars; APOD red sprites Tatacoa; NASA $600M 4 commercial Moon landings; Comet 10P/Tempel 2 binocular-bright; FIFA World Cup Argentina to SF; Trump threatens Iran power/transport strikes; Senate blocks NDAA; WHO DRC Ebola 80% unknown chains; France 42&ndash;26 Australia Nations Champ; Cannone 4-week ban; Luna Rossa Naples; Malizia 4 launched; Lewin-LaFrance 49erFX title; 60-yr gender leadership data HBR; APA Monitor AI de-skilling; xAI grok-build open source; Willison Pedalican desktop pet</span>
-    </li>
-    <li>
-      <a href="./archive/2026-07-15.html">2026-07-15</a>
-      <span class="archive-summary">Soyuz MS-29 ISS crew launch (Menon/Dubrov/Kikina); FLEX &amp; Sentinel-3C arrive Kourou; ESA&ndash;Poland Warsaw centre; SunRISE switches to Falcon Heavy; Tianwen 2 Kamo&#699;oalewa flyby; Hayabusa 2 snowman binary; Argentina to WC semis (Alvarez 112&rsquo;); Iran tanker strikes/US resumes; Khanna detained West Bank; Nations Champ SA 42&ndash;28 SCO, ENG 73&ndash;8 FIJ, ARG 35&ndash;21 WAL; Mackinac Whitehawk line honours; 505 Worlds GER win; 470 JWC Gdynia; myo-reps 62% time saving; 147k-person 90&ndash;120 min/wk sweet spot; GPT-5.6 Luna/Terra/Sol; DOOMQL SQLite engine; llm-coding-agent 0.1a0; APA Monitor AI de-skilling; MIT SMR emotional labor 59% women</span>
-    </li>
-    <li>
-      <a href="./archive/2026-07-10.html">2026-07-10</a>
-      <span class="archive-summary">Euclid 31 ancient quasars (A&amp;A); Tianwen-2 at Kamo&#699;oalewa first image; Rubin LSST begins; Quanta quantum proofs STOC; TESS microlensing first; US&ndash;Iran airstrikes/Khamenei funeral July 10; Spain World Cup 6-game clean-sheet record; Duterte impeachment opens; Nations Champ Round 1 full picture; Cork Week finals; Mackinac starts; myo-reps meta-analysis 62% time saving; GenAI amplifies strong/degrades weak entrepreneurs; GPT-5.6 Luna/Terra/Sol GA; Bun Zig&rarr;Rust; LiteLLM CVE-2026-42271</span>
-    </li>
-    <li>
-      <a href="./archive/2026-07-06.html">2026-07-06</a>
-      <span class="archive-summary">Earth aphelion (152.09M km today); AR4482 X1.3 flare; JWST infant stars; Nations Champ opens (Wales 39&ndash;24 Fiji, SA 45&ndash;21 England, NZ 34&ndash;32 France); Sail4th 250 NYC; AEGEAN 600 starts; women&rsquo;s strength longevity study; ACSM 137-review guidelines; APA Monitor AI de-skilling; Willison sqlite-utils 4.0rc2 by Fable ($149); MIT Sloan lifecycle AI governance</span>
-    </li>
-    <li>
-      <a href="./archive/2026-06-29.html">2026-06-29</a>
-      <span class="archive-summary">Swift Boost launch June 30 (1st unprepared satellite capture); ESA autonomy call; Quanta dark dimension theory; World Cup R32 Canada 1&ndash;0 South Africa; Ukraine refinery drone strike; Newport Bermuda Race Black Jack wins; APA sleep&ndash;mental health bidirectional; OpenAI GPT-5.6 Sol govt-only preview; Qualcomm&ndash;Tenstorrent talks $8&ndash;10B; CVE-2026-LGTM AI injection</span>
-    </li>
-    <li>
-      <a href="./archive/2026-06-26.html">2026-06-26</a>
-      <span class="archive-summary">Venezuela twin earthquakes (188+ dead, rescue ongoing); Ukraine strikes Russian gas plant &amp; satellite centres; Ebola DRC 1,000+ cases; World Cup group stage done (Scotland out 3&ndash;0); Lucy/Donaldjohanson bilobate wobbling asteroid w/ ancient water; Botswana Artemis Accords; ESA launch diversity; Kiel Week class winners (Gimson/Burnet, Richner/Sch&auml;rer); Anthropic accuses Alibaba 28.8M Claude distillation exchanges; Fable 5 Commerce deadline today; SAGE EI review (101 studies)</span>
-    </li>
-    <li>
-      <a href="./archive/2026-06-25.html">2026-06-25</a>
-      <span class="archive-summary">JUNO neutrino results in Nature (1.6&times; precision gain); Webb 3I/ATLAS 12Bn-yr origin clues; Euclid Q2 60M-star mosaic; APOD anticrepuscular rays Sicily; US Senate war powers resolution vs Iran; $34&ndash;42B war costs/sanctions ease; World Cup group stage concludes (Turkey&ndash;USA, Germany&ndash;Ecuador); Top 14 Final Toulouse v Montpellier Sat; Nations Championship July 4; Round Ireland Race Day 5 Khumbu leads; Superyacht Cup Palma opens; Kiel Week wraps; Henselmans carbs hypertrophy; MIT SMR 7Cs crisis maturity; APA Monitor r&eacute;sum&eacute; anonymisation bias; Jalape&ntilde;o OpenAI chip; Alteryx MCP agents; NYC DoE AI vetting</span>
-    </li>
-    <li>
-      <a href="./archive/2026-06-24.html">2026-06-24</a>
-      <span class="archive-summary">Euclid Q2 galactic bulge release (today); 3I/ATLAS found to be 12Bn years old; Qatar Ras Laffan explosion 13 dead; Ronaldo scores at 6th World Cup (5&ndash;0); Andy Burnham enters Labour leadership race; US Senate bipartisan housing bill; England squad (George captain, Itoje rested); Vend&eacute;e Arctique: Beccaria wins; Superyacht Cup Palma 30th ed. opens; Harvard 30yr lifting study; ACSM guidelines; Claude outage resolved; Willison Moebius in browser</span>
-    </li>
-    <li>
-      <a href="./archive/2026-06-23.html">2026-06-23</a>
-      <span class="archive-summary">Roman Telescope arrives KSC; JWST Orion A young stars; Quanta dark dimension; ISS Canadarm2 spacewalk prep; APOD Triton; Starmer resigns; US&ndash;Iran 60-day roadmap; Greenspan dies at 100; China sanctions 10 US defence firms; France heatwave 41.9&deg;C; Colombia de la Espriella wins; All Blacks (Savea captain); Springboks 46-man squad; Newport Bermuda Alliance rescue; SailGP Halifax Spain wins; Willison sqlite-utils 4.0rc1</span>
-    </li>
-    <li>
-      <a href="./archive/2026-06-22.html">2026-06-22</a>
-      <span class="archive-summary">Quanta shuffles proof; Euclid Q2 galactic survey 24 June; World Cup June 21 (Spain 4&ndash;0 Saudi Arabia); Vance&ndash;Iran Switzerland talks; Leinster URC back-to-back; SailGP Halifax Spain wins; Newport Bermuda Day 3; stretch hypertrophy review; Datasette Apps; Matt Pocock Skills v1.0</span>
-    </li>
-    <li>
-      <a href="./archive/2026-06-21.html">2026-06-21</a>
-      <span class="archive-summary">APOD Keogram 2025; June solstice; Quanta particles; Iran Hormuz closure disputed; Ukraine&ndash;Russia drone escalation; World Cup Germany 2&ndash;1 C&ocirc;te d&rsquo;Ivoire, Netherlands 5&ndash;1 Sweden; Northampton 26&ndash;17 Exeter (Prem Final); Scotland Nations Champ squad; SailGP Halifax Day 2; Newport Bermuda Race; APA on psychologists in AI; Willison ChatGPT Images 2.0; Pocock TypeScript/Go</span>
-    </li>
-    <li>
-      <a href="./archive/2026-06-20.html">2026-06-20</a>
-      <span class="archive-summary">Leinster 36&ndash;7 Bulls (URC back-to-back champions); Prem Final Northampton v Exeter today; Burnham wins Makerfield by-election vs Starmer; Trump&ndash;Meloni G7 photo row; SailGP Halifax opens; Germany v C&ocirc;te d&rsquo;Ivoire today (Group E); Katalyst Stargazer departs for Kwajalein; Simon Willison Datasette Apps</span>
-    </li>
-    <li>
-      <a href="./archive/2026-06-19.html">2026-06-19</a>
-      <span class="archive-summary">US&ndash;Iran MOU signed Geneva (Hormuz reopens, nuclear talks begin); World Cup June&nbsp;18 (Canada 6&ndash;0 Qatar, Switzerland 4&ndash;1); URC Final Leinster v Bulls tonight; Prem Final Northampton v Exeter tomorrow; Newport Bermuda Race starts; APOD galactic-centre supernova remnant; ACSM lifting guidelines; Meta&ndash;Nebius $27B; Karpathy Claws orchestration</span>
-    </li>
-    <li>
-      <a href="./archive/2026-06-18.html">2026-06-18</a>
-      <span class="archive-summary">Katalyst/Swift boost launch imminent; Moon occults Venus; Kamo&#699;oalewa LL chondrite study; Roman Telescope Sept launch; World Cup Day 8 England 4&ndash;2 Croatia; US&ndash;Iran $300B investment fund; G7 Lebanon ceasefire; URC Final Leinster v Bulls preview; Charlie Dalin dies; OpenAI Deployment Simulation; UE6 MCP integration</span>
-    </li>
-    <li>
-      <a href="./archive/2026-06-17.html">2026-06-17</a>
-      <span class="archive-summary">Ariane 6 VA269 launches (heaviest payload); APOD Saturn Cassini; World Cup Day 7 Haaland brace; Vend&eacute;e Arctique Beccaria wins; Top 14 semis confirmed; Fable 5 export control analysis; APA AI anxiety survey; MCP approval-gate pattern; AI spine leadership research</span>
-    </li>
-    <li>
-      <a href="./archive/2026-06-16.html">2026-06-16</a>
-      <span class="archive-summary">Dragon CRS-34 returns; Katalyst ready for Swift boost; Ariane 6 June 17; BoJ hike to 1%; Israel&ndash;Lebanon flares vs US&ndash;Iran deal; Swiss pop-cap vote; World Cup Day 6 Belgium&ndash;Egypt; URC Final preview; Vend&eacute;e Arctique finale; Gemini CLI June 18 sunset; EQ global decline study</span>
-    </li>
-    <li>
-      <a href="./archive/2026-06-15.html">2026-06-15</a>
-      <span class="archive-summary">US&ndash;Iran peace deal signed; World Cup Days 4&ndash;5 (Germany 7&ndash;1); ESA Arrakihs mission adopted; Yoon 30-yr sentence; Giraglia Day 2; R2AK starts; GLP-1 exercise study (ENDO 2026); HBR superteam; Anthropic v. Chinese labs distillation</span>
-    </li>
-    <li>
-      <a href="./archive/2026-06-14.html">2026-06-14</a>
-      <span class="archive-summary">AAS 248 opens (black holes, Europa ice, ASTRA missions); Katalyst Swift boost launch imminent; Belfast counter-rallies; World Cup Day 3 (Brazil 1&ndash;1 Morocco, Qatar 1&ndash;1 Switzerland); Exeter 27&ndash;26 Bath; URC Final Leinster v Bulls June 19; Vend&eacute;e Arctique Horeau retires; Newport Bermuda Race June 19; Fable 5 foreign access suspended; SBS on stretch hypertrophy; MIT SMR leadership overwhelm</span>
-    </li>
-    <li>
-      <a href="./archive/2026-06-13.html">2026-06-13</a>
-      <span class="archive-summary">Quanta: Earth&rsquo;s oceans may be homegrown; APOD Venus&ndash;Jupiter conjunction; Parker Solar 28th perihelion; US&ndash;Iran deal text agreed; World Cup Day 2 USA 4&ndash;1; Belfast riots; Northampton 21&ndash;20 Leicester Prem semi; Vend&eacute;e Arctique Goodchild leads; Datasette 1.0a33 sandboxing</span>
-    </li>
-    <li>
-      <a href="./archive/2026-06-12.html">2026-06-12</a>
-      <span class="archive-summary">JWST WASP-121b dawn/dusk; Artemis III crew; US strikes Iran; URC &amp; Premiership semi-finals preview; Vend&eacute;e Arctique Day 5; Harvard lifting longevity study; Anthropic Fable 5 reversal; Microsoft MAI models</span>
-    </li>
-    <li>
-      <a href="./archive/2026-06-11.html">2026-06-11</a>
-      <span class="archive-summary">Artemis III crew; Hormuz crisis escalates; JWST filaments; URC Elite XV; SSL Gold Cup Neuch&#226;tel; JFrog/Claude Code; DiffusionGemma</span>
-    </li>
-    <li>
-      <a href="./archive/2026-06-10.html">2026-06-10</a>
-      <span class="archive-summary">Roman Telescope August launch; ESA ILA Berlin; URC &amp; Prem finals set; SailGP Australia leads; Fable 5 impressions; Willison on WWDC &amp; MicroPython WASM</span>
-    </li>
-    <li>
-      <a href="./archive/2026-06-09.html">2026-06-09</a>
-      <span class="archive-summary">Venus&ndash;Jupiter conjunction; Roman Telescope ships; GWTC-5; Iran&ndash;Israel ceasefire strain; Peru election tie; H-1B ruling; SVNS Bordeaux; SailGP Disney+; Microsoft MAI models</span>
-    </li>
-    <li>
-      <a href="./archive/2026-06-08.html">2026-06-08</a>
-      <span class="archive-summary">Sgr A* winds confirmed; MAVEN retired; URC final Leinster v Bulls; Sodebo Jules Verne record; GPT-5.5 / Gemini 3.5 Flash; Anthropic $30B run rate</span>
-    </li>
-    <li>
-      <a href="./archive/2026-06-07.html">2026-06-07</a>
-      <span class="archive-summary">ISS Dragon shelter; Sgr A* winds discovered; Iran&ndash;Gulf escalation; URC semis (Bulls, Leinster); SailGP NY; Willison MicroPython sandbox</span>
-    </li>
-  </ul>
-</div>
+</main>
 
 <footer>
-  Generated by Daily Digest Bot &middot; 6 August 2026, 07:10 CEST &middot; Sources configured in <a href="./sources.yaml">sources.yaml</a>
+  Daily Digest &nbsp;·&nbsp; Last updated 7 August 2026 at 07:15 CET &nbsp;·&nbsp; Automated
 </footer>
+
 </body>
 </html>
