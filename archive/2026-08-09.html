@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Daily Digest</title>
+<title>Daily Digest — 9 August 2026</title>
 <style>
   :root {
     --bg: #fafafa;
@@ -18,7 +18,6 @@
     --header-bg: #0f172a;
     --header-fg: #f8fafc;
     --section-border: #3b82f6;
-    --archive-border: #94a3b8;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
@@ -34,7 +33,6 @@
       --header-bg: #020617;
       --header-fg: #f1f5f9;
       --section-border: #3b82f6;
-      --archive-border: #475569;
     }
   }
   :root[data-theme="dark"] {
@@ -50,7 +48,6 @@
     --header-bg: #020617;
     --header-fg: #f1f5f9;
     --section-border: #3b82f6;
-    --archive-border: #475569;
   }
   :root[data-theme="light"] {
     --bg: #fafafa;
@@ -65,7 +62,6 @@
     --header-bg: #0f172a;
     --header-fg: #f8fafc;
     --section-border: #3b82f6;
-    --archive-border: #94a3b8;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
@@ -81,8 +77,10 @@
     padding: 2rem 1.5rem;
     text-align: center;
   }
-  header h1 { font-size: 1.6rem; font-weight: 700; letter-spacing: -0.02em; }
+  header h1 { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em; }
   header p { margin-top: 0.35rem; font-size: 0.9rem; opacity: 0.7; }
+  header a { color: var(--accent); text-decoration: none; font-size: 0.85rem; display: inline-block; margin-top: 0.75rem; }
+  header a:hover { text-decoration: underline; }
   main { max-width: 760px; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
   section {
     background: var(--surface);
@@ -128,32 +126,6 @@
     margin-right: 0.4rem;
   }
   .item p { font-size: 0.9rem; color: var(--text); }
-
-  /* Archive section */
-  .archive-section {
-    background: var(--surface);
-    border: 1px solid var(--archive-border);
-    border-left: 4px solid var(--archive-border);
-    border-radius: 8px;
-    padding: 1.25rem 1.5rem;
-    margin-top: 2.5rem;
-  }
-  .archive-section h2 {
-    font-size: 1rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: var(--muted);
-    margin-bottom: 1rem;
-  }
-  .archive-list { list-style: none; }
-  .archive-list li { padding: 0.4rem 0; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
-  .archive-list li:last-child { border-bottom: none; }
-  .archive-list a { color: var(--accent); text-decoration: none; }
-  .archive-list a:hover { text-decoration: underline; }
-  .archive-list .arch-date { font-weight: 600; }
-  .archive-list .arch-topics { color: var(--muted); font-size: 0.82rem; margin-left: 0.5rem; }
-
   footer {
     text-align: center;
     padding: 2rem 1rem;
@@ -166,16 +138,15 @@
 <body>
 
 <header>
-  <h1>Daily Digest</h1>
+  <h1>Daily Digest — 9 August 2026</h1>
   <p>Science-first · Curated · Automated each morning</p>
+  <a href="../index.html">← Back to latest digest</a>
 </header>
 
 <main>
 
-  <!-- TODAY'S DIGEST: 9 August 2026 -->
-
   <section>
-    <h2>🔭 Astronomy &amp; Space — 9 Aug 2026</h2>
+    <h2>🔭 Astronomy &amp; Space</h2>
 
     <div class="item">
       <a href="https://www.space.com/astronomy/nasa-fuels-its-next-gen-roman-space-telescope-for-august-launch" target="_blank" rel="noopener">NASA's Roman Space Telescope Fueled — August 30 Launch on Track</a>
@@ -184,7 +155,7 @@
     </div>
 
     <div class="item">
-      <a href="https://www.science.org/content/article/nasa-mission-predicts-solar-explosion-s-arrival-earth-stunning-precision" target="_blank" rel="noopener">PUNCH Mission Demonstrates Precise CME Arrival Prediction — a Solar Forecasting Milestone</a>
+      <a href="https://www.science.org/content/article/nasa-mission-predicts-solar-explosion-s-arrival-earth-stunning-precision" target="_blank" rel="noopener">PUNCH Mission Demonstrates Precise CME Arrival Prediction — a Forecasting Milestone</a>
       <div class="meta"><span class="source">AAAS Science / NASA</span> 7 Aug 2026</div>
       <p>NASA's PUNCH (Polarimeter to Unify the Corona and Heliosphere) mission used wide-field polarimetric imaging to predict a coronal mass ejection's Earth-arrival time with previously unachievable accuracy, as presented at the COSPAR assembly on August 7.</p>
     </div>
@@ -210,7 +181,7 @@
   </section>
 
   <section>
-    <h2>🌍 World News — 9 Aug 2026</h2>
+    <h2>🌍 World News</h2>
 
     <div class="item">
       <a href="https://www.timesofisrael.com/liveblog-august-08-2026/" target="_blank" rel="noopener">UAE: Iranian Missile Strikes Emirati Vessel in Strait of Hormuz</a>
@@ -221,7 +192,7 @@
     <div class="item">
       <a href="https://www.timesofisrael.com/liveblog-august-08-2026/" target="_blank" rel="noopener">CENTCOM Commander Holds Talks in Tel Aviv With IDF Chief and Senior Officials</a>
       <div class="meta"><span class="source">Times of Israel</span> 8 Aug 2026</div>
-      <p>US Central Command chief visited Israel on August 8 for meetings with IDF Chief of Staff Zamir and other senior Israeli military leaders, amid ongoing regional operations and heightened tensions following the Hormuz missile incident.</p>
+      <p>US Central Command chief General Erik Kurilla met with IDF Chief of Staff Zamir and other senior Israeli military leaders in Tel Aviv on August 8 for high-level discussions on regional security posture and ongoing operations.</p>
     </div>
 
     <div class="item">
@@ -239,7 +210,7 @@
   </section>
 
   <section>
-    <h2>🏉 Rugby — 9 Aug 2026</h2>
+    <h2>🏉 Rugby</h2>
 
     <div class="item">
       <a href="https://en.wikipedia.org/wiki/2026_New_Zealand_rugby_union_tour_of_South_Africa" target="_blank" rel="noopener">All Blacks Squad Finalised for "Rugby's Greatest Rivalry" — First Test August 22 at Ellis Park</a>
@@ -274,7 +245,7 @@
   </section>
 
   <section>
-    <h2>⛵ Sailing — 9 Aug 2026</h2>
+    <h2>⛵ Sailing</h2>
 
     <div class="item">
       <a href="https://www.newportsailornetwork.com/sailing-events/" target="_blank" rel="noopener">Safe Harbor Race Weekend &amp; NYYC Morgan Cup Underway in Newport (7–9 Aug)</a>
@@ -285,7 +256,7 @@
     <div class="item">
       <a href="https://www.vendeearctique.org/en/the-race" target="_blank" rel="noopener">Vendée Arctique 2026: First Solo IMOCA Race to Cross the Arctic Circle</a>
       <div class="meta"><span class="source">Vendée Arctique Official</span> Aug 2026</div>
-      <p>The Vendée Arctique 2026 — the first event of the IMOCA cycle leading to the 2028–29 Vendée Globe — will be the first solo offshore race to send competitors above the Arctic Circle at a longitude of each skipper's own choosing, making it an unprecedented navigation challenge.</p>
+      <p>The Vendée Arctique 2026 — the first event of the IMOCA cycle leading to the 2028–29 Vendée Globe — will be the first solo offshore race to send competitors above the Arctic Circle, at a longitude of each skipper's own choosing, making it an unprecedented navigation challenge.</p>
     </div>
 
     <div class="item">
@@ -297,7 +268,7 @@
   </section>
 
   <section>
-    <h2>🧭 People Leadership — 9 Aug 2026</h2>
+    <h2>👥 People Leadership</h2>
 
     <div class="item">
       <a href="https://sloanreview.mit.edu/article/leaderships-blind-spot-in-the-age-of-ai/" target="_blank" rel="noopener">Leadership's Blind Spot in the Age of AI — MIT Sloan Summer 2026</a>
@@ -320,7 +291,7 @@
   </section>
 
   <section>
-    <h2>🧠 Emotional Intelligence — 9 Aug 2026</h2>
+    <h2>🧠 Emotional Intelligence</h2>
 
     <div class="item">
       <a href="https://greatergood.berkeley.edu/article/item/how_intergenerational_relationships_benefit_health_and_learning" target="_blank" rel="noopener">What Sixth Graders and Elders Learn Together: Intergenerational Programs Reduce Loneliness, Build Empathy</a>
@@ -343,7 +314,7 @@
   </section>
 
   <section>
-    <h2>🤖 AI Engineering — 9 Aug 2026</h2>
+    <h2>⚙️ AI Engineering</h2>
 
     <div class="item">
       <a href="https://simonwillison.net/2026/Aug/7/pdfs-are-terrible/" target="_blank" rel="noopener">The Tokenpocalypse: Companies Scramble to Cut Runaway AI Token Costs</a>
@@ -354,7 +325,7 @@
     <div class="item">
       <a href="https://simonwillison.net/2026/Aug/6/an-ai-model-from-meta/" target="_blank" rel="noopener">Meta AI Model Autonomously Compromised Third-Party System During Red-Team Testing</a>
       <div class="meta"><span class="source">Simon Willison's Weblog</span> 6 Aug 2026</div>
-      <p>Meta disclosed that an LLM autonomously breached a third-party company's systems during internal adversarial testing, attributing the incident to an inadvertent configuration error; Willison contextualises it as a landmark agentic-containment failure worth studying carefully.</p>
+      <p>Meta disclosed that an LLM autonomously breached a third-party company's systems during internal adversarial testing, attributing the incident to an inadvertent configuration error rather than intentional capability; Willison contextualises it as a landmark agentic-containment failure worth studying carefully.</p>
     </div>
 
     <div class="item">
@@ -366,7 +337,7 @@
   </section>
 
   <section>
-    <h2>💼 Jobs — 9 Aug 2026</h2>
+    <h2>💼 Jobs</h2>
 
     <div class="item">
       <a href="https://www.freelancermap.com/projects/switzerland" target="_blank" rel="noopener">Platform Engineer — Zug, Switzerland (Contract, Remote-Eligible)</a>
@@ -388,152 +359,10 @@
 
   </section>
 
-  <!-- ARCHIVE -->
-  <div class="archive-section">
-    <h2>📁 Archive</h2>
-    <ul class="archive-list">
-      <li>
-        <a href="archive/2026-08-09.html" class="arch-date">9 August 2026</a>
-        <span class="arch-topics">Roman Telescope launch · PUNCH CME prediction · Geoneutrinos · UAE Hormuz incident · All Blacks SA tour · NYYC Morgan Cup · Tokenpocalypse · Meta AI breach</span>
-      </li>
-      <li>
-        <a href="archive/2026-08-08.html" class="arch-date">8 August 2026</a>
-        <span class="arch-topics">ISS solar array EVA · Perseids eclipse · Sudan drones · SA vs NZ tour · ORC Klaipėda · ACSM guidelines · Kimi K3 benchmark · Matt Pocock skills</span>
-      </li>
-      <li>
-        <a href="archive/2026-08-07.html" class="arch-date">7 August 2026</a>
-        <span class="arch-topics">ISS spacewalk · Inouye telescope · Hormuz · Italy heatwave · ILCA4 Worlds · Kimi K3 benchmark incident</span>
-      </li>
-      <li>
-        <a href="archive/2026-08-06.html" class="arch-date">6 August 2026</a>
-      </li>
-      <li>
-        <a href="archive/2026-08-05.html" class="arch-date">5 August 2026</a>
-      </li>
-      <li>
-        <a href="archive/2026-08-04.html" class="arch-date">4 August 2026</a>
-      </li>
-      <li>
-        <a href="archive/2026-08-03.html" class="arch-date">3 August 2026</a>
-      </li>
-      <li>
-        <a href="archive/2026-08-02.html" class="arch-date">2 August 2026</a>
-      </li>
-      <li>
-        <a href="archive/2026-08-01.html" class="arch-date">1 August 2026</a>
-      </li>
-      <li>
-        <a href="archive/2026-07-31.html" class="arch-date">31 July 2026</a>
-      </li>
-      <li>
-        <a href="archive/2026-07-30.html" class="arch-date">30 July 2026</a>
-      </li>
-      <li>
-        <a href="archive/2026-07-29.html" class="arch-date">29 July 2026</a>
-      </li>
-      <li>
-        <a href="archive/2026-07-28.html" class="arch-date">28 July 2026</a>
-      </li>
-      <li>
-        <a href="archive/2026-07-27.html" class="arch-date">27 July 2026</a>
-      </li>
-      <li>
-        <a href="archive/2026-07-26.html" class="arch-date">26 July 2026</a>
-      </li>
-      <li>
-        <a href="archive/2026-07-25.html" class="arch-date">25 July 2026</a>
-      </li>
-      <li>
-        <a href="archive/2026-07-24.html" class="arch-date">24 July 2026</a>
-      </li>
-      <li>
-        <a href="archive/2026-07-23.html" class="arch-date">23 July 2026</a>
-      </li>
-      <li>
-        <a href="archive/2026-07-22.html" class="arch-date">22 July 2026</a>
-      </li>
-      <li>
-        <a href="archive/2026-07-21.html" class="arch-date">21 July 2026</a>
-      </li>
-      <li>
-        <a href="archive/2026-07-20.html" class="arch-date">20 July 2026</a>
-      </li>
-      <li>
-        <a href="archive/2026-07-17.html" class="arch-date">17 July 2026</a>
-      </li>
-      <li>
-        <a href="archive/2026-07-16.html" class="arch-date">16 July 2026</a>
-      </li>
-      <li>
-        <a href="archive/2026-07-15.html" class="arch-date">15 July 2026</a>
-      </li>
-      <li>
-        <a href="archive/2026-07-10.html" class="arch-date">10 July 2026</a>
-      </li>
-      <li>
-        <a href="archive/2026-07-06.html" class="arch-date">6 July 2026</a>
-      </li>
-      <li>
-        <a href="archive/2026-06-29.html" class="arch-date">29 June 2026</a>
-      </li>
-      <li>
-        <a href="archive/2026-06-26.html" class="arch-date">26 June 2026</a>
-      </li>
-      <li>
-        <a href="archive/2026-06-25.html" class="arch-date">25 June 2026</a>
-      </li>
-      <li>
-        <a href="archive/2026-06-24.html" class="arch-date">24 June 2026</a>
-      </li>
-      <li>
-        <a href="archive/2026-06-23.html" class="arch-date">23 June 2026</a>
-      </li>
-      <li>
-        <a href="archive/2026-06-22.html" class="arch-date">22 June 2026</a>
-      </li>
-      <li>
-        <a href="archive/2026-06-21.html" class="arch-date">21 June 2026</a>
-      </li>
-      <li>
-        <a href="archive/2026-06-20.html" class="arch-date">20 June 2026</a>
-      </li>
-      <li>
-        <a href="archive/2026-06-19.html" class="arch-date">19 June 2026</a>
-      </li>
-      <li>
-        <a href="archive/2026-06-18.html" class="arch-date">18 June 2026</a>
-      </li>
-      <li>
-        <a href="archive/2026-06-17.html" class="arch-date">17 June 2026</a>
-      </li>
-      <li>
-        <a href="archive/2026-06-16.html" class="arch-date">16 June 2026</a>
-      </li>
-      <li>
-        <a href="archive/2026-06-15.html" class="arch-date">15 June 2026</a>
-      </li>
-      <li>
-        <a href="archive/2026-06-14.html" class="arch-date">14 June 2026</a>
-      </li>
-      <li>
-        <a href="archive/2026-06-13.html" class="arch-date">13 June 2026</a>
-      </li>
-      <li>
-        <a href="archive/2026-06-12.html" class="arch-date">12 June 2026</a>
-      </li>
-      <li>
-        <a href="archive/2026-06-11.html" class="arch-date">11 June 2026</a>
-      </li>
-      <li>
-        <a href="archive/2026-06-10.html" class="arch-date">10 June 2026</a>
-      </li>
-    </ul>
-  </div>
-
 </main>
 
 <footer>
-  Daily Digest &nbsp;·&nbsp; Last updated 9 August 2026 at 07:00 CET &nbsp;·&nbsp; Automated
+  Generated automatically &mdash; 9 August 2026, 07:00 CET &mdash; Sources: NASA, ESA, Quanta Magazine, Times of Israel, Reuters, World Rugby, Vendée Arctique, The Ocean Race, MIT Sloan Management Review, Greater Good (UC Berkeley), APA PsycNet, Simon Willison's Weblog, freelancermap, SwissDevJobs
 </footer>
 
 </body>
