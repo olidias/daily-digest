@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Daily Digest</title>
+<title>Daily Digest — 11 August 2026</title>
 <style>
   :root {
     --bg: #ffffff;
@@ -19,8 +19,6 @@
     --header-bg: #1e3a5f;
     --header-text: #ffffff;
     --header-sub: #93c5fd;
-    --archive-bg: #f0f4f8;
-    --archive-border: #cbd5e1;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
@@ -37,8 +35,6 @@
       --header-bg: #0f2340;
       --header-text: #e8eaf0;
       --header-sub: #93c5fd;
-      --archive-bg: #151a25;
-      --archive-border: #2d3348;
     }
   }
   :root[data-theme="dark"] {
@@ -55,8 +51,6 @@
     --header-bg: #0f2340;
     --header-text: #e8eaf0;
     --header-sub: #93c5fd;
-    --archive-bg: #151a25;
-    --archive-border: #2d3348;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
@@ -84,24 +78,16 @@
   header p {
     color: var(--header-sub);
     font-size: 0.875rem;
-    margin-bottom: 2px;
   }
-  .toc {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-top: 14px;
+  header nav {
+    margin-top: 12px;
+    font-size: 0.8125rem;
   }
-  .toc a {
-    font-size: 0.75rem;
+  header nav a {
     color: var(--header-sub);
     text-decoration: none;
-    border: 1px solid rgba(147,197,253,0.35);
-    padding: 2px 8px;
-    border-radius: 12px;
-    white-space: nowrap;
   }
-  .toc a:hover { background: rgba(147,197,253,0.15); }
+  header nav a:hover { text-decoration: underline; }
   section {
     margin-bottom: 32px;
     border: 1px solid var(--border);
@@ -124,7 +110,10 @@
     letter-spacing: 0.02em;
     text-transform: uppercase;
   }
-  .section-icon { font-size: 1rem; line-height: 1; }
+  .section-icon {
+    font-size: 1rem;
+    line-height: 1;
+  }
   article {
     padding: 14px 16px;
     border-bottom: 1px solid var(--border);
@@ -167,53 +156,22 @@
     color: var(--text);
     line-height: 1.55;
   }
-  /* Archive section */
-  .archive-section {
-    margin-top: 48px;
-    padding-top: 24px;
-    border-top: 2px solid var(--border);
-  }
-  .archive-section h2 {
-    font-size: 1.125rem;
-    font-weight: 700;
-    margin-bottom: 16px;
-    color: var(--text);
-  }
-  .archive-list {
-    list-style: none;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 6px;
-  }
-  .archive-list li a {
-    display: block;
-    padding: 7px 12px;
-    background: var(--archive-bg);
-    border: 1px solid var(--archive-border);
-    border-radius: 6px;
-    color: var(--accent);
-    text-decoration: none;
-    font-size: 0.875rem;
-    font-weight: 500;
-    transition: border-color 0.15s;
-  }
-  .archive-list li a:hover {
-    border-color: var(--accent);
-    text-decoration: underline;
-  }
-  .archive-list li.today a {
-    border-color: var(--accent);
-    font-weight: 700;
-    background: var(--tag-bg);
-    color: var(--tag-text);
-  }
   footer {
     margin-top: 40px;
     padding-top: 16px;
     border-top: 1px solid var(--border);
     font-size: 0.75rem;
     color: var(--text-muted);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
   }
+  footer a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  footer a:hover { text-decoration: underline; }
 </style>
 </head>
 <body>
@@ -221,22 +179,11 @@
 <header>
   <h1>Daily Digest — 11 August 2026</h1>
   <p>Curated from primary sources &amp; research feeds · Europe/Zurich</p>
-  <p style="font-size:0.75rem;color:var(--header-sub);margin-top:2px;">🔭 Space &nbsp;·&nbsp; 🌍 World News &nbsp;·&nbsp; ⛵ Sailing &nbsp;·&nbsp; 🏋️ Lifting &nbsp;·&nbsp; 👥 Leadership &nbsp;·&nbsp; 🧠 EQ &nbsp;·&nbsp; 🤖 AI &nbsp;·&nbsp; 💼 Jobs</p>
-  <nav class="toc">
-    <a href="#space">🔭 Astronomy &amp; Space</a>
-    <a href="#world">🌍 World News</a>
-    <a href="#sailing">⛵ Sailing</a>
-    <a href="#lifting">🏋️ Lifting</a>
-    <a href="#leadership">👥 Leadership</a>
-    <a href="#eq">🧠 Emotional Intelligence</a>
-    <a href="#ai">🤖 AI Engineering</a>
-    <a href="#jobs">💼 Jobs</a>
-    <a href="#archive">📁 Archive</a>
-  </nav>
+  <nav><a href="../index.html">← Back to index &amp; archive</a></nav>
 </header>
 
 <!-- ASTRONOMY & SPACE -->
-<section id="space">
+<section>
   <div class="section-header">
     <span class="section-icon">🔭</span>
     <h2>Astronomy &amp; Space</h2>
@@ -263,7 +210,7 @@
   <article>
     <h3><a href="https://science.nasa.gov/solar-system/whats-up-august-2026-skywatching-tips-from-nasa/" target="_blank" rel="noopener">Perseid Meteor Shower Peaks Tomorrow Night Under Near-Perfect Dark Skies</a></h3>
     <div class="meta"><span class="source-tag">NASA Science</span> <span>Aug 2026</span></div>
-    <p class="summary">The Perseid shower peaks the night of August 12-13 in coincidence with a New Moon, providing ideally dark skies — with the total solar eclipse the same evening adding to a remarkable night for amateur observers.</p>
+    <p class="summary">The Perseid shower peaks the night of August 12-13 in coincidence with a New Moon, providing ideally dark skies for one of the year's most prolific meteor displays — with the total solar eclipse the same evening adding to the observing interest.</p>
   </article>
 
   <article>
@@ -275,21 +222,21 @@
   <article>
     <h3><a href="https://skyandtelescope.org/astronomy-news/" target="_blank" rel="noopener">Venus Reaches Dichotomy Tonight — Exactly Half-Lit</a></h3>
     <div class="meta"><span class="source-tag">Sky &amp; Telescope</span> <span>Aug 11, 2026</span></div>
-    <p class="summary">Venus reaches dichotomy overnight Aug 11/12, appearing 50.4% illuminated; it will then track toward a close conjunction with Spica on September 1 and continues as a prominent evening-sky object through autumn.</p>
+    <p class="summary">Venus reaches dichotomy overnight Aug 11/12, appearing 50.4% illuminated; it will then track toward a conjunction with Spica on September 1 and continues as a prominent evening-sky object through autumn.</p>
   </article>
 </section>
 
 <!-- WORLD NEWS -->
-<section id="world">
+<section>
   <div class="section-header">
     <span class="section-icon">🌍</span>
     <h2>World News</h2>
   </div>
 
   <article>
-    <h3>Trump Signals Economic Pressure Over Military Strike on Iran; Deal Terms Unconfirmed by Tehran</h3>
+    <h3>Trump Signals Economic Pressure Over Military Strike on Iran; Deal Terms Remain Unconfirmed by Tehran</h3>
     <div class="meta"><span class="source-tag">Euronews / Anadolu Agency</span> <span>Aug 10, 2026</span></div>
-    <p class="summary">US President Trump told Axios he is prepared to sustain economic pressure rather than launch an immediate military offensive against Iran; however Tehran has not itself confirmed the reported deal parameters — including full reopening of the Strait of Hormuz and an end to Iran's nuclear programme — that US officials have attributed to an agreement.</p>
+    <p class="summary">US President Trump told Axios he is prepared to sustain economic pressure rather than launch an immediate military offensive against Iran, though Tehran has not itself confirmed the reported deal parameters — including full reopening of the Strait of Hormuz and an end to Iran's nuclear programme — that US officials have attributed to an agreement.</p>
   </article>
 
   <article>
@@ -312,7 +259,7 @@
 
   <article>
     <h3>Ukraine Frozen Conflict Scenario Now Dominant Outlook Among Analysts</h3>
-    <div class="meta"><span class="source-tag">Deutsche Bank Research / Conference Board</span> <span>Aug 2026</span></div>
+    <div class="meta"><span class="source-tag">Deutsche Bank Research Institute / Conference Board</span> <span>Aug 2026</span></div>
     <p class="summary">Deutsche Bank Research and the Conference Board's August geopolitical assessments both flag a frozen conflict as the increasingly probable outcome in Ukraine, as diplomatic momentum stalls and neither side can achieve decisive territorial gains.</p>
   </article>
 
@@ -324,7 +271,7 @@
 </section>
 
 <!-- SAILING -->
-<section id="sailing">
+<section>
   <div class="section-header">
     <span class="section-icon">⛵</span>
     <h2>Sailing</h2>
@@ -333,7 +280,7 @@
   <article>
     <h3><a href="https://www.sail-world.com/news/298748/Who-will-claim-the-470-Worlds-in-Enoshima" target="_blank" rel="noopener">470 World Championship Underway in Enoshima, Japan (Aug 10–17)</a></h3>
     <div class="meta"><span class="source-tag">Sail-World</span> <span>Aug 10, 2026</span></div>
-    <p class="summary">Day two of the 2026 470 Sailing World Championships is racing at Enoshima — the same Olympic venue — with the full international fleet competing over eight days for the world title in the Olympic double-handed dinghy class.</p>
+    <p class="summary">Day two of the 2026 470 Sailing World Championships is racing at Enoshima — the same Olympic venue — with the full international fleet competing over eight days for the World title in the Olympic double-handed dinghy class.</p>
   </article>
 
   <article>
@@ -356,7 +303,7 @@
 </section>
 
 <!-- SCIENCE-BASED LIFTING -->
-<section id="lifting">
+<section>
   <div class="section-header">
     <span class="section-icon">🏋️</span>
     <h2>Science-Based Lifting</h2>
@@ -365,18 +312,18 @@
   <article>
     <h3><a href="https://link.springer.com/article/10.1007/s40279-025-02341-z" target="_blank" rel="noopener">Meta-Analysis: Carbohydrate Intake Has Minimal Independent Effect on Muscle Hypertrophy</a></h3>
     <div class="meta"><span class="source-tag">Menno Henselmans / Sports Medicine</span> <span>2026</span></div>
-    <p class="summary">A systematic review and meta-analysis by Henselmans, Vårvik, and Izquierdo in <em>Sports Medicine</em> finds that carbohydrate intake exerts at most a modest independent effect on resistance-training hypertrophy when total energy and protein are controlled — with direct practical implications for diet design in trained individuals.</p>
+    <p class="summary">A systematic review and meta-analysis by Henselmans, Vårvik, and Izquierdo in <em>Sports Medicine</em> synthesises available evidence and finds that carbohydrate intake exerts at most a modest independent effect on resistance-training hypertrophy when total energy and protein are controlled — a finding with direct practical implications for diet design.</p>
   </article>
 
   <article>
-    <h3><a href="https://www.strongerbyscience.com/correlation-strength-hypertrophy/" target="_blank" rel="noopener">Hypertrophy-Strength Correlation Stronger in New Lifters Than Prior Studies Showed — With Caveats</a></h3>
+    <h3><a href="https://www.strongerbyscience.com/correlation-strength-hypertrophy/" target="_blank" rel="noopener">Hypertrophy-Strength Correlation Stronger in New Lifters Than Prior Studies Showed — But Not as Strong as It Looks</a></h3>
     <div class="meta"><span class="source-tag">Stronger By Science</span> <span>2026</span></div>
-    <p class="summary">Analysis of research by Marques et al. shows that in new lifters, hypertrophy correlates more strongly with strength gains than earlier studies indicated, but Stronger By Science cautions the magnitude is substantially overstated by the raw statistics due to methodological artefacts.</p>
+    <p class="summary">Analysis of research by Marques et al. shows that in new lifters, hypertrophy correlates more strongly with strength gains than earlier studies indicated, but Stronger By Science cautions that the magnitude of the relationship is substantially overstated by the raw statistics due to methodological artefacts.</p>
   </article>
 </section>
 
 <!-- PEOPLE LEADERSHIP -->
-<section id="leadership">
+<section>
   <div class="section-header">
     <span class="section-icon">👥</span>
     <h2>People Leadership</h2>
@@ -391,7 +338,7 @@
   <article>
     <h3><a href="https://hbr.org/2026/07/what-60-years-of-data-reveals-about-how-men-and-women-experience-leadership" target="_blank" rel="noopener">Sixty Years of Data Expose Persisting Underground Bias Against Women Leaders</a></h3>
     <div class="meta"><span class="source-tag">HBR</span> <span>July 2026</span></div>
-    <p class="summary">A longitudinal dataset spanning six decades finds that despite surface-level convergence in attitudes, structural "underground bias" — in informal sponsorship patterns, subjective performance criteria, and unequal access to profit-and-loss roles — continues to systematically disadvantage women in leadership pipelines.</p>
+    <p class="summary">A longitudinal dataset spanning six decades finds that while surface-level attitudes have converged, structural "underground bias" — in informal sponsorship patterns, subjective performance criteria, and unequal access to profit-and-loss roles — continues to systematically disadvantage women in leadership pipelines.</p>
   </article>
 
   <article>
@@ -402,7 +349,7 @@
 </section>
 
 <!-- EMOTIONAL INTELLIGENCE -->
-<section id="eq">
+<section>
   <div class="section-header">
     <span class="section-icon">🧠</span>
     <h2>Emotional Intelligence</h2>
@@ -411,13 +358,13 @@
   <article>
     <h3><a href="https://greatergood.berkeley.edu/article/" target="_blank" rel="noopener">Intergenerational Contact: Sixth-Graders at Care Homes Benefit Both Young and Old</a></h3>
     <div class="meta"><span class="source-tag">Greater Good Magazine (UC Berkeley)</span> <span>Aug 4, 2026</span></div>
-    <p class="summary">Research coverage by Kira M. Newman examines a Canadian programme pairing sixth-grade students with long-term care residents, finding documented wellbeing and social-emotional gains for both cohorts — adding to the growing evidence base for structured intergenerational contact as a low-cost wellbeing intervention.</p>
+    <p class="summary">Research coverage by Kira M. Newman examines a Canadian programme pairing sixth-grade students with long-term care residents, finding documented wellbeing and social-emotional gains for both cohorts — adding to a growing evidence base for structured intergenerational contact as a low-cost wellbeing intervention.</p>
   </article>
 
   <article>
-    <h3><a href="https://greatergood.berkeley.edu/article/" target="_blank" rel="noopener">Evidence-Based Framework: Helping Students Align Daily Decisions with Core Values</a></h3>
+    <h3><a href="https://greatergood.berkeley.edu/article/" target="_blank" rel="noopener">Evidence-Based Approach: Helping Students Align Daily Decisions with Core Values</a></h3>
     <div class="meta"><span class="source-tag">Greater Good Magazine (UC Berkeley)</span> <span>Aug 3, 2026</span></div>
-    <p class="summary">Arthur Schwartz, Marcelo Cavazos, and Ellyn Metcalf present an empirically grounded approach for helping students bridge the gap between stated values and daily choices — addressing a key mechanism by which identity-consistent behaviour supports long-term psychological flourishing.</p>
+    <p class="summary">Arthur Schwartz, Marcelo Cavazos, and Ellyn Metcalf present an empirically grounded framework for educators to help students bridge the gap between stated values and daily decisions — addressing a key mechanism by which identity-consistent behaviour supports long-term psychological flourishing.</p>
   </article>
 
   <article>
@@ -428,7 +375,7 @@
 </section>
 
 <!-- AI ENGINEERING -->
-<section id="ai">
+<section>
   <div class="section-header">
     <span class="section-icon">🤖</span>
     <h2>AI Engineering</h2>
@@ -437,30 +384,30 @@
   <article>
     <h3><a href="https://simonwillison.net/2026/Aug/9/github-models-is-now-retired/" target="_blank" rel="noopener">GitHub Models Service Officially Retired</a></h3>
     <div class="meta"><span class="source-tag">Simon Willison</span> <span>Aug 9, 2026</span></div>
-    <p class="summary">GitHub has officially retired its AI Models preview service — which provided free hosted access to multiple LLMs — following a scheduled brownout, ending one of the more accessible low-friction entry points to model experimentation on the platform.</p>
+    <p class="summary">GitHub has officially retired its AI Models preview service — which provided free hosted access to multiple LLMs — following a scheduled brownout, ending one of the more significant low-friction entry points to model experimentation on the platform.</p>
   </article>
 
   <article>
     <h3><a href="https://simonwillison.net/2026/Aug/8/auto-mode/" target="_blank" rel="noopener">Claude Code Auto Mode Becomes Default for Pro, Max, and Team Plans on Aug 14</a></h3>
     <div class="meta"><span class="source-tag">Simon Willison</span> <span>Aug 8, 2026</span></div>
-    <p class="summary">Anthropic announced that auto mode — which dynamically selects between extended-thinking and standard reasoning — will become the default in Claude Code for Pro, Max, and Team plan users starting August 14, reflecting confidence in the mode's reliability across agentic coding tasks.</p>
+    <p class="summary">Anthropic announced that auto mode — which dynamically selects between extended-thinking and standard reasoning — will become the default in Claude Code for Pro, Max, and Team plan users starting August 14, reflecting sustained confidence in the mode's reliability across agentic coding tasks.</p>
   </article>
 
   <article>
     <h3><a href="https://simonwillison.net/2026/Aug/8/now-we-have-a-timeline-of-the-openai-accidental-attack-against-h/" target="_blank" rel="noopener">Full Timeline Confirmed: OpenAI's Accidental Attack Against Hugging Face</a></h3>
     <div class="meta"><span class="source-tag">Simon Willison</span> <span>Aug 8, 2026</span></div>
-    <p class="summary">A verified chronology of the incident in which OpenAI infrastructure accidentally generated traffic patterns targeting Hugging Face has been published; the timeline clarifies what happened, when, and what safeguards were absent.</p>
+    <p class="summary">A verified chronology of the incident in which OpenAI infrastructure accidentally generated traffic patterns targeting Hugging Face has been published; the timeline helps clarify what happened, when, and what safeguards were absent.</p>
   </article>
 
   <article>
     <h3><a href="https://simonwillison.net/2026/Aug/4/new-release-of-llm/" target="_blank" rel="noopener">LLM 0.32: Reasoning Traces, Server-Side Tools, Content-Addressable SQLite Logs</a></h3>
     <div class="meta"><span class="source-tag">Simon Willison</span> <span>Aug 4, 2026</span></div>
-    <p class="summary">The LLM command-line tool version 0.32 adds visible reasoning trace output, server-side provider tool support, a redesigned content-addressable SQLite logging system, and several new model integrations via the OpenAI Responses API.</p>
+    <p class="summary">The LLM command-line tool version 0.32 adds visible reasoning trace output, server-side provider tool support (enabling model-controlled tool calls without client-side plumbing), a redesigned content-addressable SQLite logging system, and several new model integrations via the OpenAI Responses API.</p>
   </article>
 </section>
 
 <!-- JOBS -->
-<section id="jobs">
+<section>
   <div class="section-header">
     <span class="section-icon">💼</span>
     <h2>Jobs</h2>
@@ -469,7 +416,7 @@
   <article>
     <h3><a href="https://www.freelancermap.com/projects/switzerland" target="_blank" rel="noopener">Freelancermap Switzerland: 628 Active IT Projects</a></h3>
     <div class="meta"><span class="source-tag">freelancermap</span> <span>Aug 11, 2026</span></div>
-    <p class="summary">Current Swiss listings include: Azure Cloud Engineer (Zürich), SAP S/4HANA FICO consultant (Zürich, 100% remote), Platform Engineer (Zug, 40% remote), SDET (Bern, 60% remote), and Senior Business Analyst (Liestal) — mix of freelance and contract arrangements with start dates through Q4 2026.</p>
+    <p class="summary">Current Swiss listings include: Azure Cloud Engineer (Zürich), SAP S/4HANA FICO consultant (Zürich, 100% remote), Platform Engineer (Zug, 40% remote), Software Developer in Test / SDET (Bern, 60% remote), and Senior Business Analyst (Liestal) — mix of freelance and contract arrangements with start dates through Q4 2026.</p>
   </article>
 
   <article>
@@ -479,59 +426,9 @@
   </article>
 </section>
 
-<!-- ARCHIVE -->
-<div class="archive-section" id="archive">
-  <h2>📁 Archive</h2>
-  <ul class="archive-list">
-    <li class="today"><a href="archive/2026-08-11.html">2026-08-11 · Today</a></li>
-    <li><a href="archive/2026-08-10.html">2026-08-10</a></li>
-    <li><a href="archive/2026-08-09.html">2026-08-09</a></li>
-    <li><a href="archive/2026-08-08.html">2026-08-08</a></li>
-    <li><a href="archive/2026-08-07.html">2026-08-07</a></li>
-    <li><a href="archive/2026-08-06.html">2026-08-06</a></li>
-    <li><a href="archive/2026-08-05.html">2026-08-05</a></li>
-    <li><a href="archive/2026-08-04.html">2026-08-04</a></li>
-    <li><a href="archive/2026-08-03.html">2026-08-03</a></li>
-    <li><a href="archive/2026-08-02.html">2026-08-02</a></li>
-    <li><a href="archive/2026-08-01.html">2026-08-01</a></li>
-    <li><a href="archive/2026-07-31.html">2026-07-31</a></li>
-    <li><a href="archive/2026-07-30.html">2026-07-30</a></li>
-    <li><a href="archive/2026-07-29.html">2026-07-29</a></li>
-    <li><a href="archive/2026-07-28.html">2026-07-28</a></li>
-    <li><a href="archive/2026-07-27.html">2026-07-27</a></li>
-    <li><a href="archive/2026-07-26.html">2026-07-26</a></li>
-    <li><a href="archive/2026-07-25.html">2026-07-25</a></li>
-    <li><a href="archive/2026-07-24.html">2026-07-24</a></li>
-    <li><a href="archive/2026-07-23.html">2026-07-23</a></li>
-    <li><a href="archive/2026-07-22.html">2026-07-22</a></li>
-    <li><a href="archive/2026-07-21.html">2026-07-21</a></li>
-    <li><a href="archive/2026-07-20.html">2026-07-20</a></li>
-    <li><a href="archive/2026-07-17.html">2026-07-17</a></li>
-    <li><a href="archive/2026-07-16.html">2026-07-16</a></li>
-    <li><a href="archive/2026-07-15.html">2026-07-15</a></li>
-    <li><a href="archive/2026-07-10.html">2026-07-10</a></li>
-    <li><a href="archive/2026-07-06.html">2026-07-06</a></li>
-    <li><a href="archive/2026-06-29.html">2026-06-29</a></li>
-    <li><a href="archive/2026-06-26.html">2026-06-26</a></li>
-    <li><a href="archive/2026-06-25.html">2026-06-25</a></li>
-    <li><a href="archive/2026-06-24.html">2026-06-24</a></li>
-    <li><a href="archive/2026-06-23.html">2026-06-23</a></li>
-    <li><a href="archive/2026-06-22.html">2026-06-22</a></li>
-    <li><a href="archive/2026-06-21.html">2026-06-21</a></li>
-    <li><a href="archive/2026-06-20.html">2026-06-20</a></li>
-    <li><a href="archive/2026-06-19.html">2026-06-19</a></li>
-    <li><a href="archive/2026-06-18.html">2026-06-18</a></li>
-    <li><a href="archive/2026-06-17.html">2026-06-17</a></li>
-    <li><a href="archive/2026-06-16.html">2026-06-16</a></li>
-    <li><a href="archive/2026-06-15.html">2026-06-15</a></li>
-    <li><a href="archive/2026-06-14.html">2026-06-14</a></li>
-    <li><a href="archive/2026-06-13.html">2026-06-13</a></li>
-    <li><a href="archive/2026-06-12.html">2026-06-12</a></li>
-  </ul>
-</div>
-
 <footer>
-  <p>Generated 2026-08-11 · Europe/Zurich · Inline CSS only · No external resources</p>
+  <span>Generated 2026-08-11 · Europe/Zurich · Sources: NASA, ESA, Quanta Magazine, Sky &amp; Telescope, Sail-World, Yachting World, MIT Sloan, HBR, Greater Good, APA Monitor, Simon Willison, freelancermap, swissdevjobs.ch</span>
+  <a href="../index.html">← Archive index</a>
 </footer>
 
 </body>
