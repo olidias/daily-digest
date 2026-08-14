@@ -6,578 +6,581 @@
 <title>Daily Digest</title>
 <style>
   :root {
-    --bg: #f7f7f5;
+    --bg: #f8f7f4;
     --surface: #ffffff;
-    --border: #e2e2de;
-    --text: #1a1a18;
-    --muted: #6b6b65;
-    --accent: #2563eb;
-    --accent-soft: #eff6ff;
-    --tag-bg: #f0f0ec;
-    --section-border: #d1d5db;
+    --border: #e2ddd6;
+    --text: #1a1a1a;
+    --text-muted: #6b6560;
+    --accent: #1a5276;
+    --accent-hover: #154360;
+    --tag-bg: #eaf0f7;
+    --tag-text: #1a5276;
+    --section-bar: #1a5276;
   }
   @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --bg: #141412;
-      --surface: #1e1e1c;
-      --border: #2e2e2a;
-      --text: #e8e8e2;
-      --muted: #9b9b93;
-      --accent: #60a5fa;
-      --accent-soft: #1e2d45;
-      --tag-bg: #252520;
-      --section-border: #3a3a35;
+    :root {
+      --bg: #18191d;
+      --surface: #222429;
+      --border: #2f3138;
+      --text: #e8e6e1;
+      --text-muted: #9a9590;
+      --accent: #5b9bd5;
+      --accent-hover: #7ab3e0;
+      --tag-bg: #1e2a38;
+      --tag-text: #7ab3e0;
+      --section-bar: #2a4a6e;
     }
   }
-  :root[data-theme="dark"] {
-    --bg: #141412;
-    --surface: #1e1e1c;
-    --border: #2e2e2a;
-    --text: #e8e8e2;
-    --muted: #9b9b93;
-    --accent: #60a5fa;
-    --accent-soft: #1e2d45;
-    --tag-bg: #252520;
-    --section-border: #3a3a35;
-  }
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
+    font-family: Georgia, 'Times New Roman', serif;
     background: var(--bg);
     color: var(--text);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    max-width: 780px;
-    margin: 0 auto;
-    padding: 1.5rem 1rem 4rem;
+    line-height: 1.65;
+    padding: 0 1rem 3rem;
   }
+  .container { max-width: 760px; margin: 0 auto; }
   header {
-    border-bottom: 2px solid var(--accent);
-    padding-bottom: 1rem;
+    border-bottom: 3px solid var(--section-bar);
+    padding: 2rem 0 1rem;
     margin-bottom: 2rem;
   }
   header h1 {
     font-size: 1.6rem;
-    font-weight: 700;
+    font-weight: bold;
     letter-spacing: -0.02em;
     color: var(--text);
   }
-  header .date {
-    font-size: 0.9rem;
-    color: var(--muted);
-    margin-top: 0.25rem;
+  header .dateline {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin-top: 0.3rem;
   }
   section {
-    margin-bottom: 2.5rem;
-  }
-  section h2 {
-    font-size: 1.05rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: var(--muted);
-    border-bottom: 1px solid var(--section-border);
-    padding-bottom: 0.4rem;
-    margin-bottom: 1rem;
-  }
-  .item {
     background: var(--surface);
     border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 0.85rem 1rem;
-    margin-bottom: 0.6rem;
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
   }
+  section h2 {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #fff;
+    background: var(--section-bar);
+    padding: 0.55rem 1rem;
+  }
+  .item {
+    padding: 0.85rem 1rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .item:last-child { border-bottom: none; }
   .item-title {
-    font-size: 0.97rem;
-    font-weight: 600;
-    line-height: 1.35;
-    margin-bottom: 0.3rem;
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1.3;
+    margin-bottom: 0.2rem;
   }
   .item-title a {
-    color: var(--accent);
+    color: var(--text);
     text-decoration: none;
   }
-  .item-title a:hover { text-decoration: underline; }
+  .item-title a:hover { color: var(--accent); text-decoration: underline; }
   .item-meta {
-    font-size: 0.78rem;
-    color: var(--muted);
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.75rem;
+    color: var(--text-muted);
     margin-bottom: 0.35rem;
   }
+  .item-meta .source {
+    background: var(--tag-bg);
+    color: var(--tag-text);
+    border-radius: 3px;
+    padding: 0.05rem 0.4rem;
+    font-weight: 600;
+    margin-right: 0.4rem;
+  }
   .item-summary {
-    font-size: 0.88rem;
-    color: var(--text);
+    font-size: 0.9rem;
+    color: var(--text-muted);
     line-height: 1.5;
   }
-  .tag {
-    display: inline-block;
-    background: var(--tag-bg);
-    color: var(--muted);
-    font-size: 0.72rem;
-    font-weight: 600;
-    padding: 0.1rem 0.45rem;
-    border-radius: 4px;
-    margin-right: 0.3rem;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-  }
-  /* Archive section */
+  /* Archive list */
   .archive-list {
     list-style: none;
+    padding: 0;
   }
   .archive-list li {
+    padding: 0.6rem 1rem;
     border-bottom: 1px solid var(--border);
-    padding: 0.5rem 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.9rem;
     display: flex;
     align-items: baseline;
-    gap: 0.75rem;
+    gap: 1rem;
   }
   .archive-list li:last-child { border-bottom: none; }
   .archive-list a {
-    font-size: 0.92rem;
     color: var(--accent);
     text-decoration: none;
     font-weight: 600;
+    white-space: nowrap;
   }
   .archive-list a:hover { text-decoration: underline; }
-  .archive-list .arc-summary {
-    font-size: 0.8rem;
-    color: var(--muted);
+  .archive-list .archive-label {
+    color: var(--text-muted);
+    font-size: 0.82rem;
   }
   footer {
-    border-top: 1px solid var(--border);
-    padding-top: 1rem;
-    font-size: 0.78rem;
-    color: var(--muted);
     text-align: center;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+  }
+  .job-item {
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .job-item:last-child { border-bottom: none; }
+  .job-title {
+    font-weight: bold;
+    font-size: 0.95rem;
+    margin-bottom: 0.15rem;
+    color: var(--text);
+  }
+  .job-meta {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.75rem;
+    color: var(--text-muted);
   }
 </style>
 </head>
 <body>
+<div class="container">
 
 <header>
   <h1>Daily Digest</h1>
-  <div class="date">Thursday, 13 August 2026 &nbsp;·&nbsp; Europe/Zurich</div>
+  <div class="dateline">Thursday, 14 August 2026 &nbsp;·&nbsp; Europe/Zurich</div>
 </header>
 
-<!-- ═══════════════════════════════════════════════
-     ASTRONOMY & SPACE
-     ═══════════════════════════════════════════════ -->
+<!-- ══════════════════════════════════════════
+     TODAY'S DIGEST — 2026-08-14
+══════════════════════════════════════════ -->
+
 <section>
   <h2>🔭 Astronomy &amp; Space</h2>
 
   <div class="item">
-    <div class="item-title"><a href="https://earthsky.org/astronomy-essentials/total-solar-eclipse-visible-august-12-2026/">Triple Celestial Event Aug 12: Eclipse, Perseids, Six-Planet Alignment</a></div>
-    <div class="item-meta"><span class="tag">NASA / ESA / EarthSky</span> 12 Aug 2026</div>
-    <div class="item-summary">Yesterday delivered an extraordinary coincidence: a total solar eclipse swept across Greenland, Iceland, and northern Spain (max totality 2 min 18 s off Iceland's west coast), the Perseid meteor shower peaked under new-moon-dark skies the same night, and six planets — Jupiter, Mercury, Mars, Uranus, Saturn, Neptune — were spread across the pre-dawn sky simultaneously.</div>
+    <div class="item-title">
+      <a href="https://www.astronomy.com/observing/total-solar-eclipse-2026-live-updates-from-iceland-and-spain/">Total Solar Eclipse Crosses Iceland and Northern Spain</a>
+    </div>
+    <div class="item-meta">
+      <span class="source">Astronomy.com / PBS NewsHour</span> Aug 12, 2026
+    </div>
+    <div class="item-summary">The Moon's shadow swept across Iceland, northern Spain and Portugal yesterday in a total solar eclipse lasting up to 2 min 18 sec — the first totality over Reykjavík in nearly six centuries — with observers in León, Spain reporting clear skies while cloud frustrated viewers near Grundarfjörður, Iceland.</div>
   </div>
 
   <div class="item">
-    <div class="item-title"><a href="https://science.nasa.gov/blogs/roman/2026/08/10/nasas-roman-telescope-team-begins-integrated-operations-for-launch/">Roman Space Telescope Begins Integrated Launch Operations — 17 Days to Lift-off</a></div>
-    <div class="item-meta"><span class="tag">NASA</span> 10 Aug 2026 · Launch 30 Aug 2026</div>
-    <div class="item-summary">NASA's Nancy Grace Roman Space Telescope team began integrated operations with SpaceX Falcon Heavy hardware at Kennedy Space Center on Aug 10, clearing the final milestone before encapsulation; launch is locked in for Aug 30 at 07:26 EDT, eight to nine months ahead of the original schedule and under budget, with the observatory set to map dark energy and hunt exoplanets across a field of view ~100× wider than Hubble's.</div>
+    <div class="item-title">
+      <a href="https://science.nasa.gov/blogs/roman/2026/08/10/nasas-roman-telescope-team-begins-integrated-operations-for-launch/">Roman Space Telescope Begins Integrated Operations Ahead of Aug 30 Launch</a>
+    </div>
+    <div class="item-meta">
+      <span class="source">NASA Science</span> Aug 10, 2026
+    </div>
+    <div class="item-summary">Teams at Kennedy Space Center mated the observatory to SpaceX Falcon Heavy hardware on Aug 7 and have begun integrated operations ahead of the Aug 30 launch, which will send the telescope into orbit where it will image at least 100× the field of view of Hubble to probe dark energy and exoplanets.</div>
   </div>
 
   <div class="item">
-    <div class="item-title"><a href="https://www.nasa.gov/news/recently-published/">Curiosity Rover Enters Martian "Honeycomb" Fracture Valley</a></div>
-    <div class="item-meta"><span class="tag">NASA / Mars</span> Aug 2026</div>
-    <div class="item-summary">Curiosity has driven into a Martian valley blanketed by a "sea" of tiny polygon-shaped fractures — each only a few centimetres wide — whose honeycomb geometry is interpreted as evidence of ancient repeated wetting and drying cycles, providing fresh textural constraints on Mars's long-term aqueous history.</div>
+    <div class="item-title">
+      <a href="https://watchers.news/2026/08/11/watch-live-perseid-meteor-shower-peaks-august-12-13-under-moonless-skies/">Perseid Meteor Shower Peaks Under Moonless Skies — Best Conditions in a Decade</a>
+    </div>
+    <div class="item-meta">
+      <span class="source">The Watchers / American Meteor Society</span> Aug 12–13, 2026
+    </div>
+    <div class="item-summary">This year's Perseid peak (02:00–04:00 UTC Aug 13) coincided with a New Moon, yielding ideal dark-sky conditions for rates of up to 100 meteors per hour, with the Virtual Telescope Project broadcasting live from Manciano, Italy.</div>
   </div>
 
   <div class="item">
-    <div class="item-title"><a href="https://www.quantamagazine.org/physics/">Geoneutrinos Build First Detailed Map of Earth's Radioactive Mantle Heat Engine</a></div>
-    <div class="item-meta"><span class="tag">Quanta Magazine</span> 7 Aug 2026</div>
-    <div class="item-summary">A global constellation of neutrino detectors has produced an unprecedented picture of uranium and thorium concentrations driving Earth's tectonic heat engine; the study quantifies how much of Earth's interior heat is radiogenic versus primordial, resolving a long-standing uncertainty in geodynamics.</div>
+    <div class="item-title">
+      <a href="https://www.esa.int/Newsroom">ESA: Sophie Adenot Completes Third EuroSuit IVA Spacesuit Test Aboard ISS</a>
+    </div>
+    <div class="item-meta">
+      <span class="source">ESA Newsroom</span> Early Aug 2026
+    </div>
+    <div class="item-summary">ESA astronaut Sophie Adenot completed a third and likely final test of EuroSuit — a European intravehicular activity spacesuit prototype — aboard the International Space Station, advancing development of Europe's next-generation IVA capability.</div>
   </div>
 
   <div class="item">
-    <div class="item-title"><a href="https://www.esa.int/ESA_Multimedia/Videos/2026/08/Join_us_live_and_enjoy_the_total_solar_eclipse">ESA's SMILE Mission Enters Two-Month Commissioning Phase in Beijing</a></div>
-    <div class="item-meta"><span class="tag">ESA</span> Aug 2026</div>
-    <div class="item-summary">ESA engineers are in Beijing through end of August commissioning the Solar wind–Magnetosphere–Ionosphere Link Explorer (SMILE), the joint ESA/CAS mission that reached science orbit on 20 June and will study how solar wind energy couples into Earth's magnetosphere.</div>
+    <div class="item-title">
+      <a href="https://science.nasa.gov/solar-system/whats-up-august-2026-skywatching-tips-from-nasa/">Venus Reaches Greatest Eastern Elongation, Aug 14–16</a>
+    </div>
+    <div class="item-meta">
+      <span class="source">NASA Science</span> Aug 2026
+    </div>
+    <div class="item-summary">Venus is at its widest angular separation from the Sun this week, shining prominently low in the western sky after sunset — the best evening window for telescopic observation of the planet's crescent phase.</div>
   </div>
 
-  <div class="item">
-    <div class="item-title"><a href="https://www.quantamagazine.org/physics/">Quanta: A Simple Power Law Explains River Network Geometry Across All Scales</a></div>
-    <div class="item-meta"><span class="tag">Quanta Magazine</span> 10 Aug 2026</div>
-    <div class="item-summary">Researchers have shown that a single scaling law — previously known for idealised river basins — holds even in turbulent, high-sediment-load regimes, suggesting that the mathematical order governing river branching, gradient, and channel width is a near-universal property of erosional landscapes.</div>
-  </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════
-     WORLD NEWS
-     ═══════════════════════════════════════════════ -->
 <section>
   <h2>🌍 World News</h2>
 
   <div class="item">
-    <div class="item-title"><a href="https://www.reuters.com/world/">Colombia Earthquake Kills 181, Injures Over 2,500</a></div>
-    <div class="item-meta"><span class="tag">Reuters</span> Aug 2026</div>
-    <div class="item-summary">A major earthquake struck Colombia, killing at least 181 people and injuring 2,595 according to official authorities; emergency response teams are deployed across affected regions while the death toll is expected to rise as rescue operations continue in collapsed structures.</div>
+    <div class="item-title">
+      <a href="https://www.aol.com/articles/world-order-shifted-growth-outlook-155020697.html">Global Growth Holds at 3% Despite Geopolitical Uncertainty, Reuters Quarterly Poll Finds</a>
+    </div>
+    <div class="item-meta">
+      <span class="source">Reuters Poll</span> Aug 2026
+    </div>
+    <div class="item-summary">A Reuters poll of 220+ economists leaves the 2026 global growth forecast unchanged at 3%, but a majority name "further geopolitical shocks" as the primary downside risk, with Fed policy steady after a 9–3 hold vote at the July 29 FOMC meeting.</div>
   </div>
 
   <div class="item">
-    <div class="item-title"><a href="https://www.reuters.com/world/">Turkey's Parliament Approves Conditional Pardon for Kurdish Militants</a></div>
-    <div class="item-meta"><span class="tag">Reuters</span> Aug 2026</div>
-    <div class="item-summary">The Turkish Grand National Assembly voted to approve legislation granting a conditional pardon to thousands of PKK militants, a centrepiece of the government's renewed peace initiative with the Kurdish insurgent group; the bill is the most significant legislative step in the peace process in over a decade.</div>
+    <div class="item-title">
+      <a href="https://www.bloomberg.com/">China Healthcare Stocks Surge on Earnings Beat and Compressed Valuations</a>
+    </div>
+    <div class="item-meta">
+      <span class="source">Bloomberg Surveillance</span> Aug 13, 2026
+    </div>
+    <div class="item-summary">China healthcare equities rallied sharply on August 13 as sector earnings exceeded consensus estimates, compounded by valuations that investors view as historically cheap relative to comparable emerging-market peers.</div>
   </div>
 
   <div class="item">
-    <div class="item-title"><a href="https://www.reuters.com/world/">Demi Vollering Wins Women's Tour de France Overall</a></div>
-    <div class="item-meta"><span class="tag">Reuters</span> Aug 2026</div>
-    <div class="item-summary">Dutch rider Demi Vollering claimed the overall title at the Women's Tour de France, finishing the final stage more than a minute ahead of Spain's Paula Blasi Cairol and defending champion Katarzyna Niewiadoma-Phinney of Poland in a decisive general classification victory.</div>
+    <div class="item-title">
+      <a href="https://www.bloomberg.com/">Boeing Directors Avoid Investor Lawsuit Over 737 MAX Safety Claims</a>
+    </div>
+    <div class="item-meta">
+      <span class="source">Bloomberg</span> Aug 13, 2026
+    </div>
+    <div class="item-summary">A court dismissed a derivative lawsuit seeking to hold Boeing's board personally liable for alleged safety governance failures, ruling shareholders had not met the procedural threshold required to bring claims directly against directors.</div>
   </div>
+
 </section>
 
-<!-- ═══════════════════════════════════════════════
-     RUGBY (HIGH-LEVEL ONLY)
-     ═══════════════════════════════════════════════ -->
 <section>
-  <h2>🏉 Rugby</h2>
+  <h2>🏉 Rugby (High-Level)</h2>
 
   <div class="item">
-    <div class="item-title"><a href="https://www.world.rugby/nations-cup/en/news">Nations Cup Round 3: Georgia, Samoa, Chile, Tonga, USA Win; Rankings Shift</a></div>
-    <div class="item-meta"><span class="tag">World Rugby Nations Cup</span> Aug 2026</div>
-    <div class="item-summary">Round three of the World Rugby Nations Cup saw wins for Georgia, Samoa, Chile, Tonga, and the USA, with Spain and Canada drawing; Scotland, Chile, USA, Samoa, and Canada all moved up the global rankings, as the competition enters its final Americas leg with six matches across Montevideo to Winnipeg.</div>
+    <div class="item-title">
+      <a href="https://en.wikipedia.org/wiki/2026_New_Zealand_rugby_union_tour_of_South_Africa">New Zealand's Tour of South Africa — "Rugby's Greatest Rivalry" — Underway</a>
+    </div>
+    <div class="item-meta">
+      <span class="source">World Rugby / Wikipedia</span> Aug–Sep 2026
+    </div>
+    <div class="item-summary">The All Blacks are on tour in South Africa for a marquee three-Test series, with World Rugby confirming match officials for all fixtures; the series represents the highest-profile Tier-1 international action of the August window.</div>
   </div>
 
   <div class="item">
-    <div class="item-title"><a href="https://en.wikipedia.org/wiki/2026_New_Zealand_rugby_union_tour_of_South_Africa">SA vs NZ "Greatest Rivalry" Series: Four Tests, Aug–Sep 2026</a></div>
-    <div class="item-meta"><span class="tag">World Rugby / Test Series</span> Starts 22 Aug 2026</div>
-    <div class="item-summary">New Zealand's eight-match tour of South Africa — promoted as "Rugby's Greatest Rivalry" — kicks off its four-Test series on Aug 22 at Ellis Park, with subsequent Tests in Cape Town (Aug 29), Johannesburg (Sep 5), and Baltimore, USA (Sep 12); this is the first time the Freedom Cup has been contested over four tests.</div>
+    <div class="item-title">
+      <a href="https://www.florugby.com/articles/16094554-top-14-rugby-transfers-2026-2027">Top 14: Italy Star Tommaso Menoncello Signs with Stade Toulousain</a>
+    </div>
+    <div class="item-meta">
+      <span class="source">FloRugby</span> Aug 2026
+    </div>
+    <div class="item-summary">Benetton's Italy international winger Tommaso Menoncello has joined reigning champions Stade Toulousain, headlining a wave of international recruitment across the Top 14 from URC and Super Rugby Pacific clubs.</div>
   </div>
 
   <div class="item">
-    <div class="item-title"><a href="https://www.world.rugby/news">Emirates Match Official Appointments Confirmed: SA–NZ &amp; Pacific Nations Cup</a></div>
-    <div class="item-meta"><span class="tag">World Rugby</span> Aug 2026</div>
-    <div class="item-summary">World Rugby has formally announced the Emirates Panel match official appointments for the Springboks vs All Blacks series and the Asahi Super Dry Pacific Nations Cup, completing the official framework for the northern hemisphere's summer international programme through October.</div>
+    <div class="item-title">
+      <a href="https://www.rugbypass.com/united-rugby-championship/fixtures-results/">URC 2026–27 Season Confirmed to Open September 25</a>
+    </div>
+    <div class="item-meta">
+      <span class="source">RugbyPass</span> Aug 2026
+    </div>
+    <div class="item-summary">The BKT United Rugby Championship's new campaign kicks off on Friday 25 September, with Round 1 headliners including Connacht vs Stormers and Ulster vs Edinburgh.</div>
   </div>
+
+  <div class="item">
+    <div class="item-title">
+      <a href="https://premiershiprugby.com/news/transfer-news">Premiership Rugby 2026–27 Transfer Window: International Arrivals Confirmed</a>
+    </div>
+    <div class="item-meta">
+      <span class="source">Premiership Rugby / Planet Rugby</span> Aug 2026
+    </div>
+    <div class="item-summary">Several highly anticipated international signings have been confirmed ahead of the new Premiership season, with clubs welcoming Test-level recruits from Super Rugby Pacific and Top 14.</div>
+  </div>
+
 </section>
 
-<!-- ═══════════════════════════════════════════════
-     SAILING
-     ═══════════════════════════════════════════════ -->
 <section>
   <h2>⛵ Sailing</h2>
 
   <div class="item">
-    <div class="item-title"><a href="https://www.theoceanrace.com/en/atlantic/2026">Ocean Race Atlantic 2026: Crews and Format Confirmed for September Sprint</a></div>
-    <div class="item-meta"><span class="tag">The Ocean Race / IMOCA</span> Race: Sep 2026</div>
-    <div class="item-summary">The Ocean Race Atlantic — the organisation's first point-to-point race in its 50-year history — will send foiling IMOCA 60s from New York to Barcelona in September 2026 with mandatory 50/50 gender-split crews of four; teams will simultaneously collect oceanographic climate data during the crossing.</div>
+    <div class="item-title">
+      <a href="https://www.sailingscuttlebutt.com/2026/07/26/spain-win-at-sailgp-portsmouth/">Spain Wins SailGP Portsmouth Grand Prix</a>
+    </div>
+    <div class="item-meta">
+      <span class="source">Scuttlebutt Sailing News</span> Jul 26, 2026
+    </div>
+    <div class="item-summary">Team Spain took victory at the Portsmouth Sail Grand Prix, with Sweden second and Canada third, tightening the season standings with the Germany event next on Aug 22–23 in Sassnitz.</div>
   </div>
 
   <div class="item">
-    <div class="item-title"><a href="https://www.sailingscuttlebutt.com/2026/08/">Chester Race Week 2026 Underway — Canada's Largest Keelboat Regatta</a></div>
-    <div class="item-meta"><span class="tag">Sail-World / Regatta</span> 12–15 Aug 2026</div>
-    <div class="item-summary">Chester Race Week 2026 is now underway on the waters of Mahone Bay, Nova Scotia, running 12–15 August as Canada's largest keelboat regatta, with competitors racing in a variety of one-design and handicap classes across the scenic bay.</div>
+    <div class="item-title">
+      <a href="https://en.wikipedia.org/wiki/2026_SailGP_championship">ROCKWOOL Germany Sail Grand Prix — Sassnitz, Aug 22–23 (Upcoming)</a>
+    </div>
+    <div class="item-meta">
+      <span class="source">SailGP</span> Upcoming
+    </div>
+    <div class="item-summary">The next SailGP round takes place on the Baltic coast at Sassnitz on August 22–23, with all F50 teams competing for championship points following Spain's Portsmouth victory.</div>
   </div>
+
+  <div class="item">
+    <div class="item-title">
+      <a href="https://www.newportsailornetwork.com/sailing-events/">Hinman Masters Team Race — New York Yacht Club, Aug 14–16</a>
+    </div>
+    <div class="item-meta">
+      <span class="source">US Sailing</span> Aug 14–16, 2026
+    </div>
+    <div class="item-summary">The Hinman Masters Team Race gets underway at NYYC today through Sunday, bringing an elite fleet of senior sailors together in classic short-course team racing format.</div>
+  </div>
+
 </section>
 
-<!-- ═══════════════════════════════════════════════
-     SCIENCE-BASED LIFTING
-     ═══════════════════════════════════════════════ -->
 <section>
   <h2>🏋️ Science-Based Lifting</h2>
 
   <div class="item">
-    <div class="item-title"><a href="https://acsm.org/resistance-training-guidelines-update-2026/">ACSM Releases Landmark 2026 Resistance Training Position Stand — First Update in 17 Years</a></div>
-    <div class="item-meta"><span class="tag">ACSM / Peer-reviewed</span> 2026</div>
-    <div class="item-summary">The American College of Sports Medicine synthesised 137 systematic reviews representing over 30,000 participants to publish its first updated resistance training Position Stand in 17 years; key evidence-based conclusions: training to momentary failure, specific equipment choice (machines vs. free weights), and complex periodisation do not consistently improve outcomes for healthy adults, while hypertrophy uniquely benefits from training closer to failure relative to strength development.</div>
+    <div class="item-title">
+      <a href="https://www.sciencedaily.com/releases/2026/08/260808234959.htm">Resistance Training Sweet Spot: 90–120 Min/Week Lowers All-Cause Mortality 13%</a>
+    </div>
+    <div class="item-meta">
+      <span class="source">ScienceDaily</span> Aug 8, 2026
+    </div>
+    <div class="item-summary">A large longitudinal study finds that 90–120 minutes of resistance training per week yields a ~13% reduction in all-cause mortality, with concurrent aerobic exercise compounding that to ~45%; the effect persists even at lighter loads, provided effort is close to failure.</div>
   </div>
 
   <div class="item">
-    <div class="item-title"><a href="https://mennohenselmans.com/3-epic-new-studies-to-build-more-muscle-2026/">Henselmans: Myo-Reps Deliver Comparable Hypertrophy with 29% Fewer Reps in 62% Less Time</a></div>
-    <div class="item-meta"><span class="tag">Menno Henselmans</span> 2026</div>
-    <div class="item-summary">In a 2026 review of three new studies, Henselmans highlights evidence that myo-rep (cluster-set) training produces similar hypertrophy to traditional straight sets while requiring markedly fewer total repetitions and substantially less time per session, strengthening the case for rest-pause protocols as an efficient programming strategy.</div>
+    <div class="item-title">
+      <a href="https://acsm.org/science-spotlight-acsm-releases-new-position-stand-on-resistance-training/">ACSM Releases Updated Position Stand on Resistance Training — 137 Systematic Reviews</a>
+    </div>
+    <div class="item-meta">
+      <span class="source">American College of Sports Medicine</span> Aug 2026
+    </div>
+    <div class="item-summary">ACSM's new evidence-based Position Stand synthesises 137 systematic reviews involving over 30,000 participants; key conclusion: meaningful benefits accumulate even from sub-optimal frequency or load, provided weekly volume targets are met.</div>
   </div>
 
   <div class="item">
-    <div class="item-title"><a href="https://link.springer.com/article/10.1007/s40279-025-02341-z">Systematic Review: Carbohydrate Intake Does Not Reliably Enhance Resistance-Training Hypertrophy</a></div>
-    <div class="item-meta"><span class="tag">Sports Medicine / Peer-reviewed</span> 2026</div>
-    <div class="item-summary">A systematic review and meta-analysis co-authored by Henselmans, Vårvik, and Izquierdo, published in Sports Medicine, found that high-carbohydrate dietary conditions do not consistently produce greater resistance-training-induced muscle hypertrophy compared with lower-carbohydrate conditions in controlled studies, suggesting carbohydrate periodisation for hypertrophy has limited empirical support.</div>
+    <div class="item-title">
+      <a href="https://www.sciencedaily.com/releases/2026/05/260501052830.htm">High vs Low Load Resistance Training: Muscle Gains Equivalent at Matched Effort</a>
+    </div>
+    <div class="item-meta">
+      <span class="source">ScienceDaily</span> May 2026
+    </div>
+    <div class="item-summary">A controlled trial adds to growing evidence that light and heavy loads produce statistically indistinguishable hypertrophy when sets are taken to near-failure, reinforcing that proximity to failure — not absolute load — is the primary mechanical stimulus for muscle growth.</div>
   </div>
+
 </section>
 
-<!-- ═══════════════════════════════════════════════
-     PEOPLE LEADERSHIP
-     ═══════════════════════════════════════════════ -->
 <section>
   <h2>🧭 People Leadership</h2>
 
   <div class="item">
-    <div class="item-title"><a href="https://sloanreview.mit.edu/topic/leadership/">MIT Sloan: "Merit" Hiring Claims Lack Rigour Amid Anti-DEI Backlash, Study Finds</a></div>
-    <div class="item-meta"><span class="tag">MIT Sloan Management Review</span> Aug 2026</div>
-    <div class="item-summary">Research by Jennifer Sloan and Vern L. Glaser published in MIT SMR finds that many organisations claiming to restore merit-based hiring in response to anti-DEI pressure are implementing practices that lack the methodological rigour required to actually measure or ensure merit, raising concerns about what replaces structured diversity practices.</div>
+    <div class="item-title">
+      <a href="https://sloanreview.mit.edu/">MIT Sloan: Managers Who Prioritise Team Well-Being Help Workers With Adverse Childhood Experiences</a>
+    </div>
+    <div class="item-meta">
+      <span class="source">MIT Sloan Management Review</span> Aug 10, 2026
+    </div>
+    <div class="item-summary">A new empirical study finds that supervisor attentiveness to team well-being meaningfully buffers the workplace behavioural consequences of adverse childhood experiences, with implications for leadership development programmes targeting psychologically safe environments.</div>
   </div>
 
   <div class="item">
-    <div class="item-title"><a href="https://hbr.org/topic/subject/leadership">HBR: "What Leaders Get Wrong About Decision Rights" — Research by Greer, Jordan &amp; Sytch</a></div>
-    <div class="item-meta"><span class="tag">Harvard Business Review</span> Jul/Aug 2026</div>
-    <div class="item-summary">Drawing on multi-firm research, Lindy Greer, Jennifer Jordan, and Maxim Sytch identify the systematic ways leaders misallocate decision authority — over-centralising tactical calls while under-specifying strategic ones — and propose an empirically grounded framework for matching decision rights to team capability and task uncertainty.</div>
+    <div class="item-title">
+      <a href="https://sloanreview.mit.edu/">MIT Sloan: Meritocratic Hiring Claims Often Lack Methodological Rigour Amid Anti-DEI Backlash</a>
+    </div>
+    <div class="item-meta">
+      <span class="source">MIT Sloan Management Review</span> Aug 5, 2026
+    </div>
+    <div class="item-summary">A study by Jennifer Sloan and Vern Glaser shows organisations retreating from DEI toward explicit "merit-based" hiring rarely validate the instruments they call meritocratic, risking perpetuation of structural bias under a veneer of objectivity.</div>
   </div>
 
   <div class="item">
-    <div class="item-title"><a href="https://www.harvardbusiness.org/insight/2026-global-leadership-study-research-findings/">Harvard Business Impact 2026 Global Leadership Study: EQ and Agility Top Capability Gaps</a></div>
-    <div class="item-meta"><span class="tag">Harvard Business Impact</span> 2026</div>
-    <div class="item-summary">A global study surveying leaders across industries found that 80% prioritise the ability to function under constant uncertainty and change; the two most valued leadership capabilities are demonstrating emotional and social intelligence (45%) and building agility and resilience (43%), with AI strategy and faster organisational learning identified as the defining business pressures of 2026.</div>
+    <div class="item-title">
+      <a href="https://www.harvardbusiness.org/insight/2026-global-leadership-study-research-findings/">Harvard Business 2026 Global Leadership Study: EQ and Agility Top the Skills Gap</a>
+    </div>
+    <div class="item-meta">
+      <span class="source">Harvard Business Impact</span> 2026
+    </div>
+    <div class="item-summary">The 2026 Global Leadership Study identifies demonstrating emotional and social intelligence (45%) and building agility and resilience (43%) as the capabilities organisations most need leaders to develop, with AI creating a notable readiness gap at the frontline-manager level.</div>
   </div>
+
 </section>
 
-<!-- ═══════════════════════════════════════════════
-     EMOTIONAL INTELLIGENCE
-     ═══════════════════════════════════════════════ -->
 <section>
   <h2>🧠 Emotional Intelligence</h2>
 
   <div class="item">
-    <div class="item-title"><a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2026.1738432/full">Structural-Equation Study: Emotion Regulation Fully Mediates Mindfulness → Mental Health Pathway</a></div>
-    <div class="item-meta"><span class="tag">Frontiers in Psychology / Peer-reviewed</span> 2026</div>
-    <div class="item-summary">A pre-registered SEM study of adults found that mindfulness does not reduce depression and anxiety directly; the effect is fully mediated through improved emotion-regulation capacity, suggesting that mindfulness-based interventions should explicitly scaffold emotion-regulation skills to achieve optimal clinical outcomes.</div>
+    <div class="item-title">
+      <a href="https://journals.sagepub.com/doi/10.1177/15344843251342689">Comprehensive Meta-Review: Leader EQ Positively Predicts a Broad Range of Performance Outcomes</a>
+    </div>
+    <div class="item-meta">
+      <span class="source">Consulting Psychology Journal (SAGE)</span> 2026
+    </div>
+    <div class="item-summary">A systematic review of 101 empirical studies confirms consistent positive associations between leader EQ and beneficial outcomes across both ability-based and trait-based measurement approaches, strongest for team cohesion, follower satisfaction, and adaptive decision-making under pressure.</div>
   </div>
 
   <div class="item">
-    <div class="item-title"><a href="https://greatergood.berkeley.edu/articles">Greater Good: Intergenerational Contact Program Measurably Reduces Sixth-Graders' Ageism and Loneliness</a></div>
-    <div class="item-meta"><span class="tag">Greater Good Magazine / UC Berkeley</span> 4 Aug 2026</div>
-    <div class="item-summary">A Canadian programme placing sixth graders in regular contact with residents of long-term care homes produced measurable reductions in ageist attitudes and loneliness in both groups, with student participants showing gains in empathy and perspective-taking, according to a controlled evaluation by Kira M. Newman.</div>
+    <div class="item-title">
+      <a href="https://greatergood.berkeley.edu/articles">Greater Good: Intergenerational Contact Builds Empathy in Youth and Older Adults Alike</a>
+    </div>
+    <div class="item-meta">
+      <span class="source">Greater Good Magazine (UC Berkeley)</span> Aug 2026
+    </div>
+    <div class="item-summary">A study of sixth-graders participating in a structured programme at Canadian long-term care facilities shows significant increases in empathic concern and reduced age-related anxiety in both youth and older adult participants, with direct implications for social-emotional learning curricula.</div>
   </div>
 
   <div class="item">
-    <div class="item-title"><a href="https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2026.1764971/full">Digital Mindfulness Improves Wellbeing via Emotion Regulation and Self-Compassion Chain</a></div>
-    <div class="item-meta"><span class="tag">Frontiers in Education / Peer-reviewed</span> 2026</div>
-    <div class="item-summary">A 2026 study examining digital mindfulness engagement found that its positive effect on psychological wellbeing is serially mediated first by improved emotion regulation and then by heightened self-compassion, providing a mechanistic account of why app-based mindfulness practices may reduce trait anxiety.</div>
+    <div class="item-title">
+      <a href="https://greatergood.berkeley.edu/articles">Bridging Differences: Research-Backed Strategies for Reducing Intergroup Threat Perception</a>
+    </div>
+    <div class="item-meta">
+      <span class="source">Greater Good Magazine (UC Berkeley)</span> Aug 2026
+    </div>
+    <div class="item-summary">Drawing on contact hypothesis literature, civil-rights researcher john a. powell outlines evidence-supported approaches to reducing the fear-based cognitive processes that underlie polarisation and in-group/out-group rigidity.</div>
   </div>
+
 </section>
 
-<!-- ═══════════════════════════════════════════════
-     AI ENGINEERING
-     ═══════════════════════════════════════════════ -->
 <section>
-  <h2>⚙️ AI Engineering</h2>
+  <h2>🤖 AI Engineering</h2>
 
   <div class="item">
-    <div class="item-title"><a href="https://simonwillison.net/">Simon Willison: LLM 0.32 Ships Streaming Typed Events for Reasoning &amp; Tool Calls</a></div>
-    <div class="item-meta"><span class="tag">Simon Willison</span> ~10 Aug 2026</div>
-    <div class="item-summary">LLM 0.32 — described as the most significant release since the project launched — introduces streaming typed events for reasoning traces, tool calls, and tool results, with reasoning output directed to stderr by default; the release substantially improves the developer experience for building agentic pipelines on top of the CLI.</div>
+    <div class="item-title">
+      <a href="https://tech.yahoo.com/ai/articles/deepseek-officially-launches-v4-pro-181255468.html">DeepSeek-V4-Pro-0813 Goes GA: Large Agentic Benchmark Gains, Third-Party Verification Pending</a>
+    </div>
+    <div class="item-meta">
+      <span class="source">Yahoo Tech / TechTimes / South China Morning Post</span> Aug 13, 2026
+    </div>
+    <div class="item-summary">DeepSeek formally released V4-Pro-0813, claiming agent-benchmark leaps of up to 49.9 percentage points (DeepSWE: 12.8 → 62.7; CyberGym: 52.7 → 83.3) and a 1M-token context, but independent evaluators have not yet replicated the scores; reception is mixed — impressive on cybersecurity tasks, underwhelming on general capability at its price point.</div>
   </div>
 
   <div class="item">
-    <div class="item-title"><a href="https://www.mattpocock.com/articles">Matt Pocock: 25 Agent Skills Drop-In for Claude Code, Cursor, Codex &amp; Copilot</a></div>
-    <div class="item-meta"><span class="tag">Matt Pocock / Total TypeScript</span> Aug 2026</div>
-    <div class="item-summary">Pocock released a set of 25 packaged agent skills installable with a single command across Claude Code, Cursor, Codex, or Copilot, covering TypeScript-specific agentic patterns; the release is part of a broader series on how agentic coding pipelines can be composed from reusable, model-agnostic skill units.</div>
+    <div class="item-title">
+      <a href="https://simonwillison.net/">Simon Willison: LLM CLI Tool v0.27 — Reasoning Traces, OpenAI Responses &amp; Server-Side Tools</a>
+    </div>
+    <div class="item-meta">
+      <span class="source">Simon Willison's Weblog</span> Aug 4, 2026
+    </div>
+    <div class="item-summary">The 0.27 release of the open-source <code>llm</code> Python library adds streaming typed events for reasoning, tool calls, and results; Claude 5 models now think by default, with <code>-o thinking 0</code> disabling thinking for Sonnet 5 / Opus 5 (Fable 5 always reasons).</div>
   </div>
 
   <div class="item">
-    <div class="item-title"><a href="https://techstartups.com/2026/08/12/top-tech-news-today-august-12-2026-anthropic-google-ibm-lovable-nvidia-openai-more/">Anthropic Courts Investors Ahead of Possible IPO; Claude Opus 4.7 Tops SWE-Bench at 87.6%</a></div>
-    <div class="item-meta"><span class="tag">Tech Startups / AI Industry</span> 12 Aug 2026</div>
-    <div class="item-summary">Anthropic is reported to be meeting potential investors as it prepares a possible public-market debut this autumn, per the Wall Street Journal; concurrently, Claude Opus 4.7 holds the top position on SWE-Bench Verified (real-world software engineering) at 87.6%, while GPT-5.4-Pro leads GPQA Diamond (graduate-level reasoning) at 94.4%.</div>
+    <div class="item-title">
+      <a href="https://llm-stats.com/ai-news">MiniMax Releases H3 — Omni-Modal Generative System (Text, Images, Audio, Video)</a>
+    </div>
+    <div class="item-meta">
+      <span class="source">LLM Stats</span> Aug 2026
+    </div>
+    <div class="item-summary">MiniMax's H3 accepts text, images, audio, and video as inputs and can generate up to 15-second video clips with synchronised audio — one of the first commercially available models to unify all four modalities in a single inference call.</div>
   </div>
+
+  <div class="item">
+    <div class="item-title">
+      <a href="https://simonwillison.net/">Simon Willison: Stateless MCP Has Recaptured My Interest (mcp-explorer &amp; datasette-mcp)</a>
+    </div>
+    <div class="item-meta">
+      <span class="source">Simon Willison's Weblog</span> Jul 31, 2026
+    </div>
+    <div class="item-summary">Willison argues that stateless MCP server design simplifies deployment and announces two new projects built around the pattern; recommended reading if you build MCP-compatible toolchains.</div>
+  </div>
+
 </section>
 
-<!-- ═══════════════════════════════════════════════
-     JOBS
-     ═══════════════════════════════════════════════ -->
 <section>
-  <h2>💼 Jobs</h2>
+  <h2>💼 Jobs &amp; Freelance (Switzerland / Remote)</h2>
 
-  <div class="item">
-    <div class="item-title"><a href="https://www.freelancermap.com/it-projects/Switzerland-3.html">FreelancerMap Switzerland — Top Open Contracts (Aug 2026)</a></div>
-    <div class="item-meta"><span class="tag">freelancermap</span> Aug 2026</div>
-    <div class="item-summary">Notable open contracts on FreelancerMap Switzerland include: Azure Cloud Engineer in Zürich (on-site, 10+ months); Software Developer in Test/SDET in Bern (60% remote, 27+ months); Platform Engineer in Zug (40% remote); Senior SAP MM Consultant for S/4HANA Rollout in Zürich (100% remote, 12+ months); Senior OneTrust TPRM Technical Consultant in Zurich (6+ months) — all posted through direct clients or low-commission agencies.</div>
+  <div class="job-item">
+    <div class="job-title">Senior ServiceNow Developer — Zürich</div>
+    <div class="job-meta">freelancermap &nbsp;·&nbsp; Freelance / Contract &nbsp;·&nbsp; Aug 2026</div>
+  </div>
+  <div class="job-item">
+    <div class="job-title">Data Governance Lead — Zürich (40% Remote)</div>
+    <div class="job-meta">freelancermap &nbsp;·&nbsp; Freelance / Contract &nbsp;·&nbsp; Aug 2026</div>
+  </div>
+  <div class="job-item">
+    <div class="job-title">Python &amp; Cloud Native Engineer — Bern</div>
+    <div class="job-meta">freelancermap &nbsp;·&nbsp; Freelance / Contract &nbsp;·&nbsp; Aug 2026</div>
+  </div>
+  <div class="job-item">
+    <div class="job-title">Microsoft Power Platform Consultant — Basel</div>
+    <div class="job-meta">freelancermap &nbsp;·&nbsp; Freelance / Contract &nbsp;·&nbsp; Aug 2026</div>
+  </div>
+  <div class="job-item">
+    <div class="job-title">Senior Full-Stack Developer (ReactJS / React Native) — Lugano (CHF 70–80k)</div>
+    <div class="job-meta">swissdevjobs.ch &nbsp;·&nbsp; Permanent &nbsp;·&nbsp; Aug 2026 &nbsp;·&nbsp; <a href="https://swissdevjobs.ch/" style="color:var(--accent)">swissdevjobs.ch →</a></div>
+  </div>
+  <div class="job-item">
+    <div class="job-title">Senior Business Analyst — Zürich</div>
+    <div class="job-meta">freelancermap &nbsp;·&nbsp; Contract &nbsp;·&nbsp; Aug 2026 &nbsp;·&nbsp; <a href="https://www.freelancermap.com/projects/switzerland" style="color:var(--accent)">freelancermap →</a></div>
   </div>
 
-  <div class="item">
-    <div class="item-title"><a href="https://swissdevjobs.ch/">SwissDevJobs.ch — 193 Open IT Roles; 30 ML/AI Positions Listed</a></div>
-    <div class="item-meta"><span class="tag">swissdevjobs.ch</span> Aug 2026</div>
-    <div class="item-summary">SwissDevJobs currently lists 193 transparent IT and software developer positions in Switzerland — including 30 Machine Learning / AI roles — with full tech-stack disclosure and salary ranges up to 165,000 CHF/year; the platform covers both on-site and remote opportunities across software engineering, QA, product management, and UX/UI.</div>
-  </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════
+<!-- ══════════════════════════════════════════
      ARCHIVE
-     ═══════════════════════════════════════════════ -->
+══════════════════════════════════════════ -->
 <section>
   <h2>📁 Archive</h2>
   <ul class="archive-list">
-    <li>
-      <a href="archive/2026-08-13.html">2026-08-13</a>
-      <span class="arc-summary">Eclipse aftermath · Roman Telescope · Colombia quake · Nations Cup · Ocean Race Atlantic · ACSM Guidelines · LLM 0.32</span>
-    </li>
-    <li>
-      <a href="archive/2026-08-12.html">2026-08-12</a>
-      <span class="arc-summary">Total Solar Eclipse · Perseids · Roman Telescope launch prep · Syrian Assad conviction · FLEX Sentinel-3C · RORC 50th</span>
-    </li>
-    <li>
-      <a href="archive/2026-08-11.html">2026-08-11</a>
-      <span class="arc-summary">Astronomy · World News · Rugby · Sailing · Lifting · Leadership · EQ · AI</span>
-    </li>
-    <li>
-      <a href="archive/2026-08-10.html">2026-08-10</a>
-      <span class="arc-summary">Astronomy · World News · Rugby · Sailing · Lifting · Leadership · EQ · AI</span>
-    </li>
-    <li>
-      <a href="archive/2026-08-09.html">2026-08-09</a>
-      <span class="arc-summary">Astronomy · World News · Rugby · Sailing · Lifting · Leadership · EQ · AI</span>
-    </li>
-    <li>
-      <a href="archive/2026-08-08.html">2026-08-08</a>
-      <span class="arc-summary">Astronomy · World News · Rugby · Sailing · Lifting · Leadership · EQ · AI</span>
-    </li>
-    <li>
-      <a href="archive/2026-08-07.html">2026-08-07</a>
-      <span class="arc-summary">Astronomy · World News · Rugby · Sailing · Lifting · Leadership · EQ · AI</span>
-    </li>
-    <li>
-      <a href="archive/2026-08-06.html">2026-08-06</a>
-      <span class="arc-summary">Astronomy · World News · Rugby · Sailing · Lifting · Leadership · EQ · AI</span>
-    </li>
-    <li>
-      <a href="archive/2026-08-05.html">2026-08-05</a>
-      <span class="arc-summary">Astronomy · World News · Rugby · Sailing · Lifting · Leadership · EQ · AI</span>
-    </li>
-    <li>
-      <a href="archive/2026-08-04.html">2026-08-04</a>
-      <span class="arc-summary">Astronomy · World News · Rugby · Sailing · Lifting · Leadership · EQ · AI</span>
-    </li>
-    <li>
-      <a href="archive/2026-08-03.html">2026-08-03</a>
-      <span class="arc-summary">Astronomy · World News · Rugby · Sailing · Lifting · Leadership · EQ · AI</span>
-    </li>
-    <li>
-      <a href="archive/2026-08-02.html">2026-08-02</a>
-      <span class="arc-summary">Astronomy · World News · Rugby · Sailing · Lifting · Leadership · EQ · AI</span>
-    </li>
-    <li>
-      <a href="archive/2026-08-01.html">2026-08-01</a>
-      <span class="arc-summary">Astronomy · World News · Rugby · Sailing · Lifting · Leadership · EQ · AI</span>
-    </li>
-    <li>
-      <a href="archive/2026-07-31.html">2026-07-31</a>
-      <span class="arc-summary">Astronomy · World News · Rugby · Sailing · Lifting · Leadership · EQ · AI</span>
-    </li>
-    <li>
-      <a href="archive/2026-07-30.html">2026-07-30</a>
-      <span class="arc-summary">Astronomy · World News · Rugby · Sailing · Lifting · Leadership · EQ · AI</span>
-    </li>
-    <li>
-      <a href="archive/2026-07-29.html">2026-07-29</a>
-      <span class="arc-summary">Astronomy · World News · Rugby · Sailing · Lifting · Leadership · EQ · AI</span>
-    </li>
-    <li>
-      <a href="archive/2026-07-28.html">2026-07-28</a>
-      <span class="arc-summary">Astronomy · World News · Rugby · Sailing · Lifting · Leadership · EQ · AI</span>
-    </li>
-    <li>
-      <a href="archive/2026-07-27.html">2026-07-27</a>
-      <span class="arc-summary">Astronomy · World News · Rugby · Sailing · Lifting · Leadership · EQ · AI</span>
-    </li>
-    <li>
-      <a href="archive/2026-07-26.html">2026-07-26</a>
-      <span class="arc-summary">Astronomy · World News · Rugby · Sailing · Lifting · Leadership · EQ · AI</span>
-    </li>
-    <li>
-      <a href="archive/2026-07-25.html">2026-07-25</a>
-      <span class="arc-summary">Astronomy · World News · Rugby · Sailing · Lifting · Leadership · EQ · AI</span>
-    </li>
-    <li>
-      <a href="archive/2026-07-24.html">2026-07-24</a>
-      <span class="arc-summary">Astronomy · World News · Rugby · Sailing · Lifting · Leadership · EQ · AI</span>
-    </li>
-    <li>
-      <a href="archive/2026-07-23.html">2026-07-23</a>
-      <span class="arc-summary">Astronomy · World News · Rugby · Sailing · Lifting · Leadership · EQ · AI</span>
-    </li>
-    <li>
-      <a href="archive/2026-07-22.html">2026-07-22</a>
-      <span class="arc-summary">Astronomy · World News · Rugby · Sailing · Lifting · Leadership · EQ · AI</span>
-    </li>
-    <li>
-      <a href="archive/2026-07-21.html">2026-07-21</a>
-      <span class="arc-summary">Astronomy · World News · Rugby · Sailing · Lifting · Leadership · EQ · AI</span>
-    </li>
-    <li>
-      <a href="archive/2026-07-20.html">2026-07-20</a>
-      <span class="arc-summary">Astronomy · World News · Rugby · Sailing · Lifting · Leadership · EQ · AI</span>
-    </li>
-    <li>
-      <a href="archive/2026-07-17.html">2026-07-17</a>
-      <span class="arc-summary">Astronomy · World News · Rugby · Sailing · Lifting · Leadership · EQ · AI</span>
-    </li>
-    <li>
-      <a href="archive/2026-07-16.html">2026-07-16</a>
-      <span class="arc-summary">Astronomy · World News · Rugby · Sailing · Lifting · Leadership · EQ · AI</span>
-    </li>
-    <li>
-      <a href="archive/2026-07-15.html">2026-07-15</a>
-      <span class="arc-summary">Astronomy · World News · Rugby · Sailing · Lifting · Leadership · EQ · AI</span>
-    </li>
-    <li>
-      <a href="archive/2026-07-10.html">2026-07-10</a>
-      <span class="arc-summary">Astronomy · World News · Rugby · Sailing · Lifting · Leadership · EQ · AI</span>
-    </li>
-    <li>
-      <a href="archive/2026-07-06.html">2026-07-06</a>
-      <span class="arc-summary">Astronomy · World News · Rugby · Sailing · Lifting · Leadership · EQ · AI</span>
-    </li>
-    <li>
-      <a href="archive/2026-06-29.html">2026-06-29</a>
-      <span class="arc-summary">Astronomy · World News · Rugby · Sailing · Lifting · Leadership · EQ · AI</span>
-    </li>
-    <li>
-      <a href="archive/2026-06-26.html">2026-06-26</a>
-      <span class="arc-summary">Astronomy · World News · Rugby · Sailing · Lifting · Leadership · EQ · AI</span>
-    </li>
-    <li>
-      <a href="archive/2026-06-25.html">2026-06-25</a>
-      <span class="arc-summary">Astronomy · World News · Rugby · Sailing · Lifting · Leadership · EQ · AI</span>
-    </li>
-    <li>
-      <a href="archive/2026-06-24.html">2026-06-24</a>
-      <span class="arc-summary">Astronomy · World News · Rugby · Sailing · Lifting · Leadership · EQ · AI</span>
-    </li>
-    <li>
-      <a href="archive/2026-06-23.html">2026-06-23</a>
-      <span class="arc-summary">Astronomy · World News · Rugby · Sailing · Lifting · Leadership · EQ · AI</span>
-    </li>
-    <li>
-      <a href="archive/2026-06-22.html">2026-06-22</a>
-      <span class="arc-summary">Astronomy · World News · Rugby · Sailing · Lifting · Leadership · EQ · AI</span>
-    </li>
-    <li>
-      <a href="archive/2026-06-21.html">2026-06-21</a>
-      <span class="arc-summary">Astronomy · World News · Rugby · Sailing · Lifting · Leadership · EQ · AI</span>
-    </li>
-    <li>
-      <a href="archive/2026-06-20.html">2026-06-20</a>
-      <span class="arc-summary">Astronomy · World News · Rugby · Sailing · Lifting · Leadership · EQ · AI</span>
-    </li>
-    <li>
-      <a href="archive/2026-06-19.html">2026-06-19</a>
-      <span class="arc-summary">Astronomy · World News · Rugby · Sailing · Lifting · Leadership · EQ · AI</span>
-    </li>
-    <li>
-      <a href="archive/2026-06-18.html">2026-06-18</a>
-      <span class="arc-summary">Astronomy · World News · Rugby · Sailing · Lifting · Leadership · EQ · AI</span>
-    </li>
-    <li>
-      <a href="archive/2026-06-17.html">2026-06-17</a>
-      <span class="arc-summary">Astronomy · World News · Rugby · Sailing · Lifting · Leadership · EQ · AI</span>
-    </li>
-    <li>
-      <a href="archive/2026-06-16.html">2026-06-16</a>
-      <span class="arc-summary">Astronomy · World News · Rugby · Sailing · Lifting · Leadership · EQ · AI</span>
-    </li>
-    <li>
-      <a href="archive/2026-06-15.html">2026-06-15</a>
-      <span class="arc-summary">Astronomy · World News · Rugby · Sailing · Lifting · Leadership · EQ · AI</span>
-    </li>
-    <li>
-      <a href="archive/2026-06-14.html">2026-06-14</a>
-      <span class="arc-summary">Astronomy · World News · Rugby · Sailing · Lifting · Leadership · EQ · AI</span>
-    </li>
+    <li><a href="archive/2026-08-14.html">2026-08-14</a> <span class="archive-label">Solar eclipse recap · Roman Telescope · Perseids · DeepSeek V4-Pro GA · ACSM resistance training</span></li>
+    <li><a href="archive/2026-08-13.html">2026-08-13</a> <span class="archive-label">Solar eclipse (Iceland/Spain) · Rugby All Blacks SA tour · SailGP · MIT Sloan leadership</span></li>
+    <li><a href="archive/2026-08-12.html">2026-08-12</a> <span class="archive-label">Perseids peak · Roman Telescope integration · SailGP standings · AI model releases</span></li>
+    <li><a href="archive/2026-08-11.html">2026-08-11</a> <span class="archive-label">Roman Telescope mated to Falcon Heavy · ESA SMILE commissioning · Rugby transfers</span></li>
+    <li><a href="archive/2026-08-10.html">2026-08-10</a> <span class="archive-label">Astronomy · World news · Sailing · Lifting science · AI engineering</span></li>
+    <li><a href="archive/2026-08-09.html">2026-08-09</a> <span class="archive-label">Astronomy · World news · Sailing · Lifting science · AI engineering</span></li>
+    <li><a href="archive/2026-08-08.html">2026-08-08</a> <span class="archive-label">Astronomy · World news · Rugby · Sailing · Lifting · Leadership · AI</span></li>
+    <li><a href="archive/2026-08-07.html">2026-08-07</a> <span class="archive-label">Astronomy · World news · Rugby · Sailing · Lifting · Leadership · AI</span></li>
+    <li><a href="archive/2026-08-06.html">2026-08-06</a> <span class="archive-label">Astronomy · World news · Rugby · Sailing · Lifting · Leadership · AI</span></li>
+    <li><a href="archive/2026-08-05.html">2026-08-05</a> <span class="archive-label">Astronomy · World news · Rugby · Sailing · Lifting · Leadership · AI</span></li>
+    <li><a href="archive/2026-08-04.html">2026-08-04</a> <span class="archive-label">Astronomy · World news · Rugby · Sailing · Lifting · Leadership · AI</span></li>
+    <li><a href="archive/2026-08-03.html">2026-08-03</a> <span class="archive-label">Astronomy · World news · Rugby · Sailing · Lifting · Leadership · AI</span></li>
+    <li><a href="archive/2026-08-02.html">2026-08-02</a> <span class="archive-label">Astronomy · World news · Rugby · Sailing · Lifting · Leadership · AI</span></li>
+    <li><a href="archive/2026-08-01.html">2026-08-01</a> <span class="archive-label">Astronomy · World news · Rugby · Sailing · Lifting · Leadership · AI</span></li>
+    <li><a href="archive/2026-07-31.html">2026-07-31</a> <span class="archive-label">Astronomy · World news · Rugby · Sailing · Lifting · Leadership · AI</span></li>
+    <li><a href="archive/2026-07-30.html">2026-07-30</a> <span class="archive-label">Astronomy · World news · Rugby · Sailing · Lifting · Leadership · AI</span></li>
+    <li><a href="archive/2026-07-29.html">2026-07-29</a> <span class="archive-label">Astronomy · World news · Rugby · Sailing · Lifting · Leadership · AI</span></li>
+    <li><a href="archive/2026-07-28.html">2026-07-28</a> <span class="archive-label">Astronomy · World news · Rugby · Sailing · Lifting · Leadership · AI</span></li>
+    <li><a href="archive/2026-07-27.html">2026-07-27</a> <span class="archive-label">Astronomy · World news · Rugby · Sailing · Lifting · Leadership · AI</span></li>
+    <li><a href="archive/2026-07-26.html">2026-07-26</a> <span class="archive-label">Astronomy · World news · Rugby · Sailing · Lifting · Leadership · AI</span></li>
+    <li><a href="archive/2026-07-25.html">2026-07-25</a> <span class="archive-label">Astronomy · World news · Rugby · Sailing · Lifting · Leadership · AI</span></li>
+    <li><a href="archive/2026-07-24.html">2026-07-24</a> <span class="archive-label">Astronomy · World news · Rugby · Sailing · Lifting · Leadership · AI</span></li>
+    <li><a href="archive/2026-07-23.html">2026-07-23</a> <span class="archive-label">Astronomy · World news · Rugby · Sailing · Lifting · Leadership · AI</span></li>
+    <li><a href="archive/2026-07-22.html">2026-07-22</a> <span class="archive-label">Astronomy · World news · Rugby · Sailing · Lifting · Leadership · AI</span></li>
+    <li><a href="archive/2026-07-21.html">2026-07-21</a> <span class="archive-label">Astronomy · World news · Rugby · Sailing · Lifting · Leadership · AI</span></li>
+    <li><a href="archive/2026-07-20.html">2026-07-20</a> <span class="archive-label">Astronomy · World news · Rugby · Sailing · Lifting · Leadership · AI</span></li>
+    <li><a href="archive/2026-07-17.html">2026-07-17</a> <span class="archive-label">Astronomy · World news · Rugby · Sailing · Lifting · Leadership · AI</span></li>
+    <li><a href="archive/2026-07-16.html">2026-07-16</a> <span class="archive-label">Astronomy · World news · Rugby · Sailing · Lifting · Leadership · AI</span></li>
+    <li><a href="archive/2026-07-15.html">2026-07-15</a> <span class="archive-label">Astronomy · World news · Rugby · Sailing · Lifting · Leadership · AI</span></li>
+    <li><a href="archive/2026-07-10.html">2026-07-10</a> <span class="archive-label">Astronomy · World news · Rugby · Sailing · Lifting · Leadership · AI</span></li>
+    <li><a href="archive/2026-07-06.html">2026-07-06</a> <span class="archive-label">Astronomy · World news · Rugby · Sailing · Lifting · Leadership · AI</span></li>
+    <li><a href="archive/2026-06-29.html">2026-06-29</a> <span class="archive-label">Astronomy · World news · Rugby · Sailing · Lifting · Leadership · AI</span></li>
+    <li><a href="archive/2026-06-26.html">2026-06-26</a> <span class="archive-label">Astronomy · World news · Rugby · Sailing · Lifting · Leadership · AI</span></li>
+    <li><a href="archive/2026-06-25.html">2026-06-25</a> <span class="archive-label">Astronomy · World news · Rugby · Sailing · Lifting · Leadership · AI</span></li>
+    <li><a href="archive/2026-06-24.html">2026-06-24</a> <span class="archive-label">Astronomy · World news · Rugby · Sailing · Lifting · Leadership · AI</span></li>
+    <li><a href="archive/2026-06-23.html">2026-06-23</a> <span class="archive-label">Astronomy · World news · Rugby · Sailing · Lifting · Leadership · AI</span></li>
+    <li><a href="archive/2026-06-22.html">2026-06-22</a> <span class="archive-label">Astronomy · World news · Rugby · Sailing · Lifting · Leadership · AI</span></li>
+    <li><a href="archive/2026-06-21.html">2026-06-21</a> <span class="archive-label">Astronomy · World news · Rugby · Sailing · Lifting · Leadership · AI</span></li>
+    <li><a href="archive/2026-06-20.html">2026-06-20</a> <span class="archive-label">Astronomy · World news · Rugby · Sailing · Lifting · Leadership · AI</span></li>
+    <li><a href="archive/2026-06-19.html">2026-06-19</a> <span class="archive-label">Astronomy · World news · Rugby · Sailing · Lifting · Leadership · AI</span></li>
+    <li><a href="archive/2026-06-18.html">2026-06-18</a> <span class="archive-label">Astronomy · World news · Rugby · Sailing · Lifting · Leadership · AI</span></li>
+    <li><a href="archive/2026-06-17.html">2026-06-17</a> <span class="archive-label">Astronomy · World news · Rugby · Sailing · Lifting · Leadership · AI</span></li>
+    <li><a href="archive/2026-06-16.html">2026-06-16</a> <span class="archive-label">Astronomy · World news · Rugby · Sailing · Lifting · Leadership · AI</span></li>
+    <li><a href="archive/2026-06-15.html">2026-06-15</a> <span class="archive-label">Astronomy · World news · Rugby · Sailing · Lifting · Leadership · AI</span></li>
   </ul>
 </section>
 
 <footer>
-  Generated by Daily Digest Bot &nbsp;·&nbsp; 13 August 2026 &nbsp;·&nbsp; Europe/Zurich
+  Generated: 14 Aug 2026 &nbsp;·&nbsp; <a href="archive/2026-08-14.html">Today's standalone digest</a>
 </footer>
 
+</div>
 </body>
 </html>
