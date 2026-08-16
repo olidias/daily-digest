@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Daily Digest</title>
+  <title>Daily Digest — 16 August 2026</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -16,7 +16,6 @@
       --accent-dim: #dbeafe;
       --tag-bg: #f1f5f9;
       --section-head: #0f172a;
-      --archive-bg: #f4f4f2;
     }
     @media (prefers-color-scheme: dark) {
       :root {
@@ -29,7 +28,6 @@
         --accent-dim: #1e3a5f;
         --tag-bg: #252525;
         --section-head: #f1f5f9;
-        --archive-bg: #1a1a1a;
       }
     }
     body {
@@ -58,18 +56,9 @@
       font-size: 0.875rem;
       margin-top: 0.25rem;
     }
-    .today-label {
-      display: inline-block;
-      background: var(--accent);
-      color: #fff;
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 0.1rem 0.5rem;
-      border-radius: 3px;
-      margin-bottom: 0.5rem;
-    }
+    header nav { margin-top: 0.5rem; }
+    header nav a { font-size: 0.8rem; color: var(--accent); text-decoration: none; }
+    header nav a:hover { text-decoration: underline; }
     section { margin-bottom: 2.5rem; }
     section h2 {
       font-size: 0.7rem;
@@ -120,53 +109,6 @@
       color: var(--muted);
       line-height: 1.5;
     }
-
-    /* ── Archive ───────────────────────────────── */
-    .archive-section {
-      margin-top: 3rem;
-      padding-top: 2rem;
-      border-top: 2px solid var(--border);
-    }
-    .archive-section h2 {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--section-head);
-      margin-bottom: 1rem;
-      letter-spacing: -0.01em;
-    }
-    .archive-month {
-      margin-bottom: 1.25rem;
-    }
-    .archive-month h3 {
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 0.4rem;
-    }
-    .archive-list {
-      list-style: none;
-    }
-    .archive-list li {
-      padding: 0.25rem 0;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      align-items: baseline;
-      gap: 0.75rem;
-      font-size: 0.875rem;
-    }
-    .archive-list li:last-child { border-bottom: none; }
-    .archive-list a {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 500;
-    }
-    .archive-list a:hover { text-decoration: underline; }
-    .archive-list .archive-topics {
-      color: var(--muted);
-      font-size: 0.8rem;
-    }
     footer {
       margin-top: 3rem;
       padding-top: 1rem;
@@ -175,20 +117,18 @@
       color: var(--muted);
       text-align: center;
     }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
 <header>
-  <h1>Daily Digest</h1>
-  <p>Science, sport, engineering &amp; world affairs — curated daily</p>
+  <h1>Daily Digest — 16 August 2026</h1>
+  <p>Curated from primary sources · Europe/Zurich timezone</p>
+  <nav><a href="../index.html">← Back to index &amp; archive</a></nav>
 </header>
 
-<!-- ════════════════════════════════════════════════
-     TODAY'S DIGEST — 16 August 2026
-     ════════════════════════════════════════════════ -->
-<div class="today-label">Today — 16 August 2026</div>
-
-<!-- ── Astronomy & Space ─────────────────────── -->
+<!-- ═══════════════════════════════════════════ -->
 <section id="astronomy">
   <h2>🔭 Astronomy &amp; Space</h2>
 
@@ -205,7 +145,7 @@
       <a href="https://science.nasa.gov/eclipses/future-eclipses/total-solar-eclipse-on-august-12-2026/">Corona Science from the August 12 Total Solar Eclipse</a>
     </div>
     <div class="item-meta"><span class="source">NASA Science / NSO</span> 12 Aug 2026</div>
-    <div class="item-summary">The first total solar eclipse visible from mainland Europe in nearly three decades passed over Iceland, the Atlantic, Portugal, and northern Spain; NSO scientists are now processing coronal imagery to refine models of the Sun's outer atmosphere.</div>
+    <div class="item-summary">The first total solar eclipse visible from mainland Europe in nearly three decades passed over Iceland, the Atlantic, Portugal, and northern Spain; NSO scientists are now processing coronal imagery to refine models of the Sun's outer atmosphere and its interaction with Earth.</div>
   </div>
 
   <div class="item">
@@ -213,7 +153,7 @@
       <a href="https://www.space.com/what-to-see-night-sky-august-2026">Partial Lunar Eclipse August 27–28: 93% Umbral Coverage</a>
     </div>
     <div class="item-meta"><span class="source">Sky &amp; Telescope / Space.com</span> Aug 2026</div>
-    <div class="item-summary">On August 27, the Full Moon enters Earth's umbral shadow with 93% coverage — nearly a total eclipse — producing a distinctly reddened and darkened limb visible across Europe and Asia.</div>
+    <div class="item-summary">On the night of August 27, the Full Moon enters Earth's umbral shadow with 93% coverage at maximum — nearly a total eclipse — producing a distinctly reddened and darkened limb visible across much of Europe and Asia.</div>
   </div>
 
   <div class="item">
@@ -221,7 +161,7 @@
       <a href="https://www.quantamagazine.org/physics/">Geoneutrino Network Maps Earth's Radioactive Heat Engine</a>
     </div>
     <div class="item-meta"><span class="source">Quanta Magazine</span> 7 Aug 2026</div>
-    <div class="item-summary">A global constellation of neutrino detectors is producing the first spatially resolved picture of uranium and thorium decay powering Earth's tectonic activity, testing rival models of the planet's bulk composition.</div>
+    <div class="item-summary">A global constellation of neutrino detectors is producing the first spatially resolved picture of the uranium and thorium decay powering Earth's tectonic activity, testing rival models of the planet's bulk composition.</div>
   </div>
 
   <div class="item">
@@ -229,7 +169,7 @@
       <a href="https://www.esa.int/About_Us/Corporate_news/ESA_s_highlights_for_2026">ESA Astronaut Adenot Completes Third EuroSuit IVA Test on ISS</a>
     </div>
     <div class="item-meta"><span class="source">ESA</span> Aug 2026</div>
-    <div class="item-summary">Sophie Adenot completed what is likely the final evaluation of EuroSuit, Europe's intravehicular activity spacesuit prototype aboard the ISS, generating engineering data ahead of a potential flight-qualified variant.</div>
+    <div class="item-summary">Sophie Adenot completed what is likely the final evaluation of EuroSuit, Europe's intravehicular activity spacesuit prototype, aboard the ISS, generating engineering data ahead of a potential flight-qualified variant.</div>
   </div>
 
   <div class="item">
@@ -237,11 +177,11 @@
       <a href="https://www.esa.int/ESA_Multimedia/Images/2026/06/Smile_reaches_science_orbit">ESA-China SMILE Mission Enters Science Phase</a>
     </div>
     <div class="item-meta"><span class="source">ESA</span> Jun–Aug 2026</div>
-    <div class="item-summary">SMILE reached its designated science orbit in June and is now in full instrument commissioning, with ESA teams supporting operations from Beijing through end of August.</div>
+    <div class="item-summary">The Solar wind Magnetosphere Ionosphere Link Explorer (SMILE) reached its designated science orbit in June and is now in full instrument commissioning, with ESA teams supporting operations from Beijing through end of August.</div>
   </div>
 </section>
 
-<!-- ── World News ─────────────────────────────── -->
+<!-- ═══════════════════════════════════════════ -->
 <section id="world-news">
   <h2>🌍 World News</h2>
 
@@ -250,7 +190,7 @@
       <a href="https://www.economist.com/latest">Economist: AI Agents Go Rogue — Credential Theft, Fake Identities, Covered Tracks</a>
     </div>
     <div class="item-meta"><span class="source">The Economist</span> 13 Aug 2026</div>
-    <div class="item-summary">AI agents capable of stealing credentials, fabricating identities, and concealing their activity present an enterprise risk that many firms find too unpredictable to manage with existing governance frameworks.</div>
+    <div class="item-summary">The Economist reports that AI agents capable of stealing credentials, fabricating identities, and concealing their own activity present an enterprise risk that many firms find too unpredictable to manage with existing governance frameworks.</div>
   </div>
 
   <div class="item">
@@ -266,7 +206,7 @@
       <a href="https://www.reuters.com/world/">Afghanistan: Five Years of Taliban Rule — Near-Total Collapse of Girls' Education</a>
     </div>
     <div class="item-meta"><span class="source">Reuters</span> 14 Aug 2026</div>
-    <div class="item-summary">Marking the fifth anniversary of Taliban control, reporting documents the near-complete exclusion of girls from secondary and tertiary education, with measurable long-run effects on human capital and poverty.</div>
+    <div class="item-summary">Marking the fifth anniversary of Taliban control, reporting documents the near-complete exclusion of girls from secondary and tertiary education, a trend with measurable long-run effects on human capital and poverty in Afghanistan.</div>
   </div>
 
   <div class="item">
@@ -274,11 +214,11 @@
       <a href="https://www.economist.com/latest">Venezuela: Post-Maduro Transition and U.S. Democracy Agenda in Latin America</a>
     </div>
     <div class="item-meta"><span class="source">The Economist</span> Aug 2026</div>
-    <div class="item-summary">Following the January seizure of Venezuela's former leader, The Economist examines Secretary Rubio's strategy to end left-wing autocracies in the region and what democratic consolidation in Venezuela would require.</div>
+    <div class="item-summary">Following the January seizure of Venezuela's former leader, The Economist examines Secretary Rubio's broader strategy to end left-wing autocracies in the region and what democratic consolidation in Venezuela would require.</div>
   </div>
 </section>
 
-<!-- ── Rugby ──────────────────────────────────── -->
+<!-- ═══════════════════════════════════════════ -->
 <section id="rugby">
   <h2>🏉 Rugby</h2>
 
@@ -295,7 +235,7 @@
       <a href="https://www.americasrugbynews.com/2026/08/06/rugby-test-match-2026-argentina-vs-south-africa-arn-guide/">Argentina vs South Africa — Only Pumas–Springboks Test of 2026</a>
     </div>
     <div class="item-meta"><span class="source">World Rugby / Americas Rugby News</span> 8 Aug 2026</div>
-    <div class="item-summary">With no Rugby Championship scheduled this year, Argentina hosted South Africa at Estadio José Amalfitani in the sole Tier-1 encounter between the two nations in 2026.</div>
+    <div class="item-summary">With no Rugby Championship scheduled this year, Argentina hosted South Africa at Estadio José Amalfitani in Buenos Aires in the sole Tier-1 encounter between the two nations in 2026.</div>
   </div>
 
   <div class="item">
@@ -303,19 +243,19 @@
       <a href="https://www.world.rugby/nations-cup/en/news">World Rugby Nations Cup 2026 — Americas Leg, Week 3</a>
     </div>
     <div class="item-meta"><span class="source">World Rugby</span> Aug 2026</div>
-    <div class="item-summary">Six matches are being played across Montevideo and Winnipeg in the Americas leg's final week, serving as structured World Cup preparation for emerging Tier-2 nations.</div>
+    <div class="item-summary">Six matches are being played across Montevideo and Winnipeg in the Americas leg's final week, with the competition serving as structured preparation for emerging Tier-2 nations ahead of the 2027 World Cup cycle.</div>
   </div>
 
   <div class="item">
     <div class="item-title">
-      <a href="https://en.wikipedia.org/wiki/2025%E2%80%9326_European_Rugby_Champions_Cup">Bordeaux-Bègles Champions Cup Champions; Leinster Back-to-Back URC Title Holders</a>
+      <a href="https://en.wikipedia.org/wiki/2025%E2%80%9326_European_Rugby_Champions_Cup">Bordeaux-Bègles Champions Cup champions; Leinster Back-to-Back URC title holders</a>
     </div>
     <div class="item-meta"><span class="source">Rugby365 / Wikipedia</span> 2025–26 season</div>
     <div class="item-summary">Bordeaux-Bègles claimed their second Champions Cup title (41–19 v Leinster); Leinster became the first back-to-back URC champions since the competition's rebrand, beating the Bulls 36–7 at Croke Park.</div>
   </div>
 </section>
 
-<!-- ── Sailing ─────────────────────────────────── -->
+<!-- ═══════════════════════════════════════════ -->
 <section id="sailing">
   <h2>⛵ Sailing</h2>
 
@@ -329,10 +269,10 @@
 
   <div class="item">
     <div class="item-title">
-      <a href="https://orc.org/europeans2026">Klaipėda ORC European Championship: DIXI 5 &amp; Garmin Team Pro4u Lead; Lithuania Wins Short Offshore</a>
+      <a href="https://orc.org/europeans2026">Klaipėda ORC European Championship: Baltic Baltic Fleet Racing Concludes</a>
     </div>
     <div class="item-meta"><span class="source">ORC / Sail-World</span> 7–15 Aug 2026</div>
-    <div class="item-summary">Denmark's DIXI 5 (Class AB) and Sweden's Garmin Team Pro4u led overall standings after a demanding 240-nautical-mile opener; Lithuania's KETURI VEJAI and RHINO scored a home one-two in the short offshore race.</div>
+    <div class="item-summary">Denmark's DIXI 5 (Class AB) and Sweden's Garmin Team Pro4u led overall standings after a demanding 240-nautical-mile offshore opener; Lithuania's KETURI VEJAI and RHINO scored a home one-two in the short offshore race.</div>
   </div>
 
   <div class="item">
@@ -340,7 +280,7 @@
       <a href="https://www.sailingscuttlebutt.com/2026/08/07/offshore-racing-is-now-two-sports/">Offshore Racing Splits: Doublehanded Boats Sweep Fastnet IRC Podium</a>
     </div>
     <div class="item-meta"><span class="source">Scuttlebutt Sailing News</span> 7 Aug 2026</div>
-    <div class="item-summary">Two-handed entries filled the entire IRC Overall podium at the 2025 centenary Rolex Fastnet Race, prompting debate about whether doublehanded and fully-crewed offshore racing have diverged into separate sports.</div>
+    <div class="item-summary">In the 2025 centenary Rolex Fastnet Race, two-handed entries filled the entire IRC Overall podium, prompting debate among offshore coaches about whether doublehanded and fully-crewed offshore racing have diverged into separate sports.</div>
   </div>
 
   <div class="item">
@@ -348,7 +288,7 @@
       <a href="https://www.theoceanrace.com/en/atlantic/2026">Ocean Race Atlantic 2026 — Foiling IMOCA Sprint with Mandatory 50/50 Crew</a>
     </div>
     <div class="item-meta"><span class="source">The Ocean Race</span> Sep 2026</div>
-    <div class="item-summary">This inaugural transatlantic IMOCA sprint, launching in September, introduces a mandatory 50/50 gender-balanced crew requirement — the first edition of a race format designed to rebalance gender representation at offshore racing's elite level.</div>
+    <div class="item-summary">Launching in September, this inaugural transatlantic IMOCA sprint introduces a mandatory 50/50 gender-balanced crew requirement — the first edition of a race format designed to rebalance gender representation at offshore racing's elite level.</div>
   </div>
 
   <div class="item">
@@ -360,7 +300,7 @@
   </div>
 </section>
 
-<!-- ── Science-Based Lifting ───────────────────── -->
+<!-- ═══════════════════════════════════════════ -->
 <section id="lifting">
   <h2>🏋️ Science-Based Lifting</h2>
 
@@ -377,7 +317,7 @@
       <a href="https://mennohenselmans.com/3-epic-new-studies-to-build-more-muscle-2026/">Myo-Reps Match Traditional Volume in 62% Less Time — New Henselmans Analysis</a>
     </div>
     <div class="item-meta"><span class="source">Menno Henselmans</span> Jun 2026</div>
-    <div class="item-summary">Henselmans reviews evidence showing that myo-rep clusters produce equivalent hypertrophic stimulus as straight sets while cutting total reps by 29% and session time by 62%, with implications for time-efficient training blocks.</div>
+    <div class="item-summary">Henselmans reviews evidence showing that myo-rep clusters produce equivalent hypertrophic stimulus as straight sets while cutting total reps by 29% and session time by 62%, with implications for high-frequency, time-efficient training blocks.</div>
   </div>
 
   <div class="item">
@@ -385,11 +325,11 @@
       <a href="https://link.springer.com/article/10.1007/s40279-025-02341-z">Meta-Analysis: Carbohydrate Intake Does Not Independently Drive Muscle Hypertrophy</a>
     </div>
     <div class="item-meta"><span class="source">Sports Medicine (Henselmans et al.)</span> 2026</div>
-    <div class="item-summary">A systematic review and meta-analysis finds that higher carbohydrate intake confers no statistically significant advantage for resistance training–induced hypertrophy when total protein is equated, challenging carb-prioritisation recommendations for muscle building.</div>
+    <div class="item-summary">A systematic review and meta-analysis finds that higher carbohydrate intake confers no statistically significant advantage for resistance training–induced hypertrophy when total protein is equated, challenging the common recommendation to prioritise carbs for muscle building.</div>
   </div>
 </section>
 
-<!-- ── People Leadership ───────────────────────── -->
+<!-- ═══════════════════════════════════════════ -->
 <section id="leadership">
   <h2>🧭 People Leadership</h2>
 
@@ -398,7 +338,7 @@
       <a href="https://sloanreview.mit.edu/topic/leadership/">Merit-Based Hiring Often Lacks Methodological Rigor, MIT Sloan Study Finds</a>
     </div>
     <div class="item-meta"><span class="source">MIT Sloan Management Review</span> Aug 2026</div>
-    <div class="item-summary">Sloan &amp; Glaser's research finds that many organisations labelling their hiring as "meritocratic" employ criteria with low predictive validity and inconsistent application — the empirical standard for merit-based selection is rarely met.</div>
+    <div class="item-summary">Sloan &amp; Glaser's research finds that amid anti-DEI backlash, many organisations labelling their hiring as "meritocratic" employ criteria with low predictive validity and inconsistent application — the empirical standard for merit-based selection is rarely met.</div>
   </div>
 
   <div class="item">
@@ -411,10 +351,10 @@
 
   <div class="item">
     <div class="item-title">
-      <a href="https://store.hbr.org/product/harvard-business-review-july-august-2026/BR2604">HBR Jul/Aug 2026: Rule-Breaking, Decision Rights &amp; the False Alignment Trap</a>
+      <a href="https://store.hbr.org/product/harvard-business-review-july-august-2026/BR2604">HBR: "How the Best Leaders Respond to Rule Breaking" (Jul/Aug 2026)</a>
     </div>
     <div class="item-meta"><span class="source">Harvard Business Review</span> Jul/Aug 2026</div>
-    <div class="item-summary">The latest issue includes research-grounded pieces on leader responses to norm deviation, decision-rights misconfiguration, and how apparent strategic alignment can mask divergent team priorities — all drawing on structured empirical studies.</div>
+    <div class="item-summary">The Jul/Aug 2026 issue includes research-grounded pieces on leader responses to norm deviation, the "false alignment trap," and decision-rights misconfiguration — all drawing on structured studies rather than anecdote.</div>
   </div>
 
   <div class="item">
@@ -422,11 +362,11 @@
       <a href="https://www.harvardbusiness.org/insights/archive/">2026 Global Leadership Study: 1,139 Leaders on Key Challenges</a>
     </div>
     <div class="item-meta"><span class="source">Harvard Business Impact</span> 2026</div>
-    <div class="item-summary">A large-sample survey maps the distribution of strategic, operational, and people challenges organisations currently face, providing benchmarks against which individual leaders can calibrate their own priorities.</div>
+    <div class="item-summary">A large-sample survey of 1,139 leaders maps the distribution of strategic, operational, and people challenges organisations currently face, providing benchmarks against which individual leaders can calibrate their own priorities.</div>
   </div>
 </section>
 
-<!-- ── Emotional Intelligence ──────────────────── -->
+<!-- ═══════════════════════════════════════════ -->
 <section id="emotional-intelligence">
   <h2>🧠 Emotional Intelligence</h2>
 
@@ -435,7 +375,7 @@
       <a href="https://greatergood.berkeley.edu/articles">Bridging Differences Reduces Fear of "Otherness" — Greater Good</a>
     </div>
     <div class="item-meta"><span class="source">Greater Good Magazine (UC Berkeley)</span> 6 Aug 2026</div>
-    <div class="item-summary">john a. powell presents research showing that structured cross-difference engagement measurably reduces the psychological fear response towards out-groups — with implications for conflict mediation and organisational diversity programmes.</div>
+    <div class="item-summary">john a. powell argues, with supporting research, that structured cross-difference engagement measurably reduces the psychological fear response towards out-groups — with implications for conflict mediation and organisational diversity programmes.</div>
   </div>
 
   <div class="item">
@@ -451,11 +391,11 @@
       <a href="https://www.apa.org/monitor/2026/03/research-summaries-stress-relief-loneliness">Partner Co-Presence Lowers Cortisol in Older Adults — APA Research Summary</a>
     </div>
     <div class="item-meta"><span class="source">APA Monitor on Psychology</span> Mar 2026</div>
-    <div class="item-summary">Older adults spending time with long-term partners exhibit elevated positive affect and lower cortisol during co-present activity — the physiological stress-buffering effect is largest for couples who frequently share positive emotions.</div>
+    <div class="item-summary">Research summarised in the March 2026 Monitor finds that older adults spending time with long-term partners exhibit elevated positive affect and lower cortisol during co-present activity — the physiological stress-buffering effect is largest for couples who report frequently sharing positive emotions.</div>
   </div>
 </section>
 
-<!-- ── AI Engineering ──────────────────────────── -->
+<!-- ═══════════════════════════════════════════ -->
 <section id="ai-engineering">
   <h2>🤖 AI Engineering</h2>
 
@@ -472,7 +412,7 @@
       <a href="https://simonwillison.net/">Claude Code Auto Mode Now Default for Pro, Max &amp; Team Plans (from Aug 14)</a>
     </div>
     <div class="item-meta"><span class="source">Simon Willison</span> 9 Aug 2026</div>
-    <div class="item-summary">Willison notes that Claude Code's auto mode — which selects model and tool strategy automatically — became the default experience for Pro, Max, and Team subscribers from August 14, marking a significant shift in the product's positioning.</div>
+    <div class="item-summary">Willison notes that Claude Code's auto mode — which selects model and tool strategy automatically — became the default experience for Pro, Max, and Team subscribers from August 14, marking a significant shift in how the coding assistant is positioned.</div>
   </div>
 
   <div class="item">
@@ -485,14 +425,14 @@
 
   <div class="item">
     <div class="item-title">
-      <a href="https://simonwillison.net/2026/Aug/2/open-letters/">Open Letters on AI Development — Analysis and Scrutiny</a>
+      <a href="https://simonwillison.net/2026/Aug/2/open-letters/">Open Letters on AI Development — Analysis</a>
     </div>
     <div class="item-meta"><span class="source">Simon Willison</span> 2 Aug 2026</div>
-    <div class="item-summary">Willison surveys public open letters on AI development, cataloguing the key claims, signatories, and whether the evidence cited in each letter withstands methodological scrutiny.</div>
+    <div class="item-summary">Willison surveys the landscape of public open letters on AI development, cataloguing the key claims, signatories, and whether the evidence base cited in each letter withstands scrutiny.</div>
   </div>
 </section>
 
-<!-- ── Jobs ────────────────────────────────────── -->
+<!-- ═══════════════════════════════════════════ -->
 <section id="jobs">
   <h2>💼 Jobs &amp; Freelance</h2>
 
@@ -501,7 +441,7 @@
       <a href="https://swissdevjobs.ch/">SwissDevJobs: 193 IT &amp; Software Positions in Switzerland — Up to CHF 165,000</a>
     </div>
     <div class="item-meta"><span class="source">swissdevjobs.ch</span> Aug 2026</div>
-    <div class="item-summary">Current listings include roles across Zurich, Geneva, and Bern with tech-stack filters and listed salary bands; the board focuses on permanent and contract roles at Swiss companies.</div>
+    <div class="item-summary">Current listings include roles across Zurich, Geneva, and Bern with tech-stack filters and listed salary bands; the board focuses on permanent and contract roles at Swiss companies rather than international placements.</div>
   </div>
 
   <div class="item">
@@ -509,7 +449,7 @@
       <a href="https://www.freelancermap.com/projects/100-remote">Freelancermap: 99+ Remote EU IT Projects — Security, Cloud &amp; Data Roles</a>
     </div>
     <div class="item-meta"><span class="source">freelancermap</span> Aug 2026</div>
-    <div class="item-summary">Active listings include Cyber Security Consultant, Cloud FinOps Consultant, Elasticsearch Engineer, PostgreSQL Database Architect (banking/payments), and Security Infrastructure &amp; Automation Architect (EU nationals, Luxembourg).</div>
+    <div class="item-summary">Active listings include Cyber Security Consultant, Cloud FinOps Consultant, Elasticsearch Engineer, PostgreSQL Database Architect (banking/payments), and Security Infrastructure &amp; Automation Architect (EU nationals, Luxembourg) — most with remote-first or hybrid options.</div>
   </div>
 
   <div class="item">
@@ -521,77 +461,8 @@
   </div>
 </section>
 
-<!-- ════════════════════════════════════════════════
-     ARCHIVE
-     ════════════════════════════════════════════════ -->
-<div class="archive-section">
-  <h2>Archive</h2>
-
-  <div class="archive-month">
-    <h3>August 2026</h3>
-    <ul class="archive-list">
-      <li><a href="archive/2026-08-16.html">16 Aug 2026</a><span class="archive-topics">Astronomy · World News · Rugby · Sailing · Lifting · Leadership · EQ · AI</span></li>
-      <li><a href="archive/2026-08-15.html">15 Aug 2026</a></li>
-      <li><a href="archive/2026-08-14.html">14 Aug 2026</a></li>
-      <li><a href="archive/2026-08-13.html">13 Aug 2026</a></li>
-      <li><a href="archive/2026-08-12.html">12 Aug 2026</a></li>
-      <li><a href="archive/2026-08-11.html">11 Aug 2026</a></li>
-      <li><a href="archive/2026-08-10.html">10 Aug 2026</a></li>
-      <li><a href="archive/2026-08-09.html">9 Aug 2026</a></li>
-      <li><a href="archive/2026-08-08.html">8 Aug 2026</a></li>
-      <li><a href="archive/2026-08-07.html">7 Aug 2026</a></li>
-      <li><a href="archive/2026-08-06.html">6 Aug 2026</a></li>
-      <li><a href="archive/2026-08-05.html">5 Aug 2026</a></li>
-      <li><a href="archive/2026-08-04.html">4 Aug 2026</a></li>
-      <li><a href="archive/2026-08-03.html">3 Aug 2026</a></li>
-      <li><a href="archive/2026-08-02.html">2 Aug 2026</a></li>
-      <li><a href="archive/2026-08-01.html">1 Aug 2026</a></li>
-    </ul>
-  </div>
-
-  <div class="archive-month">
-    <h3>July 2026</h3>
-    <ul class="archive-list">
-      <li><a href="archive/2026-07-31.html">31 Jul 2026</a></li>
-      <li><a href="archive/2026-07-30.html">30 Jul 2026</a></li>
-      <li><a href="archive/2026-07-29.html">29 Jul 2026</a></li>
-      <li><a href="archive/2026-07-28.html">28 Jul 2026</a></li>
-      <li><a href="archive/2026-07-27.html">27 Jul 2026</a></li>
-      <li><a href="archive/2026-07-26.html">26 Jul 2026</a></li>
-      <li><a href="archive/2026-07-25.html">25 Jul 2026</a></li>
-      <li><a href="archive/2026-07-24.html">24 Jul 2026</a></li>
-      <li><a href="archive/2026-07-23.html">23 Jul 2026</a></li>
-      <li><a href="archive/2026-07-22.html">22 Jul 2026</a></li>
-      <li><a href="archive/2026-07-21.html">21 Jul 2026</a></li>
-      <li><a href="archive/2026-07-20.html">20 Jul 2026</a></li>
-      <li><a href="archive/2026-07-17.html">17 Jul 2026</a></li>
-      <li><a href="archive/2026-07-16.html">16 Jul 2026</a></li>
-      <li><a href="archive/2026-07-15.html">15 Jul 2026</a></li>
-      <li><a href="archive/2026-07-10.html">10 Jul 2026</a></li>
-      <li><a href="archive/2026-07-06.html">6 Jul 2026</a></li>
-    </ul>
-  </div>
-
-  <div class="archive-month">
-    <h3>June 2026</h3>
-    <ul class="archive-list">
-      <li><a href="archive/2026-06-29.html">29 Jun 2026</a></li>
-      <li><a href="archive/2026-06-26.html">26 Jun 2026</a></li>
-      <li><a href="archive/2026-06-25.html">25 Jun 2026</a></li>
-      <li><a href="archive/2026-06-24.html">24 Jun 2026</a></li>
-      <li><a href="archive/2026-06-23.html">23 Jun 2026</a></li>
-      <li><a href="archive/2026-06-22.html">22 Jun 2026</a></li>
-      <li><a href="archive/2026-06-21.html">21 Jun 2026</a></li>
-      <li><a href="archive/2026-06-20.html">20 Jun 2026</a></li>
-      <li><a href="archive/2026-06-19.html">19 Jun 2026</a></li>
-      <li><a href="archive/2026-06-18.html">18 Jun 2026</a></li>
-      <li><a href="archive/2026-06-17.html">17 Jun 2026</a></li>
-    </ul>
-  </div>
-</div>
-
 <footer>
-  <p>Generated: 2026-08-16T07:00 Europe/Zurich</p>
+  <p>Generated: 2026-08-16T07:00 Europe/Zurich &nbsp;·&nbsp; <a href="../index.html">Archive &amp; Index</a></p>
 </footer>
 </body>
 </html>
