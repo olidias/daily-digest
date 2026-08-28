@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Digest — 28 August 2026</title>
+<style>
+  :root {
+    --bg: #f9f8f5;
+    --card: #ffffff;
+    --border: #e2ddd5;
+    --header-bg: #1a1a2e;
+    --header-fg: #f0f0e8;
+    --accent: #2563eb;
+    --accent-hover: #1d4ed8;
+    --text: #1c1c1e;
+    --muted: #6b7280;
+    --topic-bg: #f0f4ff;
+    --topic-border: #c7d2fe;
+    --tag-bg: #e0e7ff;
+    --tag-fg: #3730a3;
+    --section-head: #1e3a5f;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0f0f14;
+      --card: #1a1a24;
+      --border: #2a2a38;
+      --header-bg: #0a0a12;
+      --header-fg: #e8e8f0;
+      --accent: #60a5fa;
+      --accent-hover: #93c5fd;
+      --text: #e5e5ea;
+      --muted: #9ca3af;
+      --topic-bg: #1e2235;
+      --topic-border: #3b4270;
+      --tag-bg: #1e2060;
+      --tag-fg: #a5b4fc;
+      --section-head: #93c5fd;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0f0f14;
+    --card: #1a1a24;
+    --border: #2a2a38;
+    --header-bg: #0a0a12;
+    --header-fg: #e8e8f0;
+    --accent: #60a5fa;
+    --accent-hover: #93c5fd;
+    --text: #e5e5ea;
+    --muted: #9ca3af;
+    --topic-bg: #1e2235;
+    --topic-border: #3b4270;
+    --tag-bg: #1e2060;
+    --tag-fg: #a5b4fc;
+    --section-head: #93c5fd;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    font-size: 16px;
+  }
+  header {
+    background: var(--header-bg);
+    color: var(--header-fg);
+    padding: 2rem 1.5rem 1.5rem;
+    text-align: center;
+  }
+  header h1 { font-size: 1.7rem; font-weight: 700; letter-spacing: -0.02em; }
+  header p { margin-top: 0.4rem; font-size: 0.9rem; opacity: 0.7; }
+  .back-link {
+    display: inline-block;
+    margin-top: 0.8rem;
+    color: #93c5fd;
+    font-size: 0.85rem;
+    text-decoration: none;
+  }
+  .back-link:hover { text-decoration: underline; }
+  main { max-width: 760px; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
+  section {
+    margin-bottom: 2rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .section-header {
+    background: var(--topic-bg);
+    border-bottom: 1px solid var(--topic-border);
+    padding: 0.7rem 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .section-header h2 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--section-head);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .section-header .icon { font-size: 1.1rem; }
+  ul { list-style: none; }
+  li {
+    padding: 0.9rem 1.2rem;
+    border-bottom: 1px solid var(--border);
+  }
+  li:last-child { border-bottom: none; }
+  .item-title {
+    font-size: 0.97rem;
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+  }
+  .item-title a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .item-title a:hover { text-decoration: underline; color: var(--accent-hover); }
+  .item-meta {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-bottom: 0.3rem;
+  }
+  .source-tag {
+    display: inline-block;
+    background: var(--tag-bg);
+    color: var(--tag-fg);
+    border-radius: 4px;
+    padding: 0.05rem 0.45rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    margin-right: 0.4rem;
+  }
+  .item-summary {
+    font-size: 0.88rem;
+    color: var(--text);
+    opacity: 0.85;
+  }
+  footer {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    font-size: 0.78rem;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>📰 Daily Digest</h1>
+  <p>28 August 2026 · Europe/Zurich</p>
+  <a class="back-link" href="../index.html">← Back to index</a>
+</header>
+<main>
+
+  <!-- ASTRONOMY & SPACE -->
+  <section>
+    <div class="section-header"><span class="icon">🔭</span><h2>Astronomy &amp; Space</h2></div>
+    <ul>
+      <li>
+        <div class="item-title"><a href="https://www.esa.int/Newsroom" target="_blank" rel="noopener">ESA MTG-I2 Weather Satellite Successfully Launches from French Guiana</a></div>
+        <div class="item-meta"><span class="source-tag">ESA</span>27 Aug 2026</div>
+        <div class="item-summary">Europe's next-generation geostationary weather mission MTG-I2 lifted off from Europe's Spaceport in Kourou, French Guiana on 27 August, completing the second Meteosat Third Generation imager satellite deployment and dramatically improving European weather forecasting resolution and storm-tracking capability.</div>
+      </li>
+      <li>
+        <div class="item-title"><a href="https://science.nasa.gov/solar-system/whats-up-august-2026-skywatching-tips-from-nasa/" target="_blank" rel="noopener">Deep Partial Lunar Eclipse Peaks Tonight — 93% of Moon in Earth's Shadow</a></div>
+        <div class="item-meta"><span class="source-tag">NASA / Sky &amp; Telescope</span>27–28 Aug 2026</div>
+        <div class="item-summary">The full Moon slipped through Earth's umbral shadow overnight Aug 27–28, with 93% of its diameter immersed at maximum eclipse — producing a dramatically darkened, copper-tinged disc visible across North and South America, western Europe, and Africa; the best lunar eclipse visible from Earth until New Year's Eve 2028.</div>
+      </li>
+      <li>
+        <div class="item-title"><a href="https://science.nasa.gov/mission/roman-space-telescope/" target="_blank" rel="noopener">NASA Roman Space Telescope Cleared for 30 August Falcon Heavy Launch</a></div>
+        <div class="item-meta"><span class="source-tag">NASA</span>Aug 2026</div>
+        <div class="item-summary">NASA's Nancy Grace Roman Space Telescope has completed final pre-launch preparations and is scheduled for liftoff aboard SpaceX's Falcon Heavy on August 30; designed to survey billions of galaxies in infrared light with a field of view 100× wider than Hubble's, Roman will probe dark energy and discover thousands of exoplanets via gravitational microlensing.</div>
+      </li>
+      <li>
+        <div class="item-title"><a href="https://www.esa.int/Newsroom" target="_blank" rel="noopener">ESA's Sophie Adenot Completes ISS Spacewalk to Install Replacement Communications Antenna</a></div>
+        <div class="item-meta"><span class="source-tag">ESA</span>25 Aug 2026</div>
+        <div class="item-summary">ESA astronaut Sophie Adenot conducted an extravehicular activity on 25 August to install a replacement communications antenna on the International Space Station's external structure, part of ongoing upgrades to the station's relay network ahead of the ISS transition timeline.</div>
+      </li>
+      <li>
+        <div class="item-title"><a href="https://www.esa.int/Newsroom" target="_blank" rel="noopener">Gaia and Hubble Reveal Milky Way's Earliest Known Major Merger — 12 Billion Years Ago</a></div>
+        <div class="item-meta"><span class="source-tag">ESA / NASA Hubble</span>Aug 2026</div>
+        <div class="item-summary">Combined data from ESA's Gaia astrometry mission and the NASA/ESA Hubble Space Telescope have uncovered evidence that the Milky Way absorbed a dwarf galaxy approximately 12 billion years ago in what is now recognized as our galaxy's earliest known major merger event, reshaping our understanding of how the Milky Way's stellar halo and thick disc formed.</div>
+      </li>
+      <li>
+        <div class="item-title"><a href="https://www.space.com/" target="_blank" rel="noopener">Astronomers Capture Clearest-Ever Image of Betelgeuse's Long-Suspected Companion Star</a></div>
+        <div class="item-meta"><span class="source-tag">Sky &amp; Telescope</span>Aug 2026</div>
+        <div class="item-summary">An international team has obtained the sharpest resolved image yet of a stellar companion orbiting the red supergiant Betelgeuse, potentially confirming a companion hypothesis debated for roughly a century and offering new constraints on the system's binary dynamics ahead of Betelgeuse's eventual supernova.</div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- WORLD NEWS -->
+  <section>
+    <div class="section-header"><span class="icon">🌍</span><h2>World News</h2></div>
+    <ul>
+      <li>
+        <div class="item-title"><a href="https://www.reuters.com/world/" target="_blank" rel="noopener">Over 1,500 Missing After Catastrophic Floods Strike Nepal-Tibet Border</a></div>
+        <div class="item-meta"><span class="source-tag">Reuters</span>27–28 Aug 2026</div>
+        <div class="item-summary">Torrential monsoon flooding along the Nepal-Tibet border has left more than 1,500 people missing — many of them foreign tourists — with entire villages swept away; rescue operations are complicated by landslides blocking road access to the affected valleys.</div>
+      </li>
+      <li>
+        <div class="item-title"><a href="https://www.reuters.com/world/" target="_blank" rel="noopener">Pakistan Hospital Fire Kills 14 Newborns in Islamabad Nursery</a></div>
+        <div class="item-meta"><span class="source-tag">Reuters</span>27 Aug 2026</div>
+        <div class="item-summary">A fire that broke out early Wednesday in the neonatal nursery of a major government hospital in Pakistan's capital Islamabad killed 14 newborn babies, according to hospital officials and government statements, prompting a government inquiry into safety standards in public health facilities.</div>
+      </li>
+      <li>
+        <div class="item-title"><a href="https://www.reuters.com/world/" target="_blank" rel="noopener">U.S. Gaza Envoy Criticizes Israel, Warns Trump Ceasefire Plan's Alternative Is "the Next War"</a></div>
+        <div class="item-meta"><span class="source-tag">Reuters</span>27–28 Aug 2026</div>
+        <div class="item-summary">The U.S. official overseeing President Trump's Gaza ceasefire initiative publicly criticized Israel for ongoing attacks on the Palestinian territory and stated that failure to accept the American proposal would lead directly to a renewed, larger conflict, signaling growing U.S. frustration with the stalled negotiations.</div>
+      </li>
+      <li>
+        <div class="item-title"><a href="https://www.reuters.com/world/" target="_blank" rel="noopener">Artist Yayoi Kusama Dies at 97</a></div>
+        <div class="item-meta"><span class="source-tag">Reuters</span>28 Aug 2026</div>
+        <div class="item-summary">Japanese avant-garde artist Yayoi Kusama, globally celebrated for her immersive polka-dot and infinity-mirror installations and one of the world's best-selling living artists, has died at the age of 97 in Tokyo.</div>
+      </li>
+      <li>
+        <div class="item-title"><a href="https://www.reuters.com/world/" target="_blank" rel="noopener">Haiti: Mass Kidnapping Believed Among Largest in Country's Recent History</a></div>
+        <div class="item-meta"><span class="source-tag">Reuters</span>27–28 Aug 2026</div>
+        <div class="item-summary">Haitian authorities are responding to what security analysts describe as one of the largest mass kidnapping incidents in the country's recent history, with a gang leader issuing threats to kill hostages if armed operations are conducted against the group — underscoring the continued breakdown of public security in Haiti.</div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- RUGBY -->
+  <section>
+    <div class="section-header"><span class="icon">🏉</span><h2>Rugby (High-Level)</h2></div>
+    <ul>
+      <li>
+        <div class="item-title"><a href="https://www.world.rugby/news" target="_blank" rel="noopener">All Blacks 33–16 Springboks: New Zealand Opens "Rugby's Greatest Rivalry" Series Emphatically</a></div>
+        <div class="item-meta"><span class="source-tag">World Rugby</span>23 Aug 2026</div>
+        <div class="item-summary">The All Blacks took a 1–0 lead in the four-Test Rugby's Greatest Rivalry series with an emphatic 33–16 victory over South Africa in Johannesburg, demonstrating dominant set-piece control and counter-attacking rugby in a high-quality Tier-1 contest; Test 2 follows this weekend.</div>
+      </li>
+      <li>
+        <div class="item-title"><a href="https://www.world.rugby/news" target="_blank" rel="noopener">Australia Begin Argentina Tour as Rugby Championship Precursor</a></div>
+        <div class="item-meta"><span class="source-tag">World Rugby</span>Aug 2026</div>
+        <div class="item-summary">The Wallabies have commenced their two-Test tour of Argentina in August–September 2026, serving as a key preparation block ahead of the Rugby Championship and providing extended run-time for the rebuilt Australian squad under current head coach.</div>
+      </li>
+      <li>
+        <div class="item-title"><a href="https://www.world.rugby/news" target="_blank" rel="noopener">World Rugby Debuts Remote TMO Hub at Nations Cup — Officiating Technology Step Change</a></div>
+        <div class="item-meta"><span class="source-tag">World Rugby</span>Aug 2026</div>
+        <div class="item-summary">World Rugby has piloted a centralized remote Television Match Official hub at the World Rugby Nations Cup, allowing TMO decisions to be made from a single broadcast centre rather than on-site at each venue — a significant operational shift that marks the start of new minimum technology standards across the global game.</div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- SAILING -->
+  <section>
+    <div class="section-header"><span class="icon">⛵</span><h2>Sailing</h2></div>
+    <ul>
+      <li>
+        <div class="item-title"><a href="https://www.sailingscuttlebutt.com/2026/08/" target="_blank" rel="noopener">SailGP Germany: F50 Foiling Catamarans Race in Sassnitz, 22–23 August</a></div>
+        <div class="item-meta"><span class="source-tag">Scuttlebutt / SailGP</span>22–23 Aug 2026</div>
+        <div class="item-summary">The Germany Sail Grand Prix in Sassnitz brought SailGP's F50 foiling catamarans back to competition in front of Baltic Sea crowds on 22–23 August, continuing the 2026 SailGP Championship season which runs thirteen grand prix events through November.</div>
+      </li>
+      <li>
+        <div class="item-title"><a href="https://www.sailingscuttlebutt.com/2026/08/" target="_blank" rel="noopener">Russian Navy Frigate Fires Warning Shots Near UK-Registered Yacht South of Isle of Wight</a></div>
+        <div class="item-meta"><span class="source-tag">Sailing Scuttlebutt</span>Aug 2026</div>
+        <div class="item-summary">A Russian Navy frigate fired warning shots in proximity to the UK-registered sailing yacht Bright Future approximately 20 miles south of the Isle of Wight — outside UK territorial waters — in a maritime incident that drew diplomatic attention and raised concerns about naval conduct in the English Channel.</div>
+      </li>
+      <li>
+        <div class="item-title"><a href="https://en.wikipedia.org/wiki/2026_SailGP_championship" target="_blank" rel="noopener">The Ocean Race Atlantic: New York–Lorient Foiling IMOCA Race Debuts September 2026</a></div>
+        <div class="item-meta"><span class="source-tag">Yachting World</span>Aug 2026</div>
+        <div class="item-summary">The Ocean Race Atlantic — a fully-crewed high-speed transatlantic sprint for the foiling IMOCA class, racing from New York to Lorient, France — is set to debut in September 2026, marking the event's 50th anniversary with its first-ever point-to-point format and a new generation of foiling offshore yachts.</div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- SCIENCE-BASED LIFTING -->
+  <section>
+    <div class="section-header"><span class="icon">🏋️</span><h2>Science-Based Lifting</h2></div>
+    <ul>
+      <li>
+        <div class="item-title"><a href="https://acsm.org/resistance-training-guidelines-update-2026/" target="_blank" rel="noopener">ACSM Publishes Landmark 2026 Resistance Training Position Stand — First Update in 17 Years</a></div>
+        <div class="item-meta"><span class="source-tag">ACSM / Medicine &amp; Science in Sports &amp; Exercise</span>Apr 2026</div>
+        <div class="item-summary">The American College of Sports Medicine's first major resistance training guidelines update since 2009 synthesizes 137 systematic reviews (30,000+ participants) and concludes that load, volume, frequency, and range of motion are the primary adaptation drivers, while training-to-failure, machine-vs-free-weight choice, and complex periodization do not consistently impact outcomes for healthy adults; hypertrophy requires at least 10 sets per muscle group per week at 30–100% 1RM taken near failure.</div>
+      </li>
+      <li>
+        <div class="item-title"><a href="https://www.sciencedaily.com/releases/2026/08/260808234959.htm" target="_blank" rel="noopener">Strength Training Sweet Spot for Longevity: 90–120 Minutes Per Week, British Journal of Sports Medicine</a></div>
+        <div class="item-meta"><span class="source-tag">British Journal of Sports Medicine</span>Aug 2026</div>
+        <div class="item-summary">A long-running cohort study (up to 30 years of follow-up) published in the BJSM finds that 90–120 minutes of resistance training per week is associated with the greatest reduction in all-cause mortality risk, with no additional longevity benefit observed beyond 120 minutes weekly — and that concurrent aerobic exercise amplifies the benefit further.</div>
+      </li>
+      <li>
+        <div class="item-title"><a href="https://www.strongerbyscience.com/articles/" target="_blank" rel="noopener">Sleep as a Primary Determinant of Hypertrophy: Emerging Research Framework</a></div>
+        <div class="item-meta"><span class="source-tag">Stronger By Science</span>Aug 2026</div>
+        <div class="item-summary">A growing body of hypertrophy research now positions sleep quality and duration as a modifiable determinant of training adaptation on par with programming variables — with sleep deprivation shown to blunt anabolic signalling, elevate cortisol, and reduce training readiness independently of training load, according to recent synthesis reviews.</div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- PEOPLE LEADERSHIP -->
+  <section>
+    <div class="section-header"><span class="icon">🧑‍💼</span><h2>People Leadership</h2></div>
+    <ul>
+      <li>
+        <div class="item-title"><a href="https://sloanreview.mit.edu/" target="_blank" rel="noopener">MIT Sloan: "Merit"-Based Hiring Claims Lack Methodological Rigor Amid Anti-DEI Shift</a></div>
+        <div class="item-meta"><span class="source-tag">MIT Sloan Management Review</span>11 Aug 2026</div>
+        <div class="item-summary">A research-grounded MIT Sloan article by Benjamin Laker and Maria Papacosta finds that organizations claiming to prioritize merit in hiring as an alternative to DEI programmes frequently apply inconsistent, unvalidated criteria — meaning the supposed meritocracy introduces different biases rather than eliminating them, with structured assessment protocols identified as the evidence-based corrective.</div>
+      </li>
+      <li>
+        <div class="item-title"><a href="https://sloanreview.mit.edu/" target="_blank" rel="noopener">MIT Sloan: Manager Focus on Team Well-Being Helps Break Adversity-Driven Behavioral Patterns</a></div>
+        <div class="item-meta"><span class="source-tag">MIT Sloan Management Review</span>30 Jul 2026</div>
+        <div class="item-summary">Research by Payal Sharma and colleagues finds that employees who experienced adversity in childhood display identifiable behavioural patterns in workplace settings, but that managers who actively attend to team psychological safety and well-being can help those employees shift those patterns — with implications for how leaders structure feedback and support conversations.</div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- EMOTIONAL INTELLIGENCE -->
+  <section>
+    <div class="section-header"><span class="icon">🧠</span><h2>Emotional Intelligence</h2></div>
+    <ul>
+      <li>
+        <div class="item-title"><a href="https://greatergood.berkeley.edu/article/item/your_happiness_calendar_for_august_2026" target="_blank" rel="noopener">Greater Good: What Intergenerational Programs Teach Us About Connection and Resilience</a></div>
+        <div class="item-meta"><span class="source-tag">Greater Good Science Center (UC Berkeley)</span>4 Aug 2026</div>
+        <div class="item-summary">A UC Berkeley Greater Good article reviews a Canadian program pairing sixth-grade students with long-term care home residents, reporting measurable gains in empathy, sense of purpose, and social connectedness for both age groups — with the research suggesting structured intergenerational contact is an underutilized lever for emotional development across the lifespan.</div>
+      </li>
+      <li>
+        <div class="item-title"><a href="https://greatergood.berkeley.edu/article/" target="_blank" rel="noopener">Aligning Daily Decisions with Personal Values Reduces Psychological Stress, Study Finds</a></div>
+        <div class="item-meta"><span class="source-tag">Greater Good Science Center (UC Berkeley)</span>3 Aug 2026</div>
+        <div class="item-summary">Research reviewed by Greater Good (Schwartz, Cavazos, and Metcalf) demonstrates that adolescents and young adults who take explicit steps to align everyday decisions with their stated personal values show reduced cognitive dissonance and lower reported psychological stress, with structured reflection practices identified as the most effective intervention method.</div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- AI ENGINEERING -->
+  <section>
+    <div class="section-header"><span class="icon">🤖</span><h2>AI Engineering</h2></div>
+    <ul>
+      <li>
+        <div class="item-title"><a href="https://simonwillison.net/" target="_blank" rel="noopener">Simon Willison: The Core Skill for Productive AI Coding Agents Is Verified Delegation</a></div>
+        <div class="item-meta"><span class="source-tag">Simon Willison's Weblog</span>22 Aug 2026</div>
+        <div class="item-summary">Willison argues that the decisive skill for engineering with AI coding agents is not prompt quality alone, but the ability to confidently instruct agents on bounded tasks and rigorously verify their output — developers who treat agent output as code review rather than trusted deliverable see dramatically better outcomes.</div>
+      </li>
+      <li>
+        <div class="item-title"><a href="https://www.buildfastwithai.com/blogs/7-ai-tools-changed-developer-workflow-august-2026" target="_blank" rel="noopener">MCP Becomes the De Facto Standard for Agent Tool Discovery: 10,000+ Public Servers, 97M Monthly SDK Downloads</a></div>
+        <div class="item-meta"><span class="source-tag">AI Engineering / Build Fast with AI</span>Aug 2026</div>
+        <div class="item-summary">As of mid-2026, the Model Context Protocol has crossed 10,000 active public MCP servers with a combined 97 million monthly Python and TypeScript SDK downloads — cementing its role as the universal interface for agent tool discovery across Claude, GPT, and open-source LLM runtimes.</div>
+      </li>
+      <li>
+        <div class="item-title"><a href="https://www.buildfastwithai.com/blogs/7-ai-tools-changed-developer-workflow-august-2026" target="_blank" rel="noopener">Spotify Ships Xirp: Orchestrates Claude Code, Codex, and Gemini CLI in Parallel via tmux + git Worktrees</a></div>
+        <div class="item-meta"><span class="source-tag">Build Fast with AI</span>10 Aug 2026</div>
+        <div class="item-summary">Spotify open-sourced Xirp on August 10 — an orchestration layer that spins up Claude Code, OpenAI Codex, and Gemini CLI sessions in parallel using tmux and git worktree isolation, letting engineering teams fan out large refactoring tasks across multiple AI agents simultaneously and merge verified outputs.</div>
+      </li>
+      <li>
+        <div class="item-title"><a href="https://tech-insider.org/typescript-vs-javascript-2026/" target="_blank" rel="noopener">TypeScript 7.0: Compiler Porting to Native Go for Projected 10× Performance Boost</a></div>
+        <div class="item-meta"><span class="source-tag">Tech Insider / Anders Hejlsberg</span>Aug 2026</div>
+        <div class="item-summary">TypeScript creator Anders Hejlsberg confirmed that TypeScript 7.0 will port the compiler from TypeScript to native Go code, targeting a 10× speedup in type-checking performance — a change that would dramatically reduce CI compile times and improve IDE responsiveness for large monorepos; 73% of developers surveyed now use TypeScript as their primary language.</div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- JOBS -->
+  <section>
+    <div class="section-header"><span class="icon">💼</span><h2>Jobs</h2></div>
+    <ul>
+      <li>
+        <div class="item-title"><a href="https://swissdevjobs.ch/" target="_blank" rel="noopener">SwissDevJobs: 177 IT &amp; Software Developer Roles Live — Transparent Salary Data up to 165k CHF</a></div>
+        <div class="item-meta"><span class="source-tag">swissdevjobs.ch</span>28 Aug 2026</div>
+        <div class="item-summary">SwissDevJobs currently lists 177 open IT and software developer positions across Switzerland, including roles at CERN and major Swiss employers, with the platform's signature transparent tech-stack and salary disclosures (up to CHF 165,000/year) helping candidates filter without hidden information.</div>
+      </li>
+      <li>
+        <div class="item-title"><a href="https://www.glassdoor.com/Job/switzerland-freelance-jobs-SRCH_IL.0,11_IN226_KO12,21.htm" target="_blank" rel="noopener">Glassdoor Switzerland: 289 Freelance Positions + 92 Remote Developer Roles in August 2026</a></div>
+        <div class="item-meta"><span class="source-tag">Glassdoor</span>28 Aug 2026</div>
+        <div class="item-summary">Glassdoor lists 289 freelance positions and 92 dedicated remote developer roles in Switzerland as of late August 2026, with common in-demand skills spanning TypeScript/JavaScript frontend, cloud infrastructure (Terraform, GCP, CI/CD), and AI/ML engineering — reflecting continued demand for senior tech talent across the Swiss market.</div>
+      </li>
+      <li>
+        <div class="item-title"><a href="https://arc.dev/en-ch/remote-jobs" target="_blank" rel="noopener">Arc.dev Switzerland Remote: Flexible Roles from International Companies Open to Swiss Time Zone</a></div>
+        <div class="item-meta"><span class="source-tag">Arc.dev</span>28 Aug 2026</div>
+        <div class="item-summary">Arc.dev's Switzerland remote job board (partnered with We Work Remotely) lists international-company roles accepting Swiss-based candidates, with new positions added daily across frontend, backend, and full-stack engineering for developers seeking remote flexibility while remaining Switzerland-resident.</div>
+      </li>
+    </ul>
+  </section>
+
+</main>
+<footer>
+  Generated 28 August 2026 · Europe/Zurich · Sources: NASA, ESA, Sky &amp; Telescope, Quanta Magazine, Reuters, World Rugby, Sailing Scuttlebutt, SailGP, ACSM, MIT Sloan, Greater Good Science Center, Simon Willison's Weblog, SwissDevJobs, Glassdoor
+</footer>
+</body>
+</html>
