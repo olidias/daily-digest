@@ -20,7 +20,8 @@
     --tag-bg: #e0e7ff;
     --tag-fg: #3730a3;
     --section-head: #1e3a5f;
-    --archive-bg: #fafaf7;
+    --archive-bg: #fafaf8;
+    --archive-border: #e2ddd5;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
@@ -38,7 +39,8 @@
       --tag-bg: #1e2060;
       --tag-fg: #a5b4fc;
       --section-head: #93c5fd;
-      --archive-bg: #13131a;
+      --archive-bg: #13131c;
+      --archive-border: #2a2a38;
     }
   }
   :root[data-theme="dark"] {
@@ -56,7 +58,8 @@
     --tag-bg: #1e2060;
     --tag-fg: #a5b4fc;
     --section-head: #93c5fd;
-    --archive-bg: #13131a;
+    --archive-bg: #13131c;
+    --archive-border: #2a2a38;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
@@ -75,7 +78,9 @@
   header h1 { font-size: 1.7rem; font-weight: 700; letter-spacing: -0.02em; }
   header p { margin-top: 0.4rem; font-size: 0.9rem; opacity: 0.7; }
   main { max-width: 760px; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
-  section {
+
+  /* TODAY'S DIGEST SECTIONS */
+  section.topic {
     margin-bottom: 2rem;
     background: var(--card);
     border: 1px solid var(--border);
@@ -98,12 +103,12 @@
     letter-spacing: 0.08em;
   }
   .section-header .icon { font-size: 1.1rem; }
-  ul { list-style: none; }
-  li {
+  ul.items { list-style: none; }
+  ul.items li {
     padding: 0.9rem 1.2rem;
     border-bottom: 1px solid var(--border);
   }
-  li:last-child { border-bottom: none; }
+  ul.items li:last-child { border-bottom: none; }
   .item-title {
     font-size: 0.97rem;
     font-weight: 600;
@@ -135,40 +140,48 @@
     opacity: 0.85;
   }
 
-  /* Archive section */
+  /* ARCHIVE SECTION */
   .archive-section {
-    background: var(--archive-bg);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    overflow: hidden;
-    margin-bottom: 2rem;
+    margin-top: 3rem;
+    border-top: 2px solid var(--border);
+    padding-top: 1.5rem;
   }
-  .archive-section .section-header {
-    background: var(--topic-bg);
-    border-bottom: 1px solid var(--topic-border);
+  .archive-section h2 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--section-head);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 1rem;
   }
   .archive-list { list-style: none; }
   .archive-list li {
-    padding: 0.6rem 1.2rem;
-    border-bottom: 1px solid var(--border);
+    padding: 0.55rem 0;
+    border-bottom: 1px solid var(--archive-border);
     display: flex;
     align-items: baseline;
-    gap: 0.75rem;
+    gap: 0.8rem;
+    flex-wrap: wrap;
   }
   .archive-list li:last-child { border-bottom: none; }
   .archive-date {
-    font-size: 0.82rem;
+    font-size: 0.85rem;
+    font-weight: 700;
     color: var(--muted);
     white-space: nowrap;
-    min-width: 6.5rem;
+    min-width: 7rem;
   }
-  .archive-list a {
+  .archive-link {
+    font-size: 0.88rem;
     color: var(--accent);
     text-decoration: none;
-    font-size: 0.9rem;
     font-weight: 500;
   }
-  .archive-list a:hover { text-decoration: underline; color: var(--accent-hover); }
+  .archive-link:hover { text-decoration: underline; }
+  .archive-summary {
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
 
   footer {
     text-align: center;
@@ -182,157 +195,369 @@
 <body>
 <header>
   <h1>📰 Daily Digest</h1>
-  <p>Astronomy · World News · Rugby · Sailing · Lifting · Leadership · EI · AI Engineering · Jobs</p>
+  <p>31 August 2026 · Europe/Zurich</p>
 </header>
 <main>
 
-  <!-- TODAY: 30 AUGUST 2026 -->
-  <section>
-    <div class="section-header"><span class="icon">📅</span><h2>Today — 30 August 2026</h2></div>
-    <ul>
-      <li>
-        <div class="item-title"><a href="archive/2026-08-30.html">Read today's full digest →</a></div>
-        <div class="item-meta">Roman Space Telescope launches · King Harald V dies · SA vs NZ Rugby Championship · ILCA 7 Worlds final · Congo Ebola spreads</div>
-      </li>
-    </ul>
-  </section>
-
   <!-- ASTRONOMY & SPACE -->
-  <section>
+  <section class="topic">
     <div class="section-header"><span class="icon">🔭</span><h2>Astronomy &amp; Space</h2></div>
-    <ul>
+    <ul class="items">
       <li>
         <div class="item-title"><a href="https://science.nasa.gov/mission/roman-space-telescope/" target="_blank" rel="noopener">Nancy Grace Roman Space Telescope Launches Aboard SpaceX Falcon Heavy</a></div>
         <div class="item-meta"><span class="source-tag">NASA</span>30 Aug 2026</div>
-        <div class="item-summary">NASA's $4.3 billion Roman Space Telescope lifted off from Kennedy Space Center on a SpaceX Falcon Heavy, bound for the Sun–Earth L2 point where it will conduct a 5-year survey combining Hubble-like resolution with a field of view 100 times wider, targeting dark energy, gravitational microlensing exoplanets, and infrared astrophysics.</div>
+        <div class="item-summary">NASA's Roman Space Telescope lifted off at 07:26 EDT from Kennedy Space Center and is now en route to the Sun–Earth L2 point, where its 2.4 m mirror and wide-field camera — covering 100× Hubble's field of view — will spend five years surveying dark energy, dark matter, and planetary systems via microlensing, months ahead of the original schedule.</div>
       </li>
       <li>
-        <div class="item-title"><a href="https://www.nasa.gov/2026-news-releases/" target="_blank" rel="noopener">NASA Adjusts Crew-13 Launch Date After Oxidizer Leak Detected on Dragon</a></div>
-        <div class="item-meta"><span class="source-tag">NASA</span>29 Aug 2026</div>
-        <div class="item-summary">NASA and SpaceX are delaying the Crew-13 ISS launch after engineers detected an oxidizer leak in Dragon's propulsion system during standard pre-launch spacecraft processing, with a new launch date pending resolution of the anomaly.</div>
+        <div class="item-title"><a href="https://www.nasa.gov/2026-news-releases/" target="_blank" rel="noopener">Turkey Signs Artemis Accords, Becomes 71st Signatory Nation</a></div>
+        <div class="item-meta"><span class="source-tag">NASA</span>31 Aug 2026</div>
+        <div class="item-summary">Turkey signed the Artemis Accords at a ceremony at NASA Headquarters, joining the international framework of norms for peaceful civil exploration of the Moon, Mars, and beyond, as the programme builds toward crewed Artemis III surface missions.</div>
       </li>
       <li>
-        <div class="item-title"><a href="https://www.nasa.gov/2026-news-releases/" target="_blank" rel="noopener">LINK Spacecraft to Attempt Proximity Operations with Distressed Swift Observatory</a></div>
-        <div class="item-meta"><span class="source-tag">NASA / Katalyst Space</span>27 Aug 2026</div>
-        <div class="item-summary">Following an ongoing attitude-control failure aboard NASA's Neil Gehrels Swift Observatory, NASA and Katalyst Space have directed the LINK spacecraft to execute rendezvous and proximity operations with Swift — demonstrating on-orbit servicing capabilities while potentially stabilising the observatory.</div>
-      </li>
-      <li>
-        <div class="item-title"><a href="https://earthsky.org/" target="_blank" rel="noopener">M7 Solar Flare Ejecta Arrives 29 August, G2 Geomagnetic Storm and Auroras Possible</a></div>
-        <div class="item-meta"><span class="source-tag">EarthSky / NOAA</span>29 Aug 2026</div>
-        <div class="item-summary">Coronal mass ejection material from a recent M7-class solar flare reached Earth on 29 August, triggering G2 (moderate) geomagnetic storm conditions and auroral displays visible as far south as the northern US states and central Europe.</div>
-      </li>
-      <li>
-        <div class="item-title"><a href="https://www.nasa.gov/2026-news-releases/" target="_blank" rel="noopener">Artemis II Crew Receive Congressional Space Medal of Honor at JSC</a></div>
-        <div class="item-meta"><span class="source-tag">NASA</span>28 Aug 2026</div>
-        <div class="item-summary">President Trump presented the four Artemis II crew members — Reid Wiseman, Victor Glover, Christina Koch, and CSA astronaut Jeremy Hansen — with the Congressional Space Medal of Honor on 28 August, honouring their historic crewed lunar fly-by, the first humans to travel near the Moon since Apollo 17 in 1972.</div>
+        <div class="item-title"><a href="https://apod.nasa.gov/apod/astropix.html" target="_blank" rel="noopener">APOD: A Plane Lunar Eclipse</a></div>
+        <div class="item-meta"><span class="source-tag">NASA APOD</span>31 Aug 2026</div>
+        <div class="item-summary">Today's Astronomy Picture of the Day features a striking image of a lunar eclipse captured in the same plane as an aircraft contrail, a serendipitous alignment that illustrates the geometry of Earth's shadow and the scale of near-Earth airspace against the Moon.</div>
       </li>
     </ul>
   </section>
 
   <!-- WORLD NEWS -->
-  <section>
+  <section class="topic">
     <div class="section-header"><span class="icon">🌍</span><h2>World News</h2></div>
-    <ul>
+    <ul class="items">
       <li>
-        <div class="item-title"><a href="https://www.reuters.com/world/" target="_blank" rel="noopener">King Harald V of Norway Dies at 89 After Decades on the Throne</a></div>
-        <div class="item-meta"><span class="source-tag">Reuters</span>28 Aug 2026</div>
-        <div class="item-summary">Norway's King Harald V, who survived Nazi occupation as a child in wartime exile in the United States before ascending the throne in 1991 and becoming one of Europe's longest-serving monarchs, died on 28 August 2026 aged 89, triggering national mourning and the succession of his son Crown Prince Haakon.</div>
+        <div class="item-title"><a href="https://en.wikipedia.org/wiki/Portal:Current_events/August_2026" target="_blank" rel="noopener">Nepal Floods: Thousands Missing After Villages Swept Away Along Nepal-China Border</a></div>
+        <div class="item-meta"><span class="source-tag">Reuters / Wikipedia</span>31 Aug 2026</div>
+        <div class="item-summary">Four days after catastrophic flash floods destroyed entire villages along the Nepal-China border, Nepali authorities have warned of further flooding as the Bhotekoshi River continues to rise, with thousands still unaccounted for and rescue operations severely hampered by road damage.</div>
       </li>
       <li>
-        <div class="item-title"><a href="https://www.reuters.com/world/" target="_blank" rel="noopener">Ukraine Endures 72 Hours of Relentless Drone Strikes; Deadly Attack on 29 August</a></div>
-        <div class="item-meta"><span class="source-tag">Reuters</span>29 Aug 2026</div>
-        <div class="item-summary">A sustained, 72-hour campaign of Russian drone strikes across Ukraine culminated in a deadly attack on 29 August that severely disrupted civilian infrastructure and daily life in multiple cities, as Kyiv's air defences intercepted scores of drones but could not prevent all casualties.</div>
+        <div class="item-title"><a href="https://en.wikipedia.org/wiki/Portal:Current_events/August_2026" target="_blank" rel="noopener">Iceland Referendum: Voters Reject EU Membership 52.8% to 47.2%</a></div>
+        <div class="item-meta"><span class="source-tag">Reuters / RÚV</span>31 Aug 2026</div>
+        <div class="item-summary">With nearly all votes counted, Iceland's referendum on resuming EU accession negotiations has produced a 52.8% vote against, preserving the country's EEA/EFTA status and ending what would have been the first EU enlargement bid since Western Balkans stalled.</div>
       </li>
       <li>
-        <div class="item-title"><a href="https://www.reuters.com/world/" target="_blank" rel="noopener">Nepal and Tibet Flood Death Toll Rises; About 2,500 Still Missing</a></div>
-        <div class="item-meta"><span class="source-tag">Reuters</span>29 Aug 2026</div>
-        <div class="item-summary">Nepali authorities report a rising death toll from catastrophic flash floods that obliterated communities along Nepal's border with Chinese-controlled Tibet, with approximately 2,500 people still missing across both sides of the frontier as rescue operations continue.</div>
+        <div class="item-title"><a href="https://en.wikipedia.org/wiki/Portal:Current_events/August_2026" target="_blank" rel="noopener">US Strikes Two Iranian Missile Launchers Near Strait of Hormuz</a></div>
+        <div class="item-meta"><span class="source-tag">Reuters</span>31 Aug 2026</div>
+        <div class="item-summary">US forces carried out precision strikes on two Iranian mobile missile launchers positioned near the Strait of Hormuz following intelligence of imminent threats to commercial shipping, with Iran's IRGC vowing a "calculated response."</div>
       </li>
       <li>
-        <div class="item-title"><a href="https://www.reuters.com/world/" target="_blank" rel="noopener">Congo Ebola Outbreak Spreads to Two Additional Health Zones</a></div>
+        <div class="item-title"><a href="https://en.wikipedia.org/wiki/Portal:Current_events/August_2026" target="_blank" rel="noopener">Russia Launches Deadly Drone Swarm Targeting Kyiv Region</a></div>
         <div class="item-meta"><span class="source-tag">Reuters</span>29 Aug 2026</div>
-        <div class="item-summary">What epidemiologists are calling the fastest-growing Ebola outbreak in recorded history has extended into two new health zones in eastern Democratic Republic of Congo, raising fears about containment capacity in an area where active conflict continues to hamper health workers' access.</div>
+        <div class="item-summary">A mass Russian Shahed drone attack on the Kyiv region overnight caused civilian casualties and infrastructure damage, with Ukrainian air defences intercepting the majority of drones before they reached the capital.</div>
       </li>
       <li>
-        <div class="item-title"><a href="https://www.reuters.com/world/" target="_blank" rel="noopener">Trump Administration Announces Sweeping Agreement with Venezuela</a></div>
-        <div class="item-meta"><span class="source-tag">Reuters</span>29 Aug 2026</div>
-        <div class="item-summary">President Trump announced a broad bilateral agreement with Venezuela on 29 August covering trade, migration enforcement, and energy access, a significant geopolitical realignment whose full terms were being disclosed in stages and whose durability analysts questioned given Venezuela's track record on prior US deals.</div>
+        <div class="item-title"><a href="https://investinglive.com/news/economic-and-event-calendar-in-asia-31-august-2026-china-official-pmis/" target="_blank" rel="noopener">China's August Manufacturing PMI Stays Below 50 at 49.6; Q2 GDP Missed Target at 4.3%</a></div>
+        <div class="item-meta"><span class="source-tag">Reuters / NBS</span>31 Aug 2026</div>
+        <div class="item-summary">China's official August Manufacturing PMI came in at 49.6 — slightly above July's 49.2 but still contracting — reflecting soft domestic demand and a property slump that held Q2 GDP growth to 4.3%, below Beijing's 4.5–5% annual target range.</div>
+      </li>
+      <li>
+        <div class="item-title"><a href="https://en.wikipedia.org/wiki/Portal:Current_events/August_2026" target="_blank" rel="noopener">Moroccan Security Forces Repel Mass Migrant Crossing Attempt at Melilla</a></div>
+        <div class="item-meta"><span class="source-tag">Reuters</span>31 Aug 2026</div>
+        <div class="item-summary">Hundreds of migrants attempted to storm the fences surrounding the Spanish enclave of Melilla, with Moroccan security forces sustaining injuries during clashes that resulted in more than 50 detentions, reigniting debate over EU-Morocco migration cooperation.</div>
       </li>
     </ul>
   </section>
 
   <!-- RUGBY -->
-  <section>
-    <div class="section-header"><span class="icon">🏉</span><h2>Rugby</h2></div>
-    <ul>
+  <section class="topic">
+    <div class="section-header"><span class="icon">🏉</span><h2>Rugby (High-Level Only)</h2></div>
+    <ul class="items">
       <li>
-        <div class="item-title"><a href="https://en.wikipedia.org/wiki/2026_New_Zealand_rugby_union_tour_of_South_Africa" target="_blank" rel="noopener">South Africa vs New Zealand — Rugby's Greatest Rivalry, Cape Town (29 Aug)</a></div>
-        <div class="item-meta"><span class="source-tag">World Rugby</span>29 Aug 2026</div>
-        <div class="item-summary">The Springboks hosted the All Blacks at Cape Town Stadium on 29 August in the 2026 Rugby Championship, billed as "Rugby's Greatest Rivalry," with both southern-hemisphere heavyweights building momentum ahead of the 2027 World Cup in Australia.</div>
+        <div class="item-title"><a href="https://www.nbcsports.com/rugby/news/south-africa-beat-new-zealand-33-26-in-cape-town-to-hand-all-blacks-first-loss-of-2026" target="_blank" rel="noopener">South Africa 33–26 New Zealand · Cape Town (Series Levelled 1–1)</a></div>
+        <div class="item-meta"><span class="source-tag">World Rugby / NBC Sports</span>29 Aug 2026</div>
+        <div class="item-summary">The Springboks ended the All Blacks' unbeaten 2026 run with a dominant 33–26 victory at Cape Town Stadium, scoring all three of their tries in the first half to build a 24–14 lead before holding off New Zealand's comeback to level the four-test tour series 1–1.</div>
       </li>
       <li>
-        <div class="item-title"><a href="https://en.wikipedia.org/wiki/2026_Australia_rugby_union_tour_of_Argentina" target="_blank" rel="noopener">Australia vs Argentina — First Test, Jujuy (29 Aug)</a></div>
-        <div class="item-meta"><span class="source-tag">World Rugby</span>29 Aug 2026</div>
-        <div class="item-summary">The Wallabies opened their two-test tour of Argentina at Estadio 23 de Agosto in Jujuy on 29 August, a Rugby Championship clash giving both Tier-1 nations valuable preparation in southern-hemisphere conditions ahead of the 2027 World Cup cycle.</div>
+        <div class="item-title"><a href="https://www.nbcsports.com/rugby/news/australia-leads-from-start-to-finish-to-beat-argentina-27-21-in-the-1st-rugby-test" target="_blank" rel="noopener">Argentina 21–27 Australia · Jujuy (First Test, Wallabies Win)</a></div>
+        <div class="item-meta"><span class="source-tag">World Rugby / NBC Sports</span>29 Aug 2026</div>
+        <div class="item-summary">Australia secured a 27–21 victory in the first of two tests in Argentina — the Wallabies' third consecutive win under head coach Les Kiss — with early tries from hooker Brandon Paenga-Amoso and fly-half Carter Gordon providing a buffer Australia's defense protected for the final 27 minutes.</div>
       </li>
     </ul>
   </section>
 
-  <!-- SAILING -->
-  <section>
-    <div class="section-header"><span class="icon">⛵</span><h2>Sailing</h2></div>
-    <ul>
+  <!-- SCIENCE-BASED LIFTING -->
+  <section class="topic">
+    <div class="section-header"><span class="icon">🏋️</span><h2>Science-Based Lifting</h2></div>
+    <ul class="items">
       <li>
-        <div class="item-title"><a href="https://ilcasailing.org/" target="_blank" rel="noopener">ILCA 7 Men's World Championship Final Day — Ryan Lo (SGP) Leads into Medal Race, Dún Laoghaire</a></div>
-        <div class="item-meta"><span class="source-tag">ILCA Sailing</span>30 Aug 2026</div>
-        <div class="item-summary">Singapore's Ryan Lo carried the overall lead into the ILCA 7 Men's World Championship medal race in Dún Laoghaire, Ireland on the final day of competition, with Britain's Michael Beckett his closest challenger after Lo extended his advantage in the preceding fleet races.</div>
+        <div class="item-title"><a href="https://www.sciencedaily.com/releases/2026/08/260808234959.htm" target="_blank" rel="noopener">Strength Training Sweet Spot: 90–120 Min/Week Cuts Early Mortality by 13%; Paired with Cardio, by 45%</a></div>
+        <div class="item-meta"><span class="source-tag">ScienceDaily</span>Aug 2026</div>
+        <div class="item-summary">A large prospective study found that resistance training 90–120 minutes per week reduces all-cause early mortality risk by 13%, with especially pronounced reductions in cardiovascular and neurological disease deaths; combining that volume with regular aerobic exercise produced a 45% reduction in overall death risk.</div>
       </li>
       <li>
-        <div class="item-title"><a href="https://www.ussailing.org/competition/championships/" target="_blank" rel="noopener">Dartmouth Sailing Week Concludes — Final Day of Racing, 30 August</a></div>
-        <div class="item-meta"><span class="source-tag">US Sailing</span>30 Aug 2026</div>
-        <div class="item-summary">Dartmouth Sailing Week wrapped up on 30 August, with competitors in multiple keelboat and dinghy classes completing their final races in the coastal venue's famously variable conditions, drawing participants from across New England and the wider Atlantic fleet.</div>
+        <div class="item-title"><a href="https://www.strongerbyscience.com/articles/" target="_blank" rel="noopener">Training Order Meta-Analysis: Lifting Before Cardio Yields ~7% Greater Strength Gains</a></div>
+        <div class="item-meta"><span class="source-tag">Stronger By Science</span>Aug 2026</div>
+        <div class="item-summary">A meta-analysis in SBS's research compilation found that performing resistance training before aerobic exercise in the same session produced approximately 7% larger strength gains compared to cardio-first order, with the effect most pronounced for lower-body strength.</div>
+      </li>
+      <li>
+        <div class="item-title"><a href="https://www.strongerbyscience.com/articles/" target="_blank" rel="noopener">One Set to Failure at 70–85% 1RM, 2–3×/Week Is Sufficient for Intermediate Strength Gains</a></div>
+        <div class="item-meta"><span class="source-tag">Stronger By Science</span>Aug 2026</div>
+        <div class="item-summary">Controlled trial data compiled by SBS shows that a single set taken to, or just short of, muscular failure at 70–85% 1RM performed 2–3 times per week per lift is sufficient to produce continued strength progress in squat and bench press for intermediate-level trainees.</div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- PEOPLE LEADERSHIP -->
+  <section class="topic">
+    <div class="section-header"><span class="icon">👥</span><h2>People Leadership</h2></div>
+    <ul class="items">
+      <li>
+        <div class="item-title"><a href="https://sloanreview.mit.edu/topic/leadership/" target="_blank" rel="noopener">Anti-DEI Backlash Exposes Methodological Gaps in "Merit-Based" Hiring (MIT Sloan)</a></div>
+        <div class="item-meta"><span class="source-tag">MIT Sloan Management Review</span>Aug 2026</div>
+        <div class="item-summary">Research by Hung Dao and colleagues finds that while many organisations claim to shift to merit-based hiring amid anti-DEI pressure, analysis of their processes reveals most lack the structured, validated evaluation criteria required for genuine meritocracy, effectively substituting one form of bias for another.</div>
+      </li>
+      <li>
+        <div class="item-title"><a href="https://sloanreview.mit.edu/topic/leadership/" target="_blank" rel="noopener">Managers Who Tend to Team Well-Being Help Employees with Childhood Adversity Shift Behavioural Patterns</a></div>
+        <div class="item-meta"><span class="source-tag">MIT Sloan Management Review</span>30 Jul 2026</div>
+        <div class="item-summary">A longitudinal study by Sharma, Barnes, and Rao demonstrates that managers who actively attend to team psychological safety enable employees with adverse childhood experiences to measurably shift away from reactive behavioural patterns — establishing a causal pathway from managerial practice to employee resilience.</div>
+      </li>
+      <li>
+        <div class="item-title"><a href="https://hbr.org/topic/subject/leadership-and-managing-people" target="_blank" rel="noopener">Generative AI Enables Solo Builders — Does This Reduce the Collaborative Advantage? (HBR Research)</a></div>
+        <div class="item-meta"><span class="source-tag">HBR</span>12 Aug 2026</div>
+        <div class="item-summary">Research by Eggers, Ryan, and Dinesh examines how generative AI allows individuals with limited technical expertise to build sophisticated products solo, using data from 1,400+ startup founders to ask whether teams' collaborative advantage persists or merely shifts to different stages of the creation process.</div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- AI ENGINEERING -->
+  <section class="topic">
+    <div class="section-header"><span class="icon">🤖</span><h2>AI Engineering</h2></div>
+    <ul class="items">
+      <li>
+        <div class="item-title"><a href="https://simonwillison.net/" target="_blank" rel="noopener">Willison Reframes LLM Security Flaw as "Confused Environment Attack," Not Prompt Injection</a></div>
+        <div class="item-meta"><span class="source-tag">Simon Willison</span>30 Aug 2026</div>
+        <div class="item-summary">Willison updated his analysis to clarify that the vulnerability class involves a "confused environment attack" — where the environment exposed to an agent is itself exploitable — rather than a classic prompt injection, a distinction he argues is critical for accurate threat modelling and effective mitigation design.</div>
+      </li>
+      <li>
+        <div class="item-title"><a href="https://simonwillison.net/" target="_blank" rel="noopener">Qwen3.8-Flash-Next: Qwen4 MoE Architecture Preview — 125B Total / 6B Active Parameters</a></div>
+        <div class="item-meta"><span class="source-tag">Simon Willison</span>Aug 2026</div>
+        <div class="item-summary">Qwen's new Qwen3.8-Flash-Next is a multimodal mixture-of-experts model previewing the Qwen4 family architecture, with 125B total parameters and only 6B active per forward pass, delivering major throughput gains at inference while matching or exceeding larger dense models on several key benchmarks.</div>
+      </li>
+      <li>
+        <div class="item-title"><a href="https://aitoolly.com/ai-news/article/2026-08-22-matt-pocock-unveils-skills-repository-a-practical-look-at-ai-agent-configurations-for-engineers" target="_blank" rel="noopener">Matt Pocock Releases "Skills for Real Engineers" — Production-Grade Claude Code Agent Workflows</a></div>
+        <div class="item-meta"><span class="source-tag">Matt Pocock</span>22 Aug 2026</div>
+        <div class="item-summary">TypeScript educator Matt Pocock published a public Claude Code skills directory covering TDD workflows, triage state machines, and vertical-slice architecture patterns, designed so agents ask clarifying questions before writing code and run self-validating test loops before delivering solutions; the repo reached 83,000+ GitHub stars within days.</div>
       </li>
     </ul>
   </section>
 
   <!-- JOBS -->
-  <section>
+  <section class="topic">
     <div class="section-header"><span class="icon">💼</span><h2>Jobs</h2></div>
-    <ul>
+    <ul class="items">
       <li>
-        <div class="item-title"><a href="https://www.freelancermap.com/projects/switzerland" target="_blank" rel="noopener">Senior System Engineer Infrastruktur — Swisscom IT Services, Zürich</a></div>
-        <div class="item-meta"><span class="source-tag">freelancermap</span>Aug 2026</div>
-        <div class="item-summary">Swisscom IT Services is seeking a senior-level infrastructure systems engineer for a contract role in Zürich, listed on freelancermap with 0% commission and open to Swiss-based or remote-eligible freelancers.</div>
+        <div class="item-title"><a href="https://swissdevjobs.ch/" target="_blank" rel="noopener">SwissDevJobs: 177 Active IT &amp; Software Developer Openings in Switzerland</a></div>
+        <div class="item-meta"><span class="source-tag">swissdevjobs.ch</span>31 Aug 2026</div>
+        <div class="item-summary">Switzerland's specialist IT job board currently lists 177 positions across Software Engineering, DevOps, AI/ML, Product Management, and QA roles, with transparent tech-stack disclosure and salaries posted up to 165,000 CHF/year.</div>
       </li>
       <li>
-        <div class="item-title"><a href="https://www.freelancermap.com/projects/switzerland" target="_blank" rel="noopener">Python &amp; Cloud Native Engineer — IQ Plus AG, Bern</a></div>
-        <div class="item-meta"><span class="source-tag">freelancermap</span>Aug 2026</div>
-        <div class="item-summary">IQ Plus AG in Bern is advertising a Python and cloud-native engineering contract via freelancermap, targeting engineers with hands-on cloud platform and backend development experience.</div>
-      </li>
-      <li>
-        <div class="item-title"><a href="https://swissdevjobs.ch/" target="_blank" rel="noopener">177 Open IT Roles in Switzerland — Software Engineers, AI/ML, DevOps, QA, UX</a></div>
-        <div class="item-meta"><span class="source-tag">SwissDevJobs</span>Aug 2026</div>
-        <div class="item-summary">SwissDevJobs currently lists 177 open IT positions across Switzerland, spanning software engineering, AI/ML, DevOps, QA, and UX/UI design, with salaries up to CHF 165,000 and tech stacks disclosed upfront for each listing.</div>
+        <div class="item-title"><a href="https://www.freelancermap.com/projects/switzerland" target="_blank" rel="noopener">Freelancermap: Active IT &amp; SAP Freelance Contracts in Switzerland</a></div>
+        <div class="item-meta"><span class="source-tag">freelancermap</span>31 Aug 2026</div>
+        <div class="item-summary">Freelancermap lists active IT, SAP, and consulting freelance projects in Switzerland with on-site, hybrid, and remote options across development, architecture, and data engineering disciplines.</div>
       </li>
     </ul>
   </section>
 
   <!-- ARCHIVE -->
   <div class="archive-section">
-    <div class="section-header"><span class="icon">🗂️</span><h2>Archive</h2></div>
+    <h2>📁 Archive</h2>
     <ul class="archive-list">
-      <li><span class="archive-date">29 Aug 2026</span><a href="archive/2026-08-29.html">Roman Telescope T‑24h · Vacuum birefringence confirmed · Asia flooding crisis · SailGP Spain wins · AI agent daily use at 81%</a></li>
-      <li><span class="archive-date">28 Aug 2026</span><a href="archive/2026-08-28.html">28 August 2026</a></li>
-      <li><span class="archive-date">27 Aug 2026</span><a href="archive/2026-08-27.html">27 August 2026</a></li>
-      <li><span class="archive-date">26 Aug 2026</span><a href="archive/2026-08-26.html">26 August 2026</a></li>
-      <li><span class="archive-date">25 Aug 2026</span><a href="archive/2026-08-25.html">25 August 2026</a></li>
-      <li><span class="archive-date">24 Aug 2026</span><a href="archive/2026-08-24.html">24 August 2026</a></li>
+      <li>
+        <span class="archive-date">31 Aug 2026</span>
+        <a class="archive-link" href="archive/2026-08-31.html">31 August 2026</a>
+        <span class="archive-summary">Roman Space Telescope launch · Nepal floods · Iceland EU vote · SA vs NZ rugby · AI agent security</span>
+      </li>
+      <li>
+        <span class="archive-date">30 Aug 2026</span>
+        <a class="archive-link" href="archive/2026-08-30.html">30 August 2026</a>
+        <span class="archive-summary">Roman Telescope pre-launch · Norway King Harald V · Swift Observatory servicing mission</span>
+      </li>
+      <li>
+        <span class="archive-date">29 Aug 2026</span>
+        <a class="archive-link" href="archive/2026-08-29.html">29 August 2026</a>
+      </li>
+      <li>
+        <span class="archive-date">28 Aug 2026</span>
+        <a class="archive-link" href="archive/2026-08-28.html">28 August 2026</a>
+      </li>
+      <li>
+        <span class="archive-date">27 Aug 2026</span>
+        <a class="archive-link" href="archive/2026-08-27.html">27 August 2026</a>
+      </li>
+      <li>
+        <span class="archive-date">26 Aug 2026</span>
+        <a class="archive-link" href="archive/2026-08-26.html">26 August 2026</a>
+      </li>
+      <li>
+        <span class="archive-date">25 Aug 2026</span>
+        <a class="archive-link" href="archive/2026-08-25.html">25 August 2026</a>
+      </li>
+      <li>
+        <span class="archive-date">24 Aug 2026</span>
+        <a class="archive-link" href="archive/2026-08-24.html">24 August 2026</a>
+      </li>
+      <li>
+        <span class="archive-date">22 Aug 2026</span>
+        <a class="archive-link" href="archive/2026-08-22.html">22 August 2026</a>
+      </li>
+      <li>
+        <span class="archive-date">21 Aug 2026</span>
+        <a class="archive-link" href="archive/2026-08-21.html">21 August 2026</a>
+      </li>
+      <li>
+        <span class="archive-date">20 Aug 2026</span>
+        <a class="archive-link" href="archive/2026-08-20.html">20 August 2026</a>
+      </li>
+      <li>
+        <span class="archive-date">19 Aug 2026</span>
+        <a class="archive-link" href="archive/2026-08-19.html">19 August 2026</a>
+      </li>
+      <li>
+        <span class="archive-date">18 Aug 2026</span>
+        <a class="archive-link" href="archive/2026-08-18.html">18 August 2026</a>
+      </li>
+      <li>
+        <span class="archive-date">17 Aug 2026</span>
+        <a class="archive-link" href="archive/2026-08-17.html">17 August 2026</a>
+      </li>
+      <li>
+        <span class="archive-date">16 Aug 2026</span>
+        <a class="archive-link" href="archive/2026-08-16.html">16 August 2026</a>
+      </li>
+      <li>
+        <span class="archive-date">15 Aug 2026</span>
+        <a class="archive-link" href="archive/2026-08-15.html">15 August 2026</a>
+      </li>
+      <li>
+        <span class="archive-date">14 Aug 2026</span>
+        <a class="archive-link" href="archive/2026-08-14.html">14 August 2026</a>
+      </li>
+      <li>
+        <span class="archive-date">13 Aug 2026</span>
+        <a class="archive-link" href="archive/2026-08-13.html">13 August 2026</a>
+      </li>
+      <li>
+        <span class="archive-date">12 Aug 2026</span>
+        <a class="archive-link" href="archive/2026-08-12.html">12 August 2026</a>
+      </li>
+      <li>
+        <span class="archive-date">11 Aug 2026</span>
+        <a class="archive-link" href="archive/2026-08-11.html">11 August 2026</a>
+      </li>
+      <li>
+        <span class="archive-date">10 Aug 2026</span>
+        <a class="archive-link" href="archive/2026-08-10.html">10 August 2026</a>
+      </li>
+      <li>
+        <span class="archive-date">9 Aug 2026</span>
+        <a class="archive-link" href="archive/2026-08-09.html">9 August 2026</a>
+      </li>
+      <li>
+        <span class="archive-date">8 Aug 2026</span>
+        <a class="archive-link" href="archive/2026-08-08.html">8 August 2026</a>
+      </li>
+      <li>
+        <span class="archive-date">7 Aug 2026</span>
+        <a class="archive-link" href="archive/2026-08-07.html">7 August 2026</a>
+      </li>
+      <li>
+        <span class="archive-date">6 Aug 2026</span>
+        <a class="archive-link" href="archive/2026-08-06.html">6 August 2026</a>
+      </li>
+      <li>
+        <span class="archive-date">5 Aug 2026</span>
+        <a class="archive-link" href="archive/2026-08-05.html">5 August 2026</a>
+      </li>
+      <li>
+        <span class="archive-date">4 Aug 2026</span>
+        <a class="archive-link" href="archive/2026-08-04.html">4 August 2026</a>
+      </li>
+      <li>
+        <span class="archive-date">3 Aug 2026</span>
+        <a class="archive-link" href="archive/2026-08-03.html">3 August 2026</a>
+      </li>
+      <li>
+        <span class="archive-date">2 Aug 2026</span>
+        <a class="archive-link" href="archive/2026-08-02.html">2 August 2026</a>
+      </li>
+      <li>
+        <span class="archive-date">1 Aug 2026</span>
+        <a class="archive-link" href="archive/2026-08-01.html">1 August 2026</a>
+      </li>
+      <li>
+        <span class="archive-date">31 Jul 2026</span>
+        <a class="archive-link" href="archive/2026-07-31.html">31 July 2026</a>
+      </li>
+      <li>
+        <span class="archive-date">30 Jul 2026</span>
+        <a class="archive-link" href="archive/2026-07-30.html">30 July 2026</a>
+      </li>
+      <li>
+        <span class="archive-date">29 Jul 2026</span>
+        <a class="archive-link" href="archive/2026-07-29.html">29 July 2026</a>
+      </li>
+      <li>
+        <span class="archive-date">28 Jul 2026</span>
+        <a class="archive-link" href="archive/2026-07-28.html">28 July 2026</a>
+      </li>
+      <li>
+        <span class="archive-date">27 Jul 2026</span>
+        <a class="archive-link" href="archive/2026-07-27.html">27 July 2026</a>
+      </li>
+      <li>
+        <span class="archive-date">26 Jul 2026</span>
+        <a class="archive-link" href="archive/2026-07-26.html">26 July 2026</a>
+      </li>
+      <li>
+        <span class="archive-date">25 Jul 2026</span>
+        <a class="archive-link" href="archive/2026-07-25.html">25 July 2026</a>
+      </li>
+      <li>
+        <span class="archive-date">24 Jul 2026</span>
+        <a class="archive-link" href="archive/2026-07-24.html">24 July 2026</a>
+      </li>
+      <li>
+        <span class="archive-date">23 Jul 2026</span>
+        <a class="archive-link" href="archive/2026-07-23.html">23 July 2026</a>
+      </li>
+      <li>
+        <span class="archive-date">22 Jul 2026</span>
+        <a class="archive-link" href="archive/2026-07-22.html">22 July 2026</a>
+      </li>
+      <li>
+        <span class="archive-date">21 Jul 2026</span>
+        <a class="archive-link" href="archive/2026-07-21.html">21 July 2026</a>
+      </li>
+      <li>
+        <span class="archive-date">20 Jul 2026</span>
+        <a class="archive-link" href="archive/2026-07-20.html">20 July 2026</a>
+      </li>
+      <li>
+        <span class="archive-date">17 Jul 2026</span>
+        <a class="archive-link" href="archive/2026-07-17.html">17 July 2026</a>
+      </li>
+      <li>
+        <span class="archive-date">16 Jul 2026</span>
+        <a class="archive-link" href="archive/2026-07-16.html">16 July 2026</a>
+      </li>
+      <li>
+        <span class="archive-date">15 Jul 2026</span>
+        <a class="archive-link" href="archive/2026-07-15.html">15 July 2026</a>
+      </li>
+      <li>
+        <span class="archive-date">10 Jul 2026</span>
+        <a class="archive-link" href="archive/2026-07-10.html">10 July 2026</a>
+      </li>
+      <li>
+        <span class="archive-date">6 Jul 2026</span>
+        <a class="archive-link" href="archive/2026-07-06.html">6 July 2026</a>
+      </li>
     </ul>
   </div>
 
 </main>
 <footer>
-  Generated 30 August 2026, 07:05 CET · Europe/Zurich · Daily Digest Bot
+  Generated 31 August 2026 · Europe/Zurich
 </footer>
 </body>
 </html>

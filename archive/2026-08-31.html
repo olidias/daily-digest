@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Digest — 31 August 2026</title>
+<style>
+  :root {
+    --bg: #f9f8f5;
+    --card: #ffffff;
+    --border: #e2ddd5;
+    --header-bg: #1a1a2e;
+    --header-fg: #f0f0e8;
+    --accent: #2563eb;
+    --accent-hover: #1d4ed8;
+    --text: #1c1c1e;
+    --muted: #6b7280;
+    --topic-bg: #f0f4ff;
+    --topic-border: #c7d2fe;
+    --tag-bg: #e0e7ff;
+    --tag-fg: #3730a3;
+    --section-head: #1e3a5f;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0f0f14;
+      --card: #1a1a24;
+      --border: #2a2a38;
+      --header-bg: #0a0a12;
+      --header-fg: #e8e8f0;
+      --accent: #60a5fa;
+      --accent-hover: #93c5fd;
+      --text: #e5e5ea;
+      --muted: #9ca3af;
+      --topic-bg: #1e2235;
+      --topic-border: #3b4270;
+      --tag-bg: #1e2060;
+      --tag-fg: #a5b4fc;
+      --section-head: #93c5fd;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0f0f14;
+    --card: #1a1a24;
+    --border: #2a2a38;
+    --header-bg: #0a0a12;
+    --header-fg: #e8e8f0;
+    --accent: #60a5fa;
+    --accent-hover: #93c5fd;
+    --text: #e5e5ea;
+    --muted: #9ca3af;
+    --topic-bg: #1e2235;
+    --topic-border: #3b4270;
+    --tag-bg: #1e2060;
+    --tag-fg: #a5b4fc;
+    --section-head: #93c5fd;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    font-size: 16px;
+  }
+  header {
+    background: var(--header-bg);
+    color: var(--header-fg);
+    padding: 2rem 1.5rem 1.5rem;
+    text-align: center;
+  }
+  header h1 { font-size: 1.7rem; font-weight: 700; letter-spacing: -0.02em; }
+  header p { margin-top: 0.4rem; font-size: 0.9rem; opacity: 0.7; }
+  .back-link {
+    display: inline-block;
+    margin-top: 0.8rem;
+    color: #93c5fd;
+    font-size: 0.85rem;
+    text-decoration: none;
+  }
+  .back-link:hover { text-decoration: underline; }
+  main { max-width: 760px; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
+  section {
+    margin-bottom: 2rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .section-header {
+    background: var(--topic-bg);
+    border-bottom: 1px solid var(--topic-border);
+    padding: 0.7rem 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .section-header h2 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--section-head);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .section-header .icon { font-size: 1.1rem; }
+  ul { list-style: none; }
+  li {
+    padding: 0.9rem 1.2rem;
+    border-bottom: 1px solid var(--border);
+  }
+  li:last-child { border-bottom: none; }
+  .item-title {
+    font-size: 0.97rem;
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+  }
+  .item-title a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .item-title a:hover { text-decoration: underline; color: var(--accent-hover); }
+  .item-meta {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-bottom: 0.3rem;
+  }
+  .source-tag {
+    display: inline-block;
+    background: var(--tag-bg);
+    color: var(--tag-fg);
+    border-radius: 4px;
+    padding: 0.05rem 0.45rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    margin-right: 0.4rem;
+  }
+  .item-summary {
+    font-size: 0.88rem;
+    color: var(--text);
+    opacity: 0.85;
+  }
+  footer {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    font-size: 0.78rem;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>📰 Daily Digest</h1>
+  <p>31 August 2026 · Europe/Zurich</p>
+  <a class="back-link" href="../index.html">← Back to index</a>
+</header>
+<main>
+
+  <!-- ASTRONOMY & SPACE -->
+  <section>
+    <div class="section-header"><span class="icon">🔭</span><h2>Astronomy &amp; Space</h2></div>
+    <ul>
+      <li>
+        <div class="item-title"><a href="https://science.nasa.gov/mission/roman-space-telescope/" target="_blank" rel="noopener">Nancy Grace Roman Space Telescope Launches Aboard SpaceX Falcon Heavy</a></div>
+        <div class="item-meta"><span class="source-tag">NASA</span>30 Aug 2026</div>
+        <div class="item-summary">NASA's Roman Space Telescope lifted off at 07:26 EDT from Kennedy Space Center and is now en route to the Sun–Earth L2 point, where its 2.4 m mirror and wide-field camera — covering 100× Hubble's field of view — will spend five years surveying dark energy, dark matter, and planetary systems via microlensing, months ahead of the original schedule.</div>
+      </li>
+      <li>
+        <div class="item-title"><a href="https://www.nasa.gov/2026-news-releases/" target="_blank" rel="noopener">Turkey Signs Artemis Accords, Becomes 71st Signatory Nation</a></div>
+        <div class="item-meta"><span class="source-tag">NASA</span>31 Aug 2026</div>
+        <div class="item-summary">Turkey signed the Artemis Accords at a ceremony at NASA Headquarters, joining the international framework of norms for peaceful civil exploration of the Moon, Mars, and beyond, as the programme builds toward crewed Artemis III surface missions.</div>
+      </li>
+      <li>
+        <div class="item-title"><a href="https://apod.nasa.gov/apod/astropix.html" target="_blank" rel="noopener">APOD: A Plane Lunar Eclipse</a></div>
+        <div class="item-meta"><span class="source-tag">NASA APOD</span>31 Aug 2026</div>
+        <div class="item-summary">Today's Astronomy Picture of the Day features a striking image of a lunar eclipse captured in the same plane as an aircraft contrail, a serendipitous alignment that illustrates the geometry of Earth's shadow and the scale of near-Earth airspace against the Moon.</div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- WORLD NEWS -->
+  <section>
+    <div class="section-header"><span class="icon">🌍</span><h2>World News</h2></div>
+    <ul>
+      <li>
+        <div class="item-title"><a href="https://en.wikipedia.org/wiki/Portal:Current_events/August_2026" target="_blank" rel="noopener">Nepal Floods: Thousands Missing After Villages Swept Away Along Nepal-China Border</a></div>
+        <div class="item-meta"><span class="source-tag">Reuters / Wikipedia</span>31 Aug 2026</div>
+        <div class="item-summary">Four days after catastrophic flash floods destroyed entire villages along the Nepal-China border, Nepali authorities have warned of further flooding as the Bhotekoshi River continues to rise, with thousands still unaccounted for and rescue operations severely hampered by road damage.</div>
+      </li>
+      <li>
+        <div class="item-title"><a href="https://en.wikipedia.org/wiki/Portal:Current_events/August_2026" target="_blank" rel="noopener">Iceland Referendum: Voters Reject EU Membership 52.8% to 47.2%</a></div>
+        <div class="item-meta"><span class="source-tag">Reuters / RÚV</span>31 Aug 2026</div>
+        <div class="item-summary">With nearly all votes counted, Iceland's referendum on resuming EU accession negotiations has produced a 52.8% vote against, preserving the country's EEA/EFTA status and ending what would have been the first EU enlargement bid since Western Balkans stalled; the margin closely mirrors the 1994 result.</div>
+      </li>
+      <li>
+        <div class="item-title"><a href="https://en.wikipedia.org/wiki/Portal:Current_events/August_2026" target="_blank" rel="noopener">US Strikes Two Iranian Missile Launchers Near Strait of Hormuz</a></div>
+        <div class="item-meta"><span class="source-tag">Reuters</span>31 Aug 2026</div>
+        <div class="item-summary">US forces carried out precision strikes on two Iranian mobile surface-to-surface missile launchers positioned near the Strait of Hormuz following intelligence of imminent threats to commercial shipping, raising regional tensions as Iran's IRGC vowed a "calculated response."</div>
+      </li>
+      <li>
+        <div class="item-title"><a href="https://en.wikipedia.org/wiki/Portal:Current_events/August_2026" target="_blank" rel="noopener">Russia Launches Deadly Drone Swarm Targeting Kyiv Region</a></div>
+        <div class="item-meta"><span class="source-tag">Reuters</span>29 Aug 2026</div>
+        <div class="item-summary">A mass Russian Shahed drone attack on the Kyiv region overnight on 29 August caused civilian casualties and infrastructure damage, with Ukrainian air defences intercepting the majority of drones before they reached the capital itself.</div>
+      </li>
+      <li>
+        <div class="item-title"><a href="https://investinglive.com/news/economic-and-event-calendar-in-asia-31-august-2026-china-official-pmis/" target="_blank" rel="noopener">China's August Manufacturing PMI Remains Below Expansion Threshold at 49.6</a></div>
+        <div class="item-meta"><span class="source-tag">Reuters / NBS</span>31 Aug 2026</div>
+        <div class="item-summary">China's National Bureau of Statistics released its official August Manufacturing PMI at 49.6 — slightly above July's 49.2 but still contracting — reflecting ongoing softness in domestic demand and a property slump that held Q2 GDP growth to 4.3%, below the lower end of Beijing's 4.5–5% target.</div>
+      </li>
+      <li>
+        <div class="item-title"><a href="https://en.wikipedia.org/wiki/Portal:Current_events/August_2026" target="_blank" rel="noopener">Moroccan Security Forces Repel Mass Migrant Crossing Attempt at Melilla</a></div>
+        <div class="item-meta"><span class="source-tag">Reuters</span>31 Aug 2026</div>
+        <div class="item-summary">Hundreds of migrants attempted to storm the fences surrounding the Spanish enclave of Melilla, with Moroccan security forces sustaining injuries during clashes that resulted in more than 50 detentions, reigniting debate over EU-Morocco migration cooperation.</div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- RUGBY -->
+  <section>
+    <div class="section-header"><span class="icon">🏉</span><h2>Rugby (High-Level Only)</h2></div>
+    <ul>
+      <li>
+        <div class="item-title"><a href="https://www.nbcsports.com/rugby/news/south-africa-beat-new-zealand-33-26-in-cape-town-to-hand-all-blacks-first-loss-of-2026" target="_blank" rel="noopener">South Africa 33–26 New Zealand · Cape Town (Series Levelled 1–1)</a></div>
+        <div class="item-meta"><span class="source-tag">World Rugby / NBC Sports</span>29 Aug 2026</div>
+        <div class="item-summary">The Springboks ended the All Blacks' unbeaten 2026 run with a 33–26 victory at Cape Town Stadium, scoring all three of their tries in a dominant first half to build a 24–14 half-time lead, before holding off a New Zealand comeback to level the four-test tour series at 1–1.</div>
+      </li>
+      <li>
+        <div class="item-title"><a href="https://www.nbcsports.com/rugby/news/australia-leads-from-start-to-finish-to-beat-argentina-27-21-in-the-1st-rugby-test" target="_blank" rel="noopener">Argentina 21–27 Australia · Jujuy (First Test, Wallabies Win)</a></div>
+        <div class="item-meta"><span class="source-tag">World Rugby / NBC Sports</span>29 Aug 2026</div>
+        <div class="item-summary">Australia secured a 27–21 victory in the first of two tests in Argentina — the Wallabies' third consecutive win under head coach Les Kiss — with early tries from hooker Brandon Paenga-Amoso and fly-half Carter Gordon providing a buffer Australia's defense protected for the final 27 minutes.</div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- SCIENCE-BASED LIFTING -->
+  <section>
+    <div class="section-header"><span class="icon">🏋️</span><h2>Science-Based Lifting</h2></div>
+    <ul>
+      <li>
+        <div class="item-title"><a href="https://www.sciencedaily.com/releases/2026/08/260808234959.htm" target="_blank" rel="noopener">Strength Training Sweet Spot: 90–120 Min/Week Cuts Early Mortality by 13%; Paired with Cardio, by 45%</a></div>
+        <div class="item-meta"><span class="source-tag">ScienceDaily</span>Aug 2026</div>
+        <div class="item-summary">A large prospective study found that individuals who resistance-trained 90–120 minutes per week had a 13% lower risk of all-cause early mortality, with especially pronounced reductions in cardiovascular and neurological disease mortality; combining that training with regular aerobic exercise produced a 45% reduction in overall death risk.</div>
+      </li>
+      <li>
+        <div class="item-title"><a href="https://www.strongerbyscience.com/articles/" target="_blank" rel="noopener">Training Order Meta-Analysis: Lifting Before Cardio Yields ~7% Greater Strength Gains</a></div>
+        <div class="item-meta"><span class="source-tag">Stronger By Science</span>Aug 2026</div>
+        <div class="item-summary">A meta-analysis compiled in Stronger By Science's research master list found that performing resistance training before aerobic exercise in the same session produced approximately 7% larger strength gains compared to the cardio-first order, with the effect most pronounced for lower-body strength.</div>
+      </li>
+      <li>
+        <div class="item-title"><a href="https://www.strongerbyscience.com/articles/" target="_blank" rel="noopener">One Set to Failure at 70–85% 1RM, 2–3×/Week Is Sufficient for Intermediate Strength Gains</a></div>
+        <div class="item-meta"><span class="source-tag">Stronger By Science</span>Aug 2026</div>
+        <div class="item-summary">SBS's compilation of controlled trial data shows that a single set taken to, or just short of, muscular failure at 70–85% of one-rep-max performed 2–3 times per week per lift remains sufficient to produce continued strength progress in squat and bench press for intermediate-level trainees.</div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- PEOPLE LEADERSHIP -->
+  <section>
+    <div class="section-header"><span class="icon">👥</span><h2>People Leadership</h2></div>
+    <ul>
+      <li>
+        <div class="item-title"><a href="https://sloanreview.mit.edu/topic/leadership/" target="_blank" rel="noopener">Anti-DEI Backlash Exposes Methodological Gaps in "Merit-Based" Hiring (MIT Sloan)</a></div>
+        <div class="item-meta"><span class="source-tag">MIT Sloan Management Review</span>Aug 2026</div>
+        <div class="item-summary">Research by Hung Dao and colleagues published in MIT Sloan Management Review finds that while many organisations claim to shift to merit-based hiring amid anti-DEI pressure, analysis of their processes reveals that most lack the structured, validated evaluation criteria required for genuine meritocracy, effectively substituting one form of bias for another.</div>
+      </li>
+      <li>
+        <div class="item-title"><a href="https://sloanreview.mit.edu/topic/leadership/" target="_blank" rel="noopener">Managers Who Tend to Team Well-Being Help Employees with Childhood Adversity Shift Behavioural Patterns</a></div>
+        <div class="item-meta"><span class="source-tag">MIT Sloan Management Review</span>30 Jul 2026</div>
+        <div class="item-summary">A longitudinal study by Sharma, Barnes, and Rao in MIT Sloan Management Review demonstrates that when managers actively attend to team psychological safety and well-being, employees who experienced adverse childhood events show measurable shifts away from reactive behavioural patterns — underscoring the causal pathway from managerial practice to employee resilience.</div>
+      </li>
+      <li>
+        <div class="item-title"><a href="https://hbr.org/topic/subject/leadership-and-managing-people" target="_blank" rel="noopener">Generative AI Enables Solo Builders — but Does It Make Collaboration Less Important? (HBR Research)</a></div>
+        <div class="item-meta"><span class="source-tag">HBR</span>12 Aug 2026</div>
+        <div class="item-summary">Research by JP Eggers, Sarah Ryan, and Asha Dinesh in Harvard Business Review examines how generative AI now allows individuals with little technical expertise to develop sophisticated products solo, and uses data from 1,400+ startup founders to explore whether this capability reduces teams' collaborative advantage or merely shifts where collaboration adds value.</div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- AI ENGINEERING -->
+  <section>
+    <div class="section-header"><span class="icon">🤖</span><h2>AI Engineering</h2></div>
+    <ul>
+      <li>
+        <div class="item-title"><a href="https://simonwillison.net/" target="_blank" rel="noopener">Simon Willison Reframes LLM Security Issue as "Confused Environment Attack" Rather Than Prompt Injection</a></div>
+        <div class="item-meta"><span class="source-tag">Simon Willison</span>30 Aug 2026</div>
+        <div class="item-summary">In an updated post, Willison clarifies that a previously discussed vulnerability is more precisely a "confused environment attack" — where the nature of the environment exposed to an agent creates an exploitable condition — rather than a classic prompt injection, a distinction he argues matters for both accurate threat modelling and designing effective mitigations.</div>
+      </li>
+      <li>
+        <div class="item-title"><a href="https://simonwillison.net/" target="_blank" rel="noopener">Qwen3.8-Flash-Next: Early Preview of Qwen4 MoE Architecture — 125B Total Parameters, 6B Active</a></div>
+        <div class="item-meta"><span class="source-tag">Simon Willison</span>Aug 2026</div>
+        <div class="item-summary">Willison covers Qwen's release of Qwen3.8-Flash-Next, a multimodal mixture-of-experts model serving as an architectural preview of the forthcoming Qwen4 family, featuring 125 billion total parameters with only 6 billion active per token — delivering substantial throughput gains at inference while matching or exceeding larger dense models on several benchmarks.</div>
+      </li>
+      <li>
+        <div class="item-title"><a href="https://aitoolly.com/ai-news/article/2026-08-22-matt-pocock-unveils-skills-repository-a-practical-look-at-ai-agent-configurations-for-engineers" target="_blank" rel="noopener">Matt Pocock Releases "Skills for Real Engineers" — Production-Grade Claude Code Agent Workflows</a></div>
+        <div class="item-meta"><span class="source-tag">Matt Pocock</span>22 Aug 2026</div>
+        <div class="item-summary">TypeScript educator Matt Pocock published a public Claude Code skills directory covering TDD workflows, triage state machines, and vertical-slice architecture patterns, teaching agents to ask clarifying questions before writing code and run self-validating test loops before presenting solutions; the repository reached over 83,000 GitHub stars within days of release.</div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- JOBS -->
+  <section>
+    <div class="section-header"><span class="icon">💼</span><h2>Jobs</h2></div>
+    <ul>
+      <li>
+        <div class="item-title"><a href="https://swissdevjobs.ch/" target="_blank" rel="noopener">SwissDevJobs: 177 Active IT &amp; Software Developer Openings in Switzerland</a></div>
+        <div class="item-meta"><span class="source-tag">swissdevjobs.ch</span>31 Aug 2026</div>
+        <div class="item-summary">Switzerland's specialist IT job board currently lists 177 positions across Software Engineering, DevOps, AI/ML, Product Management, and QA roles, with transparent tech-stack disclosure and salaries posted on listings, ranging up to 165,000 CHF per year.</div>
+      </li>
+      <li>
+        <div class="item-title"><a href="https://www.freelancermap.com/projects/switzerland" target="_blank" rel="noopener">Freelancermap: Active IT &amp; SAP Freelance Contracts Available in Switzerland</a></div>
+        <div class="item-meta"><span class="source-tag">freelancermap</span>31 Aug 2026</div>
+        <div class="item-summary">Freelancermap lists active freelance IT, SAP, and consulting projects based in Switzerland with on-site, hybrid, and remote options; new contracts are posted daily across development, architecture, and data engineering disciplines.</div>
+      </li>
+    </ul>
+  </section>
+
+</main>
+<footer>
+  Generated 31 August 2026 · Europe/Zurich &nbsp;·&nbsp; <a href="../index.html" style="color:inherit;">Daily Digest Index</a>
+</footer>
+</body>
+</html>
