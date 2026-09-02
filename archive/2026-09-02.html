@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Daily Digest</title>
+<title>Daily Digest — 2 September 2026</title>
 <style>
   :root {
     --bg: #f9f8f5;
@@ -20,8 +20,6 @@
     --tag-bg: #e0e7ff;
     --tag-fg: #3730a3;
     --section-head: #1e3a5f;
-    --archive-bg: #fafaf8;
-    --archive-border: #e2ddd5;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
@@ -39,8 +37,6 @@
       --tag-bg: #1e2060;
       --tag-fg: #a5b4fc;
       --section-head: #93c5fd;
-      --archive-bg: #13131c;
-      --archive-border: #2a2a38;
     }
   }
   :root[data-theme="dark"] {
@@ -58,8 +54,6 @@
     --tag-bg: #1e2060;
     --tag-fg: #a5b4fc;
     --section-head: #93c5fd;
-    --archive-bg: #13131c;
-    --archive-border: #2a2a38;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
@@ -77,10 +71,16 @@
   }
   header h1 { font-size: 1.7rem; font-weight: 700; letter-spacing: -0.02em; }
   header p { margin-top: 0.4rem; font-size: 0.9rem; opacity: 0.7; }
+  .back-link {
+    display: inline-block;
+    margin-top: 0.8rem;
+    color: #93c5fd;
+    font-size: 0.85rem;
+    text-decoration: none;
+  }
+  .back-link:hover { text-decoration: underline; }
   main { max-width: 760px; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
-
-  /* TODAY'S DIGEST SECTIONS */
-  section.topic {
+  section {
     margin-bottom: 2rem;
     background: var(--card);
     border: 1px solid var(--border);
@@ -103,12 +103,12 @@
     letter-spacing: 0.08em;
   }
   .section-header .icon { font-size: 1.1rem; }
-  ul.items { list-style: none; }
-  ul.items li {
+  ul { list-style: none; }
+  li {
     padding: 0.9rem 1.2rem;
     border-bottom: 1px solid var(--border);
   }
-  ul.items li:last-child { border-bottom: none; }
+  li:last-child { border-bottom: none; }
   .item-title {
     font-size: 0.97rem;
     font-weight: 600;
@@ -139,50 +139,6 @@
     color: var(--text);
     opacity: 0.85;
   }
-
-  /* ARCHIVE SECTION */
-  .archive-section {
-    margin-top: 3rem;
-    border-top: 2px solid var(--border);
-    padding-top: 1.5rem;
-  }
-  .archive-section h2 {
-    font-size: 1rem;
-    font-weight: 700;
-    color: var(--section-head);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    margin-bottom: 1rem;
-  }
-  .archive-list { list-style: none; }
-  .archive-list li {
-    padding: 0.55rem 0;
-    border-bottom: 1px solid var(--archive-border);
-    display: flex;
-    align-items: baseline;
-    gap: 0.8rem;
-    flex-wrap: wrap;
-  }
-  .archive-list li:last-child { border-bottom: none; }
-  .archive-date {
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: var(--muted);
-    white-space: nowrap;
-    min-width: 7rem;
-  }
-  .archive-link {
-    font-size: 0.88rem;
-    color: var(--accent);
-    text-decoration: none;
-    font-weight: 500;
-  }
-  .archive-link:hover { text-decoration: underline; }
-  .archive-summary {
-    font-size: 0.78rem;
-    color: var(--muted);
-  }
-
   footer {
     text-align: center;
     padding: 1.5rem 1rem;
@@ -196,13 +152,14 @@
 <header>
   <h1>📰 Daily Digest</h1>
   <p>2 September 2026 · Europe/Zurich</p>
+  <a class="back-link" href="../index.html">← Back to index</a>
 </header>
 <main>
 
   <!-- ASTRONOMY & SPACE -->
-  <section class="topic">
+  <section>
     <div class="section-header"><span class="icon">🔭</span><h2>Astronomy &amp; Space</h2></div>
-    <ul class="items">
+    <ul>
       <li>
         <div class="item-title"><a href="https://science.nasa.gov/missions/roman-space-telescope/" target="_blank" rel="noopener">Roman Space Telescope Coronagraph Instrument Successfully Activated</a></div>
         <div class="item-meta"><span class="source-tag">NASA Breaking News</span>1 Sep 2026</div>
@@ -227,9 +184,9 @@
   </section>
 
   <!-- WORLD NEWS -->
-  <section class="topic">
+  <section>
     <div class="section-header"><span class="icon">🌍</span><h2>World News</h2></div>
-    <ul class="items">
+    <ul>
       <li>
         <div class="item-title"><a href="https://www.reuters.com/world/" target="_blank" rel="noopener">US Central Command Confirms Strikes on IRGC Targets in Iran</a></div>
         <div class="item-meta"><span class="source-tag">Reuters World</span>1–2 Sep 2026</div>
@@ -249,16 +206,16 @@
   </section>
 
   <!-- RUGBY -->
-  <section class="topic">
+  <section>
     <div class="section-header"><span class="icon">🏉</span><h2>Rugby</h2></div>
-    <ul class="items">
+    <ul>
       <li>
-        <div class="item-title"><a href="https://en.wikipedia.org/wiki/2026_New_Zealand_rugby_union_tour_of_South_Africa" target="_blank" rel="noopener">All Blacks vs Springboks: Test 3 at FNB Stadium Johannesburg on 5 September — Four-Test Freedom Cup</a></div>
+        <div class="item-title"><a href="https://en.wikipedia.org/wiki/2026_New_Zealand_rugby_union_tour_of_South_Africa" target="_blank" rel="noopener">All Blacks vs Springboks: Test 3 in Johannesburg on 5 September — Four-Test Freedom Cup Series</a></div>
         <div class="item-meta"><span class="source-tag">World Rugby News</span>2 Sep 2026</div>
         <div class="item-summary">Following Test 2 in Cape Town on 29 August, the historic four-Test Freedom Cup series moves to the 94,000-seat FNB Stadium in Johannesburg on Saturday 5 September, the first time the rivals have contested a four-Test series, with the series tally the deciding factor.</div>
       </li>
       <li>
-        <div class="item-title"><a href="https://en.wikipedia.org/wiki/2026%E2%80%9327_United_Rugby_Championship" target="_blank" rel="noopener">2026–27 URC Season Opens 19 September — Round 1 on 26 September</a></div>
+        <div class="item-title"><a href="https://en.wikipedia.org/wiki/2026%E2%80%9327_United_Rugby_Championship" target="_blank" rel="noopener">2026–27 URC Season Begins 19 September — Round 1 on 26 September</a></div>
         <div class="item-meta"><span class="source-tag">World Rugby News</span>Sep 2026</div>
         <div class="item-summary">The United Rugby Championship's 2026–27 campaign opens in mid-September with Round 1 fixtures including Munster vs Glasgow Warriors, Sharks vs Ospreys, and Zebre Parma vs Bulls on 26 September, running through to the final in June 2027.</div>
       </li>
@@ -271,21 +228,21 @@
   </section>
 
   <!-- SAILING -->
-  <section class="topic">
+  <section>
     <div class="section-header"><span class="icon">⛵</span><h2>Sailing</h2></div>
-    <ul class="items">
+    <ul>
       <li>
-        <div class="item-title"><a href="https://www.sail-world.com/" target="_blank" rel="noopener">Maxi Yacht Rolex Cup Returns to Porto Cervo, 6–12 September</a></div>
+        <div class="item-title"><a href="https://www.sail-world.com/news/299157/Four-reasons-to-attend-the-Yacht-Racing-Forum-2026" target="_blank" rel="noopener">Maxi Yacht Rolex Cup Returns to Porto Cervo, 6–12 September</a></div>
         <div class="item-meta"><span class="source-tag">Sail-World</span>Sep 2026</div>
         <div class="item-summary">The Maxi Yacht Rolex Cup and Rolex Swan Cup are back at Porto Cervo this week, gathering the world's largest and fastest offshore racers in Sardinia's Costa Smeralda for one of the Mediterranean's premier autumn regattas.</div>
       </li>
       <li>
-        <div class="item-title"><a href="https://www.yachtingworld.com/news" target="_blank" rel="noopener">Les Voiles de Saint-Tropez: 250+ Boats Expected for French Riviera Classic, 26 Sep – 4 Oct</a></div>
+        <div class="item-title"><a href="https://www.burgessyachts.com/en/editorial/news/sailing-yacht-regatta-guide" target="_blank" rel="noopener">Les Voiles de Saint-Tropez: 250+ Boats Expected for French Riviera Classic, 26 Sep – 4 Oct</a></div>
         <div class="item-meta"><span class="source-tag">Yachting World</span>Sep 2026</div>
         <div class="item-summary">More than 250 classic and contemporary sailboats are expected at Les Voiles de Saint-Tropez, the iconic ten-day festival that blends racing with a showcase of naval heritage in one of sailing's most celebrated harbours.</div>
       </li>
       <li>
-        <div class="item-title"><a href="https://en.wikipedia.org/wiki/Sailing_at_the_2026_Asian_Games" target="_blank" rel="noopener">Sailing at 2026 Asian Games, 26 Sep – 3 Oct, Gamagōri, Japan</a></div>
+        <div class="item-title"><a href="https://en.wikipedia.org/wiki/Sailing_at_the_2026_Asian_Games" target="_blank" rel="noopener">Sailing Enters Asian Games Programme, 26 Sep – 3 Oct, Gamagōri, Japan</a></div>
         <div class="item-meta"><span class="source-tag">Sail-World</span>Sep 2026</div>
         <div class="item-summary">Competitive sailing joins the multi-sport programme at the 2026 Asian Games, with races held at Kaiyoh Yacht Harbor in Gamagōri offering a crucial Olympic pathway for Asian fleets across multiple dinghy, keelboat, and windsurfing disciplines.</div>
       </li>
@@ -293,11 +250,11 @@
   </section>
 
   <!-- SCIENCE-BASED LIFTING -->
-  <section class="topic">
+  <section>
     <div class="section-header"><span class="icon">🏋️</span><h2>Science-Based Lifting</h2></div>
-    <ul class="items">
+    <ul>
       <li>
-        <div class="item-title"><a href="https://acsm.org/resistance-training-guidelines-update-2026/" target="_blank" rel="noopener">ACSM 2026 Position Stand: Landmark Resistance Training Guidelines from 137 Systematic Reviews, 30,000+ Subjects</a></div>
+        <div class="item-title"><a href="https://acsm.org/resistance-training-guidelines-update-2026/" target="_blank" rel="noopener">ACSM Publishes Landmark 2026 Resistance Training Position Stand: 137 Systematic Reviews, 30,000+ Subjects</a></div>
         <div class="item-meta"><span class="source-tag">Stronger By Science</span>2026</div>
         <div class="item-summary">The American College of Sports Medicine's first major resistance training update synthesises evidence from 137 systematic reviews and over 30,000 participants, concluding that ~10 sets per muscle group per week drives hypertrophy, while training to momentary failure, equipment type (machines vs. free weights), and complex periodisation showed no consistent incremental benefit.</div>
       </li>
@@ -315,9 +272,9 @@
   </section>
 
   <!-- PEOPLE LEADERSHIP -->
-  <section class="topic">
+  <section>
     <div class="section-header"><span class="icon">🧭</span><h2>People Leadership</h2></div>
-    <ul class="items">
+    <ul>
       <li>
         <div class="item-title"><a href="https://sloanreview.mit.edu/issue/2026-summer/" target="_blank" rel="noopener">Brain Scans Reveal Social Connectors — Not High-Status Leaders — Are the Engine of Team Consensus</a></div>
         <div class="item-meta"><span class="source-tag">MIT Sloan Management Review</span>Summer 2026</div>
@@ -337,9 +294,9 @@
   </section>
 
   <!-- EMOTIONAL INTELLIGENCE -->
-  <section class="topic">
+  <section>
     <div class="section-header"><span class="icon">🧠</span><h2>Emotional Intelligence</h2></div>
-    <ul class="items">
+    <ul>
       <li>
         <div class="item-title"><a href="https://greatergood.berkeley.edu/article/item/how_do_stereotypes_shape_your_judgment" target="_blank" rel="noopener">How Stereotypes Shape Your Judgment — and What Research Says You Can Do About It</a></div>
         <div class="item-meta"><span class="source-tag">Greater Good Magazine (UC Berkeley)</span>Aug 2026</div>
@@ -354,9 +311,9 @@
   </section>
 
   <!-- AI ENGINEERING -->
-  <section class="topic">
+  <section>
     <div class="section-header"><span class="icon">🤖</span><h2>AI Engineering</h2></div>
-    <ul class="items">
+    <ul>
       <li>
         <div class="item-title"><a href="https://simonwillison.net/" target="_blank" rel="noopener">Simon Willison: Claude Fable 5.1 Produced a Polished Animated Pelican — Notes on Creative Code Generation</a></div>
         <div class="item-meta"><span class="source-tag">Simon Willison</span>1 Sep 2026</div>
@@ -371,9 +328,9 @@
   </section>
 
   <!-- JOBS -->
-  <section class="topic">
+  <section>
     <div class="section-header"><span class="icon">💼</span><h2>Jobs</h2></div>
-    <ul class="items">
+    <ul>
       <li>
         <div class="item-title"><a href="https://www.freelancermap.com/it-projects/Switzerland-3.html" target="_blank" rel="noopener">Kafka Platform Engineer / Ops Specialist — Zürich, Start Sep 1 (Remote-Friendly)</a></div>
         <div class="item-meta"><span class="source-tag">freelancermap</span>1 Sep 2026</div>
@@ -392,216 +349,9 @@
     </ul>
   </section>
 
-  <!-- ARCHIVE -->
-  <div class="archive-section">
-    <h2>📁 Archive</h2>
-    <ul class="archive-list">
-      <li>
-        <span class="archive-date">2 Sep 2026</span>
-        <a class="archive-link" href="archive/2026-09-02.html">2 September 2026</a>
-        <span class="archive-summary">Roman coronagraph activated · US strikes IRGC · SK semiconductors +209% · All Blacks/Springboks Test 3 · ACSM resistance training guidelines · MIT Sloan connectors research · Simon Willison on Fable 5.1</span>
-      </li>
-      <li>
-        <span class="archive-date">1 Sep 2026</span>
-        <a class="archive-link" href="archive/2026-09-01.html">1 September 2026</a>
-        <span class="archive-summary">ISS spacewalk · ESA FLEX/Sentinel-3C launch · Ukraine peace talks · SA vs NZ 2nd test preview · Cloudflare AI bots · Premiership franchise model</span>
-      </li>
-      <li>
-        <span class="archive-date">31 Aug 2026</span>
-        <a class="archive-link" href="archive/2026-08-31.html">31 August 2026</a>
-        <span class="archive-summary">Roman Space Telescope launch · Nepal floods · Iceland EU vote · SA vs NZ rugby · AI agent security</span>
-      </li>
-      <li>
-        <span class="archive-date">30 Aug 2026</span>
-        <a class="archive-link" href="archive/2026-08-30.html">30 August 2026</a>
-        <span class="archive-summary">Roman Telescope pre-launch · Norway King Harald V · Swift Observatory servicing mission</span>
-      </li>
-      <li>
-        <span class="archive-date">29 Aug 2026</span>
-        <a class="archive-link" href="archive/2026-08-29.html">29 August 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">28 Aug 2026</span>
-        <a class="archive-link" href="archive/2026-08-28.html">28 August 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">27 Aug 2026</span>
-        <a class="archive-link" href="archive/2026-08-27.html">27 August 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">26 Aug 2026</span>
-        <a class="archive-link" href="archive/2026-08-26.html">26 August 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">25 Aug 2026</span>
-        <a class="archive-link" href="archive/2026-08-25.html">25 August 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">24 Aug 2026</span>
-        <a class="archive-link" href="archive/2026-08-24.html">24 August 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">22 Aug 2026</span>
-        <a class="archive-link" href="archive/2026-08-22.html">22 August 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">21 Aug 2026</span>
-        <a class="archive-link" href="archive/2026-08-21.html">21 August 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">20 Aug 2026</span>
-        <a class="archive-link" href="archive/2026-08-20.html">20 August 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">19 Aug 2026</span>
-        <a class="archive-link" href="archive/2026-08-19.html">19 August 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">18 Aug 2026</span>
-        <a class="archive-link" href="archive/2026-08-18.html">18 August 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">17 Aug 2026</span>
-        <a class="archive-link" href="archive/2026-08-17.html">17 August 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">16 Aug 2026</span>
-        <a class="archive-link" href="archive/2026-08-16.html">16 August 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">15 Aug 2026</span>
-        <a class="archive-link" href="archive/2026-08-15.html">15 August 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">14 Aug 2026</span>
-        <a class="archive-link" href="archive/2026-08-14.html">14 August 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">13 Aug 2026</span>
-        <a class="archive-link" href="archive/2026-08-13.html">13 August 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">12 Aug 2026</span>
-        <a class="archive-link" href="archive/2026-08-12.html">12 August 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">11 Aug 2026</span>
-        <a class="archive-link" href="archive/2026-08-11.html">11 August 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">10 Aug 2026</span>
-        <a class="archive-link" href="archive/2026-08-10.html">10 August 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">9 Aug 2026</span>
-        <a class="archive-link" href="archive/2026-08-09.html">9 August 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">8 Aug 2026</span>
-        <a class="archive-link" href="archive/2026-08-08.html">8 August 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">7 Aug 2026</span>
-        <a class="archive-link" href="archive/2026-08-07.html">7 August 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">6 Aug 2026</span>
-        <a class="archive-link" href="archive/2026-08-06.html">6 August 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">5 Aug 2026</span>
-        <a class="archive-link" href="archive/2026-08-05.html">5 August 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">4 Aug 2026</span>
-        <a class="archive-link" href="archive/2026-08-04.html">4 August 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">3 Aug 2026</span>
-        <a class="archive-link" href="archive/2026-08-03.html">3 August 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">2 Aug 2026</span>
-        <a class="archive-link" href="archive/2026-08-02.html">2 August 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">1 Aug 2026</span>
-        <a class="archive-link" href="archive/2026-08-01.html">1 August 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">31 Jul 2026</span>
-        <a class="archive-link" href="archive/2026-07-31.html">31 July 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">30 Jul 2026</span>
-        <a class="archive-link" href="archive/2026-07-30.html">30 July 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">29 Jul 2026</span>
-        <a class="archive-link" href="archive/2026-07-29.html">29 July 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">28 Jul 2026</span>
-        <a class="archive-link" href="archive/2026-07-28.html">28 July 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">27 Jul 2026</span>
-        <a class="archive-link" href="archive/2026-07-27.html">27 July 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">26 Jul 2026</span>
-        <a class="archive-link" href="archive/2026-07-26.html">26 July 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">25 Jul 2026</span>
-        <a class="archive-link" href="archive/2026-07-25.html">25 July 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">24 Jul 2026</span>
-        <a class="archive-link" href="archive/2026-07-24.html">24 July 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">23 Jul 2026</span>
-        <a class="archive-link" href="archive/2026-07-23.html">23 July 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">22 Jul 2026</span>
-        <a class="archive-link" href="archive/2026-07-22.html">22 July 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">21 Jul 2026</span>
-        <a class="archive-link" href="archive/2026-07-21.html">21 July 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">20 Jul 2026</span>
-        <a class="archive-link" href="archive/2026-07-20.html">20 July 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">17 Jul 2026</span>
-        <a class="archive-link" href="archive/2026-07-17.html">17 July 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">16 Jul 2026</span>
-        <a class="archive-link" href="archive/2026-07-16.html">16 July 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">15 Jul 2026</span>
-        <a class="archive-link" href="archive/2026-07-15.html">15 July 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">10 Jul 2026</span>
-        <a class="archive-link" href="archive/2026-07-10.html">10 July 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">6 Jul 2026</span>
-        <a class="archive-link" href="archive/2026-07-06.html">6 July 2026</a>
-      </li>
-    </ul>
-  </div>
-
 </main>
 <footer>
-  Generated 2 September 2026 · Europe/Zurich
+  Generated 2026-09-02 · Europe/Zurich · Sources: NASA, ESA, Quanta Magazine, Reuters, World Rugby, Sail-World, Yachting World, ACSM, Springer, MIT Sloan, HBR, Greater Good (UC Berkeley), simonwillison.net, Matt Pocock, freelancermap, swissdevjobs.ch
 </footer>
 </body>
 </html>
