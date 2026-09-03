@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Daily Digest</title>
+<title>Daily Digest — 3 September 2026</title>
 <style>
   :root {
     --bg: #f9f8f5;
@@ -20,8 +20,6 @@
     --tag-bg: #e0e7ff;
     --tag-fg: #3730a3;
     --section-head: #1e3a5f;
-    --archive-bg: #fafaf8;
-    --archive-border: #e2ddd5;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
@@ -39,8 +37,6 @@
       --tag-bg: #1e2060;
       --tag-fg: #a5b4fc;
       --section-head: #93c5fd;
-      --archive-bg: #13131c;
-      --archive-border: #2a2a38;
     }
   }
   :root[data-theme="dark"] {
@@ -58,8 +54,6 @@
     --tag-bg: #1e2060;
     --tag-fg: #a5b4fc;
     --section-head: #93c5fd;
-    --archive-bg: #13131c;
-    --archive-border: #2a2a38;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
@@ -77,9 +71,9 @@
   }
   header h1 { font-size: 1.7rem; font-weight: 700; letter-spacing: -0.02em; }
   header p { margin-top: 0.4rem; font-size: 0.9rem; opacity: 0.7; }
+  header a { color: var(--header-fg); opacity: 0.6; font-size: 0.8rem; text-decoration: none; }
+  header a:hover { opacity: 1; }
   main { max-width: 760px; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
-
-  /* TODAY'S DIGEST SECTIONS */
   section.topic {
     margin-bottom: 2rem;
     background: var(--card);
@@ -139,50 +133,6 @@
     color: var(--text);
     opacity: 0.85;
   }
-
-  /* ARCHIVE SECTION */
-  .archive-section {
-    margin-top: 3rem;
-    border-top: 2px solid var(--border);
-    padding-top: 1.5rem;
-  }
-  .archive-section h2 {
-    font-size: 1rem;
-    font-weight: 700;
-    color: var(--section-head);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    margin-bottom: 1rem;
-  }
-  .archive-list { list-style: none; }
-  .archive-list li {
-    padding: 0.55rem 0;
-    border-bottom: 1px solid var(--archive-border);
-    display: flex;
-    align-items: baseline;
-    gap: 0.8rem;
-    flex-wrap: wrap;
-  }
-  .archive-list li:last-child { border-bottom: none; }
-  .archive-date {
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: var(--muted);
-    white-space: nowrap;
-    min-width: 7rem;
-  }
-  .archive-link {
-    font-size: 0.88rem;
-    color: var(--accent);
-    text-decoration: none;
-    font-weight: 500;
-  }
-  .archive-link:hover { text-decoration: underline; }
-  .archive-summary {
-    font-size: 0.78rem;
-    color: var(--muted);
-  }
-
   footer {
     text-align: center;
     padding: 1.5rem 1rem;
@@ -196,6 +146,7 @@
 <header>
   <h1>📰 Daily Digest</h1>
   <p>3 September 2026 · Europe/Zurich</p>
+  <p style="margin-top:0.5rem"><a href="../index.html">← Back to latest</a></p>
 </header>
 <main>
 
@@ -349,218 +300,6 @@
       </li>
     </ul>
   </section>
-
-  <!-- ARCHIVE -->
-  <div class="archive-section">
-    <h2>📁 Archive</h2>
-    <ul class="archive-list">
-      <li>
-        <span class="archive-date">3 Sep 2026</span>
-        <a class="archive-link" href="archive/2026-09-03.html">3 September 2026</a>
-        <span class="archive-summary">BepiColombo Mercury arrival · Roman telescope in transit · Saturn decagon cloud · US–Iran oil spike · Ocean Race Atlantic · GGR start · ACSM lifting guidelines · MIT SMR leadership anxiety · datasette-mcp 0.2 · Codex+LibreOffice</span>
-      </li>
-      <li>
-        <span class="archive-date">2 Sep 2026</span>
-        <a class="archive-link" href="archive/2026-09-02.html">2 September 2026</a>
-        <span class="archive-summary">Roman coronagraph activated · US strikes IRGC · SK semiconductors +209% · All Blacks/Springboks Test 3 · ACSM resistance training guidelines · MIT Sloan connectors research · Simon Willison on Fable 5.1</span>
-      </li>
-      <li>
-        <span class="archive-date">1 Sep 2026</span>
-        <a class="archive-link" href="archive/2026-09-01.html">1 September 2026</a>
-        <span class="archive-summary">ISS spacewalk · ESA FLEX/Sentinel-3C launch · Ukraine peace talks · SA vs NZ 2nd test preview · Cloudflare AI bots · Premiership franchise model</span>
-      </li>
-      <li>
-        <span class="archive-date">31 Aug 2026</span>
-        <a class="archive-link" href="archive/2026-08-31.html">31 August 2026</a>
-        <span class="archive-summary">Roman Space Telescope launch · Nepal floods · Iceland EU vote · SA vs NZ rugby · AI agent security</span>
-      </li>
-      <li>
-        <span class="archive-date">30 Aug 2026</span>
-        <a class="archive-link" href="archive/2026-08-30.html">30 August 2026</a>
-        <span class="archive-summary">Roman Telescope pre-launch · Norway King Harald V · Swift Observatory servicing mission</span>
-      </li>
-      <li>
-        <span class="archive-date">29 Aug 2026</span>
-        <a class="archive-link" href="archive/2026-08-29.html">29 August 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">28 Aug 2026</span>
-        <a class="archive-link" href="archive/2026-08-28.html">28 August 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">27 Aug 2026</span>
-        <a class="archive-link" href="archive/2026-08-27.html">27 August 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">26 Aug 2026</span>
-        <a class="archive-link" href="archive/2026-08-26.html">26 August 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">25 Aug 2026</span>
-        <a class="archive-link" href="archive/2026-08-25.html">25 August 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">24 Aug 2026</span>
-        <a class="archive-link" href="archive/2026-08-24.html">24 August 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">22 Aug 2026</span>
-        <a class="archive-link" href="archive/2026-08-22.html">22 August 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">21 Aug 2026</span>
-        <a class="archive-link" href="archive/2026-08-21.html">21 August 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">20 Aug 2026</span>
-        <a class="archive-link" href="archive/2026-08-20.html">20 August 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">19 Aug 2026</span>
-        <a class="archive-link" href="archive/2026-08-19.html">19 August 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">18 Aug 2026</span>
-        <a class="archive-link" href="archive/2026-08-18.html">18 August 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">17 Aug 2026</span>
-        <a class="archive-link" href="archive/2026-08-17.html">17 August 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">16 Aug 2026</span>
-        <a class="archive-link" href="archive/2026-08-16.html">16 August 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">15 Aug 2026</span>
-        <a class="archive-link" href="archive/2026-08-15.html">15 August 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">14 Aug 2026</span>
-        <a class="archive-link" href="archive/2026-08-14.html">14 August 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">13 Aug 2026</span>
-        <a class="archive-link" href="archive/2026-08-13.html">13 August 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">12 Aug 2026</span>
-        <a class="archive-link" href="archive/2026-08-12.html">12 August 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">11 Aug 2026</span>
-        <a class="archive-link" href="archive/2026-08-11.html">11 August 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">10 Aug 2026</span>
-        <a class="archive-link" href="archive/2026-08-10.html">10 August 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">9 Aug 2026</span>
-        <a class="archive-link" href="archive/2026-08-09.html">9 August 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">8 Aug 2026</span>
-        <a class="archive-link" href="archive/2026-08-08.html">8 August 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">7 Aug 2026</span>
-        <a class="archive-link" href="archive/2026-08-07.html">7 August 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">6 Aug 2026</span>
-        <a class="archive-link" href="archive/2026-08-06.html">6 August 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">5 Aug 2026</span>
-        <a class="archive-link" href="archive/2026-08-05.html">5 August 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">4 Aug 2026</span>
-        <a class="archive-link" href="archive/2026-08-04.html">4 August 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">3 Aug 2026</span>
-        <a class="archive-link" href="archive/2026-08-03.html">3 August 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">2 Aug 2026</span>
-        <a class="archive-link" href="archive/2026-08-02.html">2 August 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">1 Aug 2026</span>
-        <a class="archive-link" href="archive/2026-08-01.html">1 August 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">31 Jul 2026</span>
-        <a class="archive-link" href="archive/2026-07-31.html">31 July 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">30 Jul 2026</span>
-        <a class="archive-link" href="archive/2026-07-30.html">30 July 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">29 Jul 2026</span>
-        <a class="archive-link" href="archive/2026-07-29.html">29 July 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">28 Jul 2026</span>
-        <a class="archive-link" href="archive/2026-07-28.html">28 July 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">27 Jul 2026</span>
-        <a class="archive-link" href="archive/2026-07-27.html">27 July 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">26 Jul 2026</span>
-        <a class="archive-link" href="archive/2026-07-26.html">26 July 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">25 Jul 2026</span>
-        <a class="archive-link" href="archive/2026-07-25.html">25 July 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">24 Jul 2026</span>
-        <a class="archive-link" href="archive/2026-07-24.html">24 July 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">23 Jul 2026</span>
-        <a class="archive-link" href="archive/2026-07-23.html">23 July 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">22 Jul 2026</span>
-        <a class="archive-link" href="archive/2026-07-22.html">22 July 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">21 Jul 2026</span>
-        <a class="archive-link" href="archive/2026-07-21.html">21 July 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">20 Jul 2026</span>
-        <a class="archive-link" href="archive/2026-07-20.html">20 July 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">17 Jul 2026</span>
-        <a class="archive-link" href="archive/2026-07-17.html">17 July 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">16 Jul 2026</span>
-        <a class="archive-link" href="archive/2026-07-16.html">16 July 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">15 Jul 2026</span>
-        <a class="archive-link" href="archive/2026-07-15.html">15 July 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">10 Jul 2026</span>
-        <a class="archive-link" href="archive/2026-07-10.html">10 July 2026</a>
-      </li>
-      <li>
-        <span class="archive-date">6 Jul 2026</span>
-        <a class="archive-link" href="archive/2026-07-06.html">6 July 2026</a>
-      </li>
-    </ul>
-  </div>
 
 </main>
 <footer>
