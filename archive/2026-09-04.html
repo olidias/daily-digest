@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Daily Digest</title>
+<title>Daily Digest — 4 September 2026</title>
 <style>
   :root {
     --bg: #f9f8f5;
@@ -20,8 +20,6 @@
     --tag-bg: #e0e7ff;
     --tag-fg: #3730a3;
     --section-head: #1e3a5f;
-    --archive-bg: #f4f4f0;
-    --archive-border: #d8d3cb;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
@@ -39,8 +37,6 @@
       --tag-bg: #1e2060;
       --tag-fg: #a5b4fc;
       --section-head: #93c5fd;
-      --archive-bg: #141418;
-      --archive-border: #2a2a38;
     }
   }
   :root[data-theme="dark"] {
@@ -58,8 +54,6 @@
     --tag-bg: #1e2060;
     --tag-fg: #a5b4fc;
     --section-head: #93c5fd;
-    --archive-bg: #141418;
-    --archive-border: #2a2a38;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
@@ -77,6 +71,8 @@
   }
   header h1 { font-size: 1.7rem; font-weight: 700; letter-spacing: -0.02em; }
   header p { margin-top: 0.4rem; font-size: 0.9rem; opacity: 0.7; }
+  header a { color: var(--header-fg); opacity: 0.6; font-size: 0.8rem; text-decoration: none; }
+  header a:hover { opacity: 1; }
   main { max-width: 760px; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
   section.topic {
     margin-bottom: 2rem;
@@ -137,48 +133,6 @@
     color: var(--text);
     opacity: 0.85;
   }
-  /* Archive section */
-  .archive-section {
-    margin-top: 2.5rem;
-    background: var(--archive-bg);
-    border: 1px solid var(--archive-border);
-    border-radius: 10px;
-    overflow: hidden;
-  }
-  .archive-header {
-    padding: 0.7rem 1.2rem;
-    border-bottom: 1px solid var(--archive-border);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  .archive-header h2 {
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: var(--section-head);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-  }
-  .archive-list { list-style: none; }
-  .archive-list li {
-    padding: 0.6rem 1.2rem;
-    border-bottom: 1px solid var(--archive-border);
-    display: flex;
-    gap: 1rem;
-    align-items: baseline;
-  }
-  .archive-list li:last-child { border-bottom: none; }
-  .archive-list a {
-    color: var(--accent);
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 600;
-  }
-  .archive-list a:hover { text-decoration: underline; color: var(--accent-hover); }
-  .archive-summary {
-    font-size: 0.8rem;
-    color: var(--muted);
-  }
   footer {
     text-align: center;
     padding: 1.5rem 1rem;
@@ -192,6 +146,7 @@
 <header>
   <h1>📰 Daily Digest</h1>
   <p>4 September 2026 · Europe/Zurich</p>
+  <p style="margin-top:0.5rem"><a href="../index.html">← Back to latest</a></p>
 </header>
 <main>
 
@@ -360,63 +315,6 @@
       </li>
     </ul>
   </section>
-
-  <!-- ARCHIVE -->
-  <div class="archive-section">
-    <div class="archive-header"><span>🗂</span><h2>Archive</h2></div>
-    <ul class="archive-list">
-      <li><a href="archive/2026-09-03.html">3 September 2026</a><span class="archive-summary">BepiColombo at Mercury · US–Iran escalation · Ocean Race Atlantic · ACSM resistance guidelines</span></li>
-      <li><a href="archive/2026-09-02.html">2 September 2026</a><span class="archive-summary">Roman telescope en route · Ocean Race Atlantic departs · Claude Fable 5.1</span></li>
-      <li><a href="archive/2026-09-01.html">1 September 2026</a><span class="archive-summary">datasette-mcp 0.2 · Golden Globe Race preview · Premiership season preview</span></li>
-      <li><a href="archive/2026-08-31.html">31 August 2026</a><span class="archive-summary">Roman Space Telescope launch day · Saturn south-pole decagon · URC fixtures</span></li>
-      <li><a href="archive/2026-08-30.html">30 August 2026</a><span class="archive-summary">Roman telescope countdown · Springboks vs All Blacks preview · GGR fleet</span></li>
-      <li><a href="archive/2026-08-29.html">29 August 2026</a><span class="archive-summary">Springboks vs All Blacks 2nd Test · ESA EPSC2026 · AI engineering roundup</span></li>
-      <li><a href="archive/2026-08-28.html">28 August 2026</a><span class="archive-summary">Roman telescope "Go for launch" · Cluster spacecraft reentry · HBR fall preview</span></li>
-      <li><a href="archive/2026-08-27.html">27 August 2026</a><span class="archive-summary">Middle East tensions · Sailing previews · MIT SMR fall issue</span></li>
-      <li><a href="archive/2026-08-26.html">26 August 2026</a><span class="archive-summary">ESA research fellowships · Premiership franchise model · AI weekly</span></li>
-      <li><a href="archive/2026-08-25.html">25 August 2026</a><span class="archive-summary">ACSM resistance training update · URC preview · Simon Willison weekly</span></li>
-      <li><a href="archive/2026-08-24.html">24 August 2026</a><span class="archive-summary">Quanta physics roundup · World rugby news · Gemini Flash</span></li>
-      <li><a href="archive/2026-08-22.html">22 August 2026</a><span class="archive-summary">Astronomy weekly · Global leadership research · Sailing season</span></li>
-      <li><a href="archive/2026-08-21.html">21 August 2026</a><span class="archive-summary">ESA Juice update · Rugby Championship · AI tooling</span></li>
-      <li><a href="archive/2026-08-20.html">20 August 2026</a><span class="archive-summary">Physics research · World news · Lifting science</span></li>
-      <li><a href="archive/2026-08-19.html">19 August 2026</a><span class="archive-summary">Space science · Leadership · EI research</span></li>
-      <li><a href="archive/2026-08-18.html">18 August 2026</a><span class="archive-summary">Astronomy · Rugby · Sailing · AI</span></li>
-      <li><a href="archive/2026-08-17.html">17 August 2026</a><span class="archive-summary">Weekly digest</span></li>
-      <li><a href="archive/2026-08-16.html">16 August 2026</a><span class="archive-summary">Weekly digest</span></li>
-      <li><a href="archive/2026-08-15.html">15 August 2026</a><span class="archive-summary">Weekly digest</span></li>
-      <li><a href="archive/2026-08-14.html">14 August 2026</a><span class="archive-summary">Weekly digest</span></li>
-      <li><a href="archive/2026-08-13.html">13 August 2026</a><span class="archive-summary">Weekly digest</span></li>
-      <li><a href="archive/2026-08-12.html">12 August 2026</a><span class="archive-summary">Weekly digest</span></li>
-      <li><a href="archive/2026-08-11.html">11 August 2026</a><span class="archive-summary">Weekly digest</span></li>
-      <li><a href="archive/2026-08-10.html">10 August 2026</a><span class="archive-summary">Weekly digest</span></li>
-      <li><a href="archive/2026-08-09.html">9 August 2026</a><span class="archive-summary">Weekly digest</span></li>
-      <li><a href="archive/2026-08-08.html">8 August 2026</a><span class="archive-summary">Weekly digest</span></li>
-      <li><a href="archive/2026-08-07.html">7 August 2026</a><span class="archive-summary">Weekly digest</span></li>
-      <li><a href="archive/2026-08-06.html">6 August 2026</a><span class="archive-summary">Weekly digest</span></li>
-      <li><a href="archive/2026-08-05.html">5 August 2026</a><span class="archive-summary">Weekly digest</span></li>
-      <li><a href="archive/2026-08-04.html">4 August 2026</a><span class="archive-summary">Weekly digest</span></li>
-      <li><a href="archive/2026-08-03.html">3 August 2026</a><span class="archive-summary">Weekly digest</span></li>
-      <li><a href="archive/2026-08-02.html">2 August 2026</a><span class="archive-summary">Weekly digest</span></li>
-      <li><a href="archive/2026-08-01.html">1 August 2026</a><span class="archive-summary">Weekly digest</span></li>
-      <li><a href="archive/2026-07-31.html">31 July 2026</a><span class="archive-summary">Weekly digest</span></li>
-      <li><a href="archive/2026-07-30.html">30 July 2026</a><span class="archive-summary">Weekly digest</span></li>
-      <li><a href="archive/2026-07-29.html">29 July 2026</a><span class="archive-summary">Weekly digest</span></li>
-      <li><a href="archive/2026-07-28.html">28 July 2026</a><span class="archive-summary">Weekly digest</span></li>
-      <li><a href="archive/2026-07-27.html">27 July 2026</a><span class="archive-summary">Weekly digest</span></li>
-      <li><a href="archive/2026-07-26.html">26 July 2026</a><span class="archive-summary">Weekly digest</span></li>
-      <li><a href="archive/2026-07-25.html">25 July 2026</a><span class="archive-summary">Weekly digest</span></li>
-      <li><a href="archive/2026-07-24.html">24 July 2026</a><span class="archive-summary">Weekly digest</span></li>
-      <li><a href="archive/2026-07-23.html">23 July 2026</a><span class="archive-summary">Weekly digest</span></li>
-      <li><a href="archive/2026-07-22.html">22 July 2026</a><span class="archive-summary">Weekly digest</span></li>
-      <li><a href="archive/2026-07-21.html">21 July 2026</a><span class="archive-summary">Weekly digest</span></li>
-      <li><a href="archive/2026-07-20.html">20 July 2026</a><span class="archive-summary">Weekly digest</span></li>
-      <li><a href="archive/2026-07-17.html">17 July 2026</a><span class="archive-summary">Weekly digest</span></li>
-      <li><a href="archive/2026-07-16.html">16 July 2026</a><span class="archive-summary">Weekly digest</span></li>
-      <li><a href="archive/2026-07-15.html">15 July 2026</a><span class="archive-summary">Weekly digest</span></li>
-      <li><a href="archive/2026-07-10.html">10 July 2026</a><span class="archive-summary">Weekly digest</span></li>
-      <li><a href="archive/2026-07-06.html">6 July 2026</a><span class="archive-summary">Weekly digest</span></li>
-    </ul>
-  </div>
 
 </main>
 <footer>
