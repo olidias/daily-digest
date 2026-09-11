@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Daily Digest</title>
+<title>Daily Digest — 11 September 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400&display=swap">
 <style>
@@ -16,12 +16,13 @@
     --muted:       #6e6b61;
     --accent:      #1e5c3e;
     --accent-soft: #e8f2ec;
+    --amber:       #9a5200;
+    --amber-soft:  #fdf0e0;
     --rule:        #ccc8be;
     --tag-bg:      #f0eeea;
     --tag-text:    #6e6b61;
     --link:        #1e5c3e;
     --link-hover:  #155030;
-    --archive-dt:  #9a5200;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
@@ -32,12 +33,13 @@
       --muted:       #9a9590;
       --accent:      #4aaa74;
       --accent-soft: #142a1e;
+      --amber:       #d48040;
+      --amber-soft:  #2a1e0e;
       --rule:        #3a3830;
       --tag-bg:      #2a2924;
       --tag-text:    #9a9590;
       --link:        #4aaa74;
       --link-hover:  #6dc090;
-      --archive-dt:  #d48040;
     }
   }
   :root[data-theme="dark"] {
@@ -48,16 +50,18 @@
     --muted:       #9a9590;
     --accent:      #4aaa74;
     --accent-soft: #142a1e;
+    --amber:       #d48040;
+    --amber-soft:  #2a1e0e;
     --rule:        #3a3830;
     --tag-bg:      #2a2924;
     --tag-text:    #9a9590;
     --link:        #4aaa74;
     --link-hover:  #6dc090;
-    --archive-dt:  #d48040;
   }
 
   /* ── Reset & base ───────────────────────────────────────── */
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
   body {
     background: var(--bg);
     color: var(--text);
@@ -74,7 +78,7 @@
   /* ── Layout ─────────────────────────────────────────────── */
   .wrapper { max-width: 700px; margin-inline: auto; }
 
-  /* ── Site header ────────────────────────────────────────── */
+  /* ── Header ─────────────────────────────────────────────── */
   .site-header {
     display: flex;
     flex-direction: column;
@@ -89,6 +93,7 @@
     font-weight: 600;
     letter-spacing: -0.01em;
     color: var(--text);
+    text-wrap: balance;
   }
   .site-header .meta {
     font-size: 0.8125rem;
@@ -96,6 +101,16 @@
     font-family: "IBM Plex Mono", monospace;
     letter-spacing: 0.01em;
   }
+  .site-header .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.8125rem;
+    color: var(--accent);
+    margin-top: 4px;
+    width: fit-content;
+  }
+  .site-header .back-link:hover { text-decoration: underline; }
 
   /* ── Topic section ──────────────────────────────────────── */
   .topic {
@@ -123,8 +138,10 @@
   }
 
   /* ── Article items ──────────────────────────────────────── */
-  .articles { display: flex; flex-direction: column; }
+  .articles { display: flex; flex-direction: column; gap: 0; }
   .article {
+    display: grid;
+    grid-template-columns: 1fr;
     padding: 14px 0;
     border-bottom: 1px solid var(--border);
   }
@@ -140,6 +157,7 @@
     display: inline-block;
     font-size: 0.6875rem;
     font-family: "IBM Plex Mono", monospace;
+    font-weight: 400;
     letter-spacing: 0.04em;
     text-transform: uppercase;
     background: var(--tag-bg);
@@ -157,8 +175,13 @@
     color: var(--text);
     text-wrap: balance;
   }
-  .article-title a { color: var(--text); }
-  .article-title a:hover { color: var(--link); text-decoration: underline; }
+  .article-title a {
+    color: var(--text);
+  }
+  .article-title a:hover {
+    color: var(--link);
+    text-decoration: underline;
+  }
   .article-summary {
     font-size: 0.875rem;
     color: var(--muted);
@@ -167,6 +190,7 @@
   }
 
   /* ── Jobs section ───────────────────────────────────────── */
+  .jobs-grid { display: flex; flex-direction: column; gap: 0; }
   .job-item {
     padding: 13px 0;
     border-bottom: 1px solid var(--border);
@@ -179,45 +203,17 @@
     flex-wrap: wrap;
     margin-bottom: 4px;
   }
-  .job-title { font-size: 0.9375rem; font-weight: 600; color: var(--text); }
+  .job-title {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--text);
+  }
   .job-title a { color: var(--text); }
   .job-title a:hover { color: var(--link); text-decoration: underline; }
-  .job-desc { font-size: 0.875rem; color: var(--muted); }
-
-  /* ── Archive section ────────────────────────────────────── */
-  .archive {
-    margin-top: 56px;
-    padding-top: 28px;
-    border-top: 1.5px solid var(--rule);
-  }
-  .archive h2 {
-    font-family: "IBM Plex Serif", Georgia, serif;
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: var(--muted);
-    margin-bottom: 16px;
-    letter-spacing: -0.01em;
-  }
-  .archive-list { list-style: none; display: flex; flex-direction: column; gap: 0; }
-  .archive-list li {
-    display: flex;
-    align-items: baseline;
-    gap: 14px;
-    padding: 9px 0;
-    border-bottom: 1px solid var(--border);
+  .job-desc {
     font-size: 0.875rem;
+    color: var(--muted);
   }
-  .archive-list li:last-child { border-bottom: none; }
-  .archive-date {
-    font-family: "IBM Plex Mono", monospace;
-    font-size: 0.8rem;
-    color: var(--archive-dt);
-    white-space: nowrap;
-    flex-shrink: 0;
-  }
-  .archive-list a { font-weight: 500; color: var(--text); }
-  .archive-list a:hover { color: var(--link); text-decoration: underline; }
-  .archive-note { font-size: 0.8rem; color: var(--muted); }
 
   /* ── Footer ─────────────────────────────────────────────── */
   .site-footer {
@@ -227,6 +223,9 @@
     font-size: 0.75rem;
     color: var(--muted);
     font-family: "IBM Plex Mono", monospace;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
   }
 
   /* ── Responsive ─────────────────────────────────────────── */
@@ -234,8 +233,9 @@
     body { padding-inline: 16px; padding-block: 24px; }
     .site-header h1 { font-size: 1.35rem; }
     .topic-name { font-size: 1rem; }
-    .archive-list li { flex-direction: column; gap: 2px; }
+    .article-title { font-size: 0.9rem; }
   }
+
   @media (prefers-reduced-motion: reduce) {
     * { transition: none !important; animation: none !important; }
   }
@@ -247,6 +247,7 @@
   <header class="site-header">
     <div class="meta">Friday · 11 September 2026 · Europe/Zurich</div>
     <h1>Daily Digest</h1>
+    <a class="back-link" href="../index.html">← All issues</a>
   </header>
 
   <!-- ══ Astronomy & Space ══════════════════════════════════ -->
@@ -274,7 +275,7 @@
             <a href="https://www.esa.int/Newsroom" target="_blank" rel="noopener">BepiColombo begins Mercury arrival operations after propulsion module separation</a>
           </div>
         </div>
-        <p class="article-summary">ESA's BepiColombo mission commenced Mercury orbit insertion operations on 3 September following separation of its propulsion module, with the composite spacecraft now on final approach to the innermost planet.</p>
+        <p class="article-summary">ESA's BepiColombo mission commenced Mercury orbit insertion operations on 3 September following the separation of its propulsion module, with the composite spacecraft now on final approach to the innermost planet.</p>
       </article>
 
       <article class="article">
@@ -284,7 +285,7 @@
             <a href="https://www.esa.int/Newsroom/Press_Releases" target="_blank" rel="noopener">FLEX and Copernicus Sentinel-3C to launch on Vega-C 15 September</a>
           </div>
         </div>
-        <p class="article-summary">ESA has confirmed the 15 September launch of the FLEX (Fluorescence Explorer) vegetation-monitoring satellite and Copernicus Sentinel-3C on a Vega-C rocket from French Guiana, completing the Sentinel-3 constellation.</p>
+        <p class="article-summary">ESA has confirmed the 15 September launch of the FLEX (Fluorescence Explorer) vegetation-monitoring satellite and the Copernicus Sentinel-3C on a Vega-C rocket from French Guiana, completing the Sentinel-3 constellation.</p>
       </article>
 
       <article class="article">
@@ -299,7 +300,7 @@
 
       <article class="article">
         <div class="article-top">
-          <span class="source-tag">Vera C. Rubin Observatory</span>
+          <span class="source-tag">ScienceDaily / Vera C. Rubin Obs.</span>
           <div class="article-title">
             <a href="https://www.sciencedaily.com/news/space_time/" target="_blank" rel="noopener">Rubin Observatory delivers spectacularly deep view of the COSMOS field</a>
           </div>
@@ -355,7 +356,7 @@
             <a href="https://www.euronews.com/tag/world-news" target="_blank" rel="noopener">Bayeux Tapestry returns to England for the first time in 900 years</a>
           </div>
         </div>
-        <p class="article-summary">The nearly 70-metre-long Bayeux Tapestry has crossed the Channel for the first time since its creation around 1077, beginning a temporary loan exhibition in England as part of a Franco-British cultural exchange agreement.</p>
+        <p class="article-summary">The nearly 70-metre-long Bayeux Tapestry has crossed the Channel for the first time since its creation around 1077, beginning a temporary loan exhibition in England as part of a historic Franco-British cultural exchange agreement.</p>
       </article>
 
     </div>
@@ -365,7 +366,7 @@
   <section class="topic">
     <div class="topic-header">
       <h2 class="topic-name">Rugby</h2>
-      <span class="topic-count">3 items · Tier-1 only</span>
+      <span class="topic-count">2 items · Tier-1 only</span>
     </div>
     <div class="articles">
 
@@ -386,17 +387,7 @@
             <a href="https://www.world.rugby/news" target="_blank" rel="noopener">Springboks make two changes for Baltimore decider; All Blacks name 36-man squad with seven changes</a>
           </div>
         </div>
-        <p class="article-summary">Rassie Erasmus replaces the jaw-fractured Cheslin Kolbe with Damian Willemse and promotes Morne van den Berg to the starting XV; New Zealand ring seven changes, four of them injury-forced (Ardie Savea, Quinn Tupaea and Luke Jacobson ruled out), ahead of Saturday's 4th and deciding test at M&amp;T Bank Stadium, Baltimore.</p>
-      </article>
-
-      <article class="article">
-        <div class="article-top">
-          <span class="source-tag">World Rugby / WXV</span>
-          <div class="article-title">
-            <a href="https://www.women.rugby/en/news/1046245/wxv-global-series-2026-preview-september" target="_blank" rel="noopener">WXV Global Series 2026 opens 12–13 September: England host Australia in Salford</a>
-          </div>
-        </div>
-        <p class="article-summary">World Rugby's 2026 WXV Global Series begins this weekend, with England hosting Australia in Salford on the opening fixture as 12 women's Tier-1 nations begin home-and-away competition, and the Challenger leg kicking off in Hong Kong simultaneously.</p>
+        <p class="article-summary">Rassie Erasmus replaces the jaw-fractured Cheslin Kolbe with Damian Willemse and promotes Morne van den Berg to the starting XV; New Zealand ring seven changes, four of them injury-forced (Ardie Savea, Tupaea, Jacobson ruled out), ahead of Saturday's 4th and deciding test at M&amp;T Bank Stadium, Baltimore — the first time the rivalry has been played in the United States.</p>
       </article>
 
     </div>
@@ -417,14 +408,14 @@
             <a href="https://www.sailingworld.com/racing/us-sailgp-victorious-in-valencia-for-second-season-win/" target="_blank" rel="noopener">USA SailGP wins Spain Grand Prix in Valencia, claiming second 2026 event victory</a>
           </div>
         </div>
-        <p class="article-summary">Taylor Canfield's US SailGP Team defeated the Flying Roos (Australia) in the Valencia final on 6 September, with Red Bull Italy securing their first-ever final appearance in third; USA moves to third overall heading to the Geneva Sail Grand Prix (19–20 September).</p>
+        <p class="article-summary">Taylor Canfield's US SailGP Team defeated the Flying Roos (Australia) in the Valencia final on 6 September, with Red Bull Italy securing their first-ever final appearance in third; USA moves to third overall in the championship heading to the Geneva Sail Grand Prix (19–20 September).</p>
       </article>
 
       <article class="article">
         <div class="article-top">
           <span class="source-tag">Sail-World</span>
           <div class="article-title">
-            <a href="https://www.sail-world.com/news/299650/" target="_blank" rel="noopener">ILCA 6 Women's World Championship, Dún Laoghaire — Day 3 racing delayed by light winds</a>
+            <a href="https://www.sail-world.com/news/299650/" target="_blank" rel="noopener">ILCA 6 Women's World Championship, Dún Laoghaire — Day 3 racing delayed by 2-knot winds</a>
           </div>
         </div>
         <p class="article-summary">Light-air conditions held racing at Dún Laoghaire on Day 3 of the Women's ILCA 6 Worlds, with reigning champion Louise Cervera and 2025 medallists Agata Barwinska and Eve McMahon among 108 competitors from 44 nations contesting the final series.</p>
@@ -437,7 +428,7 @@
             <a href="https://www.yachtingworld.com/yachts-and-gear/the-best-new-yachts-debut-at-the-cannes-yachting-festival-163944" target="_blank" rel="noopener">Cannes Yachting Festival (8–13 Sept): three 80 ft fast cruisers and nine multihull world premieres</a>
           </div>
         </div>
-        <p class="article-summary">The 2026 Cannes festival debuts a trio of semi-custom 80 ft performance cruisers alongside nine multihull world premieres spanning 43–70 ft, including three new Fountaine-Pajot models.</p>
+        <p class="article-summary">The 2026 Cannes festival debuts a trio of semi-custom 80 ft performance cruisers alongside nine multihull world premieres spanning 43–70 ft, including three new Fountaine-Pajot models, making it one of the most new-product-dense editions in the show's history.</p>
       </article>
 
       <article class="article">
@@ -447,7 +438,7 @@
             <a href="https://www.sail-world.com/news/299571/" target="_blank" rel="noopener">Noble Marine RS400 Nationals 2026 opens at Hayling Island — ten-race series underway</a>
           </div>
         </div>
-        <p class="article-summary">Opening-day coverage from the RS400 National Championship (10–13 September, Hayling Island SC) profiles leading contenders as the first two races of the ten-race series concluded in mixed conditions.</p>
+        <p class="article-summary">Opening-day coverage from the RS400 National Championship (10–13 September, Hayling Island SC) profiles leading contenders and dark-horse entries across the fleet as the first two races of the ten-race series concluded in mixed conditions.</p>
       </article>
 
     </div>
@@ -498,7 +489,7 @@
             <a href="https://hbr.org/2026/09/transformation-should-be-a-learning-journey" target="_blank" rel="noopener">Transformation Should Be a Learning Journey</a>
           </div>
         </div>
-        <p class="article-summary">Research on large-scale corporate transformations (including DBS Bank and GE) identifies four initiative archetypes — pilots, options, established-business improvements, and ventures — that together build organisational learning capacity and sustain transformation momentum.</p>
+        <p class="article-summary">Research on large-scale corporate transformations (including DBS Bank and GE) identifies four initiative archetypes — pilots, options, established-business improvements, and ventures — that together build organisational learning capacity and sustain transformation momentum rather than treating transformation as a discrete programme.</p>
       </article>
 
       <article class="article">
@@ -518,7 +509,7 @@
             <a href="https://hbr.org/2026/09/research-roundup-ai-on-org-charts-job-hoppers-skillsets-elite-board-seats-and-more" target="_blank" rel="noopener">Research Roundup: AI on Org Charts, Job-Hoppers' Skill Sets, Elite Board Seats</a>
           </div>
         </div>
-        <p class="article-summary">A curated digest of recent academic studies covering how AI is reshaping organisational hierarchies, the expanded skill profiles of frequent job-changers, and access patterns around elite board seats.</p>
+        <p class="article-summary">A curated digest of recent academic studies covering how AI is reshaping organisational hierarchies, the expanded skill profiles of frequent job-changers, and access patterns around elite board seats — summarising findings from peer-reviewed sources.</p>
       </article>
 
     </div>
@@ -539,7 +530,7 @@
             <a href="https://www.psypost.org/massive-review-confirms-the-connection-between-emotional-intelligence-and-human/" target="_blank" rel="noopener">Meta-analysis of 3,000 studies and one million participants confirms EI predicts flourishing across life domains</a>
           </div>
         </div>
-        <p class="article-summary">A new PNAS meta-analysis pooling over one million participants across 3,000 studies finds that emotional intelligence robustly predicts well-being, academic performance, and health outcomes — but notes that effect sizes vary substantially by measurement approach.</p>
+        <p class="article-summary">A new PNAS meta-analysis pooling over one million participants across 3,000 studies finds that emotional intelligence robustly predicts well-being, academic performance, and health outcomes — but notes that effect sizes vary substantially by measurement approach, complicating broad commercial claims about EI training.</p>
       </article>
 
       <article class="article">
@@ -549,7 +540,7 @@
             <a href="https://www.apa.org/monitor/2026/09/ai-brain-development-youth" target="_blank" rel="noopener">Heavy AI cognitive offloading linked to higher anxiety and declining distress tolerance in adolescents</a>
           </div>
         </div>
-        <p class="article-summary">Psychologists find that adolescents who routinely delegate cognitive tasks to AI show elevated anxiety and reduced capacity to tolerate distress, while the manner and motivation of AI use — rather than use per se — is the stronger predictor of negative outcomes.</p>
+        <p class="article-summary">Psychologists find that adolescents who routinely delegate cognitive tasks to AI tools show elevated anxiety and reduced capacity to tolerate distress, while the manner and motivation of AI use — rather than use per se — is the stronger predictor of negative outcomes.</p>
       </article>
 
       <article class="article">
@@ -559,7 +550,7 @@
             <a href="https://www.apa.org/monitor/2026/09/ai-psychosis" target="_blank" rel="noopener">The Human Line Project documents 265 AI-associated delusion reports; OpenAI estimates 630,000 weekly psychosis-risk ChatGPT users</a>
           </div>
         </div>
-        <p class="article-summary">New clinical documentation by the Human Line Project shows chatbot interactions can trigger or exacerbate psychotic episodes in vulnerable individuals, with OpenAI's own analysis estimating approximately 630,000 weekly ChatGPT users exhibiting signs of mania or psychosis.</p>
+        <p class="article-summary">New clinical documentation by the Human Line Project shows chatbot interactions can trigger or exacerbate psychotic episodes in vulnerable individuals, with OpenAI's own analysis estimating approximately 630,000 weekly ChatGPT users exhibiting signs of mania or psychosis — prompting calls for platform-level safeguarding.</p>
       </article>
 
       <article class="article">
@@ -569,7 +560,7 @@
             <a href="https://greatergood.berkeley.edu/podcasts/item/how_to_protect_your_brain_as_you_age" target="_blank" rel="noopener">How to protect your brain as you age: neuroplasticity, sleep, stress reduction, and purpose</a>
           </div>
         </div>
-        <p class="article-summary">A new Science of Happiness episode synthesises current evidence on maintaining cognitive function across the lifespan, identifying consistent sleep, aerobic exercise, stress reduction, and cultivating a sense of purpose as the most reliably replicated protective factors.</p>
+        <p class="article-summary">A new Science of Happiness episode synthesises current evidence on maintaining cognitive function across the lifespan, identifying consistent sleep, aerobic exercise, stress-reduction practices, and cultivating a sense of purpose as the most reliably replicated protective factors.</p>
       </article>
 
     </div>
@@ -597,10 +588,10 @@
         <div class="article-top">
           <span class="source-tag">Simon Willison</span>
           <div class="article-title">
-            <a href="https://simonwillison.net/2026/Sep/10/trynix/" target="_blank" rel="noopener">trynix.dev runs a full x86_64 Linux VM in the browser via qemu-wasm for instant Nix package access</a>
+            <a href="https://simonwillison.net/2026/Sep/10/trynix/" target="_blank" rel="noopener">trynix.dev runs a full x86_64 Linux VM entirely in the browser via qemu-wasm for instant Nix package access</a>
           </div>
         </div>
-        <p class="article-summary">trynix.dev boots a WebAssembly-compiled QEMU virtual machine directly in the browser, giving instant access to any Nix package without local installation — a novel approach to reproducible, shareable developer environments that requires no server backend.</p>
+        <p class="article-summary">trynix.dev boots a WebAssembly-compiled QEMU virtual machine directly in the browser, giving instant access to any package in the Nix ecosystem without local installation — a novel approach to reproducible, shareable developer environments that requires no server backend.</p>
       </article>
 
       <article class="article">
@@ -610,7 +601,7 @@
             <a href="https://simonwillison.net/2026/Sep/10/shopify-react-native/" target="_blank" rel="noopener">Shopify abandons React Native in favour of separate native Swift and Kotlin codebases</a>
           </div>
         </div>
-        <p class="article-summary">Shopify announced it is ending its investment in React Native for consumer mobile apps, reverting to separate native Swift (iOS) and Kotlin (Android) codebases after concluding that performance and platform-fidelity tradeoffs were no longer acceptable at their scale.</p>
+        <p class="article-summary">Shopify announced it is ending its investment in React Native for its consumer mobile apps, reverting to separate native Swift (iOS) and Kotlin (Android) codebases after concluding that the performance and platform-fidelity tradeoffs of cross-platform tooling were no longer acceptable at their scale.</p>
       </article>
 
       <article class="article">
@@ -620,7 +611,7 @@
             <a href="https://llm-stats.com/ai-news" target="_blank" rel="noopener">September model wave: Claude Fable 5.1, Gemini 3.8 Flash, and OpenAI Astra now generally available</a>
           </div>
         </div>
-        <p class="article-summary">Four major frontier model releases landed in the first two weeks of September — Claude Fable 5.1 (GA 1 Sep), Gemini 3.8 Flash, Meta's Muse Spark 1.3, and OpenAI Astra — with pricing compression and agentic tool-use as the primary competitive axes.</p>
+        <p class="article-summary">Four major frontier model releases landed in the first two weeks of September — Anthropic's Claude Fable 5.1 (GA 1 Sep, cache read at $0.25/M tokens), Google's Gemini 3.8 Flash, Meta's Muse Spark 1.3, and OpenAI Astra — with pricing compression and agentic tool-use as the primary competitive axes.</p>
       </article>
 
     </div>
@@ -632,20 +623,24 @@
       <h2 class="topic-name">Jobs</h2>
       <span class="topic-count">5 listings</span>
     </div>
-    <div class="articles">
+    <div class="jobs-grid">
 
       <div class="job-item">
         <div class="job-top">
           <span class="source-tag">freelancermap</span>
-          <div class="job-title"><a href="https://www.freelancermap.com/project/senior-ai-developer-3025171" target="_blank" rel="noopener">Senior AI Developer</a></div>
+          <div class="job-title">
+            <a href="https://www.freelancermap.com/project/senior-ai-developer-3025171" target="_blank" rel="noopener">Senior AI Developer</a>
+          </div>
         </div>
-        <p class="job-desc">Freelance contract, ASAP start.</p>
+        <p class="job-desc">Freelance contract, ASAP start — details via freelancermap listing.</p>
       </div>
 
       <div class="job-item">
         <div class="job-top">
           <span class="source-tag">freelancermap</span>
-          <div class="job-title"><a href="https://www.freelancermap.com/project/servicenow-secops-developer-consultant" target="_blank" rel="noopener">ServiceNow SecOps Developer / Consultant</a></div>
+          <div class="job-title">
+            <a href="https://www.freelancermap.com/project/servicenow-secops-developer-consultant" target="_blank" rel="noopener">ServiceNow SecOps Developer / Consultant</a>
+          </div>
         </div>
         <p class="job-desc">12-month contract, Utrecht — 20% remote. Security Operations modules and threat intelligence pipelines.</p>
       </div>
@@ -653,15 +648,19 @@
       <div class="job-item">
         <div class="job-top">
           <span class="source-tag">freelancermap</span>
-          <div class="job-title"><a href="https://www.freelancermap.com/project/senior-cloud-migration-engineer-gcp-zu-aws-m-w-d-2989557" target="_blank" rel="noopener">Senior Cloud Migration Engineer — GCP to AWS</a></div>
+          <div class="job-title">
+            <a href="https://www.freelancermap.com/project/senior-cloud-migration-engineer-gcp-zu-aws-m-w-d-2989557" target="_blank" rel="noopener">Senior Cloud Migration Engineer — GCP to AWS</a>
+          </div>
         </div>
-        <p class="job-desc">3-month contract, Cologne. Lead GCP → AWS migration workload.</p>
+        <p class="job-desc">3-month contract, Cologne. Lead Google Cloud Platform → AWS migration workload.</p>
       </div>
 
       <div class="job-item">
         <div class="job-top">
           <span class="source-tag">swissdevjobs.ch</span>
-          <div class="job-title"><a href="https://swissdevjobs.ch/" target="_blank" rel="noopener">Senior Platform Engineer</a></div>
+          <div class="job-title">
+            <a href="https://swissdevjobs.ch/" target="_blank" rel="noopener">Senior Platform Engineer</a>
+          </div>
         </div>
         <p class="job-desc">Switzerland — Kubernetes, Linux, CI/CD. CHF 115,000–130,000 / year.</p>
       </div>
@@ -669,7 +668,9 @@
       <div class="job-item">
         <div class="job-top">
           <span class="source-tag">swissdevjobs.ch</span>
-          <div class="job-title"><a href="https://swissdevjobs.ch/" target="_blank" rel="noopener">Cloud Software Engineer</a></div>
+          <div class="job-title">
+            <a href="https://swissdevjobs.ch/" target="_blank" rel="noopener">Cloud Software Engineer</a>
+          </div>
         </div>
         <p class="job-desc">Switzerland — React, REST stack. Full listing at swissdevjobs.ch.</p>
       </div>
@@ -677,35 +678,9 @@
     </div>
   </section>
 
-  <!-- ══ Archive ════════════════════════════════════════════ -->
-  <nav class="archive" aria-label="Previous issues">
-    <h2>Archive</h2>
-    <ul class="archive-list">
-      <li>
-        <span class="archive-date">2026-09-10</span>
-        <span><a href="archive/2026-09-10.html">10 September 2026</a> <span class="archive-note">— Roman launch · Iran-Hormuz · Springboks series · SailGP Valencia · AI models · EI research</span></span>
-      </li>
-      <li>
-        <span class="archive-date">2026-09-09</span>
-        <span><a href="archive/2026-09-09.html">9 September 2026</a> <span class="archive-note">— BepiColombo arrival · World news · Rugby · Sailing · Leadership · AI Engineering</span></span>
-      </li>
-      <li>
-        <span class="archive-date">2026-09-08</span>
-        <span><a href="archive/2026-09-08.html">8 September 2026</a></span>
-      </li>
-      <li>
-        <span class="archive-date">2026-09-07</span>
-        <span><a href="archive/2026-09-07.html">7 September 2026</a></span>
-      </li>
-      <li>
-        <span class="archive-date">2026-09-06</span>
-        <span><a href="archive/2026-09-06.html">6 September 2026</a></span>
-      </li>
-    </ul>
-  </nav>
-
   <footer class="site-footer">
-    Generated: 2026-09-11T07:00 Europe/Zurich
+    <span>Generated: 2026-09-11T07:00 Europe/Zurich</span>
+    <span>Sources: NASA · ESA · ScienceDaily · Sky Sports · AllBlacks.com · SailGP · Sail-World · Yachting World · Harvard Business Impact · DDI · APA Monitor · Greater Good · PsyPost · Simon Willison · LLM Stats · freelancermap · swissdevjobs.ch</span>
   </footer>
 
 </div>
