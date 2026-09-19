@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Digest — 19 September 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400&display=swap">
+<style>
+  :root {
+    --bg:          #f2f1ed;
+    --surface:     #ffffff;
+    --border:      #dbd8d0;
+    --text:        #1c1b18;
+    --muted:       #6e6b61;
+    --accent:      #1e5c3e;
+    --accent-soft: #e8f2ec;
+    --amber:       #9a5200;
+    --amber-soft:  #fdf0e0;
+    --rule:        #ccc8be;
+    --tag-bg:      #f0eeea;
+    --tag-text:    #6e6b61;
+    --link:        #1e5c3e;
+    --link-hover:  #155030;
+    --archive-dt:  #9a5200;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg:          #181714;
+      --surface:     #211f1b;
+      --border:      #33302a;
+      --text:        #e8e6e0;
+      --muted:       #9a9590;
+      --accent:      #4aaa74;
+      --accent-soft: #142a1e;
+      --amber:       #d48040;
+      --amber-soft:  #2a1e0e;
+      --rule:        #3a3830;
+      --tag-bg:      #2a2924;
+      --tag-text:    #9a9590;
+      --link:        #4aaa74;
+      --link-hover:  #6dc090;
+      --archive-dt:  #d48040;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg:          #181714;
+    --surface:     #211f1b;
+    --border:      #33302a;
+    --text:        #e8e6e0;
+    --muted:       #9a9590;
+    --accent:      #4aaa74;
+    --accent-soft: #142a1e;
+    --amber:       #d48040;
+    --amber-soft:  #2a1e0e;
+    --rule:        #3a3830;
+    --tag-bg:      #2a2924;
+    --tag-text:    #9a9590;
+    --link:        #4aaa74;
+    --link-hover:  #6dc090;
+    --archive-dt:  #d48040;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "IBM Plex Sans", system-ui, sans-serif;
+    font-size: 15px;
+    line-height: 1.65;
+    padding-inline: 20px;
+    padding-block: 36px;
+  }
+  a { color: var(--link); text-decoration: none; }
+  a:hover { color: var(--link-hover); text-decoration: underline; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+  .wrapper { max-width: 700px; margin-inline: auto; }
+  .site-header {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-bottom: 28px;
+    border-bottom: 1.5px solid var(--rule);
+    margin-bottom: 40px;
+  }
+  .site-header h1 {
+    font-family: "IBM Plex Serif", Georgia, serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--text);
+  }
+  .site-header .meta {
+    font-size: 0.8125rem;
+    color: var(--muted);
+    font-family: "IBM Plex Mono", monospace;
+    letter-spacing: 0.01em;
+  }
+  .back-link {
+    font-size: 0.8125rem;
+    font-family: "IBM Plex Mono", monospace;
+    margin-bottom: 24px;
+    display: block;
+  }
+  .topic { margin-bottom: 44px; }
+  .topic-header {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  .topic-name {
+    font-family: "IBM Plex Serif", Georgia, serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--accent);
+    text-wrap: balance;
+  }
+  .topic-count {
+    font-size: 0.75rem;
+    color: var(--muted);
+    font-family: "IBM Plex Mono", monospace;
+  }
+  .articles { display: flex; flex-direction: column; }
+  .article {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .article:last-child { border-bottom: none; }
+  .article-top {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 5px;
+  }
+  .source-tag {
+    display: inline-block;
+    font-size: 0.6875rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    background: var(--tag-bg);
+    color: var(--tag-text);
+    padding: 2px 7px;
+    border-radius: 3px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-top: 3px;
+  }
+  .article-title {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--text);
+    text-wrap: balance;
+  }
+  .article-title a { color: var(--text); }
+  .article-title a:hover { color: var(--link); text-decoration: underline; }
+  .article-summary {
+    font-size: 0.875rem;
+    color: var(--muted);
+    line-height: 1.6;
+    max-width: 62ch;
+  }
+  .site-footer {
+    margin-top: 48px;
+    padding-top: 20px;
+    border-top: 1px solid var(--rule);
+    font-size: 0.75rem;
+    color: var(--muted);
+    font-family: "IBM Plex Mono", monospace;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  @media (max-width: 480px) {
+    body { padding-inline: 16px; padding-block: 24px; }
+    .site-header h1 { font-size: 1.35rem; }
+    .topic-name { font-size: 1rem; }
+    .article-title { font-size: 0.9rem; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <a class="back-link" href="../index.html">&#8592; Back to latest digest</a>
+
+  <header class="site-header">
+    <div class="meta">Saturday · 19 September 2026 · Europe/Zurich</div>
+    <h1>Daily Digest — 19 September 2026</h1>
+  </header>
+
+  <!-- ══ Astronomy & Space ══════════════════════════════════ -->
+  <section class="topic">
+    <div class="topic-header">
+      <h2 class="topic-name">Astronomy &amp; Space</h2>
+      <span class="topic-count">6 items</span>
+    </div>
+    <div class="articles">
+
+      <article class="article">
+        <div class="article-top">
+          <span class="source-tag">NASA / Hubble</span>
+          <div class="article-title">
+            <a href="https://science.nasa.gov/missions/hubble/nasas-hubble-tracks-new-decagon-encircling-saturns-south-pole/" target="_blank" rel="noopener">Saturn's South Pole Grows a 10-Sided Atmospheric Pattern</a>
+          </div>
+        </div>
+        <p class="article-summary">Hubble data confirmed a decagonal (10-sided) vortex has formed around Saturn's south pole, mirroring the famous northern hexagon and traceable back to 2023 — giving the ringed planet a matched pair of polygonal polar structures for the first time.</p>
+      </article>
+
+      <article class="article">
+        <div class="article-top">
+          <span class="source-tag">NASA / LRO</span>
+          <div class="article-title">
+            <a href="https://phys.org/news/2026-09-nasa-spacecraft-huge-crater-moon.html" target="_blank" rel="noopener">NASA Spacecraft Finds Giant New Lunar Crater Three Times the Previous Record</a>
+          </div>
+        </div>
+        <p class="article-summary">The Lunar Reconnaissance Orbiter discovered the McGetchin Crater — larger than the Roman Colosseum and three times bigger than the prior record-holder — formed by an impact two years ago that had gone undetected until systematic orbital survey.</p>
+      </article>
+
+      <article class="article">
+        <div class="article-top">
+          <span class="source-tag">NASA</span>
+          <div class="article-title">
+            <a href="https://www.nasa.gov/2026-news-releases/" target="_blank" rel="noopener">Roman Space Telescope Used Only 10% of Planned Mid-Course Fuel, Extending Mission to 22+ Years</a>
+          </div>
+        </div>
+        <p class="article-summary">The Nancy Grace Roman Space Telescope's first mid-course correction was so fuel-efficient that the mission now carries reserves for at least 22 years of science operations — more than double its 10-year design life.</p>
+      </article>
+
+      <article class="article">
+        <div class="article-top">
+          <span class="source-tag">Astronomy Research</span>
+          <div class="article-title">
+            <a href="https://starlust.org/space-weekly-recap-september-1218-2026-key-stories-you-may-have-missed/" target="_blank" rel="noopener">Youngest Known Planet Confirmed: Elias 2-24 b Is Under One Million Years Old</a>
+          </div>
+        </div>
+        <p class="article-summary">Astronomers confirmed Elias 2-24 b as the youngest known planet — a Jupiter-mass world less than one million years old, still embedded in its protoplanetary disk and actively accreting.</p>
+      </article>
+
+      <article class="article">
+        <div class="article-top">
+          <span class="source-tag">Quanta Magazine</span>
+          <div class="article-title">
+            <a href="https://www.quantamagazine.org/physics/" target="_blank" rel="noopener">Where Does the Quantum World End? Strogatz and Levin Explain Decoherence</a>
+          </div>
+        </div>
+        <p class="article-summary">In a September 17 episode of <em>The Joy of Why</em>, physicists Steven Strogatz and Janna Levin work through quantum decoherence — the mechanism that causes quantum superpositions to collapse into the definite classical outcomes we observe.</p>
+      </article>
+
+      <article class="article">
+        <div class="article-top">
+          <span class="source-tag">Quanta Magazine</span>
+          <div class="article-title">
+            <a href="https://www.quantamagazine.org/mathematicians-build-long-awaited-graph-sandwich-20260918/" target="_blank" rel="noopener">Mathematicians Prove the Long-Awaited Graph Sandwich Conjecture</a>
+          </div>
+        </div>
+        <p class="article-summary">A new proof of a decades-old conjecture in combinatorics delivers a rigorous framework for bounding complex networks between two graph structures, with implications for probability theory and network science.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ══ World News ═════════════════════════════════════════ -->
+  <section class="topic">
+    <div class="topic-header">
+      <h2 class="topic-name">World News</h2>
+      <span class="topic-count">5 items</span>
+    </div>
+    <div class="articles">
+
+      <article class="article">
+        <div class="article-top">
+          <span class="source-tag">Reuters / Yahoo News</span>
+          <div class="article-title">
+            <a href="https://www.yahoo.com/news/world/articles/latest-news-bulletin-september-18th-160029597.html" target="_blank" rel="noopener">Houthis Seize Red Sea Port of Mokha and Bab el-Mandeb Islands</a>
+          </div>
+        </div>
+        <p class="article-summary">Yemeni Houthi forces captured the port of Mokha and several islands inside the Bab el-Mandeb Strait, sharply escalating the threat to a chokepoint through which approximately 15% of global shipping passes.</p>
+      </article>
+
+      <article class="article">
+        <div class="article-top">
+          <span class="source-tag">NPR / Reuters</span>
+          <div class="article-title">
+            <a href="https://www.npr.org/2026/09/18/nx-s1-5974236/the-news-roundup-for-september-18-2026" target="_blank" rel="noopener">Trump Administration Approves $2.8 Billion Arms Sale to Israel Including 2,000-lb Bombs</a>
+          </div>
+        </div>
+        <p class="article-summary">The package — described as the largest single sale of 2,000-pound munitions in recent years — was cleared amid continued international debate over U.S. arms transfers and their use in densely populated areas.</p>
+      </article>
+
+      <article class="article">
+        <div class="article-top">
+          <span class="source-tag">Reuters</span>
+          <div class="article-title">
+            <a href="https://www.yahoo.com/news/world/articles/latest-news-bulletin-september-18th-100016449.html" target="_blank" rel="noopener">Xi Jinping Travels to Washington for Summit with Trump at UN General Assembly</a>
+          </div>
+        </div>
+        <p class="article-summary">Chinese President Xi Jinping is heading to New York and Washington for the most significant China–US bilateral meeting of the year, on the sidelines of the annual UN General Assembly gathering.</p>
+      </article>
+
+      <article class="article">
+        <div class="article-top">
+          <span class="source-tag">Reuters</span>
+          <div class="article-title">
+            <a href="https://www.npr.org/2026/09/18/nx-s1-5974236/the-news-roundup-for-september-18-2026" target="_blank" rel="noopener">US Congress Passes New Russia and Iran Sanctions; Kremlin Warns of Peace-Deal Damage</a>
+          </div>
+        </div>
+        <p class="article-summary">The sanctions package passed as Ukraine's President Zelenskyy reshuffled the prosecutor general's office; Moscow responded that additional economic restrictions would make a negotiated settlement in Ukraine harder to reach.</p>
+      </article>
+
+      <article class="article">
+        <div class="article-top">
+          <span class="source-tag">Democracy Now / UN</span>
+          <div class="article-title">
+            <a href="https://www.democracynow.org/2026/9/18/headlines" target="_blank" rel="noopener">UN Fact-Finding Mission: Some U.S. Strikes on Civilian Sites in Iran May Be War Crimes</a>
+          </div>
+        </div>
+        <p class="article-summary">The UN mission concluded it has sufficient evidentiary grounds to classify certain U.S. strikes on civilian infrastructure in Iran as potential violations of international humanitarian law, calling for independent accountability proceedings.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ══ Sailing ════════════════════════════════════════════ -->
+  <section class="topic">
+    <div class="topic-header">
+      <h2 class="topic-name">Sailing</h2>
+      <span class="topic-count">3 items</span>
+    </div>
+    <div class="articles">
+
+      <article class="article">
+        <div class="article-top">
+          <span class="source-tag">SailGP</span>
+          <div class="article-title">
+            <a href="https://www.sailingscuttlebutt.com/2026/09/17/sailgp-five-things-to-watch-in-geneva/" target="_blank" rel="noopener">Rolex Switzerland Sail Grand Prix Opens in Geneva — Taylor Canfield Out, Goodison Steps Up for Brazil</a>
+          </div>
+        </div>
+        <p class="article-summary">Day one of the SailGP Geneva event (Sept 19–20) on Lake Geneva features a notable late substitution: Taylor Canfield is ruled out for the USA team, while Paul Goodison takes the helm for Brazil following Martine Grael's departure from the programme.</p>
+      </article>
+
+      <article class="article">
+        <div class="article-top">
+          <span class="source-tag">Golden Globe Race</span>
+          <div class="article-title">
+            <a href="https://www.yacht.de/en/regatta/races/the-golden-globe-race-gets-underway-16-sailors-following-in-the-footsteps-of-the-great-solo-sailing-pioneers/" target="_blank" rel="noopener">Golden Globe Race 2026: 16 Solo Sailors Two Weeks into Non-Stop Circumnavigation</a>
+          </div>
+        </div>
+        <p class="article-summary">The 16-boat fleet of the 2026 Golden Globe Race — a non-stop, single-handed, unassisted round-the-world challenge sailed without GPS — departed September 6 and is now well into the Atlantic leg.</p>
+      </article>
+
+      <article class="article">
+        <div class="article-top">
+          <span class="source-tag">Scuttlebutt</span>
+          <div class="article-title">
+            <a href="https://www.sailingscuttlebutt.com/2026/09/17/preview-2026-big-boat-series/" target="_blank" rel="noopener">Rolex Big Boat Series Reaches Final Days — 81 Boats Racing San Francisco Bay</a>
+          </div>
+        </div>
+        <p class="article-summary">The 2026 Rolex Big Boat Series at St. Francis Yacht Club concludes September 20, with 81 boats across five ORC classes competing on San Francisco Bay in strong westerly afternoon breezes.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ══ People Leadership ══════════════════════════════════ -->
+  <section class="topic">
+    <div class="topic-header">
+      <h2 class="topic-name">People Leadership</h2>
+      <span class="topic-count">3 items</span>
+    </div>
+    <div class="articles">
+
+      <article class="article">
+        <div class="article-top">
+          <span class="source-tag">MIT Sloan Mgmt Review</span>
+          <div class="article-title">
+            <a href="https://sloanreview.mit.edu/topic/leadership/" target="_blank" rel="noopener">Research: A Good Story — True or Fabricated — Raises B2B Negotiators' Trust and Concessions</a>
+          </div>
+        </div>
+        <p class="article-summary">Experimental research finds that compelling narratives systematically increase perceived trustworthiness and willingness to make concessions in B2B negotiations, independent of whether the story is literally accurate — isolating storytelling as a structural mechanism in deal-making.</p>
+      </article>
+
+      <article class="article">
+        <div class="article-top">
+          <span class="source-tag">MIT Sloan Mgmt Review</span>
+          <div class="article-title">
+            <a href="https://sloanreview.mit.edu/topic/leadership/" target="_blank" rel="noopener">Research: Working-Class Employees Invite More Audience Discussion, Making Their Pitches More Persuasive</a>
+          </div>
+        </div>
+        <p class="article-summary">A study finds that employees from working-class backgrounds are significantly more likely to solicit feedback during idea presentations; this participatory style increases audience engagement and perceived pitch quality through a distinct social mechanism.</p>
+      </article>
+
+      <article class="article">
+        <div class="article-top">
+          <span class="source-tag">MIT Sloan Mgmt Review</span>
+          <div class="article-title">
+            <a href="https://sloanreview.mit.edu/topic/leadership/" target="_blank" rel="noopener">Research: Front-Line Worker Disengagement Rises Sharply Without Middle-Manager Support</a>
+          </div>
+        </div>
+        <p class="article-summary">New research identifies middle-manager support as the critical mediating variable for front-line value creation: when that layer is absent or ineffective, worker disengagement and output decline significantly, regardless of senior leadership quality.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ══ Emotional Intelligence ═════════════════════════════ -->
+  <section class="topic">
+    <div class="topic-header">
+      <h2 class="topic-name">Emotional Intelligence</h2>
+      <span class="topic-count">2 items</span>
+    </div>
+    <div class="articles">
+
+      <article class="article">
+        <div class="article-top">
+          <span class="source-tag">PsyPost / Meta-Analysis</span>
+          <div class="article-title">
+            <a href="https://www.psypost.org/massive-review-confirms-the-connection-between-emotional-intelligence-and-human/" target="_blank" rel="noopener">1 Million Participants Across 3,000 Studies: EI Reliably Predicts Flourishing at Work, School, and Home</a>
+          </div>
+        </div>
+        <p class="article-summary">The largest aggregation of EI research to date finds robust, consistent associations between emotional intelligence and positive outcomes across life domains, while noting that effect size magnitude depends heavily on measurement instrument — a finding that complicates commercially sold EI assessments.</p>
+      </article>
+
+      <article class="article">
+        <div class="article-top">
+          <span class="source-tag">Research Roundup Sep 2026</span>
+          <div class="article-title">
+            <a href="https://www.beautifulminds-newsletter.com/p/research-roundup-september-2026" target="_blank" rel="noopener">Better Emotion Regulation Redirects Envy from Hostility to Motivation</a>
+          </div>
+        </div>
+        <p class="article-summary">Adults with stronger emotion-regulation skills reported significantly more benign envy and no elevation in malicious envy when confronted with upward social comparisons, suggesting emotional skill steers competitive feelings toward goal-directed behaviour rather than hostility.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ══ AI Engineering ════════════════════════════════════ -->
+  <section class="topic">
+    <div class="topic-header">
+      <h2 class="topic-name">AI Engineering</h2>
+      <span class="topic-count">3 items</span>
+    </div>
+    <div class="articles">
+
+      <article class="article">
+        <div class="article-top">
+          <span class="source-tag">Anthropic</span>
+          <div class="article-title">
+            <a href="https://www.nbcnews.com/tech/tech-news/anthropic-says-model-claude-helping-build-next-version-rcna598494" target="_blank" rel="noopener">Anthropic R&amp;D Automation Index: Claude Now Leads 26% of Internal Research and Engineering</a>
+          </div>
+        </div>
+        <p class="article-summary">Published September 17, Anthropic's index shows Claude handling 26% of the company's own AI R&amp;D tasks end-to-end as of August 2026 — up from under 1% in February — with approximately 30,000 concurrent agents operating under real-time pre-execution monitoring that blocks roughly 1 in 47,000 actions.</p>
+      </article>
+
+      <article class="article">
+        <div class="article-top">
+          <span class="source-tag">Anthropic / NBC News</span>
+          <div class="article-title">
+            <a href="https://techxplore.com/news/2026-09-anthropic-claude-version.html" target="_blank" rel="noopener">Anthropic: Claude Is Actively Contributing to Its Own Successor's Design</a>
+          </div>
+        </div>
+        <p class="article-summary">Anthropic confirmed on September 18 that the current Claude model is participating in the research and evaluation pipeline for the next-generation model — a methodological shift where the frontier model assists its own successor's development under human supervision.</p>
+      </article>
+
+      <article class="article">
+        <div class="article-top">
+          <span class="source-tag">Anthropic</span>
+          <div class="article-title">
+            <a href="https://blog.buildfastwithai.com/ai-news-today-september-18-2026" target="_blank" rel="noopener">Novo Nordisk Deploys Claude Across Drug Discovery and R&amp;D Workflows</a>
+          </div>
+        </div>
+        <p class="article-summary">Novo Nordisk announced integration of Anthropic's Claude models into core pharmaceutical R&amp;D pipelines, including early-stage drug discovery, marking a significant enterprise adoption of frontier AI within regulated life-sciences operations.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ══ Jobs ══════════════════════════════════════════════ -->
+  <section class="topic">
+    <div class="topic-header">
+      <h2 class="topic-name">Jobs</h2>
+      <span class="topic-count">3 items</span>
+    </div>
+    <div class="articles">
+
+      <article class="article">
+        <div class="article-top">
+          <span class="source-tag">freelancermap</span>
+          <div class="article-title">
+            <a href="https://www.freelancermap.com/projects/switzerland" target="_blank" rel="noopener">Senior Software Developer — Test Automation, Bern (Partial Remote)</a>
+          </div>
+        </div>
+        <p class="article-summary">Direct-client freelance project for a senior developer specialising in test automation infrastructure, Bern-based with partial remote arrangement; listed September 2026.</p>
+      </article>
+
+      <article class="article">
+        <div class="article-top">
+          <span class="source-tag">freelancermap</span>
+          <div class="article-title">
+            <a href="https://www.freelancermap.com/projects/switzerland" target="_blank" rel="noopener">Test Engineer — Banking CRM Transformation, Bern</a>
+          </div>
+        </div>
+        <p class="article-summary">Freelance test engineer role supporting a large banking CRM platform transformation programme in Bern; remote flexibility available; direct-client project listed September 2026.</p>
+      </article>
+
+      <article class="article">
+        <div class="article-top">
+          <span class="source-tag">swissdevjobs.ch</span>
+          <div class="article-title">
+            <a href="https://swissdevjobs.ch/" target="_blank" rel="noopener">Multiple Developer Roles Across Switzerland — JavaScript, Python, Cloud, Java</a>
+          </div>
+        </div>
+        <p class="article-summary">Active September 2026 listings include engineering positions in JavaScript, Python, Cloud/DevOps, and Java across Zürich, Geneva, Bern, Zug, and Lausanne, with remote and hybrid options available.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <span>Generated: Saturday 19 September 2026 · Europe/Zurich</span>
+    <span>Sources: NASA, ESA Webb, Quanta Magazine, Starlust, Reuters, NPR, Democracy Now, SailGP, Scuttlebutt, MIT Sloan, PsyPost, Anthropic, freelancermap, swissdevjobs.ch</span>
+  </footer>
+
+</div>
+</body>
+</html>
