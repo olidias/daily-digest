@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Digest — 20 September 2026</title>
+<style>
+  :root {
+    --bg:          #f2f1ed;
+    --surface:     #ffffff;
+    --border:      #dbd8d0;
+    --text:        #1c1b18;
+    --muted:       #6e6b61;
+    --accent:      #1e5c3e;
+    --accent-soft: #e8f2ec;
+    --amber:       #9a5200;
+    --amber-soft:  #fdf0e0;
+    --rule:        #ccc8be;
+    --tag-bg:      #f0eeea;
+    --tag-text:    #6e6b61;
+    --link:        #1e5c3e;
+    --link-hover:  #155030;
+    --archive-dt:  #9a5200;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg:          #181714;
+      --surface:     #211f1b;
+      --border:      #33302a;
+      --text:        #e8e6e0;
+      --muted:       #9a9590;
+      --accent:      #4aaa74;
+      --accent-soft: #142a1e;
+      --amber:       #d48040;
+      --amber-soft:  #2a1e0e;
+      --rule:        #3a3830;
+      --tag-bg:      #2a2924;
+      --tag-text:    #9a9590;
+      --link:        #4aaa74;
+      --link-hover:  #6dc090;
+      --archive-dt:  #d48040;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg:          #181714;
+    --surface:     #211f1b;
+    --border:      #33302a;
+    --text:        #e8e6e0;
+    --muted:       #9a9590;
+    --accent:      #4aaa74;
+    --accent-soft: #142a1e;
+    --amber:       #d48040;
+    --amber-soft:  #2a1e0e;
+    --rule:        #3a3830;
+    --tag-bg:      #2a2924;
+    --tag-text:    #9a9590;
+    --link:        #4aaa74;
+    --link-hover:  #6dc090;
+    --archive-dt:  #d48040;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "IBM Plex Sans", system-ui, sans-serif;
+    font-size: 15px;
+    line-height: 1.65;
+    padding-inline: 20px;
+    padding-block: 36px;
+  }
+  a { color: var(--link); text-decoration: none; }
+  a:hover { color: var(--link-hover); text-decoration: underline; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+  .wrapper { max-width: 700px; margin-inline: auto; }
+  .site-header {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-bottom: 28px;
+    border-bottom: 1.5px solid var(--rule);
+    margin-bottom: 40px;
+  }
+  .site-header h1 {
+    font-family: "IBM Plex Serif", Georgia, serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--text);
+  }
+  .site-header .meta {
+    font-size: 0.8125rem;
+    color: var(--muted);
+    font-family: "IBM Plex Mono", monospace;
+    letter-spacing: 0.01em;
+  }
+  .back-link {
+    font-size: 0.8125rem;
+    font-family: "IBM Plex Mono", monospace;
+    margin-bottom: 24px;
+    display: block;
+  }
+  .topic { margin-bottom: 44px; }
+  .topic-header {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  .topic-name {
+    font-family: "IBM Plex Serif", Georgia, serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--accent);
+    text-wrap: balance;
+  }
+  .topic-count {
+    font-size: 0.75rem;
+    color: var(--muted);
+    font-family: "IBM Plex Mono", monospace;
+  }
+  .articles { display: flex; flex-direction: column; }
+  .article {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .article:last-child { border-bottom: none; }
+  .article-top {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 5px;
+  }
+  .source-tag {
+    display: inline-block;
+    font-size: 0.6875rem;
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    background: var(--tag-bg);
+    color: var(--tag-text);
+    padding: 2px 7px;
+    border-radius: 3px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-top: 3px;
+  }
+  .article-title {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--text);
+    text-wrap: balance;
+  }
+  .article-title a { color: var(--text); }
+  .article-title a:hover { color: var(--link); text-decoration: underline; }
+  .article-summary {
+    font-size: 0.875rem;
+    color: var(--muted);
+    line-height: 1.6;
+    max-width: 62ch;
+  }
+  .site-footer {
+    margin-top: 48px;
+    padding-top: 20px;
+    border-top: 1px solid var(--rule);
+    font-size: 0.75rem;
+    color: var(--muted);
+    font-family: "IBM Plex Mono", monospace;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  @media (max-width: 480px) {
+    body { padding-inline: 16px; padding-block: 24px; }
+    .site-header h1 { font-size: 1.35rem; }
+    .topic-name { font-size: 1rem; }
+    .article-title { font-size: 0.9rem; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <a class="back-link" href="../index.html">&#8592; Back to latest digest</a>
+
+  <header class="site-header">
+    <div class="meta">Sunday · 20 September 2026 · Europe/Zurich</div>
+    <h1>Daily Digest — 20 September 2026</h1>
+  </header>
+
+  <!-- ══ Astronomy & Space ══════════════════════════════════ -->
+  <section class="topic">
+    <div class="topic-header">
+      <h2 class="topic-name">Astronomy &amp; Space</h2>
+      <span class="topic-count">3 items</span>
+    </div>
+    <div class="articles">
+
+      <article class="article">
+        <div class="article-top">
+          <span class="source-tag">NASA</span>
+          <div class="article-title">
+            <a href="https://www.nasa.gov/blogs/spacestation/" target="_blank" rel="noopener">Progress 96 Cargo Spacecraft Docks to International Space Station</a>
+          </div>
+        </div>
+        <p class="article-summary">Russia's Progress 96 resupply vehicle docked to the ISS Poisk module at 9:44 a.m. EDT on September 19, delivering fresh supplies to the Expedition 75 crew.</p>
+      </article>
+
+      <article class="article">
+        <div class="article-top">
+          <span class="source-tag">APOD</span>
+          <div class="article-title">
+            <a href="https://apod.nasa.gov/apod/ap260919.html" target="_blank" rel="noopener">APOD: A Zodiacal Night over Hanle Dark Sky Reserve</a>
+          </div>
+        </div>
+        <p class="article-summary">NASA's Astronomy Picture of the Day for September 19 features a sweeping zodiacal light panorama over India's high-altitude Hanle Dark Sky Reserve, with Jupiter and Mars visible within the interplanetary dust glow.</p>
+      </article>
+
+      <article class="article">
+        <div class="article-top">
+          <span class="source-tag">Sky &amp; Telescope</span>
+          <div class="article-title">
+            <a href="https://www.space.com/astronomy/exoplanets/scientists-find-youngest-exoplanet-on-record-a-newborn-named-elias" target="_blank" rel="noopener">Astronomers Confirm Elias 2-24 b as Youngest Known Exoplanet at Under One Million Years Old</a>
+          </div>
+        </div>
+        <p class="article-summary">Using Keck, ALMA, and the VLT, astronomers directly confirmed Elias 2-24 b — a Jupiter-size world still embedded in its protoplanetary disk 450 light-years away — as the youngest known exoplanet, challenging leading giant-planet formation models.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ══ World News ═════════════════════════════════════════ -->
+  <section class="topic">
+    <div class="topic-header">
+      <h2 class="topic-name">World News</h2>
+      <span class="topic-count">3 items</span>
+    </div>
+    <div class="articles">
+
+      <article class="article">
+        <div class="article-top">
+          <span class="source-tag">Reuters</span>
+          <div class="article-title">
+            <a href="https://www.cnn.com/2026/09/19/politics/frustration-houthis-saudi-arabia-iran" target="_blank" rel="noopener">Houthis Fire Ballistic Missile at Riyadh — First Strike on Saudi Capital Since Yemen Escalation</a>
+          </div>
+        </div>
+        <p class="article-summary">Saudi Arabia confirmed Houthi rebels launched a ballistic missile targeting Riyadh on September 19 — the first attack on the capital since fighting intensified in connection with the broader Iran conflict — with the coalition reporting the attempt was intercepted.</p>
+      </article>
+
+      <article class="article">
+        <div class="article-top">
+          <span class="source-tag">Reuters</span>
+          <div class="article-title">
+            <a href="https://notesfrompoland.com/2026/09/18/russia-planning-accidental-strikes-on-eastern-nato-states-warns-poland/" target="_blank" rel="noopener">Poland's Tusk Warns Russia Planning 'Accidental' Drone Strikes on NATO States to Test Article 5</a>
+          </div>
+        </div>
+        <p class="article-summary">Polish Prime Minister Donald Tusk warned on September 18 that Russian intelligence intends to stage drone and missile incursions into NATO territory and claim they are accidental, aiming to demonstrate that Article 5 collective defence exists only in theory.</p>
+      </article>
+
+      <article class="article">
+        <div class="article-top">
+          <span class="source-tag">Reuters</span>
+          <div class="article-title">
+            <a href="https://www.kyivpost.com/thread/84873" target="_blank" rel="noopener">Russia Votes in Parliamentary Elections as US Congress Tightens Sanctions on Moscow</a>
+          </div>
+        </div>
+        <p class="article-summary">Russians went to the polls on September 19 in parliamentary elections the ruling United Russia party is assured to dominate, while a sweeping bipartisan US sanctions bill targeting Russia's energy revenues and buyers such as China headed to President Trump.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ══ Rugby ══════════════════════════════════════════════ -->
+  <section class="topic">
+    <div class="topic-header">
+      <h2 class="topic-name">Rugby (High-Level)</h2>
+      <span class="topic-count">3 items</span>
+    </div>
+    <div class="articles">
+
+      <article class="article">
+        <div class="article-top">
+          <span class="source-tag">World Rugby</span>
+          <div class="article-title">
+            <a href="https://www.world.rugby/news/1046877/asahi-super-dry-pacific-nations-cup-2026-japan-claim-crown-after-edging-out-holders-fiji" target="_blank" rel="noopener">Japan Crowned Pacific Nations Cup 2026 Champions After Tight 20–15 Win over Fiji</a>
+          </div>
+        </div>
+        <p class="article-summary">Japan beat defending champions Fiji 20–15 in the Pacific Nations Cup final in Tokyo, with replacement Samisoni Tua scoring the decisive try in the 72nd minute to clinch their first title since 2019.</p>
+      </article>
+
+      <article class="article">
+        <div class="article-top">
+          <span class="source-tag">World Rugby</span>
+          <div class="article-title">
+            <a href="https://www.world.rugby/pacific-nations-cup/en/" target="_blank" rel="noopener">Canada Defeat USA 19–16 in Pacific Nations Cup Third-Place Play-off</a>
+          </div>
+        </div>
+        <p class="article-summary">Canada edged USA 19–16 in the Pacific Nations Cup third-place match, with Jesse Kilgour's maiden international try proving decisive for Stephen Meehan's side.</p>
+      </article>
+
+      <article class="article">
+        <div class="article-top">
+          <span class="source-tag">World Rugby</span>
+          <div class="article-title">
+            <a href="https://www.world.rugby/wxv/en" target="_blank" rel="noopener">WXV 2026 Round 2: Ireland vs USA Scheduled Today; Spain, Fiji, Netherlands Win in Challenger</a>
+          </div>
+        </div>
+        <p class="article-summary">Round 2 of the 2026 WXV Global Series continues the September window — Wales faced South Africa and Italy took on Japan on September 18–19, Ireland vs USA is scheduled for September 20 — while WXV Challenger Round 2 in Hong Kong saw Spain, Fiji, and the Netherlands win.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ══ Sailing ════════════════════════════════════════════ -->
+  <section class="topic">
+    <div class="topic-header">
+      <h2 class="topic-name">Sailing</h2>
+      <span class="topic-count">2 items</span>
+    </div>
+    <div class="articles">
+
+      <article class="article">
+        <div class="article-top">
+          <span class="source-tag">Yachting World / SailGP</span>
+          <div class="article-title">
+            <a href="https://sailgp.com/news/26/five-races-five-winners-swiss-light-up-shifty-opening-day-on-lake-geneva/" target="_blank" rel="noopener">Five Races, Five Winners as Swiss Team Take First Home SailGP Victory at Lake Geneva</a>
+          </div>
+        </div>
+        <p class="article-summary">Day 1 of the Rolex Switzerland Sail Grand Prix on Lake Geneva produced five different race winners in light, shifty conditions below 12 km/h at times, with the home Explora Journeys Swiss team celebrating their first-ever home SailGP victory in Race 2.</p>
+      </article>
+
+      <article class="article">
+        <div class="article-top">
+          <span class="source-tag">Sail-World</span>
+          <div class="article-title">
+            <a href="https://www.sail-world.com/news/299304/" target="_blank" rel="noopener">Melges 24 World Championship 2026 Opens in Harbor Springs, Michigan</a>
+          </div>
+        </div>
+        <p class="article-summary">The 2026 Melges 24 World Championship opened on September 19 at Little Traverse Yacht Club in Harbor Springs, Michigan, with competition running through September 26.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ══ Emotional Intelligence ═════════════════════════════ -->
+  <section class="topic">
+    <div class="topic-header">
+      <h2 class="topic-name">Emotional Intelligence</h2>
+      <span class="topic-count">1 item</span>
+    </div>
+    <div class="articles">
+
+      <article class="article">
+        <div class="article-top">
+          <span class="source-tag">APA Monitor</span>
+          <div class="article-title">
+            <a href="https://www.apa.org/monitor/2026/09/ai-brain-development-youth" target="_blank" rel="noopener">What AI Is Doing to Young Brains</a>
+          </div>
+        </div>
+        <p class="article-summary">Psychologists examine how widespread AI chatbot use among adolescents — now more than half of U.S. teens — may be reshaping cognitive and emotional development, with researchers raising concerns about dependent help-seeking behaviour and reduced tolerance for effortful thinking.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ══ AI Engineering ════════════════════════════════════ -->
+  <section class="topic">
+    <div class="topic-header">
+      <h2 class="topic-name">AI Engineering</h2>
+      <span class="topic-count">1 item</span>
+    </div>
+    <div class="articles">
+
+      <article class="article">
+        <div class="article-top">
+          <span class="source-tag">Simon Willison</span>
+          <div class="article-title">
+            <a href="https://simonwillison.net/2026/Sep/19/datasette-auth-github/" target="_blank" rel="noopener">datasette-auth-github 1.0 Released — Stable GitHub OAuth for Datasette</a>
+          </div>
+        </div>
+        <p class="article-summary">Simon Willison announces the stable 1.0 release of datasette-auth-github, a plugin enabling GitHub OAuth authentication and access-control for Datasette instances, with full configuration documentation and support for organisation and team-based permission rules.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ══ Jobs ══════════════════════════════════════════════ -->
+  <section class="topic">
+    <div class="topic-header">
+      <h2 class="topic-name">Jobs</h2>
+      <span class="topic-count">5 items</span>
+    </div>
+    <div class="articles">
+
+      <article class="article">
+        <div class="article-top">
+          <span class="source-tag">freelancermap</span>
+          <div class="article-title">
+            <a href="https://www.freelancermap.com/projects" target="_blank" rel="noopener">Senior .NET Developer — Italian Healthcare Client (Remote, 5+ months)</a>
+          </div>
+        </div>
+        <p class="article-summary">Senior .NET developer for an Italian healthcare client; fully remote, 5+ month engagement, ASAP start, no rate listed.</p>
+      </article>
+
+      <article class="article">
+        <div class="article-top">
+          <span class="source-tag">freelancermap</span>
+          <div class="article-title">
+            <a href="https://www.freelancermap.com/projects" target="_blank" rel="noopener">Senior .NET / Blazor WebAssembly Developer — Brussels (60% Remote, 14+ months)</a>
+          </div>
+        </div>
+        <p class="article-summary">Senior .NET/Blazor WebAssembly developer for a 14-month+ engagement in Brussels, 60% remote, starting October 2026, no rate listed.</p>
+      </article>
+
+      <article class="article">
+        <div class="article-top">
+          <span class="source-tag">freelancermap</span>
+          <div class="article-title">
+            <a href="https://www.freelancermap.com/projects" target="_blank" rel="noopener">Platform Developer — Luxembourg (100% Remote, ASAP)</a>
+          </div>
+        </div>
+        <p class="article-summary">Platform developer role based in Luxembourg; 100% remote, ASAP start, no rate listed.</p>
+      </article>
+
+      <article class="article">
+        <div class="article-top">
+          <span class="source-tag">swissdevjobs.ch</span>
+          <div class="article-title">
+            <a href="https://swissdevjobs.ch/" target="_blank" rel="noopener">Java Fullstack Software Developer — Unisys, Switzerland</a>
+          </div>
+        </div>
+        <p class="article-summary">Fullstack Java developer at Unisys in Switzerland; stack includes Java, Spring, TypeScript, and Angular. Salary not shown.</p>
+      </article>
+
+      <article class="article">
+        <div class="article-top">
+          <span class="source-tag">swissdevjobs.ch</span>
+          <div class="article-title">
+            <a href="https://swissdevjobs.ch/" target="_blank" rel="noopener">Senior Platform Engineer — ONZACK AG, Switzerland (CHF 115k–130k)</a>
+          </div>
+        </div>
+        <p class="article-summary">Senior Platform Engineer at ONZACK AG in Switzerland; CHF 115,000–130,000/year, posted September 2026.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <span>Generated: Sunday 20 September 2026 · Europe/Zurich</span>
+    <span>Sources: NASA, APOD, Sky &amp; Telescope / Space.com, Reuters, World Rugby, SailGP, Yachting World, Sail-World, APA Monitor, Simon Willison, freelancermap, swissdevjobs.ch</span>
+  </footer>
+
+</div>
+</body>
+</html>
