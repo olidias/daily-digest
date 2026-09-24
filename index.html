@@ -6,406 +6,246 @@
 <title>Daily Digest</title>
 <style>
   :root {
-    --bg: #ffffff;
-    --bg-section: #f8f9fa;
+    --bg: #f9f7f4;
+    --surface: #ffffff;
+    --border: #e0dbd3;
     --text: #1a1a1a;
-    --text-muted: #6b7280;
-    --accent: #1d4ed8;
-    --accent-hover: #1e40af;
-    --border: #e5e7eb;
-    --tag-bg: #eff6ff;
-    --tag-text: #1d4ed8;
-    --header-bg: #1a1a2e;
-    --header-text: #ffffff;
+    --muted: #666;
+    --accent: #2c5282;
+    --accent-hover: #1a365d;
+    --tag-bg: #ebf4ff;
+    --tag-text: #2c5282;
+    --section-head: #2d3748;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
       --bg: #0f1117;
-      --bg-section: #1a1d27;
-      --text: #e5e7eb;
-      --text-muted: #9ca3af;
-      --accent: #60a5fa;
-      --accent-hover: #93c5fd;
-      --border: #374151;
-      --tag-bg: #1e3a5f;
-      --tag-text: #93c5fd;
-      --header-bg: #0a0a1a;
-      --header-text: #f9fafb;
+      --surface: #1a1f2e;
+      --border: #2d3748;
+      --text: #e2e8f0;
+      --muted: #a0aec0;
+      --accent: #90cdf4;
+      --accent-hover: #bee3f8;
+      --tag-bg: #1a2744;
+      --tag-text: #90cdf4;
+      --section-head: #e2e8f0;
     }
   }
   :root[data-theme="dark"] {
     --bg: #0f1117;
-    --bg-section: #1a1d27;
-    --text: #e5e7eb;
-    --text-muted: #9ca3af;
-    --accent: #60a5fa;
-    --accent-hover: #93c5fd;
-    --border: #374151;
-    --tag-bg: #1e3a5f;
-    --tag-text: #93c5fd;
-    --header-bg: #0a0a1a;
-    --header-text: #f9fafb;
+    --surface: #1a1f2e;
+    --border: #2d3748;
+    --text: #e2e8f0;
+    --muted: #a0aec0;
+    --accent: #90cdf4;
+    --accent-hover: #bee3f8;
+    --tag-bg: #1a2744;
+    --tag-text: #90cdf4;
+    --section-head: #e2e8f0;
   }
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     background: var(--bg);
     color: var(--text);
     line-height: 1.6;
-    font-size: 16px;
+    padding: 0 16px;
   }
-  header {
-    background: var(--header-bg);
-    color: var(--header-text);
-    padding: 2rem 1rem;
-    text-align: center;
+  .wrapper { max-width: 740px; margin: 0 auto; padding: 32px 0 64px; }
+  header { margin-bottom: 40px; border-bottom: 2px solid var(--border); padding-bottom: 20px; }
+  header h1 { font-size: 1.7rem; font-weight: 700; color: var(--section-head); }
+  header p { color: var(--muted); font-size: 0.9rem; margin-top: 4px; }
+  section { margin-bottom: 36px; }
+  section h2 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--section-head);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 14px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border);
   }
-  header h1 { font-size: 1.75rem; font-weight: 700; letter-spacing: -0.02em; }
-  header p { margin-top: 0.4rem; font-size: 0.9rem; opacity: 0.7; }
-  main {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 1.5rem 1rem 3rem;
-  }
-  section {
-    margin-bottom: 2rem;
-    background: var(--bg-section);
+  .items { display: flex; flex-direction: column; gap: 14px; }
+  .item {
+    background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 8px;
-    overflow: hidden;
+    padding: 14px 16px;
   }
-  section h2 {
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--tag-text);
-    background: var(--tag-bg);
-    padding: 0.5rem 1rem;
-    border-bottom: 1px solid var(--border);
-  }
-  ul { list-style: none; }
-  li {
-    padding: 0.85rem 1rem;
-    border-bottom: 1px solid var(--border);
-  }
-  li:last-child { border-bottom: none; }
-  .item-title {
-    font-size: 0.95rem;
-    font-weight: 600;
-    display: block;
-    margin-bottom: 0.2rem;
-  }
-  .item-title a {
-    color: var(--accent);
-    text-decoration: none;
-  }
+  .item-title { font-size: 0.95rem; font-weight: 600; margin-bottom: 4px; }
+  .item-title a { color: var(--accent); text-decoration: none; }
   .item-title a:hover { color: var(--accent-hover); text-decoration: underline; }
-  .item-meta {
-    font-size: 0.8rem;
-    color: var(--text-muted);
-    margin-bottom: 0.25rem;
+  .item-meta { font-size: 0.78rem; color: var(--muted); margin-bottom: 6px; }
+  .item-summary { font-size: 0.88rem; color: var(--text); }
+  .source-tag {
+    display: inline-block;
+    background: var(--tag-bg);
+    color: var(--tag-text);
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 2px 7px;
+    border-radius: 4px;
+    margin-right: 6px;
   }
-  .item-summary {
-    font-size: 0.875rem;
-    color: var(--text);
-  }
-  .archive-list {
-    columns: 2;
-    column-gap: 1rem;
-  }
+  .archive-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
   .archive-list li {
-    padding: 0.4rem 1rem;
-    break-inside: avoid;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 10px 14px;
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
   }
-  .archive-list a {
-    color: var(--accent);
-    text-decoration: none;
-    font-size: 0.875rem;
-  }
-  .archive-list a:hover { text-decoration: underline; }
-  @media (max-width: 480px) {
-    .archive-list { columns: 1; }
-  }
+  .archive-list li a { color: var(--accent); font-weight: 600; text-decoration: none; font-size: 0.9rem; }
+  .archive-list li a:hover { color: var(--accent-hover); text-decoration: underline; }
+  .archive-hint { font-size: 0.8rem; color: var(--muted); }
   footer {
-    text-align: center;
-    padding: 1.5rem 1rem;
-    font-size: 0.8rem;
-    color: var(--text-muted);
+    margin-top: 48px;
+    padding-top: 16px;
     border-top: 1px solid var(--border);
+    font-size: 0.78rem;
+    color: var(--muted);
   }
 </style>
 </head>
 <body>
+<div class="wrapper">
+
 <header>
   <h1>Daily Digest</h1>
-  <p>Wednesday, 23 September 2026</p>
+  <p>Astronomy · World News · Rugby · Sailing · Fitness Science · Leadership · Psychology · AI Engineering · Jobs</p>
 </header>
-<main>
 
-  <section>
-    <h2>Astronomy &amp; Space</h2>
-    <ul>
-      <li>
-        <span class="item-title"><a href="https://science.nasa.gov/image-article/apod-2026-september-22-chance-triple-alignment-plane-space-station-sun/" target="_blank" rel="noopener">APOD: Chance Triple Alignment — Aircraft, ISS, and Sun in a Single Frame</a></span>
-        <div class="item-meta">NASA Astronomy Picture of the Day · 22 Sep 2026</div>
-        <div class="item-summary">A photographer captured a remarkable simultaneous transit in which a commercial aircraft and the International Space Station crossed the face of the Sun within seconds of each other, an alignment with odds estimated at roughly one in tens of millions for any given ground position.</div>
-      </li>
-      <li>
-        <span class="item-title"><a href="https://www.nasa.gov/news/recently-published/" target="_blank" rel="noopener">NASA's Roman Space Telescope 300-Megapixel Infrared Camera Activated On-Orbit</a></span>
-        <div class="item-meta">NASA Breaking News · Sep 2026</div>
-        <div class="item-summary">NASA has confirmed successful power-on and initial calibration of Roman's Wide Field Instrument — a 300-megapixel focal-plane array that will image sky areas 100 times the area of a single Hubble pointing at comparable resolution, enabling survey science at unprecedented scale.</div>
-      </li>
-      <li>
-        <span class="item-title"><a href="https://skyandtelescope.org/astronomy-news/" target="_blank" rel="noopener">3I/ATLAS Isotopic Anomaly Traced to Low-Metallicity Stellar Nursery — New ApJ Letters Paper</a></span>
-        <div class="item-meta">Sky &amp; Telescope · 22 Sep 2026</div>
-        <div class="item-summary">A preprint submitted to The Astrophysical Journal Letters shows that the unusual isotopic ratios detected in the third known interstellar visitor, 3I/ATLAS, are consistent with origin in a low-metallicity stellar nursery rather than a chemical processing anomaly, providing the first astrophysical constraint on its birth environment.</div>
-      </li>
-      <li>
-        <span class="item-title"><a href="https://www.sciencedaily.com/news/space_time/astronomy/" target="_blank" rel="noopener">Tens of Thousands of Novel Organic Compounds Identified in Two Celebrated Meteorites</a></span>
-        <div class="item-meta">ScienceDaily / Astronomy · 22 Sep 2026</div>
-        <div class="item-summary">A high-resolution mass spectrometry survey of the Murchison and Allende meteorites has catalogued tens of thousands of previously uncharacterised organic molecules, dramatically extending the known inventory of abiotic chemistry delivered to early Earth and other planetary bodies by carbonaceous chondrites.</div>
-      </li>
-      <li>
-        <span class="item-title"><a href="https://www.space.com/news" target="_blank" rel="noopener">Amateur Astronomer Serendipitously Identifies Massive Ancient Impact Crater in Quebec</a></span>
-        <div class="item-meta">Space.com · 22 Sep 2026</div>
-        <div class="item-summary">While browsing satellite imagery for a camping location in rural Quebec, an amateur astronomer noticed a circular topographic anomaly that geologists subsequently confirmed as a previously unmapped impact structure, adding a significant entry to the Earth Impact Database.</div>
-      </li>
-      <li>
-        <span class="item-title"><a href="https://www.esa.int/Newsroom/Press_Releases" target="_blank" rel="noopener">ESA Awards EOGS Architecture Studies to ICEYE Global and LDO Space</a></span>
-        <div class="item-meta">ESA News · Sep 2026</div>
-        <div class="item-summary">ESA contracted ICEYE Global and LDO Space to conduct parallel phase-A studies for the Earth Observation Governmental Service (EOGS), a proposed constellation intended to provide assured, sovereign European access to SAR and optical Earth observation data for governmental and defence users.</div>
-      </li>
-    </ul>
-  </section>
+<!-- TODAY'S DIGEST -->
+<section>
+  <h2>Today — 24 September 2026</h2>
+  <div class="items">
 
-  <section>
-    <h2>World News</h2>
-    <ul>
-      <li>
-        <span class="item-title"><a href="https://www.reuters.com/world/" target="_blank" rel="noopener">UN General Assembly High-Level Week Opens in New York — Guterres's Final Session as Secretary-General</a></span>
-        <div class="item-meta">Reuters · 23 Sep 2026</div>
-        <div class="item-summary">World leaders gathered in New York for the annual UN General Assembly high-level debate, which marks the final such session presided over by Secretary-General António Guterres before his term ends; the agenda is dominated by the Russia-Ukraine war, Middle East tensions, and climate finance commitments.</div>
-      </li>
-      <li>
-        <span class="item-title"><a href="https://sundayguardianlive.com/world/us-israel-iran-war-latest-live-news-iranian-flights-to-baghdad-suspended-from-wednesday-as-iraq-faces-pressure-from-us-threat-over-secondary-sanctions-on-airlines-and-airports-290719/" target="_blank" rel="noopener">Iran Suspends Baghdad Flights as Iraq Faces U.S. Secondary-Sanctions Ultimatum</a></span>
-        <div class="item-meta">Sunday Guardian Live · 23 Sep 2026</div>
-        <div class="item-summary">Iranian airlines suspended all flights to Baghdad from Wednesday after Iraq came under intense American pressure threatening secondary sanctions on Iraqi carriers and airports that facilitate Iranian air traffic, a move that further tightens the economic squeeze on Tehran.</div>
-      </li>
-      <li>
-        <span class="item-title"><a href="https://www.reuters.com/world/" target="_blank" rel="noopener">Moscow Mayor Describes Overnight Drone Wave as "Largest Ever" Attack on Russian Capital</a></span>
-        <div class="item-meta">Reuters · 22 Sep 2026</div>
-        <div class="item-summary">Moscow's mayor reported that an overnight Ukrainian drone barrage — described by city officials as the largest single attack on the capital since the war began — struck an oil refinery and a residential block, with Russian air-defence systems claiming to intercept the majority of the incoming drones.</div>
-      </li>
-      <li>
-        <span class="item-title"><a href="https://www.reuters.com/world/" target="_blank" rel="noopener">Saudi Arabia Reports First Houthi Ballistic Missile Targeting Riyadh in Current Escalation</a></span>
-        <div class="item-meta">Reuters · 22 Sep 2026</div>
-        <div class="item-summary">Saudi authorities announced that Yemen's Houthi rebels fired a ballistic missile toward Riyadh — the first attempt to reach the Saudi capital in the current round of conflict — which was intercepted before impact; the attack signals a significant escalation in the range and ambition of Houthi strikes.</div>
-      </li>
-      <li>
-        <span class="item-title"><a href="https://www.reuters.com/world/" target="_blank" rel="noopener">Charles Spencer Book Surfaces Serious Allegations Against King Charles III</a></span>
-        <div class="item-meta">Reuters · 22 Sep 2026</div>
-        <div class="item-summary">A new memoir by Earl Spencer — Princess Diana's brother — contains allegations about King Charles III's conduct during the 1990s that have prompted a formal response from Buckingham Palace and renewed public debate about the monarchy's handling of its most turbulent decade.</div>
-      </li>
-    </ul>
-  </section>
+    <div class="item">
+      <div class="item-title"><a href="archive/2026-09-24.html#astronomy">Astronomy &amp; Space</a></div>
+      <div class="item-summary">JWST detects water near Sagittarius A*; Roman Telescope powers up 300-MP camera post-launch; LISA funded at $80.5M.</div>
+    </div>
 
-  <section>
-    <h2>Rugby</h2>
-    <ul>
-      <li>
-        <span class="item-title"><a href="https://sports.yahoo.com/articles/week-florugby-sep-21-sep-021915754.html" target="_blank" rel="noopener">URC and Premiership Launch 2026-27 Seasons — Opening Round Results</a></span>
-        <div class="item-meta">FloRugby / World Rugby · 22 Sep 2026</div>
-        <div class="item-summary">The United Rugby Championship and Gallagher Premiership kicked off their 2026-27 campaigns this past weekend alongside the Top 14, with early standouts including Munster's home defeat of Glasgow Warriors and Saracens edging Leicester Tigers at Welford Road in a tightly contested opener.</div>
-      </li>
-      <li>
-        <span class="item-title"><a href="https://www.world.rugby/news" target="_blank" rel="noopener">Japan Wins Pacific Nations Cup 2026, Edging Defending Champions Fiji in Classic Final</a></span>
-        <div class="item-meta">World Rugby · 21 Sep 2026</div>
-        <div class="item-summary">Japan defeated Fiji in a tightly contested Pacific Nations Cup final to claim the 2026 title and deny Fiji back-to-back championships; Canada secured third place by beating the USA in the bronze final, completing a competitive tournament that strengthens the Pacific rugby pathway ahead of the 2027 Rugby World Cup.</div>
-      </li>
-      <li>
-        <span class="item-title"><a href="https://www.rugbyworldcup.com/2027/en" target="_blank" rel="noopener">Visa Named Official Payment Technology Partner for Rugby World Cup 2027; Priority Ticket Window Opens 28 September</a></span>
-        <div class="item-meta">World Rugby · 22 Sep 2026</div>
-        <div class="item-summary">World Rugby announced Visa as Official Payment Technology Partner for Men's Rugby World Cup 2027, with eligible Visa cardholders in participating markets gaining a three-day priority purchase window for RWC 2027 tickets beginning 28 September 2026 ahead of the general public sale.</div>
-      </li>
-    </ul>
-  </section>
+    <div class="item">
+      <div class="item-title"><a href="archive/2026-09-24.html#world">World News</a></div>
+      <div class="item-summary">Trump holds 3-hour talks with Iran's FM at UNGA over Strait of Hormuz; US-Denmark reach Greenland security deal; China fixed-asset investment down 7.2%.</div>
+    </div>
 
-  <section>
-    <h2>Sailing</h2>
-    <ul>
-      <li>
-        <span class="item-title"><a href="https://www.sailing.org/2026/04/30/notice-of-race-published-for-the-2026-offshore-double-handed-world-championship/" target="_blank" rel="noopener">Offshore Double-Handed World Championship Opens Today in Marseille</a></span>
-        <div class="item-meta">World Sailing · 23 Sep 2026</div>
-        <div class="item-summary">The 2026 Offshore Double-Handed World Championship gets underway today at Marseille with up to 22 international teams racing in mixed two-person crews — the discipline's premier global event, running through 2 October — as the offshore double-handed format continues its push toward Olympic recognition.</div>
-      </li>
-      <li>
-        <span class="item-title"><a href="https://www.yachtingmonthly.com/boat-events/golden-globe-race" target="_blank" rel="noopener">Golden Globe Race 2026: 16 Skippers Now 17 Days Into Non-Stop Solo Circumnavigation</a></span>
-        <div class="item-meta">Yachting Monthly / GGR · 23 Sep 2026</div>
-        <div class="item-summary">Seventeen days after departing Les Sables-d'Olonne on 6 September, the 16 Golden Globe Race entrants are navigating without GPS using only paper charts, sextants, and classic instruments in a solo non-stop circumnavigation; early fleet positions show the leaders approaching the southwest African coast.</div>
-      </li>
-      <li>
-        <span class="item-title"><a href="https://en.wikipedia.org/wiki/2026_SailGP_championship" target="_blank" rel="noopener">SailGP: USA Tops Points Standings After Switzerland Grand Prix, Eyes Season 4 Dominance</a></span>
-        <div class="item-meta">SailGP · 21 Sep 2026</div>
-        <div class="item-summary">The United States SailGP Team extended its lead in the Season 4 standings following a strong result at the Rolex Switzerland Sail Grand Prix on Lake Geneva (19-20 September), putting the defending champions in an early commanding position ahead of the remaining eleven events in the global circuit.</div>
-      </li>
-    </ul>
-  </section>
+    <div class="item">
+      <div class="item-title"><a href="archive/2026-09-24.html#rugby">Rugby</a></div>
+      <div class="item-summary">2026–27 URC and Premiership seasons open Friday 25 September; Munster vs Glasgow Warriors the headline Round 1 clash.</div>
+    </div>
 
-  <section>
-    <h2>People Leadership</h2>
-    <ul>
-      <li>
-        <span class="item-title"><a href="https://sloanreview.mit.edu/issue/2026-fall/" target="_blank" rel="noopener">MIT Sloan Management Review Fall 2026 Final Print Issue: Leaders Who Embed Purpose Into Performance Reviews</a></span>
-        <div class="item-meta">MIT Sloan Management Review · 23 Sep 2026</div>
-        <div class="item-summary">The final print edition of MIT SMR features a case study of DHL Express's approach to embedding organisational purpose directly into formal leadership reviews and performance metrics, with the CEO arguing that purpose becomes operational only when it is evaluated with the same rigour as financial KPIs.</div>
-      </li>
-      <li>
-        <span class="item-title"><a href="https://sloanreview.mit.edu/issue/2026-fall/" target="_blank" rel="noopener">Psychotherapeutic Model Helps Executives Resolve Leadership-Blocking Internal Conflicts</a></span>
-        <div class="item-meta">MIT Sloan Management Review · 23 Sep 2026</div>
-        <div class="item-summary">Researchers adapting internal family systems and parts-based therapeutic frameworks to executive development found that helping leaders identify and reconcile competing internal motivations — rather than suppressing them — produced durable behavioural change that standard coaching interventions had failed to achieve.</div>
-      </li>
-      <li>
-        <span class="item-title"><a href="https://sloanreview.mit.edu/issue/2026-fall/" target="_blank" rel="noopener">DBS Bank Ties Innovation Explicitly to 20% of Every Employee Performance Review</a></span>
-        <div class="item-meta">MIT Sloan Management Review · 23 Sep 2026</div>
-        <div class="item-summary">MIT SMR documents how DBS Bank operationalised a culture of innovation by formally weighting it at 20% in all performance assessments across the organisation — a structural intervention that increased the volume of implemented employee innovations fourfold over five years according to internal tracking data.</div>
-      </li>
-    </ul>
-  </section>
+    <div class="item">
+      <div class="item-title"><a href="archive/2026-09-24.html#sailing">Sailing</a></div>
+      <div class="item-summary">Golden Globe Race: 16 solo sailors 3 weeks out; SailGP Geneva wraps; Asian Games sailing starts Sept 26 in Aichi.</div>
+    </div>
 
-  <section>
-    <h2>Emotional Intelligence</h2>
-    <ul>
-      <li>
-        <span class="item-title"><a href="https://www.psypost.org/massive-review-confirms-the-connection-between-emotional-intelligence-and-human/" target="_blank" rel="noopener">Meta-Analysis of 3,000 Studies (1 Million Participants) Confirms EI Predicts Flourishing Across Life Domains</a></span>
-        <div class="item-meta">PsyPost / PNAS · Sep 2026</div>
-        <div class="item-summary">A comprehensive meta-analysis pooling data from over one million participants across 3,000 independent studies found that emotional intelligence reliably predicts well-being and performance at work, in academic settings, and in personal health — with the effect robust across measurement approaches, though strongest for ability-based EI measures over self-report.</div>
-      </li>
-      <li>
-        <span class="item-title"><a href="https://journals.sagepub.com/doi/10.1177/15344843251342689" target="_blank" rel="noopener">High-EI Individuals Experience More Benign Envy, Not Less Envy — Study of 442 Adults</a></span>
-        <div class="item-meta">Psychology Research / Scott Barry Kaufman Newsletter · Sep 2026</div>
-        <div class="item-summary">A study of 442 French-speaking adults found that better emotion-regulation skills did not reduce the frequency of envious feelings but did shift their quality: high-EI participants showed elevated benign envy (motivational) while malicious envy (resentful) remained unchanged, suggesting emotional intelligence steers uncomfortable emotions toward constructive ends rather than eliminating them.</div>
-      </li>
-    </ul>
-  </section>
+    <div class="item">
+      <div class="item-title"><a href="archive/2026-09-24.html#lifting">Science-Based Lifting</a></div>
+      <div class="item-summary">New analysis shows hypertrophy–strength correlation stronger than previously measured; myo-reps deliver same gains in 62% less time.</div>
+    </div>
 
-  <section>
-    <h2>AI Engineering</h2>
-    <ul>
-      <li>
-        <span class="item-title"><a href="https://simonwillison.net/2026/Sep/22/opus-and-sol-and-luna/" target="_blank" rel="noopener">Claude Opus 5.5, GPT-6 Sol, and GPT-6 Luna Released Within an Hour of Each Other — Price War Erupts</a></span>
-        <div class="item-meta">Simon Willison · 22 Sep 2026</div>
-        <div class="item-summary">Anthropic released Claude Opus 5.5 and, approximately one hour later, OpenAI countered with GPT-6 Sol and GPT-6 Luna, triggering an immediate pricing response from both companies; Willison's analysis covers the benchmark positioning, pricing changes, and what the near-simultaneous launch signals about competitive dynamics in frontier AI.</div>
-      </li>
-      <li>
-        <span class="item-title"><a href="https://simonwillison.net/2026/Sep/22/llm/" target="_blank" rel="noopener">llm 0.36 Released: New Plugin Architecture and Expanded Model Support</a></span>
-        <div class="item-meta">Simon Willison · 22 Sep 2026</div>
-        <div class="item-summary">Simon Willison released llm 0.36, a command-line tool for accessing large language models, featuring a revised plugin architecture and out-of-the-box support for the newly-released Claude Opus 5.5, GPT-6 Sol, GPT-6 Luna, and Jev Decision Models via the new llm-typesafe plugin.</div>
-      </li>
-      <li>
-        <span class="item-title"><a href="https://simonwillison.net/2026/Sep/21/jev/" target="_blank" rel="noopener">Jev Introduces "System One" Decision Models — A New LLM Architecture for Structured Reasoning</a></span>
-        <div class="item-meta">Simon Willison · 21 Sep 2026</div>
-        <div class="item-summary">TypeSafe AI's Jev introduces a new model class it calls System One (aka Decision Models), which generate machine-verifiable decision trees rather than free-text completions — Willison's write-up covers the architecture, its type-safe output guarantees, and why this constitutes a genuinely different LLM shape rather than incremental fine-tuning.</div>
-      </li>
-      <li>
-        <span class="item-title"><a href="https://llm-stats.com/ai-news" target="_blank" rel="noopener">xAI Releases Grok 4.7 — Latest Incremental Update to the Grok Model Series</a></span>
-        <div class="item-meta">LLM Stats · 21 Sep 2026</div>
-        <div class="item-summary">xAI released Grok 4.7 on 21 September, the most recent model update from Elon Musk's AI company, arriving into a crowded release window alongside Anthropic and OpenAI model drops and continuing the rapid cadence of incremental capability updates across frontier AI providers.</div>
-      </li>
-    </ul>
-  </section>
+    <div class="item">
+      <div class="item-title"><a href="archive/2026-09-24.html#leadership">People Leadership</a></div>
+      <div class="item-summary">HBR: AI automation creates hidden oversight labor; dominating conversations derails leaders as team players.</div>
+    </div>
 
-  <section>
-    <h2>Jobs</h2>
-    <ul>
-      <li>
-        <span class="item-title"><a href="https://www.freelancermap.com/projects/switzerland" target="_blank" rel="noopener">SAP ABAP Developer — Zürich (90% Remote)</a></span>
-        <div class="item-meta">freelancermap · 23 Sep 2026</div>
-        <div class="item-summary">Freelance SAP ABAP development contract in Zürich, 90% remote; responsibilities centre on custom development and enhancements within an S/4HANA environment.</div>
-      </li>
-      <li>
-        <span class="item-title"><a href="https://www.freelancermap.com/projects/switzerland" target="_blank" rel="noopener">Senior Delivery Lead — Zurich (40% Remote)</a></span>
-        <div class="item-meta">freelancermap · 23 Sep 2026</div>
-        <div class="item-summary">Freelance senior delivery lead role in Zurich at 40% remote, requiring experience managing cross-functional technology delivery in a large financial services or consulting environment.</div>
-      </li>
-      <li>
-        <span class="item-title"><a href="https://www.freelancermap.com/projects/switzerland" target="_blank" rel="noopener">Senior Database DevOps Engineer — Bern (60% Remote)</a></span>
-        <div class="item-meta">freelancermap · 23 Sep 2026</div>
-        <div class="item-summary">Freelance database DevOps engineering contract based in Bern at 60% remote, focused on CI/CD pipeline management and automation for large-scale relational and cloud-native database environments.</div>
-      </li>
-    </ul>
-  </section>
+    <div class="item">
+      <div class="item-title"><a href="archive/2026-09-24.html#ei">Emotional Intelligence</a></div>
+      <div class="item-summary">APA warns AI misuse may disrupt youth emotional development; peer-reviewed study separates EI from broader socioemotional attributes.</div>
+    </div>
 
-  <section>
-    <h2>Archive</h2>
-    <ul class="archive-list">
-      <li><a href="archive/2026-09-23.html">23 Sep 2026 — Space, World, Rugby, Sailing, AI</a></li>
-      <li><a href="archive/2026-09-22.html">22 Sep 2026</a></li>
-      <li><a href="archive/2026-09-21.html">21 Sep 2026</a></li>
-      <li><a href="archive/2026-09-20.html">20 Sep 2026</a></li>
-      <li><a href="archive/2026-09-19.html">19 Sep 2026</a></li>
-      <li><a href="archive/2026-09-18.html">18 Sep 2026</a></li>
-      <li><a href="archive/2026-09-17.html">17 Sep 2026</a></li>
-      <li><a href="archive/2026-09-16.html">16 Sep 2026</a></li>
-      <li><a href="archive/2026-09-15.html">15 Sep 2026</a></li>
-      <li><a href="archive/2026-09-14.html">14 Sep 2026</a></li>
-      <li><a href="archive/2026-09-13.html">13 Sep 2026</a></li>
-      <li><a href="archive/2026-09-12.html">12 Sep 2026</a></li>
-      <li><a href="archive/2026-09-11.html">11 Sep 2026</a></li>
-      <li><a href="archive/2026-09-10.html">10 Sep 2026</a></li>
-      <li><a href="archive/2026-09-09.html">09 Sep 2026</a></li>
-      <li><a href="archive/2026-09-08.html">08 Sep 2026</a></li>
-      <li><a href="archive/2026-09-07.html">07 Sep 2026</a></li>
-      <li><a href="archive/2026-09-06.html">06 Sep 2026</a></li>
-      <li><a href="archive/2026-09-05.html">05 Sep 2026</a></li>
-      <li><a href="archive/2026-09-04.html">04 Sep 2026</a></li>
-      <li><a href="archive/2026-09-03.html">03 Sep 2026</a></li>
-      <li><a href="archive/2026-09-02.html">02 Sep 2026</a></li>
-      <li><a href="archive/2026-09-01.html">01 Sep 2026</a></li>
-      <li><a href="archive/2026-08-31.html">31 Aug 2026</a></li>
-      <li><a href="archive/2026-08-30.html">30 Aug 2026</a></li>
-      <li><a href="archive/2026-08-29.html">29 Aug 2026</a></li>
-      <li><a href="archive/2026-08-28.html">28 Aug 2026</a></li>
-      <li><a href="archive/2026-08-27.html">27 Aug 2026</a></li>
-      <li><a href="archive/2026-08-26.html">26 Aug 2026</a></li>
-      <li><a href="archive/2026-08-25.html">25 Aug 2026</a></li>
-      <li><a href="archive/2026-08-24.html">24 Aug 2026</a></li>
-      <li><a href="archive/2026-08-22.html">22 Aug 2026</a></li>
-      <li><a href="archive/2026-08-21.html">21 Aug 2026</a></li>
-      <li><a href="archive/2026-08-20.html">20 Aug 2026</a></li>
-      <li><a href="archive/2026-08-19.html">19 Aug 2026</a></li>
-      <li><a href="archive/2026-08-18.html">18 Aug 2026</a></li>
-      <li><a href="archive/2026-08-17.html">17 Aug 2026</a></li>
-      <li><a href="archive/2026-08-16.html">16 Aug 2026</a></li>
-      <li><a href="archive/2026-08-15.html">15 Aug 2026</a></li>
-      <li><a href="archive/2026-08-14.html">14 Aug 2026</a></li>
-      <li><a href="archive/2026-08-13.html">13 Aug 2026</a></li>
-      <li><a href="archive/2026-08-12.html">12 Aug 2026</a></li>
-      <li><a href="archive/2026-08-11.html">11 Aug 2026</a></li>
-      <li><a href="archive/2026-08-10.html">10 Aug 2026</a></li>
-      <li><a href="archive/2026-08-09.html">09 Aug 2026</a></li>
-      <li><a href="archive/2026-08-08.html">08 Aug 2026</a></li>
-      <li><a href="archive/2026-08-07.html">07 Aug 2026</a></li>
-      <li><a href="archive/2026-08-06.html">06 Aug 2026</a></li>
-      <li><a href="archive/2026-08-05.html">05 Aug 2026</a></li>
-      <li><a href="archive/2026-08-04.html">04 Aug 2026</a></li>
-      <li><a href="archive/2026-08-03.html">03 Aug 2026</a></li>
-      <li><a href="archive/2026-08-02.html">02 Aug 2026</a></li>
-      <li><a href="archive/2026-08-01.html">01 Aug 2026</a></li>
-      <li><a href="archive/2026-07-31.html">31 Jul 2026</a></li>
-      <li><a href="archive/2026-07-30.html">30 Jul 2026</a></li>
-      <li><a href="archive/2026-07-29.html">29 Jul 2026</a></li>
-      <li><a href="archive/2026-07-28.html">28 Jul 2026</a></li>
-      <li><a href="archive/2026-07-27.html">27 Jul 2026</a></li>
-      <li><a href="archive/2026-07-26.html">26 Jul 2026</a></li>
-      <li><a href="archive/2026-07-25.html">25 Jul 2026</a></li>
-      <li><a href="archive/2026-07-24.html">24 Jul 2026</a></li>
-    </ul>
-  </section>
+    <div class="item">
+      <div class="item-title"><a href="archive/2026-09-24.html#ai">AI Engineering</a></div>
+      <div class="item-summary">LLM CLI v0.36 ships; Claude Opus 5.5, GPT-6 Sol &amp; Luna released triggering price war; Jev debuts "decision model" category.</div>
+    </div>
 
-</main>
+    <div class="item">
+      <div class="item-title"><a href="archive/2026-09-24.html#jobs">Jobs</a></div>
+      <div class="item-summary">577 freelance IT projects on Freelancermap Switzerland; SwissDevJobs lists 177 roles with salaries up to 165K CHF.</div>
+    </div>
+
+    <div style="margin-top:6px;">
+      <a href="archive/2026-09-24.html" style="color:var(--accent);font-weight:600;font-size:0.9rem;">→ Read full digest</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ARCHIVE -->
+<section>
+  <h2>Archive</h2>
+  <ul class="archive-list">
+    <li><a href="archive/2026-09-24.html">24 September 2026</a><span class="archive-hint">JWST water near black hole · Roman Telescope live · URC season opens · LLM price war</span></li>
+    <li><a href="archive/2026-09-23.html">23 September 2026</a><span class="archive-hint">Previous digest</span></li>
+    <li><a href="archive/2026-09-22.html">22 September 2026</a><span class="archive-hint">Previous digest</span></li>
+    <li><a href="archive/2026-09-21.html">21 September 2026</a><span class="archive-hint">Previous digest</span></li>
+    <li><a href="archive/2026-09-20.html">20 September 2026</a><span class="archive-hint">Previous digest</span></li>
+    <li><a href="archive/2026-09-19.html">19 September 2026</a><span class="archive-hint">Previous digest</span></li>
+    <li><a href="archive/2026-09-18.html">18 September 2026</a><span class="archive-hint">Previous digest</span></li>
+    <li><a href="archive/2026-09-17.html">17 September 2026</a><span class="archive-hint">Previous digest</span></li>
+    <li><a href="archive/2026-09-16.html">16 September 2026</a><span class="archive-hint">Previous digest</span></li>
+    <li><a href="archive/2026-09-15.html">15 September 2026</a><span class="archive-hint">Previous digest</span></li>
+    <li><a href="archive/2026-09-14.html">14 September 2026</a><span class="archive-hint">Previous digest</span></li>
+    <li><a href="archive/2026-09-13.html">13 September 2026</a><span class="archive-hint">Previous digest</span></li>
+    <li><a href="archive/2026-09-12.html">12 September 2026</a><span class="archive-hint">Previous digest</span></li>
+    <li><a href="archive/2026-09-11.html">11 September 2026</a><span class="archive-hint">Previous digest</span></li>
+    <li><a href="archive/2026-09-10.html">10 September 2026</a><span class="archive-hint">Previous digest</span></li>
+    <li><a href="archive/2026-09-09.html">9 September 2026</a><span class="archive-hint">Previous digest</span></li>
+    <li><a href="archive/2026-09-08.html">8 September 2026</a><span class="archive-hint">Previous digest</span></li>
+    <li><a href="archive/2026-09-07.html">7 September 2026</a><span class="archive-hint">Previous digest</span></li>
+    <li><a href="archive/2026-09-06.html">6 September 2026</a><span class="archive-hint">Previous digest</span></li>
+    <li><a href="archive/2026-09-05.html">5 September 2026</a><span class="archive-hint">Previous digest</span></li>
+    <li><a href="archive/2026-09-04.html">4 September 2026</a><span class="archive-hint">Previous digest</span></li>
+    <li><a href="archive/2026-09-03.html">3 September 2026</a><span class="archive-hint">Previous digest</span></li>
+    <li><a href="archive/2026-09-02.html">2 September 2026</a><span class="archive-hint">Previous digest</span></li>
+    <li><a href="archive/2026-09-01.html">1 September 2026</a><span class="archive-hint">Previous digest</span></li>
+    <li><a href="archive/2026-08-31.html">31 August 2026</a><span class="archive-hint">Previous digest</span></li>
+    <li><a href="archive/2026-08-30.html">30 August 2026</a><span class="archive-hint">Previous digest</span></li>
+    <li><a href="archive/2026-08-29.html">29 August 2026</a><span class="archive-hint">Previous digest</span></li>
+    <li><a href="archive/2026-08-28.html">28 August 2026</a><span class="archive-hint">Previous digest</span></li>
+    <li><a href="archive/2026-08-27.html">27 August 2026</a><span class="archive-hint">Previous digest</span></li>
+    <li><a href="archive/2026-08-26.html">26 August 2026</a><span class="archive-hint">Previous digest</span></li>
+    <li><a href="archive/2026-08-25.html">25 August 2026</a><span class="archive-hint">Previous digest</span></li>
+    <li><a href="archive/2026-08-24.html">24 August 2026</a><span class="archive-hint">Previous digest</span></li>
+    <li><a href="archive/2026-08-22.html">22 August 2026</a><span class="archive-hint">Previous digest</span></li>
+    <li><a href="archive/2026-08-21.html">21 August 2026</a><span class="archive-hint">Previous digest</span></li>
+    <li><a href="archive/2026-08-20.html">20 August 2026</a><span class="archive-hint">Previous digest</span></li>
+    <li><a href="archive/2026-08-19.html">19 August 2026</a><span class="archive-hint">Previous digest</span></li>
+    <li><a href="archive/2026-08-18.html">18 August 2026</a><span class="archive-hint">Previous digest</span></li>
+    <li><a href="archive/2026-08-17.html">17 August 2026</a><span class="archive-hint">Previous digest</span></li>
+    <li><a href="archive/2026-08-16.html">16 August 2026</a><span class="archive-hint">Previous digest</span></li>
+    <li><a href="archive/2026-08-15.html">15 August 2026</a><span class="archive-hint">Previous digest</span></li>
+    <li><a href="archive/2026-08-14.html">14 August 2026</a><span class="archive-hint">Previous digest</span></li>
+    <li><a href="archive/2026-08-13.html">13 August 2026</a><span class="archive-hint">Previous digest</span></li>
+    <li><a href="archive/2026-08-12.html">12 August 2026</a><span class="archive-hint">Previous digest</span></li>
+    <li><a href="archive/2026-08-11.html">11 August 2026</a><span class="archive-hint">Previous digest</span></li>
+    <li><a href="archive/2026-08-10.html">10 August 2026</a><span class="archive-hint">Previous digest</span></li>
+    <li><a href="archive/2026-08-09.html">9 August 2026</a><span class="archive-hint">Previous digest</span></li>
+    <li><a href="archive/2026-08-08.html">8 August 2026</a><span class="archive-hint">Previous digest</span></li>
+    <li><a href="archive/2026-08-07.html">7 August 2026</a><span class="archive-hint">Previous digest</span></li>
+    <li><a href="archive/2026-08-06.html">6 August 2026</a><span class="archive-hint">Previous digest</span></li>
+    <li><a href="archive/2026-08-05.html">5 August 2026</a><span class="archive-hint">Previous digest</span></li>
+    <li><a href="archive/2026-08-04.html">4 August 2026</a><span class="archive-hint">Previous digest</span></li>
+    <li><a href="archive/2026-08-03.html">3 August 2026</a><span class="archive-hint">Previous digest</span></li>
+    <li><a href="archive/2026-08-02.html">2 August 2026</a><span class="archive-hint">Previous digest</span></li>
+    <li><a href="archive/2026-08-01.html">1 August 2026</a><span class="archive-hint">Previous digest</span></li>
+    <li><a href="archive/2026-07-31.html">31 July 2026</a><span class="archive-hint">Previous digest</span></li>
+    <li><a href="archive/2026-07-30.html">30 July 2026</a><span class="archive-hint">Previous digest</span></li>
+    <li><a href="archive/2026-07-29.html">29 July 2026</a><span class="archive-hint">Previous digest</span></li>
+    <li><a href="archive/2026-07-28.html">28 July 2026</a><span class="archive-hint">Previous digest</span></li>
+    <li><a href="archive/2026-07-27.html">27 July 2026</a><span class="archive-hint">Previous digest</span></li>
+    <li><a href="archive/2026-07-26.html">26 July 2026</a><span class="archive-hint">Previous digest</span></li>
+  </ul>
+</section>
+
 <footer>
-  Generated Wednesday, 23 September 2026 at 07:00 CET
+  Updated: 24 September 2026, 07:05 CET
 </footer>
+
+</div>
 </body>
 </html>
