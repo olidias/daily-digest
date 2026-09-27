@@ -1,0 +1,27 @@
+name: Daily Digest
+
+on:
+  schedule:
+    - cron: '3 5 * * *'   # 05:03 UTC = 07:03 CEST (summer) / 06:03 CET (winter)
+  workflow_dispatch:       # manual trigger for testing
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install anthropic httpx pyyaml
+
+      - name: Generate daily digest
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python generate_digest.py
