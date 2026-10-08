@@ -6,316 +6,169 @@
 <title>Daily Digest</title>
 <style>
   :root {
-    --bg: #f8f7f4;
-    --surface: #ffffff;
-    --border: #e2ddd6;
-    --text: #1a1a1a;
-    --muted: #6b6560;
-    --accent: #2563eb;
-    --accent-hover: #1d4ed8;
-    --header-bg: #1a1a2e;
-    --header-text: #f0f0f0;
-    --footer-bg: #f0ede8;
-    --archive-bg: #f4f2ee;
+    --bg: #f9f9f7;
+    --fg: #1a1a1a;
+    --accent: #1a5c8a;
+    --accent-light: #e8f1f8;
+    --muted: #555;
+    --border: #ddd;
+    --section-bg: #fff;
+    --tag-bg: #e8f1f8;
+    --tag-fg: #1a5c8a;
+    --footer-bg: #f0f0ee;
+    --today-bg: #fffbf0;
+    --today-border: #e0c060;
   }
   @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --bg: #141414;
-      --surface: #1e1e1e;
+    :root {
+      --bg: #1a1a1c;
+      --fg: #e8e8e6;
+      --accent: #6ab0e0;
+      --accent-light: #1e2e3a;
+      --muted: #aaa;
       --border: #333;
-      --text: #e8e6e3;
-      --muted: #9b9590;
-      --accent: #60a5fa;
-      --accent-hover: #93c5fd;
-      --header-bg: #0f0f1e;
-      --header-text: #e8e6e3;
-      --footer-bg: #1a1a1a;
-      --archive-bg: #1a1a1a;
+      --section-bg: #22222a;
+      --tag-bg: #1e2e3a;
+      --tag-fg: #6ab0e0;
+      --footer-bg: #111115;
+      --today-bg: #2a2618;
+      --today-border: #9a8030;
     }
   }
-  :root[data-theme="dark"] {
-    --bg: #141414;
-    --surface: #1e1e1e;
-    --border: #333;
-    --text: #e8e6e3;
-    --muted: #9b9590;
-    --accent: #60a5fa;
-    --accent-hover: #93c5fd;
-    --header-bg: #0f0f1e;
-    --header-text: #e8e6e3;
-    --footer-bg: #1a1a1a;
-    --archive-bg: #1a1a1a;
-  }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.6;
-  }
-  header {
-    background: var(--header-bg);
-    color: var(--header-text);
-    padding: 2rem 1rem;
-    text-align: center;
-  }
-  header h1 { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em; }
-  header p { font-size: 0.875rem; color: #9ca3af; margin-top: 0.25rem; }
-  main { max-width: 720px; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
-  section { margin-bottom: 2.5rem; }
-  h2 {
-    font-size: 0.7rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: var(--muted);
-    border-bottom: 2px solid var(--border);
-    padding-bottom: 0.4rem;
-    margin-bottom: 1rem;
-  }
-  article {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 1rem 1.125rem;
-    margin-bottom: 0.625rem;
-  }
-  article h3 { font-size: 0.95rem; font-weight: 600; line-height: 1.4; margin-bottom: 0.25rem; }
-  article h3 a { color: var(--accent); text-decoration: none; }
-  article h3 a:hover { color: var(--accent-hover); text-decoration: underline; }
-  .meta { font-size: 0.72rem; color: var(--muted); margin-bottom: 0.4rem; }
-  .summary { font-size: 0.875rem; color: var(--text); }
-  /* Archive section */
-  .archive-section {
-    background: var(--archive-bg);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 1.25rem 1.5rem;
-  }
-  .archive-section h2 {
-    border-color: var(--border);
-    margin-bottom: 1rem;
-  }
-  .archive-list { list-style: none; }
-  .archive-list li {
-    padding: 0.35rem 0;
-    border-bottom: 1px solid var(--border);
-    font-size: 0.875rem;
-  }
-  .archive-list li:last-child { border-bottom: none; }
-  .archive-list a { color: var(--accent); text-decoration: none; }
-  .archive-list a:hover { text-decoration: underline; }
-  .archive-list .archive-topics { color: var(--muted); font-size: 0.75rem; margin-left: 0.5rem; }
-  footer {
-    background: var(--footer-bg);
-    border-top: 1px solid var(--border);
-    text-align: center;
-    padding: 1.25rem 1rem;
-    font-size: 0.75rem;
-    color: var(--muted);
-  }
-  footer a { color: var(--accent); text-decoration: none; }
+  body { background: var(--bg); color: var(--fg); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 16px; line-height: 1.6; }
+  .wrapper { max-width: 800px; margin: 0 auto; padding: 0 16px; }
+  header { padding: 32px 0 24px; border-bottom: 2px solid var(--accent); }
+  header h1 { font-size: 1.8rem; font-weight: 700; color: var(--accent); }
+  header p { color: var(--muted); font-size: 0.9rem; margin-top: 4px; }
+  .today-card { background: var(--today-bg); border: 2px solid var(--today-border); border-radius: 10px; padding: 20px 24px; margin: 28px 0 12px; }
+  .today-card h2 { font-size: 1.1rem; font-weight: 700; color: var(--accent); margin-bottom: 6px; }
+  .today-card p { font-size: 0.9rem; color: var(--muted); margin-bottom: 12px; }
+  .today-card a.btn { display: inline-block; background: var(--accent); color: #fff; text-decoration: none; padding: 8px 18px; border-radius: 6px; font-size: 0.9rem; font-weight: 600; }
+  .today-card a.btn:hover { opacity: 0.9; }
+  .today-summary { margin-top: 14px; }
+  .today-summary ul { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-top: 10px; }
+  .today-summary ul li { border-left: 3px solid var(--accent); padding-left: 10px; font-size: 0.88rem; }
+  .today-summary ul li a { color: var(--accent); text-decoration: none; font-weight: 600; }
+  .today-summary ul li a:hover { text-decoration: underline; }
+  .today-summary ul li .src { color: var(--muted); font-size: 0.78rem; }
+  .archive-section { margin: 36px 0 0; }
+  .archive-section h2 { font-size: 1.1rem; font-weight: 700; color: var(--fg); margin-bottom: 14px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+  .archive-list { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+  .archive-list li { display: flex; align-items: baseline; gap: 12px; padding: 6px 10px; border-radius: 5px; font-size: 0.9rem; }
+  .archive-list li:hover { background: var(--accent-light); }
+  .archive-list li a { color: var(--accent); text-decoration: none; font-weight: 600; white-space: nowrap; }
+  .archive-list li a:hover { text-decoration: underline; }
+  .archive-list li .topics { color: var(--muted); font-size: 0.8rem; }
+  footer { margin: 40px 0 0; padding: 16px 0; border-top: 1px solid var(--border); background: var(--footer-bg); }
+  footer .wrapper { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; font-size: 0.8rem; color: var(--muted); }
 </style>
 </head>
 <body>
-<header>
-  <h1>Daily Digest</h1>
-  <p>Science &middot; World &middot; Sport &middot; Wellness &middot; Engineering</p>
-</header>
-<main>
+<div class="wrapper">
+  <header>
+    <h1>Daily Digest</h1>
+    <p>Science, world news, sport, and engineering &mdash; curated daily for Europe/Zurich</p>
+  </header>
 
-<!-- TODAY'S DIGEST: 7 October 2026 -->
-<section id="today">
-  <h2>Today &mdash; 7 October 2026</h2>
+  <div class="today-card">
+    <h2>Today &mdash; Thursday, 8 October 2026</h2>
+    <p>Astronomy &bull; World News &bull; Rugby &bull; Sailing &bull; Science-Based Lifting &bull; People Leadership &bull; Emotional Intelligence &bull; AI Engineering &bull; Jobs</p>
+    <a class="btn" href="archive/2026-10-08.html">Read today's digest &rarr;</a>
+    <div class="today-summary">
+      <ul>
+        <li>
+          <a href="archive/2026-10-08.html">Webb captures NGC 7129 stellar nursery; SMILE images full auroral oval; Roman Telescope first observations</a>
+          <div class="src">Astronomy &amp; Space &middot; ESA/Webb, NASA APOD</div>
+        </li>
+        <li>
+          <a href="archive/2026-10-08.html">Tanker struck north of Qatar; Delhi building collapse; Japan tightens residency rules; Nigeria Boko Haram attack</a>
+          <div class="src">World News &middot; UKMTO / Reuters</div>
+        </li>
+        <li>
+          <a href="archive/2026-10-08.html">NZ vs Australia at Eden Park Oct 10; URC Round 3; Top 14</a>
+          <div class="src">Rugby &middot; World Rugby</div>
+        </li>
+        <li>
+          <a href="archive/2026-10-08.html">Claude Haiku 5.5 launches; Mistral Large 4 open weights due Oct; Rogue OpenAI agents on Wikimedia</a>
+          <div class="src">AI Engineering &middot; Simon Willison</div>
+        </li>
+      </ul>
+    </div>
+  </div>
 
-  <!-- ASTRONOMY & SPACE -->
-  <article>
-    <h3><a href="https://www.nobelprize.org/prizes/physics/2026/press-release/">2026 Nobel Prize in Physics: Francis Halzen for IceCube and the Discovery of Astrophysical Neutrinos</a></h3>
-    <div class="meta">Astronomy &amp; Space &middot; Nobel Prize Committee &middot; 6 October 2026</div>
-    <p class="summary">The Royal Swedish Academy of Sciences awarded the 2026 Nobel Prize in Physics to Francis Halzen (University of Wisconsin&ndash;Madison) for &ldquo;decisive contributions to the IceCube Neutrino Observatory and the discovery of high-energy neutrinos of astrophysical origin&rdquo;; IceCube, a cubic-kilometre detector frozen into the Antarctic ice sheet, confirmed that extremely energetic &ldquo;ghost particles&rdquo; reach Earth from outside our galaxy, opening a new observational window on the high-energy universe.</p>
-  </article>
-
-  <article>
-    <h3><a href="https://science.nasa.gov/image-article/apod-2026-october-6-a-complete-auroral-oval-from-smile/">APOD 6 Oct: A Complete Auroral Oval from SMILE</a></h3>
-    <div class="meta">Astronomy &amp; Space &middot; NASA Science / APOD &middot; 6 October 2026</div>
-    <p class="summary">The ESA/CAS Solar wind Magnetosphere Ionosphere Link Explorer (SMILE) captured the first full-disc image of Earth&rsquo;s complete northern auroral oval from orbit, providing a global view of how the magnetosphere responds dynamically to solar-wind driving &mdash; a perspective previously impossible from single-point observations.</p>
-  </article>
-
-  <article>
-    <h3><a href="https://www.quantamagazine.org/is-ai-the-end-of-math-as-we-know-it-20261005/">Is AI the End of Math As We Know It? &mdash; Quanta Magazine</a></h3>
-    <div class="meta">Astronomy &amp; Space &middot; Quanta Magazine (Physics) &middot; 5 October 2026</div>
-    <p class="summary">Quanta examines whether LLM-driven automated theorem provers &mdash; now capable of finding novel proofs faster than human mathematicians &mdash; may fundamentally alter the epistemic standards of rigour that have underpinned mathematics for two centuries, and what it means for the discipline if correctness becomes machine-certified rather than human-verified.</p>
-  </article>
-
-  <!-- WORLD NEWS -->
-  <article>
-    <h3><a href="https://www.reuters.com/world/">Zelenskiy: Intelligence Shows Russia Preparing a Massive Attack</a></h3>
-    <div class="meta">World News &middot; Reuters &middot; 6 October 2026</div>
-    <p class="summary">Ukrainian President Volodymyr Zelenskiy stated that Ukrainian intelligence indicates Russia is massing forces for a large-scale offensive operation, urging Western allies to accelerate delivery of additional air-defence systems and long-range strike capabilities.</p>
-  </article>
-
-  <article>
-    <h3><a href="https://www.reuters.com/world/">Former BND Chief Arrested on Suspicion of Passing State Secrets to Foreign Intelligence</a></h3>
-    <div class="meta">World News &middot; Reuters &middot; 6 October 2026</div>
-    <p class="summary">German authorities arrested a former head of the Bundesnachrichtendienst (BND) on suspicion of disclosing classified information to a foreign intelligence agency &mdash; one of the most significant espionage cases to implicate a senior German intelligence official in recent history.</p>
-  </article>
-
-  <article>
-    <h3><a href="https://www.reuters.com/world/">US Military Pauses Okinawa Operations After Marine Arrested for Killing Local Woman</a></h3>
-    <div class="meta">World News &middot; Reuters &middot; 6 October 2026</div>
-    <p class="summary">US Forces Japan suspended all non-essential military activities in Okinawa for 48 hours after a Marine was detained on suspicion of murdering a local woman; the incident is expected to intensify long-running political tensions over the US military presence in the prefecture.</p>
-  </article>
-
-  <!-- RUGBY -->
-  <article>
-    <h3><a href="https://www.unitedrugby.com/">URC Round 3: Bulls and Leinster Dominate; Stormers, Munster, and Lions Claim Big Wins</a></h3>
-    <div class="meta">Rugby (Tier-1) &middot; United Rugby Championship &middot; 5 October 2026</div>
-    <p class="summary">Saturday&rsquo;s URC Round 3 produced heavy wins: Bulls 47&ndash;21 Ulster, Leinster 35&ndash;5 Benetton, Stormers 36&ndash;5 Zebre Parma, Munster 23&ndash;0 Ospreys, Lions 55&ndash;21 Edinburgh; the Sharks edged the Dragons 33&ndash;30 in the closest match of the round.</p>
-  </article>
-
-  <article>
-    <h3><a href="https://en.wikipedia.org/wiki/2026_Bledisloe_Cup">Bledisloe Cup Test 1 Preview: All Blacks vs Wallabies at Eden Park, Saturday 10 Oct</a></h3>
-    <div class="meta">Rugby (Tier-1) &middot; World Rugby &middot; Upcoming 10 October 2026</div>
-    <p class="summary">New Zealand host Australia at Eden Park, Auckland on Saturday in the opening Test of the 2026 Bledisloe Cup; a second Test follows on 17 October at Stadium Australia in Sydney, with the series billed as one of the most competitive in years.</p>
-  </article>
-
-  <article>
-    <h3><a href="https://www.planetrugby.com/news/full-2026-27-united-rugby-championship-fixtures-confirmed-as-munster-and-glasgow-warriors-set-for-blockbuster-opening-round-clash/">European Rugby Champions Cup 2026&ndash;27 Opens 16 October — 24 Teams, Munster vs Glasgow</a></h3>
-    <div class="meta">Rugby (Tier-1) &middot; PlanetRugby &middot; October 2026</div>
-    <p class="summary">The European Rugby Champions Cup returns on 16 October with an expanded 24-team format drawing clubs from England, France, Ireland, Scotland, South Africa, and Wales; Munster vs. Glasgow Warriors is confirmed as the headline opener of the new competition cycle.</p>
-  </article>
-
-  <!-- SAILING -->
-  <article>
-    <h3><a href="https://mysailing.com.au/record-field-for-2026-world-sailing-inclusion-championships/">World Sailing Inclusion Championships Day 3 &mdash; Record 222 Athletes in Portim&atilde;o</a></h3>
-    <div class="meta">Sailing &middot; World Sailing / mySailing &middot; 5&ndash;10 October 2026</div>
-    <p class="summary">Racing is at its mid-point in the 2026 World Sailing Inclusion Championships in Portim&atilde;o, Portugal; 222 athletes from 40 nations are competing across nine para-sailing classes through Saturday &mdash; the most geographically diverse entry list in the event&rsquo;s history.</p>
-  </article>
-
-  <article>
-    <h3><a href="https://sailingscuttlebutt.com/2026/10/04/courtois-claims-sixth-straight-world-title">Pauline Courtois Claims Historic Sixth Consecutive Women&rsquo;s Match Racing World Title</a></h3>
-    <div class="meta">Sailing &middot; Scuttlebutt Sailing News &middot; 4 October 2026</div>
-    <p class="summary">France&rsquo;s Pauline Courtois and her crew dominated the 2026 World Sailing Women&rsquo;s Match Racing Championship in San Francisco, winning 19 of 20 races to claim an unprecedented sixth straight world title &mdash; a record unmatched in the event&rsquo;s history.</p>
-  </article>
-
-  <article>
-    <h3><a href="https://mysailing.com.au/les-voiles-de-saint-tropez-2026-a-sumptuous-finale">Les Voiles de Saint-Tropez 2026: Elena of London and Jethou Triumph in Spectacular Finale</a></h3>
-    <div class="meta">Sailing &middot; mySailing &middot; 4 October 2026</div>
-    <p class="summary">The 2026 edition of Les Voiles de Saint-Tropez concluded on 4 October under sunshine and a steady breeze; Elena of London won the Traditional yachts class and Jethou took the Edmond de Rothschild Trophy among the Maxis, closing one of the Riviera&rsquo;s most-watched regattas.</p>
-  </article>
-
-  <!-- PEOPLE LEADERSHIP -->
-  <article>
-    <h3><a href="https://sloanreview.mit.edu/issue/2026-fall/">MIT SMR Fall 2026 (Final Issue): Responsible AI, Agent Autonomy, and Scaling Without Bureaucracy</a></h3>
-    <div class="meta">People Leadership &middot; MIT Sloan Management Review &middot; Fall 2026</div>
-    <p class="summary">MIT Sloan Management Review&rsquo;s final print issue includes research on governance frameworks leaders need for autonomous AI agents, a case study on how argenx scaled to $4 billion without bureaucratic layering, and methodology-grounded pieces on trauma-aware management and merit-based hiring.</p>
-  </article>
-
-  <article>
-    <h3><a href="https://sloanreview.mit.edu/tag/leadership-development/">Building Social Capital as the Key Driver of Internal Career Mobility</a></h3>
-    <div class="meta">People Leadership &middot; MIT Sloan Management Review &middot; Fall 2026</div>
-    <p class="summary">Research in MIT SMR&rsquo;s fall issue finds that organisations that systematically enable cross-functional relationship-building see measurably higher internal mobility and lower regrettable attrition, challenging the assumption that talent hoarding is a rational management strategy.</p>
-  </article>
-
-  <!-- AI ENGINEERING -->
-  <article>
-    <h3><a href="https://simonwillison.net/2026/Oct/6/llm-openai-decisions/">Release: llm-openai-decisions 0.1a0 &mdash; Plugin for the OpenAI Decisions API</a></h3>
-    <div class="meta">AI Engineering &middot; Simon Willison&rsquo;s Weblog &middot; 6 October 2026</div>
-    <p class="summary">Willison releases an alpha plugin for his <code>llm</code> CLI tool that integrates OpenAI&rsquo;s Decisions API, allowing developers to capture and inspect model decision-making traces from the command line, stored in the content-addressed SQLite log schema introduced in LLM 0.32.</p>
-  </article>
-
-  <article>
-    <h3><a href="https://simonwillison.net/2026/Oct/6/le-chonk">Introducing Mistral Large 4 &mdash; &ldquo;Le Chonk&rdquo;</a></h3>
-    <div class="meta">AI Engineering &middot; Simon Willison&rsquo;s Weblog &middot; 6 October 2026</div>
-    <p class="summary">Willison covers Mistral AI&rsquo;s preview release of Mistral Large 4, their largest model to date, and ships <code>llm-mistral 0.16</code> the same day, adding reasoning-model support to the <code>llm</code> CLI ecosystem.</p>
-  </article>
-
-  <!-- JOBS -->
-  <article>
-    <h3><a href="https://www.freelancermap.com/projects/switzerland">Freelancermap CH: Frontend Developer (German-Speaking Switzerland) &mdash; 12-Month Contract, Z&uuml;rich</a></h3>
-    <div class="meta">Jobs &middot; freelancermap.com &middot; Switzerland, October 2026</div>
-    <p class="summary">Freelancermap lists an active 12-month Frontend Developer contract in Z&uuml;rich, German-speaking Switzerland, requiring both English and German; 0% commission, direct-client contact model.</p>
-  </article>
-
-  <article>
-    <h3><a href="https://www.freelancermap.com/projects/switzerland">Freelancermap CH: SAP HCM Swiss Payroll Consultant &mdash; 6-Month Contract with Extension, Z&uuml;rich</a></h3>
-    <div class="meta">Jobs &middot; freelancermap.com &middot; Switzerland, October 2026</div>
-    <p class="summary">An active 6-month SAP HCM (Swiss payroll module) consultant engagement in Z&uuml;rich with extension possibilities; Freelancermap&rsquo;s Switzerland board currently carries 666+ active IT and consulting projects across on-site, hybrid, and remote arrangements.</p>
-  </article>
-</section>
-
-<!-- ARCHIVE -->
-<section id="archive">
   <div class="archive-section">
     <h2>Archive</h2>
     <ul class="archive-list">
-      <li><a href="archive/2026-10-07.html">7 October 2026</a><span class="archive-topics">Space &middot; Nobel Prize &middot; World &middot; Rugby &middot; Sailing &middot; Leadership &middot; AI Engineering &middot; Jobs</span></li>
-      <li><a href="archive/2026-10-06.html">6 October 2026</a></li>
-      <li><a href="archive/2026-10-05.html">5 October 2026</a><span class="archive-topics">Space &middot; World &middot; Rugby &middot; Sailing &middot; Lifting &middot; Leadership &middot; EQ &middot; AI Engineering &middot; Jobs</span></li>
-      <li><a href="archive/2026-10-04.html">4 October 2026</a><span class="archive-topics">Space &middot; World &middot; Rugby &middot; Sailing &middot; Lifting &middot; EQ &middot; AI Engineering &middot; Jobs</span></li>
-      <li><a href="archive/2026-10-03.html">3 October 2026</a><span class="archive-topics">Space &middot; World &middot; Rugby &middot; Sailing &middot; Lifting &middot; Leadership &middot; EQ &middot; AI Engineering &middot; Jobs</span></li>
-      <li><a href="archive/2026-10-02.html">2 October 2026</a><span class="archive-topics">Space &middot; World &middot; Rugby &middot; Sailing &middot; Lifting &middot; Leadership &middot; EQ &middot; AI Engineering &middot; Jobs</span></li>
-      <li><a href="archive/2026-10-01.html">1 October 2026</a></li>
-      <li><a href="archive/2026-09-30.html">30 September 2026</a></li>
-      <li><a href="archive/2026-09-29.html">29 September 2026</a></li>
-      <li><a href="archive/2026-09-28.html">28 September 2026</a></li>
-      <li><a href="archive/2026-09-27.html">27 September 2026</a></li>
-      <li><a href="archive/2026-09-26.html">26 September 2026</a></li>
-      <li><a href="archive/2026-09-25.html">25 September 2026</a></li>
-      <li><a href="archive/2026-09-24.html">24 September 2026</a></li>
-      <li><a href="archive/2026-09-23.html">23 September 2026</a></li>
-      <li><a href="archive/2026-09-22.html">22 September 2026</a></li>
-      <li><a href="archive/2026-09-21.html">21 September 2026</a></li>
-      <li><a href="archive/2026-09-20.html">20 September 2026</a></li>
-      <li><a href="archive/2026-09-19.html">19 September 2026</a></li>
-      <li><a href="archive/2026-09-18.html">18 September 2026</a></li>
-      <li><a href="archive/2026-09-17.html">17 September 2026</a></li>
-      <li><a href="archive/2026-09-16.html">16 September 2026</a></li>
-      <li><a href="archive/2026-09-15.html">15 September 2026</a></li>
-      <li><a href="archive/2026-09-14.html">14 September 2026</a></li>
-      <li><a href="archive/2026-09-13.html">13 September 2026</a></li>
-      <li><a href="archive/2026-09-12.html">12 September 2026</a></li>
-      <li><a href="archive/2026-09-11.html">11 September 2026</a></li>
-      <li><a href="archive/2026-09-10.html">10 September 2026</a></li>
-      <li><a href="archive/2026-09-09.html">9 September 2026</a></li>
-      <li><a href="archive/2026-09-08.html">8 September 2026</a></li>
-      <li><a href="archive/2026-09-07.html">7 September 2026</a></li>
-      <li><a href="archive/2026-09-06.html">6 September 2026</a></li>
-      <li><a href="archive/2026-09-05.html">5 September 2026</a></li>
-      <li><a href="archive/2026-09-04.html">4 September 2026</a></li>
-      <li><a href="archive/2026-09-03.html">3 September 2026</a></li>
-      <li><a href="archive/2026-09-02.html">2 September 2026</a></li>
-      <li><a href="archive/2026-09-01.html">1 September 2026</a></li>
-      <li><a href="archive/2026-08-31.html">31 August 2026</a></li>
-      <li><a href="archive/2026-08-30.html">30 August 2026</a></li>
-      <li><a href="archive/2026-08-29.html">29 August 2026</a></li>
-      <li><a href="archive/2026-08-28.html">28 August 2026</a></li>
-      <li><a href="archive/2026-08-27.html">27 August 2026</a></li>
-      <li><a href="archive/2026-08-26.html">26 August 2026</a></li>
-      <li><a href="archive/2026-08-25.html">25 August 2026</a></li>
-      <li><a href="archive/2026-08-24.html">24 August 2026</a></li>
-      <li><a href="archive/2026-08-22.html">22 August 2026</a></li>
-      <li><a href="archive/2026-08-21.html">21 August 2026</a></li>
-      <li><a href="archive/2026-08-20.html">20 August 2026</a></li>
-      <li><a href="archive/2026-08-19.html">19 August 2026</a></li>
-      <li><a href="archive/2026-08-18.html">18 August 2026</a></li>
-      <li><a href="archive/2026-08-17.html">17 August 2026</a></li>
-      <li><a href="archive/2026-08-16.html">16 August 2026</a></li>
-      <li><a href="archive/2026-08-15.html">15 August 2026</a></li>
-      <li><a href="archive/2026-08-14.html">14 August 2026</a></li>
-      <li><a href="archive/2026-08-13.html">13 August 2026</a></li>
-      <li><a href="archive/2026-08-12.html">12 August 2026</a></li>
-      <li><a href="archive/2026-08-11.html">11 August 2026</a></li>
-      <li><a href="archive/2026-08-10.html">10 August 2026</a></li>
-      <li><a href="archive/2026-08-09.html">9 August 2026</a></li>
-      <li><a href="archive/2026-08-08.html">8 August 2026</a></li>
+      <li><a href="archive/2026-10-08.html">2026-10-08</a><span class="topics">Webb NGC 7129 &bull; Qatar tanker attack &bull; NZ vs Australia &bull; Claude Haiku 5.5</span></li>
+      <li><a href="archive/2026-10-07.html">2026-10-07</a><span class="topics">Space &bull; Nobel Prize &bull; World &bull; Rugby &bull; Sailing &bull; Leadership &bull; AI Engineering &bull; Jobs</span></li>
+      <li><a href="archive/2026-10-06.html">2026-10-06</a><span class="topics">Archive</span></li>
+      <li><a href="archive/2026-10-05.html">2026-10-05</a><span class="topics">Space &bull; World &bull; Rugby &bull; Sailing &bull; Lifting &bull; Leadership &bull; EQ &bull; AI Engineering &bull; Jobs</span></li>
+      <li><a href="archive/2026-10-04.html">2026-10-04</a><span class="topics">Space &bull; World &bull; Rugby &bull; Sailing &bull; Lifting &bull; EQ &bull; AI Engineering &bull; Jobs</span></li>
+      <li><a href="archive/2026-10-03.html">2026-10-03</a><span class="topics">Space &bull; World &bull; Rugby &bull; Sailing &bull; Lifting &bull; Leadership &bull; EQ &bull; AI Engineering &bull; Jobs</span></li>
+      <li><a href="archive/2026-10-02.html">2026-10-02</a><span class="topics">Archive</span></li>
+      <li><a href="archive/2026-10-01.html">2026-10-01</a><span class="topics">Archive</span></li>
+      <li><a href="archive/2026-09-30.html">2026-09-30</a><span class="topics">Archive</span></li>
+      <li><a href="archive/2026-09-29.html">2026-09-29</a><span class="topics">Archive</span></li>
+      <li><a href="archive/2026-09-28.html">2026-09-28</a><span class="topics">Archive</span></li>
+      <li><a href="archive/2026-09-27.html">2026-09-27</a><span class="topics">Archive</span></li>
+      <li><a href="archive/2026-09-26.html">2026-09-26</a><span class="topics">Archive</span></li>
+      <li><a href="archive/2026-09-25.html">2026-09-25</a><span class="topics">Archive</span></li>
+      <li><a href="archive/2026-09-24.html">2026-09-24</a><span class="topics">Archive</span></li>
+      <li><a href="archive/2026-09-23.html">2026-09-23</a><span class="topics">Archive</span></li>
+      <li><a href="archive/2026-09-22.html">2026-09-22</a><span class="topics">Archive</span></li>
+      <li><a href="archive/2026-09-21.html">2026-09-21</a><span class="topics">Archive</span></li>
+      <li><a href="archive/2026-09-20.html">2026-09-20</a><span class="topics">Archive</span></li>
+      <li><a href="archive/2026-09-19.html">2026-09-19</a><span class="topics">Archive</span></li>
+      <li><a href="archive/2026-09-18.html">2026-09-18</a><span class="topics">Archive</span></li>
+      <li><a href="archive/2026-09-17.html">2026-09-17</a><span class="topics">Archive</span></li>
+      <li><a href="archive/2026-09-16.html">2026-09-16</a><span class="topics">Archive</span></li>
+      <li><a href="archive/2026-09-15.html">2026-09-15</a><span class="topics">Archive</span></li>
+      <li><a href="archive/2026-09-14.html">2026-09-14</a><span class="topics">Archive</span></li>
+      <li><a href="archive/2026-09-13.html">2026-09-13</a><span class="topics">Archive</span></li>
+      <li><a href="archive/2026-09-12.html">2026-09-12</a><span class="topics">Archive</span></li>
+      <li><a href="archive/2026-09-11.html">2026-09-11</a><span class="topics">Archive</span></li>
+      <li><a href="archive/2026-09-10.html">2026-09-10</a><span class="topics">Archive</span></li>
+      <li><a href="archive/2026-09-09.html">2026-09-09</a><span class="topics">Archive</span></li>
+      <li><a href="archive/2026-09-08.html">2026-09-08</a><span class="topics">Archive</span></li>
+      <li><a href="archive/2026-09-07.html">2026-09-07</a><span class="topics">Archive</span></li>
+      <li><a href="archive/2026-09-06.html">2026-09-06</a><span class="topics">Archive</span></li>
+      <li><a href="archive/2026-09-05.html">2026-09-05</a><span class="topics">Archive</span></li>
+      <li><a href="archive/2026-09-04.html">2026-09-04</a><span class="topics">Archive</span></li>
+      <li><a href="archive/2026-09-03.html">2026-09-03</a><span class="topics">Archive</span></li>
+      <li><a href="archive/2026-09-02.html">2026-09-02</a><span class="topics">Archive</span></li>
+      <li><a href="archive/2026-09-01.html">2026-09-01</a><span class="topics">Archive</span></li>
+      <li><a href="archive/2026-08-31.html">2026-08-31</a><span class="topics">Archive</span></li>
+      <li><a href="archive/2026-08-30.html">2026-08-30</a><span class="topics">Archive</span></li>
+      <li><a href="archive/2026-08-29.html">2026-08-29</a><span class="topics">Archive</span></li>
+      <li><a href="archive/2026-08-28.html">2026-08-28</a><span class="topics">Archive</span></li>
+      <li><a href="archive/2026-08-27.html">2026-08-27</a><span class="topics">Archive</span></li>
+      <li><a href="archive/2026-08-26.html">2026-08-26</a><span class="topics">Archive</span></li>
+      <li><a href="archive/2026-08-25.html">2026-08-25</a><span class="topics">Archive</span></li>
+      <li><a href="archive/2026-08-24.html">2026-08-24</a><span class="topics">Archive</span></li>
+      <li><a href="archive/2026-08-22.html">2026-08-22</a><span class="topics">Archive</span></li>
+      <li><a href="archive/2026-08-21.html">2026-08-21</a><span class="topics">Archive</span></li>
+      <li><a href="archive/2026-08-20.html">2026-08-20</a><span class="topics">Archive</span></li>
+      <li><a href="archive/2026-08-19.html">2026-08-19</a><span class="topics">Archive</span></li>
+      <li><a href="archive/2026-08-18.html">2026-08-18</a><span class="topics">Archive</span></li>
+      <li><a href="archive/2026-08-17.html">2026-08-17</a><span class="topics">Archive</span></li>
+      <li><a href="archive/2026-08-16.html">2026-08-16</a><span class="topics">Archive</span></li>
+      <li><a href="archive/2026-08-15.html">2026-08-15</a><span class="topics">Archive</span></li>
+      <li><a href="archive/2026-08-14.html">2026-08-14</a><span class="topics">Archive</span></li>
+      <li><a href="archive/2026-08-13.html">2026-08-13</a><span class="topics">Archive</span></li>
+      <li><a href="archive/2026-08-12.html">2026-08-12</a><span class="topics">Archive</span></li>
+      <li><a href="archive/2026-08-11.html">2026-08-11</a><span class="topics">Archive</span></li>
+      <li><a href="archive/2026-08-10.html">2026-08-10</a><span class="topics">Archive</span></li>
+      <li><a href="archive/2026-08-09.html">2026-08-09</a><span class="topics">Archive</span></li>
     </ul>
   </div>
-</section>
+</div>
 
-</main>
 <footer>
-  <p>Generated 7 October 2026 &middot; Updated daily at 07:00 CET</p>
+  <div class="wrapper">
+    <span>Daily Digest &middot; Generated 2026-10-08 &middot; Europe/Zurich</span>
+    <span>olidias/daily-digest</span>
+  </div>
 </footer>
 </body>
 </html>
