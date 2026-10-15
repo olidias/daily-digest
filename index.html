@@ -55,6 +55,7 @@
     padding: 24px 0 20px;
     margin-bottom: 32px;
   }
+  header .container { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; }
   header h1 { font-size: 1.4rem; font-weight: 700; letter-spacing: -0.02em; }
   header h1 span { color: var(--muted); font-weight: 400; }
   section { margin-bottom: 36px; }
@@ -91,7 +92,7 @@
   .source-tag {
     display: inline-block;
     background: var(--tag-bg);
-    color: var(--tag-text);
+    color: var(--tag-tag, var(--tag-text));
     padding: 1px 7px;
     border-radius: 3px;
     font-size: 0.72rem;
@@ -104,26 +105,16 @@
     color: var(--muted);
     line-height: 1.5;
   }
-  .archive-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 8px;
-    margin-top: 12px;
+  .archive-list { list-style: none; }
+  .archive-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.875rem;
   }
-  .archive-grid a {
-    display: block;
-    padding: 8px 12px;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    text-decoration: none;
-    font-size: 0.85rem;
-    color: var(--text);
-    transition: border-color 0.15s;
-  }
-  .archive-grid a:hover { border-color: var(--accent); color: var(--accent); }
-  .archive-grid a .date { font-weight: 500; }
-  .archive-grid a .topics { font-size: 0.75rem; color: var(--muted); display: block; margin-top: 2px; }
+  .archive-list li:last-child { border-bottom: none; }
+  .archive-list a { color: var(--accent); text-decoration: none; }
+  .archive-list a:hover { text-decoration: underline; }
+  .archive-list .archive-meta { color: var(--muted); font-size: 0.78rem; margin-left: 8px; }
   footer {
     border-top: 1px solid var(--border);
     padding: 20px 0 32px;
@@ -135,7 +126,7 @@
 <body>
 <header>
   <div class="container">
-    <h1>Daily Digest <span>— 14 October 2026</span></h1>
+    <h1>Daily Digest <span>— 15 October 2026</span></h1>
   </div>
 </header>
 
@@ -145,34 +136,34 @@
   <h2>Astronomy &amp; Space</h2>
   <ul>
     <li>
-      <span class="item-title"><a href="https://skyandtelescope.org/astronomy-news/first-all-sky-map-erosita/">First All-Sky X-ray Map from eROSITA Released</a></span>
+      <span class="item-title"><a href="https://skyandtelescope.org/astronomy-news/fast-radio-burst-shatters-distance-record/">Fast Radio Burst Shatters Distance Record at 11 Billion Light-Years</a></span>
+      <div class="item-meta"><span class="source-tag">Sky &amp; Telescope</span>14 Oct 2026</div>
+      <p class="item-summary">Astronomers announced the most distant fast radio burst ever detected—roughly 11 billion light-years away, originating when the universe was only about 3 billion years old—providing new constraints on FRB progenitor environments and the cosmic baryon density.</p>
+    </li>
+    <li>
+      <span class="item-title"><a href="https://quantamagazine.org/triplet-of-ghostly-galaxies-hints-at-what-dark-matter-is-and-isnt-20261014">Triplet of 'Ghostly' Galaxies Hints at What Dark Matter Is — and Isn't</a></span>
+      <div class="item-meta"><span class="source-tag">Quanta Magazine</span>14 Oct 2026</div>
+      <p class="item-summary">Three unusually faint ultra-diffuse galaxies roughly 65 million light-years away offer conflicting clues about dark matter's nature, with their near-absence of dark matter lending cautious support to modified gravity theories while challenging cold dark matter models.</p>
+    </li>
+    <li>
+      <span class="item-title"><a href="https://www.nasa.gov/2026-news-releases/">Chandra Traces 'Treble Clef' Radio Structure to Colliding Galaxy Clusters</a></span>
+      <div class="item-meta"><span class="source-tag">NASA / Chandra</span>14 Oct 2026</div>
+      <p class="item-summary">NASA's Chandra X-ray Observatory provided X-ray evidence linking the distinctive treble-clef-shaped radio emission in a galaxy cluster to a head-on merger event, resolving a longstanding puzzle about one of radio astronomy's more unusual morphologies.</p>
+    </li>
+    <li>
+      <span class="item-title"><a href="https://skyandtelescope.org/astronomy-news/">Nobel Prize in Physics 2026 Awarded to IceCube's Francis Halzen</a></span>
       <div class="item-meta"><span class="source-tag">Sky &amp; Telescope</span>13 Oct 2026</div>
-      <p class="item-summary">Astronomers published the first complete all-sky X-ray survey from the eROSITA telescope, revealing millions of previously unknown X-ray sources and providing a new census of galaxy clusters and AGN across the entire sky.</p>
+      <p class="item-summary">Particle physicist Francis Halzen, the driving force behind the IceCube Neutrino Observatory at the South Pole, received the 2026 Nobel Prize in Physics for foundational contributions to high-energy neutrino astronomy and the detection of astrophysical neutrino sources.</p>
     </li>
     <li>
-      <span class="item-title"><a href="https://skyandtelescope.org/astronomy-news/the-solar-system-has-a-new-life-expectancy-and-its-a-billion-times-shorter/">Solar System's Stable Lifetime Revised Downward — by a Billion Years</a></span>
-      <div class="item-meta"><span class="source-tag">Sky &amp; Telescope</span>12 Oct 2026</div>
-      <p class="item-summary">New dynamical modelling by Batygin et al. (Astrophysical Journal Letters) finds the outer solar system will become gravitationally unstable after the Sun becomes a white dwarf, cutting its projected stable lifetime by roughly a factor of one billion compared to prior estimates.</p>
+      <span class="item-title"><a href="https://science.nasa.gov/image-article/apod-2026-october-14-mars-and-the-beehive-under-an-aurora/">APOD: Mars and the Beehive Cluster Under a Swedish Aurora</a></span>
+      <div class="item-meta"><span class="source-tag">NASA APOD</span>14 Oct 2026</div>
+      <p class="item-summary">A wide-field photograph from Lansjärv, Sweden captures Mars positioned beside the Beehive star cluster (M44) beneath a multi-coloured aurora produced by a solar eruption that reached Earth on 10 October 2026.</p>
     </li>
     <li>
-      <span class="item-title"><a href="https://www.nasa.gov/blogs/spacestation/2026/10/13/spacex-dragon-counts-down-to-launch-for-station-resupply-mission/">SpaceX Dragon Launches on CRS-35 Station Resupply Mission</a></span>
-      <div class="item-meta"><span class="source-tag">NASA</span>13 Oct 2026</div>
-      <p class="item-summary">SpaceX's 35th commercial resupply mission lifted off carrying over 6,300 lbs of cargo — including health experiments and two student-built CubeSats — with autonomous docking at the ISS Harmony module expected on 15 October.</p>
-    </li>
-    <li>
-      <span class="item-title"><a href="https://www.esa.int/Newsroom">ESA Astronaut Sophie Adenot Returns After 237 Days on the ISS</a></span>
-      <div class="item-meta"><span class="source-tag">ESA</span>13 Oct 2026</div>
-      <p class="item-summary">ESA astronaut Sophie Adenot landed and arrived back in Cologne following NASA's Crew-12 mission; a post-flight press conference was held 13 October at the European Astronaut Centre.</p>
-    </li>
-    <li>
-      <span class="item-title"><a href="https://www.esa.int/Science_Exploration/Space_Science/Mars_moon_lander_set_to_launch_on_19_October">Mars Moon Lander MMX Set to Launch 19 October</a></span>
-      <div class="item-meta"><span class="source-tag">ESA</span>13 Oct 2026</div>
-      <p class="item-summary">JAXA's Martian Moons eXploration spacecraft — carrying an ESA-contributed rover to sample Phobos — is confirmed for launch on an H3 rocket from Tanegashima Space Center on 19 October, with ESA set to release post-launch confirmation imagery.</p>
-    </li>
-    <li>
-      <span class="item-title"><a href="https://skyandtelescope.org/astronomy-news/">NASA Selects Three New CLPS Science Payloads for the Moon</a></span>
-      <div class="item-meta"><span class="source-tag">Sky &amp; Telescope</span>13 Oct 2026</div>
-      <p class="item-summary">NASA announced three additional science payloads under its Commercial Lunar Payload Services programme targeting lunar hazards characterisation, resource prospecting, and surface environment monitoring.</p>
+      <span class="item-title"><a href="https://nasa.gov/news-release/nasa-to-discuss-artemis-acceleration-status-of-upcoming-moon-missions">NASA Schedules Artemis Acceleration Briefing Targeting 2028 Moon Return</a></span>
+      <div class="item-meta"><span class="source-tag">NASA</span>14 Oct 2026</div>
+      <p class="item-summary">NASA announced a Kennedy Space Center press briefing for October 23 to detail the Artemis programme's revised schedule, which targets Artemis III landing four astronauts on the lunar surface by 2028 and an Artemis II crewed lunar flyby in 2027.</p>
     </li>
   </ul>
 </section>
@@ -181,19 +172,29 @@
   <h2>World News</h2>
   <ul>
     <li>
-      <span class="item-title"><a href="https://www.reuters.com/world/middle-east/">Saudi Arabia Hit by Fresh Houthi Barrage; Riyadh Airport Remains Closed</a></span>
-      <div class="item-meta"><span class="source-tag">Reuters</span>13 Oct 2026</div>
-      <p class="item-summary">A new wave of Houthi drones and ballistic missiles struck targets in Saudi Arabia, keeping King Khalid International Airport closed following a series of attacks that have killed and injured hundreds of civilians this week amid the ongoing Iran war.</p>
+      <span class="item-title"><a href="https://www.reuters.com/world/">China-North Korea Bridge Officially Opens as Trucks Begin Crossing</a></span>
+      <div class="item-meta"><span class="source-tag">Reuters</span>14 Oct 2026</div>
+      <p class="item-summary">A long-delayed road bridge linking China and North Korea officially opened on 14 October with truck traffic commencing immediately, marking a substantial deepening of bilateral economic ties after years of construction delays and diplomatic friction.</p>
     </li>
     <li>
-      <span class="item-title"><a href="https://www.reuters.com/world/middle-east/">Container Ship Struck by Projectile in Strait of Hormuz — UKMTO</a></span>
-      <div class="item-meta"><span class="source-tag">Reuters / UKMTO</span>13 Oct 2026</div>
-      <p class="item-summary">The UK Maritime Trade Operations authority reported a container vessel was hit by a projectile in the Strait of Hormuz, extending the pattern of attacks on commercial shipping in the region since the outbreak of the Iran conflict.</p>
+      <span class="item-title"><a href="https://www.reuters.com/world/">Russia Strikes Ukrainian Power Grid Despite Claimed Energy Ceasefire</a></span>
+      <div class="item-meta"><span class="source-tag">Reuters</span>14 Oct 2026</div>
+      <p class="item-summary">Russian forces struck Ukrainian power facilities overnight, leaving 600,000 people without electricity and killing at least three in Kyiv, contradicting a claimed US-brokered energy ceasefire that analysis links to Trump administration midterm political calculations.</p>
     </li>
     <li>
-      <span class="item-title"><a href="https://www.reuters.com/world/europe/">Russia Fires Ballistic Missiles at Kyiv Infrastructure Without Warning</a></span>
-      <div class="item-meta"><span class="source-tag">Reuters</span>13 Oct 2026</div>
-      <p class="item-summary">President Zelenskyy said five Russian ballistic missiles struck civilian infrastructure in Kyiv without advance warning to Ukraine's partners; separately, US envoys Witkoff and Kushner conveyed to Ukrainian officials that a Russian diesel export deal was linked to renewed ceasefire negotiations.</p>
+      <span class="item-title"><a href="https://www.reuters.com/world/">Iran Deploys New Hormuz Interdiction Tactics; Cargo Vessel Sinks After Mining</a></span>
+      <div class="item-meta"><span class="source-tag">Reuters</span>14 Oct 2026</div>
+      <p class="item-summary">Senior Iranian officials told Reuters that Iran has deployed novel maritime interdiction methods in the Strait of Hormuz, as a cargo ship sank after striking a mine in the waterway, further escalating threats to global energy shipping.</p>
+    </li>
+    <li>
+      <span class="item-title"><a href="https://www.economist.com/latest">Houthi Strike on Saudi Airport Is Deadliest Gulf Attack Since Iran War Began</a></span>
+      <div class="item-meta"><span class="source-tag">The Economist</span>14 Oct 2026</div>
+      <p class="item-summary">Yemeni Houthi forces struck a Saudi international airport in what analysts describe as the most lethal single attack on a Gulf Arab state since the outbreak of the Iran-regional war in February, as Saudi-Houthi engagements escalated across multiple fronts.</p>
+    </li>
+    <li>
+      <span class="item-title"><a href="https://www.economist.com/latest">IMF Cuts Gulf Growth Forecasts as Regional War Drives Global Supply Shock</a></span>
+      <div class="item-meta"><span class="source-tag">The Economist</span>14 Oct 2026</div>
+      <p class="item-summary">The IMF's October 2026 World Economic Outlook downgraded forecasts for Gulf economies and cut the global growth projection to 3.1%, with the energy price shock from the ongoing Iran conflict identified as the primary driver.</p>
     </li>
   </ul>
 </section>
@@ -202,19 +203,19 @@
   <h2>Rugby (high-level only)</h2>
   <ul>
     <li>
-      <span class="item-title"><a href="https://www.world.rugby/news">World Rugby Executive Board Approves Dangerous Tackle Law Amendment</a></span>
+      <span class="item-title"><a href="https://www.allblacks.com/news/all-blacks/all-blacks-team-named-to-play-australia-in-second-bledisloe-cup-test">All Blacks Name Reshuffled XV for Second Bledisloe Cup Test in Sydney</a></span>
+      <div class="item-meta"><span class="source-tag">All Blacks / NZ Rugby</span>14 Oct 2026</div>
+      <p class="item-summary">Dave Rennie names a reshuffled All Blacks squad for the 17 October Sydney Test after four players are ruled out — Asafo Aumua and Anton Segner (failed HIAs), Ethan Blackadder (calf) and Leroy Carter (ankle) — with Du'Plessis Kirifi, George Bell, Jamie Hannah and Anton Lienert-Brown called up.</p>
+    </li>
+    <li>
+      <span class="item-title"><a href="https://www.rugby.com.au/news/wallabies-team-bledisloe-cup-all-blacks-announcement-rugby-union-20261015">Wallabies Name Team for Bledisloe Test 2: Meredith at 10, Ikitau and Petaia Out</a></span>
+      <div class="item-meta"><span class="source-tag">Rugby Australia</span>15 Oct 2026</div>
+      <p class="item-summary">Les Kiss selects Declan Meredith at flyhalf and drafts two Brumbies replacements as Len Ikitau (concussion) and Jordan Petaia (ankle) are ruled out for the Sydney Test against New Zealand on 17 October.</p>
+    </li>
+    <li>
+      <span class="item-title"><a href="https://www.world.rugby/news/1047363/disciplinary-decision-wxv-global-series-2026">WXV Global Series Disciplinary: Bans for Two French Players, South Africa Red Card Rescinded</a></span>
       <div class="item-meta"><span class="source-tag">World Rugby</span>13 Oct 2026</div>
-      <p class="item-summary">World Rugby's Executive Board approved a law amendment and an accompanying application guideline that subjects two specific dangerous tackle techniques to automatic sanction at the elite international level, effective immediately.</p>
-    </li>
-    <li>
-      <span class="item-title"><a href="https://www.rugby.com.au/news/2026/10/14/all-blacks-searching-for-repeat-effort-in-bledisloe-rematch/">All Blacks Targeting Back-to-Back Bledisloe Win in Sydney</a></span>
-      <div class="item-meta"><span class="source-tag">rugby.com.au</span>14 Oct 2026</div>
-      <p class="item-summary">Ahead of Bledisloe Cup Test 2 in Sydney on 17 October, the All Blacks squad is focused on backing up the dominant 50-19 victory at Eden Park, with squad members emphasising execution over complacency against a Wallabies side that has reset its mindset.</p>
-    </li>
-    <li>
-      <span class="item-title"><a href="https://www.abc.net.au/news/2026-10-13/bledisloe-cup-wallabies-all-blacks-tom-wright-eden-park-loss/107257634">Wallabies 'Faced the Music' After 50-19 Eden Park Defeat</a></span>
-      <div class="item-meta"><span class="source-tag">ABC News</span>13 Oct 2026</div>
-      <p class="item-summary">Winger Tom Wright said the Wallabies squad confronted the Eden Park loss head-on and have worked through it, insisting there are no lingering mental scars ahead of the Sydney return Test on 17 October.</p>
+      <p class="item-summary">World Rugby's Foul Play Review Committee handed two-match suspensions to French players Cloé Correa and Ambre Mwayembe, while South Africa's Danelle Lochner had her red card rescinded but faces a full disciplinary hearing.</p>
     </li>
   </ul>
 </section>
@@ -223,51 +224,19 @@
   <h2>Sailing</h2>
   <ul>
     <li>
-      <span class="item-title"><a href="https://www.sail-world.com/news/300694/">Record 28-Boat Fleet Gathers for Inaugural Cape 31 Gold Cup</a></span>
-      <div class="item-meta"><span class="source-tag">Sail-World</span>13 Oct 2026</div>
-      <p class="item-summary">A record fleet of 28 Cape 31s assembled in Saint-Tropez for the inaugural Cape 31 Gold Cup; Alessandro Rombelli's Stig was crowned 2026 Mediterranean circuit champion as Gold Cup championship racing got underway on 14 October.</p>
+      <span class="item-title"><a href="https://yachtingworld.com/weather/the-el-nino-phase-typically-lasts-nine-to-18-months-how-it-affects-sailors-164228">El Niño Making Pacific Crossings Slower and Less Predictable, Expert Warns</a></span>
+      <div class="item-meta"><span class="source-tag">Yachting World</span>14 Oct 2026</div>
+      <p class="item-summary">Dr Elizabeth Alberts explains how the current El Niño phase is disrupting trade wind patterns across the Pacific, making ocean passages longer and less reliable for bluewater sailors.</p>
     </li>
     <li>
-      <span class="item-title"><a href="https://www.sail-world.com/news/300673/">Killer Coffee Co Launches 18ft Skiff Team for 2026-27 Season</a></span>
-      <div class="item-meta"><span class="source-tag">Sail-World</span>13 Oct 2026</div>
-      <p class="item-summary">The Killer Coffee Co crew officially launched their 2026-27 Australian 18 Footers League campaign at a hull christening at Double Bay, Sydney Harbour, ahead of the new season.</p>
+      <span class="item-title"><a href="https://www.yachtingworld.com/reviews/boat-tests/stem-50-review-top-quality-adventure-yacht">Stem 50 Review: Capable Aluminium Bluewater Cruiser Sea-Trialled in 30 Knots</a></span>
+      <div class="item-meta"><span class="source-tag">Yachting World</span>13 Oct 2026</div>
+      <p class="item-summary">Jochen Rieker puts the Italian-built aluminium Stem 50 through a 30-knot sea trial and finds a well-engineered bluewater cruiser with strong upwind performance and thoughtful deck ergonomics.</p>
     </li>
     <li>
-      <span class="item-title"><a href="https://www.sail-world.com/news/300643/">International 14 Autumn Trophy Opens at Itchenor SC</a></span>
-      <div class="item-meta"><span class="source-tag">Sail-World</span>12 Oct 2026</div>
-      <p class="item-summary">Twelve boats contested day one of the International 14 Autumn Weekend at Itchenor Sailing Club, with George &amp; Alex winning their second race to take the Autumn Trophy lead.</p>
-    </li>
-  </ul>
-</section>
-
-<section>
-  <h2>People Leadership</h2>
-  <ul>
-    <li>
-      <span class="item-title"><a href="https://hbr.org/2026/10/research-when-being-authentic-undermines-your-leadership">Research: When Being Authentic Undermines Your Leadership</a></span>
-      <div class="item-meta"><span class="source-tag">HBR Leadership</span>12 Oct 2026</div>
-      <p class="item-summary">Empirical research finds that authentic self-disclosure by leaders backfires when the content or timing is misjudged — what leaders share and how they share it matters as much as the intent to be genuine, with trust and effectiveness both damaged in specific conditions.</p>
-    </li>
-    <li>
-      <span class="item-title"><a href="https://hbr.org/2026/10/why-great-teams-dont-need-to-like-each-other">Why Great Teams Don't Need to Like Each Other</a></span>
-      <div class="item-meta"><span class="source-tag">HBR Leadership</span>13 Oct 2026</div>
-      <p class="item-summary">Wharton's Adam Grant draws on research findings to argue that interpersonal liking is not a prerequisite for high team performance, identifying the evidence-backed drivers that actually differentiate effective teams from ineffective ones.</p>
-    </li>
-    <li>
-      <span class="item-title"><a href="https://hbr.org/2026/10/what-sets-great-strategists-apart-in-the-ai-era">What Sets Great Strategists Apart in the AI Era</a></span>
-      <div class="item-meta"><span class="source-tag">HBR Leadership</span>13 Oct 2026</div>
-      <p class="item-summary">Gavetti, Posen, Siderius, and Zaman present research arguing that the most durable strategic advantage in an AI-driven environment is 'sticky knowledge' — tacit, hard-to-transfer insight that AI cannot easily replicate — and outline the conditions under which leaders develop it.</p>
-    </li>
-  </ul>
-</section>
-
-<section>
-  <h2>Emotional Intelligence</h2>
-  <ul>
-    <li>
-      <span class="item-title"><a href="https://greatergood.berkeley.edu/article/item/how_artificial_intelligence_can_help_with_critical_thinking">How Artificial Intelligence Can Help With Critical Thinking</a></span>
-      <div class="item-meta"><span class="source-tag">Greater Good / UC Berkeley</span>12 Oct 2026</div>
-      <p class="item-summary">Monideepa Tarafdar reports research showing knowledge workers who use AI to actively challenge their own reasoning — rather than accepting AI outputs passively — improve performance, linking the approach to metacognition and self-awareness as measurable components of effective thinking.</p>
+      <span class="item-title"><a href="https://sail-world.com/news/300692/Georgetown-sweeps-Match-Races">Georgetown Sweeps Match Races; Stanford Surges as ACC College Sailing Qualifiers Conclude</a></span>
+      <div class="item-meta"><span class="source-tag">Sail-World</span>14 Oct 2026</div>
+      <p class="item-summary">Georgetown and Stanford emerge as co-favourites heading to the Open ACC Championship after each claimed a qualifier title, while Boston College took the Hewitt Trophy with 112 points at the Bowdoin event.</p>
     </li>
   </ul>
 </section>
@@ -276,19 +245,14 @@
   <h2>AI Engineering</h2>
   <ul>
     <li>
-      <span class="item-title"><a href="https://simonwillison.net/2026/Oct/13/redesigning-source-control-at-anthropic/">Redesigning Source Control at Anthropic</a></span>
+      <span class="item-title"><a href="https://simonwillison.net/2026/Oct/13/redesigning-source-control-at-anthropic/">Anthropic Rebuilt Its Version Control System From Scratch</a></span>
       <div class="item-meta"><span class="source-tag">Simon Willison</span>13 Oct 2026</div>
-      <p class="item-summary">Simon Willison links to Anthropic's engineering write-up on building a custom alternative to Git, driven by a sharp rise in code-change volume from AI-assisted development that strained conventional source-control tooling.</p>
+      <p class="item-summary">Anthropic engineers built a custom Git alternative modelled on centralised source control to cope with rapidly expanding codebase and headcount; Willison's write-up links the original internal post and discusses the tradeoffs.</p>
     </li>
     <li>
-      <span class="item-title"><a href="https://simonwillison.net/2026/Oct/12/python-3-15-web-edit-profiling/">Profiling web-edit with Python 3.15: Flame Graphs and Source Heatmaps</a></span>
-      <div class="item-meta"><span class="source-tag">Simon Willison</span>12 Oct 2026</div>
-      <p class="item-summary">Hands-on exploration of Python 3.15's built-in profiler to produce flame graphs and per-line source heatmaps for a web-edit application, demonstrating the new tooling's practical utility for performance bottleneck identification.</p>
-    </li>
-    <li>
-      <span class="item-title"><a href="https://simonwillison.net/2026/Oct/12/python-3-15/">Hello Python 3.15, Goodbye 3.10</a></span>
-      <div class="item-meta"><span class="source-tag">Simon Willison</span>12 Oct 2026</div>
-      <p class="item-summary">Notes on updating cookiecutter project templates to test against Python 3.11–3.15 following the Python 3.15 release; includes practical guidance on dropping end-of-life 3.10 support from CI matrices.</p>
+      <span class="item-title"><a href="https://simonwillison.net/2026/Oct/13/llm-gemini/">LLM-Gemini 0.35 Adds Support for Gemini 4 Argon; Pricing Doubles in December</a></span>
+      <div class="item-meta"><span class="source-tag">Simon Willison</span>13 Oct 2026</div>
+      <p class="item-summary">Simon Willison released llm-gemini 0.35 adding support for Google's newly released Gemini 4 Argon model, with a note that its introductory pricing will double on 1 December 2026.</p>
     </li>
   </ul>
 </section>
@@ -297,88 +261,94 @@
   <h2>Jobs</h2>
   <ul>
     <li>
-      <span class="item-title"><a href="https://www.freelancermap.com/projects">TypeScript Engineer — Freelance, Multi-City Europe</a></span>
-      <div class="item-meta"><span class="source-tag">freelancermap</span>~13 Oct 2026</div>
-      <p class="item-summary">Three-month freelance TypeScript Engineer contract across several European cities (Brussels, Prague, Warsaw, Budapest, Paris, Bucharest), on-site; start date October 2026, via Darwin Recruitment.</p>
+      <span class="item-title"><a href="https://www.freelancermap.com/project/senior-business-analyst-business-process-improvement-und-automation-eu-agency-warsaw">Senior Business Analyst — Process Automation, EU Agency (Warsaw, 100% Remote)</a></span>
+      <div class="item-meta"><span class="source-tag">freelancermap</span>14 Oct 2026</div>
+      <p class="item-summary">Freelance senior BA role with an EU agency client in Warsaw; fully remote, 12-month engagement starting October 2026, focusing on business process improvement and automation.</p>
     </li>
     <li>
-      <span class="item-title"><a href="https://www.freelancermap.com/projects/remote">Senior AI Engineer — Freelance, 100% Remote</a></span>
-      <div class="item-meta"><span class="source-tag">freelancermap</span>~13 Oct 2026</div>
-      <p class="item-summary">Fully remote freelance Senior AI Engineer role starting approximately November 2026, via Darwin Recruitment; full details on freelancermap.</p>
+      <span class="item-title"><a href="https://www.freelancermap.com/projects">TypeScript Engineers — Brussels &amp; Prague (On-site, 3+ Months)</a></span>
+      <div class="item-meta"><span class="source-tag">freelancermap</span>13 Oct 2026</div>
+      <p class="item-summary">Darwin Recruitment posted freelance TypeScript engineering positions in Brussels and Prague for engagements of three months or longer; on-site presence required at both locations.</p>
+    </li>
+    <li>
+      <span class="item-title"><a href="https://www.freelancermap.com/projects">Java Developer — DWP Programme (Newcastle)</a></span>
+      <div class="item-meta"><span class="source-tag">freelancermap</span>13 Oct 2026</div>
+      <p class="item-summary">Boost Talent is recruiting a freelance Java developer for a UK Department for Work and Pensions programme based in Newcastle.</p>
     </li>
   </ul>
 </section>
 
 <section>
   <h2>Archive</h2>
-  <div class="archive-grid">
-    <a href="archive/2026-10-13.html"><span class="date">13 Oct 2026</span><span class="topics">Space · World · Rugby · Sailing · AI</span></a>
-    <a href="archive/2026-10-12.html"><span class="date">12 Oct 2026</span><span class="topics">Space · World · Rugby · Sailing · AI</span></a>
-    <a href="archive/2026-10-11.html"><span class="date">11 Oct 2026</span><span class="topics">Space · World · Rugby · Sailing · AI</span></a>
-    <a href="archive/2026-10-10.html"><span class="date">10 Oct 2026</span><span class="topics">Space · World · Rugby · Sailing · AI</span></a>
-    <a href="archive/2026-10-09.html"><span class="date">9 Oct 2026</span><span class="topics">Space · World · Rugby · Sailing · AI</span></a>
-    <a href="archive/2026-10-08.html"><span class="date">8 Oct 2026</span><span class="topics">Space · World · Rugby · Sailing · AI</span></a>
-    <a href="archive/2026-10-07.html"><span class="date">7 Oct 2026</span><span class="topics">Space · World · Rugby · Sailing · AI</span></a>
-    <a href="archive/2026-10-06.html"><span class="date">6 Oct 2026</span><span class="topics">Space · World · Rugby · Sailing · AI</span></a>
-    <a href="archive/2026-10-05.html"><span class="date">5 Oct 2026</span><span class="topics">Space · World · Rugby · Sailing · AI</span></a>
-    <a href="archive/2026-10-04.html"><span class="date">4 Oct 2026</span><span class="topics">Space · World · Rugby · Sailing · AI</span></a>
-    <a href="archive/2026-10-03.html"><span class="date">3 Oct 2026</span><span class="topics">Space · World · Rugby · Sailing · AI</span></a>
-    <a href="archive/2026-10-02.html"><span class="date">2 Oct 2026</span><span class="topics">Space · World · Rugby · Sailing · AI</span></a>
-    <a href="archive/2026-10-01.html"><span class="date">1 Oct 2026</span><span class="topics">Space · World · Rugby · Sailing · AI</span></a>
-    <a href="archive/2026-09-30.html"><span class="date">30 Sep 2026</span><span class="topics">Space · World · Rugby · Sailing · AI</span></a>
-    <a href="archive/2026-09-29.html"><span class="date">29 Sep 2026</span><span class="topics">Space · World · Rugby · Sailing · AI</span></a>
-    <a href="archive/2026-09-28.html"><span class="date">28 Sep 2026</span><span class="topics">Space · World · Rugby · Sailing · AI</span></a>
-    <a href="archive/2026-09-27.html"><span class="date">27 Sep 2026</span><span class="topics">Space · World · Rugby · Sailing · AI</span></a>
-    <a href="archive/2026-09-26.html"><span class="date">26 Sep 2026</span><span class="topics">Space · World · Rugby · Sailing · AI</span></a>
-    <a href="archive/2026-09-25.html"><span class="date">25 Sep 2026</span><span class="topics">Space · World · Rugby · Sailing · AI</span></a>
-    <a href="archive/2026-09-24.html"><span class="date">24 Sep 2026</span><span class="topics">Space · World · Rugby · Sailing · AI</span></a>
-    <a href="archive/2026-09-23.html"><span class="date">23 Sep 2026</span><span class="topics">Space · World · Rugby · Sailing · AI</span></a>
-    <a href="archive/2026-09-22.html"><span class="date">22 Sep 2026</span><span class="topics">Space · World · Rugby · Sailing · AI</span></a>
-    <a href="archive/2026-09-21.html"><span class="date">21 Sep 2026</span><span class="topics">Space · World · Rugby · Sailing · AI</span></a>
-    <a href="archive/2026-09-20.html"><span class="date">20 Sep 2026</span><span class="topics">Space · World · Rugby · Sailing · AI</span></a>
-    <a href="archive/2026-09-19.html"><span class="date">19 Sep 2026</span><span class="topics">Space · World · Rugby · Sailing · AI</span></a>
-    <a href="archive/2026-09-18.html"><span class="date">18 Sep 2026</span><span class="topics">Space · World · Rugby · Sailing · AI</span></a>
-    <a href="archive/2026-09-17.html"><span class="date">17 Sep 2026</span><span class="topics">Space · World · Rugby · Sailing · AI</span></a>
-    <a href="archive/2026-09-16.html"><span class="date">16 Sep 2026</span><span class="topics">Space · World · Rugby · Sailing · AI</span></a>
-    <a href="archive/2026-09-15.html"><span class="date">15 Sep 2026</span><span class="topics">Space · World · Rugby · Sailing · AI</span></a>
-    <a href="archive/2026-09-14.html"><span class="date">14 Sep 2026</span><span class="topics">Space · World · Rugby · Sailing · AI</span></a>
-    <a href="archive/2026-09-13.html"><span class="date">13 Sep 2026</span><span class="topics">Space · World · Rugby · Sailing · AI</span></a>
-    <a href="archive/2026-09-12.html"><span class="date">12 Sep 2026</span><span class="topics">Space · World · Rugby · Sailing · AI</span></a>
-    <a href="archive/2026-09-11.html"><span class="date">11 Sep 2026</span><span class="topics">Space · World · Rugby · Sailing · AI</span></a>
-    <a href="archive/2026-09-10.html"><span class="date">10 Sep 2026</span><span class="topics">Space · World · Rugby · Sailing · AI</span></a>
-    <a href="archive/2026-09-09.html"><span class="date">9 Sep 2026</span><span class="topics">Space · World · Rugby · Sailing · AI</span></a>
-    <a href="archive/2026-09-08.html"><span class="date">8 Sep 2026</span><span class="topics">Space · World · Rugby · Sailing · AI</span></a>
-    <a href="archive/2026-09-07.html"><span class="date">7 Sep 2026</span><span class="topics">Space · World · Rugby · Sailing · AI</span></a>
-    <a href="archive/2026-09-06.html"><span class="date">6 Sep 2026</span><span class="topics">Space · World · Rugby · Sailing · AI</span></a>
-    <a href="archive/2026-09-05.html"><span class="date">5 Sep 2026</span><span class="topics">Space · World · Rugby · Sailing · AI</span></a>
-    <a href="archive/2026-09-04.html"><span class="date">4 Sep 2026</span><span class="topics">Space · World · Rugby · Sailing · AI</span></a>
-    <a href="archive/2026-09-03.html"><span class="date">3 Sep 2026</span><span class="topics">Space · World · Rugby · Sailing · AI</span></a>
-    <a href="archive/2026-09-02.html"><span class="date">2 Sep 2026</span><span class="topics">Space · World · Rugby · Sailing · AI</span></a>
-    <a href="archive/2026-09-01.html"><span class="date">1 Sep 2026</span><span class="topics">Space · World · Rugby · Sailing · AI</span></a>
-    <a href="archive/2026-08-31.html"><span class="date">31 Aug 2026</span><span class="topics">Space · World · Rugby · Sailing · AI</span></a>
-    <a href="archive/2026-08-30.html"><span class="date">30 Aug 2026</span><span class="topics">Space · World · Rugby · Sailing · AI</span></a>
-    <a href="archive/2026-08-29.html"><span class="date">29 Aug 2026</span><span class="topics">Space · World · Rugby · Sailing · AI</span></a>
-    <a href="archive/2026-08-28.html"><span class="date">28 Aug 2026</span><span class="topics">Space · World · Rugby · Sailing · AI</span></a>
-    <a href="archive/2026-08-27.html"><span class="date">27 Aug 2026</span><span class="topics">Space · World · Rugby · Sailing · AI</span></a>
-    <a href="archive/2026-08-26.html"><span class="date">26 Aug 2026</span><span class="topics">Space · World · Rugby · Sailing · AI</span></a>
-    <a href="archive/2026-08-25.html"><span class="date">25 Aug 2026</span><span class="topics">Space · World · Rugby · Sailing · AI</span></a>
-    <a href="archive/2026-08-24.html"><span class="date">24 Aug 2026</span><span class="topics">Space · World · Rugby · Sailing · AI</span></a>
-    <a href="archive/2026-08-22.html"><span class="date">22 Aug 2026</span><span class="topics">Space · World · Rugby · Sailing · AI</span></a>
-    <a href="archive/2026-08-21.html"><span class="date">21 Aug 2026</span><span class="topics">Space · World · Rugby · Sailing · AI</span></a>
-    <a href="archive/2026-08-20.html"><span class="date">20 Aug 2026</span><span class="topics">Space · World · Rugby · Sailing · AI</span></a>
-    <a href="archive/2026-08-19.html"><span class="date">19 Aug 2026</span><span class="topics">Space · World · Rugby · Sailing · AI</span></a>
-    <a href="archive/2026-08-18.html"><span class="date">18 Aug 2026</span><span class="topics">Space · World · Rugby · Sailing · AI</span></a>
-    <a href="archive/2026-08-17.html"><span class="date">17 Aug 2026</span><span class="topics">Space · World · Rugby · Sailing · AI</span></a>
-    <a href="archive/2026-08-16.html"><span class="date">16 Aug 2026</span><span class="topics">Space · World · Rugby · Sailing · AI</span></a>
-    <a href="archive/2026-08-15.html"><span class="date">15 Aug 2026</span><span class="topics">Space · World · Rugby · Sailing · AI</span></a>
-  </div>
+  <ul class="archive-list">
+    <li><a href="archive/2026-10-15.html">15 October 2026</a><span class="archive-meta">Astronomy · World News · Rugby · Sailing · AI Engineering · Jobs</span></li>
+    <li><a href="archive/2026-10-14.html">14 October 2026</a><span class="archive-meta">Astronomy · World News · Rugby · Sailing · AI Engineering · Jobs</span></li>
+    <li><a href="archive/2026-10-13.html">13 October 2026</a><span class="archive-meta">Astronomy · World News · Rugby · Sailing · AI Engineering · Jobs</span></li>
+    <li><a href="archive/2026-10-12.html">12 October 2026</a></li>
+    <li><a href="archive/2026-10-11.html">11 October 2026</a></li>
+    <li><a href="archive/2026-10-10.html">10 October 2026</a></li>
+    <li><a href="archive/2026-10-09.html">9 October 2026</a></li>
+    <li><a href="archive/2026-10-08.html">8 October 2026</a></li>
+    <li><a href="archive/2026-10-07.html">7 October 2026</a></li>
+    <li><a href="archive/2026-10-06.html">6 October 2026</a></li>
+    <li><a href="archive/2026-10-05.html">5 October 2026</a></li>
+    <li><a href="archive/2026-10-04.html">4 October 2026</a></li>
+    <li><a href="archive/2026-10-03.html">3 October 2026</a></li>
+    <li><a href="archive/2026-10-02.html">2 October 2026</a></li>
+    <li><a href="archive/2026-10-01.html">1 October 2026</a></li>
+    <li><a href="archive/2026-09-30.html">30 September 2026</a></li>
+    <li><a href="archive/2026-09-29.html">29 September 2026</a></li>
+    <li><a href="archive/2026-09-28.html">28 September 2026</a></li>
+    <li><a href="archive/2026-09-27.html">27 September 2026</a></li>
+    <li><a href="archive/2026-09-26.html">26 September 2026</a></li>
+    <li><a href="archive/2026-09-25.html">25 September 2026</a></li>
+    <li><a href="archive/2026-09-24.html">24 September 2026</a></li>
+    <li><a href="archive/2026-09-23.html">23 September 2026</a></li>
+    <li><a href="archive/2026-09-22.html">22 September 2026</a></li>
+    <li><a href="archive/2026-09-21.html">21 September 2026</a></li>
+    <li><a href="archive/2026-09-20.html">20 September 2026</a></li>
+    <li><a href="archive/2026-09-19.html">19 September 2026</a></li>
+    <li><a href="archive/2026-09-18.html">18 September 2026</a></li>
+    <li><a href="archive/2026-09-17.html">17 September 2026</a></li>
+    <li><a href="archive/2026-09-16.html">16 September 2026</a></li>
+    <li><a href="archive/2026-09-15.html">15 September 2026</a></li>
+    <li><a href="archive/2026-09-14.html">14 September 2026</a></li>
+    <li><a href="archive/2026-09-13.html">13 September 2026</a></li>
+    <li><a href="archive/2026-09-12.html">12 September 2026</a></li>
+    <li><a href="archive/2026-09-11.html">11 September 2026</a></li>
+    <li><a href="archive/2026-09-10.html">10 September 2026</a></li>
+    <li><a href="archive/2026-09-09.html">9 September 2026</a></li>
+    <li><a href="archive/2026-09-08.html">8 September 2026</a></li>
+    <li><a href="archive/2026-09-07.html">7 September 2026</a></li>
+    <li><a href="archive/2026-09-06.html">6 September 2026</a></li>
+    <li><a href="archive/2026-09-05.html">5 September 2026</a></li>
+    <li><a href="archive/2026-09-04.html">4 September 2026</a></li>
+    <li><a href="archive/2026-09-03.html">3 September 2026</a></li>
+    <li><a href="archive/2026-09-02.html">2 September 2026</a></li>
+    <li><a href="archive/2026-09-01.html">1 September 2026</a></li>
+    <li><a href="archive/2026-08-31.html">31 August 2026</a></li>
+    <li><a href="archive/2026-08-30.html">30 August 2026</a></li>
+    <li><a href="archive/2026-08-29.html">29 August 2026</a></li>
+    <li><a href="archive/2026-08-28.html">28 August 2026</a></li>
+    <li><a href="archive/2026-08-27.html">27 August 2026</a></li>
+    <li><a href="archive/2026-08-26.html">26 August 2026</a></li>
+    <li><a href="archive/2026-08-25.html">25 August 2026</a></li>
+    <li><a href="archive/2026-08-24.html">24 August 2026</a></li>
+    <li><a href="archive/2026-08-22.html">22 August 2026</a></li>
+    <li><a href="archive/2026-08-21.html">21 August 2026</a></li>
+    <li><a href="archive/2026-08-20.html">20 August 2026</a></li>
+    <li><a href="archive/2026-08-19.html">19 August 2026</a></li>
+    <li><a href="archive/2026-08-18.html">18 August 2026</a></li>
+    <li><a href="archive/2026-08-17.html">17 August 2026</a></li>
+    <li><a href="archive/2026-08-16.html">16 August 2026</a></li>
+  </ul>
 </section>
 
 </main>
 
 <footer>
   <div class="container">
-    <p>Generated 14 October 2026 at 07:15 CET &middot; Sources: NASA, ESA, Sky &amp; Telescope, Reuters, World Rugby, Sail-World, HBR, Greater Good Magazine, Simon Willison, freelancermap</p>
+    <p>Generated 15 October 2026 · Europe/Zurich</p>
   </div>
 </footer>
 </body>
