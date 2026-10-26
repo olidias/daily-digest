@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Digest — 26 October 2026</title>
+<style>
+  :root {
+    --bg: #f8f8f4;
+    --surface: #ffffff;
+    --border: #e0ddd5;
+    --text: #1a1a18;
+    --text-muted: #6b6b62;
+    --accent: #2a5298;
+    --accent-hover: #1a3e7a;
+    --tag-bg: #eef1f8;
+    --tag-text: #2a5298;
+    --section-bg: #f2f1ec;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #111110;
+      --surface: #1c1c1a;
+      --border: #2e2e2b;
+      --text: #e8e8e2;
+      --text-muted: #8a8a80;
+      --accent: #6b9af4;
+      --accent-hover: #8eb2ff;
+      --tag-bg: #1e2a42;
+      --tag-text: #6b9af4;
+      --section-bg: #161614;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #111110;
+    --surface: #1c1c1a;
+    --border: #2e2e2b;
+    --text: #e8e8e2;
+    --text-muted: #8a8a80;
+    --accent: #6b9af4;
+    --accent-hover: #8eb2ff;
+    --tag-bg: #1e2a42;
+    --tag-text: #6b9af4;
+    --section-bg: #161614;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    background: var(--bg);
+    color: var(--text);
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 24px 16px 48px;
+  }
+
+  header {
+    padding: 32px 0 24px;
+    border-bottom: 2px solid var(--border);
+    margin-bottom: 32px;
+  }
+  header h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text);
+  }
+  header .subtitle {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+  }
+  header a.back {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 0.85rem;
+    color: var(--accent);
+    text-decoration: none;
+  }
+  header a.back:hover { text-decoration: underline; }
+
+  section {
+    margin-bottom: 36px;
+  }
+  section h2 {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    padding: 6px 10px;
+    background: var(--section-bg);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 4px 4px 0;
+    margin-bottom: 12px;
+  }
+
+  ul.items { list-style: none; }
+  ul.items li {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  ul.items li:last-child { border-bottom: none; }
+
+  .item-title {
+    font-size: 0.97rem;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+  .item-title a {
+    color: var(--text);
+    text-decoration: none;
+  }
+  .item-title a:hover { color: var(--accent-hover); text-decoration: underline; }
+
+  .item-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 3px;
+    margin-bottom: 4px;
+  }
+  .source-tag {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    padding: 1px 6px;
+    background: var(--tag-bg);
+    color: var(--tag-text);
+    border-radius: 3px;
+    white-space: nowrap;
+  }
+
+  .item-summary {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    line-height: 1.55;
+  }
+
+  /* Jobs section */
+  ul.jobs-list { list-style: none; }
+  ul.jobs-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.875rem;
+  }
+  ul.jobs-list li:last-child { border-bottom: none; }
+  ul.jobs-list .job-title { font-weight: 600; color: var(--text); }
+  ul.jobs-list .job-title a { color: var(--text); text-decoration: none; }
+  ul.jobs-list .job-title a:hover { color: var(--accent-hover); text-decoration: underline; }
+  ul.jobs-list .job-details { color: var(--text-muted); font-size: 0.82rem; margin-top: 2px; }
+
+  footer {
+    margin-top: 48px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+  footer a { color: var(--text-muted); }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Daily Digest — 26 October 2026</h1>
+  <div class="subtitle">Monday · Europe/Zurich</div>
+  <a class="back" href="../index.html">← Back to index</a>
+</header>
+
+<section id="astronomy">
+  <h2>Astronomy &amp; Space</h2>
+  <ul class="items">
+    <li>
+      <div class="item-title"><a href="https://www.nasa.gov/roman-space-telescope/" target="_blank" rel="noopener">Roman Space Telescope Enters Commissioning Phase After Launch</a></div>
+      <div class="item-meta"><span class="source-tag">NASA</span></div>
+      <div class="item-summary">The Nancy Grace Roman Space Telescope, launched August 30 on a Falcon Heavy, has completed its 1.5-million-km journey to L2 and begun the three-month instrument commissioning sequence ahead of first science light in early 2027.</div>
+    </li>
+    <li>
+      <div class="item-title"><a href="https://www.archyde.com/hubble-data-challenges-supernova-role-in-cosmic-reionization/" target="_blank" rel="noopener">Hubble Observations Challenge Supernova Winds' Role in Cosmic Reionization</a></div>
+      <div class="item-meta"><span class="source-tag">Nature Astronomy / Phys.org</span></div>
+      <div class="item-summary">New Hubble UV spectroscopy of nearby starburst galaxies finds that the fastest supernova-driven outflows actually suppress the escape of ionizing radiation, undermining the dominant model and pointing to young stars as the primary driver of reionization.</div>
+    </li>
+    <li>
+      <div class="item-title"><a href="https://www.quantamagazine.org/dark-matter-stripped-galaxies-collision/" target="_blank" rel="noopener">Galaxy Triplet Appears Stripped of Dark Matter by Ancient Collision</a></div>
+      <div class="item-meta"><span class="source-tag">Quanta Magazine</span></div>
+      <div class="item-summary">Astronomers have found three dwarf galaxies that seem to contain almost no dark matter, apparently ejected by a high-speed galactic encounter — an observation that poses a direct challenge to modified gravity theories that dispense with dark matter entirely.</div>
+    </li>
+    <li>
+      <div class="item-title"><a href="https://spacewatch.global/2026/10/esa-council-names-new-agency-directors-for-commercialisation-and-space-operations/" target="_blank" rel="noopener">ESA Space Rider Drop-Test Failure Will Not Delay Development, Agency Says</a></div>
+      <div class="item-meta"><span class="source-tag">ESA / European Spaceflight</span></div>
+      <div class="item-summary">ESA confirmed that a full-scale Space Rider test model was lost after a parafoil deployment anomaly during a drop test, but says the failure has been characterised and does not affect the vehicle's development schedule.</div>
+    </li>
+    <li>
+      <div class="item-title"><a href="https://www.space.com/october-full-moon-hunters-moon-2026" target="_blank" rel="noopener">October Hunter's Moon Rises on October 25</a></div>
+      <div class="item-meta"><span class="source-tag">Sky &amp; Telescope / Space.com</span></div>
+      <div class="item-summary">The October full moon — traditionally the Hunter's Moon — rose on the evening of October 25, offering clear-sky observers across the Northern Hemisphere a bright, low-horizon moon ideal for extended stargazing.</div>
+    </li>
+  </ul>
+</section>
+
+<section id="world-news">
+  <h2>World News</h2>
+  <ul class="items">
+    <li>
+      <div class="item-title"><a href="https://dailycuratednews.substack.com/p/news-headlines-october-26-2026" target="_blank" rel="noopener">Lula Wins Brazilian Presidential Runoff, Secures Fourth Term</a></div>
+      <div class="item-meta"><span class="source-tag">Reuters / Substack News Roundup</span></div>
+      <div class="item-summary">Incumbent President Luiz Inácio Lula da Silva defeated Senator Jair Bolsonaro in Brazil's presidential runoff election, securing a fourth term in a result that stabilises Lula's centrist-left coalition.</div>
+    </li>
+    <li>
+      <div class="item-title"><a href="https://www.euronews.com/tag/top-stories" target="_blank" rel="noopener">More Than 400,000 March Across France Despite Government Protest Ban</a></div>
+      <div class="item-meta"><span class="source-tag">Euronews</span></div>
+      <div class="item-summary">Demonstrations spread across French cities on Sunday despite an official ban, with authorities reporting over 400,000 participants nationwide and 1,300 arrests; solidarity marches also took place in Milan and other European capitals.</div>
+    </li>
+    <li>
+      <div class="item-title"><a href="https://dailycuratednews.substack.com/p/news-headlines-october-26-2026" target="_blank" rel="noopener">Pentagon Drafts Iran Strike Options as Trump Weighs Deal vs. Military Action</a></div>
+      <div class="item-meta"><span class="source-tag">Daily Curated News / SBS</span></div>
+      <div class="item-summary">US defense planners have prepared a range of Iran strike scenarios at the White House's request, as President Trump publicly said he is weighing a diplomatic deal against more aggressive options, prompting Tehran to threaten "aggressive retaliation."</div>
+    </li>
+    <li>
+      <div class="item-title"><a href="https://news.sbs.co.kr/english/article.do?news_id=N1008815021" target="_blank" rel="noopener">Typhoon Champi Weakens to Extratropical Cyclone; Heavy Rain Forecast for Japan</a></div>
+      <div class="item-meta"><span class="source-tag">SBS News</span></div>
+      <div class="item-summary">The 30th named typhoon of the season, Champi, weakened into an extratropical cyclone early October 26 but continues to direct significant moisture toward Japan's main islands, where authorities have issued heavy rainfall advisories.</div>
+    </li>
+    <li>
+      <div class="item-title"><a href="https://dailycuratednews.substack.com/p/news-headlines-october-26-2026" target="_blank" rel="noopener">Venezuela's Machado Returns Home as Opposition Eyes Election Momentum</a></div>
+      <div class="item-meta"><span class="source-tag">Daily Curated News</span></div>
+      <div class="item-summary">Opposition leader María Corina Machado returned to Venezuela following an extended absence, signalling a renewed push to contest the Maduro government's legitimacy amid ongoing international pressure.</div>
+    </li>
+  </ul>
+</section>
+
+<section id="rugby">
+  <h2>Rugby</h2>
+  <ul class="items">
+    <li>
+      <div class="item-title"><a href="https://www.premiershiprugby.com/" target="_blank" rel="noopener">Bristol Bears 20–7 Exeter Chiefs (Gallagher Premiership, Round 5)</a></div>
+      <div class="item-meta"><span class="source-tag">All.Rugby / Premiership</span></div>
+      <div class="item-summary">Bristol held firm at Ashton Gate on Sunday to beat Exeter 20–7, marking a significant bounce-back win for the Bears and piling pressure on the Chiefs after a tough start to their 2026–27 Premiership campaign.</div>
+    </li>
+    <li>
+      <div class="item-title"><a href="https://www.rugbyworld.com/rugby-fixtures/united-rugby-championship-fixtures" target="_blank" rel="noopener">URC Weekend Results: Lions Edge Ulster in High-Scoring Clash</a></div>
+      <div class="item-meta"><span class="source-tag">Rugby World / URC</span></div>
+      <div class="item-summary">The Lions defeated Ulster 49–31 in a high-scoring United Rugby Championship fixture, while other Saturday matches across the competition continued the 2026–27 season's fast-paced opening weeks.</div>
+    </li>
+    <li>
+      <div class="item-title"><a href="https://www.planetrugby.com/tournament/united-rugby-championship" target="_blank" rel="noopener">Connacht Beat Zebre Parma 44–26 in URC (Oct 23)</a></div>
+      <div class="item-meta"><span class="source-tag">Planet Rugby / URC</span></div>
+      <div class="item-summary">Connacht ran in five tries against Zebre Parma at Dexcom Stadium in Galway, with Cian Prendergast among the scorers, in a bonus-point win that keeps the Irish province near the top of the URC standings.</div>
+    </li>
+  </ul>
+</section>
+
+<section id="sailing">
+  <h2>Sailing</h2>
+  <ul class="items">
+    <li>
+      <div class="item-title"><a href="https://www.yachtsandyachting.com/" target="_blank" rel="noopener">Route du Rhum Final Fleet Assembled: 115 Skippers Depart Saint-Malo November 1</a></div>
+      <div class="item-meta"><span class="source-tag">Yachts &amp; Yachting</span></div>
+      <div class="item-summary">The 2026 Route du Rhum fleet is fully registered with 115 skippers across six classes — including the ultra-light Ocean Fifty multihulls — set to leave Saint-Malo for Guadeloupe on Sunday, November 1, in what promises to be a competitive solo transatlantic race.</div>
+    </li>
+    <li>
+      <div class="item-title"><a href="https://goldengloberace.com/news/" target="_blank" rel="noopener">Pat Lawless Retires from McIntyre Golden Globe Race After Critical Rig Failure</a></div>
+      <div class="item-meta"><span class="source-tag">Golden Globe Race / Yachts &amp; Yachting</span></div>
+      <div class="item-summary">Irish skipper Pat Lawless has been forced to retire from the 2026 McIntyre Golden Globe Race after a critical rig failure aboard SILVERMINES HYDRO in the South Atlantic, where a severe storm also battered the wider fleet.</div>
+    </li>
+    <li>
+      <div class="item-title"><a href="https://www.yachtsandyachting.com/" target="_blank" rel="noopener">SB20 World Championship Battles Storm Conditions at Hyères</a></div>
+      <div class="item-meta"><span class="source-tag">Yachts &amp; Yachting</span></div>
+      <div class="item-summary">The SB20 World Championship at Hyères turned testing on October 24 when a fast-moving storm replaced light conditions with heavy showers and 28-knot gusts, reshuffling the provisional standings midway through the regatta.</div>
+    </li>
+    <li>
+      <div class="item-title"><a href="https://www.sailingscuttlebutt.com/" target="_blank" rel="noopener">Rolex Middle Sea Race Concludes; 107-Yacht Fleet from 55 Nations</a></div>
+      <div class="item-meta"><span class="source-tag">Scuttlebutt Sailing</span></div>
+      <div class="item-summary">The 2026 Rolex Middle Sea Race, which started on October 17 with a record-matching 107 yachts representing 55 countries, has wrapped with winners announced across IRC and class divisions.</div>
+    </li>
+  </ul>
+</section>
+
+<section id="lifting">
+  <h2>Science-Based Lifting</h2>
+  <ul class="items">
+    <li>
+      <div class="item-title"><a href="https://www.sciencedaily.com/news/health_medicine/fitness/" target="_blank" rel="noopener">Four Minutes of Daily Strength Training Improves Mobility in Older Adults — Penn State RCT</a></div>
+      <div class="item-meta"><span class="source-tag">ScienceDaily / Penn State</span></div>
+      <div class="item-summary">A 12-week randomised controlled trial from Penn State found that just four minutes of daily resistance exercise significantly improved mobility and physical function in older adults, suggesting very short sessions are sufficient to generate clinically meaningful adaptations.</div>
+    </li>
+    <li>
+      <div class="item-title"><a href="https://health.yahoo.com/wellness/fitness/exercise/articles/older-men-tried-trendy-strength-190428742.html" target="_blank" rel="noopener">Heavy Loading Outperforms Nordic/Eccentric Protocols on Strength in Older Men — Eur. J. Applied Physiology</a></div>
+      <div class="item-meta"><span class="source-tag">European Journal of Applied Physiology (2026)</span></div>
+      <div class="item-summary">A 2026 randomised trial comparing traditional heavy lifting with eccentric-focused protocols in older men found that heavy loading produced superior gains on two maximal strength measures, while eccentric sessions caused significantly more DOMS and elevated creatine kinase.</div>
+    </li>
+    <li>
+      <div class="item-title"><a href="https://www.sciencedaily.com/releases/2026/10/261006234509.htm" target="_blank" rel="noopener">Seven Days of Resistance Exercise Shrinks Visceral Fat Cells in Obese Mice — UNICAMP</a></div>
+      <div class="item-meta"><span class="source-tag">ScienceDaily / UNICAMP</span></div>
+      <div class="item-summary">Brazilian researchers at UNICAMP found that just seven days of resistance training reduced the size of visceral adipocytes in obese mice even without measurable weight loss, suggesting metabolic benefits begin far earlier than body-composition changes become visible — though human replication is still needed.</div>
+    </li>
+  </ul>
+</section>
+
+<section id="leadership">
+  <h2>People Leadership</h2>
+  <ul class="items">
+    <li>
+      <div class="item-title"><a href="https://hbr.org/archive-toc/BR2605" target="_blank" rel="noopener">Three Evidence-Based Practices for Sustaining Large-Scale Transformation — HBR Sept–Oct 2026</a></div>
+      <div class="item-meta"><span class="source-tag">Harvard Business Review</span></div>
+      <div class="item-summary">Drawing on comparative case studies of DBS Bank and GE, the HBR September–October 2026 cover piece identifies three leadership practices — coherent narrative maintenance, distributed ownership, and adaptive pacing — that distinguish transformations that sustain momentum from those that stall.</div>
+    </li>
+    <li>
+      <div class="item-title"><a href="https://sloanreview.mit.edu/" target="_blank" rel="noopener">Responsible AI Governance: Study Maps When Agent Autonomy Crosses Acceptable Thresholds — MIT Sloan (Oct 21)</a></div>
+      <div class="item-meta"><span class="source-tag">MIT Sloan Management Review</span></div>
+      <div class="item-summary">Stefan Tams, Ofir Turel, and Kevin Hill publish empirical findings on the conditions under which employees and managers judge autonomous AI agents as overstepping, with implications for where human-in-the-loop controls should be preserved in enterprise deployments.</div>
+    </li>
+  </ul>
+</section>
+
+<section id="emotional-intelligence">
+  <h2>Emotional Intelligence</h2>
+  <ul class="items">
+    <li>
+      <div class="item-title"><a href="https://yahoo.com/lifestyle/articles/landmark-study-finds-women-more-155444349.html" target="_blank" rel="noopener">Landmark Meta-Study: Women Score Higher in EI Across 76 Countries, but Career Penalty Persists — APA Emotion</a></div>
+      <div class="item-meta"><span class="source-tag">APA / Emotion Journal</span></div>
+      <div class="item-summary">An APA journal analysis of 609,278 individuals across 76 countries from 1995–2023 confirms a consistent gender gap in emotional intelligence — concentrated in the "recognising others' feelings" domain — while simultaneously documenting that the advantage produces wage and promotion penalties for women rather than career rewards.</div>
+    </li>
+    <li>
+      <div class="item-title"><a href="https://www.psypost.org/massive-review-confirms-the-connection-between-emotional-intelligence-and-human/" target="_blank" rel="noopener">PNAS Meta-Meta-Analysis: EI Robustly Predicts Well-Being, But Measurement Method Is Decisive — Robinson &amp; Zell</a></div>
+      <div class="item-meta"><span class="source-tag">PNAS / PsyPost</span></div>
+      <div class="item-summary">Pooling 62 prior meta-analyses covering more than three million participants across 3,000+ studies, Robinson and Zell find that higher emotional intelligence reliably predicts flourishing at work, school, and in relationships, but the effect size varies substantially depending on whether EI is assessed by ability test or self-report.</div>
+    </li>
+  </ul>
+</section>
+
+<section id="ai-engineering">
+  <h2>AI Engineering</h2>
+  <ul class="items">
+    <li>
+      <div class="item-title"><a href="https://simonwillison.net/2026/Oct/23/kimi-k31-pro" target="_blank" rel="noopener">Kimi K3.1 Pro Released: Near Claude Opus 5.5 on Benchmarks, Open Weights Due Nov 4</a></div>
+      <div class="item-meta"><span class="source-tag">Simon Willison</span></div>
+      <div class="item-summary">Moonshot's Kimi K3.1 Pro is now available via API and scores 55 on Artificial Analysis benchmarks — behind only Claude Opus 5.5 (58) and ahead of Claude Fable 5.1, GPT-6 Astra, and Gemini 4 Argon — with full model weights promised for public release by November 4.</div>
+    </li>
+    <li>
+      <div class="item-title"><a href="https://simonwillison.net/2026/Oct/22/agent-skills-foundation" target="_blank" rel="noopener">Anthropic Donates Agent Skills Standard to Agentic AI Foundation for Open Governance</a></div>
+      <div class="item-meta"><span class="source-tag">Simon Willison / Anthropic</span></div>
+      <div class="item-summary">Anthropic has transferred stewardship of the Agent Skills interoperability standard to the newly-formed Agentic AI Foundation (AAIF), removing vendor lock-in concerns and positioning the spec as a neutral cross-platform foundation for AI agent tool-use ecosystems.</div>
+    </li>
+    <li>
+      <div class="item-title"><a href="https://simonwillison.net/2026/Oct/18/llm-tools-datasette/" target="_blank" rel="noopener">LLM-Tools-Datasette 0.1.1 Released — Exposes Datasette Instances as LLM Tool Endpoints</a></div>
+      <div class="item-meta"><span class="source-tag">Simon Willison</span></div>
+      <div class="item-summary">Simon Willison released llm-tools-datasette 0.1.1, a plugin that exposes any Datasette database instance as a callable tool for LLMs, fixing a dependency break introduced when LLM 0.33 switched its HTTP layer to httpx2.</div>
+    </li>
+  </ul>
+</section>
+
+<section id="jobs">
+  <h2>Jobs</h2>
+  <ul class="jobs-list">
+    <li>
+      <div class="job-title"><a href="https://www.freelancermap.com/projects" target="_blank" rel="noopener">SAP FI-CO Consultant</a></div>
+      <div class="job-details">freelancermap · Visp, Switzerland · Hybrid (3 days on-site)</div>
+    </li>
+    <li>
+      <div class="job-title"><a href="https://www.freelancermap.de/projekte/%c3%a0-lausanne.html" target="_blank" rel="noopener">C++ Software Tester</a></div>
+      <div class="job-details">freelancermap · Lausanne / Remote · 12-month contract</div>
+    </li>
+    <li>
+      <div class="job-title"><a href="https://www.freelancermap.de/projekte/%c3%a0-lausanne.html" target="_blank" rel="noopener">Dynamics 365 Finance &amp; Operations Consultant</a></div>
+      <div class="job-details">freelancermap · Zurich / Geneva · 40% home office</div>
+    </li>
+    <li>
+      <div class="job-title"><a href="https://swissdevjobs.ch/" target="_blank" rel="noopener">Browse current Swiss developer roles (full-time, part-time, remote)</a></div>
+      <div class="job-details">swissdevjobs.ch · 80k+ monthly visitors · Filter by tech stack, canton, or contract type</div>
+    </li>
+  </ul>
+</section>
+
+<footer>
+  <p>Generated 2026-10-26 07:10 CET &nbsp;·&nbsp; <a href="../index.html">← Archive index</a></p>
+</footer>
+
+</body>
+</html>
