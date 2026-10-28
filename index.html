@@ -6,151 +6,251 @@
 <title>Daily Digest</title>
 <style>
   :root {
-    --bg: #f7f7f5;
+    --bg: #f9f7f4;
     --surface: #ffffff;
-    --border: #e2e2de;
-    --text: #1a1a18;
-    --muted: #6b6b66;
-    --accent: #1a5c96;
-    --accent-hover: #134a7a;
+    --border: #e2ddd8;
+    --text: #1a1917;
+    --muted: #6b6460;
+    --accent: #2c5f8a;
+    --accent-light: #e8f0f8;
+    --tag-bg: #f0ece8;
+    --tag-text: #5a504a;
+    --heading: #111110;
+    --archive-bg: #f2eee9;
   }
   @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #16161a;
-      --surface: #1e1e24;
-      --border: #2e2e38;
-      --text: #e8e8e2;
-      --muted: #8e8e88;
-      --accent: #6aaddc;
-      --accent-hover: #8ec4e8;
+    :root:not([data-theme="light"]) {
+      --bg: #171614;
+      --surface: #1f1e1c;
+      --border: #2e2c29;
+      --text: #ddd9d4;
+      --muted: #8a8480;
+      --accent: #6ba3cc;
+      --accent-light: #1a2a3a;
+      --tag-bg: #2a2825;
+      --tag-text: #9a9490;
+      --heading: #f0ece8;
+      --archive-bg: #1a1917;
     }
   }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root[data-theme="dark"] {
+    --bg: #171614;
+    --surface: #1f1e1c;
+    --border: #2e2c29;
+    --text: #ddd9d4;
+    --muted: #8a8480;
+    --accent: #6ba3cc;
+    --accent-light: #1a2a3a;
+    --tag-bg: #2a2825;
+    --tag-text: #9a9490;
+    --heading: #f0ece8;
+    --archive-bg: #1a1917;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   body {
+    font-family: Georgia, 'Times New Roman', serif;
     background: var(--bg);
     color: var(--text);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    padding: 0 16px;
+    line-height: 1.65;
+    font-size: 17px;
   }
-  .container { max-width: 760px; margin: 0 auto; padding: 32px 0 64px; }
-  header { border-bottom: 2px solid var(--border); padding-bottom: 20px; margin-bottom: 36px; }
-  header h1 { font-size: 1.8rem; font-weight: 700; letter-spacing: -0.02em; }
-  header p { color: var(--muted); font-size: 0.9rem; margin-top: 6px; }
-  .today-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 24px;
+  .page-wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 16px 64px;
+  }
+  header {
+    padding: 40px 0 28px;
+    border-bottom: 2px solid var(--border);
     margin-bottom: 40px;
   }
-  .today-card h2 { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--muted); margin-bottom: 10px; }
-  .today-card .date-link { font-size: 1.35rem; font-weight: 700; color: var(--accent); text-decoration: none; }
-  .today-card .date-link:hover { color: var(--accent-hover); text-decoration: underline; }
-  .today-card .topics { font-size: 0.85rem; color: var(--muted); margin-top: 8px; }
-  .archive-section h2 {
-    font-size: 1rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--muted);
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 8px;
-    margin-bottom: 16px;
+  header h1 {
+    font-size: clamp(24px, 5vw, 34px);
+    font-weight: normal;
+    color: var(--heading);
+    letter-spacing: -0.5px;
   }
-  .archive-section ul { list-style: none; }
-  .archive-section li { padding: 5px 0; border-bottom: 1px solid var(--border); }
-  .archive-section li:last-child { border-bottom: none; }
-  .archive-section a { color: var(--accent); text-decoration: none; font-size: 0.95rem; }
-  .archive-section a:hover { text-decoration: underline; }
-  footer { border-top: 1px solid var(--border); padding-top: 16px; font-size: 0.8rem; color: var(--muted); margin-top: 40px; }
+  header .sub {
+    margin-top: 6px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  /* ── Today section ── */
+  .today-label {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--muted);
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+  .today-link {
+    display: block;
+    padding: 14px 16px;
+    background: var(--accent-light);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    text-decoration: none;
+    margin-bottom: 40px;
+    transition: border-color 0.15s;
+  }
+  .today-link:hover { border-color: var(--accent); }
+  .today-link .today-date {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+  .today-link .today-headline {
+    font-size: 19px;
+    color: var(--heading);
+    line-height: 1.35;
+  }
+  .today-link .today-topics {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 8px;
+  }
+  /* ── Archive section ── */
+  .archive-section h2 {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--muted);
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+  .archive-list {
+    list-style: none;
+  }
+  .archive-list li {
+    border-bottom: 1px solid var(--border);
+  }
+  .archive-list li:last-child { border-bottom: none; }
+  .archive-list a {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    padding: 10px 0;
+    text-decoration: none;
+    color: var(--text);
+    font-size: 15px;
+  }
+  .archive-list a:hover .arc-date { color: var(--accent); }
+  .archive-list a:hover .arc-topics { text-decoration: underline; }
+  .arc-date {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 13px;
+    color: var(--muted);
+    flex-shrink: 0;
+    min-width: 100px;
+  }
+  .arc-topics {
+    color: var(--text);
+  }
+  footer {
+    border-top: 1px solid var(--border);
+    padding-top: 24px;
+    margin-top: 40px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 12px;
+    color: var(--muted);
+  }
 </style>
 </head>
 <body>
-<div class="container">
+<div class="page-wrap">
 
-<header>
-  <h1>Daily Digest</h1>
-  <p>A curated daily briefing &mdash; Astronomy, World News, Rugby, Sailing, Science-Based Lifting, Leadership, EI, AI Engineering, Jobs</p>
-</header>
+  <header>
+    <h1>Daily Digest</h1>
+    <div class="sub">Astronomy · World News · Rugby · Sailing · Science · Leadership · AI</div>
+  </header>
 
-<div class="today-card">
-  <h2>Today</h2>
-  <a class="date-link" href="archive/2026-10-27.html">27 October 2026</a>
-  <p class="topics">Astronomy &amp; Space &middot; World News &middot; Rugby &middot; Sailing &middot; Science-Based Lifting &middot; People Leadership &middot; Emotional Intelligence &middot; AI Engineering &middot; Jobs</p>
-</div>
+  <div class="today-label">Today — Wednesday 28 October 2026</div>
 
-<div class="archive-section">
-  <h2>Archive</h2>
-  <ul>
-      <li><a href="archive/2026-10-27.html">27 October 2026</a></li>
-      <li><a href="archive/2026-10-26.html">26 October 2026</a></li>
-      <li><a href="archive/2026-10-25.html">25 October 2026</a></li>
-      <li><a href="archive/2026-10-24.html">24 October 2026</a></li>
-      <li><a href="archive/2026-10-23.html">23 October 2026</a></li>
-      <li><a href="archive/2026-10-22.html">22 October 2026</a></li>
-      <li><a href="archive/2026-10-21.html">21 October 2026</a></li>
-      <li><a href="archive/2026-10-20.html">20 October 2026</a></li>
-      <li><a href="archive/2026-10-19.html">19 October 2026</a></li>
-      <li><a href="archive/2026-10-18.html">18 October 2026</a></li>
-      <li><a href="archive/2026-10-17.html">17 October 2026</a></li>
-      <li><a href="archive/2026-10-16.html">16 October 2026</a></li>
-      <li><a href="archive/2026-10-15.html">15 October 2026</a></li>
-      <li><a href="archive/2026-10-14.html">14 October 2026</a></li>
-      <li><a href="archive/2026-10-13.html">13 October 2026</a></li>
-      <li><a href="archive/2026-10-12.html">12 October 2026</a></li>
-      <li><a href="archive/2026-10-11.html">11 October 2026</a></li>
-      <li><a href="archive/2026-10-10.html">10 October 2026</a></li>
-      <li><a href="archive/2026-10-09.html">9 October 2026</a></li>
-      <li><a href="archive/2026-10-08.html">8 October 2026</a></li>
-      <li><a href="archive/2026-10-07.html">7 October 2026</a></li>
-      <li><a href="archive/2026-10-06.html">6 October 2026</a></li>
-      <li><a href="archive/2026-10-05.html">5 October 2026</a></li>
-      <li><a href="archive/2026-10-04.html">4 October 2026</a></li>
-      <li><a href="archive/2026-10-03.html">3 October 2026</a></li>
-      <li><a href="archive/2026-10-02.html">2 October 2026</a></li>
-      <li><a href="archive/2026-10-01.html">1 October 2026</a></li>
-      <li><a href="archive/2026-09-30.html">30 September 2026</a></li>
-      <li><a href="archive/2026-09-29.html">29 September 2026</a></li>
-      <li><a href="archive/2026-09-28.html">28 September 2026</a></li>
-      <li><a href="archive/2026-09-27.html">27 September 2026</a></li>
-      <li><a href="archive/2026-09-26.html">26 September 2026</a></li>
-      <li><a href="archive/2026-09-25.html">25 September 2026</a></li>
-      <li><a href="archive/2026-09-24.html">24 September 2026</a></li>
-      <li><a href="archive/2026-09-23.html">23 September 2026</a></li>
-      <li><a href="archive/2026-09-22.html">22 September 2026</a></li>
-      <li><a href="archive/2026-09-21.html">21 September 2026</a></li>
-      <li><a href="archive/2026-09-20.html">20 September 2026</a></li>
-      <li><a href="archive/2026-09-19.html">19 September 2026</a></li>
-      <li><a href="archive/2026-09-18.html">18 September 2026</a></li>
-      <li><a href="archive/2026-09-17.html">17 September 2026</a></li>
-      <li><a href="archive/2026-09-16.html">16 September 2026</a></li>
-      <li><a href="archive/2026-09-15.html">15 September 2026</a></li>
-      <li><a href="archive/2026-09-14.html">14 September 2026</a></li>
-      <li><a href="archive/2026-09-13.html">13 September 2026</a></li>
-      <li><a href="archive/2026-09-12.html">12 September 2026</a></li>
-      <li><a href="archive/2026-09-11.html">11 September 2026</a></li>
-      <li><a href="archive/2026-09-10.html">10 September 2026</a></li>
-      <li><a href="archive/2026-09-09.html">9 September 2026</a></li>
-      <li><a href="archive/2026-09-08.html">8 September 2026</a></li>
-      <li><a href="archive/2026-09-07.html">7 September 2026</a></li>
-      <li><a href="archive/2026-09-06.html">6 September 2026</a></li>
-      <li><a href="archive/2026-09-05.html">5 September 2026</a></li>
-      <li><a href="archive/2026-09-04.html">4 September 2026</a></li>
-      <li><a href="archive/2026-09-03.html">3 September 2026</a></li>
-      <li><a href="archive/2026-09-02.html">2 September 2026</a></li>
-      <li><a href="archive/2026-09-01.html">1 September 2026</a></li>
-      <li><a href="archive/2026-08-31.html">31 August 2026</a></li>
-      <li><a href="archive/2026-08-30.html">30 August 2026</a></li>
-      <li><a href="archive/2026-08-29.html">29 August 2026</a></li>
-      <li><a href="archive/2026-08-28.html">28 August 2026</a></li>
-  </ul>
-</div>
+  <a class="today-link" href="archive/2026-10-28.html">
+    <div class="today-date">28 October 2026</div>
+    <div class="today-headline">Roman telescope commissioning · Israel election · Cyclone Arnab · URC Round 5 · Vendée Arctique</div>
+    <div class="today-topics">Astronomy &amp; Space · World News · Rugby · Sailing · Jobs</div>
+  </a>
 
-<footer>
-  <p>Generated automatically &middot; Retention: 60 days</p>
-</footer>
+  <div class="archive-section">
+    <h2>Archive</h2>
+    <ul class="archive-list">
+      <li><a href="archive/2026-10-27.html"><span class="arc-date">27 Oct 2026</span><span class="arc-topics">Previous digest</span></a></li>
+      <li><a href="archive/2026-10-26.html"><span class="arc-date">26 Oct 2026</span><span class="arc-topics">Previous digest</span></a></li>
+      <li><a href="archive/2026-10-25.html"><span class="arc-date">25 Oct 2026</span><span class="arc-topics">Previous digest</span></a></li>
+      <li><a href="archive/2026-10-24.html"><span class="arc-date">24 Oct 2026</span><span class="arc-topics">Previous digest</span></a></li>
+      <li><a href="archive/2026-10-23.html"><span class="arc-date">23 Oct 2026</span><span class="arc-topics">Previous digest</span></a></li>
+      <li><a href="archive/2026-10-22.html"><span class="arc-date">22 Oct 2026</span><span class="arc-topics">Previous digest</span></a></li>
+      <li><a href="archive/2026-10-21.html"><span class="arc-date">21 Oct 2026</span><span class="arc-topics">Previous digest</span></a></li>
+      <li><a href="archive/2026-10-20.html"><span class="arc-date">20 Oct 2026</span><span class="arc-topics">Previous digest</span></a></li>
+      <li><a href="archive/2026-10-19.html"><span class="arc-date">19 Oct 2026</span><span class="arc-topics">Previous digest</span></a></li>
+      <li><a href="archive/2026-10-18.html"><span class="arc-date">18 Oct 2026</span><span class="arc-topics">Previous digest</span></a></li>
+      <li><a href="archive/2026-10-17.html"><span class="arc-date">17 Oct 2026</span><span class="arc-topics">Previous digest</span></a></li>
+      <li><a href="archive/2026-10-16.html"><span class="arc-date">16 Oct 2026</span><span class="arc-topics">Previous digest</span></a></li>
+      <li><a href="archive/2026-10-15.html"><span class="arc-date">15 Oct 2026</span><span class="arc-topics">Previous digest</span></a></li>
+      <li><a href="archive/2026-10-14.html"><span class="arc-date">14 Oct 2026</span><span class="arc-topics">Previous digest</span></a></li>
+      <li><a href="archive/2026-10-13.html"><span class="arc-date">13 Oct 2026</span><span class="arc-topics">Previous digest</span></a></li>
+      <li><a href="archive/2026-10-12.html"><span class="arc-date">12 Oct 2026</span><span class="arc-topics">Previous digest</span></a></li>
+      <li><a href="archive/2026-10-11.html"><span class="arc-date">11 Oct 2026</span><span class="arc-topics">Previous digest</span></a></li>
+      <li><a href="archive/2026-10-10.html"><span class="arc-date">10 Oct 2026</span><span class="arc-topics">Previous digest</span></a></li>
+      <li><a href="archive/2026-10-09.html"><span class="arc-date">09 Oct 2026</span><span class="arc-topics">Previous digest</span></a></li>
+      <li><a href="archive/2026-10-08.html"><span class="arc-date">08 Oct 2026</span><span class="arc-topics">Previous digest</span></a></li>
+      <li><a href="archive/2026-10-07.html"><span class="arc-date">07 Oct 2026</span><span class="arc-topics">Previous digest</span></a></li>
+      <li><a href="archive/2026-10-06.html"><span class="arc-date">06 Oct 2026</span><span class="arc-topics">Previous digest</span></a></li>
+      <li><a href="archive/2026-10-05.html"><span class="arc-date">05 Oct 2026</span><span class="arc-topics">Previous digest</span></a></li>
+      <li><a href="archive/2026-10-04.html"><span class="arc-date">04 Oct 2026</span><span class="arc-topics">Previous digest</span></a></li>
+      <li><a href="archive/2026-10-03.html"><span class="arc-date">03 Oct 2026</span><span class="arc-topics">Previous digest</span></a></li>
+      <li><a href="archive/2026-10-02.html"><span class="arc-date">02 Oct 2026</span><span class="arc-topics">Previous digest</span></a></li>
+      <li><a href="archive/2026-10-01.html"><span class="arc-date">01 Oct 2026</span><span class="arc-topics">Previous digest</span></a></li>
+      <li><a href="archive/2026-09-30.html"><span class="arc-date">30 Sep 2026</span><span class="arc-topics">Previous digest</span></a></li>
+      <li><a href="archive/2026-09-29.html"><span class="arc-date">29 Sep 2026</span><span class="arc-topics">Previous digest</span></a></li>
+      <li><a href="archive/2026-09-28.html"><span class="arc-date">28 Sep 2026</span><span class="arc-topics">Previous digest</span></a></li>
+      <li><a href="archive/2026-09-27.html"><span class="arc-date">27 Sep 2026</span><span class="arc-topics">Previous digest</span></a></li>
+      <li><a href="archive/2026-09-26.html"><span class="arc-date">26 Sep 2026</span><span class="arc-topics">Previous digest</span></a></li>
+      <li><a href="archive/2026-09-25.html"><span class="arc-date">25 Sep 2026</span><span class="arc-topics">Previous digest</span></a></li>
+      <li><a href="archive/2026-09-24.html"><span class="arc-date">24 Sep 2026</span><span class="arc-topics">Previous digest</span></a></li>
+      <li><a href="archive/2026-09-23.html"><span class="arc-date">23 Sep 2026</span><span class="arc-topics">Previous digest</span></a></li>
+      <li><a href="archive/2026-09-22.html"><span class="arc-date">22 Sep 2026</span><span class="arc-topics">Previous digest</span></a></li>
+      <li><a href="archive/2026-09-21.html"><span class="arc-date">21 Sep 2026</span><span class="arc-topics">Previous digest</span></a></li>
+      <li><a href="archive/2026-09-20.html"><span class="arc-date">20 Sep 2026</span><span class="arc-topics">Previous digest</span></a></li>
+      <li><a href="archive/2026-09-19.html"><span class="arc-date">19 Sep 2026</span><span class="arc-topics">Previous digest</span></a></li>
+      <li><a href="archive/2026-09-18.html"><span class="arc-date">18 Sep 2026</span><span class="arc-topics">Previous digest</span></a></li>
+      <li><a href="archive/2026-09-17.html"><span class="arc-date">17 Sep 2026</span><span class="arc-topics">Previous digest</span></a></li>
+      <li><a href="archive/2026-09-16.html"><span class="arc-date">16 Sep 2026</span><span class="arc-topics">Previous digest</span></a></li>
+      <li><a href="archive/2026-09-15.html"><span class="arc-date">15 Sep 2026</span><span class="arc-topics">Previous digest</span></a></li>
+      <li><a href="archive/2026-09-14.html"><span class="arc-date">14 Sep 2026</span><span class="arc-topics">Previous digest</span></a></li>
+      <li><a href="archive/2026-09-13.html"><span class="arc-date">13 Sep 2026</span><span class="arc-topics">Previous digest</span></a></li>
+      <li><a href="archive/2026-09-12.html"><span class="arc-date">12 Sep 2026</span><span class="arc-topics">Previous digest</span></a></li>
+      <li><a href="archive/2026-09-11.html"><span class="arc-date">11 Sep 2026</span><span class="arc-topics">Previous digest</span></a></li>
+      <li><a href="archive/2026-09-10.html"><span class="arc-date">10 Sep 2026</span><span class="arc-topics">Previous digest</span></a></li>
+      <li><a href="archive/2026-09-09.html"><span class="arc-date">09 Sep 2026</span><span class="arc-topics">Previous digest</span></a></li>
+      <li><a href="archive/2026-09-08.html"><span class="arc-date">08 Sep 2026</span><span class="arc-topics">Previous digest</span></a></li>
+      <li><a href="archive/2026-09-07.html"><span class="arc-date">07 Sep 2026</span><span class="arc-topics">Previous digest</span></a></li>
+      <li><a href="archive/2026-09-06.html"><span class="arc-date">06 Sep 2026</span><span class="arc-topics">Previous digest</span></a></li>
+      <li><a href="archive/2026-09-05.html"><span class="arc-date">05 Sep 2026</span><span class="arc-topics">Previous digest</span></a></li>
+      <li><a href="archive/2026-09-04.html"><span class="arc-date">04 Sep 2026</span><span class="arc-topics">Previous digest</span></a></li>
+      <li><a href="archive/2026-09-03.html"><span class="arc-date">03 Sep 2026</span><span class="arc-topics">Previous digest</span></a></li>
+      <li><a href="archive/2026-09-02.html"><span class="arc-date">02 Sep 2026</span><span class="arc-topics">Previous digest</span></a></li>
+      <li><a href="archive/2026-09-01.html"><span class="arc-date">01 Sep 2026</span><span class="arc-topics">Previous digest</span></a></li>
+      <li><a href="archive/2026-08-31.html"><span class="arc-date">31 Aug 2026</span><span class="arc-topics">Previous digest</span></a></li>
+      <li><a href="archive/2026-08-30.html"><span class="arc-date">30 Aug 2026</span><span class="arc-topics">Previous digest</span></a></li>
+      <li><a href="archive/2026-08-29.html"><span class="arc-date">29 Aug 2026</span><span class="arc-topics">Previous digest</span></a></li>
+    </ul>
+  </div>
+
+  <footer>
+    Updated 2026-10-28 · Digest generated daily at 07:00 CET
+  </footer>
 
 </div>
 </body>
