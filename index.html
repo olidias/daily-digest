@@ -1,257 +1,483 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Daily Digest</title>
 <style>
   :root {
-    --bg: #f9f7f4;
+    --bg: #f8f7f4;
     --surface: #ffffff;
-    --border: #e2ddd8;
-    --text: #1a1917;
+    --border: #e0ddd6;
+    --text: #1a1a1a;
     --muted: #6b6460;
     --accent: #2c5f8a;
-    --accent-light: #e8f0f8;
-    --tag-bg: #f0ece8;
-    --tag-text: #5a504a;
-    --heading: #111110;
-    --archive-bg: #f2eee9;
+    --accent-hover: #1e4066;
+    --tag-bg: #eef3f8;
+    --tag-text: #2c5f8a;
+    --section-title: #0f2d4a;
+    --header-bg: #0f2d4a;
+    --header-text: #ffffff;
+    --archive-bg: #f1efe9;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-      --bg: #171614;
-      --surface: #1f1e1c;
-      --border: #2e2c29;
-      --text: #ddd9d4;
-      --muted: #8a8480;
-      --accent: #6ba3cc;
-      --accent-light: #1a2a3a;
-      --tag-bg: #2a2825;
-      --tag-text: #9a9490;
-      --heading: #f0ece8;
-      --archive-bg: #1a1917;
+      --bg: #111418;
+      --surface: #1c2128;
+      --border: #30363d;
+      --text: #e6edf3;
+      --muted: #8b949e;
+      --accent: #58a6ff;
+      --accent-hover: #79b8ff;
+      --tag-bg: #1f3046;
+      --tag-text: #79b8ff;
+      --section-title: #cdd9e5;
+      --header-bg: #0d1117;
+      --header-text: #e6edf3;
+      --archive-bg: #161b22;
     }
   }
   :root[data-theme="dark"] {
-    --bg: #171614;
-    --surface: #1f1e1c;
-    --border: #2e2c29;
-    --text: #ddd9d4;
-    --muted: #8a8480;
-    --accent: #6ba3cc;
-    --accent-light: #1a2a3a;
-    --tag-bg: #2a2825;
-    --tag-text: #9a9490;
-    --heading: #f0ece8;
-    --archive-bg: #1a1917;
+    --bg: #111418;
+    --surface: #1c2128;
+    --border: #30363d;
+    --text: #e6edf3;
+    --muted: #8b949e;
+    --accent: #58a6ff;
+    --accent-hover: #79b8ff;
+    --tag-bg: #1f3046;
+    --tag-text: #79b8ff;
+    --section-title: #cdd9e5;
+    --header-bg: #0d1117;
+    --header-text: #e6edf3;
+    --archive-bg: #161b22;
   }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   body {
-    font-family: Georgia, 'Times New Roman', serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     background: var(--bg);
     color: var(--text);
-    line-height: 1.65;
-    font-size: 17px;
-  }
-  .page-wrap {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 0 16px 64px;
+    line-height: 1.6;
+    font-size: 16px;
   }
   header {
-    padding: 40px 0 28px;
+    background: var(--header-bg);
+    color: var(--header-text);
+    padding: 2rem 1rem 1.5rem;
+    text-align: center;
+  }
+  header h1 { font-size: 1.6rem; font-weight: 700; letter-spacing: -0.02em; }
+  header p { margin-top: 0.4rem; font-size: 0.9rem; opacity: 0.7; }
+  main { max-width: 800px; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
+  section { margin-bottom: 2.5rem; }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
     border-bottom: 2px solid var(--border);
-    margin-bottom: 40px;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.2rem;
   }
-  header h1 {
-    font-size: clamp(24px, 5vw, 34px);
-    font-weight: normal;
-    color: var(--heading);
-    letter-spacing: -0.5px;
-  }
-  header .sub {
-    margin-top: 6px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 13px;
-    color: var(--muted);
-  }
-  /* ── Today section ── */
-  .today-label {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 11px;
-    font-weight: 600;
+  .section-header h2 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--section-title);
     text-transform: uppercase;
-    letter-spacing: 1.2px;
-    color: var(--muted);
-    margin-bottom: 16px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid var(--border);
+    letter-spacing: 0.06em;
   }
-  .today-link {
-    display: block;
-    padding: 14px 16px;
-    background: var(--accent-light);
+  .item {
+    background: var(--surface);
     border: 1px solid var(--border);
-    border-radius: 6px;
+    border-radius: 8px;
+    padding: 1rem 1.1rem;
+    margin-bottom: 0.75rem;
+  }
+  .item-title a {
+    color: var(--accent);
     text-decoration: none;
-    margin-bottom: 40px;
-    transition: border-color 0.15s;
-  }
-  .today-link:hover { border-color: var(--accent); }
-  .today-link .today-date {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 13px;
-    color: var(--muted);
-    margin-bottom: 4px;
-  }
-  .today-link .today-headline {
-    font-size: 19px;
-    color: var(--heading);
+    font-weight: 600;
+    font-size: 0.97rem;
     line-height: 1.35;
   }
-  .today-link .today-topics {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 12px;
-    color: var(--muted);
-    margin-top: 8px;
+  .item-title a:hover { color: var(--accent-hover); text-decoration: underline; }
+  .item-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.3rem;
+    margin-bottom: 0.45rem;
   }
-  /* ── Archive section ── */
-  .archive-section h2 {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 11px;
+  .source-tag {
+    background: var(--tag-bg);
+    color: var(--tag-text);
+    font-size: 0.73rem;
     font-weight: 600;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
     text-transform: uppercase;
-    letter-spacing: 1.2px;
-    color: var(--muted);
-    margin-bottom: 16px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid var(--border);
+    letter-spacing: 0.04em;
+  }
+  .item-summary { color: var(--muted); font-size: 0.88rem; line-height: 1.55; }
+  /* Archive section */
+  .archive-section {
+    background: var(--archive-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-top: 3rem;
+  }
+  .archive-section h2 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--section-title);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
   }
   .archive-list {
     list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 0.4rem;
   }
-  .archive-list li {
-    border-bottom: 1px solid var(--border);
-  }
-  .archive-list li:last-child { border-bottom: none; }
-  .archive-list a {
-    display: flex;
-    align-items: baseline;
-    gap: 12px;
-    padding: 10px 0;
+  .archive-list li a {
+    display: block;
+    padding: 0.4rem 0.6rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    color: var(--accent);
     text-decoration: none;
-    color: var(--text);
-    font-size: 15px;
+    font-size: 0.85rem;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
   }
-  .archive-list a:hover .arc-date { color: var(--accent); }
-  .archive-list a:hover .arc-topics { text-decoration: underline; }
-  .arc-date {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 13px;
-    color: var(--muted);
-    flex-shrink: 0;
-    min-width: 100px;
-  }
-  .arc-topics {
-    color: var(--text);
+  .archive-list li a:hover { color: var(--accent-hover); border-color: var(--accent); }
+  .archive-list li.today a {
+    background: var(--tag-bg);
+    border-color: var(--accent);
+    font-weight: 700;
   }
   footer {
-    border-top: 1px solid var(--border);
-    padding-top: 24px;
-    margin-top: 40px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: 12px;
+    text-align: center;
+    padding: 2rem 1rem;
     color: var(--muted);
+    font-size: 0.8rem;
+    border-top: 1px solid var(--border);
+  }
+  @media (max-width: 600px) {
+    header h1 { font-size: 1.3rem; }
+    .item { padding: 0.85rem 0.9rem; }
+    .archive-list { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
   }
 </style>
 </head>
 <body>
-<div class="page-wrap">
 
-  <header>
-    <h1>Daily Digest</h1>
-    <div class="sub">Astronomy · World News · Rugby · Sailing · Science · Leadership · AI</div>
-  </header>
+<header>
+  <h1>Daily Digest</h1>
+  <p>Today: October 31, 2026 &middot; Europe/Zurich</p>
+</header>
 
-  <div class="today-label">Today — Friday 30 October 2026</div>
+<main>
 
-  <a class="today-link" href="archive/2026-10-30.html">
-    <div class="today-date">30 October 2026</div>
-    <div class="today-headline">UVEX confirmed · Rubin asteroids · Ukraine drone strike · Houthis · Middle Sea Race · GPT-6.1 Terra</div>
-    <div class="today-topics">Astronomy &amp; Space · World News · Rugby · Sailing · Science-Based Lifting · People Leadership · Emotional Intelligence · AI Engineering · Jobs</div>
-  </a>
+  <!-- TODAY'S DIGEST -->
+  <section id="astronomy-space">
+    <div class="section-header"><h2>Astronomy &amp; Space</h2></div>
 
+    <div class="item">
+      <div class="item-title"><a href="https://www.quantamagazine.org/a-new-map-of-empty-space-challenges-a-tranquil-picture-of-the-galaxy-20261030/" target="_blank" rel="noopener">A New Map of &lsquo;Empty&rsquo; Space Challenges a Tranquil Picture of the Galaxy</a></div>
+      <div class="item-meta"><span class="source-tag">Quanta Magazine</span></div>
+      <div class="item-summary">A wave of 3D mapping of the interstellar medium is revealing it to be far more dynamic and structured than the peaceful void it was long assumed to be.</div>
+    </div>
+
+    <div class="item">
+      <div class="item-title"><a href="https://www.quantamagazine.org/is-there-more-to-cold-fusion-than-failure-and-fraud-20261030/" target="_blank" rel="noopener">Is There More to Cold Fusion Than Failure and Fraud?</a></div>
+      <div class="item-meta"><span class="source-tag">Quanta Magazine</span></div>
+      <div class="item-summary">Despite its disgraced reputation, a thriving research program using exotic atoms is quietly investigating cold-fusion-adjacent physics, with no credible path to solving the energy crisis but genuine scientific interest.</div>
+    </div>
+
+    <div class="item">
+      <div class="item-title"><a href="https://www.quantamagazine.org/physics/" target="_blank" rel="noopener">OpenAI AI System Claims to Prove Particle Physics Theory &mdash; Physicists Review 1,147-Page Proof</a></div>
+      <div class="item-meta"><span class="source-tag">Quanta Magazine</span></div>
+      <div class="item-summary">OpenAI announced an AI result purporting to make a particle physics theory mathematically rigorous, but a group led by Nobel laureate David Gross is vetting the 1,147-page proof before any public release.</div>
+    </div>
+
+    <div class="item">
+      <div class="item-title"><a href="https://science.nasa.gov/image-article/apod-2026-october-28-the-mutual-occultation-of-ganymede-and-io/" target="_blank" rel="noopener">APOD: The Mutual Occultation of Ganymede and Io</a></div>
+      <div class="item-meta"><span class="source-tag">NASA APOD</span></div>
+      <div class="item-summary">NASA&rsquo;s Astronomy Picture of the Day features imagery of the rare October 20 event in which Jupiter&rsquo;s moons Ganymede and Io simultaneously occulted one another as seen from Earth.</div>
+    </div>
+
+    <div class="item">
+      <div class="item-title"><a href="https://skyandtelescope.org/astronomy-news/" target="_blank" rel="noopener">Rubin Observatory Sets Record for Asteroid Detections</a></div>
+      <div class="item-meta"><span class="source-tag">Sky &amp; Telescope</span></div>
+      <div class="item-summary">The Vera C. Rubin Observatory has achieved a record-breaking count of asteroid detections in its ongoing survey, underscoring its transformative capacity for Solar System science.</div>
+    </div>
+
+    <div class="item">
+      <div class="item-title"><a href="https://skyandtelescope.org/astronomy-news/astronomy-and-society/a-satellite-company-tested-sunlight-as-a-service-without-astronomers-knowledge/" target="_blank" rel="noopener">A Satellite Company Tested &ldquo;Sunlight as a Service&rdquo; Without Astronomers&rsquo; Knowledge</a></div>
+      <div class="item-meta"><span class="source-tag">Sky &amp; Telescope</span></div>
+      <div class="item-summary">Reflect Orbital set up powerful ground-based spotlights near Lone Pine, California to simulate the illumination its proposed satellites could provide, without informing the astronomical community in advance.</div>
+    </div>
+  </section>
+
+  <section id="world-news">
+    <div class="section-header"><h2>World News</h2></div>
+
+    <div class="item">
+      <div class="item-title"><a href="https://abcnews.com/international" target="_blank" rel="noopener">Spain High-Speed Train Collision Near Toledo Kills at Least 69</a></div>
+      <div class="item-meta"><span class="source-tag">Reuters / ABC News</span></div>
+      <div class="item-summary">A collision between two high-speed trains near Toledo, Spain has killed at least 69 people, prompting debate over whether human error or network failures were responsible.</div>
+    </div>
+
+    <div class="item">
+      <div class="item-title"><a href="https://www.reuters.com/world/" target="_blank" rel="noopener">Russia and Ukraine Agree Brief Truce for Aid Operation in Oleshky</a></div>
+      <div class="item-meta"><span class="source-tag">Reuters</span></div>
+      <div class="item-summary">Russia and Ukraine reached agreement on a short-term ceasefire to permit a humanitarian aid operation in the town of Oleshky in southern Ukraine.</div>
+    </div>
+
+    <div class="item">
+      <div class="item-title"><a href="https://www.reuters.com/world/" target="_blank" rel="noopener">Israel Election: Netanyahu&rsquo;s Bloc Leads Without a Majority, Leaving Political Deadlock</a></div>
+      <div class="item-meta"><span class="source-tag">Reuters</span></div>
+      <div class="item-summary">Results from the Israeli election show Netanyahu&rsquo;s bloc ahead of rivals but short of a parliamentary majority, prolonging political uncertainty and coalition negotiations.</div>
+    </div>
+
+    <div class="item">
+      <div class="item-title"><a href="https://www.reuters.com/world/" target="_blank" rel="noopener">Russian Drone Strike on Dnipro Railway Station Kills at Least 14</a></div>
+      <div class="item-meta"><span class="source-tag">Reuters</span></div>
+      <div class="item-summary">A Russian drone strike on a railway station in Dnipro, Ukraine, killed at least 14 people, the latest in a series of infrastructure attacks on Ukrainian transport hubs.</div>
+    </div>
+  </section>
+
+  <section id="rugby">
+    <div class="section-header"><h2>Rugby</h2></div>
+
+    <div class="item">
+      <div class="item-title"><a href="https://all.rugby/" target="_blank" rel="noopener">URC Round 5: Team Announcements Released for October 29 Fixtures</a></div>
+      <div class="item-meta"><span class="source-tag">All Rugby / URC</span></div>
+      <div class="item-summary">All participating clubs have posted their squads for United Rugby Championship Round 5, with Connacht v Leinster headlining the weekend&rsquo;s fixtures.</div>
+    </div>
+
+    <div class="item">
+      <div class="item-title"><a href="https://all.rugby/" target="_blank" rel="noopener">Champions Cup Opener: Northampton Name Squad for European Campaign</a></div>
+      <div class="item-meta"><span class="source-tag">All Rugby / EPCR</span></div>
+      <div class="item-summary">Northampton Saints&rsquo; head coach has named the side for their European Rugby Champions Cup opening match, as the pool-stage competition gets underway.</div>
+    </div>
+
+    <div class="item">
+      <div class="item-title"><a href="https://all.rugby/" target="_blank" rel="noopener">Premiership: Northampton Defeat Cardiff in Close-Run Match</a></div>
+      <div class="item-meta"><span class="source-tag">All Rugby / Premiership</span></div>
+      <div class="item-summary">Northampton Saints edged out Cardiff Rugby in a competitive Premiership encounter, with Chessum, McParland, and Atkinson also extending their contracts at their respective clubs this week.</div>
+    </div>
+  </section>
+
+  <section id="sailing">
+    <div class="section-header"><h2>Sailing</h2></div>
+
+    <div class="item">
+      <div class="item-title"><a href="https://www.sail-world.com/news/300803/Rolex-Middle-Sea-Race-2026-Start" target="_blank" rel="noopener">Rolex Middle Sea Race: Black Jack 100 Takes Monohull Line Honours</a></div>
+      <div class="item-meta"><span class="source-tag">Sail-World</span></div>
+      <div class="item-summary">Remon Vos&rsquo;s Black Jack 100 claimed monohull line honours in the 47th Rolex Middle Sea Race off Malta, completing the course in approximately 51 hours 51 minutes.</div>
+    </div>
+
+    <div class="item">
+      <div class="item-title"><a href="https://www.yachtingmonthly.com/boat-events/golden-globe-race" target="_blank" rel="noopener">Golden Globe Race 2026: Two Entrants Withdraw</a></div>
+      <div class="item-meta"><span class="source-tag">Yachting Monthly</span></div>
+      <div class="item-summary">Pat Lawless retired from the Golden Globe Race after a rigging failure, and Louis Kerdelhu&eacute;, the youngest entrant, withdrew on health grounds, reducing the field mid-race.</div>
+    </div>
+
+    <div class="item">
+      <div class="item-title"><a href="https://www.rolexsydneyhobart.com/" target="_blank" rel="noopener">Rolex Sydney Hobart 2026: 107 Entries Confirmed as Deadline Closes</a></div>
+      <div class="item-meta"><span class="source-tag">Rolex Sydney Hobart / Sail-World</span></div>
+      <div class="item-summary">Entry registrations for the 2026 Rolex Sydney Hobart Yacht Race closed on October 23 with 107 starters confirmed, including Bell&rsquo;s Comanche relaunched as Tribeca LOYAL.</div>
+    </div>
+  </section>
+
+  <section id="lifting">
+    <div class="section-header"><h2>Science-Based Lifting</h2></div>
+
+    <div class="item">
+      <div class="item-title"><a href="https://www.sciencedaily.com/releases/2026/10/261020085025.htm" target="_blank" rel="noopener">Just 4 Minutes a Day Can Dramatically Improve Strength After 65</a></div>
+      <div class="item-meta"><span class="source-tag">ScienceDaily / PLOS One</span></div>
+      <div class="item-summary">A Penn State 12-week RCT in adults aged 65+ found that a daily four-minute resistance training routine significantly improved strength, balance, and mobility, with participants adhering on 81% of days.</div>
+    </div>
+
+    <div class="item">
+      <div class="item-title"><a href="https://www.sciencealert.com/squat-snacking-can-build-similar-strength-to-one-big-training-session-study-finds" target="_blank" rel="noopener">Exercise &ldquo;Snacking&rdquo; Builds Similar Strength to One Continuous Training Session</a></div>
+      <div class="item-meta"><span class="source-tag">ScienceAlert / Journal of Exercise Science &amp; Fitness</span></div>
+      <div class="item-summary">A Tongji University study found no significant differences between fragmented resistance training bouts and a single continuous session for muscular strength and endurance outcomes, though the sample was small.</div>
+    </div>
+
+    <div class="item">
+      <div class="item-title"><a href="https://doi.org/10.3390/sports14100440" target="_blank" rel="noopener">The Strength Training Research Paradox: Are We Studying the Right People?</a></div>
+      <div class="item-meta"><span class="source-tag">Sports (MDPI) &mdash; Oct 7, 2026</span></div>
+      <div class="item-summary">A perspective article argues that study samples in strength training research often don&rsquo;t match the populations researchers intend to inform, and calls for explicit alignment between research questions and participant training status.</div>
+    </div>
+  </section>
+
+  <section id="leadership">
+    <div class="section-header"><h2>People Leadership</h2></div>
+
+    <div class="item">
+      <div class="item-title"><a href="https://store.hbr.org/product/harvard-business-review-september-october-2026/BR2605" target="_blank" rel="noopener">Why Cash Rewards Don&rsquo;t Always Produce Better Ideas</a></div>
+      <div class="item-meta"><span class="source-tag">Harvard Business Review &mdash; Sep/Oct 2026</span></div>
+      <div class="item-summary">The featured HBR research piece in the September/October 2026 issue examines conditions under which monetary incentives suppress rather than stimulate creative output.</div>
+    </div>
+
+    <div class="item">
+      <div class="item-title"><a href="https://sloanreview.mit.edu/topic/leadership/" target="_blank" rel="noopener">Saving Management From Our Obsession With Leadership</a></div>
+      <div class="item-meta"><span class="source-tag">MIT Sloan Management Review</span></div>
+      <div class="item-summary">MIT SMR argues that the field&rsquo;s intense focus on leadership as a concept has obscured the practical discipline of management, offering a research-grounded case for rebalancing attention.</div>
+    </div>
+  </section>
+
+  <section id="emotional-intelligence">
+    <div class="section-header"><h2>Emotional Intelligence</h2></div>
+
+    <div class="item">
+      <div class="item-title"><a href="https://psu.edu/news/research/story/qa-why-do-people-prefer-human-empathy-despite-rating-ai-empathy-higher" target="_blank" rel="noopener">People Rate AI Empathy Higher in Quality &mdash; Yet Still Prefer Human Empathy</a></div>
+      <div class="item-meta"><span class="source-tag">Penn State Research &mdash; Oct 27, 2026</span></div>
+      <div class="item-summary">A Penn State study found that respondents rated AI-generated empathetic responses as higher quality than human-written ones on objective rubrics, yet consistently preferred human empathy when they had the choice.</div>
+    </div>
+
+    <div class="item">
+      <div class="item-title"><a href="https://theconversation.com/women-are-more-emotionally-intelligent-than-men-and-thats-a-problem-landmark-study-293385" target="_blank" rel="noopener">Women Are More Emotionally Intelligent Than Men &mdash; and That&rsquo;s a Problem</a></div>
+      <div class="item-meta"><span class="source-tag">The Conversation &mdash; Oct 9, 2026</span></div>
+      <div class="item-summary">A landmark meta-analysis of 1,279 studies covering 609,278 participants across 76 countries found that women score higher on performance-based EI tests, but the gap nearly vanishes on self-report measures.</div>
+    </div>
+
+    <div class="item">
+      <div class="item-title"><a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2026.1866661/full" target="_blank" rel="noopener">Consensus Guidelines for a 10-Session EI Intervention in First-Year University Students</a></div>
+      <div class="item-meta"><span class="source-tag">Frontiers in Psychology &mdash; Oct 6, 2026</span></div>
+      <div class="item-summary">A Delphi study establishes expert consensus on the design of a structured ten-session emotional intelligence intervention for students in their first year of higher education.</div>
+    </div>
+  </section>
+
+  <section id="ai-engineering">
+    <div class="section-header"><h2>AI Engineering</h2></div>
+
+    <div class="item">
+      <div class="item-title"><a href="https://simonwillison.net/2026/Oct/29/how-i-built-the-most-ai-pilled-company-in-the-world/" target="_blank" rel="noopener">Building a Multiplayer Game World with Autonomous Fable-Class Agents</a></div>
+      <div class="item-meta"><span class="source-tag">Simon Willison &mdash; Oct 29, 2026</span></div>
+      <div class="item-summary">Simon Willison&rsquo;s link post covers Spawn, a game being developed entirely by a swarm of Fable-powered autonomous agents that ship to production hourly and cost over $3 million in tokens per month.</div>
+    </div>
+
+    <div class="item">
+      <div class="item-title"><a href="https://simonwillison.net/2026/Oct/28/vibe-game-development/" target="_blank" rel="noopener">The October Inflection Point for Vibe Game Development</a></div>
+      <div class="item-meta"><span class="source-tag">Simon Willison &mdash; Oct 28, 2026</span></div>
+      <div class="item-summary">Simon Willison argues that October 2026 marks a qualitative leap in AI-assisted game creation, shifting the practical challenge from code generation to coming up with novel and delightful concepts.</div>
+    </div>
+
+    <div class="item">
+      <div class="item-title"><a href="https://www.infoq.com/llms/news/" target="_blank" rel="noopener">OpenAI DevDay 2026: Decisions API, Computer Use for Agents API, and Cloud Codex Environments</a></div>
+      <div class="item-meta"><span class="source-tag">InfoQ / OpenAI DevDay 2026</span></div>
+      <div class="item-summary">OpenAI&rsquo;s DevDay 2026 announced the Decisions API (limited preview), computer-use capabilities for the Agents API, and cloud-hosted Codex environments, expanding the surface area for agentic application development.</div>
+    </div>
+
+    <div class="item">
+      <div class="item-title"><a href="https://www.infoq.com/llms/news/" target="_blank" rel="noopener">Harvard Study: AI-Generated Code Raised Volume Without Matching Productivity Gains</a></div>
+      <div class="item-meta"><span class="source-tag">InfoQ / Harvard Study &mdash; Oct 2026</span></div>
+      <div class="item-summary">A Harvard study of 718 firms found that AI coding tools increased raw code volume significantly but did not produce a commensurate rise in completed features, because code review became the new bottleneck.</div>
+    </div>
+  </section>
+
+  <section id="jobs">
+    <div class="section-header"><h2>Jobs</h2></div>
+
+    <div class="item">
+      <div class="item-title"><a href="https://www.freelancermap.com/projects/switzerland" target="_blank" rel="noopener">Freelancermap Switzerland: 666 Active Projects (DevOps, Power Automate, Backend)</a></div>
+      <div class="item-meta"><span class="source-tag">freelancermap &mdash; updated daily</span></div>
+      <div class="item-summary">Freelancermap lists 666 active freelance IT projects in Switzerland as of October 2026, with recent Zurich and Bern postings including DevOps and Power Automate roles.</div>
+    </div>
+
+    <div class="item">
+      <div class="item-title"><a href="https://englishjobsearch.ch/jobs/developer" target="_blank" rel="noopener">SwissDevJobs / EnglishJobSearch: Python/LLM and Frontend Developer Roles in Zurich</a></div>
+      <div class="item-meta"><span class="source-tag">swissdevjobs.ch / EnglishJobSearch</span></div>
+      <div class="item-summary">Active listings in Zurich include a freelance Python/LLM developer post and frontend roles requiring Vue.js, Laravel, and React; several are marked remote or hybrid with Swiss-resident preference.</div>
+    </div>
+
+    <div class="item">
+      <div class="item-title"><a href="https://www.glassdoor.com/Job/switzerland-freelance-jobs-SRCH_IL.0,11_IN226_KO12,21.htm" target="_blank" rel="noopener">Glassdoor Switzerland: 346 Freelance Listings Including AI Trainer Roles (CHF 8&ndash;65/hr)</a></div>
+      <div class="item-meta"><span class="source-tag">Glassdoor &mdash; Oct 2026</span></div>
+      <div class="item-summary">Glassdoor shows 346 Switzerland freelance listings, with AI-trainer gigs paying CHF 8&ndash;65/hr alongside permanent frontend and full-stack developer roles in Zurich, Bern, and Lugano.</div>
+    </div>
+  </section>
+
+  <!-- ARCHIVE -->
   <div class="archive-section">
     <h2>Archive</h2>
     <ul class="archive-list">
-      <li><a href="archive/2026-10-29.html"><span class="arc-date">29 Oct 2026</span><span class="arc-topics">UVEX telescope · Spain train crash · Israel election · America's Cup preliminary · Agent Sandbox</span></a></li>
-      <li><a href="archive/2026-10-28.html"><span class="arc-date">28 Oct 2026</span><span class="arc-topics">Roman telescope · Israel election · Cyclone Arnab · URC Round 5 · Vendée Arctique</span></a></li>
-      <li><a href="archive/2026-10-27.html"><span class="arc-date">27 Oct 2026</span><span class="arc-topics">Previous digest</span></a></li>
-      <li><a href="archive/2026-10-26.html"><span class="arc-date">26 Oct 2026</span><span class="arc-topics">Previous digest</span></a></li>
-      <li><a href="archive/2026-10-25.html"><span class="arc-date">25 Oct 2026</span><span class="arc-topics">Previous digest</span></a></li>
-      <li><a href="archive/2026-10-24.html"><span class="arc-date">24 Oct 2026</span><span class="arc-topics">Previous digest</span></a></li>
-      <li><a href="archive/2026-10-23.html"><span class="arc-date">23 Oct 2026</span><span class="arc-topics">Previous digest</span></a></li>
-      <li><a href="archive/2026-10-22.html"><span class="arc-date">22 Oct 2026</span><span class="arc-topics">Previous digest</span></a></li>
-      <li><a href="archive/2026-10-21.html"><span class="arc-date">21 Oct 2026</span><span class="arc-topics">Previous digest</span></a></li>
-      <li><a href="archive/2026-10-20.html"><span class="arc-date">20 Oct 2026</span><span class="arc-topics">Previous digest</span></a></li>
-      <li><a href="archive/2026-10-19.html"><span class="arc-date">19 Oct 2026</span><span class="arc-topics">Previous digest</span></a></li>
-      <li><a href="archive/2026-10-18.html"><span class="arc-date">18 Oct 2026</span><span class="arc-topics">Previous digest</span></a></li>
-      <li><a href="archive/2026-10-17.html"><span class="arc-date">17 Oct 2026</span><span class="arc-topics">Previous digest</span></a></li>
-      <li><a href="archive/2026-10-16.html"><span class="arc-date">16 Oct 2026</span><span class="arc-topics">Previous digest</span></a></li>
-      <li><a href="archive/2026-10-15.html"><span class="arc-date">15 Oct 2026</span><span class="arc-topics">Previous digest</span></a></li>
-      <li><a href="archive/2026-10-14.html"><span class="arc-date">14 Oct 2026</span><span class="arc-topics">Previous digest</span></a></li>
-      <li><a href="archive/2026-10-13.html"><span class="arc-date">13 Oct 2026</span><span class="arc-topics">Previous digest</span></a></li>
-      <li><a href="archive/2026-10-12.html"><span class="arc-date">12 Oct 2026</span><span class="arc-topics">Previous digest</span></a></li>
-      <li><a href="archive/2026-10-11.html"><span class="arc-date">11 Oct 2026</span><span class="arc-topics">Previous digest</span></a></li>
-      <li><a href="archive/2026-10-10.html"><span class="arc-date">10 Oct 2026</span><span class="arc-topics">Previous digest</span></a></li>
-      <li><a href="archive/2026-10-09.html"><span class="arc-date">09 Oct 2026</span><span class="arc-topics">Previous digest</span></a></li>
-      <li><a href="archive/2026-10-08.html"><span class="arc-date">08 Oct 2026</span><span class="arc-topics">Previous digest</span></a></li>
-      <li><a href="archive/2026-10-07.html"><span class="arc-date">07 Oct 2026</span><span class="arc-topics">Previous digest</span></a></li>
-      <li><a href="archive/2026-10-06.html"><span class="arc-date">06 Oct 2026</span><span class="arc-topics">Previous digest</span></a></li>
-      <li><a href="archive/2026-10-05.html"><span class="arc-date">05 Oct 2026</span><span class="arc-topics">Previous digest</span></a></li>
-      <li><a href="archive/2026-10-04.html"><span class="arc-date">04 Oct 2026</span><span class="arc-topics">Previous digest</span></a></li>
-      <li><a href="archive/2026-10-03.html"><span class="arc-date">03 Oct 2026</span><span class="arc-topics">Previous digest</span></a></li>
-      <li><a href="archive/2026-10-02.html"><span class="arc-date">02 Oct 2026</span><span class="arc-topics">Previous digest</span></a></li>
-      <li><a href="archive/2026-10-01.html"><span class="arc-date">01 Oct 2026</span><span class="arc-topics">Previous digest</span></a></li>
-      <li><a href="archive/2026-09-30.html"><span class="arc-date">30 Sep 2026</span><span class="arc-topics">Previous digest</span></a></li>
-      <li><a href="archive/2026-09-29.html"><span class="arc-date">29 Sep 2026</span><span class="arc-topics">Previous digest</span></a></li>
-      <li><a href="archive/2026-09-28.html"><span class="arc-date">28 Sep 2026</span><span class="arc-topics">Previous digest</span></a></li>
-      <li><a href="archive/2026-09-27.html"><span class="arc-date">27 Sep 2026</span><span class="arc-topics">Previous digest</span></a></li>
-      <li><a href="archive/2026-09-26.html"><span class="arc-date">26 Sep 2026</span><span class="arc-topics">Previous digest</span></a></li>
-      <li><a href="archive/2026-09-25.html"><span class="arc-date">25 Sep 2026</span><span class="arc-topics">Previous digest</span></a></li>
-      <li><a href="archive/2026-09-24.html"><span class="arc-date">24 Sep 2026</span><span class="arc-topics">Previous digest</span></a></li>
-      <li><a href="archive/2026-09-23.html"><span class="arc-date">23 Sep 2026</span><span class="arc-topics">Previous digest</span></a></li>
-      <li><a href="archive/2026-09-22.html"><span class="arc-date">22 Sep 2026</span><span class="arc-topics">Previous digest</span></a></li>
-      <li><a href="archive/2026-09-21.html"><span class="arc-date">21 Sep 2026</span><span class="arc-topics">Previous digest</span></a></li>
-      <li><a href="archive/2026-09-20.html"><span class="arc-date">20 Sep 2026</span><span class="arc-topics">Previous digest</span></a></li>
-      <li><a href="archive/2026-09-19.html"><span class="arc-date">19 Sep 2026</span><span class="arc-topics">Previous digest</span></a></li>
-      <li><a href="archive/2026-09-18.html"><span class="arc-date">18 Sep 2026</span><span class="arc-topics">Previous digest</span></a></li>
-      <li><a href="archive/2026-09-17.html"><span class="arc-date">17 Sep 2026</span><span class="arc-topics">Previous digest</span></a></li>
-      <li><a href="archive/2026-09-16.html"><span class="arc-date">16 Sep 2026</span><span class="arc-topics">Previous digest</span></a></li>
-      <li><a href="archive/2026-09-15.html"><span class="arc-date">15 Sep 2026</span><span class="arc-topics">Previous digest</span></a></li>
-      <li><a href="archive/2026-09-14.html"><span class="arc-date">14 Sep 2026</span><span class="arc-topics">Previous digest</span></a></li>
-      <li><a href="archive/2026-09-13.html"><span class="arc-date">13 Sep 2026</span><span class="arc-topics">Previous digest</span></a></li>
-      <li><a href="archive/2026-09-12.html"><span class="arc-date">12 Sep 2026</span><span class="arc-topics">Previous digest</span></a></li>
-      <li><a href="archive/2026-09-11.html"><span class="arc-date">11 Sep 2026</span><span class="arc-topics">Previous digest</span></a></li>
-      <li><a href="archive/2026-09-10.html"><span class="arc-date">10 Sep 2026</span><span class="arc-topics">Previous digest</span></a></li>
-      <li><a href="archive/2026-09-09.html"><span class="arc-date">09 Sep 2026</span><span class="arc-topics">Previous digest</span></a></li>
-      <li><a href="archive/2026-09-08.html"><span class="arc-date">08 Sep 2026</span><span class="arc-topics">Previous digest</span></a></li>
-      <li><a href="archive/2026-09-07.html"><span class="arc-date">07 Sep 2026</span><span class="arc-topics">Previous digest</span></a></li>
-      <li><a href="archive/2026-09-06.html"><span class="arc-date">06 Sep 2026</span><span class="arc-topics">Previous digest</span></a></li>
-      <li><a href="archive/2026-09-05.html"><span class="arc-date">05 Sep 2026</span><span class="arc-topics">Previous digest</span></a></li>
-      <li><a href="archive/2026-09-04.html"><span class="arc-date">04 Sep 2026</span><span class="arc-topics">Previous digest</span></a></li>
-      <li><a href="archive/2026-09-03.html"><span class="arc-date">03 Sep 2026</span><span class="arc-topics">Previous digest</span></a></li>
-      <li><a href="archive/2026-09-02.html"><span class="arc-date">02 Sep 2026</span><span class="arc-topics">Previous digest</span></a></li>
-      <li><a href="archive/2026-09-01.html"><span class="arc-date">01 Sep 2026</span><span class="arc-topics">Previous digest</span></a></li>
-      <li><a href="archive/2026-08-31.html"><span class="arc-date">31 Aug 2026</span><span class="arc-topics">Previous digest</span></a></li>
+      <li class="today"><a href="archive/2026-10-31.html">2026-10-31</a></li>
+      <li><a href="archive/2026-10-30.html">2026-10-30</a></li>
+      <li><a href="archive/2026-10-29.html">2026-10-29</a></li>
+      <li><a href="archive/2026-10-28.html">2026-10-28</a></li>
+      <li><a href="archive/2026-10-27.html">2026-10-27</a></li>
+      <li><a href="archive/2026-10-26.html">2026-10-26</a></li>
+      <li><a href="archive/2026-10-25.html">2026-10-25</a></li>
+      <li><a href="archive/2026-10-24.html">2026-10-24</a></li>
+      <li><a href="archive/2026-10-23.html">2026-10-23</a></li>
+      <li><a href="archive/2026-10-22.html">2026-10-22</a></li>
+      <li><a href="archive/2026-10-21.html">2026-10-21</a></li>
+      <li><a href="archive/2026-10-20.html">2026-10-20</a></li>
+      <li><a href="archive/2026-10-19.html">2026-10-19</a></li>
+      <li><a href="archive/2026-10-18.html">2026-10-18</a></li>
+      <li><a href="archive/2026-10-17.html">2026-10-17</a></li>
+      <li><a href="archive/2026-10-16.html">2026-10-16</a></li>
+      <li><a href="archive/2026-10-15.html">2026-10-15</a></li>
+      <li><a href="archive/2026-10-14.html">2026-10-14</a></li>
+      <li><a href="archive/2026-10-13.html">2026-10-13</a></li>
+      <li><a href="archive/2026-10-12.html">2026-10-12</a></li>
+      <li><a href="archive/2026-10-11.html">2026-10-11</a></li>
+      <li><a href="archive/2026-10-10.html">2026-10-10</a></li>
+      <li><a href="archive/2026-10-09.html">2026-10-09</a></li>
+      <li><a href="archive/2026-10-08.html">2026-10-08</a></li>
+      <li><a href="archive/2026-10-07.html">2026-10-07</a></li>
+      <li><a href="archive/2026-10-06.html">2026-10-06</a></li>
+      <li><a href="archive/2026-10-05.html">2026-10-05</a></li>
+      <li><a href="archive/2026-10-04.html">2026-10-04</a></li>
+      <li><a href="archive/2026-10-03.html">2026-10-03</a></li>
+      <li><a href="archive/2026-10-02.html">2026-10-02</a></li>
+      <li><a href="archive/2026-10-01.html">2026-10-01</a></li>
+      <li><a href="archive/2026-09-30.html">2026-09-30</a></li>
+      <li><a href="archive/2026-09-29.html">2026-09-29</a></li>
+      <li><a href="archive/2026-09-28.html">2026-09-28</a></li>
+      <li><a href="archive/2026-09-27.html">2026-09-27</a></li>
+      <li><a href="archive/2026-09-26.html">2026-09-26</a></li>
+      <li><a href="archive/2026-09-25.html">2026-09-25</a></li>
+      <li><a href="archive/2026-09-24.html">2026-09-24</a></li>
+      <li><a href="archive/2026-09-23.html">2026-09-23</a></li>
+      <li><a href="archive/2026-09-22.html">2026-09-22</a></li>
+      <li><a href="archive/2026-09-21.html">2026-09-21</a></li>
+      <li><a href="archive/2026-09-20.html">2026-09-20</a></li>
+      <li><a href="archive/2026-09-19.html">2026-09-19</a></li>
+      <li><a href="archive/2026-09-18.html">2026-09-18</a></li>
+      <li><a href="archive/2026-09-17.html">2026-09-17</a></li>
+      <li><a href="archive/2026-09-16.html">2026-09-16</a></li>
+      <li><a href="archive/2026-09-15.html">2026-09-15</a></li>
+      <li><a href="archive/2026-09-14.html">2026-09-14</a></li>
+      <li><a href="archive/2026-09-13.html">2026-09-13</a></li>
+      <li><a href="archive/2026-09-12.html">2026-09-12</a></li>
+      <li><a href="archive/2026-09-11.html">2026-09-11</a></li>
+      <li><a href="archive/2026-09-10.html">2026-09-10</a></li>
+      <li><a href="archive/2026-09-09.html">2026-09-09</a></li>
+      <li><a href="archive/2026-09-08.html">2026-09-08</a></li>
+      <li><a href="archive/2026-09-07.html">2026-09-07</a></li>
+      <li><a href="archive/2026-09-06.html">2026-09-06</a></li>
+      <li><a href="archive/2026-09-05.html">2026-09-05</a></li>
+      <li><a href="archive/2026-09-04.html">2026-09-04</a></li>
+      <li><a href="archive/2026-09-03.html">2026-09-03</a></li>
+      <li><a href="archive/2026-09-02.html">2026-09-02</a></li>
+      <li><a href="archive/2026-09-01.html">2026-09-01</a></li>
     </ul>
   </div>
 
-  <footer>
-    Updated 2026-10-30 · Digest generated daily at 07:00 CET
-  </footer>
+</main>
 
-</div>
+<footer>
+  <p>Generated on Saturday, October 31, 2026 at 07:05 CET &middot; Daily Digest</p>
+</footer>
+
 </body>
 </html>
