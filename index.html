@@ -6,391 +6,479 @@
 <title>Daily Digest</title>
 <style>
   :root {
-    --bg: #f8f9fa;
+    --bg: #f8f7f4;
     --surface: #ffffff;
-    --border: #dee2e6;
-    --text: #212529;
-    --muted: #6c757d;
-    --accent: #0d6efd;
-    --topic-bg: #e9ecef;
-    --tag: #495057;
+    --border: #e0ddd8;
+    --text: #1a1a18;
+    --muted: #6b6860;
+    --accent: #2a5ba8;
+    --accent-hover: #1e4080;
+    --tag-bg: #eef2fb;
+    --tag-text: #2a5ba8;
+    --section-title: #1a1a18;
+    --header-bg: #1e3a6e;
+    --header-text: #ffffff;
   }
   @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #0f1117;
-      --surface: #1a1d23;
-      --border: #2d3038;
-      --text: #e1e4e8;
-      --muted: #8b949e;
-      --accent: #58a6ff;
-      --topic-bg: #21262d;
-      --tag: #8b949e;
+    :root:not([data-theme="light"]) {
+      --bg: #16161a;
+      --surface: #1e1e24;
+      --border: #2e2e38;
+      --text: #e8e6e0;
+      --muted: #9b9890;
+      --accent: #6b9ff8;
+      --accent-hover: #9bbfff;
+      --tag-bg: #1e2a40;
+      --tag-text: #6b9ff8;
+      --section-title: #e8e6e0;
+      --header-bg: #0e1f3e;
+      --header-text: #e8e6e0;
     }
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
+    font-family: Georgia, 'Times New Roman', serif;
     background: var(--bg);
     color: var(--text);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
+    line-height: 1.65;
+    font-size: 17px;
   }
-  .container { max-width: 760px; margin: 0 auto; padding: 0 16px; }
   header {
+    background: var(--header-bg);
+    color: var(--header-text);
+    padding: 2.5rem 1rem 2rem;
+    text-align: center;
+  }
+  header h1 { font-size: 1.9rem; font-weight: 700; letter-spacing: -0.01em; }
+  header p { margin-top: 0.4rem; font-size: 0.9rem; opacity: 0.75; font-family: system-ui, sans-serif; }
+  .container { max-width: 760px; margin: 0 auto; padding: 0 1rem; }
+  section {
     background: var(--surface);
-    border-bottom: 1px solid var(--border);
-    padding: 24px 0 20px;
-    margin-bottom: 32px;
-  }
-  header h1 { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em; }
-  header .subtitle { color: var(--muted); font-size: 0.875rem; margin-top: 4px; }
-  section { margin-bottom: 36px; }
-  .topic-header {
-    background: var(--topic-bg);
-    border-radius: 6px 6px 0 0;
-    padding: 10px 16px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--tag);
     border: 1px solid var(--border);
-    border-bottom: none;
-  }
-  .items {
-    border: 1px solid var(--border);
-    border-radius: 0 0 6px 6px;
+    border-radius: 8px;
+    margin: 1.5rem 0;
     overflow: hidden;
-    background: var(--surface);
+  }
+  .section-header {
+    padding: 0.85rem 1.25rem;
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; gap: 0.6rem;
+  }
+  .section-header h2 {
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: system-ui, sans-serif;
+    color: var(--section-title);
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
   }
   .item {
-    padding: 14px 16px;
+    padding: 1rem 1.25rem;
     border-bottom: 1px solid var(--border);
   }
   .item:last-child { border-bottom: none; }
-  .item-title { font-size: 0.95rem; font-weight: 600; }
-  .item-title a { color: var(--accent); text-decoration: none; }
-  .item-title a:hover { text-decoration: underline; }
-  .item-meta { font-size: 0.78rem; color: var(--muted); margin-top: 2px; }
-  .item-summary { font-size: 0.875rem; color: var(--text); margin-top: 5px; }
-  .archive-list {
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    background: var(--surface);
-    overflow: hidden;
+  .item-title {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.35;
   }
-  .archive-item {
-    display: flex;
-    align-items: center;
-    padding: 11px 16px;
-    border-bottom: 1px solid var(--border);
-    font-size: 0.875rem;
+  .item-title a {
+    color: var(--accent);
+    text-decoration: none;
   }
-  .archive-item:last-child { border-bottom: none; }
-  .archive-date { font-weight: 600; min-width: 110px; }
-  .archive-date a { color: var(--accent); text-decoration: none; }
-  .archive-date a:hover { text-decoration: underline; }
-  footer {
-    border-top: 1px solid var(--border);
-    padding: 20px 0;
-    margin-top: 16px;
+  .item-title a:hover { color: var(--accent-hover); text-decoration: underline; }
+  .item-meta {
     font-size: 0.8rem;
     color: var(--muted);
-    text-align: center;
+    font-family: system-ui, sans-serif;
+    margin-top: 0.25rem;
   }
-  @media (max-width: 600px) {
-    header h1 { font-size: 1.25rem; }
-    .item { padding: 12px 14px; }
-    .archive-item { flex-direction: column; align-items: flex-start; gap: 2px; }
+  .item-summary {
+    font-size: 0.95rem;
+    color: var(--text);
+    margin-top: 0.4rem;
+    line-height: 1.55;
+  }
+  .archive-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin: 1.5rem 0;
+    overflow: hidden;
+  }
+  .archive-section .section-header { border-bottom: 1px solid var(--border); }
+  .archive-list { list-style: none; padding: 0; }
+  .archive-list li {
+    padding: 0.6rem 1.25rem;
+    border-bottom: 1px solid var(--border);
+    font-family: system-ui, sans-serif;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+  }
+  .archive-list li:last-child { border-bottom: none; }
+  .archive-list a { color: var(--accent); text-decoration: none; }
+  .archive-list a:hover { text-decoration: underline; }
+  .archive-date { color: var(--muted); font-variant-numeric: tabular-nums; min-width: 7rem; }
+  footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    font-family: system-ui, sans-serif;
+    font-size: 0.8rem;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+    margin-top: 1rem;
   }
 </style>
 </head>
 <body>
 <header>
-  <div class="container">
-    <h1>Daily Digest</h1>
-    <div class="subtitle">Curated from primary sources · Updated daily · Europe/Zurich</div>
-  </div>
+  <h1>Daily Digest</h1>
+  <p>Wednesday, 11 November 2026 &mdash; Europe/Zurich</p>
 </header>
 <div class="container">
 
-<section>
-  <div class="topic-header">Today &mdash; 10 November 2026</div>
-  <div class="items">
-    <div class="item">
-      <div class="item-title"><a href="archive/2026-11-10.html">Read today's full digest →</a></div>
-      <div class="item-meta">Astronomy &amp; Space · Rugby · Sailing · Science-Based Lifting · People Leadership · Emotional Intelligence · AI Engineering · Jobs</div>
-    </div>
-  </div>
-</section>
+  <!-- TODAY'S DIGEST -->
 
-<!-- TODAY'S DIGEST INLINE -->
-<section>
-  <div class="topic-header">Astronomy &amp; Space</div>
-  <div class="items">
-    <div class="item">
-      <div class="item-title"><a href="https://nasa.gov/news-release/nasa-awards-moon-base-transportation-technology-science-projects" target="_blank" rel="noopener">Blue Origin Wins $94M NASA CLPS Award to Deliver Nuclear Rover to Lunar South Pole</a></div>
-      <div class="item-meta">NASA News</div>
-      <div class="item-summary">Blue Origin received a $94 million base contract plus a $140 million option period under NASA's Commercial Lunar Payload Services programme to deliver the PROMISE nuclear-powered lunar rover to the Moon's south pole.</div>
-    </div>
-    <div class="item">
-      <div class="item-title"><a href="https://skyandtelescope.org/astronomy-news/swift-observatory-ends-reenters-the-earths-atmosphere/" target="_blank" rel="noopener">Swift X-ray Observatory Reenters Atmosphere After 20+ Years of Gamma-Ray Burst Science</a></div>
-      <div class="item-meta">Sky &amp; Telescope · 4 November 2026</div>
-      <div class="item-summary">NASA's Swift Observatory reentered Earth's atmosphere on 4 November over southeast Asia, ending a mission that began in 2004 and catalogued thousands of gamma-ray bursts, fundamentally advancing our understanding of their origins.</div>
-    </div>
-    <div class="item">
-      <div class="item-title"><a href="https://skyandtelescope.org/astronomy-news/" target="_blank" rel="noopener">Rubin Observatory Finds 1,000+ Outer Solar System Objects, Including Possible New Dwarf Planet</a></div>
-      <div class="item-meta">Sky &amp; Telescope</div>
-      <div class="item-summary">Analysis of Rubin Observatory survey data has uncovered more than 1,000 previously unknown trans-Neptunian objects, with at least one candidate large enough to qualify as a new dwarf planet.</div>
-    </div>
-    <div class="item">
-      <div class="item-title"><a href="https://www.quantamagazine.org/a-strange-quantum-theorem-has-killed-einsteins-reality-20261106/" target="_blank" rel="noopener">PBR Quantum Theorem Strengthens Case Against Einstein's "Realistic" Quantum State</a></div>
-      <div class="item-meta">Quanta Magazine · 6 November 2026</div>
-      <div class="item-summary">A re-examination of the Pusey-Barrett-Rudolph theorem demonstrates that quantum wave functions must be physically real rather than merely statistical bookkeeping, further undermining hidden-variable and epistemic interpretations of quantum mechanics.</div>
-    </div>
-    <div class="item">
-      <div class="item-title"><a href="https://www.esa.int/Newsroom" target="_blank" rel="noopener">ESA's Hera Probe Captures First Close-Up Views of Didymos Asteroid System</a></div>
-      <div class="item-meta">ESA · 5 November 2026</div>
-      <div class="item-summary">ESA's Hera spacecraft has obtained its first sharp close-up images of the Didymos-Dimorphos binary asteroid pair, the target of NASA's 2022 DART kinetic impactor test, beginning its detailed science observation phase.</div>
-    </div>
-    <div class="item">
-      <div class="item-title"><a href="https://www.esa.int/Newsroom" target="_blank" rel="noopener">ESA's MTG-I2 Weather Satellite Delivers First Earth Images</a></div>
-      <div class="item-meta">ESA · 6 November 2026</div>
-      <div class="item-summary">The MTG-I2 Meteosat Third Generation Imager satellite transmitted its first images of Earth on 6 November, enabling finer-resolution meteorological monitoring over Europe and Africa.</div>
-    </div>
-  </div>
-</section>
+  <!-- Astronomy & Space -->
+  <section>
+    <div class="section-header"><h2>🔭 Astronomy &amp; Space</h2></div>
 
-<section>
-  <div class="topic-header">Rugby (High-Level)</div>
-  <div class="items">
     <div class="item">
-      <div class="item-title"><a href="https://www.world.rugby/news" target="_blank" rel="noopener">Nations Championship: Ireland Host Argentina, England Face Australia in Autumn Series</a></div>
-      <div class="item-meta">World Rugby · 6–8 November 2026</div>
-      <div class="item-summary">The Autumn Nations Championship Northern Hemisphere series continued with Ireland v Argentina at Aviva Stadium (6 Nov) and England v Australia at Allianz Stadium, Twickenham (8 Nov), as top-tier squads assemble ahead of November finals weekend (27–29 Nov).</div>
+      <div class="item-title"><a href="https://www.esa.int/" target="_blank" rel="noopener">ESA Hera Returns First Close-Up Images of Didymos Asteroid System</a></div>
+      <div class="item-meta">ESA News</div>
+      <div class="item-summary">ESA's Hera spacecraft has transmitted its first high-resolution images of the Didymos system, beginning its detailed survey of what NASA's 2022 DART kinetic impactor did to the moonlet Dimorphos.</div>
     </div>
-    <div class="item">
-      <div class="item-title"><a href="https://www.world.rugby/nations-cup/en/news/1049110/world-rugby-nations-cup-2026-round-four-preview" target="_blank" rel="noopener">Nations Cup Round 4: USA and Georgia Remain the Only Unbeaten Teams</a></div>
-      <div class="item-meta">World Rugby · 6–21 November 2026</div>
-      <div class="item-summary">The World Rugby Nations Cup second phase runs 6–21 November across Europe and Hong Kong, with USA and Georgia the sole unbeaten sides from the first three rounds in July; the two inaugural champions will be crowned this month.</div>
-    </div>
-    <div class="item">
-      <div class="item-title"><a href="https://www.world.rugby/news/1049286/record-low-for-romania-as-nations-cup-shakes-up-world-rugby-mens-rankings" target="_blank" rel="noopener">World Rugby Rankings Shake-Up: Spain 16th, Romania Hits Record Low After Round 4</a></div>
-      <div class="item-meta">World Rugby</div>
-      <div class="item-summary">Spain climbed to 16th, Tonga reached 17th, and Romania fell to a record low after Round 4 of the Nations Cup; at the top, South Africa's lead over New Zealand narrowed to 0.44 ranking points.</div>
-    </div>
-  </div>
-</section>
 
-<section>
-  <div class="topic-header">Sailing</div>
-  <div class="items">
     <div class="item">
-      <div class="item-title"><a href="https://www.yachtingworld.com/all-latest-posts/tom-laperche-smashes-route-du-rhum-record-to-win-transatlantic-solo-race-on-ultim-svr-lazartigue-164535" target="_blank" rel="noopener">Tom Laperche Smashes Route du Rhum Record, Wins Solo Transatlantic in 6d 13h 27m</a></div>
-      <div class="item-meta">Yachting World / Sail-World · 8 November 2026</div>
-      <div class="item-summary">Tom Laperche on SVR-Lazartigue finished the Route du Rhum — Destination Guadeloupe on 8 November in a record-breaking 6 days, 13 hours, 27 minutes, and 40 seconds across 4,308 nautical miles from Saint-Malo; Thomas Coville placed second and Louis Burton third.</div>
+      <div class="item-title"><a href="https://science.nasa.gov/" target="_blank" rel="noopener">Webb Detects Most Deuterium-Rich Methane Ever Measured in Solar System — from Interstellar Comet 3I/ATLAS</a></div>
+      <div class="item-meta">NASA / ESA / CSA James Webb Space Telescope</div>
+      <div class="item-summary">Spectroscopic observations of comet 3I/ATLAS with JWST have yielded the highest deuterium-to-hydrogen ratio in methane recorded within the Solar System, offering a fresh chemical fingerprint of an interstellar body.</div>
     </div>
+
     <div class="item">
-      <div class="item-title"><a href="https://www.yachtingworld.com/homepage/route-du-rhum-veteran-skipper-francis-joyon-capsizes-in-legendary-orma-trimaran-164488" target="_blank" rel="noopener">Two Capsizes During Route du Rhum: Le Cléac'h and Joyon Both Safe</a></div>
-      <div class="item-meta">Yachting World · 4–7 November 2026</div>
-      <div class="item-summary">Armel Le Cléac'h's Ultim Banque Populaire XI capsized mid-Atlantic on 4 November (skipper safe inside the hull), and veteran sailor Francis Joyon's ORMA trimaran also went over and was rescued; both retirements significantly reshaped the race standings.</div>
+      <div class="item-title"><a href="https://science.nasa.gov/" target="_blank" rel="noopener">Webb and Hubble Image the Cat's Head Nebula Together</a></div>
+      <div class="item-meta">NASA / ESA — 4 November 2026</div>
+      <div class="item-summary">A joint Hubble–Webb campaign produced the most detailed portrait yet of a towering pillar of gas and dust in the Cat's Head Nebula, combining infrared and ultraviolet coverage to trace stellar feedback in real time.</div>
     </div>
+
     <div class="item">
-      <div class="item-title"><a href="https://sail-world.com/news/301439/Mulitiple-incidents-reshape-the-Golden-Globe-Race" target="_blank" rel="noopener">Golden Globe Race: Medical Evacuation and Disqualification Leave 10 of 16 Starters Racing</a></div>
-      <div class="item-meta">Sail-World · 8 November 2026</div>
-      <div class="item-summary">American skipper Guy de Boer was airlifted by the Brazilian Navy after an onboard fall, while Norwegian skipper Mara Løvenskiold Kveseth withdrew following disqualification penalties; ten of the original sixteen entrants remain in the solo around-the-world race.</div>
+      <div class="item-title"><a href="https://science.nasa.gov/" target="_blank" rel="noopener">Webb Spots 104 Magnified Stellar Events in the Distant "Dragon" Galaxy</a></div>
+      <div class="item-meta">NASA / ESA / CSA James Webb Space Telescope</div>
+      <div class="item-summary">Using strong gravitational lensing, astronomers identified 104 individual magnified stellar flares and transients in a galaxy 6.5 billion light-years away, pushing the census of resolved extragalactic stellar physics to a new distance record.</div>
     </div>
+
     <div class="item">
-      <div class="item-title"><a href="https://sail-world.com/news/301421/Inaugural-X-15-Wingfoil-Worlds-overall" target="_blank" rel="noopener">Inaugural X-15 Wingfoil World Championships: Poland and Germany Take Senior Titles in Ibiza</a></div>
+      <div class="item-title"><a href="https://www.quantamagazine.org/a-strange-quantum-theorem-has-killed-einsteins-reality-20261106/" target="_blank" rel="noopener">A Strange Quantum Theorem Has Killed Einstein's Reality (Quanta Magazine)</a></div>
+      <div class="item-meta">Quanta Magazine — 6 November 2026</div>
+      <div class="item-summary">Recent experimental tests of a generalised quantum no-go theorem have ruled out the class of hidden-variable theories most compatible with everyday intuitions about objective reality, closing a loophole that Einstein's defenders had relied on.</div>
+    </div>
+
+    <div class="item">
+      <div class="item-title"><a href="https://www.quantamagazine.org/is-there-anything-left-in-the-dream-of-cold-fusion-20261102/" target="_blank" rel="noopener">Is There Anything Left in the Dream of Cold Fusion? (Quanta Magazine)</a></div>
+      <div class="item-meta">Quanta Magazine — 2 November 2026</div>
+      <div class="item-summary">A surviving thread of the cold-fusion programme — using exotic muon-catalysed reactions — still probes the edges of nuclear physics without energy-break-even prospects, keeping the science alive even as the original commercial dream fades.</div>
+    </div>
+  </section>
+
+  <!-- World News -->
+  <section>
+    <div class="section-header"><h2>🌍 World News</h2></div>
+
+    <div class="item">
+      <div class="item-title"><a href="https://www.reuters.com/world/" target="_blank" rel="noopener">COP31 Opens in Turkey Amid Coal-Mining Protests Near Summit Host City</a></div>
+      <div class="item-meta">Reuters World</div>
+      <div class="item-summary">World leaders arriving for COP31 climate negotiations faced immediate pressure from communities living next to active lignite operations, underscoring the gap between summit pledges and local fossil-fuel realities.</div>
+    </div>
+
+    <div class="item">
+      <div class="item-title"><a href="https://www.reuters.com/world/" target="_blank" rel="noopener">Sudan Army Detains Former Ruling-Party Chair Ahmed Haroun</a></div>
+      <div class="item-meta">Reuters World</div>
+      <div class="item-summary">The Sudanese armed forces have arrested Ahmed Haroun, an Islamist leader and longtime chairman of the former ruling National Congress Party, according to party officials with direct knowledge of the detention.</div>
+    </div>
+
+    <div class="item">
+      <div class="item-title"><a href="https://www.reuters.com/world/" target="_blank" rel="noopener">Russia-Ukraine Talks Delegation to Include Senior Military Officials</a></div>
+      <div class="item-meta">Reuters World</div>
+      <div class="item-summary">Russia has confirmed its delegation to next week's trilateral talks with the United States and Ukraine will include senior military officers alongside diplomats, signalling that any agreement would need armed-forces sign-off.</div>
+    </div>
+
+    <div class="item">
+      <div class="item-title"><a href="https://www.reuters.com/world/" target="_blank" rel="noopener">Attack Near Sanaa Kills at Least 33; Houthis Blame Saudi Airstrikes</a></div>
+      <div class="item-meta">Reuters World</div>
+      <div class="item-summary">At least 33 people were killed and 39 wounded in a strike on a village near the Yemeni capital; the Houthi-run Saba agency attributed the attack to Saudi aircraft, while a Reuters correspondent separately observed blast damage at the Aramco Tower in Riyadh.</div>
+    </div>
+  </section>
+
+  <!-- Rugby -->
+  <section>
+    <div class="section-header"><h2>🏉 Rugby</h2></div>
+
+    <div class="item">
+      <div class="item-title"><a href="https://en.wikipedia.org/wiki/2026_Nations_Championship" target="_blank" rel="noopener">Nations Championship Round 1: Ireland 42–12 Argentina; England 45–22 Australia</a></div>
+      <div class="item-meta">World Rugby Nations Championship — 6–8 November 2026</div>
+      <div class="item-summary">Ireland opened the Northern Hemisphere Series with a commanding 30-point win over Argentina in Dublin, while England put 45 points on Australia at Twickenham to send clear early messages from both home sides.</div>
+    </div>
+
+    <div class="item">
+      <div class="item-title"><a href="https://en.wikipedia.org/wiki/2026_Nations_Championship" target="_blank" rel="noopener">South Africa 66–7 Italy; New Zealand 43–21 Scotland</a></div>
+      <div class="item-meta">World Rugby Nations Championship — 7 November 2026</div>
+      <div class="item-summary">South Africa produced the most emphatic result of the opening weekend with a 59-point demolition of Italy, while the All Blacks ran away from Scotland in the second half to win comfortably in Edinburgh.</div>
+    </div>
+
+    <div class="item">
+      <div class="item-title"><a href="https://en.wikipedia.org/wiki/2026_Nations_Championship" target="_blank" rel="noopener">France 54–17 Fiji; Will Jordan Out for the Series with Hamstring Injury</a></div>
+      <div class="item-meta">World Rugby Nations Championship — 7 November 2026</div>
+      <div class="item-summary">France ran in eight tries against Fiji at the Stade de France, though the week's biggest All Blacks news was a hamstring injury to record try scorer Will Jordan that rules him out of the rest of the Nations Championship.</div>
+    </div>
+
+    <div class="item">
+      <div class="item-title"><a href="https://www.skysports.com/rugby-union/news/13604775/nations-championship-fixtures-schedule-dates-key-info-as-rugbys-revolutionary-new-look-tournament-gears-up-for-finals" target="_blank" rel="noopener">France vs South Africa Friday 13 November — Clash of Unbeaten Teams</a></div>
+      <div class="item-meta">Sky Sports / Nations Championship</div>
+      <div class="item-summary">The marquee match of Round 2 pits undefeated France against South Africa in Paris on Friday, with both teams having run up large margins in their opening fixtures and both eyeing an early declaration of supremacy.</div>
+    </div>
+  </section>
+
+  <!-- Sailing -->
+  <section>
+    <div class="section-header"><h2>⛵ Sailing</h2></div>
+
+    <div class="item">
+      <div class="item-title"><a href="https://yachtingworld.com/homepage/injured-at-sea-alone-brazilian-navy-rescues-golden-globe-race-solo-skipper-while-imoca-racers-divert-to-azores-164547" target="_blank" rel="noopener">Golden Globe Race: American Skipper Guy deBoer Rescued by Brazilian Navy</a></div>
+      <div class="item-meta">Yachting World — 8 November 2026</div>
+      <div class="item-summary">Guy deBoer, solo sailing the 2026–27 Golden Globe Race, was airlifted from his vessel by a Brazilian Navy helicopter on 8 November after sustaining injuries in a fall aboard; two of the sixteen starters have now retired from the race.</div>
+    </div>
+
+    <div class="item">
+      <div class="item-title"><a href="https://www.sail-world.com/" target="_blank" rel="noopener">Route du Rhum: Tom Laperche Wins Ultim Class on SVR-Lazartigue</a></div>
       <div class="item-meta">Sail-World</div>
-      <div class="item-summary">The first-ever X-15 Wingfoil World Championships concluded in Ibiza with Poland's Kamil Manowiecki winning the men's senior title and Germany's Jette Koep taking the women's.</div>
+      <div class="item-summary">Tom Laperche claimed overall honours in the Route du Rhum–Guadeloupe aboard the giant trimaran SVR-Lazartigue, completing the solo transatlantic crossing in record-breaking time; race veteran Francis Joyon, who capsized mid-Atlantic, was rescued safely.</div>
     </div>
-  </div>
-</section>
 
-<section>
-  <div class="topic-header">Science-Based Lifting</div>
-  <div class="items">
     <div class="item">
-      <div class="item-title"><a href="https://www.strongerbyscience.com/articles/" target="_blank" rel="noopener">Isometric Training: What Does the Evidence Actually Say About Strength and Hypertrophy?</a></div>
-      <div class="item-meta">Stronger By Science</div>
-      <div class="item-summary">A new Stronger By Science review finds that isometric training outcomes for strength and hypertrophy are highly context-dependent — varying with joint angle, muscle length, and intensity — with no overall advantage over dynamic training under matched conditions.</div>
+      <div class="item-title"><a href="https://en.wikipedia.org/wiki/2026_SailGP_championship" target="_blank" rel="noopener">SailGP: Dubai (21–22 Nov) and Abu Dhabi Grand Final (28–29 Nov) Ahead</a></div>
+      <div class="item-meta">SailGP 2026 Championship</div>
+      <div class="item-summary">With two rounds remaining, the 2026 SailGP championship enters its decisive phase: a Dubai event on 21–22 November, then the season grand final in Abu Dhabi on 28–29 November that will determine the overall winner.</div>
     </div>
-    <div class="item">
-      <div class="item-title"><a href="https://www.strongerbyscience.com/master-list/muscle-growth/" target="_blank" rel="noopener">Meta-Analysis: Eccentric and Concentric Training Produce Equivalent Hypertrophy</a></div>
-      <div class="item-meta">Stronger By Science · Muscle Growth Master List (updated ~Nov 2026)</div>
-      <div class="item-summary">An updated meta-analysis on the Stronger By Science muscle growth list finds no statistically significant hypertrophy difference between concentric-only and eccentric-only training, with results trending slightly in favour of eccentric.</div>
-    </div>
-    <div class="item">
-      <div class="item-title"><a href="https://mennohenselmans.com/3-epic-new-studies-to-build-more-muscle-2026/" target="_blank" rel="noopener">Myo-Reps Achieve Similar Pec Growth as Traditional Sets With 29% Less Volume</a></div>
-      <div class="item-meta">Menno Henselmans · 2026</div>
-      <div class="item-summary">An 8-week randomised study reviewed by Henselmans found that myo-rep sets produced equivalent pec muscle thickness and bench press 1RM gains to traditional volume-equated sets while requiring roughly 29% less total training volume.</div>
-    </div>
-    <div class="item">
-      <div class="item-title"><a href="https://mennohenselmans.com/how-much-muscle-can-you-build-naturally-new-study/" target="_blank" rel="noopener">Natural Muscle-Building Ceiling Re-Assessed: 97th Percentile FFMI ~28.5 for Drug-Tested Lifters</a></div>
-      <div class="item-meta">Menno Henselmans · 2026</div>
-      <div class="item-summary">A 2026 review of natural lifting literature reassessed the upper limits of muscular development, placing the 97th-percentile FFMI around 28.5 for drug-tested athletes and suggesting average-genetics lifters should expect a practical ceiling closer to FFMI 23.</div>
-    </div>
-  </div>
-</section>
 
-<section>
-  <div class="topic-header">People Leadership</div>
-  <div class="items">
     <div class="item">
-      <div class="item-title"><a href="https://sloanreview.mit.edu/article/how-leadership-anxiety-derails-transformation/" target="_blank" rel="noopener">Leadership Anxiety, Not Uncertainty, Is What Derails Organisational Transformation</a></div>
-      <div class="item-meta">MIT Sloan Management Review · Fall 2026 Research Feature</div>
-      <div class="item-summary">A study based on 760 hours of observation and 300+ interviews found that leaders who acknowledge uncertainty while suppressing their own anxiety allow that anxiety to distort decisions, ultimately causing change programmes to fail — the problem is not not-knowing, but not-feeling.</div>
+      <div class="item-title"><a href="https://www.sail-world.com/news/301345/Yacht-Racing-Forum-Two-weeks-to-go" target="_blank" rel="noopener">Yacht Racing Forum 2026 Opens in Amsterdam in Eight Days (19–20 Nov)</a></div>
+      <div class="item-meta">Sail-World</div>
+      <div class="item-summary">The annual Yacht Racing Forum, the sport's main industry and stakeholder gathering, convenes in Amsterdam on 19–20 November with the offshore racing calendar and future of the Olympic classes expected to dominate the agenda.</div>
     </div>
-    <div class="item">
-      <div class="item-title"><a href="https://hbr.org/topic/subject/leadership-and-managing-people" target="_blank" rel="noopener">Familiar Speech Patterns Shape Advancement: Leaders Unconsciously Favour Linguistic In-Group</a></div>
-      <div class="item-meta">Harvard Business Review · September 2026</div>
-      <div class="item-summary">Research published in HBR shows managers unconsciously favour employees whose speech style feels familiar, creating structural barriers for talent from different linguistic or cultural backgrounds and reducing effective meritocracy in promotions.</div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section>
-  <div class="topic-header">Emotional Intelligence</div>
-  <div class="items">
-    <div class="item">
-      <div class="item-title"><a href="https://www.apa.org/monitor/2026/11-12/implicit-bias-ai-art-research" target="_blank" rel="noopener">Implicit Bias Against AI-Made Art Confirmed in Unconscious Attitudes, Not Just Stated Preferences</a></div>
-      <div class="item-meta">APA Monitor on Psychology · November/December 2026</div>
-      <div class="item-summary">A study in <em>Psychology of Aesthetics, Creativity, and the Arts</em> finds that people devalue artwork they know was made by AI not only consciously but also at the implicit attitude level, suggesting deep-seated biases about creativity and authorship.</div>
-    </div>
-    <div class="item">
-      <div class="item-title"><a href="https://www.apa.org/monitor/2026/11-12/implicit-bias-ai-art-research" target="_blank" rel="noopener">Parents' Screen Time Independently Predicts Adolescent Well-Being, Study Finds</a></div>
-      <div class="item-meta">APA Monitor on Psychology · November/December 2026</div>
-      <div class="item-summary">A <em>Frontiers in Psychology</em> study reported in the November/December APA Monitor finds that parental device use is independently linked to lower adolescent psychological well-being, over and above the effect of teens' own screen time.</div>
-    </div>
-  </div>
-</section>
+  <!-- Science-Based Lifting -->
+  <section>
+    <div class="section-header"><h2>🏋️ Science-Based Lifting</h2></div>
 
-<section>
-  <div class="topic-header">AI Engineering</div>
-  <div class="items">
     <div class="item">
-      <div class="item-title"><a href="https://simonwillison.net/" target="_blank" rel="noopener">Claude Opus 5.5 Generates Working WebGL 3D Demo in Vanilla JS Without Three.js</a></div>
-      <div class="item-meta">Simon Willison · 8–9 November 2026</div>
-      <div class="item-summary">Simon Willison reports experimenting with Claude Opus 5.5 for direct WebGL 3D programming and finding it capable of producing correct geometry, shaders, and scene management in vanilla JavaScript without relying on Three.js or other abstraction libraries.</div>
+      <div class="item-title"><a href="https://www.sciencedaily.com/releases/2026/06/260611024609.htm" target="_blank" rel="noopener">Harvard / BJSM Meta-Analysis: 90–120 Min/Week of Strength Training Linked to 13% Lower All-Cause Mortality</a></div>
+      <div class="item-meta">British Journal of Sports Medicine — June 2026</div>
+      <div class="item-summary">A large Harvard-led observational meta-analysis in the BJSM found a dose-response relationship between resistance training volume and mortality, with the lowest risk at 90–120 minutes per week and gains plateauing beyond that threshold.</div>
     </div>
-    <div class="item">
-      <div class="item-title"><a href="https://simonwillison.net/entries/" target="_blank" rel="noopener">LLM 0.37 Released: Default Model Switches to gpt-6-luna at Half the Previous Cost</a></div>
-      <div class="item-meta">Simon Willison · Early November 2026</div>
-      <div class="item-summary">Willison's LLM command-line tool (version 0.37) ships with gpt-6-luna as the new default model, cutting the per-token cost roughly in half versus the previous default; the release also includes datasette-agent 0.5a0 and datasette-apps 0.3a0.</div>
-    </div>
-    <div class="item">
-      <div class="item-title"><a href="https://simonwillison.net/2026/Nov/2/census-bureau-super-intelligence/" target="_blank" rel="noopener">US Census Bureau AI Survey Now Explicitly Asks About "Super Intelligence"</a></div>
-      <div class="item-meta">Simon Willison · 2 November 2026</div>
-      <div class="item-summary">Willison flags a question-wording change in the US Census Bureau's ongoing AI use survey: from October 2026 it explicitly asks respondents about "Super Intelligence," marking the first time an official statistical agency has incorporated AGI-adjacent terminology into its measurement framework.</div>
-    </div>
-  </div>
-</section>
 
-<section>
-  <div class="topic-header">Jobs</div>
-  <div class="items">
     <div class="item">
-      <div class="item-title"><a href="https://www.freelancermap.com/projects" target="_blank" rel="noopener">Backend Developer — 100% Remote (Barcelona), 6+ months</a></div>
-      <div class="item-meta">freelancermap · Posted 5 November 2026</div>
-      <div class="item-summary">Freelance backend developer role for a Barcelona-based project, fully remote, 6+ months duration; posted via Randstad Professional on 5 November 2026.</div>
+      <div class="item-title"><a href="https://www.sciencedaily.com/releases/2026/06/260611024609.htm" target="_blank" rel="noopener">Combining Strength + Aerobic Training Lowers Mortality Risk by ~45%</a></div>
+      <div class="item-meta">British Journal of Sports Medicine — June 2026</div>
+      <div class="item-summary">The same BJSM dataset shows the largest mortality benefit accrues when resistance training is paired with regular aerobic exercise, yielding approximately 45% lower all-cause mortality compared with physically inactive controls — an observational association, not proof of causation.</div>
     </div>
-    <div class="item">
-      <div class="item-title"><a href="https://www.freelancermap.com/projects" target="_blank" rel="noopener">Full Stack Developer Java/React — Newcastle, £500/day Inside IR35, Active SC</a></div>
-      <div class="item-meta">freelancermap · Posted 4 November 2026</div>
-      <div class="item-summary">Six-month contract in Newcastle (Stealth IT Consulting), £500/day Inside IR35, active SC clearance required; posted 4 November 2026.</div>
-    </div>
-    <div class="item">
-      <div class="item-title"><a href="https://www.freelancermap.com/projects" target="_blank" rel="noopener">Senior Python Developer — London, Agency Contract</a></div>
-      <div class="item-meta">freelancermap · Posted 3 November 2026</div>
-      <div class="item-summary">Agency contract for a senior Python developer in London (Synergetic); posted 3 November 2026.</div>
-    </div>
-    <div class="item">
-      <div class="item-title"><a href="https://swissdevjobs.ch/jobs/Java/all" target="_blank" rel="noopener">Java Full-Stack Engineer — Zurich, CHF 120,000–140,000</a></div>
-      <div class="item-meta">swissdevjobs.ch</div>
-      <div class="item-summary">Permanent Java full-stack engineering role in Zurich with a published salary band of CHF 120,000–140,000; among 47 current Java developer openings listed on the platform.</div>
-    </div>
-    <div class="item">
-      <div class="item-title"><a href="https://swissdevjobs.ch/jobs/Fullstack/all" target="_blank" rel="noopener">Senior Fullstack Engineer, IT-Consulting 80%+ — Zurich, CHF 110,000–150,000</a></div>
-      <div class="item-meta">swissdevjobs.ch</div>
-      <div class="item-summary">Senior full-stack IT consulting role in Zurich, minimum 80% FTE, salary range CHF 110,000–150,000; listed by Ergon Informatik among 30 current fullstack openings in Switzerland.</div>
-    </div>
-  </div>
-</section>
 
-<!-- ARCHIVE -->
-<section>
-  <div class="topic-header">Archive</div>
-  <div class="archive-list">
-    <div class="archive-item"><span class="archive-date"><a href="archive/2026-11-10.html">2026-11-10</a></span></div>
-    <div class="archive-item"><span class="archive-date"><a href="archive/2026-11-09.html">2026-11-09</a></span></div>
-    <div class="archive-item"><span class="archive-date"><a href="archive/2026-11-08.html">2026-11-08</a></span></div>
-    <div class="archive-item"><span class="archive-date"><a href="archive/2026-11-07.html">2026-11-07</a></span></div>
-    <div class="archive-item"><span class="archive-date"><a href="archive/2026-11-06.html">2026-11-06</a></span></div>
-    <div class="archive-item"><span class="archive-date"><a href="archive/2026-11-05.html">2026-11-05</a></span></div>
-    <div class="archive-item"><span class="archive-date"><a href="archive/2026-11-04.html">2026-11-04</a></span></div>
-    <div class="archive-item"><span class="archive-date"><a href="archive/2026-11-03.html">2026-11-03</a></span></div>
-    <div class="archive-item"><span class="archive-date"><a href="archive/2026-11-02.html">2026-11-02</a></span></div>
-    <div class="archive-item"><span class="archive-date"><a href="archive/2026-11-01.html">2026-11-01</a></span></div>
-    <div class="archive-item"><span class="archive-date"><a href="archive/2026-10-31.html">2026-10-31</a></span></div>
-    <div class="archive-item"><span class="archive-date"><a href="archive/2026-10-30.html">2026-10-30</a></span></div>
-    <div class="archive-item"><span class="archive-date"><a href="archive/2026-10-29.html">2026-10-29</a></span></div>
-    <div class="archive-item"><span class="archive-date"><a href="archive/2026-10-28.html">2026-10-28</a></span></div>
-    <div class="archive-item"><span class="archive-date"><a href="archive/2026-10-27.html">2026-10-27</a></span></div>
-    <div class="archive-item"><span class="archive-date"><a href="archive/2026-10-26.html">2026-10-26</a></span></div>
-    <div class="archive-item"><span class="archive-date"><a href="archive/2026-10-25.html">2026-10-25</a></span></div>
-    <div class="archive-item"><span class="archive-date"><a href="archive/2026-10-24.html">2026-10-24</a></span></div>
-    <div class="archive-item"><span class="archive-date"><a href="archive/2026-10-23.html">2026-10-23</a></span></div>
-    <div class="archive-item"><span class="archive-date"><a href="archive/2026-10-22.html">2026-10-22</a></span></div>
-    <div class="archive-item"><span class="archive-date"><a href="archive/2026-10-21.html">2026-10-21</a></span></div>
-    <div class="archive-item"><span class="archive-date"><a href="archive/2026-10-20.html">2026-10-20</a></span></div>
-    <div class="archive-item"><span class="archive-date"><a href="archive/2026-10-19.html">2026-10-19</a></span></div>
-    <div class="archive-item"><span class="archive-date"><a href="archive/2026-10-18.html">2026-10-18</a></span></div>
-    <div class="archive-item"><span class="archive-date"><a href="archive/2026-10-17.html">2026-10-17</a></span></div>
-    <div class="archive-item"><span class="archive-date"><a href="archive/2026-10-16.html">2026-10-16</a></span></div>
-    <div class="archive-item"><span class="archive-date"><a href="archive/2026-10-15.html">2026-10-15</a></span></div>
-    <div class="archive-item"><span class="archive-date"><a href="archive/2026-10-14.html">2026-10-14</a></span></div>
-    <div class="archive-item"><span class="archive-date"><a href="archive/2026-10-13.html">2026-10-13</a></span></div>
-    <div class="archive-item"><span class="archive-date"><a href="archive/2026-10-12.html">2026-10-12</a></span></div>
-    <div class="archive-item"><span class="archive-date"><a href="archive/2026-10-11.html">2026-10-11</a></span></div>
-    <div class="archive-item"><span class="archive-date"><a href="archive/2026-10-10.html">2026-10-10</a></span></div>
-    <div class="archive-item"><span class="archive-date"><a href="archive/2026-10-09.html">2026-10-09</a></span></div>
-    <div class="archive-item"><span class="archive-date"><a href="archive/2026-10-08.html">2026-10-08</a></span></div>
-    <div class="archive-item"><span class="archive-date"><a href="archive/2026-10-07.html">2026-10-07</a></span></div>
-    <div class="archive-item"><span class="archive-date"><a href="archive/2026-10-06.html">2026-10-06</a></span></div>
-    <div class="archive-item"><span class="archive-date"><a href="archive/2026-10-05.html">2026-10-05</a></span></div>
-    <div class="archive-item"><span class="archive-date"><a href="archive/2026-10-04.html">2026-10-04</a></span></div>
-    <div class="archive-item"><span class="archive-date"><a href="archive/2026-10-03.html">2026-10-03</a></span></div>
-    <div class="archive-item"><span class="archive-date"><a href="archive/2026-10-02.html">2026-10-02</a></span></div>
-    <div class="archive-item"><span class="archive-date"><a href="archive/2026-10-01.html">2026-10-01</a></span></div>
-    <div class="archive-item"><span class="archive-date"><a href="archive/2026-09-30.html">2026-09-30</a></span></div>
-    <div class="archive-item"><span class="archive-date"><a href="archive/2026-09-29.html">2026-09-29</a></span></div>
-    <div class="archive-item"><span class="archive-date"><a href="archive/2026-09-28.html">2026-09-28</a></span></div>
-    <div class="archive-item"><span class="archive-date"><a href="archive/2026-09-27.html">2026-09-27</a></span></div>
-    <div class="archive-item"><span class="archive-date"><a href="archive/2026-09-26.html">2026-09-26</a></span></div>
-    <div class="archive-item"><span class="archive-date"><a href="archive/2026-09-25.html">2026-09-25</a></span></div>
-    <div class="archive-item"><span class="archive-date"><a href="archive/2026-09-24.html">2026-09-24</a></span></div>
-    <div class="archive-item"><span class="archive-date"><a href="archive/2026-09-23.html">2026-09-23</a></span></div>
-    <div class="archive-item"><span class="archive-date"><a href="archive/2026-09-22.html">2026-09-22</a></span></div>
-    <div class="archive-item"><span class="archive-date"><a href="archive/2026-09-21.html">2026-09-21</a></span></div>
-    <div class="archive-item"><span class="archive-date"><a href="archive/2026-09-20.html">2026-09-20</a></span></div>
-    <div class="archive-item"><span class="archive-date"><a href="archive/2026-09-19.html">2026-09-19</a></span></div>
-    <div class="archive-item"><span class="archive-date"><a href="archive/2026-09-18.html">2026-09-18</a></span></div>
-    <div class="archive-item"><span class="archive-date"><a href="archive/2026-09-17.html">2026-09-17</a></span></div>
-    <div class="archive-item"><span class="archive-date"><a href="archive/2026-09-16.html">2026-09-16</a></span></div>
-    <div class="archive-item"><span class="archive-date"><a href="archive/2026-09-15.html">2026-09-15</a></span></div>
-    <div class="archive-item"><span class="archive-date"><a href="archive/2026-09-14.html">2026-09-14</a></span></div>
-    <div class="archive-item"><span class="archive-date"><a href="archive/2026-09-13.html">2026-09-13</a></span></div>
-    <div class="archive-item"><span class="archive-date"><a href="archive/2026-09-12.html">2026-09-12</a></span></div>
-    <div class="archive-item"><span class="archive-date"><a href="archive/2026-09-11.html">2026-09-11</a></span></div>
-  </div>
-</section>
+    <div class="item">
+      <div class="item-title"><a href="https://www.sciencedaily.com/releases/2026/10/261020085025.htm" target="_blank" rel="noopener">Penn State RCT: Four Minutes of Functional Strength Training Daily Improves Balance in Older Adults</a></div>
+      <div class="item-meta">ScienceDaily / Penn State — October 2026</div>
+      <div class="item-summary">A 12-week RCT found that four minutes of daily functional strength exercise significantly improved balance, mobility, and physical function in participants aged 65 and over, suggesting a minimal viable dose for this population.</div>
+    </div>
+
+    <div class="item">
+      <div class="item-title"><a href="https://www.coach360news.com/women-resistance-training-research-2026/" target="_blank" rel="noopener">Meta-Analysis of 126 Studies: Resistance Training Equally Effective Before and After Menopause</a></div>
+      <div class="item-meta">2026 Meta-Analysis</div>
+      <div class="item-summary">A 2026 meta-analysis pooling 126 studies and over 4,000 women found that resistance training produces comparable improvements in strength and body composition regardless of menopausal status.</div>
+    </div>
+  </section>
+
+  <!-- People Leadership -->
+  <section>
+    <div class="section-header"><h2>👥 People Leadership</h2></div>
+
+    <div class="item">
+      <div class="item-title"><a href="https://sloanreview.mit.edu/issue/2026-fall/" target="_blank" rel="noopener">MIT SMR Fall 2026 Special Report: "How Leadership Anxiety Derails Transformation"</a></div>
+      <div class="item-meta">MIT Sloan Management Review — Fall 2026</div>
+      <div class="item-summary">The final issue of MIT Sloan Management Review's 67-year run features a research-grounded special report arguing that anxiety in senior leaders — not strategy or resources — is the primary mechanism by which organisational transformations stall.</div>
+    </div>
+
+    <div class="item">
+      <div class="item-title"><a href="https://sloanreview.mit.edu/issue/2026-fall/" target="_blank" rel="noopener">MIT SMR: Four Leadership Archetypes Among Chief Purpose Officers — Study of 56 Executives</a></div>
+      <div class="item-meta">MIT Sloan Management Review — Fall 2026</div>
+      <div class="item-summary">An empirical study of 56 Chief Purpose Officers identified four distinct leadership archetypes based on how executives operationalise purpose mandates, grounded in interview and behavioural data rather than self-report frameworks.</div>
+    </div>
+
+    <div class="item">
+      <div class="item-title"><a href="https://s.hbr.org/4oW9EDL" target="_blank" rel="noopener">Harvard Business Impact: 2026 Global Leadership Study — 53% Expect AI in Strategic Decisions</a></div>
+      <div class="item-meta">Harvard Business Impact — 2026</div>
+      <div class="item-summary">A global leadership survey found 53% of respondents expect AI tools to play a significant role in strategic decision-making within two years, while 47% named scalability as the top criterion when selecting leadership-development programmes.</div>
+    </div>
+  </section>
+
+  <!-- Emotional Intelligence -->
+  <section>
+    <div class="section-header"><h2>🧠 Emotional Intelligence</h2></div>
+
+    <div class="item">
+      <div class="item-title"><a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2026.1847756/full" target="_blank" rel="noopener">Delphi Study Sets Consensus Guidelines for EI Interventions with First-Year University Students</a></div>
+      <div class="item-meta">Frontiers in Psychology — October 2026</div>
+      <div class="item-summary">An international Delphi study reached expert consensus on evidence-based guidelines for emotional intelligence programmes targeting first-year undergraduates, grounding recommendations in the four-branch ability model and incorporating mental health and self-esteem components.</div>
+    </div>
+
+    <div class="item">
+      <div class="item-title"><a href="https://www.psypost.org/emotional-regulation-skills-predict-lower-anxiety-and-aggression-in-adolescents/" target="_blank" rel="noopener">Emotional Awareness Moderates the Link Between Emotion Recognition and Regulation</a></div>
+      <div class="item-meta">Laureate Institute for Brain Research — 2026</div>
+      <div class="item-summary">A neuroscience study found that emotional awareness acts as a significant moderator in the pathway from emotion recognition to regulation capacity, suggesting interventions should target awareness explicitly rather than treating recognition and regulation as a simple pipeline.</div>
+    </div>
+
+    <div class="item">
+      <div class="item-title"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13739560" target="_blank" rel="noopener">Performance-Based EI in Childhood Shows Distinct Profile from General Cognitive Abilities</a></div>
+      <div class="item-meta">Frontiers in Psychology — October 2026</div>
+      <div class="item-summary">A developmental study found that performance-based emotional intelligence abilities in children form part of broader developmental trajectories but show statistically distinct associations from cognitive and communication abilities, supporting EI as a separable construct.</div>
+    </div>
+  </section>
+
+  <!-- AI Engineering -->
+  <section>
+    <div class="section-header"><h2>🤖 AI Engineering</h2></div>
+
+    <div class="item">
+      <div class="item-title"><a href="https://simonwillison.net/2026/Nov/10/prompting-claude-fable-52" target="_blank" rel="noopener">Simon Willison: Key Quote from Anthropic's Prompting Guide for Claude Fable 5.2</a></div>
+      <div class="item-meta">Simon Willison's Weblog — 10 November 2026</div>
+      <div class="item-summary">Willison highlights a pointed excerpt from Anthropic's official prompting documentation for the Fable 5.2 model, drawing attention to guidance that changes how developers should frame reasoning-heavy tasks compared with earlier Claude versions.</div>
+    </div>
+
+    <div class="item">
+      <div class="item-title"><a href="https://simonwillison.net/" target="_blank" rel="noopener">Simon Willison: Locating a Mysterious Beep Using Claude</a></div>
+      <div class="item-meta">Simon Willison's Weblog — 9 November 2026</div>
+      <div class="item-summary">A practical walkthrough in which Willison uses Claude as a systematic debugging partner to identify the source of an intermittent audio alert, demonstrating agentic tool use for a real-world physical environment investigation.</div>
+    </div>
+
+    <div class="item">
+      <div class="item-title"><a href="https://simonwillison.net/" target="_blank" rel="noopener">Simon Willison: Hiding AI-Generated PR Descriptions</a></div>
+      <div class="item-meta">Simon Willison's Weblog — 9 November 2026</div>
+      <div class="item-summary">Willison examines the tension around whether LLM-drafted pull-request descriptions should be disclosed or collapsed by default in code review workflows.</div>
+    </div>
+
+    <div class="item">
+      <div class="item-title"><a href="https://aitoolly.com/ai-news/2026-11-07" target="_blank" rel="noopener">Google Open-Sources EGM Plugin: Requires a Spec Before AI Agents Write Code</a></div>
+      <div class="item-meta">AI Engineering News — 7 November 2026</div>
+      <div class="item-summary">Google released the Elephant-Goldfish Model plugin as open source; it acts as a design-and-review gate for AI coding agents, enforcing a specification step before code generation to reduce agentic drift and unreviewed output.</div>
+    </div>
+
+    <div class="item">
+      <div class="item-title"><a href="https://aitoolly.com/ai-news/2026-11-07" target="_blank" rel="noopener">Meta Acquires Conductor — Tool for Splitting Tasks Across Multiple AI Agents (Shuts Down 20 Nov)</a></div>
+      <div class="item-meta">AI Engineering News — November 2026</div>
+      <div class="item-summary">Meta has acquired Conductor, a developer tool for decomposing coding projects across parallel AI agents; the standalone cloud service will shut down on 20 November as the technology moves into Meta's infrastructure.</div>
+    </div>
+
+    <div class="item">
+      <div class="item-title"><a href="https://riorundown.substack.com/p/ai-news-nov-09-2026-ai-agents-and" target="_blank" rel="noopener">gpt-oss-120B Runs on a Single 80 GB GPU via MXFP4 Quantization</a></div>
+      <div class="item-meta">AI Engineering / Substack — 9 November 2026</div>
+      <div class="item-summary">Analysis shows that the 120-billion-parameter open-source GPT variant can be loaded on a single NVIDIA 80 GB GPU using MXFP4 quantization, lowering the hardware barrier for running frontier-class open models without multi-GPU setups.</div>
+    </div>
+  </section>
+
+  <!-- Jobs -->
+  <section>
+    <div class="section-header"><h2>💼 Jobs</h2></div>
+
+    <div class="item">
+      <div class="item-title"><a href="https://swissdevjobs.ch/" target="_blank" rel="noopener">Senior Backend Developer — BLP Digital, Zürich (110K–140K CHF)</a></div>
+      <div class="item-meta">SwissDevJobs.ch — posted ~2 days ago</div>
+      <div class="item-summary">BLP Digital in Zürich is hiring a senior backend engineer; listed on SwissDevJobs with a reported salary band of 110,000–140,000 CHF annually.</div>
+    </div>
+
+    <div class="item">
+      <div class="item-title"><a href="https://swissdevjobs.ch/" target="_blank" rel="noopener">Lead Developer SAP Integration — Bern-Mittelland Region</a></div>
+      <div class="item-meta">SwissDevJobs.ch — recent</div>
+      <div class="item-summary">An enterprise client in the Bern-Mittelland region seeks a lead developer with SAP integration expertise; details via the SwissDevJobs listing.</div>
+    </div>
+
+    <div class="item">
+      <div class="item-title"><a href="https://swissdevjobs.ch/" target="_blank" rel="noopener">SAP CAP Developer — Zug</a></div>
+      <div class="item-meta">SwissDevJobs.ch — recent</div>
+      <div class="item-summary">A Zug-based employer is recruiting an SAP Cloud Application Programming (CAP) developer; full details on SwissDevJobs.ch.</div>
+    </div>
+  </section>
+
+  <!-- Archive -->
+  <section class="archive-section">
+    <div class="section-header"><h2>📁 Archive</h2></div>
+    <ul class="archive-list">
+      <li><span class="archive-date">2026-11-11</span> <a href="archive/2026-11-11.html">Today's digest — Space, World News, Rugby, Sailing, Lifting, Leadership, EI, AI Engineering, Jobs</a></li>
+      <li><span class="archive-date">2026-11-10</span> <a href="archive/2026-11-10.html">10 November 2026</a></li>
+      <li><span class="archive-date">2026-11-09</span> <a href="archive/2026-11-09.html">9 November 2026</a></li>
+      <li><span class="archive-date">2026-11-08</span> <a href="archive/2026-11-08.html">8 November 2026</a></li>
+      <li><span class="archive-date">2026-11-07</span> <a href="archive/2026-11-07.html">7 November 2026</a></li>
+      <li><span class="archive-date">2026-11-06</span> <a href="archive/2026-11-06.html">6 November 2026</a></li>
+      <li><span class="archive-date">2026-11-05</span> <a href="archive/2026-11-05.html">5 November 2026</a></li>
+      <li><span class="archive-date">2026-11-04</span> <a href="archive/2026-11-04.html">4 November 2026</a></li>
+      <li><span class="archive-date">2026-11-03</span> <a href="archive/2026-11-03.html">3 November 2026</a></li>
+      <li><span class="archive-date">2026-11-02</span> <a href="archive/2026-11-02.html">2 November 2026</a></li>
+      <li><span class="archive-date">2026-11-01</span> <a href="archive/2026-11-01.html">1 November 2026</a></li>
+      <li><span class="archive-date">2026-10-31</span> <a href="archive/2026-10-31.html">31 October 2026</a></li>
+      <li><span class="archive-date">2026-10-30</span> <a href="archive/2026-10-30.html">30 October 2026</a></li>
+      <li><span class="archive-date">2026-10-29</span> <a href="archive/2026-10-29.html">29 October 2026</a></li>
+      <li><span class="archive-date">2026-10-28</span> <a href="archive/2026-10-28.html">28 October 2026</a></li>
+      <li><span class="archive-date">2026-10-27</span> <a href="archive/2026-10-27.html">27 October 2026</a></li>
+      <li><span class="archive-date">2026-10-26</span> <a href="archive/2026-10-26.html">26 October 2026</a></li>
+      <li><span class="archive-date">2026-10-25</span> <a href="archive/2026-10-25.html">25 October 2026</a></li>
+      <li><span class="archive-date">2026-10-24</span> <a href="archive/2026-10-24.html">24 October 2026</a></li>
+      <li><span class="archive-date">2026-10-23</span> <a href="archive/2026-10-23.html">23 October 2026</a></li>
+      <li><span class="archive-date">2026-10-22</span> <a href="archive/2026-10-22.html">22 October 2026</a></li>
+      <li><span class="archive-date">2026-10-21</span> <a href="archive/2026-10-21.html">21 October 2026</a></li>
+      <li><span class="archive-date">2026-10-20</span> <a href="archive/2026-10-20.html">20 October 2026</a></li>
+      <li><span class="archive-date">2026-10-19</span> <a href="archive/2026-10-19.html">19 October 2026</a></li>
+      <li><span class="archive-date">2026-10-18</span> <a href="archive/2026-10-18.html">18 October 2026</a></li>
+      <li><span class="archive-date">2026-10-17</span> <a href="archive/2026-10-17.html">17 October 2026</a></li>
+      <li><span class="archive-date">2026-10-16</span> <a href="archive/2026-10-16.html">16 October 2026</a></li>
+      <li><span class="archive-date">2026-10-15</span> <a href="archive/2026-10-15.html">15 October 2026</a></li>
+      <li><span class="archive-date">2026-10-14</span> <a href="archive/2026-10-14.html">14 October 2026</a></li>
+      <li><span class="archive-date">2026-10-13</span> <a href="archive/2026-10-13.html">13 October 2026</a></li>
+      <li><span class="archive-date">2026-10-12</span> <a href="archive/2026-10-12.html">12 October 2026</a></li>
+      <li><span class="archive-date">2026-10-11</span> <a href="archive/2026-10-11.html">11 October 2026</a></li>
+      <li><span class="archive-date">2026-10-10</span> <a href="archive/2026-10-10.html">10 October 2026</a></li>
+      <li><span class="archive-date">2026-10-09</span> <a href="archive/2026-10-09.html">9 October 2026</a></li>
+      <li><span class="archive-date">2026-10-08</span> <a href="archive/2026-10-08.html">8 October 2026</a></li>
+      <li><span class="archive-date">2026-10-07</span> <a href="archive/2026-10-07.html">7 October 2026</a></li>
+      <li><span class="archive-date">2026-10-06</span> <a href="archive/2026-10-06.html">6 October 2026</a></li>
+      <li><span class="archive-date">2026-10-05</span> <a href="archive/2026-10-05.html">5 October 2026</a></li>
+      <li><span class="archive-date">2026-10-04</span> <a href="archive/2026-10-04.html">4 October 2026</a></li>
+      <li><span class="archive-date">2026-10-03</span> <a href="archive/2026-10-03.html">3 October 2026</a></li>
+      <li><span class="archive-date">2026-10-02</span> <a href="archive/2026-10-02.html">2 October 2026</a></li>
+      <li><span class="archive-date">2026-10-01</span> <a href="archive/2026-10-01.html">1 October 2026</a></li>
+      <li><span class="archive-date">2026-09-30</span> <a href="archive/2026-09-30.html">30 September 2026</a></li>
+      <li><span class="archive-date">2026-09-29</span> <a href="archive/2026-09-29.html">29 September 2026</a></li>
+      <li><span class="archive-date">2026-09-28</span> <a href="archive/2026-09-28.html">28 September 2026</a></li>
+      <li><span class="archive-date">2026-09-27</span> <a href="archive/2026-09-27.html">27 September 2026</a></li>
+      <li><span class="archive-date">2026-09-26</span> <a href="archive/2026-09-26.html">26 September 2026</a></li>
+      <li><span class="archive-date">2026-09-25</span> <a href="archive/2026-09-25.html">25 September 2026</a></li>
+      <li><span class="archive-date">2026-09-24</span> <a href="archive/2026-09-24.html">24 September 2026</a></li>
+      <li><span class="archive-date">2026-09-23</span> <a href="archive/2026-09-23.html">23 September 2026</a></li>
+      <li><span class="archive-date">2026-09-22</span> <a href="archive/2026-09-22.html">22 September 2026</a></li>
+      <li><span class="archive-date">2026-09-21</span> <a href="archive/2026-09-21.html">21 September 2026</a></li>
+      <li><span class="archive-date">2026-09-20</span> <a href="archive/2026-09-20.html">20 September 2026</a></li>
+      <li><span class="archive-date">2026-09-19</span> <a href="archive/2026-09-19.html">19 September 2026</a></li>
+      <li><span class="archive-date">2026-09-18</span> <a href="archive/2026-09-18.html">18 September 2026</a></li>
+      <li><span class="archive-date">2026-09-17</span> <a href="archive/2026-09-17.html">17 September 2026</a></li>
+      <li><span class="archive-date">2026-09-16</span> <a href="archive/2026-09-16.html">16 September 2026</a></li>
+      <li><span class="archive-date">2026-09-15</span> <a href="archive/2026-09-15.html">15 September 2026</a></li>
+      <li><span class="archive-date">2026-09-14</span> <a href="archive/2026-09-14.html">14 September 2026</a></li>
+      <li><span class="archive-date">2026-09-13</span> <a href="archive/2026-09-13.html">13 September 2026</a></li>
+      <li><span class="archive-date">2026-09-12</span> <a href="archive/2026-09-12.html">12 September 2026</a></li>
+    </ul>
+  </section>
 
 </div>
 <footer>
-  <div class="container">
-    Generated at 2026-11-10T06:04:11 UTC
-  </div>
+  Generated automatically on 11 November 2026 at 07:00 CET
 </footer>
 </body>
 </html>
