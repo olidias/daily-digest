@@ -6,483 +6,387 @@
 <title>Daily Digest</title>
 <style>
   :root {
-    --bg: #f8f7f4;
+    --bg: #f9f9f7;
     --surface: #ffffff;
     --border: #e0ddd8;
-    --text: #1a1a18;
-    --muted: #6b6860;
-    --accent: #2a5ba8;
-    --accent-hover: #1e4080;
-    --tag-bg: #eef2fb;
-    --tag-text: #2a5ba8;
-    --section-title: #1a1a18;
-    --header-bg: #1e3a6e;
-    --header-text: #ffffff;
+    --text: #1a1a1a;
+    --muted: #6b6b6b;
+    --accent: #2563eb;
+    --tag-bg: #eef2ff;
+    --tag-text: #3730a3;
+    --header-bg: #1e293b;
+    --header-text: #f1f5f9;
   }
   @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --bg: #16161a;
-      --surface: #1e1e24;
-      --border: #2e2e38;
-      --text: #e8e6e0;
-      --muted: #9b9890;
-      --accent: #6b9ff8;
-      --accent-hover: #9bbfff;
-      --tag-bg: #1e2a40;
-      --tag-text: #6b9ff8;
-      --section-title: #e8e6e0;
-      --header-bg: #0e1f3e;
-      --header-text: #e8e6e0;
+    :root {
+      --bg: #0f1117;
+      --surface: #1a1d27;
+      --border: #2d3148;
+      --text: #e8e8e8;
+      --muted: #9a9aaa;
+      --accent: #60a5fa;
+      --tag-bg: #1e2047;
+      --tag-text: #818cf8;
+      --header-bg: #0f172a;
+      --header-text: #f1f5f9;
     }
-  }
-  :root[data-theme="dark"] {
-    --bg: #16161a;
-    --surface: #1e1e24;
-    --border: #2e2e38;
-    --text: #e8e6e0;
-    --muted: #9b9890;
-    --accent: #6b9ff8;
-    --accent-hover: #9bbfff;
-    --tag-bg: #1e2a40;
-    --tag-text: #6b9ff8;
-    --section-title: #e8e6e0;
-    --header-bg: #0e1f3e;
-    --header-text: #e8e6e0;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
-    font-family: Georgia, 'Times New Roman', serif;
     background: var(--bg);
     color: var(--text);
-    line-height: 1.65;
-    font-size: 17px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
   }
   header {
     background: var(--header-bg);
     color: var(--header-text);
-    padding: 2.5rem 1rem 2rem;
+    padding: 2rem 1rem 1.5rem;
     text-align: center;
   }
-  header h1 { font-size: 1.9rem; font-weight: 700; letter-spacing: -0.01em; }
-  header p { margin-top: 0.4rem; font-size: 0.9rem; opacity: 0.75; font-family: system-ui, sans-serif; }
-  .container { max-width: 760px; margin: 0 auto; padding: 0 1rem; }
+  header h1 { font-size: 1.75rem; font-weight: 700; letter-spacing: -0.02em; }
+  header p { font-size: 0.875rem; color: #94a3b8; margin-top: 0.25rem; }
+  main { max-width: 740px; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
   section {
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 8px;
-    margin: 1.5rem 0;
+    margin-bottom: 1.5rem;
     overflow: hidden;
   }
-  .section-header {
-    padding: 0.85rem 1.25rem;
-    border-bottom: 1px solid var(--border);
-    display: flex; align-items: center; gap: 0.6rem;
-  }
-  .section-header h2 {
-    font-size: 1rem;
+  section h2 {
+    font-size: 0.75rem;
     font-weight: 700;
-    font-family: system-ui, sans-serif;
-    color: var(--section-title);
-    letter-spacing: 0.03em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
+    color: var(--muted);
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border);
+    background: var(--tag-bg);
   }
-  .item {
-    padding: 1rem 1.25rem;
+  ul { list-style: none; }
+  li {
+    padding: 0.9rem 1rem;
     border-bottom: 1px solid var(--border);
   }
-  .item:last-child { border-bottom: none; }
-  .item-title {
-    font-size: 1rem;
+  li:last-child { border-bottom: none; }
+  li a {
+    display: block;
     font-weight: 600;
-    line-height: 1.35;
-  }
-  .item-title a {
+    font-size: 0.95rem;
     color: var(--accent);
     text-decoration: none;
+    margin-bottom: 0.2rem;
+    line-height: 1.4;
   }
-  .item-title a:hover { color: var(--accent-hover); text-decoration: underline; }
-  .item-meta {
-    font-size: 0.8rem;
+  li a:hover { text-decoration: underline; }
+  .meta {
+    font-size: 0.75rem;
     color: var(--muted);
-    font-family: system-ui, sans-serif;
-    margin-top: 0.25rem;
+    margin-bottom: 0.3rem;
   }
-  .item-summary {
-    font-size: 0.95rem;
+  .summary {
+    font-size: 0.875rem;
     color: var(--text);
-    margin-top: 0.4rem;
-    line-height: 1.55;
   }
-  .archive-section {
-    background: var(--surface);
+  .archive-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+  .archive-grid a {
+    display: block;
+    padding: 0.5rem 0.75rem;
     border: 1px solid var(--border);
-    border-radius: 8px;
-    margin: 1.5rem 0;
-    overflow: hidden;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    color: var(--accent);
+    text-decoration: none;
+    background: var(--bg);
   }
-  .archive-section .section-header { border-bottom: 1px solid var(--border); }
-  .archive-list { list-style: none; padding: 0; }
-  .archive-list li {
-    padding: 0.6rem 1.25rem;
-    border-bottom: 1px solid var(--border);
-    font-family: system-ui, sans-serif;
-    font-size: 0.9rem;
-    display: flex;
-    align-items: baseline;
-    gap: 0.75rem;
-  }
-  .archive-list li:last-child { border-bottom: none; }
-  .archive-list a { color: var(--accent); text-decoration: none; }
-  .archive-list a:hover { text-decoration: underline; }
-  .archive-date { color: var(--muted); font-variant-numeric: tabular-nums; min-width: 7rem; }
+  .archive-grid a:hover { background: var(--tag-bg); }
+  .archive-date { font-weight: 600; }
   footer {
     text-align: center;
-    padding: 2rem 1rem;
-    font-family: system-ui, sans-serif;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     color: var(--muted);
+    padding: 2rem 1rem;
     border-top: 1px solid var(--border);
-    margin-top: 1rem;
   }
 </style>
 </head>
 <body>
 <header>
   <h1>Daily Digest</h1>
-  <p>Saturday, 14 November 2026 &mdash; Europe/Zurich</p>
+  <p>15 November 2026 &middot; Europe/Zurich &middot; <a href="archive/2026-11-15.html" style="color:#93c5fd">permalink</a></p>
 </header>
-<div class="container">
+<main>
 
-  <!-- TODAY'S DIGEST -->
-
-  <!-- Astronomy & Space -->
   <section>
-    <div class="section-header"><h2>&#x1F52D; Astronomy &amp; Space</h2></div>
-
-    <div class="item">
-      <div class="item-title"><a href="https://www.esa.int/news-media/news" target="_blank" rel="noopener">ESA&rsquo;s Hera Spacecraft Arrives at Didymos Binary Asteroid System, Begins Early Characterisation</a></div>
-      <div class="item-meta">ESA News</div>
-      <div class="item-summary">The European planetary-defence mission has entered its early-characterisation phase at 25&ndash;30 km from the binary Didymos system, sending back its first close-up imagery of both asteroids in support of the post-DART impact assessment.</div>
-    </div>
-
-    <div class="item">
-      <div class="item-title"><a href="https://www.esa.int/" target="_blank" rel="noopener">Euclid Releases First Major Data Batch: 1 Billion+ Objects Across 9,500 Full-Moon Areas of Sky</a></div>
-      <div class="item-meta">ESA News</div>
-      <div class="item-summary">The Euclid telescope&rsquo;s first large data release covers 30&times; more sky than its previous one and captures over a billion objects, underpinning the mission&rsquo;s 3D dark-matter and dark-energy mapping programme.</div>
-    </div>
-
-    <div class="item">
-      <div class="item-title"><a href="https://science.nasa.gov/science-research/heliophysics/nasas-escapade-completes-powered-earth-flybys-now-en-route-to-mars/" target="_blank" rel="noopener">NASA&rsquo;s ESCAPADE Twin Spacecraft Complete Earth Flybys, En Route to Mars (Sep 2027 Arrival)</a></div>
-      <div class="item-meta">NASA &mdash; Nov 2026</div>
-      <div class="item-summary">Both ESCAPADE probes executed successful gravity-assist flybys on November 7 and 9 and are on a confirmed trajectory to Mars, where they will study solar-wind erosion of the Martian atmosphere.</div>
-    </div>
-
-    <div class="item">
-      <div class="item-title"><a href="https://www.nasa.gov/news-release/nasa-invites-media-public-to-join-voyager-1-one-light-day-activities/" target="_blank" rel="noopener">Voyager 1 to Reach One Light-Day Distance from Earth on 18 November</a></div>
-      <div class="item-meta">NASA &mdash; Nov 2026</div>
-      <div class="item-summary">Voyager 1 will mark the historic one-light-day milestone on 18 November; NASA is hosting public and media events at JPL with a moderated discussion on the status of both Voyager probes in interstellar space.</div>
-    </div>
-
-    <div class="item">
-      <div class="item-title"><a href="https://www.quantamagazine.org/a-strange-quantum-theorem-has-killed-einsteins-reality-20261106/" target="_blank" rel="noopener">A Strange Quantum Theorem Has Killed Einstein&rsquo;s Reality</a></div>
-      <div class="item-meta">Quanta Magazine &mdash; 6 Nov 2026</div>
-      <div class="item-summary">An accessible treatment of the PBR theorem (Pusey, Barrett &amp; Rudolph) which mathematically rules out Einstein&rsquo;s picture of an objective observer-independent reality within the framework of standard quantum mechanics.</div>
-    </div>
-
-    <div class="item">
-      <div class="item-title"><a href="https://science.nasa.gov/apod/" target="_blank" rel="noopener">APOD 13 Nov: NGC 206 and the Star Clouds of Andromeda</a></div>
-      <div class="item-meta">Astronomy Picture of the Day &mdash; NASA &mdash; 13 Nov 2026</div>
-      <div class="item-summary">David Cruz&rsquo;s image of NGC 206, a luminous OB stellar association embedded in M31, showcases one of the largest known active star-forming regions in the Local Group.</div>
-    </div>
-
-  </section>
-
-  <!-- World News -->
-  <section>
-    <div class="section-header"><h2>&#x1F310; World News</h2></div>
-
-    <div class="item">
-      <div class="item-title"><a href="https://www.vietnam.vn/en/tin-tuc-the-gioi-14-11-ket-qua-cuoc-gap-giua-ong-putin-va-cac-dac-phai-vien-my" target="_blank" rel="noopener">Putin Meets US Envoys Witkoff &amp; Kushner; Trilateral Ukraine Talks to Continue</a></div>
-      <div class="item-meta">World News &mdash; 14 Nov 2026</div>
-      <div class="item-summary">Russian President Putin held talks with US special envoys Steve Witkoff and Jared Kushner and agreed to maintain the ongoing diplomatic channel on Ukraine, while reiterating that Western foreign troops inside Ukraine are unacceptable.</div>
-    </div>
-
-    <div class="item">
-      <div class="item-title"><a href="https://news.sbs.co.kr/english/article.do?news_id=N1008844035" target="_blank" rel="noopener">Jensen Huang Ousted from Nvidia Following Misconduct Allegations</a></div>
-      <div class="item-meta">SBS World News &mdash; 13 Nov 2026</div>
-      <div class="item-summary">Nvidia&rsquo;s co-founder and long-serving CEO Jensen Huang was ousted following misconduct allegations; Nvidia shares fell more than 13% intraday before closing down over 4% on November 13, marking a major leadership disruption at the world&rsquo;s largest AI-chip company.</div>
-    </div>
-
-    <div class="item">
-      <div class="item-title"><a href="https://news.sbs.co.kr/english/article.do?news_id=N1008845615" target="_blank" rel="noopener">US Aviation Communications Failure Causes Nationwide Ground Stop (Not a Cyberattack)</a></div>
-      <div class="item-meta">SBS World News &mdash; 13 Nov 2026</div>
-      <div class="item-summary">A communications system failure grounded departing flights across the United States on Friday; officials confirmed the disruption was not a cyberattack and the ground stop was lifted later the same day.</div>
-    </div>
-
-    <div class="item">
-      <div class="item-title"><a href="https://www.euronews.com/tag/world-news" target="_blank" rel="noopener">IS-Linked Fighters Kill 44 Civilians in Ebola-Affected DR Congo</a></div>
-      <div class="item-meta">Euronews &mdash; 13&ndash;14 Nov 2026</div>
-      <div class="item-summary">Islamic State-affiliated armed groups killed 44 civilians in an attack in the Democratic Republic of Congo, compounding a crisis in a region already under strain from an active Ebola outbreak.</div>
-    </div>
-
-  </section>
-
-  <!-- Rugby -->
-  <section>
-    <div class="section-header"><h2>&#x1F3C9; Rugby</h2></div>
-
-    <div class="item">
-      <div class="item-title"><a href="https://www.rte.ie/sport/results/rugby/world-rugby-nations-championship/27310/results/" target="_blank" rel="noopener">Nations Championship: England 45&ndash;22 Australia at Allianz Stadium (14 Nov)</a></div>
-      <div class="item-meta">World Rugby Nations Championship &mdash; 14 Nov 2026</div>
-      <div class="item-summary">England recorded a comprehensive 45&ndash;22 victory over Australia at Twickenham in the second round of the inaugural Nations Championship Northern Hemisphere Series.</div>
-    </div>
-
-    <div class="item">
-      <div class="item-title"><a href="https://en.wikipedia.org/wiki/2026_Nations_Championship_Northern_Hemisphere_Series" target="_blank" rel="noopener">Nations Championship: France Host South Africa (13 Nov)</a></div>
-      <div class="item-meta">World Rugby Nations Championship &mdash; 13 Nov 2026</div>
-      <div class="item-summary">France faced the Springboks in a headline Nations Championship fixture Friday evening, the second round of the Northern Hemisphere Series leading to the Finals Weekend at Twickenham on 27&ndash;29 November.</div>
-    </div>
-
-    <div class="item">
-      <div class="item-title"><a href="https://www.world.rugby/news/1046139/november-schedule-confirmed-for-climax-of-world-rugby-nations-cup-2026" target="_blank" rel="noopener">Nations Cup Penultimate Round: Georgia &amp; USA Lead Their Pools</a></div>
-      <div class="item-meta">World Rugby &mdash; Nov 2026</div>
-      <div class="item-summary">The Nations Cup penultimate round is underway across Europe this weekend with six matches, while Georgia and USA maintain leadership of their respective pools heading into the 20&ndash;21 November final round.</div>
-    </div>
-
-    <div class="item">
-      <div class="item-title"><a href="https://www.world.rugby/news" target="_blank" rel="noopener">New Hip-Drop Tackle Law Gets First International Outing in Nations Series</a></div>
-      <div class="item-meta">World Rugby &mdash; Nov 2026</div>
-      <div class="item-summary">World Rugby&rsquo;s newly enacted hip-drop tackle law made its first international-level appearance across the Nations Championship and Nations Cup matches this month, following a pre-series briefing at a World Rugby officials forum near London.</div>
-    </div>
-
-  </section>
-
-  <!-- Sailing -->
-  <section>
-    <div class="section-header"><h2>&#x26F5; Sailing</h2></div>
-
-    <div class="item">
-      <div class="item-title"><a href="https://sail-world.com/news/301450/Tom-Laperche-wins-the-Route-du-Rhum-2026" target="_blank" rel="noopener">Tom Laperche Wins Route du Rhum 2026, Breaks Solo Transatlantic Record by 6h 19m</a></div>
-      <div class="item-meta">Sail-World / Yachting World &mdash; 7 Nov 2026</div>
-      <div class="item-summary">Laperche won on debut aboard Ultim SVR Lazartigue in 6 days 13 hours 27 minutes 40 seconds, bettering Caudrelier&rsquo;s 2022 record by over six hours, after diverting mid-race to assist the capsized Banque Populaire XI until the skipper was safely recovered.</div>
-    </div>
-
-    <div class="item">
-      <div class="item-title"><a href="https://sail-world.com/news/301553/Clapcich-crowned-IMOCA-Globe-Series-champion" target="_blank" rel="noopener">Francesca Clapcich Crowned 2026 IMOCA Globe Series Champion &mdash; First Woman to Win Title</a></div>
-      <div class="item-meta">Sail-World &mdash; Nov 2026</div>
-      <div class="item-summary">An eighth-place finish in the Route du Rhum was enough to clinch the season-long IMOCA Globe Series title for Clapcich, 36 points ahead of two-time former champion Sam Goodchild, in a historic first for women in the class.</div>
-    </div>
-
-    <div class="item">
-      <div class="item-title"><a href="https://www.yachtingworld.com/homepage/injured-at-sea-alone-brazilian-navy-rescues-golden-globe-race-solo-skipper-while-imoca-racers-divert-to-azores-164547" target="_blank" rel="noopener">Golden Globe Race Skipper Airlifted by Brazilian Navy; IMOCA&rsquo;s Beyou Reports Spinal Fractures</a></div>
-      <div class="item-meta">Yachting World &mdash; Nov 2026</div>
-      <div class="item-summary">Guy de Boer was airlifted from his GGR yacht after a medical emergency at sea, while IMOCA skippers J&eacute;r&eacute;mie Beyou and Ambrogio Beccaria diverted to the Azores &mdash; Beyou reporting multiple vertebral and rib fractures.</div>
-    </div>
-
-    <div class="item">
-      <div class="item-title"><a href="https://www.yachtingworld.com/homepage/route-du-rhum-veteran-skipper-francis-joyon-capsizes-in-legendary-orma-trimaran-164488" target="_blank" rel="noopener">Francis Joyon Capsized in ORMA Trimaran During Route du Rhum, Rescued Safely</a></div>
-      <div class="item-meta">Yachting World &mdash; Nov 2026</div>
-      <div class="item-summary">Veteran sailor Francis Joyon capsized in his historic ORMA 60 trimaran during the Route du Rhum and was rescued; he is reported safe and uninjured.</div>
-    </div>
-
-  </section>
-
-  <!-- Science-Based Lifting -->
-  <section>
-    <div class="section-header"><h2>&#x1F4AA; Science-Based Lifting</h2></div>
-
-    <div class="item">
-      <div class="item-title"><a href="https://mennohenselmans.com/5-fitness-myths-science-officially-debunked-in-2026/" target="_blank" rel="noopener">5 Fitness Myths Science Officially Debunked in 2026</a></div>
-      <div class="item-meta">Menno Henselmans &mdash; 2026</div>
-      <div class="item-summary">A meta-analysis of nine studies found citrulline supplementation does not augment muscle growth; a separate meta-analysis found strength development, hypertrophy, and fat loss are equivalent pre- and post-menopause, overturning a common programming assumption.</div>
-    </div>
-
-    <div class="item">
-      <div class="item-title"><a href="https://mennohenselmans.com/3-epic-new-studies-to-build-more-muscle-2026/" target="_blank" rel="noopener">3 Epic New Studies to Build More Muscle [2026]</a></div>
-      <div class="item-meta">Menno Henselmans &mdash; 2026</div>
-      <div class="item-summary">With one exception, every study to date has found higher training volumes produce significantly greater or equal hypertrophy, while higher intensities favour strength and power gains more specifically &mdash; reinforcing dose-response volume programming.</div>
-    </div>
-
-    <div class="item">
-      <div class="item-title"><a href="https://www.strongerbyscience.com/strength-changes-hypertrophy/" target="_blank" rel="noopener">Is the Correlation Between Hypertrophy and Strength Gains Stronger Than We Realised?</a></div>
-      <div class="item-meta">Stronger By Science &mdash; Greg Nuckols &mdash; Jun 2026</div>
-      <div class="item-summary">Nuckols argues that hypertrophy likely contributes more to strength gains in novice lifters than earlier studies suggested, while the aggregate link between the two is weaker than it appears due to measurement confounds in the literature.</div>
-    </div>
-
-  </section>
-
-  <!-- People Leadership -->
-  <section>
-    <div class="section-header"><h2>&#x1F465; People Leadership</h2></div>
-
-    <div class="item">
-      <div class="item-title"><a href="https://hbr.org/2026/11/research-roundup-cooperative-executives-reskilling-resistance-penalties-for-referred-hires-and-more" target="_blank" rel="noopener">HBR Research Roundup: Referred Hires Penalised, Remote Jobs Demand 25&ndash;42% More Skills, Reskilling Resistance</a></div>
-      <div class="item-meta">Harvard Business Review &mdash; Nov 2026</div>
-      <div class="item-summary">Four-study compendium: referred coworkers are consistently rated as less deserving than non-referred peers despite equivalent performance; remote job postings require 25&ndash;42% more stated skills than equivalent in-person roles; and reskilling programmes face systematic internal resistance.</div>
-    </div>
-
-    <div class="item">
-      <div class="item-title"><a href="https://sloanreview.mit.edu/article/how-leadership-anxiety-derails-transformation/" target="_blank" rel="noopener">How Leadership Anxiety Derails Transformation</a></div>
-      <div class="item-meta">MIT Sloan Management Review &mdash; Sep 2026</div>
-      <div class="item-summary">A four-year longitudinal study &mdash; 760+ hours of observation and 300+ interviews at a professional services firm &mdash; identifies leaders&rsquo; unmanaged anxiety as a primary mechanism by which large-scale organisational transformations stall.</div>
-    </div>
-
-    <div class="item">
-      <div class="item-title"><a href="https://sloanreview.mit.edu/" target="_blank" rel="noopener">When Cultures Collide in Crisis</a></div>
-      <div class="item-meta">MIT Sloan Management Review &mdash; S. Amy Sommer &amp; Christine M. Pearson &mdash; 4 Nov 2026</div>
-      <div class="item-summary">Research-grounded piece examining how differing national and organisational cultural assumptions about authority and urgency amplify harm during cross-border corporate crises, with implications for multinational crisis protocols.</div>
-    </div>
-
-    <div class="item">
-      <div class="item-title"><a href="https://hbr.org/2026/10/research-sleep-deprivation-is-a-leadership-problem" target="_blank" rel="noopener">Research: Sleep Deprivation Is a Leadership Problem</a></div>
-      <div class="item-meta">Harvard Business Review &mdash; Oct 2026</div>
-      <div class="item-summary">A survey of 1,009 US managers and executives identifies chronic sleep deprivation as a significant driver of impaired decision quality and interpersonal dysregulation, with dose-response data linking hours of sleep to leadership-relevant outcomes.</div>
-    </div>
-
-  </section>
-
-  <!-- Emotional Intelligence -->
-  <section>
-    <div class="section-header"><h2>&#x1F9E0; Emotional Intelligence</h2></div>
-
-    <div class="item">
-      <div class="item-title"><a href="https://greatergood.berkeley.edu/article" target="_blank" rel="noopener">Mental Well-Being Linked to Longer Life: Systematic Review of 99 Studies</a></div>
-      <div class="item-meta">Greater Good Magazine (UC Berkeley) &mdash; Emiliana Simon-Thomas &mdash; 9 Nov 2026</div>
-      <div class="item-summary">A systematic review of 99 studies finds robust associations between psychological well-being and longevity, with effect sizes consistent across age groups and both physical and all-cause mortality outcomes.</div>
-    </div>
-
-    <div class="item">
-      <div class="item-title"><a href="https://www.apa.org/monitor/2026/2026-november-december.pdf" target="_blank" rel="noopener">APA Monitor Nov/Dec 2026: AI in Psychological Assessment, Workplace Surveillance, Chatbots in Early Childhood</a></div>
-      <div class="item-meta">APA Monitor on Psychology &mdash; Nov 2026</div>
-      <div class="item-summary">The latest issue covers three research-led themes: AI-based psychometric assessment tools entering clinical practice, the psychological effects of algorithmic workplace surveillance, and evidence on conversational AI in early-childhood learning environments.</div>
-    </div>
-
-    <div class="item">
-      <div class="item-title"><a href="https://www.apa.org/monitor/2026/11-12/psychologists-news" target="_blank" rel="noopener">Implicit Bias Against AI-Labeled Art Persists Even When Both Works Are AI-Generated</a></div>
-      <div class="item-meta">Psychology of Aesthetics, Creativity, and the Arts &mdash; Nov 2026</div>
-      <div class="item-summary">A controlled study found participants showed consistent negative implicit bias against artwork labeled as AI-made, even in paired comparisons where both items were algorithmically generated, suggesting the bias is label-driven rather than quality-driven.</div>
-    </div>
-
-    <div class="item">
-      <div class="item-title"><a href="https://greatergood.berkeley.edu/article" target="_blank" rel="noopener">Well-Being Research Underused by Policymakers &mdash; And How to Change That</a></div>
-      <div class="item-meta">Greater Good Magazine (UC Berkeley) &mdash; Roger Tweed &amp; Lucian Conway &mdash; 3 Nov 2026</div>
-      <div class="item-summary">The authors document the gap between the quantity of well-being research available and its near-absence in policy decisions, then propose concrete translation strategies for researchers and science communicators.</div>
-    </div>
-
-  </section>
-
-  <!-- AI Engineering -->
-  <section>
-    <div class="section-header"><h2>&#x1F916; AI Engineering</h2></div>
-
-    <div class="item">
-      <div class="item-title"><a href="https://simonwillison.net/2026/Nov/11/anthropic-ipo-roadshow/" target="_blank" rel="noopener">Anthropic IPO Roadshow: Multi-Cloud Compute Strategy Spans AWS Trainium, Google TPUs, NVIDIA &amp; AMD</a></div>
-      <div class="item-meta">Simon Willison &mdash; 11 Nov 2026</div>
-      <div class="item-summary">Willison annotated the Anthropic IPO roadshow video, highlighting co-founder Tom Brown&rsquo;s description of training and serving Claude simultaneously across four hardware vendors &mdash; AWS Trainium, Google TPUs, NVIDIA GPUs, and AMD GPUs &mdash; as a core competitive resilience strategy.</div>
-    </div>
-
-    <div class="item">
-      <div class="item-title"><a href="https://simonwillison.net/" target="_blank" rel="noopener">Anthropic Releases Fable 5.2 and Mythos 5.2 &mdash; Fable 5.2 Now #1 on Artificial Analysis</a></div>
-      <div class="item-meta">Simon Willison &mdash; 9&ndash;11 Nov 2026</div>
-      <div class="item-summary">Anthropic shipped two new Claude-family models; Fable 5.2 immediately ranked first on the Artificial Analysis leaderboard, with Willison updating his <code>llm-anthropic</code> tool and noting the benchmark profile across capability dimensions.</div>
-    </div>
-
-    <div class="item">
-      <div class="item-title"><a href="https://simonwillison.net/" target="_blank" rel="noopener">Meta&rsquo;s Muse Ember: Comparable Image Quality to Muse Wonder at 40&times; Lower Cost</a></div>
-      <div class="item-meta">Simon Willison &mdash; 10 Nov 2026</div>
-      <div class="item-summary">Willison evaluated Meta&rsquo;s small Muse Ember image model and found quality comparable to Muse Wonder while running at a fortieth of the per-image cost, making it notable for high-volume or cost-sensitive AI-image pipelines.</div>
-    </div>
-
-  </section>
-
-  <!-- Jobs -->
-  <section>
-    <div class="section-header"><h2>&#x1F4BC; Jobs</h2></div>
-
-    <div class="item">
-      <div class="item-title"><a href="https://swissdevjobs.ch/jobs/Backend/all" target="_blank" rel="noopener">SwissDevJobs: 61 Backend, 57 Python, 49 DevOps, 30 Fullstack Roles Active in Switzerland</a></div>
-      <div class="item-meta">swissdevjobs.ch &mdash; Current listings</div>
-      <div class="item-summary">The board shows 177 active IT &amp; software developer roles in Switzerland; notable employers include BLP Digital, Docpier (Lucerne), Threema (WebRTC engineer), and Bank CIC (Basel, web).</div>
-    </div>
-
-    <div class="item">
-      <div class="item-title"><a href="https://www.freelancermap.com/projects/switzerland" target="_blank" rel="noopener">Freelancermap: 689 Swiss Freelance Projects, 69 Remote &mdash; SAP, Data Science, SimCorp</a></div>
-      <div class="item-meta">freelancermap.com &mdash; Current listings</div>
-      <div class="item-summary">The Switzerland filter shows 689 live IT freelance projects, 69 tagged remote; active categories include SAP S/4HANA consulting, senior data science (Zurich, 40% remote), and SimCorp business analysis (60% remote).</div>
-    </div>
-
-  </section>
-
-  <!-- ARCHIVE -->
-  <div class="archive-section">
-    <div class="section-header"><h2>&#x1F4C2; Archive</h2></div>
-    <ul class="archive-list">
-      <li><span class="archive-date">2026-11-13</span><a href="archive/2026-11-13.html">13 November 2026</a></li>
-      <li><span class="archive-date">2026-11-12</span><a href="archive/2026-11-12.html">12 November 2026</a></li>
-      <li><span class="archive-date">2026-11-11</span><a href="archive/2026-11-11.html">11 November 2026</a></li>
-      <li><span class="archive-date">2026-11-10</span><a href="archive/2026-11-10.html">10 November 2026</a></li>
-      <li><span class="archive-date">2026-11-09</span><a href="archive/2026-11-09.html">9 November 2026</a></li>
-      <li><span class="archive-date">2026-11-08</span><a href="archive/2026-11-08.html">8 November 2026</a></li>
-      <li><span class="archive-date">2026-11-07</span><a href="archive/2026-11-07.html">7 November 2026</a></li>
-      <li><span class="archive-date">2026-11-06</span><a href="archive/2026-11-06.html">6 November 2026</a></li>
-      <li><span class="archive-date">2026-11-05</span><a href="archive/2026-11-05.html">5 November 2026</a></li>
-      <li><span class="archive-date">2026-11-04</span><a href="archive/2026-11-04.html">4 November 2026</a></li>
-      <li><span class="archive-date">2026-11-03</span><a href="archive/2026-11-03.html">3 November 2026</a></li>
-      <li><span class="archive-date">2026-11-02</span><a href="archive/2026-11-02.html">2 November 2026</a></li>
-      <li><span class="archive-date">2026-11-01</span><a href="archive/2026-11-01.html">1 November 2026</a></li>
-      <li><span class="archive-date">2026-10-31</span><a href="archive/2026-10-31.html">31 October 2026</a></li>
-      <li><span class="archive-date">2026-10-30</span><a href="archive/2026-10-30.html">30 October 2026</a></li>
-      <li><span class="archive-date">2026-10-29</span><a href="archive/2026-10-29.html">29 October 2026</a></li>
-      <li><span class="archive-date">2026-10-28</span><a href="archive/2026-10-28.html">28 October 2026</a></li>
-      <li><span class="archive-date">2026-10-27</span><a href="archive/2026-10-27.html">27 October 2026</a></li>
-      <li><span class="archive-date">2026-10-26</span><a href="archive/2026-10-26.html">26 October 2026</a></li>
-      <li><span class="archive-date">2026-10-25</span><a href="archive/2026-10-25.html">25 October 2026</a></li>
-      <li><span class="archive-date">2026-10-24</span><a href="archive/2026-10-24.html">24 October 2026</a></li>
-      <li><span class="archive-date">2026-10-23</span><a href="archive/2026-10-23.html">23 October 2026</a></li>
-      <li><span class="archive-date">2026-10-22</span><a href="archive/2026-10-22.html">22 October 2026</a></li>
-      <li><span class="archive-date">2026-10-21</span><a href="archive/2026-10-21.html">21 October 2026</a></li>
-      <li><span class="archive-date">2026-10-20</span><a href="archive/2026-10-20.html">20 October 2026</a></li>
-      <li><span class="archive-date">2026-10-19</span><a href="archive/2026-10-19.html">19 October 2026</a></li>
-      <li><span class="archive-date">2026-10-18</span><a href="archive/2026-10-18.html">18 October 2026</a></li>
-      <li><span class="archive-date">2026-10-17</span><a href="archive/2026-10-17.html">17 October 2026</a></li>
-      <li><span class="archive-date">2026-10-16</span><a href="archive/2026-10-16.html">16 October 2026</a></li>
-      <li><span class="archive-date">2026-10-15</span><a href="archive/2026-10-15.html">15 October 2026</a></li>
-      <li><span class="archive-date">2026-10-14</span><a href="archive/2026-10-14.html">14 October 2026</a></li>
-      <li><span class="archive-date">2026-10-13</span><a href="archive/2026-10-13.html">13 October 2026</a></li>
-      <li><span class="archive-date">2026-10-12</span><a href="archive/2026-10-12.html">12 October 2026</a></li>
-      <li><span class="archive-date">2026-10-11</span><a href="archive/2026-10-11.html">11 October 2026</a></li>
-      <li><span class="archive-date">2026-10-10</span><a href="archive/2026-10-10.html">10 October 2026</a></li>
-      <li><span class="archive-date">2026-10-09</span><a href="archive/2026-10-09.html">9 October 2026</a></li>
-      <li><span class="archive-date">2026-10-08</span><a href="archive/2026-10-08.html">8 October 2026</a></li>
-      <li><span class="archive-date">2026-10-07</span><a href="archive/2026-10-07.html">7 October 2026</a></li>
-      <li><span class="archive-date">2026-10-06</span><a href="archive/2026-10-06.html">6 October 2026</a></li>
-      <li><span class="archive-date">2026-10-05</span><a href="archive/2026-10-05.html">5 October 2026</a></li>
-      <li><span class="archive-date">2026-10-04</span><a href="archive/2026-10-04.html">4 October 2026</a></li>
-      <li><span class="archive-date">2026-10-03</span><a href="archive/2026-10-03.html">3 October 2026</a></li>
-      <li><span class="archive-date">2026-10-02</span><a href="archive/2026-10-02.html">2 October 2026</a></li>
-      <li><span class="archive-date">2026-10-01</span><a href="archive/2026-10-01.html">1 October 2026</a></li>
-      <li><span class="archive-date">2026-09-30</span><a href="archive/2026-09-30.html">30 September 2026</a></li>
-      <li><span class="archive-date">2026-09-29</span><a href="archive/2026-09-29.html">29 September 2026</a></li>
-      <li><span class="archive-date">2026-09-28</span><a href="archive/2026-09-28.html">28 September 2026</a></li>
-      <li><span class="archive-date">2026-09-27</span><a href="archive/2026-09-27.html">27 September 2026</a></li>
-      <li><span class="archive-date">2026-09-26</span><a href="archive/2026-09-26.html">26 September 2026</a></li>
-      <li><span class="archive-date">2026-09-25</span><a href="archive/2026-09-25.html">25 September 2026</a></li>
-      <li><span class="archive-date">2026-09-24</span><a href="archive/2026-09-24.html">24 September 2026</a></li>
-      <li><span class="archive-date">2026-09-23</span><a href="archive/2026-09-23.html">23 September 2026</a></li>
-      <li><span class="archive-date">2026-09-22</span><a href="archive/2026-09-22.html">22 September 2026</a></li>
-      <li><span class="archive-date">2026-09-21</span><a href="archive/2026-09-21.html">21 September 2026</a></li>
-      <li><span class="archive-date">2026-09-20</span><a href="archive/2026-09-20.html">20 September 2026</a></li>
-      <li><span class="archive-date">2026-09-19</span><a href="archive/2026-09-19.html">19 September 2026</a></li>
-      <li><span class="archive-date">2026-09-18</span><a href="archive/2026-09-18.html">18 September 2026</a></li>
-      <li><span class="archive-date">2026-09-17</span><a href="archive/2026-09-17.html">17 September 2026</a></li>
-      <li><span class="archive-date">2026-09-16</span><a href="archive/2026-09-16.html">16 September 2026</a></li>
-      <li><span class="archive-date">2026-09-15</span><a href="archive/2026-09-15.html">15 September 2026</a></li>
+    <h2>Astronomy &amp; Space</h2>
+    <ul>
+      <li>
+        <a href="https://www.esa.int/Science_Exploration/Space_Science/Hera">ESA Hera Enters Early Characterisation Phase at Didymos</a>
+        <div class="meta">ESA News</div>
+        <div class="summary">Hera is now 25–30 km from the binary Didymos system, has resolved its two target asteroids separately for the first time, and will begin a Detailed Characterisation Phase after 2 December.</div>
+      </li>
+      <li>
+        <a href="https://www.esa.int/Science_Exploration/Space_Science/Euclid">ESA Euclid Releases First Major Data Batch</a>
+        <div class="meta">ESA News</div>
+        <div class="summary">Euclid's first large data release captures light from more than one billion objects, laying the groundwork for a 3D map of the cosmos aimed at studying dark matter and dark energy.</div>
+      </li>
+      <li>
+        <a href="https://www.esa.int/Science_Exploration/Space_Science/Mars_Express">European Mars Orbiter Finds Hints of Volcanic Activity on Mars</a>
+        <div class="meta">ESA News</div>
+        <div class="summary">ESA's Mars orbiter has detected signatures consistent with recent or ongoing volcanic activity, suggesting Mars may not be as geologically dead as previously assumed.</div>
+      </li>
+      <li>
+        <a href="https://www.quantamagazine.org/a-strange-quantum-theorem-has-killed-einsteins-reality-20261106/">A Strange Quantum Theorem Has Killed Einstein's Reality</a>
+        <div class="meta">Quanta Magazine (Physics) &middot; 6 Nov 2026</div>
+        <div class="summary">The PBR theorem of 2012, now increasingly accepted by quantum theorists, rules out the most commonsense interpretation of reality — that physical states exist independently of measurement.</div>
+      </li>
+      <li>
+        <a href="https://science.nasa.gov/solar-system/skywatching/whats-up-november-2026-skywatching-tips-from-nasa/">Voyager 1 to Reach 1 Light-Day Distance on November 18</a>
+        <div class="meta">NASA Science</div>
+        <div class="summary">NASA reports Voyager 1 will become the first human-made object to exceed one light-day from Earth on 18 November, a historic milestone in deep-space exploration.</div>
+      </li>
+      <li>
+        <a href="https://www.nasa.gov/">SpaceX Performs Starship Booster Catch</a>
+        <div class="meta">NASA / SpaceX &middot; 15 Nov 2026</div>
+        <div class="summary">SpaceX carried out a successful Starship Super Heavy booster capture at the launch tower today, further demonstrating full-stack reusability ahead of an operational flight cadence.</div>
+      </li>
     </ul>
-  </div>
+  </section>
 
-</div>
+  <section>
+    <h2>World News</h2>
+    <ul>
+      <li>
+        <a href="https://en.wikipedia.org/wiki/2026_United_Nations_Climate_Change_Conference">COP31 Climate Conference Underway in Antalya, Turkey</a>
+        <div class="meta">UN / Wikipedia &middot; 9–20 Nov 2026</div>
+        <div class="summary">The 2026 UN Climate Change Conference is in its second week in Antalya, Turkey, with negotiators focused on emissions targets, adaptation finance, and loss-and-damage frameworks.</div>
+      </li>
+      <li>
+        <a href="https://en.wikipedia.org/wiki/Portal:Current_events/November_2026">49th ASEAN Summit Opens in Manila</a>
+        <div class="meta">Philippine Presidency &middot; 15 Nov 2026</div>
+        <div class="summary">Philippine President Marcos formally opened the 49th ASEAN Summit, calling for regional unity as global powers converge on Manila to address trade, security, and South China Sea tensions.</div>
+      </li>
+      <li>
+        <a href="https://en.wikipedia.org/wiki/Portal:Current_events/November_2026">France Accuses Iran of Cyber Sabotage of Supermarket Freezers</a>
+        <div class="meta">French Government &middot; 15 Nov 2026</div>
+        <div class="summary">French authorities have attributed a hacking campaign that disrupted supermarket refrigeration systems to Iran, calling it the first state-sponsored cyber offensive aimed purely at infrastructure sabotage on French territory.</div>
+      </li>
+      <li>
+        <a href="https://en.wikipedia.org/wiki/Portal:Current_events/November_2026">Moscow Statistics Agency Wiped by Hackers</a>
+        <div class="meta">News reports &middot; 15 Nov 2026</div>
+        <div class="summary">Russia's federal statistics agency Rosstat was reportedly targeted in a destructive cyberattack that wiped its systems, disrupting government data operations.</div>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Rugby (High-Level Only)</h2>
+    <ul>
+      <li>
+        <a href="https://en.wikipedia.org/wiki/2026_men%27s_rugby_union_internationals">France Defeats South Africa 21–19 in Paris</a>
+        <div class="meta">Nations Championship Northern Hemisphere Series &middot; 13 Nov 2026</div>
+        <div class="summary">France edged South Africa 21–19 at the Stade de France in a tightly contested Nations Championship fixture, handing the Springboks their first defeat of the November window after their 66–7 win over Italy the previous week.</div>
+      </li>
+      <li>
+        <a href="https://en.wikipedia.org/wiki/2026_Nations_Championship_Northern_Hemisphere_Series">Nations Championship Northern Hemisphere Series: Final Weekend Approaching</a>
+        <div class="meta">World Rugby &middot; 6–21 Nov 2026</div>
+        <div class="summary">The November international window continues through 21 November, with the top Northern Hemisphere nations competing in the 2026 Nations Championship, which concludes its NH Series on 29 November.</div>
+      </li>
+      <li>
+        <a href="https://en.wikipedia.org/wiki/2026_Nations_Championship">New Zealand Tour of South Africa Includes URC Fixtures</a>
+        <div class="meta">World Rugby / 2026 Nations Championship</div>
+        <div class="summary">As part of an extended 2026 programme, New Zealand are undertaking an eight-match tour of South Africa, playing United Rugby Championship sides alongside a four-Test series against the Springboks.</div>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Sailing</h2>
+    <ul>
+      <li>
+        <a href="https://yachtingworld.com/all-latest-posts/tom-laperche-smashes-route-du-rhum-record-to-win-transatlantic-solo-race-on-ultim-svr-lazartigue-164535">Tom Laperche Wins Route du Rhum, Smashes Solo Transatlantic Record</a>
+        <div class="meta">Yachting World / Sail-World</div>
+        <div class="summary">Tom Laperche won the Ultim class of the Route du Rhum–Destination Guadeloupe on the trimaran SVR-Lazartigue, breaking the solo transatlantic course record in what is shaping up as one of sailing's standout performances of 2026.</div>
+      </li>
+      <li>
+        <a href="https://www.sail-world.com/news/301552/After-a-high-caliber-IMOCA-podium">Corentin Horeau Wins IMOCA Class at Route du Rhum on Debut</a>
+        <div class="meta">Sail-World</div>
+        <div class="summary">Corentin Horeau claimed first place in the IMOCA class on his debut Route du Rhum–Destination Guadeloupe, with Boris Herrmann taking second; analysts are examining the tactical and technical lessons from the high-calibre IMOCA podium.</div>
+      </li>
+      <li>
+        <a href="https://www.sail-world.com/">Francesca Clapcich Wins 2026 IMOCA Globe Series — First Female Champion</a>
+        <div class="meta">Sail-World</div>
+        <div class="summary">Francesca Clapcich has been crowned 2026 IMOCA Globe Series champion, becoming the first woman to win the title in the class's history.</div>
+      </li>
+      <li>
+        <a href="https://www.sail-world.com/news/301590/Star-World-Championship-2026-overall">Diego Negri &amp; Lambertenghi Win 2026 Star World Championship</a>
+        <div class="meta">Sail-World &middot; Miami</div>
+        <div class="summary">Diego Negri and Sergio "Ciccio" Lambertenghi of Italy claimed the 2026 Star World Championship after six races on Biscayne Bay, Miami.</div>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>People Leadership</h2>
+    <ul>
+      <li>
+        <a href="https://hbr.org/archive-toc/BR2606">HBR: Poor Employee Scheduling Nearly Doubles Quit Rates</a>
+        <div class="meta">Harvard Business Review &middot; 11 Nov 2026</div>
+        <div class="summary">A study of 1,189 restaurant workers found that employees with poor schedules were nearly twice as likely to quit when they could see that peers received better scheduling treatment, underscoring the equity dimension of workforce management.</div>
+      </li>
+      <li>
+        <a href="https://sloanreview.mit.edu/article/">MIT SMR: AI Governance Frameworks May Erode Human Risk Behaviours</a>
+        <div class="meta">MIT Sloan Management Review &middot; 2 Nov 2026</div>
+        <div class="summary">Shefali V. Patil argues that emerging AI governance frameworks may subtly undermine the human judgment and behavioural norms that effective risk management depends on, as organisations over-delegate risk oversight to automated systems.</div>
+      </li>
+      <li>
+        <a href="https://hbr.org/archive-toc/BR2606">HBR: "How CEOs Set the Tempo" — Nohria on Strategic Pacing</a>
+        <div class="meta">Harvard Business Review &middot; Nov–Dec 2026</div>
+        <div class="summary">Drawing on observations of hundreds of CEOs, Nitin Nohria identifies five leadership tempos and argues that effective executives treat pace as a deliberate strategic choice rather than a personality trait.</div>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Emotional Intelligence</h2>
+    <ul>
+      <li>
+        <a href="https://greatergood.berkeley.edu/article">Mental Well-Being Linked to Longer Life in 99-Study Meta-Analysis</a>
+        <div class="meta">Greater Good Magazine (UC Berkeley) &middot; 9 Nov 2026</div>
+        <div class="summary">A meta-analysis of 99 studies, summarised by Emiliana R. Simon-Thomas, finds robust evidence that higher mental well-being is associated with significantly longer lifespan across diverse populations.</div>
+      </li>
+      <li>
+        <a href="https://greatergood.berkeley.edu/article">Why Rushing to Analyse Grief Misses a Crucial Step</a>
+        <div class="meta">Greater Good Magazine (UC Berkeley) &middot; 9 Nov 2026</div>
+        <div class="summary">Naomi Sanderovsky argues that the instinct to intellectualise or quickly analyse grief short-circuits an emotionally necessary phase of simply experiencing loss.</div>
+      </li>
+      <li>
+        <a href="https://www.apa.org/monitor/2026/11-12/psychologists-news">APA Monitor Nov/Dec 2026: Chatbots and Children, Workplace Surveillance</a>
+        <div class="meta">APA Monitor on Psychology &middot; Nov–Dec 2026</div>
+        <div class="summary">The latest APA Monitor issue covers psychological research on children's interactions with AI chatbots, the mental-health effects of workplace surveillance, and Gen Z nostalgia as a coping mechanism.</div>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>AI Engineering</h2>
+    <ul>
+      <li>
+        <a href="https://simonwillison.net/">Simon Willison: Google Gemini 4 Pricing Tiers and Free-Tier "Hydrogen" Model</a>
+        <div class="meta">Simon Willison's Weblog &middot; 12 Nov 2026</div>
+        <div class="summary">Willison breaks down Google's Gemini 4 pricing structure, highlighting Hydrogen — the free-tier model that will power AI features in Google Search — and what this means for developer access to capable foundation models.</div>
+      </li>
+      <li>
+        <a href="https://simonwillison.net/2026/Nov/11/aws-emulator/">AWS Releases Official Local Service Emulator</a>
+        <div class="meta">Simon Willison's Weblog &middot; 11 Nov 2026</div>
+        <div class="summary">AWS has released an official emulator allowing developers to run tests against a local clone of its services, though it still requires Docker on macOS and Windows; Willison flags the Docker dependency as a practical friction point.</div>
+      </li>
+      <li>
+        <a href="https://simonwillison.net/">Anthropic IPO Roadshow Video Contains Previously Unreleased Business Details</a>
+        <div class="meta">Simon Willison's Weblog &middot; 11 Nov 2026</div>
+        <div class="summary">Willison notes that Anthropic's IPO roadshow video, now publicly viewable, contains previously unreleased information about the company's business model and revenue structure.</div>
+      </li>
+      <li>
+        <a href="https://simonwillison.net/">Anthropic Releases Fable 5.2 and Mythos 5.2</a>
+        <div class="meta">Simon Willison's Weblog &middot; 9 Nov 2026</div>
+        <div class="summary">Anthropic released two new models — Fable 5.2 and Mythos 5.2 — on 9 November; Willison also documents Anthropic's prompting guidance showing that a single sentence about code ownership raised autonomous code consolidation from 10% to 75% of runs.</div>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Jobs</h2>
+    <ul>
+      <li>
+        <a href="https://swissdevjobs.ch/jobs/Backend/all">SwissDevJobs: 61 Backend Developer Roles Listed in Switzerland</a>
+        <div class="meta">swissdevjobs.ch</div>
+        <div class="summary">The Swiss IT job board currently lists 61 backend developer positions, 30 fullstack roles, and 49 DevOps/SRE openings, with salaries ranging from CHF 65,000 to CHF 180,000 depending on specialisation.</div>
+      </li>
+      <li>
+        <a href="https://www.freelancermap.com/projects/switzerland">Freelancermap: 689 Active Projects in Switzerland</a>
+        <div class="meta">freelancermap.com</div>
+        <div class="summary">Freelancermap lists 689 active freelance projects in Switzerland — updated daily — with notable openings including AI architect contracts of up to 13 months, mostly hybrid or on-site in Zurich, Bern, and Basel.</div>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Archive</h2>
+    <div class="archive-grid">
+      <a href="archive/2026-11-15.html"><span class="archive-date">2026-11-15</span> Space · Sailing · Rugby · AI</a>
+      <a href="archive/2026-11-14.html"><span class="archive-date">2026-11-14</span></a>
+      <a href="archive/2026-11-13.html"><span class="archive-date">2026-11-13</span></a>
+      <a href="archive/2026-11-12.html"><span class="archive-date">2026-11-12</span></a>
+      <a href="archive/2026-11-11.html"><span class="archive-date">2026-11-11</span></a>
+      <a href="archive/2026-11-10.html"><span class="archive-date">2026-11-10</span></a>
+      <a href="archive/2026-11-09.html"><span class="archive-date">2026-11-09</span></a>
+      <a href="archive/2026-11-08.html"><span class="archive-date">2026-11-08</span></a>
+      <a href="archive/2026-11-07.html"><span class="archive-date">2026-11-07</span></a>
+      <a href="archive/2026-11-06.html"><span class="archive-date">2026-11-06</span></a>
+      <a href="archive/2026-11-05.html"><span class="archive-date">2026-11-05</span></a>
+      <a href="archive/2026-11-04.html"><span class="archive-date">2026-11-04</span></a>
+      <a href="archive/2026-11-03.html"><span class="archive-date">2026-11-03</span></a>
+      <a href="archive/2026-11-02.html"><span class="archive-date">2026-11-02</span></a>
+      <a href="archive/2026-11-01.html"><span class="archive-date">2026-11-01</span></a>
+      <a href="archive/2026-10-31.html"><span class="archive-date">2026-10-31</span></a>
+      <a href="archive/2026-10-30.html"><span class="archive-date">2026-10-30</span></a>
+      <a href="archive/2026-10-29.html"><span class="archive-date">2026-10-29</span></a>
+      <a href="archive/2026-10-28.html"><span class="archive-date">2026-10-28</span></a>
+      <a href="archive/2026-10-27.html"><span class="archive-date">2026-10-27</span></a>
+      <a href="archive/2026-10-26.html"><span class="archive-date">2026-10-26</span></a>
+      <a href="archive/2026-10-25.html"><span class="archive-date">2026-10-25</span></a>
+      <a href="archive/2026-10-24.html"><span class="archive-date">2026-10-24</span></a>
+      <a href="archive/2026-10-23.html"><span class="archive-date">2026-10-23</span></a>
+      <a href="archive/2026-10-22.html"><span class="archive-date">2026-10-22</span></a>
+      <a href="archive/2026-10-21.html"><span class="archive-date">2026-10-21</span></a>
+      <a href="archive/2026-10-20.html"><span class="archive-date">2026-10-20</span></a>
+      <a href="archive/2026-10-19.html"><span class="archive-date">2026-10-19</span></a>
+      <a href="archive/2026-10-18.html"><span class="archive-date">2026-10-18</span></a>
+      <a href="archive/2026-10-17.html"><span class="archive-date">2026-10-17</span></a>
+      <a href="archive/2026-10-16.html"><span class="archive-date">2026-10-16</span></a>
+      <a href="archive/2026-10-15.html"><span class="archive-date">2026-10-15</span></a>
+      <a href="archive/2026-10-14.html"><span class="archive-date">2026-10-14</span></a>
+      <a href="archive/2026-10-13.html"><span class="archive-date">2026-10-13</span></a>
+      <a href="archive/2026-10-12.html"><span class="archive-date">2026-10-12</span></a>
+      <a href="archive/2026-10-11.html"><span class="archive-date">2026-10-11</span></a>
+      <a href="archive/2026-10-10.html"><span class="archive-date">2026-10-10</span></a>
+      <a href="archive/2026-10-09.html"><span class="archive-date">2026-10-09</span></a>
+      <a href="archive/2026-10-08.html"><span class="archive-date">2026-10-08</span></a>
+      <a href="archive/2026-10-07.html"><span class="archive-date">2026-10-07</span></a>
+      <a href="archive/2026-10-06.html"><span class="archive-date">2026-10-06</span></a>
+      <a href="archive/2026-10-05.html"><span class="archive-date">2026-10-05</span></a>
+      <a href="archive/2026-10-04.html"><span class="archive-date">2026-10-04</span></a>
+      <a href="archive/2026-10-03.html"><span class="archive-date">2026-10-03</span></a>
+      <a href="archive/2026-10-02.html"><span class="archive-date">2026-10-02</span></a>
+      <a href="archive/2026-10-01.html"><span class="archive-date">2026-10-01</span></a>
+      <a href="archive/2026-09-30.html"><span class="archive-date">2026-09-30</span></a>
+      <a href="archive/2026-09-29.html"><span class="archive-date">2026-09-29</span></a>
+      <a href="archive/2026-09-28.html"><span class="archive-date">2026-09-28</span></a>
+      <a href="archive/2026-09-27.html"><span class="archive-date">2026-09-27</span></a>
+      <a href="archive/2026-09-26.html"><span class="archive-date">2026-09-26</span></a>
+      <a href="archive/2026-09-25.html"><span class="archive-date">2026-09-25</span></a>
+      <a href="archive/2026-09-24.html"><span class="archive-date">2026-09-24</span></a>
+      <a href="archive/2026-09-23.html"><span class="archive-date">2026-09-23</span></a>
+      <a href="archive/2026-09-22.html"><span class="archive-date">2026-09-22</span></a>
+      <a href="archive/2026-09-21.html"><span class="archive-date">2026-09-21</span></a>
+      <a href="archive/2026-09-20.html"><span class="archive-date">2026-09-20</span></a>
+      <a href="archive/2026-09-19.html"><span class="archive-date">2026-09-19</span></a>
+      <a href="archive/2026-09-18.html"><span class="archive-date">2026-09-18</span></a>
+      <a href="archive/2026-09-17.html"><span class="archive-date">2026-09-17</span></a>
+      <a href="archive/2026-09-16.html"><span class="archive-date">2026-09-16</span></a>
+    </div>
+  </section>
+
+</main>
 <footer>
-  Generated on 14 November 2026 at 07:00 CET
+  Generated automatically on 15 November 2026 &middot; Europe/Zurich
 </footer>
 </body>
 </html>
