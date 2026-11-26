@@ -12,8 +12,6 @@
     --text: #1a1917;
     --muted: #6b6762;
     --accent: #2a5fad;
-    --tag-bg: #eef2fb;
-    --tag-fg: #2a5fad;
     --heading: #111110;
     --archive-bg: #f3f2ef;
   }
@@ -25,8 +23,6 @@
       --text: #e8e5de;
       --muted: #9b9890;
       --accent: #6b9eff;
-      --tag-bg: #1e2840;
-      --tag-fg: #6b9eff;
       --heading: #f0ede6;
       --archive-bg: #1a1915;
     }
@@ -66,7 +62,7 @@
   .archive-section {
     background: var(--archive-bg);
     border-radius: 8px;
-    padding: 24px;
+    padding: 20px 24px;
     margin-top: 48px;
   }
   .archive-section h2 {
@@ -84,7 +80,8 @@
   .archive-list li:last-child { border-bottom: none; }
   .archive-list a { color: var(--accent); text-decoration: none; }
   .archive-list a:hover { text-decoration: underline; }
-  .archive-list .archive-summary { color: var(--muted); font-size: 0.8rem; margin-left: 8px; }
+  .archive-date { font-weight: 600; }
+  .archive-topics { color: var(--muted); font-size: 0.8rem; margin-left: 8px; }
   footer {
     margin-top: 48px;
     padding-top: 16px;
@@ -97,42 +94,27 @@
 <body>
 <div class="wrapper">
 <header>
-  <h1>Daily Digest &mdash; 25 November 2026</h1>
-  <p>Automated digest, generated daily at 07:00 CET</p>
+  <h1>Daily Digest</h1>
+  <p>Automated morning digest &mdash; science, sport, and technology</p>
 </header>
 
 <section>
   <h2>Astronomy &amp; Space</h2>
   <ul>
     <li>
-      <div class="item-title"><a href="https://www.sciencedaily.com/releases/2026/11/261116023351.htm">ESA Hera Delivers First Close-Up Views of DART-Reshaped Didymos System</a></div>
-      <div class="item-meta">ESA / ScienceDaily &mdash; 25 Nov 2026</div>
-      <div class="item-summary">ESA's Hera spacecraft is now transmitting its first detailed images of the Didymos asteroid system, with a public livestream scheduled for the evening of 25 November to unveil the transformed post-DART collision landscape.</div>
+      <div class="item-title"><a href="https://skyandtelescope.org/astronomy-news/hera-images-dimorphos-unveiled/">Hera Releases First Close-Up Images of Post-Impact Dimorphos</a></div>
+      <div class="item-meta">ESA / Sky &amp; Telescope &mdash; 25 Nov 2026</div>
+      <div class="item-summary">ESA's Hera spacecraft arrived at the Didymos binary asteroid system and transmitted its first close-up images of Dimorphos, revealing the DART-reshaped moon in synchronous orbit alongside an unexpected swarm of metre-sized companion boulders.</div>
     </li>
     <li>
-      <div class="item-title"><a href="https://www.esa.int/news-media/news">ESA Euclid Releases First Major Data Batch: Over One Billion Objects Captured</a></div>
-      <div class="item-meta">ESA News &mdash; Nov 2026</div>
-      <div class="item-summary">The Euclid space telescope has published its first large-scale data release, mapping the light of more than a billion galaxies and stars across a sky area equivalent to 9,500 full Moons, enabling precision dark-energy studies.</div>
+      <div class="item-title"><a href="https://www.esa.int/news-media/news">Euclid Telescope Discovers Most Distant Quasar: 630 Million Years After the Big Bang</a></div>
+      <div class="item-meta">ESA &mdash; 24 Nov 2026</div>
+      <div class="item-summary">ESA's Euclid telescope identified a quasar powered by a 360-million-solar-mass black hole seen just 630 million years after the Big Bang, beating its own previous record by 40 million years; results published in Astronomy &amp; Astrophysics.</div>
     </li>
     <li>
-      <div class="item-title"><a href="https://skyandtelescope.org/astronomy-news/">BepiColombo Completes Eight-Year Journey, Enters Mercury Orbit</a></div>
-      <div class="item-meta">Sky &amp; Telescope &mdash; 20–21 Nov 2026</div>
-      <div class="item-summary">The joint ESA–JAXA BepiColombo spacecraft successfully completed its marathon 8-year interplanetary cruise and began orbital insertion around Mercury, initiating the science phase of Europe's first dedicated Mercury mission.</div>
-    </li>
-    <li>
-      <div class="item-title"><a href="https://skyandtelescope.org/astronomy-news/">Record-Breaking Early-Universe Black Hole Detected Shining Brightly</a></div>
-      <div class="item-meta">Sky &amp; Telescope &mdash; 24 Nov 2026</div>
-      <div class="item-summary">Astronomers have identified what appears to be a record-breaking supermassive black hole active at extremely high redshift, suggesting black holes grew to enormous mass far earlier in cosmic history than standard models predict.</div>
-    </li>
-    <li>
-      <div class="item-title"><a href="https://www.quantamagazine.org/what-makes-up-the-cosmos-a-20-year-survey-hints-that-something-is-missing-20261116/">Dark Energy Survey Final Results Challenge Standard Cosmological Model</a></div>
-      <div class="item-meta">Quanta Magazine &mdash; 16 Nov 2026</div>
-      <div class="item-summary">The Dark Energy Survey's 20-year final dataset finds that the distribution of matter in the universe does not match predictions from the leading cosmological model, reinforcing evidence that something fundamental may be absent from current theory.</div>
-    </li>
-    <li>
-      <div class="item-title"><a href="https://www.nasa.gov/news/recently-published/">NASA's Swift Observatory Re-enters Atmosphere After 22-Year Mission</a></div>
-      <div class="item-meta">NASA &mdash; Nov 2026</div>
-      <div class="item-summary">The Neil Gehrels Swift Observatory re-entered Earth's atmosphere over Indonesia, ending a 22-year mission that catalogued thousands of gamma-ray bursts and provided rapid multiwavelength follow-up for transient astrophysical events.</div>
+      <div class="item-title"><a href="https://science.nasa.gov/image-article/apod-2026-november-25-spherex-seeing-through-dust">APOD: SPHEREx Sees Through the Galactic Dust</a></div>
+      <div class="item-meta">NASA &mdash; 25 Nov 2026</div>
+      <div class="item-summary">The 25 November Astronomy Picture of the Day features NASA's SPHEREx satellite capturing infrared views of the Milky Way's galactic centre, exposing structures that the galactic dust completely hides in ordinary near-infrared wavelengths.</div>
     </li>
   </ul>
 </section>
@@ -141,34 +123,19 @@
   <h2>World News</h2>
   <ul>
     <li>
-      <div class="item-title"><a href="https://dailycuratednews.substack.com/p/news-headlines-november-25-2026">China Launches Shenzhou-24 to Tiangong Space Station</a></div>
-      <div class="item-meta">Multiple sources &mdash; 25 Nov 2026</div>
-      <div class="item-summary">China successfully launched the Shenzhou-24 crewed mission to its Tiangong space station; the flight also includes the first foreign national to visit the station under a bilateral agreement.</div>
+      <div class="item-title"><a href="https://www.nbcnews.com/world">Russia–Ukraine War: Estimated Russian Military Deaths Exceed 700,000</a></div>
+      <div class="item-meta">NBC News &mdash; 25 Nov 2026</div>
+      <div class="item-summary">New estimates put Russian military deaths in Ukraine above 700,000; the conflict is increasingly spreading beyond the main front through ship strikes and assassination plots, with no ceasefire talks on the horizon.</div>
     </li>
     <li>
-      <div class="item-title"><a href="https://news.sbs.co.kr/english/article.do?news_id=N1008861969">Trump Intervention in Jensen Huang's Nvidia Return Draws Bipartisan Congressional Scrutiny</a></div>
-      <div class="item-meta">SBS News &mdash; 25 Nov 2026</div>
-      <div class="item-summary">President Trump's claim that he personally facilitated Nvidia CEO Jensen Huang's return has provoked broad condemnation from both parties, with Democratic lawmakers citing national-security and anti-corruption grounds to open a formal congressional investigation.</div>
+      <div class="item-title"><a href="https://www.nbcnews.com/world">Houthi Rebels Strike Saudi Arabia's Largest Oil Refinery</a></div>
+      <div class="item-meta">NBC News &mdash; 25 Nov 2026</div>
+      <div class="item-summary">Yemeni Houthi forces carried out an attack on Saudi Arabia's largest oil refinery, raising immediate concerns about regional energy supply and prompting emergency response from Saudi Aramco.</div>
     </li>
     <li>
-      <div class="item-title"><a href="https://news.sbs.co.kr/english/article.do?news_id=N1008861969">Gunmen Take 25 Hostages in Colombian Supermarket Siege</a></div>
-      <div class="item-meta">SBS News / Reuters &mdash; 25 Nov 2026</div>
-      <div class="item-summary">Armed men seized 25 hostages at a supermarket in Colombia; security forces cordoned off the site and negotiations were ongoing as of the latest reports.</div>
-    </li>
-    <li>
-      <div class="item-title"><a href="https://news.sbs.co.kr/english/article.do?news_id=N1008861969">Seoul Metro Strike Averted After Management and Union Reach Wage Deal</a></div>
-      <div class="item-meta">SBS News &mdash; 25 Nov 2026</div>
-      <div class="item-summary">Seoul Metro management and its union concluded an early-morning wage agreement on November 25, calling off a threatened strike that would have disrupted subway Lines 1–8 for millions of daily commuters.</div>
-    </li>
-    <li>
-      <div class="item-title"><a href="https://dailycuratednews.substack.com/p/news-headlines-november-25-2026">Poland: Russia's Hybrid Warfare Against Europe Will Persist Beyond Ukraine War</a></div>
-      <div class="item-meta">Multiple sources &mdash; Nov 2026</div>
-      <div class="item-summary">Poland's intelligence minister warned that Moscow's campaign of sabotage, disinformation, and covert disruption against European nations is likely to continue irrespective of how the conflict in Ukraine concludes.</div>
-    </li>
-    <li>
-      <div class="item-title"><a href="https://news.sbs.co.kr/english/article.do?news_id=N1008861969">Five Turkish Soldiers Killed in Military Helicopter Crash Near Eskisehir</a></div>
-      <div class="item-meta">SBS News &mdash; 25 Nov 2026</div>
-      <div class="item-summary">Turkish officials confirmed that five military personnel died when a helicopter went down near Eskisehir; the cause of the crash is under investigation.</div>
+      <div class="item-title"><a href="https://www.nbcnews.com/world">United States Skips COP31 Climate Summit in Antalya, Turkey</a></div>
+      <div class="item-meta">NBC News &mdash; 25 Nov 2026</div>
+      <div class="item-summary">The United States did not attend COP31 in Antalya, continuing its withdrawal from multilateral climate diplomacy; the absence further complicates binding emissions commitments from one of the world's largest cumulative emitters.</div>
     </li>
   </ul>
 </section>
@@ -177,19 +144,9 @@
   <h2>Rugby (High-Level Only)</h2>
   <ul>
     <li>
-      <div class="item-title"><a href="https://www.autumn-internationals.co.uk/2026/">Autumn International Round-Up: England Top the Pool, Ireland Edge South Africa</a></div>
-      <div class="item-meta">Sky Sports / Autumn-Internationals &mdash; 21 Nov 2026</div>
-      <div class="item-summary">Saturday's Autumn Nations Series results: England 37–12 New Zealand, Ireland 20–17 South Africa, France 45–17 Argentina, Australia 29–26 Wales, Fiji 21–16 Italy, Scotland 67–5 Japan — a full round of Tier-1 internationals.</div>
-    </li>
-    <li>
-      <div class="item-title"><a href="https://www.autumn-internationals.co.uk/2026/ireland-fixtures.html">Ireland Host Australia at Twickenham (27 Nov) in Final Autumn International</a></div>
-      <div class="item-meta">Autumn-Internationals &mdash; upcoming 27 Nov 2026</div>
-      <div class="item-summary">Ireland face Australia at Twickenham on Friday 27 November in their last Autumn Nations Series fixture, fresh off their narrow win over South Africa the previous weekend.</div>
-    </li>
-    <li>
-      <div class="item-title"><a href="https://www.autumn-internationals.co.uk/2026/england-fixtures.html">England vs New Zealand Third-Place Play-Off at Twickenham (28 Nov)</a></div>
-      <div class="item-meta">Autumn-Internationals &mdash; upcoming 28 Nov 2026</div>
-      <div class="item-summary">England and New Zealand meet again at Twickenham on Saturday 28 November in a Nations Series third-place play-off, six days after England's dominant 37–12 group-stage victory.</div>
+      <div class="item-title"><a href="https://www.skysports.com/rugby-union/news/13615041/nations-championship-fixtures-france-to-play-south-africa-in-final-as-england-face-new-zealand-rematch-plus-ireland-vs-australia">World Rugby Nations Championship Finals Weekend Confirmed: France vs South Africa in the Final</a></div>
+      <div class="item-meta">Sky Sports &mdash; 25 Nov 2026</div>
+      <div class="item-summary">France will face South Africa in the inaugural World Rugby Nations Championship final at Allianz Stadium Twickenham on 29 November; the same venue hosts England vs New Zealand (28 Nov) and Ireland vs Australia (27 Nov) in the playoffs bracket.</div>
     </li>
   </ul>
 </section>
@@ -198,35 +155,14 @@
   <h2>Sailing</h2>
   <ul>
     <li>
-      <div class="item-title"><a href="https://yachtingmonthly.com/boat-events/golden-globe-race/par-nyman-dismasts-in-the-southern-ocean-will-sail-to-shore-unassisted-107057">Golden Globe Race: Pär Nyman Dismasts in Southern Ocean — 9 Boats Still Running</a></div>
-      <div class="item-meta">Yachting Monthly &mdash; 22 Nov 2026</div>
-      <div class="item-summary">Swedish skipper Pär Nyman suffered a broken mast aboard <em>Lazy Otter</em> late on 22 November in the Southern Ocean, ending his Golden Globe Race; he declared himself safe and declined assistance, leaving nine competitors in the race with Damien Guillou still leading.</div>
+      <div class="item-title"><a href="https://www.sailingscuttlebutt.com/2026/11/25/lasting-impact-extends-beyond-results/">81st Rolex Sydney Hobart: 107-Yacht Fleet Confirmed, Slingsby's Tribeca Loyal Leads Line Honours Charge</a></div>
+      <div class="item-meta">Sailing Scuttlebutt &mdash; 25 Nov 2026</div>
+      <div class="item-summary">The 81st Rolex Sydney Hobart Yacht Race (start: 26 December) has confirmed a 107-yacht fleet; Tom Slingsby will helm the 100-footer Tribeca Loyal as line-honours favourite, with a parallel Virtual Regatta online race running alongside the real fleet.</div>
     </li>
     <li>
-      <div class="item-title"><a href="https://en.wikipedia.org/wiki/2026_SailGP_championship">SailGP 2026 Dubai Grand Prix Concludes; Abu Dhabi Grand Final Set for 28–29 Nov</a></div>
-      <div class="item-meta">SailGP / Wikipedia &mdash; 21–22 Nov 2026</div>
-      <div class="item-summary">The Dubai Sail Grand Prix completed its racing on 22 November, with teams heading to Abu Dhabi for the season Grand Final on 28–29 November that will determine the 2026 SailGP championship winner.</div>
-    </li>
-  </ul>
-</section>
-
-<section>
-  <h2>Science-Based Lifting</h2>
-  <ul>
-    <li>
-      <div class="item-title"><a href="https://journals.lww.com/nsca-jscr/pages/default.aspx">Large Observational Study Links 90–120 Min/Week of Resistance Training to Lower All-Cause Mortality</a></div>
-      <div class="item-meta">British Journal of Sports Medicine &mdash; Nov 2026</div>
-      <div class="item-summary">An observational cohort of ~150,000 adults found that roughly 90–120 minutes per week of resistance training was associated with significantly lower all-cause mortality, with no additional benefit beyond the two-hour weekly threshold — the largest dose-response dataset to date on this question.</div>
-    </li>
-    <li>
-      <div class="item-title"><a href="https://theelitetrainer.com/keeping-up-with-current-research-november-2026/">Progressive Overload Beats Fixed-Load Training for Muscle Hypertrophy in Randomised Trial</a></div>
-      <div class="item-meta">Journal of Strength &amp; Conditioning Research &mdash; Nov 2026</div>
-      <div class="item-summary">A randomised trial comparing systematically progressed resistance protocols against matched-volume fixed-load programmes found greater gains in muscle cross-sectional area in the progressive group, adding controlled experimental support to the principle of progressive overload.</div>
-    </li>
-    <li>
-      <div class="item-title"><a href="https://www.sciencedaily.com/releases/2026/10/261020085025.htm">Penn State Trial: 4 Minutes of Daily Strength Training Improves Physical Function in Older Adults Within 12 Weeks</a></div>
-      <div class="item-meta">ScienceDaily / Penn State &mdash; Oct 2026</div>
-      <div class="item-summary">A Penn State randomised trial found that a minimal four-minute daily resistance routine significantly improved balance, mobility, and overall physical function in adults over 65 after just 12 weeks.</div>
+      <div class="item-title"><a href="https://www.sail-world.com/news/301703/EmbraceTheChallenge-announces-The-Ocean-Race-squad">Ocean Race 2027: Embrace The Challenge Names Six-Person Squad</a></div>
+      <div class="item-meta">Sail-World &mdash; 24 Nov 2026</div>
+      <div class="item-summary">Embrace The Challenge announced the six-person crew led by Oliver Heer for The Ocean Race 2027, which departs from Alicante on 17 January; the team is one of the later entries to finalise their roster ahead of the race start.</div>
     </li>
   </ul>
 </section>
@@ -235,14 +171,9 @@
   <h2>People Leadership</h2>
   <ul>
     <li>
-      <div class="item-title"><a href="https://link.springer.com/article/10.1007/s41111-026-00358-x">Bibliometric Analysis Maps 50 Years of Leadership-and-Politics Research (1976–2025)</a></div>
-      <div class="item-meta">Springer &mdash; 13 Nov 2026</div>
-      <div class="item-summary">A systematic bibliometric and content analysis of 50 years of peer-reviewed output on leadership and political science identifies dominant themes, productive research nations, and collaboration networks, revealing a recent shift toward behavioural and institutional approaches.</div>
-    </li>
-    <li>
-      <div class="item-title"><a href="https://journals.sagepub.com/home/jlo">The Leadership-Belonging Gap: New Study in JLOS Quantifies Disconnect Between Leaders and Teams</a></div>
-      <div class="item-meta">Journal of Leadership &amp; Organizational Studies &mdash; 3 Nov 2026</div>
-      <div class="item-summary">Research published in the Journal of Leadership &amp; Organizational Studies finds a systematic gap between how leaders perceive their inclusivity and how team members experience belonging, with the gap widening in high-performance or high-stakes environments.</div>
+      <div class="item-title"><a href="https://hbr.org/the-latest">Research: Leader Gratitude Expressions Raise Employees&rsquo; Positive Life Perception</a></div>
+      <div class="item-meta">Harvard Business Review &mdash; 25 Nov 2026</div>
+      <div class="item-summary">A peer-reviewed study by Locklear, Kane, and Ehrhart finds that when leaders openly express gratitude, employees show a measurable increase in recognising positive aspects of their own lives and work — a contagion effect with implications for team climate design.</div>
     </li>
   </ul>
 </section>
@@ -251,24 +182,14 @@
   <h2>AI Engineering</h2>
   <ul>
     <li>
-      <div class="item-title"><a href="https://simonwillison.net/2026/Nov/24/datasette-agent/">Datasette-agent 0.7a1: Fragment Navigation Lands in Chat Side Panels</a></div>
+      <div class="item-title"><a href="https://simonwillison.net/2026/Nov/24/llm-inflection-points/">Three LLM Inflection Points in Twelve Months</a></div>
       <div class="item-meta">Simon Willison &mdash; 24 Nov 2026</div>
-      <div class="item-summary">The 0.7a1 release of datasette-agent adds fragment-hash routing so chat side panels can navigate between pages without full reloads, improving the in-browser data-exploration experience for LLM-powered Datasette queries.</div>
+      <div class="item-summary">Willison revisits his AI Engineer Code Summit keynote, identifying three major inflection points in coding agents and LLMs over the past year, with particular focus on how agentic coding tools handle context windows and tool use at scale.</div>
     </li>
     <li>
-      <div class="item-title"><a href="https://simonwillison.net/2026/Nov/24/astra-historical-mystery/">GPT 6.2 Astra Identifies Creator of 1808 Sketchbook at Yale's Beinecke Library</a></div>
+      <div class="item-title"><a href="https://simonwillison.net/">LLM 0.38: GPT-6.2 Astra, Sol, and Z.ai GLM-5.4 Support Added</a></div>
       <div class="item-meta">Simon Willison &mdash; 24 Nov 2026</div>
-      <div class="item-summary">Simon Willison documented a case study where OpenAI's GPT 6.2 Astra model correctly identified the creator of a previously unattributed 1808 sketchbook held at Yale's Beinecke Rare Book Library by cross-referencing stylistic and provenance clues.</div>
-    </li>
-    <li>
-      <div class="item-title"><a href="https://simonwillison.net/2026/Nov/23/ladybird/">Ladybird Browser Ships First Public Alpha</a></div>
-      <div class="item-meta">Simon Willison &mdash; 23 Nov 2026</div>
-      <div class="item-summary">The Ladybird browser project released its first public alpha, marking a milestone for the from-scratch independent browser engine built outside the Chromium/Gecko/WebKit lineage.</div>
-    </li>
-    <li>
-      <div class="item-title"><a href="https://simonwillison.net/2026/Nov/23/glm-54/">GLM-5.4: Z.ai Introduces Looped Transformer Architecture for Coding Tasks</a></div>
-      <div class="item-meta">Simon Willison &mdash; 23 Nov 2026</div>
-      <div class="item-summary">Z.ai's GLM-5.4 uses a looped transformer design where weights are reused across repeated passes, reportedly improving coding performance; open weights have not yet been released, leaving the architecture claim unverifiable.</div>
+      <div class="item-summary">Willison's LLM command-line tool v0.38 adds support for OpenAI's GPT-6.2 Astra and Sol models plus Z.ai's GLM-5.4, which uses a looped-transformer architecture where weights are reused across repeated passes; open weights are not yet released.</div>
     </li>
   </ul>
 </section>
@@ -277,19 +198,19 @@
   <h2>Jobs</h2>
   <ul>
     <li>
-      <div class="item-title"><a href="https://www.freelancermap.com/projects/switzerland">Freelancermap Switzerland — ~689 Active Projects (Updated Daily)</a></div>
-      <div class="item-meta">freelancermap &mdash; Nov 2026</div>
-      <div class="item-summary">Freelancermap lists roughly 689 Swiss freelance projects as of late November, with Zürich-based developer and architect roles appearing prominently; many are hybrid (40–60% on-site) or partial-remote.</div>
+      <div class="item-title"><a href="https://www.freelancermap.com/projects/switzerland">689 IT Freelance Projects in Switzerland — 69 Fully Remote</a></div>
+      <div class="item-meta">freelancermap &mdash; 26 Nov 2026</div>
+      <div class="item-summary">Freelancermap lists 689 active IT freelance projects in Switzerland including 69 fully remote, 253 hybrid, and 367 on-site roles spanning data science, SAP, and software development; listings updated daily.</div>
     </li>
     <li>
-      <div class="item-title"><a href="https://careers.jobscore.com/careers/umanova/jobs/freelance-front-end-developer-react-typescript-doLdBQUnHlC4aKteA_UQsp">Freelance Front-End Developer (React/TypeScript) — Geneva, Remote-Eligible</a></div>
-      <div class="item-meta">Jobscore / Umanova &mdash; Nov 2026</div>
-      <div class="item-summary">Freelance React/TypeScript front-end developer role in Geneva requiring React Router, Redux, TanStack Query, and form-validation tooling (React Hook Form + Zod/Yup); remote-eligible.</div>
+      <div class="item-title"><a href="https://swissdevjobs.ch/jobs/Backend/all">Senior Backend Engineer (Remote) — Scalera AG, Switzerland</a></div>
+      <div class="item-meta">swissdevjobs.ch &mdash; 26 Nov 2026</div>
+      <div class="item-summary">Swissdevjobs.ch lists a fully remote Senior Backend Engineer opening at Scalera AG, among 61 total backend developer positions currently posted in Switzerland; salary band CHF 60k–85k.</div>
     </li>
     <li>
-      <div class="item-title"><a href="https://www.glassdoor.com/Job/suiza-developer-remote-jobs-SRCH_IL.0,5_IN226_KO6,22.htm">73 Remote Developer Roles Listed in Switzerland on Glassdoor</a></div>
-      <div class="item-meta">Glassdoor &mdash; Nov 2026</div>
-      <div class="item-summary">Glassdoor shows 73 remote developer positions in Switzerland as of November 2026, concentrated in Zürich and Lugano, alongside 684 broader remote IT roles.</div>
+      <div class="item-title"><a href="https://swissdevjobs.ch/jobs/Machine-Learning/all">47 Machine Learning Developer Roles Active in Switzerland</a></div>
+      <div class="item-meta">swissdevjobs.ch &mdash; 26 Nov 2026</div>
+      <div class="item-summary">Swissdevjobs.ch currently lists 47 active Machine Learning developer positions in Switzerland with a mix of on-site and remote options available.</div>
     </li>
   </ul>
 </section>
@@ -297,72 +218,72 @@
 <div class="archive-section">
   <h2>Archive</h2>
   <ul class="archive-list">
-    <li><a href="archive/2026-11-25.html">25 November 2026</a><span class="archive-summary">Hera at Didymos, Euclid data, BepiColombo, Autumn Internationals, Golden Globe Race, GLM-5.4</span></li>
-    <li><a href="archive/2026-11-24.html">24 November 2026</a></li>
-    <li><a href="archive/2026-11-23.html">23 November 2026</a></li>
-    <li><a href="archive/2026-11-22.html">22 November 2026</a></li>
-    <li><a href="archive/2026-11-21.html">21 November 2026</a></li>
-    <li><a href="archive/2026-11-20.html">20 November 2026</a></li>
-    <li><a href="archive/2026-11-19.html">19 November 2026</a></li>
-    <li><a href="archive/2026-11-18.html">18 November 2026</a></li>
-    <li><a href="archive/2026-11-17.html">17 November 2026</a></li>
-    <li><a href="archive/2026-11-16.html">16 November 2026</a></li>
-    <li><a href="archive/2026-11-15.html">15 November 2026</a></li>
-    <li><a href="archive/2026-11-14.html">14 November 2026</a></li>
-    <li><a href="archive/2026-11-13.html">13 November 2026</a></li>
-    <li><a href="archive/2026-11-12.html">12 November 2026</a></li>
-    <li><a href="archive/2026-11-11.html">11 November 2026</a></li>
-    <li><a href="archive/2026-11-10.html">10 November 2026</a></li>
-    <li><a href="archive/2026-11-09.html">9 November 2026</a></li>
-    <li><a href="archive/2026-11-08.html">8 November 2026</a></li>
-    <li><a href="archive/2026-11-07.html">7 November 2026</a></li>
-    <li><a href="archive/2026-11-06.html">6 November 2026</a></li>
-    <li><a href="archive/2026-11-05.html">5 November 2026</a></li>
-    <li><a href="archive/2026-11-04.html">4 November 2026</a></li>
-    <li><a href="archive/2026-11-03.html">3 November 2026</a></li>
-    <li><a href="archive/2026-11-02.html">2 November 2026</a></li>
-    <li><a href="archive/2026-11-01.html">1 November 2026</a></li>
-    <li><a href="archive/2026-10-31.html">31 October 2026</a></li>
-    <li><a href="archive/2026-10-30.html">30 October 2026</a></li>
-    <li><a href="archive/2026-10-29.html">29 October 2026</a></li>
-    <li><a href="archive/2026-10-28.html">28 October 2026</a></li>
-    <li><a href="archive/2026-10-27.html">27 October 2026</a></li>
-    <li><a href="archive/2026-10-26.html">26 October 2026</a></li>
-    <li><a href="archive/2026-10-25.html">25 October 2026</a></li>
-    <li><a href="archive/2026-10-24.html">24 October 2026</a></li>
-    <li><a href="archive/2026-10-23.html">23 October 2026</a></li>
-    <li><a href="archive/2026-10-22.html">22 October 2026</a></li>
-    <li><a href="archive/2026-10-21.html">21 October 2026</a></li>
-    <li><a href="archive/2026-10-20.html">20 October 2026</a></li>
-    <li><a href="archive/2026-10-19.html">19 October 2026</a></li>
-    <li><a href="archive/2026-10-18.html">18 October 2026</a></li>
-    <li><a href="archive/2026-10-17.html">17 October 2026</a></li>
-    <li><a href="archive/2026-10-16.html">16 October 2026</a></li>
-    <li><a href="archive/2026-10-15.html">15 October 2026</a></li>
-    <li><a href="archive/2026-10-14.html">14 October 2026</a></li>
-    <li><a href="archive/2026-10-13.html">13 October 2026</a></li>
-    <li><a href="archive/2026-10-12.html">12 October 2026</a></li>
-    <li><a href="archive/2026-10-11.html">11 October 2026</a></li>
-    <li><a href="archive/2026-10-10.html">10 October 2026</a></li>
-    <li><a href="archive/2026-10-09.html">9 October 2026</a></li>
-    <li><a href="archive/2026-10-08.html">8 October 2026</a></li>
-    <li><a href="archive/2026-10-07.html">7 October 2026</a></li>
-    <li><a href="archive/2026-10-06.html">6 October 2026</a></li>
-    <li><a href="archive/2026-10-05.html">5 October 2026</a></li>
-    <li><a href="archive/2026-10-04.html">4 October 2026</a></li>
-    <li><a href="archive/2026-10-03.html">3 October 2026</a></li>
-    <li><a href="archive/2026-10-02.html">2 October 2026</a></li>
-    <li><a href="archive/2026-10-01.html">1 October 2026</a></li>
-    <li><a href="archive/2026-09-30.html">30 September 2026</a></li>
-    <li><a href="archive/2026-09-29.html">29 September 2026</a></li>
-    <li><a href="archive/2026-09-28.html">28 September 2026</a></li>
-    <li><a href="archive/2026-09-27.html">27 September 2026</a></li>
-    <li><a href="archive/2026-09-26.html">26 September 2026</a></li>
+    <li><a href="archive/2026-11-26.html"><span class="archive-date">26 November 2026</span></a><span class="archive-topics">Hera/Dimorphos images, Ukraine casualties, Nations Championship final, Sydney Hobart, LLM inflection points</span></li>
+    <li><a href="archive/2026-11-25.html"><span class="archive-date">25 November 2026</span></a><span class="archive-topics">ESA Hera launch, Euclid data release, BepiColombo Mercury orbit, Autumn Nations results, Golden Globe Race</span></li>
+    <li><a href="archive/2026-11-24.html"><span class="archive-date">24 November 2026</span></a></li>
+    <li><a href="archive/2026-11-23.html"><span class="archive-date">23 November 2026</span></a></li>
+    <li><a href="archive/2026-11-22.html"><span class="archive-date">22 November 2026</span></a></li>
+    <li><a href="archive/2026-11-21.html"><span class="archive-date">21 November 2026</span></a></li>
+    <li><a href="archive/2026-11-20.html"><span class="archive-date">20 November 2026</span></a></li>
+    <li><a href="archive/2026-11-19.html"><span class="archive-date">19 November 2026</span></a></li>
+    <li><a href="archive/2026-11-18.html"><span class="archive-date">18 November 2026</span></a></li>
+    <li><a href="archive/2026-11-17.html"><span class="archive-date">17 November 2026</span></a></li>
+    <li><a href="archive/2026-11-16.html"><span class="archive-date">16 November 2026</span></a></li>
+    <li><a href="archive/2026-11-15.html"><span class="archive-date">15 November 2026</span></a></li>
+    <li><a href="archive/2026-11-14.html"><span class="archive-date">14 November 2026</span></a></li>
+    <li><a href="archive/2026-11-13.html"><span class="archive-date">13 November 2026</span></a></li>
+    <li><a href="archive/2026-11-12.html"><span class="archive-date">12 November 2026</span></a></li>
+    <li><a href="archive/2026-11-11.html"><span class="archive-date">11 November 2026</span></a></li>
+    <li><a href="archive/2026-11-10.html"><span class="archive-date">10 November 2026</span></a></li>
+    <li><a href="archive/2026-11-09.html"><span class="archive-date">9 November 2026</span></a></li>
+    <li><a href="archive/2026-11-08.html"><span class="archive-date">8 November 2026</span></a></li>
+    <li><a href="archive/2026-11-07.html"><span class="archive-date">7 November 2026</span></a></li>
+    <li><a href="archive/2026-11-06.html"><span class="archive-date">6 November 2026</span></a></li>
+    <li><a href="archive/2026-11-05.html"><span class="archive-date">5 November 2026</span></a></li>
+    <li><a href="archive/2026-11-04.html"><span class="archive-date">4 November 2026</span></a></li>
+    <li><a href="archive/2026-11-03.html"><span class="archive-date">3 November 2026</span></a></li>
+    <li><a href="archive/2026-11-02.html"><span class="archive-date">2 November 2026</span></a></li>
+    <li><a href="archive/2026-11-01.html"><span class="archive-date">1 November 2026</span></a></li>
+    <li><a href="archive/2026-10-31.html"><span class="archive-date">31 October 2026</span></a></li>
+    <li><a href="archive/2026-10-30.html"><span class="archive-date">30 October 2026</span></a></li>
+    <li><a href="archive/2026-10-29.html"><span class="archive-date">29 October 2026</span></a></li>
+    <li><a href="archive/2026-10-28.html"><span class="archive-date">28 October 2026</span></a></li>
+    <li><a href="archive/2026-10-27.html"><span class="archive-date">27 October 2026</span></a></li>
+    <li><a href="archive/2026-10-26.html"><span class="archive-date">26 October 2026</span></a></li>
+    <li><a href="archive/2026-10-25.html"><span class="archive-date">25 October 2026</span></a></li>
+    <li><a href="archive/2026-10-24.html"><span class="archive-date">24 October 2026</span></a></li>
+    <li><a href="archive/2026-10-23.html"><span class="archive-date">23 October 2026</span></a></li>
+    <li><a href="archive/2026-10-22.html"><span class="archive-date">22 October 2026</span></a></li>
+    <li><a href="archive/2026-10-21.html"><span class="archive-date">21 October 2026</span></a></li>
+    <li><a href="archive/2026-10-20.html"><span class="archive-date">20 October 2026</span></a></li>
+    <li><a href="archive/2026-10-19.html"><span class="archive-date">19 October 2026</span></a></li>
+    <li><a href="archive/2026-10-18.html"><span class="archive-date">18 October 2026</span></a></li>
+    <li><a href="archive/2026-10-17.html"><span class="archive-date">17 October 2026</span></a></li>
+    <li><a href="archive/2026-10-16.html"><span class="archive-date">16 October 2026</span></a></li>
+    <li><a href="archive/2026-10-15.html"><span class="archive-date">15 October 2026</span></a></li>
+    <li><a href="archive/2026-10-14.html"><span class="archive-date">14 October 2026</span></a></li>
+    <li><a href="archive/2026-10-13.html"><span class="archive-date">13 October 2026</span></a></li>
+    <li><a href="archive/2026-10-12.html"><span class="archive-date">12 October 2026</span></a></li>
+    <li><a href="archive/2026-10-11.html"><span class="archive-date">11 October 2026</span></a></li>
+    <li><a href="archive/2026-10-10.html"><span class="archive-date">10 October 2026</span></a></li>
+    <li><a href="archive/2026-10-09.html"><span class="archive-date">9 October 2026</span></a></li>
+    <li><a href="archive/2026-10-08.html"><span class="archive-date">8 October 2026</span></a></li>
+    <li><a href="archive/2026-10-07.html"><span class="archive-date">7 October 2026</span></a></li>
+    <li><a href="archive/2026-10-06.html"><span class="archive-date">6 October 2026</span></a></li>
+    <li><a href="archive/2026-10-05.html"><span class="archive-date">5 October 2026</span></a></li>
+    <li><a href="archive/2026-10-04.html"><span class="archive-date">4 October 2026</span></a></li>
+    <li><a href="archive/2026-10-03.html"><span class="archive-date">3 October 2026</span></a></li>
+    <li><a href="archive/2026-10-02.html"><span class="archive-date">2 October 2026</span></a></li>
+    <li><a href="archive/2026-10-01.html"><span class="archive-date">1 October 2026</span></a></li>
+    <li><a href="archive/2026-09-30.html"><span class="archive-date">30 September 2026</span></a></li>
+    <li><a href="archive/2026-09-29.html"><span class="archive-date">29 September 2026</span></a></li>
+    <li><a href="archive/2026-09-28.html"><span class="archive-date">28 September 2026</span></a></li>
+    <li><a href="archive/2026-09-27.html"><span class="archive-date">27 September 2026</span></a></li>
   </ul>
 </div>
 
 <footer>
-  <p>Generated automatically on 25 November 2026 at 07:00 CET. Sources fetched via WebSearch (network policy restricted direct RSS access this run). Quality bar: primary and methodology-grounded sources preferred; op-eds and unverified aggregator content excluded.</p>
+  <p>Generated automatically on 26 November 2026 at 07:00 CET. All sources fetched via WebSearch.</p>
 </footer>
 
 </div>
